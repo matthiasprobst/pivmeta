@@ -64,7 +64,7 @@
     "@id" : "http://semanticscience.org/resource/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#CoordinateEntity"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#CoordinateEntity"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "de",
@@ -105,6 +105,47 @@
   "@id" : "http://w3id.org/nfdi4ing/metadata4ing#m4i:ContactPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://w3id.org/nfdi4ing/metadata4ing/1.2.1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/abstract" : [ {
+    "@language" : "en",
+    "@value" : "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2024-01-03"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2024-01-03"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "PIVMeta: An ontology draft for describing particle image velocimetry data."
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "pivm"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#"
+  } ],
+  "http://w3id.org/nfdi4ing/metadata4ing#m4i:ContactPerson" : [ {
+    "@value" : "https://orcid.org/0000-0001-8729-0482"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "PIVMeta"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing/1.2.1"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "v1.0.0"
+  } ]
+}, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
@@ -140,449 +181,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.obolibrary.org/obo/Process"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#CartesianSpatialCoordinateOrigin",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#CoordinateEntity"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#CenterOfMass",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#SubPixelPeakFitMethod"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#CoordinateEntity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#CoordinateVelocity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#CoordinateEntity"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "coordinate velocity"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#InterrogationMethod",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#Laser",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q38867"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Device which emits light via optical amplification."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "laser"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#LeastSquaresGauss",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#SubPixelPeakFitMethod"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#Multigrid",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#InterrogationMethod"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#Multipass",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#InterrogationMethod"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#RotationalCoordinateVelocity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#CoordinateVelocity"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "rotational coordinate velocity"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#Singlepass",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#InterrogationMethod"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#SubPixelPeakFitMethod",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Method fitting the sub pixel peak in the correlation signal."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#ThreePointParabolic",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#SubPixelPeakFitMethod"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#ThreePointsGauss",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#SubPixelPeakFitMethod"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#TranslationalCoordinateVelocity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#CoordinateVelocity"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "translational coordinate velocity"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#final_window_size",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The final window size used by any PIV interrogation method."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#InterrogationMethod"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#hasVelocity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://semanticscience.org/resource/SIO_000320"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Points to a velocity of a given coordinate system."
-  }, {
-    "@language" : "de",
-    "@value" : "hat Geschwindigkeit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "has velocity"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#has_origin",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://semanticscience.org/resource/SIO_000320"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Points to an origin of a given coordinate system."
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#has_standard_name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#inCoordinateSystem",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://semanticscience.org/resource/SIO_000320"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000050"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A coordinate system in which the numeric variable is defined."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#example" : [ {
-    "@language" : "en",
-    "@value" : "Velocity data can be defined in a moving coordinate system and will therefore have different values to a stationary system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "in coordinate system"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#initial_window_size",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The initial window size used by a Multigrid PIV method."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#Multigrid"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#number_of_passes",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The number of passes performed by the Multipass PIV Method."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#Multipass"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#int"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#percentage_of_final_window_size",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#InterrogationMethod"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#float"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#x_displacement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "pixels"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "x displacement"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#x_true_particle_displacement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "pixels"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "x true particle displacement"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#x_velocity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "m/s"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "x velocity"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#y_displacement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "pixels"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "y displacement"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#y_true_particle_displacement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "pixels"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "y true particle displacement"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#y_velocity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "m/s"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "y velocity"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#z_displacement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "pixels"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "z displacement"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#z_true_particle_displacement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "pixels"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "z true particle displacement"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/piv-convention#z_velocity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
-    "@value" : "m/s"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "z velocity"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/terms/abstract" : [ {
-    "@language" : "en",
-    "@value" : "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."
-  } ],
-  "http://purl.org/dc/terms/created" : [ {
-    "@value" : "2024-01-03"
-  } ],
-  "http://purl.org/dc/terms/creator" : [ {
-    "@value" : "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"
-  } ],
-  "http://purl.org/dc/terms/license" : [ {
-    "@id" : "https://creativecommons.org/licenses/by/4.0/"
-  } ],
-  "http://purl.org/dc/terms/modified" : [ {
-    "@value" : "2024-01-03"
-  } ],
-  "http://purl.org/dc/terms/title" : [ {
-    "@language" : "en",
-    "@value" : "PIVMeta: An ontology draft for describing particle image velocimetry data."
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
-    "@value" : "pivm"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@id" : "https://matthiasprobst.github.io/piv-convention#"
-  } ],
-  "http://w3id.org/nfdi4ing/metadata4ing#m4i:ContactPerson" : [ {
-    "@value" : "https://orcid.org/0000-0001-8729-0482"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "PIVMeta"
-  } ],
-  "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing/1.2.1"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta/1.0.0"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "v1.0.0"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta##EvaluationStep",
@@ -625,6 +223,405 @@
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#CartesianSpatialCoordinateOrigin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#CoordinateEntity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#CenterOfMass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#CoordinateEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#CoordinateVelocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#CoordinateEntity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "coordinate velocity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Laser",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q38867"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Device which emits light via optical amplification."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "laser"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#LeastSquaresGauss",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Multigrid",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Multipass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#RotationalCoordinateVelocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#CoordinateVelocity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "rotational coordinate velocity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Singlepass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Method fitting the sub pixel peak in the correlation signal."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ThreePointParabolic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ThreePointsGauss",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#TranslationalCoordinateVelocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#CoordinateVelocity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "translational coordinate velocity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#final_window_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The final window size used by any PIV interrogation method."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasVelocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://semanticscience.org/resource/SIO_000320"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Points to a velocity of a given coordinate system."
+  }, {
+    "@language" : "de",
+    "@value" : "hat Geschwindigkeit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "has velocity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#has_origin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://semanticscience.org/resource/SIO_000320"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Points to an origin of a given coordinate system."
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#has_standard_name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#inCoordinateSystem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://semanticscience.org/resource/SIO_000320"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000050"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A coordinate system in which the numeric variable is defined."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "Velocity data can be defined in a moving coordinate system and will therefore have different values to a stationary system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "in coordinate system"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#initial_window_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The initial window size used by a Multigrid PIV method."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Multigrid"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#number_of_passes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The number of passes performed by the Multipass PIV Method."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Multipass"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#percentage_of_final_window_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_true_particle_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x true particle displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "m/s"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x velocity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_true_particle_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y true particle displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "m/s"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y velocity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#z_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "z displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#z_true_particle_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "z true particle displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#z_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "m/s"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "z velocity"
   } ]
 }, {
   "@id" : "https://www.w3.org/TR/rdf12-schema/#rdfs:label",
