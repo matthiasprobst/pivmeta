@@ -486,6 +486,61 @@
     "@value" : "y velocity"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/piv-convention#z_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "z displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/piv-convention#z_true_particle_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "z true particle displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/piv-convention#z_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+    "@value" : "m/s"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "z velocity"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/abstract" : [ {
@@ -569,7 +624,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Processes prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."
+    "@value" : "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."
   } ]
 }, {
   "@id" : "https://www.w3.org/TR/rdf12-schema/#rdfs:label",

@@ -541,7 +541,7 @@
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta##PreProcessingStep">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
         <rdfs:label xml:lang="en">pre processing step</rdfs:label>
-        <skos:definition xml:lang="en">Processes prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering.</skos:definition>
+        <skos:definition xml:lang="en">Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering.</skos:definition>
     </owl:Class>
     
 
@@ -628,6 +628,43 @@
         <parameter:canonical_units>m/s</parameter:canonical_units>
         <skos:definition xml:lang="en">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">y velocity</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/piv-convention#z_displacement -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/piv-convention#z_displacement">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonical_units>pixels</parameter:canonical_units>
+        <skos:definition xml:lang="en">Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">z displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/piv-convention#z_true_particle_displacement -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/piv-convention#z_true_particle_displacement">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonical_units>pixels</parameter:canonical_units>
+        <rdfs:comment xml:lang="en">Note, that tracer particle displacement is generally only known from synthetically generated PIV images.</rdfs:comment>
+        <skos:definition xml:lang="en">True displacement of tracer particles. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">z true particle displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/piv-convention#z_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/piv-convention#z_velocity">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonical_units>m/s</parameter:canonical_units>
+        <skos:definition xml:lang="en">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">z velocity</skos:prefLabel>
     </owl:NamedIndividual>
 </rdf:RDF>
 

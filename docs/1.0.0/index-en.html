@@ -73,7 +73,10 @@ $(function(){
 <dd><a href="http://w3id.org/nfdi4ing/metadata4ing#">metadata4ing#</a></dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
-</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="null" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
 <dd>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen. PIVMeta: An ontology draft for describing particle image velocimetry data.. Revision: v1.0.0. Retrieved from: https://matthiasprobst.github.io/pivmeta/1.0.0</dd>
 </dl>
@@ -91,34 +94,7 @@ This is an ontology draft for the description of Particle Image Velocimetry data
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
-<div id="namespacedeclarations">
-<h3 id="ns" class="list">Namespace declarations</h3>
-<div id="ns" align="center">
-<table>
-<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
-<tbody>
-<tr><td><b>m4i</b></td><td>&lt;http://w3id.org/nfdi4ing/metadata4ing#m4i:&gt;</td></tr>
-<tr><td><b>metadata4ing</b></td><td>&lt;http://w3id.org/nfdi4ing/metadata4ing#&gt;</td></tr>
-<tr><td><b>obo</b></td><td>&lt;http://purl.obolibrary.org/obo/&gt;</td></tr>
-<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
-<tr><td><b>parameter</b></td><td>&lt;http://mmisw.org/ont/cf/parameter/&gt;</td></tr>
-<tr><td><b>pivm</b></td><td>&lt;https://matthiasprobst.github.io/piv-convention#&gt;</td></tr>
-<tr><td><b>pivmeta</b></td><td>&lt;https://matthiasprobst.github.io/pivmeta##&gt;</td></tr>
-<tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov#&gt;</td></tr>
-<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
-<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
-<tr><td><b>resource</b></td><td>&lt;http://semanticscience.org/resource/&gt;</td></tr>
-<tr><td><b>skos</b></td><td>&lt;http://www.w3.org/2004/02/skos/core#&gt;</td></tr>
-<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
-<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann/&gt;</td></tr>
-<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
-<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
-</tbody>
-</table>
-</div>
-</div>
+<span class="markdown">The ontology is still under development. Please participate in this ontology by posting problems or contributions: https://github.com/matthiasprobst/pivmeta</span>
 </div>
   
 
@@ -332,6 +308,18 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#y_velocity"
          title="https://matthiasprobst.github.io/piv-convention#y_velocity">y velocity</a>
+   </li>
+   <li>
+      <a href="#z_displacement"
+         title="https://matthiasprobst.github.io/piv-convention#z_displacement">z displacement</a>
+   </li>
+   <li>
+      <a href="#z_true_particle_displacement"
+         title="https://matthiasprobst.github.io/piv-convention#z_true_particle_displacement">z true particle displacement</a>
+   </li>
+   <li>
+      <a href="#z_velocity"
+         title="https://matthiasprobst.github.io/piv-convention#z_velocity">z velocity</a>
    </li>
 </ul><h4> Rules </h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -854,7 +842,7 @@ This section provides details for each class and property defined by PIVMeta.
       <p>
          <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta##PreProcessingStep</p>
       <div class="comment">
-         <span class="markdown">Processes prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering.</span>
+         <span class="markdown">Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -981,6 +969,12 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/piv-convention#y_true_particle_displacement">y true particle displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_velocity"
                title="https://matthiasprobst.github.io/piv-convention#y_velocity">y velocity</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#z_displacement"
+               title="https://matthiasprobst.github.io/piv-convention#z_displacement">z displacement</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#z_true_particle_displacement"
+               title="https://matthiasprobst.github.io/piv-convention#z_true_particle_displacement">z true particle displacement</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#z_velocity"
+               title="https://matthiasprobst.github.io/piv-convention#z_velocity">z velocity</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
@@ -1407,6 +1401,18 @@ This section provides details for each class and property defined by PIVMeta.
          <a href="#y_velocity"
             title="https://matthiasprobst.github.io/piv-convention#y_velocity">y velocity</a>
       </li>
+      <li>
+         <a href="#z_displacement"
+            title="https://matthiasprobst.github.io/piv-convention#z_displacement">z displacement</a>
+      </li>
+      <li>
+         <a href="#z_true_particle_displacement"
+            title="https://matthiasprobst.github.io/piv-convention#z_true_particle_displacement">z true particle displacement</a>
+      </li>
+      <li>
+         <a href="#z_velocity"
+            title="https://matthiasprobst.github.io/piv-convention#z_velocity">z velocity</a>
+      </li>
    </ul>
    <div class="entity" id="x_displacement">
       <h3>x displacement<sup class="type-ni" title="named individual">ni</sup>
@@ -1548,6 +1554,84 @@ This section provides details for each class and property defined by PIVMeta.
          <strong>IRI:</strong> https://matthiasprobst.github.io/piv-convention#y_velocity</p>
       <div class="comment">
          <span class="markdown">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://mmisw.org/ont/cf/parameter/Standard_Name" title="http://mmisw.org/ont/cf/parameter/Standard_Name">Standard Name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://mmisw.org/ont/cf/parameter/canonical_units"
+               title="http://mmisw.org/ont/cf/parameter/canonical_units">canonical units</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"m/s"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="z_displacement">
+      <h3>z displacement<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/piv-convention#z_displacement</p>
+      <div class="comment">
+         <span class="markdown">Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://mmisw.org/ont/cf/parameter/Standard_Name" title="http://mmisw.org/ont/cf/parameter/Standard_Name">Standard Name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://mmisw.org/ont/cf/parameter/canonical_units"
+               title="http://mmisw.org/ont/cf/parameter/canonical_units">canonical units</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"pixels"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="z_true_particle_displacement">
+      <h3>z true particle displacement<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/piv-convention#z_true_particle_displacement</p>
+      <div class="comment">
+         <span class="markdown">Note, that tracer particle displacement is generally only known from synthetically generated PIV images.</span>
+      </div>
+      <div class="comment">
+         <span class="markdown">True displacement of tracer particles. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://mmisw.org/ont/cf/parameter/Standard_Name" title="http://mmisw.org/ont/cf/parameter/Standard_Name">Standard Name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://mmisw.org/ont/cf/parameter/canonical_units"
+               title="http://mmisw.org/ont/cf/parameter/canonical_units">canonical units</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"pixels"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="z_velocity">
+      <h3>z velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/piv-convention#z_velocity</p>
+      <div class="comment">
+         <span class="markdown">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
