@@ -8,13 +8,28 @@
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
-  "@id" : "http://mmisw.org/ont/cf/parameter/canonical_units",
+  "@id" : "http://mmisw.org/ont/cf/parameter/canonicalUnits",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Dimensionless variables have an empty string. Individuals of a standard name object must have units that are physically equivalent to the canoncical units. This means, they must be convertable into the canoncical units but re not necessarily identical."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://cfconventions.org/cf-conventions/cf-conventions.html#standard-name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Representative units of the physical quantity as defined by the cf-conventions."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "canonical units"
   } ]
 }, {
   "@id" : "http://purl.obolibrary.org/obo/BFO_0000017",
@@ -28,6 +43,16 @@
   }, {
     "@language" : "en",
     "@value" : "realizable entity"
+  } ]
+}, {
+  "@id" : "http://purl.obolibrary.org/obo/BFO_0000050",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "part of"
   } ]
 }, {
   "@id" : "http://purl.obolibrary.org/obo/OBI_0000832",
@@ -50,6 +75,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.obolibrary.org/obo/OBI_0000832"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An image acquisition device that takes video or still photographs, or both, digitally by recording images via an electronic image sensor."
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "digital camera"
@@ -57,6 +86,47 @@
 }, {
   "@id" : "http://purl.obolibrary.org/obo/Process",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/abstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://schema.org/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  }, {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardNameTable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://schema.org/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
 }, {
   "@id" : "http://semanticscience.org/resource/SIO_000320",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -96,10 +166,32 @@
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000017"
   } ]
 }, {
+  "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/prov#Activity"
+  } ]
+}, {
+  "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://w3id.org/nfdi4ing/metadata4ing#identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A unique identifier to the standard name table or to the repository, which stores the standard name table. A DOI is optimal."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardNameTable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://w3id.org/nfdi4ing/metadata4ing#m4i:ContactPerson",
@@ -149,6 +241,11 @@
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
+  "@id" : "http://www.w3.org/2002/07/owl#topDataProperty",
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ]
+}, {
   "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
@@ -167,11 +264,23 @@
   "@id" : "http://www.w3.org/2004/02/skos/core#editorialNote",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#example",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://www.w3.org/2004/02/skos/core#note",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardNameTable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#downloadURL"
+  } ]
 }, {
   "@id" : "http://www.w3.org/ns/prov#Activity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -190,7 +299,7 @@
     "@value" : "evaluation step"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -204,7 +313,7 @@
     "@value" : "post processing step"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -218,7 +327,7 @@
     "@value" : "pre processing step"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -291,6 +400,20 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "PIV-specific action undertaken during PIV data handling from recording to processing."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv processing step"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#RotationalCoordinateVelocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -305,6 +428,12 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#StandardNameTable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod",
@@ -339,6 +468,23 @@
     "@value" : "translational coordinate velocity"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
+    "@value" : "1/pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The number of particles per pixel (ppp) estimated by means of an algorithm or by manual counting the particles."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "estimated particle image density"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#final_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -350,6 +496,72 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasEstimatedParticleImageDensity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#hasParticleImageDensity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The number of particles per pixel estimated by means of an algorithm or by manual counting the particles."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "estimated particle image density"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasMeasuredParticleImageDensity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#hasParticleImageDensity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The number of particles per pixel measured by a measurement device."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "measured particle image density"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasParticleImageDensity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The number of particles per pixel is an important parameter for the performance of a PIV algorithm. It also allows a distinction between different PIV methods such as PTV, PIV or speckle PIV. It may be measured experimentally with a particle counter or estimated by a numerical or manual (counting) method."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "particle image density"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasStandardName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
+  }, {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardNameTable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://w3id.org/okn/o/sd#hasStandardVariable"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#partOfStandardNameTable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "has standard name"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasVelocity",
@@ -385,15 +597,6 @@
     "@value" : "Points to an origin of a given coordinate system."
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#has_standard_name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#inCoordinateSystem",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -403,7 +606,7 @@
     "@id" : "http://semanticscience.org/resource/SIO_000320"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000050"
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -431,6 +634,56 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#measured_particle_density",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
+    "@value" : "1/m^3"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The number of particles per volume measured by a measurement device."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "measured particle density"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#measured_particle_image_density",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
+    "@value" : "1/pixels"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The number of particles per pixel measured by a measurement device."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "measured particle image density"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Name for a standard name individual. The construction of a standard name string is defined by the standard name table. E.g. no spaces are allowed and specific pre- and suffixes are allowed."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@value" : "x_derivative_of_y_velocity"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#number_of_passes",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -447,6 +700,26 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#partOfStandardNameTable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardNameTable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000050"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A StandardName can be part of a StandardNameTable."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "is part of standard name table"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#percentage_of_final_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -459,9 +732,27 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#quantum_efficiency",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Quantum efficiency of a digital camera sensor."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "quantum efficiency"
+  } ],
+  "https://qudt.org/schema/qudt/dbpediaMatch" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://dbpedia.org/page/Quantum_efficiency"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "pixels"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -478,7 +769,7 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_true_particle_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "pixels"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -499,7 +790,7 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "m/s"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -516,7 +807,7 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "pixels"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -533,7 +824,7 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_true_particle_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "pixels"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -554,7 +845,7 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "m/s"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -571,7 +862,7 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#z_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "pixels"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -588,7 +879,7 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#z_true_particle_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "pixels"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -609,7 +900,7 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#z_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://mmisw.org/ont/cf/parameter/canonical_units" : [ {
+  "http://mmisw.org/ont/cf/parameter/canonicalUnits" : [ {
     "@value" : "m/s"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -622,6 +913,15 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "z velocity"
+  } ]
+}, {
+  "@id" : "https://qudt.org/schema/qudt/dbpediaMatch",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://mmisw.org/ont/cf/parameter/Standard_Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
   } ]
 }, {
   "@id" : "https://www.w3.org/TR/rdf12-schema/#rdfs:label",
