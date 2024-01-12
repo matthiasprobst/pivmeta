@@ -1,0 +1,952 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/nfdi4ing/metadata4ing/1.2.1#"
+     xml:base="http://w3id.org/nfdi4ing/metadata4ing/1.2.1"
+     xmlns:m4i="http://w3id.org/nfdi4ing/metadata4ing#m4i:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:qudt="https://qudt.org/schema/qudt/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:parameter="http://mmisw.org/ont/cf/parameter/">
+    <owl:Ontology rdf:about="http://w3id.org/nfdi4ing/metadata4ing/1.2.1">
+        <owl:imports rdf:resource="http://w3id.org/nfdi4ing/metadata4ing/1.2.1"/>
+        <terms:abstract xml:lang="en">This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.</terms:abstract>
+        <terms:created>2024-01-03</terms:created>
+        <terms:creator>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen</terms:creator>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:modified>2024-01-03</terms:modified>
+        <terms:title xml:lang="en">PIVMeta: An ontology draft for describing particle image velocimetry data.</terms:title>
+        <vann:preferredNamespacePrefix>pivm</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://matthiasprobst.github.io/pivmeta#"/>
+        <m4i:ContactPerson>https://orcid.org/0000-0001-8729-0482</m4i:ContactPerson>
+        <rdfs:label>PIVMeta</rdfs:label>
+        <owl:versionInfo>v1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://w3id.org/nfdi4ing/metadata4ing#m4i:ContactPerson -->
+
+
+    <owl:AnnotationProperty rdf:about="http://w3id.org/nfdi4ing/metadata4ing#m4i:ContactPerson"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- https://www.w3.org/TR/rdf12-schema/#rdfs:label -->
+
+
+    <rdfs:Datatype rdf:about="https://www.w3.org/TR/rdf12-schema/#rdfs:label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/"/>
+        <skos:prefLabel xml:lang="en">part of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#downloadURL -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#downloadURL">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardNameTable"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#downloadURL"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#hasEstimatedParticleImageDensity -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasEstimatedParticleImageDensity">
+        <rdfs:subPropertyOf rdf:resource="https://matthiasprobst.github.io/pivmeta#hasParticleImageDensity"/>
+        <skos:definition xml:lang="en">The number of particles per pixel estimated by means of an algorithm or by manual counting the particles.</skos:definition>
+        <skos:prefLabel xml:lang="en">estimated particle image density</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#hasMeasuredParticleImageDensity -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasMeasuredParticleImageDensity">
+        <rdfs:subPropertyOf rdf:resource="https://matthiasprobst.github.io/pivmeta#hasParticleImageDensity"/>
+        <skos:definition xml:lang="en">The number of particles per pixel measured by a measurement device.</skos:definition>
+        <skos:prefLabel xml:lang="en">measured particle image density</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#hasParticleImageDensity -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasParticleImageDensity">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:range rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <skos:definition xml:lang="en">The number of particles per pixel is an important parameter for the performance of a PIV algorithm. It also allows a distinction between different PIV methods such as PTV, PIV or speckle PIV. It may be measured experimentally with a particle counter or estimated by a numerical or manual (counting) method.</skos:definition>
+        <skos:prefLabel xml:lang="en">particle image density</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#hasStandardName -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasStandardName">
+        <owl:inverseOf rdf:resource="https://matthiasprobst.github.io/pivmeta#partOfStandardNameTable"/>
+        <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardNameTable"/>
+        <rdfs:range rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <rdfs:seeAlso rdf:resource="https://w3id.org/okn/o/sd#hasStandardVariable"/>
+        <skos:prefLabel xml:lang="en">has standard name</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#hasVelocity -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasVelocity">
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000320"/>
+        <rdfs:range rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <skos:definition xml:lang="en">Points to a velocity of a given coordinate system.</skos:definition>
+        <skos:definition xml:lang="de">hat Geschwindigkeit</skos:definition>
+        <skos:prefLabel xml:lang="en">has velocity</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#has_origin -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#has_origin">
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000320"/>
+        <rdfs:range rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <skos:definition xml:lang="en">Points to an origin of a given coordinate system.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#inCoordinateSystem -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#inCoordinateSystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <rdfs:range rdf:resource="http://semanticscience.org/resource/SIO_000320"/>
+        <skos:definition xml:lang="en">A coordinate system in which the numeric variable is defined.</skos:definition>
+        <skos:example xml:lang="en">Velocity data can be defined in a moving coordinate system and will therefore have different values to a stationary system.</skos:example>
+        <skos:prefLabel xml:lang="en">in coordinate system</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#partOfStandardNameTable -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#partOfStandardNameTable">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardNameTable"/>
+        <skos:definition xml:lang="en">A StandardName can be part of a StandardNameTable.</skos:definition>
+        <skos:prefLabel xml:lang="en">is part of standard name table</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://mmisw.org/ont/cf/parameter/canonicalUnits -->
+
+
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/cf/parameter/canonicalUnits">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Dimensionless variables have an empty string. Individuals of a standard name object must have units that are physically equivalent to the canoncical units. This means, they must be convertable into the canoncical units but re not necessarily identical.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://cfconventions.org/cf-conventions/cf-conventions.html#standard-name"/>
+        <skos:definition xml:lang="en">Representative units of the physical quantity as defined by the cf-conventions.</skos:definition>
+        <skos:prefLabel xml:lang="en">canonical units</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/description -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardNameTable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://schema.org/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/nfdi4ing/metadata4ing#identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/nfdi4ing/metadata4ing#identifier">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardNameTable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A unique identifier to the standard name table or to the repository, which stores the standard name table. A DOI is optimal.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#final_window_size -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#final_window_size">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+        <rdfs:comment xml:lang="en">The final window size used by any PIV interrogation method.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#initial_window_size -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#initial_window_size">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Multigrid"/>
+        <rdfs:comment xml:lang="en">The initial window size used by a Multigrid PIV method.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#name -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#name">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <skos:definition xml:lang="en">Name for a standard name individual. The construction of a standard name string is defined by the standard name table. E.g. no spaces are allowed and specific pre- and suffixes are allowed.</skos:definition>
+        <skos:example>x_derivative_of_y_velocity</skos:example>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#number_of_passes -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#number_of_passes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Multipass"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">The number of passes performed by the Multipass PIV Method.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#percentage_of_final_window_size -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#percentage_of_final_window_size">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://qudt.org/schema/qudt/dbpediaMatch -->
+
+
+    <owl:DatatypeProperty rdf:about="https://qudt.org/schema/qudt/dbpediaMatch">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://mmisw.org/ont/cf/parameter/Standard_Name -->
+
+
+    <owl:Class rdf:about="http://mmisw.org/ont/cf/parameter/Standard_Name">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label>Standard Name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017">
+        <skos:definition>To say that b is a realizable entity is to say that b is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type. (axiom label in BFO2 Reference: [058-002])</skos:definition>
+        <skos:prefLabel xml:lang="de">realisierbare Entität</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">realizable entity</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000832 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000832">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/"/>
+        <skos:prefLabel rdf:resource="https://matthiasprobst.github.io/measurement_device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001048 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001048">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000832"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/"/>
+        <skos:definition xml:lang="en">An image acquisition device that takes video or still photographs, or both, digitally by recording images via an electronic image sensor.</skos:definition>
+        <skos:prefLabel xml:lang="en">digital camera</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/Process -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/Process"/>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000320 -->
+
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000320">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#CoordinateEntity"/>
+        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/resource/"/>
+        <skos:prefLabel xml:lang="de">Koordinatensystem</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">coordinate system</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000321 -->
+
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000321">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000320"/>
+        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/resource/"/>
+        <skos:prefLabel xml:lang="de">Kartesiches Koordinatensystem</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">cartesian coordinate system</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/nfdi4ing/metadata4ing#Method -->
+
+
+    <owl:Class rdf:about="http://w3id.org/nfdi4ing/metadata4ing#Method">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable -->
+
+
+    <owl:Class rdf:about="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+    
+
+
+    <!-- http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep -->
+
+
+    <owl:Class rdf:about="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/nfdi4ing/metadata4ing#Tool -->
+
+
+    <owl:Class rdf:about="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Activity">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/Process"/>
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#CartesianSpatialCoordinateOrigin -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#CartesianSpatialCoordinateOrigin">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#CoordinateEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#CenterOfMass -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#CenterOfMass">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#CoordinateEntity -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#CoordinateEntity"/>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#CoordinateVelocity -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#CoordinateVelocity">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#CoordinateEntity"/>
+        <skos:prefLabel xml:lang="en">coordinate velocity</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#InterrogationMethod -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Laser -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Laser">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.wikidata.org/wiki/Q38867"/>
+        <skos:definition xml:lang="en">Device which emits light via optical amplification.</skos:definition>
+        <skos:prefLabel xml:lang="en">laser</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#LeastSquaresGauss -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#LeastSquaresGauss">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Multigrid -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Multigrid">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Multipass -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Multipass">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#PIVProcessingStep -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
+        <skos:definition xml:lang="en">PIV-specific action undertaken during PIV data handling from recording to processing.</skos:definition>
+        <skos:prefLabel xml:lang="en">piv processing step</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#RotationalCoordinateVelocity -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#RotationalCoordinateVelocity">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#CoordinateVelocity"/>
+        <skos:prefLabel xml:lang="en">rotational coordinate velocity</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Singlepass -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Singlepass">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#StandardNameTable -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#StandardNameTable">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+        <rdfs:comment xml:lang="en">Method fitting the sub pixel peak in the correlation signal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ThreePointParabolic -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ThreePointParabolic">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ThreePointsGauss -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ThreePointsGauss">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#TranslationalCoordinateVelocity -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#TranslationalCoordinateVelocity">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#CoordinateVelocity"/>
+        <skos:prefLabel xml:lang="en">translational coordinate velocity</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta##EvaluationStep -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta##EvaluationStep">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:label xml:lang="en">evaluation step</rdfs:label>
+        <skos:definition xml:lang="en">The main PIV process which evaluates the pixel displacements.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta##PostProcessingStep -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta##PostProcessingStep">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:label xml:lang="en">post processing step</rdfs:label>
+        <skos:definition xml:lang="en">Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta##PreProcessingStep -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta##PreProcessingStep">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:label xml:lang="en">pre processing step</rdfs:label>
+        <skos:definition xml:lang="en">Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>1/pixels</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">The number of particles per pixel (ppp) estimated by means of an algorithm or by manual counting the particles.</skos:definition>
+        <skos:prefLabel xml:lang="en">estimated particle image density</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#measured_particle_density -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#measured_particle_density">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>1/m^3</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">The number of particles per volume measured by a measurement device.</skos:definition>
+        <skos:prefLabel xml:lang="en">measured particle density</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#measured_particle_image_density -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#measured_particle_image_density">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>1/pixels</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">The number of particles per pixel measured by a measurement device.</skos:definition>
+        <skos:prefLabel xml:lang="en">measured particle image density</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#quantum_efficiency -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#quantum_efficiency">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <qudt:dbpediaMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dbpedia.org/page/Quantum_efficiency</qudt:dbpediaMatch>
+        <skos:definition xml:lang="en">Quantum efficiency of a digital camera sensor.</skos:definition>
+        <skos:prefLabel xml:lang="en">quantum efficiency</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#x_displacement -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_displacement">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>pixels</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">x displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#x_true_particle_displacement -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_true_particle_displacement">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>pixels</parameter:canonicalUnits>
+        <rdfs:comment xml:lang="en">Note, that tracer particle displacement is generally only known from synthetically generated PIV images.</rdfs:comment>
+        <skos:definition xml:lang="en">True displacement of tracer particles. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">x true particle displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#x_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_velocity">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>m/s</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">x velocity</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#y_displacement -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_displacement">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>pixels</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">y displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#y_true_particle_displacement -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_true_particle_displacement">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>pixels</parameter:canonicalUnits>
+        <rdfs:comment xml:lang="en">Note, that tracer particle displacement is generally only known from synthetically generated PIV images.</rdfs:comment>
+        <skos:definition xml:lang="en">True displacement of tracer particles. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">y true particle displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#y_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_velocity">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>m/s</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">y velocity</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#z_displacement -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_displacement">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>pixels</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">z displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#z_true_particle_displacement -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_true_particle_displacement">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>pixels</parameter:canonicalUnits>
+        <rdfs:comment xml:lang="en">Note, that tracer particle displacement is generally only known from synthetically generated PIV images.</rdfs:comment>
+        <skos:definition xml:lang="en">True displacement of tracer particles. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">z true particle displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#z_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_velocity">
+        <rdf:type rdf:resource="http://mmisw.org/ont/cf/parameter/Standard_Name"/>
+        <parameter:canonicalUnits>m/s</parameter:canonicalUnits>
+        <skos:definition xml:lang="en">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
+        <skos:prefLabel xml:lang="en">z velocity</skos:prefLabel>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
