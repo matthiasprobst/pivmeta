@@ -13,7 +13,7 @@ import shutil
 
 def copy_version_to_docs():
     version_path = __this_dir__ / 'docs/versions' / '1.0.0'
-    target_path = __this_dir__ / 'docs_test'
+    target_path = __this_dir__ / 'docs'
 
     assert version_path.exists()
     assert version_path.is_dir()
@@ -22,7 +22,9 @@ def copy_version_to_docs():
 
     shutil.copytree(version_path, target_path, dirs_exist_ok=True)
     index_en = target_path / 'index-en.html'
+    (target_path / 'index.html').unlink()
     index_en.rename(target_path / 'index.html')
+    assert index_en.exists() is False
 
 
 if __name__ == "__main__":
