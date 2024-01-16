@@ -101,6 +101,12 @@
 <https://matthiasprobst.github.io/ssno#hasStandardName> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/ssno#StandardName> .
 <https://matthiasprobst.github.io/ssno#hasStandardName> <http://www.w3.org/2004/02/skos/core#prefLabel> "has standard name"@en .
 # 
+# https://matthiasprobst.github.io/ssno#pivDataSource
+<https://matthiasprobst.github.io/ssno#pivDataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/ssno#pivDataSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/dcat#Distribution> .
+<https://matthiasprobst.github.io/ssno#pivDataSource> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/ssno#DataSourceType> .
+<https://matthiasprobst.github.io/ssno#pivDataSource> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv data source"@en .
+# 
 # 
 # 
 # #################################################################
@@ -153,6 +159,12 @@
 # http://purl.obolibrary.org/obo/Process
 <http://purl.obolibrary.org/obo/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
+# http://purl.org/dc/dcmitype/Image
+<http://purl.org/dc/dcmitype/Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/dc/terms/DCMIType
+<http://purl.org/dc/terms/DCMIType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
 # http://w3id.org/nfdi4ing/metadata4ing#Method
 <http://w3id.org/nfdi4ing/metadata4ing#Method> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/nfdi4ing/metadata4ing#Method> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/BFO_0000017> .
@@ -167,6 +179,12 @@
 # http://w3id.org/nfdi4ing/metadata4ing#Tool
 <http://w3id.org/nfdi4ing/metadata4ing#Tool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
+# http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/dcat#Distribution
+<http://www.w3.org/ns/dcat#Distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
 # http://www.w3.org/ns/prov#Activity
 <http://www.w3.org/ns/prov#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/Process> .
@@ -175,22 +193,27 @@
 # https://matthiasprobst.github.io/pivmeta#CenterOfMass
 <https://matthiasprobst.github.io/pivmeta#CenterOfMass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#CenterOfMass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> .
+<https://matthiasprobst.github.io/pivmeta#CenterOfMass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Center of Mass"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#InterrogationMethod
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+<https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Interrogation Method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#LeastSquaresGauss
 <https://matthiasprobst.github.io/pivmeta#LeastSquaresGauss> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#LeastSquaresGauss> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> .
+<https://matthiasprobst.github.io/pivmeta#LeastSquaresGauss> <http://www.w3.org/2004/02/skos/core#prefLabel> "Least Squares Gauss"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#Multigrid
 <https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
+<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multigrid"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#Multipass
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
+<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
 <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -201,40 +224,66 @@
 # https://matthiasprobst.github.io/pivmeta#Singlepass
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
+<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Singlepass"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod
 <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Method fitting the sub pixel peak in the correlation signal."@en .
+<https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sub Pixel Peak Fit Method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ThreePointParabolic
 <https://matthiasprobst.github.io/pivmeta#ThreePointParabolic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#ThreePointParabolic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> .
+<https://matthiasprobst.github.io/pivmeta#ThreePointParabolic> <http://www.w3.org/2004/02/skos/core#prefLabel> "Three Point Parabolic"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ThreePointsGauss
 <https://matthiasprobst.github.io/pivmeta#ThreePointsGauss> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#ThreePointsGauss> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> .
+<https://matthiasprobst.github.io/pivmeta#ThreePointsGauss> <http://www.w3.org/2004/02/skos/core#prefLabel> "Three Points Gauss"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta##EvaluationStep
 <https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
 <https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/2000/01/rdf-schema#label> "evaluation step"@en .
 <https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/2004/02/skos/core#definition> "The main PIV process which evaluates the pixel displacements."@en .
+<https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "evaluation step"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta##PostProcessingStep
 <https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
 <https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/2000/01/rdf-schema#label> "post processing step"@en .
 <https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/2004/02/skos/core#definition> "Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations."@en .
+<https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "post processing step"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta##PreProcessingStep
 <https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
 <https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/2000/01/rdf-schema#label> "pre processing step"@en .
 <https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/2004/02/skos/core#definition> "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."@en .
+<https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "pre processing step"@en .
+# 
+# https://matthiasprobst.github.io/ssno#DataSourceType
+<https://matthiasprobst.github.io/ssno#DataSourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/ssno#DataSourceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://matthiasprobst.github.io/ssno#DataSourceType> <http://www.w3.org/2004/02/skos/core#definition> "PIV data source type."@en .
+<https://matthiasprobst.github.io/ssno#DataSourceType> <http://www.w3.org/2004/02/skos/core#example> "Examples are synthetic or experimental sources."@en .
+# 
+# https://matthiasprobst.github.io/ssno#ImageManipulation
+<https://matthiasprobst.github.io/ssno#ImageManipulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/ssno#ImageManipulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+# 
+# https://matthiasprobst.github.io/ssno#PIVImage
+<https://matthiasprobst.github.io/ssno#PIVImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/ssno#PIVImage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/dcmitype/Image> .
+# 
+# https://matthiasprobst.github.io/ssno#PIVType
+<https://matthiasprobst.github.io/ssno#PIVType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/ssno#PIVType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/DCMIType> .
 # 
 # https://matthiasprobst.github.io/ssno#StandardName
 <https://matthiasprobst.github.io/ssno#StandardName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/ssno#StandardName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
 # 
 # 
 # 
@@ -247,6 +296,7 @@
 # 
 # https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density
 <https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#StandardName> .
 <https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density> <http://www.w3.org/2004/02/skos/core#definition> "The number of particles per pixel (ppp) estimated by means of an algorithm or by manual counting the particles."@en .
 <https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density> <http://www.w3.org/2004/02/skos/core#prefLabel> "estimated particle image density"@en .
 # 
@@ -312,5 +362,45 @@
 <https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/2004/02/skos/core#definition> "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."@en .
 <https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "z velocity"@en .
+# 
+# https://matthiasprobst.github.io/ssno#Experimental
+<https://matthiasprobst.github.io/ssno#Experimental> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#Experimental> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#DataSourceType> .
+# 
+# https://matthiasprobst.github.io/ssno#ExperimentalPIVImage
+<https://matthiasprobst.github.io/ssno#ExperimentalPIVImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#ExperimentalPIVImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#PIVImage> .
+# 
+# https://matthiasprobst.github.io/ssno#FlipLeftRight
+<https://matthiasprobst.github.io/ssno#FlipLeftRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#FlipLeftRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#ImageManipulation> .
+# 
+# https://matthiasprobst.github.io/ssno#FlipTopBottom
+<https://matthiasprobst.github.io/ssno#FlipTopBottom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#FlipTopBottom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#ImageManipulation> .
+# 
+# https://matthiasprobst.github.io/ssno#PIV
+<https://matthiasprobst.github.io/ssno#PIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#PIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#PIVType> .
+# 
+# https://matthiasprobst.github.io/ssno#PTV
+<https://matthiasprobst.github.io/ssno#PTV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#PTV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#PIVType> .
+# 
+# https://matthiasprobst.github.io/ssno#SplitImage
+<https://matthiasprobst.github.io/ssno#SplitImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#SplitImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#ImageManipulation> .
+# 
+# https://matthiasprobst.github.io/ssno#Synthetic
+<https://matthiasprobst.github.io/ssno#Synthetic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#Synthetic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#DataSourceType> .
+# 
+# https://matthiasprobst.github.io/ssno#SyntheticPIVImage
+<https://matthiasprobst.github.io/ssno#SyntheticPIVImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#SyntheticPIVImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#PIVImage> .
+# 
+# https://matthiasprobst.github.io/ssno#microPIV
+<https://matthiasprobst.github.io/ssno#microPIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/ssno#microPIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/ssno#PIVType> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

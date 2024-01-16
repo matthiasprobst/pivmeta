@@ -115,6 +115,13 @@ xsd:date rdf:type rdfs:Datatype .
                                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "has standard name"@en .
 
 
+###  https://matthiasprobst.github.io/ssno#pivDataSource
+<https://matthiasprobst.github.io/ssno#pivDataSource> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                                                      rdfs:range <https://matthiasprobst.github.io/ssno#DataSourceType> ;
+                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "piv data source"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -163,6 +170,14 @@ xsd:date rdf:type rdfs:Datatype .
 <http://purl.obolibrary.org/obo/Process> rdf:type owl:Class .
 
 
+###  http://purl.org/dc/dcmitype/Image
+<http://purl.org/dc/dcmitype/Image> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/DCMIType
+<http://purl.org/dc/terms/DCMIType> rdf:type owl:Class .
+
+
 ###  http://w3id.org/nfdi4ing/metadata4ing#Method
 <http://w3id.org/nfdi4ing/metadata4ing#Method> rdf:type owl:Class ;
                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000017> .
@@ -181,6 +196,14 @@ xsd:date rdf:type rdfs:Datatype .
 <http://w3id.org/nfdi4ing/metadata4ing#Tool> rdf:type owl:Class .
 
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/dcat#Distribution
+<http://www.w3.org/ns/dcat#Distribution> rdf:type owl:Class .
+
+
 ###  http://www.w3.org/ns/prov#Activity
 <http://www.w3.org/ns/prov#Activity> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://purl.obolibrary.org/obo/Process> ;
@@ -189,27 +212,32 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#CenterOfMass
 :CenterOfMass rdf:type owl:Class ;
-              rdfs:subClassOf :SubPixelPeakFitMethod .
+              rdfs:subClassOf :SubPixelPeakFitMethod ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Center of Mass"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod
 :InterrogationMethod rdf:type owl:Class ;
-                     rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+                     rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Interrogation Method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#LeastSquaresGauss
 :LeastSquaresGauss rdf:type owl:Class ;
-                   rdfs:subClassOf :SubPixelPeakFitMethod .
+                   rdfs:subClassOf :SubPixelPeakFitMethod ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Least Squares Gauss"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Multigrid
 :Multigrid rdf:type owl:Class ;
-           rdfs:subClassOf :InterrogationMethod .
+           rdfs:subClassOf :InterrogationMethod ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Multigrid"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Multipass
 :Multipass rdf:type owl:Class ;
-           rdfs:subClassOf :InterrogationMethod .
+           rdfs:subClassOf :InterrogationMethod ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
@@ -221,48 +249,78 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#Singlepass
 :Singlepass rdf:type owl:Class ;
-            rdfs:subClassOf :InterrogationMethod .
+            rdfs:subClassOf :InterrogationMethod ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Singlepass"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod
 :SubPixelPeakFitMethod rdf:type owl:Class ;
                        rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
-                       rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en .
+                       rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Sub Pixel Peak Fit Method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ThreePointParabolic
 :ThreePointParabolic rdf:type owl:Class ;
-                     rdfs:subClassOf :SubPixelPeakFitMethod .
+                     rdfs:subClassOf :SubPixelPeakFitMethod ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Three Point Parabolic"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ThreePointsGauss
 :ThreePointsGauss rdf:type owl:Class ;
-                  rdfs:subClassOf :SubPixelPeakFitMethod .
+                  rdfs:subClassOf :SubPixelPeakFitMethod ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Three Points Gauss"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta##EvaluationStep
 <https://matthiasprobst.github.io/pivmeta##EvaluationStep> rdf:type owl:Class ;
                                                            rdfs:subClassOf :PIVProcessingStep ;
                                                            rdfs:label "evaluation step"@en ;
-                                                           <http://www.w3.org/2004/02/skos/core#definition> "The main PIV process which evaluates the pixel displacements."@en .
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "The main PIV process which evaluates the pixel displacements."@en ;
+                                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "evaluation step"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta##PostProcessingStep
 <https://matthiasprobst.github.io/pivmeta##PostProcessingStep> rdf:type owl:Class ;
                                                                rdfs:subClassOf :PIVProcessingStep ;
                                                                rdfs:label "post processing step"@en ;
-                                                               <http://www.w3.org/2004/02/skos/core#definition> "Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations."@en .
+                                                               <http://www.w3.org/2004/02/skos/core#definition> "Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations."@en ;
+                                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "post processing step"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta##PreProcessingStep
 <https://matthiasprobst.github.io/pivmeta##PreProcessingStep> rdf:type owl:Class ;
                                                               rdfs:subClassOf :PIVProcessingStep ;
                                                               rdfs:label "pre processing step"@en ;
-                                                              <http://www.w3.org/2004/02/skos/core#definition> "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."@en .
+                                                              <http://www.w3.org/2004/02/skos/core#definition> "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."@en ;
+                                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "pre processing step"@en .
+
+
+###  https://matthiasprobst.github.io/ssno#DataSourceType
+<https://matthiasprobst.github.io/ssno#DataSourceType> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "PIV data source type."@en ;
+                                                       <http://www.w3.org/2004/02/skos/core#example> "Examples are synthetic or experimental sources."@en .
+
+
+###  https://matthiasprobst.github.io/ssno#ImageManipulation
+<https://matthiasprobst.github.io/ssno#ImageManipulation> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+
+
+###  https://matthiasprobst.github.io/ssno#PIVImage
+<https://matthiasprobst.github.io/ssno#PIVImage> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.org/dc/dcmitype/Image> .
+
+
+###  https://matthiasprobst.github.io/ssno#PIVType
+<https://matthiasprobst.github.io/ssno#PIVType> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.org/dc/terms/DCMIType> .
 
 
 ###  https://matthiasprobst.github.io/ssno#StandardName
-<https://matthiasprobst.github.io/ssno#StandardName> rdf:type owl:Class .
+<https://matthiasprobst.github.io/ssno#StandardName> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 #################################################################
@@ -270,7 +328,8 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 
 ###  https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density
-:estimated_particle_image_density rdf:type owl:NamedIndividual ;
+:estimated_particle_image_density rdf:type owl:NamedIndividual ,
+                                           <https://matthiasprobst.github.io/ssno#StandardName> ;
                                   <http://www.w3.org/2004/02/skos/core#definition> "The number of particles per pixel (ppp) estimated by means of an algorithm or by manual counting the particles."@en ;
                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "estimated particle image density"@en .
 
@@ -348,6 +407,56 @@ xsd:date rdf:type rdfs:Datatype .
 :z_velocity rdf:type owl:NamedIndividual ;
             <http://www.w3.org/2004/02/skos/core#definition> "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."@en ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "z velocity"@en .
+
+
+###  https://matthiasprobst.github.io/ssno#Experimental
+<https://matthiasprobst.github.io/ssno#Experimental> rdf:type owl:NamedIndividual ,
+                                                              <https://matthiasprobst.github.io/ssno#DataSourceType> .
+
+
+###  https://matthiasprobst.github.io/ssno#ExperimentalPIVImage
+<https://matthiasprobst.github.io/ssno#ExperimentalPIVImage> rdf:type owl:NamedIndividual ,
+                                                                      <https://matthiasprobst.github.io/ssno#PIVImage> .
+
+
+###  https://matthiasprobst.github.io/ssno#FlipLeftRight
+<https://matthiasprobst.github.io/ssno#FlipLeftRight> rdf:type owl:NamedIndividual ,
+                                                               <https://matthiasprobst.github.io/ssno#ImageManipulation> .
+
+
+###  https://matthiasprobst.github.io/ssno#FlipTopBottom
+<https://matthiasprobst.github.io/ssno#FlipTopBottom> rdf:type owl:NamedIndividual ,
+                                                               <https://matthiasprobst.github.io/ssno#ImageManipulation> .
+
+
+###  https://matthiasprobst.github.io/ssno#PIV
+<https://matthiasprobst.github.io/ssno#PIV> rdf:type owl:NamedIndividual ,
+                                                     <https://matthiasprobst.github.io/ssno#PIVType> .
+
+
+###  https://matthiasprobst.github.io/ssno#PTV
+<https://matthiasprobst.github.io/ssno#PTV> rdf:type owl:NamedIndividual ,
+                                                     <https://matthiasprobst.github.io/ssno#PIVType> .
+
+
+###  https://matthiasprobst.github.io/ssno#SplitImage
+<https://matthiasprobst.github.io/ssno#SplitImage> rdf:type owl:NamedIndividual ,
+                                                            <https://matthiasprobst.github.io/ssno#ImageManipulation> .
+
+
+###  https://matthiasprobst.github.io/ssno#Synthetic
+<https://matthiasprobst.github.io/ssno#Synthetic> rdf:type owl:NamedIndividual ,
+                                                           <https://matthiasprobst.github.io/ssno#DataSourceType> .
+
+
+###  https://matthiasprobst.github.io/ssno#SyntheticPIVImage
+<https://matthiasprobst.github.io/ssno#SyntheticPIVImage> rdf:type owl:NamedIndividual ,
+                                                                   <https://matthiasprobst.github.io/ssno#PIVImage> .
+
+
+###  https://matthiasprobst.github.io/ssno#microPIV
+<https://matthiasprobst.github.io/ssno#microPIV> rdf:type owl:NamedIndividual ,
+                                                          <https://matthiasprobst.github.io/ssno#PIVType> .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
