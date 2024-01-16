@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.pivchallenge.org/pub/index.html#e",
+      "@type": "dcat:Dataset",
+      "label": "Challenge1E",
+      "dct:description": "Different velocity gradients with spatially varying image quality (provided Okamoto) < synthetic > [256 x 128] ",
+      "dcat:landingPage": "https://www.pivchallenge.org/pub/index.html#e",
+      "dcterms:modified": "2000-10-28",
+      "dcterms:title": "Shear Field",
+      "dcat:creator": {
+        "@type": "prov:Person",
+        "last name": "Okamoto",
+        "personal mailbox": "okamoto@tokai.t.u-tokyo.ac.jp"
+      },
+      "dcat:distribution": [
+        {
+          "@id": "https://www.pivchallenge.org/pub/E/E.zip",
+          "@type": "dcat:Distribution",
+          "dct:description": "PIV image data",
+          "download URL": "https://www.pivchallenge.org/pub/E/E.zip",
+          "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
+          "pivm:pivDataSource": "pivm:Experimental"
+        },
+        {
+          "@id": "https://www.pivchallenge.org/pub/E/readmeE.txt",
+          "@type": "dcat:Distribution",
+          "dct:description": "Readme file",
+          "download URL": "https://www.pivchallenge.org/pub/E/readmeE.txt",
+          "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown"
+        }
+      ]
+    }
+  ]
+}

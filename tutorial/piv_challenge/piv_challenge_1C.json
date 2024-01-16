@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.pivchallenge.org/pub/index.html#c",
+      "@type": "dcat:Dataset",
+      "label": "Challenge1C",
+      "dct:description": "Strong wall reflection in an impeller (background images and mask are provided), (provided by Stanislas) < real > [1K x 512] ",
+      "dcat:landingPage": "https://www.pivchallenge.org/pub/index.html#c",
+      "dcterms:modified": "2000-10-28",
+      "dcat:creator": {
+        "@type": "prov:Person",
+        "last name": "Stanislas",
+        "personal mailbox": "pivnet-sig32@univ-lille1.fr"
+      },
+      "dcat:distribution": [
+        {
+          "@id": "https://www.pivchallenge.org/pub/C/C.zip",
+          "@type": "dcat:Distribution",
+          "dct:description": "PIV image data",
+          "download URL": "https://www.pivchallenge.org/pub/C/C.zip",
+          "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
+          "pivm:pivDataSource": "pivm:Experimental"
+        },
+        {
+          "@id": "https://www.pivchallenge.org/pub/C/readmeC.txt",
+          "@type": "dcat:Distribution",
+          "dct:description": "Readme file",
+          "download URL": "https://www.pivchallenge.org/pub/C/readmeC.txt",
+          "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown"
+        }
+      ]
+    }
+  ]
+}
