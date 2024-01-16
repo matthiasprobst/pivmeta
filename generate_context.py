@@ -47,7 +47,7 @@ def generate():
     m4i_context_file = __this_dir__ / 'm4i_context.jsonld'
 
     download_file(m4i_context_url, None, m4i_context_file)
-    with open(m4i_context_file, 'r') as f:
+    with open(m4i_context_file, 'r', encoding="utf-8") as f:
         m4i_context_data = json.load(f)['@context']
     m4i_context_data.pop('@vocab')
 
@@ -120,7 +120,7 @@ def generate():
                     print(f'"{row.label}" is already used as a label, therefore {row.id} will be skipped')
         f.write("\n  }\n}")
 
-    with open(outfile, 'r') as f:
+    with open(outfile, 'r', encoding="utf-8") as f:
         context = json.load(f)
 
     # add m4i key-values
@@ -130,8 +130,8 @@ def generate():
         else:
             print(f'"{key}" is already used as a label, therefore {value} will be skipped')
 
-    with open(outfile, 'w') as f:
-        json.dump(context, f, indent=2)
+    with open(outfile, 'w', encoding="utf-8") as f:
+        json.dump(context, f, indent=2, ensure_ascii=False)
 
     g.parse(outfile, format='json-ld')
 
