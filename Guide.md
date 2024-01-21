@@ -13,33 +13,39 @@ published PIV datasets of the PIV Challenges.
 
 But know let's finally start...
 
-## Writing a JSON-LD metafile from scratch
+## 1. First lines of a JSON-LD metadata file
 
 The context JSON-LD file can be found
-[here](https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta.jsonld). It should be added at the
+[here](https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld). It should be added at the
 beginning of the JSON-LD file to be validated. It contains the translation of keys to their IRIs and thereby giving *
-context* to the JSON data written afterwards.
+context* to the JSON data written afterwards. Then, we will add multiple metadata elements. They will go into the "
+@graph":
 
 ```json
 {
   "@context": {
-    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta.jsonld"
-  }
+    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld"
+  },
+  "@graph": [
+  ]
 }
 ```
 
-Information, generally key-value pairs, are added in the "@graph" entry of the JSON dictionary. Let's start
-by [adding a contact person](#add-contact-persons).
+## 2. General information
 
-### Add (contact) persons
+Adding general information about the PIV data is important. It allows users to understand the data and its origin, the
+goal of the investigation, its funding or persons to contact. It nothing specific to *PIVMeta*. We will use
+*m4i* for this. For the sake of completeness, we added it to this guide.
 
-It is crucial to add a person. This is possibly the first thing you want to do, because this allows to get in touch with
-you or your affiliated institution upon questions.
+### 2.1 Add a persons
+
+We will add "John Doe" as a contact person. He can be identified by an ORCID ID. The ID will be taken as a JSON-LD key (
+@ID), too.
 
 ```json
 {
   "@context": {
-    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta.jsonld",
+    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld",
     "orcid": "https://orcid.org/",
     "local": "_:"
   },
@@ -51,20 +57,265 @@ you or your affiliated institution upon questions.
         "contact person"
       ],
       "has ORCID Id": "0000-0001-8729-0482",
-      "firstName": "Matthias",
-      "lastName": "Probst",
+      "firstName": "John",
+      "lastName": "Doe",
       "role": "contact person",
       "affiliation": {
-        "@id": "_:myInstitution",
+        "@id": "local:myInstitution",
         "@type": "organization",
-        "name": "Karlsruhe Institute of Technology"
+        "name": "John Doe's Institute of Technology"
       }
     }
   ]
 }
 ```
 
-### Adding information about the PIV setup
+### 2.2 Add project information
+
+We can again reuse the m4i ontology and add information about the research project.
+
+```json
+{
+  ...,
+  "@graph": [
+    ...,
+    {
+      "@id": "local:MyResearchProject",
+      "@type": "m4i:ResearchProject",
+      "keywords": [
+        "2D2C",
+        "PIV",
+        "flow around a duck"
+      ],
+      "description": "Very important research project",
+      "members": [
+        "orcid:0000-0001-8729-0482"
+      ]
+    }
+  ]
+}
+```
+
+## 3. Adding PIV-specific information
+
+## 3. Describe PIV processing steps
+
+We can describe our PIV measurement by using the `m4i:ProcessingStep` class. Processing steps can have sub-steps. The
+first step is indicated by using the `starts with` key. The last step is indicated by using the `ends with` key. Each
+sub-processing step indicates its "parent" processing step by using the `part of` key.
+
+PIV processing steps can be broken down into two main steps:
+
+1. PIV recording
+2. PIV evaluation
+
+
+- PIV recording (`local:piv_measurement`) [outputs raw images and background images]
+- PIV evaluation
+    - PIV pre processing (`local:piv_pre_processing`)
+    - PIV evaluation / processing (`local:piv_processing`)
+    - PIV post processing (`local:outlier_detection`) [outputs the PIV result data]
+
+### 3.1 PIV measurement steps
+
+Main processing step (1) will be named `local:piv_measurement`. For this example, we will register the following
+sub-processing steps:
+
+- Calibration step (`local:piv_calibration`)
+- Background recording (`local:piv_background_recording`)
+- PIV recording (`local:piv_recording`)
+
+Each processing step may employ a tool or realizes a method. All steps employ the tool `local:camera` and the recording
+step also employs `local:laser` and `local:DEHS` (the seeding can be understood as a tool).
+
+We first write the coarse structure and then go into the details:
+
+```json
+[
+  {
+    "@id": "local:piv_measurement",
+    "@type": "processing step",
+    "has participant": "orcid:0000-0001-8729-0482",
+    "start time": "2024-09-01T08:14:31",
+    "end time": "2024-09-01T10:30:04",
+    "starts with": "local:piv_calibration",
+    "ends with": "local:piv_recording"
+  },
+  {
+    "@id": "local:piv_calibration",
+    "@type": "processing step",
+    "part of": "local:piv_measurement",
+    "has employed tool": "local:camera"
+  },
+  {
+    "@id": "local:piv_background_recording",
+    "@type": "processing step",
+    "part of": "local:piv_background_computation",
+    "has employed tool": [
+      "local:camera",
+      "local:laser"
+    ]
+  },
+  {
+    "@id": "local:piv_recording",
+    "@type": "processing step",
+    "part of": "local:piv_measurement",
+    "has employed tool": [
+      "local:camera",
+      "local:laser",
+      "local:DEHS"
+    ],
+    "has output": {
+      "@id": "local:piv_background_images",
+      "@type": "dataset",
+      "has piv file distribution": {
+        "download url": "file://path/to/images",
+        "http://www.w3.org/ns/shacl#pattern": "Cam1A*[0-9].b16"
+      }
+    }
+  }
+]
+```
+
+#### Specifying background recording
+
+```json
+{
+  "@id": "local:piv_background_recording",
+  "@type": "processing step",
+  "description": "The background image is recorded with the laser but without tracer particles",
+  "part of": "local:piv_background_computation",
+  "has employed tool": [
+    "local:camera",
+    "local:laser"
+  ],
+  "has output": {
+    "@id": "local:piv_background_images",
+    "@type": "dataset",
+    "has output": [
+      {
+        "@id": "local:bgA",
+        "@type": "dcat:Dataset",
+        "dcterms:title": "Background image for image B",
+        "dcterms:type": "pivm:BackgroundImage",
+        "dcterms:format": "https://www.iana.org/assignments/media-types/image/tiff",
+        "description": "Background image is intended to be subtracted of all PIV images",
+        "has distribution": {
+          "@id": "local:bgA_distribution",
+          "@type": "distribution",
+          "download url": "file://path/to/bgA.tiff",
+          "has media type": "image/tiff"
+        }
+      },
+      {
+        "@id": "local:bgA",
+        "@type": "dcat:Dataset",
+        "dcterms:title": "Background image for image B",
+        "dcterms:type": "pivm:BackgroundImage",
+        "dcterms:format": "https://www.iana.org/assignments/media-types/image/tiff",
+        "dcterms:description": "Background image is intended to be subtracted of all PIV images",
+        "has distribution": {
+          "@id": "local:bgA_distribution",
+          "@type": "distribution",
+          "download url": "file://path/to/bgB.tiff",
+          "has media type": "image/tiff"
+        }
+      },
+      {
+      }
+    ]
+  }
+}
+```
+
+### 3.2 PIV evaluation steps
+
+The PIV evaluation comprises the steps performed by the PIV software. It outputs the PIV data files (.csv file, .nc file
+or whatever the output file format of your PIV software is).
+
+Irrespective of the PIV software, the PIV evaluation can be broken down into three steps:
+
+1. PIV pre-processing (`local:piv_pre_processing`)
+2. PIV processing (`local:piv_processing`)
+3. PIV post-processing (`local:piv_post_processing`)
+
+```json
+{
+  "@context": {
+    ...,
+    "@graph": [
+      {
+        "@id": "local:piv_measurement",
+        "@type": "processing step",
+        "has participant": "orcid:0000-0001-8729-0482",
+        "start time": "2024-09-01T08:14:31",
+        "end time": "2024-09-01T10:30:04",
+        "has employed tool": [
+          "local:piv_cam_01",
+          "local:piv_laser_01"
+        ],
+        "realizes method": [
+          "local:piv_calibration",
+          "local:piv_recording",
+          "local:piv_background_computation"
+        ]
+      },
+      {
+        "@id": "local:piv_pre_processing",
+        "@type": "processing step",
+        "has participant": "orcid:0000-0001-8729-0482",
+        "starts with": "local:image_transformation"
+      },
+      {
+        "@id": "local:image_transformation",
+        "@type": "processing step",
+        "realizes method": [
+          "pivm#SplitImage",
+          // Individual defined in ontology!
+          "local:image_rotation",
+          "pivm#FlipLeftRight",
+          // Individual defined in ontology!
+          "local:min_max_filter"
+        ],
+        "part of": "local:piv_pre_processing"
+      },
+      {
+        "@id": "local:piv_image_filtering",
+        "@type": "processing step",
+        "realizes method": [
+          "local:median_filter",
+          "local:min_max_filter"
+        ],
+        "part of": "local:piv_pre_processing"
+      },
+      {
+        "@id": "local:piv_processing",
+        "@type": "processing step",
+        "realizes method": [
+          "local:interrogation_method",
+          // single, multi-pass, multi-grid, ..., n_passses, ...
+          "local:peak_search"
+          // sub-pixel peak find method
+        ]
+      },
+      {
+        "@id": "local:outlier_detection",
+        "@type": "processing step",
+        "realizes method": [
+          "local:normalized_median_test",
+          // pre-defined method
+          "local:Dynamic_mean_test"
+          // pre-defined method
+        ]
+      }
+    ]
+  }
+}
+```
+
+# DEPRECATED
+
+### 3.1 Add PIV setup
 
 The PIV setup tells us, which tools were used, what kind of flow was investigated and which tracer particles were used.
 Parameters like the optical magnification could also be noted here. However, technically it is the outcome of the
@@ -106,7 +357,7 @@ Specific to a PIV setup is the medium under investigation and the tracer particl
 ### Add PIV processing steps
 
 The PIV processing steps describe everything from the actual recording of images (including calibration and possibly
-backgorund images) to the computational steps like image pre processing, performing the piv algorithm and the outlier
+background images) to the computational steps like image pre processing, performing the piv algorithm and the outlier
 detection in the post processing.
 
 The processing steps will transparently show which actions were taken. Who recorded the images and with which
@@ -330,6 +581,30 @@ However, it is good practice to also list the other properties of the standard n
       ]
     }
   ]
+}
+```
+
+## Final processing step
+
+```json
+{
+  "@context": {
+    ...,
+    "@graph": [
+      {
+        "@id": "local:piv_measurement",
+        "@type": "processing step",
+        "label": "File conversion",
+        "has participant": "orcid:0000-0001-8729-0482",
+        "has employed tool": {
+          "@id": "https://doi.org/DOI_OF_SOFTWARE",
+          "@type": "tool",
+          "label": "piv2hdf",
+          "description": "Converts the processed PIV files into a HDF5 file."
+        }
+      }
+    ]
+  }
 }
 ```
 

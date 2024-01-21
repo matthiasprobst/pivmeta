@@ -6,8 +6,8 @@
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/modified> "2024-01-03" .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/title> "PIVMeta: An ontology draft for describing particle image velocimetry data."@en .
-<https://matthiasprobst.github.io/pivmeta#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "pivm" .
-<https://matthiasprobst.github.io/pivmeta#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://matthiasprobst.github.io/pivm#" .
+<https://matthiasprobst.github.io/pivmeta#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "pivmeta" .
+<https://matthiasprobst.github.io/pivmeta#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://matthiasprobst.github.io/pivmeta#" .
 <https://matthiasprobst.github.io/pivmeta#> <http://w3id.org/nfdi4ing/metadata4ing#ContactPerson> "https://orcid.org/0000-0001-8729-0482" .
 <https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/2000/01/rdf-schema#label> "PIVMeta" .
 <https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
@@ -195,6 +195,13 @@
 <https://matthiasprobst.github.io/pivmeta#CenterOfMass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> .
 <https://matthiasprobst.github.io/pivmeta#CenterOfMass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Center of Mass"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#EvaluationStep
+<https://matthiasprobst.github.io/pivmeta#EvaluationStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#EvaluationStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
+<https://matthiasprobst.github.io/pivmeta#EvaluationStep> <http://www.w3.org/2000/01/rdf-schema#label> "evaluation step"@en .
+<https://matthiasprobst.github.io/pivmeta#EvaluationStep> <http://www.w3.org/2004/02/skos/core#definition> "The main PIV process which evaluates the pixel displacements."@en .
+<https://matthiasprobst.github.io/pivmeta#EvaluationStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "evaluation step"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#InterrogationMethod
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
@@ -221,6 +228,20 @@
 <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> <http://www.w3.org/2004/02/skos/core#definition> "PIV-specific action undertaken during PIV data handling from recording to processing."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv processing step"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#PostProcessingStep
+<https://matthiasprobst.github.io/pivmeta#PostProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PostProcessingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
+<https://matthiasprobst.github.io/pivmeta#PostProcessingStep> <http://www.w3.org/2000/01/rdf-schema#label> "post processing step"@en .
+<https://matthiasprobst.github.io/pivmeta#PostProcessingStep> <http://www.w3.org/2004/02/skos/core#definition> "Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations."@en .
+<https://matthiasprobst.github.io/pivmeta#PostProcessingStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "post processing step"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#PreProcessingStep
+<https://matthiasprobst.github.io/pivmeta#PreProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PreProcessingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
+<https://matthiasprobst.github.io/pivmeta#PreProcessingStep> <http://www.w3.org/2000/01/rdf-schema#label> "pre processing step"@en .
+<https://matthiasprobst.github.io/pivmeta#PreProcessingStep> <http://www.w3.org/2004/02/skos/core#definition> "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."@en .
+<https://matthiasprobst.github.io/pivmeta#PreProcessingStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "pre processing step"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#Singlepass
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
@@ -241,27 +262,6 @@
 <https://matthiasprobst.github.io/pivmeta#ThreePointsGauss> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#ThreePointsGauss> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> .
 <https://matthiasprobst.github.io/pivmeta#ThreePointsGauss> <http://www.w3.org/2004/02/skos/core#prefLabel> "Three Points Gauss"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta##EvaluationStep
-<https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
-<https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/2000/01/rdf-schema#label> "evaluation step"@en .
-<https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/2004/02/skos/core#definition> "The main PIV process which evaluates the pixel displacements."@en .
-<https://matthiasprobst.github.io/pivmeta##EvaluationStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "evaluation step"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta##PostProcessingStep
-<https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
-<https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/2000/01/rdf-schema#label> "post processing step"@en .
-<https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/2004/02/skos/core#definition> "Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations."@en .
-<https://matthiasprobst.github.io/pivmeta##PostProcessingStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "post processing step"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta##PreProcessingStep
-<https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
-<https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/2000/01/rdf-schema#label> "pre processing step"@en .
-<https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/2004/02/skos/core#definition> "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."@en .
-<https://matthiasprobst.github.io/pivmeta##PreProcessingStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "pre processing step"@en .
 # 
 # https://matthiasprobst.github.io/ssno#DataSourceType
 <https://matthiasprobst.github.io/ssno#DataSourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

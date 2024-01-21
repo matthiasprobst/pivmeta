@@ -186,10 +186,10 @@
     "@value" : "PIVMeta: An ontology draft for describing particle image velocimetry data."
   } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
-    "@value" : "pivm"
+    "@value" : "pivmeta"
   } ],
   "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "https://matthiasprobst.github.io/pivm#"
+    "@value" : "https://matthiasprobst.github.io/pivmeta#"
   } ],
   "http://w3id.org/nfdi4ing/metadata4ing#ContactPerson" : [ {
     "@value" : "https://orcid.org/0000-0001-8729-0482"
@@ -204,7 +204,17 @@
     "@value" : "v1.0.0"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta##EvaluationStep",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#CenterOfMass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Center of Mass"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#EvaluationStep",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -220,52 +230,6 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "evaluation step"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta##PostProcessingStep",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "post processing step"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "post processing step"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta##PreProcessingStep",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "pre processing step"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "pre processing step"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#CenterOfMass",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "Center of Mass"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod",
@@ -320,6 +284,42 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "piv processing step"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PostProcessingStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "post processing step"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "post processing step"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PreProcessingStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "pre processing step"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "pre processing step"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Singlepass",
