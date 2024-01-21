@@ -48,11 +48,11 @@ if __name__ == "__main__":
     today = datetime.datetime.today()
     cfg_data['dateModified'] = today.strftime('%Y-%m-%d')
 
-    with open('widoco.cfg', 'w') as f:
+    with open(cfg_file, 'w') as f:
         for k, v in cfg_data.items():
             f.write(f'\n{k}={v}')
-            
-    subprocess.run('build_onto_doc.bat'.split(' '))
+
+    subprocess.run(__this_dir__ / 'build_onto_doc.bat'.split(' '))
     from generate_context import generate
 
     print('Copy version to docs')
