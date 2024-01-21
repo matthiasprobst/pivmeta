@@ -25,7 +25,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -36,5 +35,16 @@ jobs:
       - name: Run tests
         run: python tests/test_graph.py
 
-      - name: Deploy
-        run: python deploy.py
+      # do it manually for the moment...
+      #      - name: Prepare widoco
+      #          - apt-get update
+      #          - apt-get -y install default-jdk zip unzip gawk
+      #          - wget https://github.com/dgarijo/Widoco/releases/download/v$WIDOCO_VERSION/widoco-$WIDOCO_VERSION-jar-with-dependencies_JDK-11.jar -O widoco.jar
+      #
+      #      - name: Run widoco
+      #        - dir="temporary-widoco-dir"
+      #        - java -jar widoco.jar -ontFile metadata4ing.ttl -outFolder $dir -webVowl -uniteSections -oops -rewriteAll -confFile config.properties
+      #        - ls -al $dir
+#
+#      - name: Deploy
+#        run: python deploy.py
