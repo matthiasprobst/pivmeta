@@ -52,7 +52,7 @@ if __name__ == "__main__":
         for k, v in cfg_data.items():
             f.write(f'\n{k}={v}')
 
-    subprocess.run(__this_dir__ / 'build_onto_doc.bat'.split(' '))
+    subprocess.run(__this_dir__ / 'build_onto_doc.bat')
     from generate_context import generate
 
     print('Copy version to docs')
