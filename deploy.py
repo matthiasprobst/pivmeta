@@ -4,6 +4,7 @@
 2. run widoco
 3. run this script
 """
+import datetime
 import pathlib
 
 __this_dir__ = pathlib.Path(__file__).parent
@@ -29,9 +30,33 @@ def copy_version_to_docs():
 
 if __name__ == "__main__":
     import sys
+    import subprocess
+    import configparser
 
     sys.path.insert(0, '.')
+    # call batch script build.bat
+    print('Start building docs')
+
+    print(' > update modification data')
+    # open widoco config file
+    cfg_file = __this_dir__ / 'widoco.cfg'
+    config = configparser.ConfigParser()
+    with open('widoco.cfg', 'r') as f:
+        lines = [l.strip().split('=') for l in f.readlines()]
+
+    cfg_data = {l[0]: l[1] for l in lines if len(l) == 2}
+    today = datetime.datetime.today()
+    cfg_data['dateModified'] = today.strftime('%Y-%m-%d')
+
+    with open('widoco.cfg', 'w') as f:
+        for k, v in cfg_data.items():
+            f.write(f'\n{k}={v}')
+            
+    subprocess.run('build_onto_doc.bat'.split(' '))
     from generate_context import generate
 
-    generate()
+    print('Copy version to docs')
     copy_version_to_docs()
+
+    print('Build context.jsonld')
+    generate()
