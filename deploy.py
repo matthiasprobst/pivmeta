@@ -11,6 +11,8 @@ __this_dir__ = pathlib.Path(__file__).parent
 
 import shutil
 
+import requests.exceptions
+
 
 def copy_version_to_docs():
     version_path = __this_dir__ / 'docs/versions' / '1.0.0'
@@ -54,10 +56,14 @@ if __name__ == "__main__":
     script_path = __this_dir__ / 'build_onto_doc.bat'
     print('calling ', script_path.absolute())
     subprocess.run(str(script_path.absolute()))
+
     from generate_context import generate
 
     print('Copy version to docs')
     copy_version_to_docs()
 
     print('Build context.jsonld')
-    generate()
+    try:
+        generate()
+    except requests.exceptions.ConnectionError as e:
+        print(f'Could not generate context.jsonld ue to missing internet connection: {e}')
