@@ -5,10 +5,12 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
      xmlns:metadata4ing="http://w3id.org/nfdi4ing/metadata4ing#">
     <owl:Ontology rdf:about="https://matthiasprobst.github.io/pivmeta#">
         <owl:imports rdf:resource="http://w3id.org/nfdi4ing/metadata4ing/1.2.1"/>
@@ -17,11 +19,11 @@
         <terms:creator>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen</terms:creator>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <terms:modified>2024-01-03</terms:modified>
-        <terms:title xml:lang="en">PIVMeta: An ontology draft for describing particle image velocimetry data.</terms:title>
+        <terms:title xml:lang="en">PivMeta: An ontology draft for describing particle image velocimetry data.</terms:title>
         <vann:preferredNamespacePrefix>pivmeta</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://matthiasprobst.github.io/pivmeta#</vann:preferredNamespaceUri>
         <metadata4ing:ContactPerson>https://orcid.org/0000-0001-8729-0482</metadata4ing:ContactPerson>
-        <rdfs:label>PIVMeta</rdfs:label>
+        <rdfs:label>PivMeta</rdfs:label>
         <owl:versionInfo>v1.0.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -389,7 +391,7 @@
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#EvaluationStep">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivProcessingStep"/>
         <rdfs:label xml:lang="en">evaluation step</rdfs:label>
         <skos:definition xml:lang="en">The main PIV process which evaluates the pixel displacements.</skos:definition>
         <skos:prefLabel xml:lang="en">evaluation step</skos:prefLabel>
@@ -437,12 +439,12 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#PIVProcessingStep -->
+    <!-- https://matthiasprobst.github.io/pivmeta#PivProcessingStep -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
-        <skos:definition xml:lang="en">PIV-specific action undertaken during PIV data handling from recording to processing.</skos:definition>
+        <skos:definition xml:lang="en">Piv-specific action undertaken during PIV data handling from recording to processing.</skos:definition>
         <skos:prefLabel xml:lang="en">piv processing step</skos:prefLabel>
     </owl:Class>
     
@@ -452,7 +454,7 @@
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PostProcessingStep">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivProcessingStep"/>
         <rdfs:label xml:lang="en">post processing step</rdfs:label>
         <skos:definition xml:lang="en">Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations.</skos:definition>
         <skos:prefLabel xml:lang="en">post processing step</skos:prefLabel>
@@ -464,7 +466,7 @@
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PreProcessingStep">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivProcessingStep"/>
         <rdfs:label xml:lang="en">pre processing step</rdfs:label>
         <skos:definition xml:lang="en">Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering.</skos:definition>
         <skos:prefLabel xml:lang="en">pre processing step</skos:prefLabel>
@@ -533,19 +535,19 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#PIVImage -->
+    <!-- https://matthiasprobst.github.io/ssno#PivImage -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#PIVImage">
+    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#PivImage">
         <rdfs:subClassOf rdf:resource="http://purl.org/dc/dcmitype/Image"/>
     </owl:Class>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#PIVType -->
+    <!-- https://matthiasprobst.github.io/ssno#PivType -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#PIVType">
+    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#PivType">
         <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/DCMIType"/>
     </owl:Class>
     
@@ -715,11 +717,11 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#ExperimentalPIVImage -->
+    <!-- https://matthiasprobst.github.io/ssno#ExperimentalPivImage -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#ExperimentalPIVImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PIVImage"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#ExperimentalPivImage">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivImage"/>
     </owl:NamedIndividual>
     
 
@@ -742,20 +744,20 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#PIV -->
+    <!-- https://matthiasprobst.github.io/ssno#Piv -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#PIV">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PIVType"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#Piv">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#PTV -->
+    <!-- https://matthiasprobst.github.io/ssno#Ptv -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#PTV">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PIVType"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#Ptv">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivType"/>
     </owl:NamedIndividual>
     
 
@@ -778,20 +780,20 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#SyntheticPIVImage -->
+    <!-- https://matthiasprobst.github.io/ssno#SyntheticPivImage -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#SyntheticPIVImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PIVImage"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#SyntheticPivImage">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivImage"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#microPIV -->
+    <!-- https://matthiasprobst.github.io/ssno#microPiv -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#microPIV">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PIVType"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#microPiv">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivType"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

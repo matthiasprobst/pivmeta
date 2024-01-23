@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-01-22", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-01-23", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-01-22</dt>
+<dt>Modified on: 2024-01-23</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -77,7 +77,7 @@ $(function(){
 <img src="null" style="border-width:0" alt="License" />
 </a>
 <br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd><dt>Cite as:</dt>
 <dd>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen. PIVMeta: An ontology draft for describing particle image velocimetry data.. Revision: v1.0.0. Retrieved from: https://matthiasprobst.github.io/pivmeta/1.0.0</dd>
 </dl>
 
@@ -151,18 +151,18 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#Multipass">Multipass</a>
    </li>
    <li>
-      <a href="#https://matthiasprobst.github.io/ssno#PIVImage" title="https://matthiasprobst.github.io/ssno#PIVImage">
-         <span>p i v image</span>
+      <a href="#https://matthiasprobst.github.io/ssno#PivImage" title="https://matthiasprobst.github.io/ssno#PivImage">
+         <span>piv image</span>
       </a>
    </li>
    <li>
-      <a href="#https://matthiasprobst.github.io/ssno#PIVType" title="https://matthiasprobst.github.io/ssno#PIVType">
-         <span>p i v type</span>
-      </a>
+      <a href="#PivProcessingStep"
+         title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
    </li>
    <li>
-      <a href="#PIVProcessingStep"
-         title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">piv processing step</a>
+      <a href="#https://matthiasprobst.github.io/ssno#PivType" title="https://matthiasprobst.github.io/ssno#PivType">
+         <span>piv type</span>
+      </a>
    </li>
    <li>
       <a href="#PostProcessingStep"
@@ -255,9 +255,9 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#https://matthiasprobst.github.io/ssno#ExperimentalPIVImage"
-         title="https://matthiasprobst.github.io/ssno#ExperimentalPIVImage">
-         <span>experimental p i v image</span>
+      <a href="#https://matthiasprobst.github.io/ssno#ExperimentalPivImage"
+         title="https://matthiasprobst.github.io/ssno#ExperimentalPivImage">
+         <span>experimental piv image</span>
       </a>
    </li>
    <li>
@@ -281,18 +281,18 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#measured_particle_image_density">measured particle image density</a>
    </li>
    <li>
-      <a href="#https://matthiasprobst.github.io/ssno#microPIV" title="https://matthiasprobst.github.io/ssno#microPIV">
-         <span>micro p i v</span>
+      <a href="#https://matthiasprobst.github.io/ssno#microPiv" title="https://matthiasprobst.github.io/ssno#microPiv">
+         <span>micro piv</span>
       </a>
    </li>
    <li>
-      <a href="#https://matthiasprobst.github.io/ssno#PIV" title="https://matthiasprobst.github.io/ssno#PIV">
-         <span>p i v</span>
+      <a href="#https://matthiasprobst.github.io/ssno#Piv" title="https://matthiasprobst.github.io/ssno#Piv">
+         <span>piv</span>
       </a>
    </li>
    <li>
-      <a href="#https://matthiasprobst.github.io/ssno#PTV" title="https://matthiasprobst.github.io/ssno#PTV">
-         <span>p t v</span>
+      <a href="#https://matthiasprobst.github.io/ssno#Ptv" title="https://matthiasprobst.github.io/ssno#Ptv">
+         <span>ptv</span>
       </a>
    </li>
    <li>
@@ -310,9 +310,9 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#https://matthiasprobst.github.io/ssno#SyntheticPIVImage"
-         title="https://matthiasprobst.github.io/ssno#SyntheticPIVImage">
-         <span>synthetic p i v image</span>
+      <a href="#https://matthiasprobst.github.io/ssno#SyntheticPivImage"
+         title="https://matthiasprobst.github.io/ssno#SyntheticPivImage">
+         <span>synthetic piv image</span>
       </a>
    </li>
    <li>
@@ -416,18 +416,18 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#Multipass">Multipass</a>
       </li>
       <li>
-         <a href="#https://matthiasprobst.github.io/ssno#PIVImage" title="https://matthiasprobst.github.io/ssno#PIVImage">
-            <span>p i v image</span>
+         <a href="#https://matthiasprobst.github.io/ssno#PivImage" title="https://matthiasprobst.github.io/ssno#PivImage">
+            <span>piv image</span>
          </a>
       </li>
       <li>
-         <a href="#https://matthiasprobst.github.io/ssno#PIVType" title="https://matthiasprobst.github.io/ssno#PIVType">
-            <span>p i v type</span>
-         </a>
+         <a href="#PivProcessingStep"
+            title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
       </li>
       <li>
-         <a href="#PIVProcessingStep"
-            title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">piv processing step</a>
+         <a href="#https://matthiasprobst.github.io/ssno#PivType" title="https://matthiasprobst.github.io/ssno#PivType">
+            <span>piv type</span>
+         </a>
       </li>
       <li>
          <a href="#PostProcessingStep"
@@ -560,8 +560,8 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#PIVProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">piv processing step</a>
+            <a href="#PivProcessingStep"
+               title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -708,13 +708,13 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://matthiasprobst.github.io/ssno#PIVImage">
-      <h3>p i v image<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#PivImage">
+      <h3>piv image<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#PIVImage</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#PivImage</p>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -725,47 +725,23 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#ExperimentalPIVImage"
-               title="https://matthiasprobst.github.io/ssno#ExperimentalPIVImage">experimental p i v image</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#https://matthiasprobst.github.io/ssno#SyntheticPIVImage"
-               title="https://matthiasprobst.github.io/ssno#SyntheticPIVImage">synthetic p i v image</a>
+            <a href="#https://matthiasprobst.github.io/ssno#ExperimentalPivImage"
+               title="https://matthiasprobst.github.io/ssno#ExperimentalPivImage">experimental piv image</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#https://matthiasprobst.github.io/ssno#SyntheticPivImage"
+               title="https://matthiasprobst.github.io/ssno#SyntheticPivImage">synthetic piv image</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://matthiasprobst.github.io/ssno#PIVType">
-      <h3>p i v type<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#PIVType</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="http://purl.org/dc/terms/DCMIType"
-               target="_blank"
-               title="http://purl.org/dc/terms/DCMIType">d c m i type</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has members</dt>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#microPIV" title="https://matthiasprobst.github.io/ssno#microPIV">micro p i v</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#https://matthiasprobst.github.io/ssno#PIV" title="https://matthiasprobst.github.io/ssno#PIV">p i v</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#https://matthiasprobst.github.io/ssno#PTV" title="https://matthiasprobst.github.io/ssno#PTV">p t v</a>
-            <sup class="type-ni" title="named individual">ni</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PIVProcessingStep">
+   <div class="entity" id="PivProcessingStep">
       <h3>piv processing step<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVProcessingStep</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PivProcessingStep</p>
       <div class="comment">
-         <span class="markdown">PIV-specific action undertaken during PIV data handling from recording to processing.</span>
+         <span class="markdown">Piv-specific action undertaken during PIV data handling from recording to processing.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -786,6 +762,30 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#PivType">
+      <h3>piv type<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#PivType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://purl.org/dc/terms/DCMIType"
+               target="_blank"
+               title="http://purl.org/dc/terms/DCMIType">d c m i type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#microPiv" title="https://matthiasprobst.github.io/ssno#microPiv">micro piv</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#https://matthiasprobst.github.io/ssno#Piv" title="https://matthiasprobst.github.io/ssno#Piv">piv</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#https://matthiasprobst.github.io/ssno#Ptv" title="https://matthiasprobst.github.io/ssno#Ptv">ptv</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="PostProcessingStep">
       <h3>post processing step<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -799,8 +799,8 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#PIVProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">piv processing step</a>
+            <a href="#PivProcessingStep"
+               title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -818,8 +818,8 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#PIVProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">piv processing step</a>
+            <a href="#PivProcessingStep"
+               title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -839,8 +839,8 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#PIVProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">piv processing step</a>
+            <a href="#PivProcessingStep"
+               title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1197,9 +1197,9 @@ This section provides details for each class and property defined by PIVMeta.
          </a>
       </li>
       <li>
-         <a href="#https://matthiasprobst.github.io/ssno#ExperimentalPIVImage"
-            title="https://matthiasprobst.github.io/ssno#ExperimentalPIVImage">
-            <span>experimental p i v image</span>
+         <a href="#https://matthiasprobst.github.io/ssno#ExperimentalPivImage"
+            title="https://matthiasprobst.github.io/ssno#ExperimentalPivImage">
+            <span>experimental piv image</span>
          </a>
       </li>
       <li>
@@ -1223,18 +1223,18 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#measured_particle_image_density">measured particle image density</a>
       </li>
       <li>
-         <a href="#https://matthiasprobst.github.io/ssno#microPIV" title="https://matthiasprobst.github.io/ssno#microPIV">
-            <span>micro p i v</span>
+         <a href="#https://matthiasprobst.github.io/ssno#microPiv" title="https://matthiasprobst.github.io/ssno#microPiv">
+            <span>micro piv</span>
          </a>
       </li>
       <li>
-         <a href="#https://matthiasprobst.github.io/ssno#PIV" title="https://matthiasprobst.github.io/ssno#PIV">
-            <span>p i v</span>
+         <a href="#https://matthiasprobst.github.io/ssno#Piv" title="https://matthiasprobst.github.io/ssno#Piv">
+            <span>piv</span>
          </a>
       </li>
       <li>
-         <a href="#https://matthiasprobst.github.io/ssno#PTV" title="https://matthiasprobst.github.io/ssno#PTV">
-            <span>p t v</span>
+         <a href="#https://matthiasprobst.github.io/ssno#Ptv" title="https://matthiasprobst.github.io/ssno#Ptv">
+            <span>ptv</span>
          </a>
       </li>
       <li>
@@ -1252,9 +1252,9 @@ This section provides details for each class and property defined by PIVMeta.
          </a>
       </li>
       <li>
-         <a href="#https://matthiasprobst.github.io/ssno#SyntheticPIVImage"
-            title="https://matthiasprobst.github.io/ssno#SyntheticPIVImage">
-            <span>synthetic p i v image</span>
+         <a href="#https://matthiasprobst.github.io/ssno#SyntheticPivImage"
+            title="https://matthiasprobst.github.io/ssno#SyntheticPivImage">
+            <span>synthetic piv image</span>
          </a>
       </li>
       <li>
@@ -1329,17 +1329,17 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://matthiasprobst.github.io/ssno#ExperimentalPIVImage">
-      <h3>experimental p i v image<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#ExperimentalPivImage">
+      <h3>experimental piv image<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#ExperimentalPIVImage</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#ExperimentalPivImage</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#PIVImage" title="https://matthiasprobst.github.io/ssno#PIVImage">p i v image</a>
+            <a href="#https://matthiasprobst.github.io/ssno#PivImage" title="https://matthiasprobst.github.io/ssno#PivImage">piv image</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1398,47 +1398,47 @@ This section provides details for each class and property defined by PIVMeta.
          <span class="markdown">The number of particles per pixel measured by a measurement device.</span>
       </div>
    </div>
-   <div class="entity" id="https://matthiasprobst.github.io/ssno#microPIV">
-      <h3>micro p i v<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#microPiv">
+      <h3>micro piv<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#microPIV</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#microPiv</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#PIVType" title="https://matthiasprobst.github.io/ssno#PIVType">p i v type</a>
+            <a href="#https://matthiasprobst.github.io/ssno#PivType" title="https://matthiasprobst.github.io/ssno#PivType">piv type</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://matthiasprobst.github.io/ssno#PIV">
-      <h3>p i v<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#Piv">
+      <h3>piv<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#PIV</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#Piv</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#PIVType" title="https://matthiasprobst.github.io/ssno#PIVType">p i v type</a>
+            <a href="#https://matthiasprobst.github.io/ssno#PivType" title="https://matthiasprobst.github.io/ssno#PivType">piv type</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://matthiasprobst.github.io/ssno#PTV">
-      <h3>p t v<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#Ptv">
+      <h3>ptv<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#PTV</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#Ptv</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#PIVType" title="https://matthiasprobst.github.io/ssno#PIVType">p i v type</a>
+            <a href="#https://matthiasprobst.github.io/ssno#PivType" title="https://matthiasprobst.github.io/ssno#PivType">piv type</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1486,17 +1486,17 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://matthiasprobst.github.io/ssno#SyntheticPIVImage">
-      <h3>synthetic p i v image<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#SyntheticPivImage">
+      <h3>synthetic piv image<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#SyntheticPIVImage</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#SyntheticPivImage</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#PIVImage" title="https://matthiasprobst.github.io/ssno#PIVImage">p i v image</a>
+            <a href="#https://matthiasprobst.github.io/ssno#PivImage" title="https://matthiasprobst.github.io/ssno#PivImage">piv image</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

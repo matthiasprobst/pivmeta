@@ -13,11 +13,11 @@
                                              <http://purl.org/dc/terms/creator> "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen" ;
                                              <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
                                              <http://purl.org/dc/terms/modified> "2024-01-03" ;
-                                             <http://purl.org/dc/terms/title> "PIVMeta: An ontology draft for describing particle image velocimetry data."@en ;
+                                             <http://purl.org/dc/terms/title> "PivMeta: An ontology draft for describing particle image velocimetry data."@en ;
                                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "pivmeta" ;
                                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://matthiasprobst.github.io/pivmeta#" ;
                                              <http://w3id.org/nfdi4ing/metadata4ing#ContactPerson> "https://orcid.org/0000-0001-8729-0482" ;
-                                             rdfs:label "PIVMeta" ;
+                                             rdfs:label "PivMeta" ;
                                              owl:versionInfo "v1.0.0" .
 
 #################################################################
@@ -218,7 +218,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#EvaluationStep
 :EvaluationStep rdf:type owl:Class ;
-                rdfs:subClassOf :PIVProcessingStep ;
+                rdfs:subClassOf :PivProcessingStep ;
                 rdfs:label "evaluation step"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The main PIV process which evaluates the pixel displacements."@en ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "evaluation step"@en .
@@ -248,16 +248,16 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
-:PIVProcessingStep rdf:type owl:Class ;
+###  https://matthiasprobst.github.io/pivmeta#PivProcessingStep
+:PivProcessingStep rdf:type owl:Class ;
                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
-                   <http://www.w3.org/2004/02/skos/core#definition> "PIV-specific action undertaken during PIV data handling from recording to processing."@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Piv-specific action undertaken during PIV data handling from recording to processing."@en ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "piv processing step"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PostProcessingStep
 :PostProcessingStep rdf:type owl:Class ;
-                    rdfs:subClassOf :PIVProcessingStep ;
+                    rdfs:subClassOf :PivProcessingStep ;
                     rdfs:label "post processing step"@en ;
                     <http://www.w3.org/2004/02/skos/core#definition> "Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations."@en ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "post processing step"@en .
@@ -265,7 +265,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#PreProcessingStep
 :PreProcessingStep rdf:type owl:Class ;
-                   rdfs:subClassOf :PIVProcessingStep ;
+                   rdfs:subClassOf :PivProcessingStep ;
                    rdfs:label "pre processing step"@en ;
                    <http://www.w3.org/2004/02/skos/core#definition> "Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering."@en ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "pre processing step"@en .
@@ -308,13 +308,13 @@ xsd:date rdf:type rdfs:Datatype .
                                                           rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 
 
-###  https://matthiasprobst.github.io/ssno#PIVImage
-<https://matthiasprobst.github.io/ssno#PIVImage> rdf:type owl:Class ;
+###  https://matthiasprobst.github.io/ssno#PivImage
+<https://matthiasprobst.github.io/ssno#PivImage> rdf:type owl:Class ;
                                                  rdfs:subClassOf <http://purl.org/dc/dcmitype/Image> .
 
 
-###  https://matthiasprobst.github.io/ssno#PIVType
-<https://matthiasprobst.github.io/ssno#PIVType> rdf:type owl:Class ;
+###  https://matthiasprobst.github.io/ssno#PivType
+<https://matthiasprobst.github.io/ssno#PivType> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://purl.org/dc/terms/DCMIType> .
 
 
@@ -414,9 +414,9 @@ xsd:date rdf:type rdfs:Datatype .
                                                               <https://matthiasprobst.github.io/ssno#DataSourceType> .
 
 
-###  https://matthiasprobst.github.io/ssno#ExperimentalPIVImage
-<https://matthiasprobst.github.io/ssno#ExperimentalPIVImage> rdf:type owl:NamedIndividual ,
-                                                                      <https://matthiasprobst.github.io/ssno#PIVImage> .
+###  https://matthiasprobst.github.io/ssno#ExperimentalPivImage
+<https://matthiasprobst.github.io/ssno#ExperimentalPivImage> rdf:type owl:NamedIndividual ,
+                                                                      <https://matthiasprobst.github.io/ssno#PivImage> .
 
 
 ###  https://matthiasprobst.github.io/ssno#FlipLeftRight
@@ -429,14 +429,14 @@ xsd:date rdf:type rdfs:Datatype .
                                                                <https://matthiasprobst.github.io/ssno#ImageManipulation> .
 
 
-###  https://matthiasprobst.github.io/ssno#PIV
-<https://matthiasprobst.github.io/ssno#PIV> rdf:type owl:NamedIndividual ,
-                                                     <https://matthiasprobst.github.io/ssno#PIVType> .
+###  https://matthiasprobst.github.io/ssno#Piv
+<https://matthiasprobst.github.io/ssno#Piv> rdf:type owl:NamedIndividual ,
+                                                     <https://matthiasprobst.github.io/ssno#PivType> .
 
 
-###  https://matthiasprobst.github.io/ssno#PTV
-<https://matthiasprobst.github.io/ssno#PTV> rdf:type owl:NamedIndividual ,
-                                                     <https://matthiasprobst.github.io/ssno#PIVType> .
+###  https://matthiasprobst.github.io/ssno#Ptv
+<https://matthiasprobst.github.io/ssno#Ptv> rdf:type owl:NamedIndividual ,
+                                                     <https://matthiasprobst.github.io/ssno#PivType> .
 
 
 ###  https://matthiasprobst.github.io/ssno#SplitImage
@@ -449,14 +449,14 @@ xsd:date rdf:type rdfs:Datatype .
                                                            <https://matthiasprobst.github.io/ssno#DataSourceType> .
 
 
-###  https://matthiasprobst.github.io/ssno#SyntheticPIVImage
-<https://matthiasprobst.github.io/ssno#SyntheticPIVImage> rdf:type owl:NamedIndividual ,
-                                                                   <https://matthiasprobst.github.io/ssno#PIVImage> .
+###  https://matthiasprobst.github.io/ssno#SyntheticPivImage
+<https://matthiasprobst.github.io/ssno#SyntheticPivImage> rdf:type owl:NamedIndividual ,
+                                                                   <https://matthiasprobst.github.io/ssno#PivImage> .
 
 
-###  https://matthiasprobst.github.io/ssno#microPIV
-<https://matthiasprobst.github.io/ssno#microPIV> rdf:type owl:NamedIndividual ,
-                                                          <https://matthiasprobst.github.io/ssno#PIVType> .
+###  https://matthiasprobst.github.io/ssno#microPiv
+<https://matthiasprobst.github.io/ssno#microPiv> rdf:type owl:NamedIndividual ,
+                                                          <https://matthiasprobst.github.io/ssno#PivType> .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
