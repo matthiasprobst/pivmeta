@@ -10,7 +10,7 @@ import pathlib
 __this_dir__ = pathlib.Path(__file__).parent
 
 import shutil
-
+import yaml
 import requests.exceptions
 
 
@@ -38,6 +38,32 @@ if __name__ == "__main__":
     sys.path.insert(0, '.')
     # call batch script build.bat
     print('Start building docs')
+
+    print('Adding standard names to .ttl file from table')
+    orig_ttl = __this_dir__ / 'pivmeta_orig.ttl'
+    pub_ttl = __this_dir__ / 'pivmeta.ttl'
+    snt_path = __this_dir__ / 'standard_name_table.yaml'
+
+    print(' > copy original ttl file')
+    shutil.copy(orig_ttl, pub_ttl)
+
+    print(' > read standard name table')
+    with open(snt_path, 'r') as f:
+        snt_doc = yaml.safe_load(f)
+
+    standard_names = snt_doc['standard_names']
+
+    print(' > add standard names')
+    with open(pub_ttl, 'a') as f:
+        f.write(f'\n\n### Standard Names automatically added by pivmeta repo script')
+        for k, v in standard_names.items():
+            desc = v['description']
+            units = v['units']
+            f.write(f'\n\n### https://matthiasprobst.github.io/pivmeta#{k}')
+            f.write(f'\npivmeta:{k} rdf:type owl:NamedIndividual ,')
+            f.write(f'\n             <https://matthiasprobst.github.io/pivmeta#StandardName> ;')
+            f.write(f'\n             <http://www.w3.org/2004/02/skos/core#definition> "{desc}"@en ;')
+            f.write(f'\n             <http://www.w3.org/2004/02/skos/core#prefLabel> "{k}"@en .\n')
 
     print(' > update modification data')
     # open widoco config file

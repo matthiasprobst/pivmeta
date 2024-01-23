@@ -472,18 +472,60 @@
     "@value" : "top bottom flip"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#estimated_particle_image_density",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#coordinate",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The number of particles per pixel (ppp) estimated by means of an algorithm or by manual counting the particles."
+    "@value" : "The spatial coordinate."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "estimated particle image density"
+    "@value" : "coordinate"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "PIV displacement."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "first_peak_x_displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "first_peak_y_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasStandardName",
@@ -499,32 +541,102 @@
     "@value" : "has standard name"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#measured_particle_density",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#image_particle_density",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The number of particles per volume measured by a measurement device."
+    "@value" : "Number of particle images per pixel. Equals the number of particles divided by the image area."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "measured particle density"
+    "@value" : "image_particle_density"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#measured_particle_image_density",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#image_particle_diameter",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The number of particles per pixel measured by a measurement device."
+    "@value" : "The diameter of an image particle."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "measured particle image density"
+    "@value" : "image_particle_diameter"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#inplane_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitute of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "inplane_velocity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#laser_pulse_delay",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Time between two laser pulses."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "laser_pulse_delay"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The width of the laser beam illuminating the seeding particles. The width is defined"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "laser_sheet_thickness"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The least square residual of the z displacement reconstruction in stereo PIV."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "least_square_residual_of_z_displacement_reconstruction"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The mean diameter of the seeding particles."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "mean_seeding_particle_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#micro_piv",
@@ -535,6 +647,20 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "micro piv"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#number_of_particles",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Number of seeding particles in the image or field of interest. See also image_particle_density."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "number_of_particles"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv",
@@ -560,6 +686,132 @@
     "@value" : "piv image type"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_correlation_coefficient"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_first_peak_correlation_coefficient"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#piv_flag",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by adding the values. For example, 33 would mean that the vector is active and interpolated."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_flag"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#piv_image_index",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Simple index of a PIV image. Starts at 1 and ends at the number of images N."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_image_index"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#piv_method",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The PIV method used to compute the velocity vectors. The method name must be provided with the dataset. Examples are single pass, multi-pass or multi-grid."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_method"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#piv_scaling_factor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Image scaling factor."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_scaling_factor"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the second peak of the cross-correlation function."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_second_peak_correlation_coefficient"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the third peak of the cross-correlation function."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_third_peak_correlation_coefficient"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#pixel_origin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The pixel position of the origin used for PIV evaluation."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "pixel_origin"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ptv",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -570,156 +822,256 @@
     "@value" : "ptv"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#quantum_efficiency",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#raw_image",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Quantum efficiency of a digital camera sensor."
+    "@value" : "The raw unprocessed PIV image as recorded by the used camera."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "quantum efficiency"
+    "@value" : "raw_image"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#x_displacement",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#relative_time",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
+    "@value" : "Recording time since start of recording."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "x displacement"
+    "@value" : "relative_time"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#x_true_particle_displacement",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#saturated_pixel_number",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
-  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
+    "@value" : "Number of pixels in the field of interest that exceed the maximal senor count."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "x true particle displacement"
+    "@value" : "saturated_pixel_number"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#x_velocity",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
+    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "x velocity"
+    "@value" : "second_peak_x_displacement"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#y_displacement",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
+    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "y displacement"
+    "@value" : "second_peak_y_displacement"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#y_true_particle_displacement",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#seeding_material",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
-  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
+    "@value" : "The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS)."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "y true particle displacement"
+    "@value" : "seeding_material"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#y_velocity",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
+    "@value" : "The signal to noise ratio of the PIV evaluation."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "y velocity"
+    "@value" : "signal_to_noise_ratio"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#z_displacement",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+    "@value" : "The standard deviation of the image particle diameter in the field of interest."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "z displacement"
+    "@value" : "standard_deviation_of_image_particle_diameter"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#z_true_particle_displacement",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
-  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "True displacement of tracer particles. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "z true particle displacement"
+    "@value" : "third_peak_x_displacement"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#z_velocity",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
+    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "z velocity"
+    "@value" : "third_peak_y_displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#time",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Datetime in ISO 8601 format."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "time"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Velocity."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "velocity"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Width of the final PIV interogation window overlap."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_final_interrogation_window_overlap_size"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Width of the final PIV interogation window."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_final_interrogation_window_size"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Image coordinate in horizontal direction."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_pixel_coordinate"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The height of the final PIV interogation window overlap."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_final_interrogation_window_overlap_size"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The height of the final PIV interogation window."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_final_interrogation_window_size"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Image coordinate in vertical direction."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_pixel_coordinate"
   } ]
 }, {
   "@id" : "https://www.w3.org/TR/rdf12-schema/#rdfs:label",
