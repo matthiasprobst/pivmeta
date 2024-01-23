@@ -5,12 +5,10 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:schema="https://schema.org/"
      xmlns:metadata4ing="http://w3id.org/nfdi4ing/metadata4ing#">
     <owl:Ontology rdf:about="https://matthiasprobst.github.io/pivmeta#">
         <owl:imports rdf:resource="http://w3id.org/nfdi4ing/metadata4ing/1.2.1"/>
@@ -209,13 +207,13 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#pivDataSource -->
+    <!-- https://matthiasprobst.github.io/ssno#pivImageType -->
 
 
-    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/ssno#pivDataSource">
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
-        <rdfs:range rdf:resource="https://matthiasprobst.github.io/ssno#DataSourceType"/>
-        <skos:prefLabel xml:lang="en">piv data source</skos:prefLabel>
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/ssno#pivImageType">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PivImageDistribution"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/ssno#ImageType"/>
+        <skos:prefLabel xml:lang="en">piv image type</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -439,6 +437,24 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#PivDistribution -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivDistribution">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#PivImageDistribution -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivDistribution"/>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#PivProcessingStep -->
 
 
@@ -446,6 +462,15 @@
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
         <skos:definition xml:lang="en">Piv-specific action undertaken during PIV data handling from recording to processing.</skos:definition>
         <skos:prefLabel xml:lang="en">piv processing step</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#PivResultDistribution -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivDistribution"/>
     </owl:Class>
     
 
@@ -515,22 +540,22 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#DataSourceType -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#DataSourceType">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <skos:definition xml:lang="en">PIV data source type.</skos:definition>
-        <skos:example xml:lang="en">Examples are synthetic or experimental sources.</skos:example>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/ssno#ImageManipulation -->
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#ImageManipulation">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/ssno#ImageType -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#ImageType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:definition xml:lang="en">PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally).</skos:definition>
+        <skos:example xml:lang="en">Examples are synthetic or experimental sources.</skos:example>
     </owl:Class>
     
 
@@ -589,6 +614,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#measured_particle_density">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">The number of particles per volume measured by a measurement device.</skos:definition>
         <skos:prefLabel xml:lang="en">measured particle density</skos:prefLabel>
     </owl:NamedIndividual>
@@ -599,6 +625,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#measured_particle_image_density">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">The number of particles per pixel measured by a measurement device.</skos:definition>
         <skos:prefLabel xml:lang="en">measured particle image density</skos:prefLabel>
     </owl:NamedIndividual>
@@ -609,6 +636,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#quantum_efficiency">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">Quantum efficiency of a digital camera sensor.</skos:definition>
         <skos:prefLabel xml:lang="en">quantum efficiency</skos:prefLabel>
     </owl:NamedIndividual>
@@ -619,6 +647,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_displacement">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">x displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -629,6 +658,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_true_particle_displacement">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <rdfs:comment xml:lang="en">Note, that tracer particle displacement is generally only known from synthetically generated PIV images.</rdfs:comment>
         <skos:definition xml:lang="en">True displacement of tracer particles. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">x true particle displacement</skos:prefLabel>
@@ -640,6 +670,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">x velocity</skos:prefLabel>
     </owl:NamedIndividual>
@@ -650,6 +681,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_displacement">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">y displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -660,6 +692,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_true_particle_displacement">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <rdfs:comment xml:lang="en">Note, that tracer particle displacement is generally only known from synthetically generated PIV images.</rdfs:comment>
         <skos:definition xml:lang="en">True displacement of tracer particles. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">y true particle displacement</skos:prefLabel>
@@ -671,6 +704,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">y velocity</skos:prefLabel>
     </owl:NamedIndividual>
@@ -681,6 +715,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_displacement">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">z displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -691,6 +726,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_true_particle_displacement">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <rdfs:comment xml:lang="en">Note, that tracer particle displacement is generally only known from synthetically generated PIV images.</rdfs:comment>
         <skos:definition xml:lang="en">True displacement of tracer particles. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">z true particle displacement</skos:prefLabel>
@@ -702,62 +738,29 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#StandardName"/>
         <skos:definition xml:lang="en">Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">z velocity</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#Experimental -->
+    <!-- https://matthiasprobst.github.io/ssno#ExperimentalImage -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#Experimental">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#DataSourceType"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#ExperimentalImage">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#ImageType"/>
+        <skos:prefLabel xml:lang="en">experimental image</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#ExperimentalPivImage -->
+    <!-- https://matthiasprobst.github.io/ssno#LeftRightFlip -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#ExperimentalPivImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivImage"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/ssno#FlipLeftRight -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#FlipLeftRight">
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#LeftRightFlip">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#ImageManipulation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/ssno#FlipTopBottom -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#FlipTopBottom">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#ImageManipulation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/ssno#Piv -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#Piv">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/ssno#Ptv -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#Ptv">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivType"/>
+        <skos:prefLabel xml:lang="en">left right flip</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -767,33 +770,57 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#SplitImage">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#ImageManipulation"/>
+        <skos:prefLabel xml:lang="en">split image</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#Synthetic -->
+    <!-- https://matthiasprobst.github.io/ssno#SyntheticImage -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#Synthetic">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#DataSourceType"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#SyntheticImage">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#ImageType"/>
+        <skos:prefLabel xml:lang="en">synthetic image</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#SyntheticPivImage -->
+    <!-- https://matthiasprobst.github.io/ssno#TopBottomFlip -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#SyntheticPivImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivImage"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#TopBottomFlip">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#ImageManipulation"/>
+        <skos:prefLabel xml:lang="en">top bottom flip</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#microPiv -->
+    <!-- https://matthiasprobst.github.io/ssno#micro_piv -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#microPiv">
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#micro_piv">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivType"/>
+        <skos:prefLabel xml:lang="en">micro piv</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/ssno#piv -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#piv">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivType"/>
+        <skos:prefLabel xml:lang="en">piv</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/ssno#ptv -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/ssno#ptv">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/ssno#PivType"/>
+        <skos:prefLabel xml:lang="en">ptv</skos:prefLabel>
     </owl:NamedIndividual>
 </rdf:RDF>
 

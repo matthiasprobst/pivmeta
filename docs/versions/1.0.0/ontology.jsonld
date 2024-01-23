@@ -272,6 +272,18 @@
     "@value" : "Multipass"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Distribution"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -284,6 +296,12 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "piv processing step"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PivResultDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PostProcessingStep",
@@ -382,6 +400,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#measured_particle_density",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The number of particles per volume measured by a measurement device."
@@ -393,6 +414,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#measured_particle_image_density",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The number of particles per pixel measured by a measurement device."
@@ -404,6 +428,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#quantum_efficiency",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Quantum efficiency of a digital camera sensor."
@@ -415,6 +442,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
@@ -426,6 +456,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_true_particle_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
@@ -441,6 +474,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. X indicates the component in x-axis direction of the respective coordinate system."
@@ -452,6 +488,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
@@ -463,6 +502,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_true_particle_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
@@ -478,6 +520,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Y indicates the component in y-axis direction of the respective coordinate system."
@@ -489,6 +534,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#z_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Approximated displacement of tracer particles determined by a PIV algorithm. Displacement is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
@@ -500,6 +548,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#z_true_particle_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Note, that tracer particle displacement is generally only known from synthetically generated PIV images."
@@ -515,6 +566,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#z_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#StandardName"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Approximated velocity of medium determined by a PIV algorithm based on tracer movement. Velocity is a vector quantity. Z indicates the component in z-axis direction of the respective coordinate system."
@@ -524,42 +578,14 @@
     "@value" : "z velocity"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/ssno#DataSourceType",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  "@id" : "https://matthiasprobst.github.io/ssno#ExperimentalImage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#ImageType"
   } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "PIV data source type."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#example" : [ {
-    "@language" : "en",
-    "@value" : "Examples are synthetic or experimental sources."
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/ssno#Experimental",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#DataSourceType"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/ssno#ExperimentalPivImage",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#PivImage"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/ssno#FlipLeftRight",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#ImageManipulation"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/ssno#FlipTopBottom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#ImageManipulation"
+    "@value" : "experimental image"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#ImageManipulation",
@@ -568,10 +594,28 @@
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/ssno#Piv",
+  "@id" : "https://matthiasprobst.github.io/ssno#ImageType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally)."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "Examples are synthetic or experimental sources."
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#LeftRightFlip",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#PivType"
+    "@id" : "https://matthiasprobst.github.io/ssno#ImageManipulation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "left right flip"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#PivImage",
@@ -586,16 +630,14 @@
     "@id" : "http://purl.org/dc/terms/DCMIType"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/ssno#Ptv",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#PivType"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/ssno#SplitImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/ssno#ImageManipulation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "split image"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#StandardName",
@@ -604,16 +646,24 @@
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/ssno#Synthetic",
+  "@id" : "https://matthiasprobst.github.io/ssno#SyntheticImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#DataSourceType"
+    "@id" : "https://matthiasprobst.github.io/ssno#ImageType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "synthetic image"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/ssno#SyntheticPivImage",
+  "@id" : "https://matthiasprobst.github.io/ssno#TopBottomFlip",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#PivImage"
+    "@id" : "https://matthiasprobst.github.io/ssno#ImageManipulation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "top bottom flip"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#hasStandardName",
@@ -629,23 +679,47 @@
     "@value" : "has standard name"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/ssno#microPiv",
+  "@id" : "https://matthiasprobst.github.io/ssno#micro_piv",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/ssno#PivType"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/ssno#pivDataSource",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.w3.org/ns/dcat#Distribution"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#DataSourceType"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "piv data source"
+    "@value" : "micro piv"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#piv",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#PivType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#pivImageType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#ImageType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv image type"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#ptv",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#PivType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "ptv"
   } ]
 }, {
   "@id" : "https://www.w3.org/TR/rdf12-schema/#rdfs:label",
