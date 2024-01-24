@@ -1,5 +1,7 @@
 # PIV Meta
 
+![Tests](https://github.com/matthiasprobst/pivmeta/actions/workflows/tests.yml/badge.svg)
+
 This repository contains the (draft) PIV metadata ontology to describe PIV data. The ontology stored in the turtle file
 [pivmeta.ttl](pivmeta.ttl) is extends the [metadata4ing ontology](http://w3id.org/nfdi4ing/metadata4ing/) by using
 standard names as defined in the [sSNO ontology](https://matthiasprobst.github.io/ssno/). These tow general ontologies
