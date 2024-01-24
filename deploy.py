@@ -6,16 +6,16 @@
 """
 import datetime
 import pathlib
+import requests.exceptions
+import shutil
+import yaml
+from ssnolib.standard_name import qudt_canonical_unit_lookup
 
 __this_dir__ = pathlib.Path(__file__).parent
 
-import shutil
-import yaml
-import requests.exceptions
-from ssnolib.standard_name import qudt_unit_lookup
-
 
 def copy_version_to_docs():
+    """copy the latest version to docs/"""
     version_path = __this_dir__ / 'docs/versions' / '1.0.0'
     target_path = __this_dir__ / 'docs'
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
             units = v['units']
             qudt_units = None
             if units.strip() != '':
-                qudt_units = qudt_unit_lookup.get(units, None)
+                qudt_units = qudt_canonical_unit_lookup.get(units, None)
                 if qudt_units is None:
                     raise KeyError(f'Cannot determine qudt unit from "{units}"')
             f.write(f'\n\n### https://matthiasprobst.github.io/pivmeta#{k}')

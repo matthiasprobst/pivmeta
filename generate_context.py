@@ -25,7 +25,7 @@ def download_file(url, known_hash, target=None):
             if not calculated_hash == known_hash:
                 raise ValueError('File does not match the expected has')
         else:
-            warnings.warn('No has given!')
+            warnings.warn('No hash given!')
 
         # Save the content to a file
         if target is None:

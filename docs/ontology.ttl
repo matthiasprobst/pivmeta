@@ -204,6 +204,10 @@ xsd:date rdf:type rdfs:Datatype .
 <http://purl.org/dc/terms/DCMIType> rdf:type owl:Class .
 
 
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
+
+
 ###  http://w3id.org/nfdi4ing/metadata4ing#Method
 <http://w3id.org/nfdi4ing/metadata4ing#Method> rdf:type owl:Class ;
                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000017> .
@@ -250,9 +254,27 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "evaluation step"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#ImageManipulation
-:ImageManipulation rdf:type owl:Class ;
-                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+###  https://matthiasprobst.github.io/pivmeta#ImageFilter
+:ImageFilter rdf:type owl:Class ;
+             rdfs:subClassOf :ImageManipulationMethod ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "image filter"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod
+:ImageManipulationMethod rdf:type owl:Class ;
+                         rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ImageManipulationType
+:ImageManipulationType rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ImageRotation
+:ImageRotation rdf:type owl:Class ;
+               rdfs:subClassOf :ImageManipulationMethod ;
+               rdfs:comment "If not further specified assume anti-clockwise."@en ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "image rotation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageType
@@ -284,6 +306,11 @@ xsd:date rdf:type rdfs:Datatype .
 :Multipass rdf:type owl:Class ;
            rdfs:subClassOf :InterrogationMethod ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#OutlierDetection
+:OutlierDetection rdf:type owl:Class ;
+                  rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivDistribution
@@ -376,13 +403,13 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#LeftRightFlip
 :LeftRightFlip rdf:type owl:NamedIndividual ,
-                        :ImageManipulation ;
+                        :ImageManipulationMethod ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SplitImage
 :SplitImage rdf:type owl:NamedIndividual ,
-                     :ImageManipulation ;
+                     :ImageManipulationMethod ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "split image"@en .
 
 
@@ -394,7 +421,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#TopBottomFlip
 :TopBottomFlip rdf:type owl:NamedIndividual ,
-                        :ImageManipulation ;
+                        :ImageManipulationMethod ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "top bottom flip"@en .
 
 
@@ -425,6 +452,13 @@ xsd:date rdf:type rdfs:Datatype .
                                     :StandardName ;
                            <https://matthiasprobst.github.io/ssno/#description> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en ;
                            <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size
+:image_filter_kernel_size rdf:type owl:NamedIndividual ,
+                                   :StandardName ;
+                          <https://matthiasprobst.github.io/ssno/#description> "The size of the image filter kernel."@en ;
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "image_filter_kernel_size"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#image_particle_density
@@ -475,7 +509,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size
 :mean_seeding_particle_size rdf:type owl:NamedIndividual ,
                                      :StandardName ;
-                            <https://matthiasprobst.github.io/ssno/#unit> <https://qudt.org/vocab/unit/MicroM> ;
+                            <https://matthiasprobst.github.io/ssno/#unit> <https://qudt.org/vocab/unit/M> ;
                             <https://matthiasprobst.github.io/ssno/#description> "The mean diameter of the seeding particles."@en ;
                             <http://www.w3.org/2004/02/skos/core#prefLabel> "mean_seeding_particle_size"@en .
 
@@ -669,6 +703,13 @@ xsd:date rdf:type rdfs:Datatype .
                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size
+:x_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
+                                              :StandardName ;
+                                     <https://matthiasprobst.github.io/ssno/#description> "Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en ;
+                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "x_initial_interrogation_window_size"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate
 :x_pixel_coordinate rdf:type owl:NamedIndividual ,
                              :StandardName ;
@@ -690,6 +731,13 @@ xsd:date rdf:type rdfs:Datatype .
                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_size"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size
+:y_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
+                                              :StandardName ;
+                                     <https://matthiasprobst.github.io/ssno/#description> "Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en ;
+                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "y_initial_interrogation_window_size"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate
 :y_pixel_coordinate rdf:type owl:NamedIndividual ,
                              :StandardName ;
@@ -703,10 +751,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://qudt.org/vocab/unit/M-PER-SEC
 <https://qudt.org/vocab/unit/M-PER-SEC> rdf:type owl:NamedIndividual .
-
-
-###  https://qudt.org/vocab/unit/MicroM
-<https://qudt.org/vocab/unit/MicroM> rdf:type owl:NamedIndividual .
 
 
 ###  https://qudt.org/vocab/unit/PER-M

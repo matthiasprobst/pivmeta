@@ -64,7 +64,7 @@ standard_names:
     units: m
   mean_seeding_particle_size:
     description: The mean diameter of the seeding particles.
-    units: um
+    units: m
   number_of_particles:
     description: Number of seeding particles in the image or field of interest. See
       also image_particle_density.
@@ -134,6 +134,9 @@ standard_names:
     alias: x_interrogation_window_size
     description: Width of the final PIV interogation window.
     units: ''
+  x_initial_interrogation_window_size:
+    description: Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm).
+    units: ''
   x_pixel_coordinate:
     description: Image coordinate in horizontal direction.
     units: ''
@@ -144,6 +147,9 @@ standard_names:
   y_final_interrogation_window_size:
     alias: y_interrogation_window_size
     description: The height of the final PIV interogation window.
+    units: ''
+  y_initial_interrogation_window_size:
+    description: Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm).
     units: ''
   y_pixel_coordinate:
     description: Image coordinate in vertical direction.
@@ -165,3 +171,6 @@ standard_names:
   piv_scaling_factor:
     description: Image scaling factor.
     units: '1/m'
+  image_filter_kernel_size:
+    description: The size of the image filter kernel.
+    units: ''

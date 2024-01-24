@@ -32,9 +32,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "xml": "http://www.w3.org/XML/1998/namespace",
-    "ssno": "https://matthiasprobst.github.io/ssno/#",
     "pivmeta": "https://matthiasprobst.github.io/pivmeta#",
-    "qudt": "http://qudt.org/schema/qudt/",
     "realisierbare Entität": {
       "@id": "<http://purl.obolibrary.org/obo/BFO_0000017>"
     },
@@ -80,6 +78,12 @@
     "Three Points Gauss": {
       "@id": "pivmeta:ThreePointsGauss"
     },
+    "image filter": {
+      "@id": "pivmeta:ImageFilter"
+    },
+    "image rotation": {
+      "@id": "pivmeta:ImageRotation"
+    },
     "has standard name": {
       "@id": "pivmeta:hasStandardName",
       "@type": "pivmeta:StandardName"
@@ -89,15 +93,15 @@
       "@type": "pivmeta:ImageType"
     },
     "canonical units": {
-      "@id": "ssno:unit",
-      "@type": "qudt:Unit"
+      "@id": "<https://matthiasprobst.github.io/ssno/#unit>",
+      "@type": "<http://qudt.org/schema/qudt/Unit>"
     },
     "description": {
-      "@id": "ssno:description",
+      "@id": "<https://matthiasprobst.github.io/ssno/#description>",
       "@type": "xsd:string"
     },
     "standard name": {
-      "@id": "ssno:standard_name",
+      "@id": "<https://matthiasprobst.github.io/ssno/#standard_name>",
       "@type": "xsd:string"
     },
     "experimental image": {
@@ -121,14 +125,14 @@
     "piv": {
       "@id": "pivmeta:piv"
     },
+    "piv_first_peak_correlation_coefficient": {
+      "@id": "pivmeta:piv_first_peak_correlation_coefficient"
+    },
     "ptv": {
       "@id": "pivmeta:ptv"
     },
     "piv_correlation_coefficient": {
       "@id": "pivmeta:piv_correlation_coefficient"
-    },
-    "piv_first_peak_correlation_coefficient": {
-      "@id": "pivmeta:piv_first_peak_correlation_coefficient"
     },
     "piv_second_peak_correlation_coefficient": {
       "@id": "pivmeta:piv_second_peak_correlation_coefficient"
@@ -211,6 +215,9 @@
     "x_final_interrogation_window_size": {
       "@id": "pivmeta:x_final_interrogation_window_size"
     },
+    "x_initial_interrogation_window_size": {
+      "@id": "pivmeta:x_initial_interrogation_window_size"
+    },
     "x_pixel_coordinate": {
       "@id": "pivmeta:x_pixel_coordinate"
     },
@@ -219,6 +226,9 @@
     },
     "y_final_interrogation_window_size": {
       "@id": "pivmeta:y_final_interrogation_window_size"
+    },
+    "y_initial_interrogation_window_size": {
+      "@id": "pivmeta:y_initial_interrogation_window_size"
     },
     "y_pixel_coordinate": {
       "@id": "pivmeta:y_pixel_coordinate"
@@ -238,6 +248,9 @@
     "piv_scaling_factor": {
       "@id": "pivmeta:piv_scaling_factor"
     },
+    "image_filter_kernel_size": {
+      "@id": "pivmeta:image_filter_kernel_size"
+    },
     "m4i": "http://w3id.org/nfdi4ing/metadata4ing#",
     "bibo": "http://purl.org/ontology/bibo/",
     "biro": "http://purl.org/spar/biro/",
@@ -245,6 +258,7 @@
     "emmo": "http://emmo.info/emmo#",
     "obo": "http://purl.obolibrary.org/obo/",
     "pims-ii": "http://www.molmod.info/semantics/pims-ii.ttl#",
+    "qudt": "http://qudt.org/schema/qudt/",
     "si": "https://ptb.de/si/",
     "Prozess": {
       "@id": "obo:BFO_0000015"

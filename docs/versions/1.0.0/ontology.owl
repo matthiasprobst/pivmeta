@@ -360,6 +360,13 @@
     
 
 
+    <!-- http://qudt.org/schema/qudt/Unit -->
+
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Unit"/>
+    
+
+
     <!-- http://w3id.org/nfdi4ing/metadata4ing#Method -->
 
 
@@ -438,11 +445,41 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#ImageManipulation -->
+    <!-- https://matthiasprobst.github.io/pivmeta#ImageFilter -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ImageManipulation">
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ImageFilter">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
+        <skos:prefLabel xml:lang="en">image filter</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ImageManipulationType -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ImageManipulationType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ImageRotation -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ImageRotation">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
+        <rdfs:comment xml:lang="en">If not further specified assume anti-clockwise.</rdfs:comment>
+        <skos:prefLabel xml:lang="en">image rotation</skos:prefLabel>
     </owl:Class>
     
 
@@ -494,6 +531,15 @@
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Multipass">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
         <skos:prefLabel xml:lang="en">Multipass</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#OutlierDetection -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#OutlierDetection">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
     </owl:Class>
     
 
@@ -654,7 +700,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulation"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
         <skos:prefLabel xml:lang="en">left right flip</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -664,7 +710,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#SplitImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulation"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
         <skos:prefLabel xml:lang="en">split image</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -684,7 +730,7 @@
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#TopBottomFlip">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulation"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
         <skos:prefLabel xml:lang="en">top bottom flip</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -731,6 +777,17 @@
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:description xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</ssno:description>
         <skos:prefLabel xml:lang="en">first_peak_y_displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:description xml:lang="en">The size of the image filter kernel.</ssno:description>
+        <skos:prefLabel xml:lang="en">image_filter_kernel_size</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -809,7 +866,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/MicroM"/>
+        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
         <ssno:description xml:lang="en">The mean diameter of the seeding particles.</ssno:description>
         <skos:prefLabel xml:lang="en">mean_seeding_particle_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1113,6 +1170,17 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:description xml:lang="en">Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm).</ssno:description>
+        <skos:prefLabel xml:lang="en">x_initial_interrogation_window_size</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate -->
 
 
@@ -1146,6 +1214,17 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:description xml:lang="en">Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm).</ssno:description>
+        <skos:prefLabel xml:lang="en">y_initial_interrogation_window_size</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate -->
 
 
@@ -1168,13 +1247,6 @@
 
 
     <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/M-PER-SEC"/>
-    
-
-
-    <!-- https://qudt.org/vocab/unit/MicroM -->
-
-
-    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/MicroM"/>
     
 
 

@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-01-23", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-01-24", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-01-23</dt>
+<dt>Modified on: 2024-01-24</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -78,7 +78,7 @@ $(function(){
 </a>
 <br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd><dt>Cite as:</dt>
-<dd>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen. PIVMeta: An ontology draft for describing particle image velocimetry data.. Revision: v1.0.0. Retrieved from: https://matthiasprobst.github.io/pivmeta/1.0.0</dd>
+<dd>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen. PIVMeta: An ontology draft for describing particle image velocimetry data. Revision: v1.0.0. Retrieved from: https://matthiasprobst.github.io/pivmeta/1.0.0</dd>
 </dl>
 
 <a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -118,10 +118,24 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#EvaluationStep">evaluation step</a>
    </li>
    <li>
-      <a href="#ImageManipulation"
-         title="https://matthiasprobst.github.io/pivmeta#ImageManipulation">
-         <span>image manipulation</span>
+      <a href="#ImageFilter"
+         title="https://matthiasprobst.github.io/pivmeta#ImageFilter">image filter</a>
+   </li>
+   <li>
+      <a href="#ImageManipulationMethod"
+         title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">
+         <span>image manipulation method</span>
       </a>
+   </li>
+   <li>
+      <a href="#ImageManipulationType"
+         title="https://matthiasprobst.github.io/pivmeta#ImageManipulationType">
+         <span>image manipulation type</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ImageRotation"
+         title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a>
    </li>
    <li>
       <a href="#ImageType"
@@ -149,6 +163,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#Multipass"
          title="https://matthiasprobst.github.io/pivmeta#Multipass">Multipass</a>
+   </li>
+   <li>
+      <a href="#OutlierDetection"
+         title="https://matthiasprobst.github.io/pivmeta#OutlierDetection">
+         <span>outlier detection</span>
+      </a>
    </li>
    <li>
       <a href="#PivDistribution"
@@ -293,6 +313,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#first_peak_y_displacement"
          title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
+   </li>
+   <li>
+      <a href="#image_filter_kernel_size"
+         title="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">image_filter_kernel_size</a>
    </li>
    <li>
       <a href="#image_particle_density"
@@ -444,6 +468,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size">x_final_interrogation_window_size</a>
    </li>
    <li>
+      <a href="#x_initial_interrogation_window_size"
+         title="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">x_initial_interrogation_window_size</a>
+   </li>
+   <li>
       <a href="#x_pixel_coordinate"
          title="https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate">x_pixel_coordinate</a>
    </li>
@@ -454,6 +482,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#y_final_interrogation_window_size"
          title="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size">y_final_interrogation_window_size</a>
+   </li>
+   <li>
+      <a href="#y_initial_interrogation_window_size"
+         title="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">y_initial_interrogation_window_size</a>
    </li>
    <li>
       <a href="#y_pixel_coordinate"
@@ -491,10 +523,24 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#EvaluationStep">evaluation step</a>
       </li>
       <li>
-         <a href="#ImageManipulation"
-            title="https://matthiasprobst.github.io/pivmeta#ImageManipulation">
-            <span>image manipulation</span>
+         <a href="#ImageFilter"
+            title="https://matthiasprobst.github.io/pivmeta#ImageFilter">image filter</a>
+      </li>
+      <li>
+         <a href="#ImageManipulationMethod"
+            title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">
+            <span>image manipulation method</span>
          </a>
+      </li>
+      <li>
+         <a href="#ImageManipulationType"
+            title="https://matthiasprobst.github.io/pivmeta#ImageManipulationType">
+            <span>image manipulation type</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ImageRotation"
+            title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a>
       </li>
       <li>
          <a href="#ImageType"
@@ -522,6 +568,12 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#Multipass"
             title="https://matthiasprobst.github.io/pivmeta#Multipass">Multipass</a>
+      </li>
+      <li>
+         <a href="#OutlierDetection"
+            title="https://matthiasprobst.github.io/pivmeta#OutlierDetection">
+            <span>outlier detection</span>
+         </a>
       </li>
       <li>
          <a href="#PivDistribution"
@@ -654,17 +706,41 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="ImageManipulation">
-      <h3>image manipulation<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="ImageFilter">
+      <h3>image filter<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageManipulation</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageFilter</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ImageManipulationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ImageManipulationMethod">
+      <h3>image manipulation method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod</p>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
             <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#ImageFilter"
+               title="https://matthiasprobst.github.io/pivmeta#ImageFilter">image filter</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ImageRotation"
+               title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has members</dt>
@@ -676,6 +752,42 @@ This section provides details for each class and property defined by PIVMeta.
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#TopBottomFlip"
                title="https://matthiasprobst.github.io/pivmeta#TopBottomFlip">top bottom flip</a>
             <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ImageManipulationType">
+      <h3>image manipulation type<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageManipulationType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core#Concept"
+               target="_blank"
+               title="http://www.w3.org/2004/02/skos/core#Concept">concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ImageRotation">
+      <h3>image rotation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageRotation</p>
+      <div class="comment">
+         <span class="markdown">If not further specified assume anti-clockwise.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ImageManipulationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -787,8 +899,10 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
             <sup class="type-c" title="class">c</sup>, <a href="#SubPixelPeakFitMethod"
                title="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod">Sub Pixel Peak Fit Method</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulation"
-               title="https://matthiasprobst.github.io/pivmeta#ImageManipulation">image manipulation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#OutlierDetection"
+               title="https://matthiasprobst.github.io/pivmeta#OutlierDetection">outlier detection</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -834,6 +948,21 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes"
                title="http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes">number of passes</a>
             <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OutlierDetection">
+      <h3>outlier detection<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#OutlierDetection</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1104,6 +1233,8 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement">first_peak_x_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#first_peak_y_displacement"
                title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_filter_kernel_size"
+               title="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">image_filter_kernel_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_particle_density"
                title="https://matthiasprobst.github.io/pivmeta#image_particle_density">image_particle_density</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_particle_diameter"
@@ -1165,12 +1296,16 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size">x_final_interrogation_window_overlap_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_final_interrogation_window_size"
                title="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size">x_final_interrogation_window_size</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_initial_interrogation_window_size"
+               title="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">x_initial_interrogation_window_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_pixel_coordinate"
                title="https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate">x_pixel_coordinate</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_final_interrogation_window_overlap_size"
                title="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size">y_final_interrogation_window_overlap_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_final_interrogation_window_size"
                title="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size">y_final_interrogation_window_size</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_initial_interrogation_window_size"
+               title="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">y_initial_interrogation_window_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_pixel_coordinate"
                title="https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate">y_pixel_coordinate</a>
             <sup class="type-ni" title="named individual">ni</sup>
@@ -1279,6 +1414,7 @@ This section provides details for each class and property defined by PIVMeta.
                <a href="http://qudt.org/schema/qudt/Unit"
                   target="_blank"
                   title="http://qudt.org/schema/qudt/Unit">unit</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
@@ -1573,6 +1709,10 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
       </li>
       <li>
+         <a href="#image_filter_kernel_size"
+            title="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">image_filter_kernel_size</a>
+      </li>
+      <li>
          <a href="#image_particle_density"
             title="https://matthiasprobst.github.io/pivmeta#image_particle_density">image_particle_density</a>
       </li>
@@ -1722,6 +1862,10 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size">x_final_interrogation_window_size</a>
       </li>
       <li>
+         <a href="#x_initial_interrogation_window_size"
+            title="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">x_initial_interrogation_window_size</a>
+      </li>
+      <li>
          <a href="#x_pixel_coordinate"
             title="https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate">x_pixel_coordinate</a>
       </li>
@@ -1732,6 +1876,10 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#y_final_interrogation_window_size"
             title="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size">y_final_interrogation_window_size</a>
+      </li>
+      <li>
+         <a href="#y_initial_interrogation_window_size"
+            title="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">y_initial_interrogation_window_size</a>
       </li>
       <li>
          <a href="#y_pixel_coordinate"
@@ -1850,6 +1998,29 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/ssno/#description">description</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="image_filter_kernel_size">
+      <h3>image_filter_kernel_size<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno/#description"
+               title="https://matthiasprobst.github.io/ssno/#description">description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The size of the image filter kernel."@en</span>
          </dd>
       </dl>
    </div>
@@ -2022,8 +2193,8 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ImageManipulation"
-               title="https://matthiasprobst.github.io/pivmeta#ImageManipulation">image manipulation</a>
+            <a href="#ImageManipulationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2046,9 +2217,9 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno/#unit" title="https://matthiasprobst.github.io/ssno/#unit">canonical units</a>
             <sup class="type-op" title="object property">op</sup> 
-            <a href="https://qudt.org/vocab/unit/MicroM"
+            <a href="https://qudt.org/vocab/unit/M"
                target="_blank"
-               title="https://qudt.org/vocab/unit/MicroM">micro m</a>
+               title="https://qudt.org/vocab/unit/M">m</a>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno/#description"
@@ -2518,8 +2689,8 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ImageManipulation"
-               title="https://matthiasprobst.github.io/pivmeta#ImageManipulation">image manipulation</a>
+            <a href="#ImageManipulationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2642,8 +2813,8 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ImageManipulation"
-               title="https://matthiasprobst.github.io/pivmeta#ImageManipulation">image manipulation</a>
+            <a href="#ImageManipulationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2724,6 +2895,29 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="x_initial_interrogation_window_size">
+      <h3>x_initial_interrogation_window_size<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno/#description"
+               title="https://matthiasprobst.github.io/ssno/#description">description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="x_pixel_coordinate">
       <h3>x_pixel_coordinate<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2790,6 +2984,29 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/ssno/#description">description</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"The height of the final PIV interogation window."@en</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="y_initial_interrogation_window_size">
+      <h3>y_initial_interrogation_window_size<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno/#description"
+               title="https://matthiasprobst.github.io/ssno/#description">description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en</span>
          </dd>
       </dl>
    </div>

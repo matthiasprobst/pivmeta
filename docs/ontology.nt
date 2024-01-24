@@ -188,6 +188,9 @@
 # http://purl.org/dc/terms/DCMIType
 <http://purl.org/dc/terms/DCMIType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
+# http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
 # http://w3id.org/nfdi4ing/metadata4ing#Method
 <http://w3id.org/nfdi4ing/metadata4ing#Method> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/nfdi4ing/metadata4ing#Method> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/BFO_0000017> .
@@ -225,9 +228,24 @@
 <https://matthiasprobst.github.io/pivmeta#EvaluationStep> <http://www.w3.org/2004/02/skos/core#definition> "The main PIV process which evaluates the pixel displacements."@en .
 <https://matthiasprobst.github.io/pivmeta#EvaluationStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "evaluation step"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#ImageManipulation
-<https://matthiasprobst.github.io/pivmeta#ImageManipulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#ImageManipulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+# https://matthiasprobst.github.io/pivmeta#ImageFilter
+<https://matthiasprobst.github.io/pivmeta#ImageFilter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#ImageFilter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
+<https://matthiasprobst.github.io/pivmeta#ImageFilter> <http://www.w3.org/2004/02/skos/core#prefLabel> "image filter"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod
+<https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+# 
+# https://matthiasprobst.github.io/pivmeta#ImageManipulationType
+<https://matthiasprobst.github.io/pivmeta#ImageManipulationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#ImageManipulationType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+# 
+# https://matthiasprobst.github.io/pivmeta#ImageRotation
+<https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
+<https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/2000/01/rdf-schema#comment> "If not further specified assume anti-clockwise."@en .
+<https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/2004/02/skos/core#prefLabel> "image rotation"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ImageType
 <https://matthiasprobst.github.io/pivmeta#ImageType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -254,6 +272,10 @@
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#OutlierDetection
+<https://matthiasprobst.github.io/pivmeta#OutlierDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#OutlierDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivDistribution
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -336,12 +358,12 @@
 # 
 # https://matthiasprobst.github.io/pivmeta#LeftRightFlip
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulation> .
+<https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#SplitImage
 <https://matthiasprobst.github.io/pivmeta#SplitImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#SplitImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulation> .
+<https://matthiasprobst.github.io/pivmeta#SplitImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
 <https://matthiasprobst.github.io/pivmeta#SplitImage> <http://www.w3.org/2004/02/skos/core#prefLabel> "split image"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#SyntheticImage
@@ -351,7 +373,7 @@
 # 
 # https://matthiasprobst.github.io/pivmeta#TopBottomFlip
 <https://matthiasprobst.github.io/pivmeta#TopBottomFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#TopBottomFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulation> .
+<https://matthiasprobst.github.io/pivmeta#TopBottomFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
 <https://matthiasprobst.github.io/pivmeta#TopBottomFlip> <http://www.w3.org/2004/02/skos/core#prefLabel> "top bottom flip"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#coordinate
@@ -379,6 +401,12 @@
 <https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
 <https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <https://matthiasprobst.github.io/ssno/#description> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en .
 <https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size
+<https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <https://matthiasprobst.github.io/ssno/#description> "The size of the image filter kernel."@en .
+<https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_filter_kernel_size"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#image_particle_density
 <https://matthiasprobst.github.io/pivmeta#image_particle_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -424,8 +452,7 @@
 # https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size
 <https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size> <https://matthiasprobst.github.io/ssno/#unit> <https://qudt.org/vocab/unit/MicroM> .
-<https://qudt.org/vocab/unit/MicroM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size> <https://matthiasprobst.github.io/ssno/#unit> <https://qudt.org/vocab/unit/M> .
 <https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size> <https://matthiasprobst.github.io/ssno/#description> "The mean diameter of the seeding particles."@en .
 <https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "mean_seeding_particle_size"@en .
 # 
@@ -592,6 +619,12 @@
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <https://matthiasprobst.github.io/ssno/#description> "Width of the final PIV interogation window."@en .
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size
+<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <https://matthiasprobst.github.io/ssno/#description> "Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en .
+<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_initial_interrogation_window_size"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate
 <https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
@@ -610,6 +643,12 @@
 <https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size> <https://matthiasprobst.github.io/ssno/#description> "The height of the final PIV interogation window."@en .
 <https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_size"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size
+<https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <https://matthiasprobst.github.io/ssno/#description> "Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en .
+<https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_initial_interrogation_window_size"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate
 <https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
@@ -619,8 +658,6 @@
 # https://qudt.org/vocab/unit/M
 # 
 # https://qudt.org/vocab/unit/M-PER-SEC
-# 
-# https://qudt.org/vocab/unit/MicroM
 # 
 # https://qudt.org/vocab/unit/PER-M
 # 

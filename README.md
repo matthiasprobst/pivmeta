@@ -4,10 +4,23 @@
 
 This repository contains the (draft) PIV metadata ontology to describe PIV data. The ontology stored in the turtle file
 [pivmeta.ttl](pivmeta.ttl) is extends the [metadata4ing ontology](http://w3id.org/nfdi4ing/metadata4ing/) by using
-standard names as defined in the [sSNO ontology](https://matthiasprobst.github.io/ssno/). These tow general ontologies
-complement each other very well, as the "ssno:hasStandardName"-property allows to specify the meaning of a "m4i:
-NumericalVariable". Beyond this symbiosis, the PIVMeta ontology provides a set of classes and properties to describe PIV
-processes and properties such as pre-processing steps, evaluation algorithms, peak finding methods etc.
+standard names as defined in the [sSNO ontology](https://matthiasprobst.github.io/ssno/).
+
+These tow general ontologies complement each other very well, as the "ssno:hasStandardName"-property allows to specify
+the meaning of a "m4i:NumericalVariable".
+
+Beyond this symbiosis, the PIVMeta ontology provides a set of classes and properties to describe PIV processes and
+properties such as pre-processing steps, evaluation algorithms, peak finding methods etc.
+
+The ontology reuses multiple ontologies:
+
+- m4i: [Metadata4Ing](http://w3id.org/nfdi4ing/metadata4ing/): An ontology for describing the generation of research
+  data within a scientific activity
+- schema: [schema.org](https://schema.org/)
+- sd: [Software Description Ontology](https://w3id.org/okn/o/sd#)
+- dcat: [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-3/)
+- *to be completed*
+- ...
 
 The web version can be found [here](https://matthiasprobst.github.io/pivmeta/). A [Tutorial](Guide.md) helps with the
 first steps. The latest context file
