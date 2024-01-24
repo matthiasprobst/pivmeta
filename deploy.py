@@ -12,6 +12,7 @@ __this_dir__ = pathlib.Path(__file__).parent
 import shutil
 import yaml
 import requests.exceptions
+from ssnolib.standard_name import qudt_unit_lookup
 
 
 def copy_version_to_docs():
@@ -59,10 +60,17 @@ if __name__ == "__main__":
         for k, v in standard_names.items():
             desc = v['description']
             units = v['units']
+            qudt_units = None
+            if units.strip() != '':
+                qudt_units = qudt_unit_lookup.get(units, None)
+                if qudt_units is None:
+                    raise KeyError(f'Cannot determine qudt unit from "{units}"')
             f.write(f'\n\n### https://matthiasprobst.github.io/pivmeta#{k}')
             f.write(f'\npivmeta:{k} rdf:type owl:NamedIndividual ,')
             f.write(f'\n             <https://matthiasprobst.github.io/pivmeta#StandardName> ;')
-            f.write(f'\n             <http://www.w3.org/2004/02/skos/core#definition> "{desc}"@en ;')
+            f.write(f'\n             <https://matthiasprobst.github.io/ssno/#description> "{desc}"@en ;')
+            if qudt_units:
+                f.write(f'\n             <https://matthiasprobst.github.io/ssno/#unit> <{qudt_units}> ;')
             f.write(f'\n             <http://www.w3.org/2004/02/skos/core#prefLabel> "{k}"@en .\n')
 
     print(' > update modification data')

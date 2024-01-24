@@ -8,7 +8,8 @@ NumericalVariable". Beyond this symbiosis, the PIVMeta ontology provides a set o
 processes and properties such as pre-processing steps, evaluation algorithms, peak finding methods etc.
 
 The web version can be found [here](https://matthiasprobst.github.io/pivmeta/). A [Tutorial](Guide.md) helps with the
-first steps.
+first steps. The latest context file
+is [here](https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld)
 
 ## Usage
 
@@ -19,6 +20,7 @@ https://git.rwth-aachen.de/nfdi4ing/metadata4ing/metadata4ing/-/blob/1.2.1/train
 both ontologies.
 
 ### Describing a PIV dataset
+
 A separate example/guide to describe a PIV dataset can be found [here](tutorial/DescribeDataset.md).
 
 ## Motivation

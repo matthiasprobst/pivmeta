@@ -32,7 +32,9 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "xml": "http://www.w3.org/XML/1998/namespace",
+    "ssno": "https://matthiasprobst.github.io/ssno/#",
     "pivmeta": "https://matthiasprobst.github.io/pivmeta#",
+    "qudt": "http://qudt.org/schema/qudt/",
     "realisierbare Entität": {
       "@id": "<http://purl.obolibrary.org/obo/BFO_0000017>"
     },
@@ -85,6 +87,18 @@
     "piv image type": {
       "@id": "pivmeta:pivImageType",
       "@type": "pivmeta:ImageType"
+    },
+    "canonical units": {
+      "@id": "ssno:unit",
+      "@type": "qudt:Unit"
+    },
+    "description": {
+      "@id": "ssno:description",
+      "@type": "xsd:string"
+    },
+    "standard name": {
+      "@id": "ssno:standard_name",
+      "@type": "xsd:string"
     },
     "experimental image": {
       "@id": "pivmeta:ExperimentalImage"
@@ -231,7 +245,6 @@
     "emmo": "http://emmo.info/emmo#",
     "obo": "http://purl.obolibrary.org/obo/",
     "pims-ii": "http://www.molmod.info/semantics/pims-ii.ttl#",
-    "qudt": "http://qudt.org/schema/qudt/",
     "si": "https://ptb.de/si/",
     "Prozess": {
       "@id": "obo:BFO_0000015"
@@ -426,9 +439,6 @@
       "@id": "schema:ResearchProject"
     },
     "Beschreibung": {
-      "@id": "dcterms:description"
-    },
-    "description": {
       "@id": "dcterms:description"
     },
     "is referenced by": {

@@ -4,7 +4,10 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssno: <https://matthiasprobst.github.io/ssno/#> .
 @prefix pivmeta: <https://matthiasprobst.github.io/pivmeta#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <https://matthiasprobst.github.io/pivmeta#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
@@ -123,9 +126,34 @@ xsd:date rdf:type rdfs:Datatype .
                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "piv image type"@en .
 
 
+###  https://matthiasprobst.github.io/ssno#unit
+ssno:unit rdf:type owl:ObjectProperty ;
+          rdfs:domain pivmeta:StandardName ;
+          rdfs:range qudt:Unit ;
+          rdfs:seeAlso <http://w3id.org/nfdi4ing/metadata4ing#hasUnit> ;
+          skos:definition "The canonical unit of the standard name"@en ;
+          skos:prefLabel "canonical units"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://purl.org/dc/terms/description
+ssno:description rdf:type owl:DatatypeProperty ;
+                    rdfs:domain pivmeta:StandardName ;
+                    rdfs:range xsd:string ;
+                    skos:definition "Description of a standard name or a standard name table"@en ;
+                    skos:prefLabel "description"@en .
+
+###  https://matthiasprobst.github.io/ssno#standard_name
+ssno:standard_name rdf:type owl:DatatypeProperty ;
+                   rdfs:domain pivmeta:StandardName ;
+                   rdfs:range xsd:string ;
+                   skos:definition "Name for a standard name, e.g. \"x_velocity\". The construction of a standard name string is defined by the standard name table. E.g. no spaces are allowed and specific pre- and suffixes are allowed."@en ;
+                   skos:example "x_derivative_of_y_velocity" ;
+                   skos:prefLabel "standard name"@en .
+
 
 ###  http://www.semanticweb.org/owl/owlapi/turtle#final_window_size
 <http://www.semanticweb.org/owl/owlapi/turtle#final_window_size> rdf:type owl:DatatypeProperty ;
