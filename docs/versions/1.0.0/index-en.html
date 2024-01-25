@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-01-24", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-01-25", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-01-24</dt>
+<dt>Modified on: 2024-01-25</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -112,10 +112,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#CenterOfMass"
          title="https://matthiasprobst.github.io/pivmeta#CenterOfMass">Center of Mass</a>
-   </li>
-   <li>
-      <a href="#EvaluationStep"
-         title="https://matthiasprobst.github.io/pivmeta#EvaluationStep">evaluation step</a>
    </li>
    <li>
       <a href="#ImageFilter"
@@ -202,14 +198,6 @@ This ontology has the following classes and properties.</span>
       <a href="#PivType" title="https://matthiasprobst.github.io/pivmeta#PivType">
          <span>piv type</span>
       </a>
-   </li>
-   <li>
-      <a href="#PostProcessingStep"
-         title="https://matthiasprobst.github.io/pivmeta#PostProcessingStep">post processing step</a>
-   </li>
-   <li>
-      <a href="#PreProcessingStep"
-         title="https://matthiasprobst.github.io/pivmeta#PreProcessingStep">pre processing step</a>
    </li>
    <li>
       <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
@@ -378,10 +366,6 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#piv_image_index">piv_image_index</a>
    </li>
    <li>
-      <a href="#piv_method"
-         title="https://matthiasprobst.github.io/pivmeta#piv_method">piv_method</a>
-   </li>
-   <li>
       <a href="#piv_scaling_factor"
          title="https://matthiasprobst.github.io/pivmeta#piv_scaling_factor">piv_scaling_factor</a>
    </li>
@@ -399,10 +383,6 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#ptv" title="https://matthiasprobst.github.io/pivmeta#ptv">ptv</a>
-   </li>
-   <li>
-      <a href="#raw_image"
-         title="https://matthiasprobst.github.io/pivmeta#raw_image">raw_image</a>
    </li>
    <li>
       <a href="#relative_time"
@@ -519,10 +499,6 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#CenterOfMass">Center of Mass</a>
       </li>
       <li>
-         <a href="#EvaluationStep"
-            title="https://matthiasprobst.github.io/pivmeta#EvaluationStep">evaluation step</a>
-      </li>
-      <li>
          <a href="#ImageFilter"
             title="https://matthiasprobst.github.io/pivmeta#ImageFilter">image filter</a>
       </li>
@@ -609,14 +585,6 @@ This section provides details for each class and property defined by PIVMeta.
          </a>
       </li>
       <li>
-         <a href="#PostProcessingStep"
-            title="https://matthiasprobst.github.io/pivmeta#PostProcessingStep">post processing step</a>
-      </li>
-      <li>
-         <a href="#PreProcessingStep"
-            title="https://matthiasprobst.github.io/pivmeta#PreProcessingStep">pre processing step</a>
-      </li>
-      <li>
          <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
             title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">
             <span>processing step</span>
@@ -683,25 +651,6 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#SubPixelPeakFitMethod"
                title="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod">Sub Pixel Peak Fit Method</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="EvaluationStep">
-      <h3>evaluation step<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#EvaluationStep</p>
-      <div class="comment">
-         <span class="markdown">The main PIV process which evaluates the pixel displacements.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#PivProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1047,16 +996,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">processing step</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#EvaluationStep"
-               title="https://matthiasprobst.github.io/pivmeta#EvaluationStep">evaluation step</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PostProcessingStep">post processing step</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PreProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PreProcessingStep">pre processing step</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
       </dl>
    </div>
    <div class="entity" id="PivResultDistribution">
@@ -1097,44 +1036,6 @@ This section provides details for each class and property defined by PIVMeta.
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#piv" title="https://matthiasprobst.github.io/pivmeta#piv">piv</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#ptv" title="https://matthiasprobst.github.io/pivmeta#ptv">ptv</a>
             <sup class="type-ni" title="named individual">ni</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PostProcessingStep">
-      <h3>post processing step<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PostProcessingStep</p>
-      <div class="comment">
-         <span class="markdown">Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#PivProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PreProcessingStep">
-      <h3>pre processing step<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PreProcessingStep</p>
-      <div class="comment">
-         <span class="markdown">Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#PivProcessingStep"
-               title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1259,8 +1160,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#piv_flag">piv_flag</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#piv_image_index"
                title="https://matthiasprobst.github.io/pivmeta#piv_image_index">piv_image_index</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#piv_method"
-               title="https://matthiasprobst.github.io/pivmeta#piv_method">piv_method</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#piv_scaling_factor"
                title="https://matthiasprobst.github.io/pivmeta#piv_scaling_factor">piv_scaling_factor</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#piv_second_peak_correlation_coefficient"
@@ -1269,8 +1168,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient">piv_third_peak_correlation_coefficient</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#pixel_origin"
                title="https://matthiasprobst.github.io/pivmeta#pixel_origin">pixel_origin</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#raw_image"
-               title="https://matthiasprobst.github.io/pivmeta#raw_image">raw_image</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#relative_time"
                title="https://matthiasprobst.github.io/pivmeta#relative_time">relative_time</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#saturated_pixel_number"
@@ -1772,10 +1669,6 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#piv_image_index">piv_image_index</a>
       </li>
       <li>
-         <a href="#piv_method"
-            title="https://matthiasprobst.github.io/pivmeta#piv_method">piv_method</a>
-      </li>
-      <li>
          <a href="#piv_scaling_factor"
             title="https://matthiasprobst.github.io/pivmeta#piv_scaling_factor">piv_scaling_factor</a>
       </li>
@@ -1793,10 +1686,6 @@ This section provides details for each class and property defined by PIVMeta.
       </li>
       <li>
          <a href="#ptv" title="https://matthiasprobst.github.io/pivmeta#ptv">ptv</a>
-      </li>
-      <li>
-         <a href="#raw_image"
-            title="https://matthiasprobst.github.io/pivmeta#raw_image">raw_image</a>
       </li>
       <li>
          <a href="#relative_time"
@@ -2374,29 +2263,6 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="piv_method">
-      <h3>piv_method<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#piv_method</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#StandardName"
-               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has facts</dt>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno/#description"
-               title="https://matthiasprobst.github.io/ssno/#description">description</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The PIV method used to compute the velocity vectors. The method name must be provided with the dataset. Examples are single pass, multi-pass or multi-grid."@en</span>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="piv_scaling_factor">
       <h3>piv_scaling_factor<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2508,29 +2374,6 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#PivType" title="https://matthiasprobst.github.io/pivmeta#PivType">piv type</a>
             <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="raw_image">
-      <h3>raw_image<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#raw_image</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#StandardName"
-               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has facts</dt>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno/#description"
-               title="https://matthiasprobst.github.io/ssno/#description">description</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The raw unprocessed PIV image as recorded by the used camera."@en</span>
          </dd>
       </dl>
    </div>

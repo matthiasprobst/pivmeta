@@ -161,6 +161,16 @@
     
 
 
+    <!-- https://schema.org/name -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/name">
+        <skos:prefLabel xml:lang="en">name</skos:prefLabel>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -433,18 +443,6 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#EvaluationStep -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#EvaluationStep">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivProcessingStep"/>
-        <rdfs:label xml:lang="en">evaluation step</rdfs:label>
-        <skos:definition xml:lang="en">The main PIV process which evaluates the pixel displacements.</skos:definition>
-        <skos:prefLabel xml:lang="en">evaluation step</skos:prefLabel>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#ImageFilter -->
 
 
@@ -596,30 +594,6 @@
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivType">
         <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/DCMIType"/>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#PostProcessingStep -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PostProcessingStep">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivProcessingStep"/>
-        <rdfs:label xml:lang="en">post processing step</rdfs:label>
-        <skos:definition xml:lang="en">Processing step which takes place after the main PIV evaluation. It may include outlier detection, interpolation and other manipulating operations.</skos:definition>
-        <skos:prefLabel xml:lang="en">post processing step</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#PreProcessingStep -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PreProcessingStep">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivProcessingStep"/>
-        <rdfs:label xml:lang="en">pre processing step</rdfs:label>
-        <skos:definition xml:lang="en">Processing step prior to the main processing step including image manipulation, e.g. cropping, rotating or filtering.</skos:definition>
-        <skos:prefLabel xml:lang="en">pre processing step</skos:prefLabel>
     </owl:Class>
     
 
@@ -948,17 +922,6 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#piv_method -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_method">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The PIV method used to compute the velocity vectors. The method name must be provided with the dataset. Examples are single pass, multi-pass or multi-grid.</ssno:description>
-        <skos:prefLabel xml:lang="en">piv_method</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#piv_scaling_factor -->
 
 
@@ -1010,17 +973,6 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ptv">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PivType"/>
         <skos:prefLabel xml:lang="en">ptv</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#raw_image -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#raw_image">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The raw unprocessed PIV image as recorded by the used camera.</ssno:description>
-        <skos:prefLabel xml:lang="en">raw_image</skos:prefLabel>
     </owl:NamedIndividual>
     
 

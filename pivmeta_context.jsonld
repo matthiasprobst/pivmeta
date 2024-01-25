@@ -32,6 +32,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "xml": "http://www.w3.org/XML/1998/namespace",
+    "qudt": "http://qudt.org/schema/qudt/",
     "pivmeta": "https://matthiasprobst.github.io/pivmeta#",
     "realisierbare Entität": {
       "@id": "<http://purl.obolibrary.org/obo/BFO_0000017>"
@@ -42,8 +43,11 @@
     "Center of Mass": {
       "@id": "pivmeta:CenterOfMass"
     },
-    "evaluation step": {
-      "@id": "pivmeta:EvaluationStep"
+    "image filter": {
+      "@id": "pivmeta:ImageFilter"
+    },
+    "image rotation": {
+      "@id": "pivmeta:ImageRotation"
     },
     "Interrogation Method": {
       "@id": "pivmeta:InterrogationMethod"
@@ -60,12 +64,6 @@
     "piv processing step": {
       "@id": "pivmeta:PivProcessingStep"
     },
-    "post processing step": {
-      "@id": "pivmeta:PostProcessingStep"
-    },
-    "pre processing step": {
-      "@id": "pivmeta:PreProcessingStep"
-    },
     "Singlepass": {
       "@id": "pivmeta:Singlepass"
     },
@@ -78,11 +76,8 @@
     "Three Points Gauss": {
       "@id": "pivmeta:ThreePointsGauss"
     },
-    "image filter": {
-      "@id": "pivmeta:ImageFilter"
-    },
-    "image rotation": {
-      "@id": "pivmeta:ImageRotation"
+    "name": {
+      "@id": "schema:name"
     },
     "has standard name": {
       "@id": "pivmeta:hasStandardName",
@@ -94,7 +89,7 @@
     },
     "canonical units": {
       "@id": "<https://matthiasprobst.github.io/ssno/#unit>",
-      "@type": "<http://qudt.org/schema/qudt/Unit>"
+      "@type": "qudt:Unit"
     },
     "description": {
       "@id": "<https://matthiasprobst.github.io/ssno/#description>",
@@ -170,14 +165,8 @@
     "number_of_particles": {
       "@id": "pivmeta:number_of_particles"
     },
-    "piv_method": {
-      "@id": "pivmeta:piv_method"
-    },
     "laser_pulse_delay": {
       "@id": "pivmeta:laser_pulse_delay"
-    },
-    "raw_image": {
-      "@id": "pivmeta:raw_image"
     },
     "saturated_pixel_number": {
       "@id": "pivmeta:saturated_pixel_number"
@@ -258,7 +247,6 @@
     "emmo": "http://emmo.info/emmo#",
     "obo": "http://purl.obolibrary.org/obo/",
     "pims-ii": "http://www.molmod.info/semantics/pims-ii.ttl#",
-    "qudt": "http://qudt.org/schema/qudt/",
     "si": "https://ptb.de/si/",
     "Prozess": {
       "@id": "obo:BFO_0000015"
