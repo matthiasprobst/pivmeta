@@ -6,6 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix pivmeta: <https://matthiasprobst.github.io/pivmeta#> .
+@prefix ssno: <https://matthiasprobst.github.io/ssno#> .
 @base <https://matthiasprobst.github.io/pivmeta#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
@@ -130,8 +131,8 @@ pivmeta:pivImageType rdf:type owl:ObjectProperty ;
                      skos:prefLabel "piv image type"@en .
 
 
-###  https://matthiasprobst.github.io/ssno/#unit
-<https://matthiasprobst.github.io/ssno/#unit> rdf:type owl:ObjectProperty ;
+###  https://matthiasprobst.github.io/ssno#unit
+ssno:unit rdf:type owl:ObjectProperty ;
                                               rdfs:domain pivmeta:StandardName ;
                                               rdfs:range qudt:Unit ;
                                               rdfs:seeAlso <http://w3id.org/nfdi4ing/metadata4ing#hasUnit> ;
@@ -172,16 +173,16 @@ pivmeta:pivImageType rdf:type owl:ObjectProperty ;
                                                                                rdfs:range xsd:float .
 
 
-###  https://matthiasprobst.github.io/ssno/#description
-<https://matthiasprobst.github.io/ssno/#description> rdf:type owl:DatatypeProperty ;
+###  https://matthiasprobst.github.io/ssno#description
+ssno:description rdf:type owl:DatatypeProperty ;
                                                      rdfs:domain pivmeta:StandardName ;
                                                      rdfs:range xsd:string ;
                                                      skos:definition "Description of a standard name or a standard name table"@en ;
                                                      skos:prefLabel "description"@en .
 
 
-###  https://matthiasprobst.github.io/ssno/#standard_name
-<https://matthiasprobst.github.io/ssno/#standard_name> rdf:type owl:DatatypeProperty ;
+###  https://matthiasprobst.github.io/ssno#standard_name
+ssno:standard_name rdf:type owl:DatatypeProperty ;
                                                        rdfs:domain pivmeta:StandardName ;
                                                        rdfs:range xsd:string ;
                                                        skos:definition "Name for a standard name, e.g. \"x_velocity\". The construction of a standard name string is defined by the standard name table. E.g. no spaces are allowed and specific pre- and suffixes are allowed."@en ;
@@ -424,7 +425,7 @@ pivmeta:piv rdf:type owl:NamedIndividual ,
 ###  https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient
 pivmeta:piv_first_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
                                                         pivmeta:StandardName ;
-                                               <https://matthiasprobst.github.io/ssno/#description> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."@en ;
+                                               ssno:description "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."@en ;
                                                skos:prefLabel "piv_first_peak_correlation_coefficient"@en .
 
 
