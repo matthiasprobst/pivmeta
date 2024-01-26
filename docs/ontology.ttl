@@ -260,6 +260,12 @@ xsd:date rdf:type rdfs:Datatype .
                                      rdfs:label "Activity"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration
+:BackgroundImageGeneration rdf:type owl:Class ;
+                           rdfs:subClassOf :PivProcessingStep ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "background image generation"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod
 :BackgroundSubtractionMethod rdf:type owl:Class ;
                              rdfs:subClassOf :PivPreProcessing ;
@@ -316,6 +322,12 @@ xsd:date rdf:type rdfs:Datatype .
                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Interrogation Method"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
+:MaskGeneration rdf:type owl:Class ;
+                rdfs:subClassOf :PivProcessingStep ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "mask generation"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#Multigrid
 :Multigrid rdf:type owl:Class ;
            rdfs:subClassOf :InterrogationMethod ;
@@ -338,6 +350,12 @@ xsd:date rdf:type rdfs:Datatype .
 :PIVEvaluation rdf:type owl:Class ;
                rdfs:subClassOf :PivProcessingStep ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "piv evaluation"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVSoftware
+:PIVSoftware rdf:type owl:Class ;
+             rdfs:subClassOf <https://w3id.org/okn/o/sd#Software> ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Software"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivDistribution
@@ -404,30 +422,6 @@ xsd:date rdf:type rdfs:Datatype .
                        rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                        rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Sub Pixel Peak Fit Method"@en .
-
-
-###  https://matthiasprobst.github.io/ssno#BackgroundImageGeneration
-<https://matthiasprobst.github.io/ssno#BackgroundImageGeneration> rdf:type owl:Class ;
-                                                                  rdfs:subClassOf :PivProcessingStep ;
-                                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "background image generation"@en .
-
-
-###  https://matthiasprobst.github.io/ssno#ImageRotation
-<https://matthiasprobst.github.io/ssno#ImageRotation> rdf:type owl:Class ;
-                                                      rdfs:subClassOf :PivProcessingStep ;
-                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "image rotation"@en .
-
-
-###  https://matthiasprobst.github.io/ssno#MaskGeneration
-<https://matthiasprobst.github.io/ssno#MaskGeneration> rdf:type owl:Class ;
-                                                       rdfs:subClassOf :PivProcessingStep ;
-                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "mask generation"@en .
-
-
-###  https://matthiasprobst.github.io/ssno#PIVSoftware
-<https://matthiasprobst.github.io/ssno#PIVSoftware> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <https://w3id.org/okn/o/sd#Software> ;
-                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Software"@en .
 
 
 ###  https://w3id.org/okn/o/sd#Software
