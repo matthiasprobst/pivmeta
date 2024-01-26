@@ -8,6 +8,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ssno: <https://matthiasprobst.github.io/ssno#> .
 @prefix pivmeta: <https://matthiasprobst.github.io/pivmeta#> .
+@prefix sd: <https://w3id.org/okn/o/sd#> .
 @base <https://matthiasprobst.github.io/pivmeta#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
@@ -199,8 +200,8 @@ ssno:standard_name rdf:type owl:DatatypeProperty ;
 
 
 ###  https://w3id.org/okn/o/sd#hasDocumentation
-<https://w3id.org/okn/o/sd#hasDocumentation> rdf:type owl:DatatypeProperty ;
-                                             rdfs:domain <https://w3id.org/okn/o/sd#Software> ;
+sd:hasDocumentation rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain sd:Software ;
                                              rdfs:range xsd:anyURI ;
                                              skos:prefLabel "has documentation"@en .
 
@@ -429,7 +430,7 @@ ssno:MaskGeneration rdf:type owl:Class ;
 
 
 ###  https://w3id.org/okn/o/sd#Software
-<https://w3id.org/okn/o/sd#Software> rdf:type owl:Class ;
+sd:Software rdf:type owl:Class ;
                                      rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
                                      skos:prefLabel "Software"@en .
 

@@ -8,6 +8,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ssno: <https://matthiasprobst.github.io/ssno#> .
 @prefix pivmeta: <https://matthiasprobst.github.io/pivmeta#> .
+@prefix sd: <https://w3id.org/okn/o/sd#> .
 @base <https://matthiasprobst.github.io/pivmeta#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
@@ -199,8 +200,8 @@ ssno:standard_name rdf:type owl:DatatypeProperty ;
 
 
 ###  https://w3id.org/okn/o/sd#hasDocumentation
-<https://w3id.org/okn/o/sd#hasDocumentation> rdf:type owl:DatatypeProperty ;
-                                             rdfs:domain <https://w3id.org/okn/o/sd#Software> ;
+sd:hasDocumentation rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain sd:Software ;
                                              rdfs:range xsd:anyURI ;
                                              skos:prefLabel "has documentation"@en .
 
@@ -429,7 +430,7 @@ ssno:MaskGeneration rdf:type owl:Class ;
 
 
 ###  https://w3id.org/okn/o/sd#Software
-<https://w3id.org/okn/o/sd#Software> rdf:type owl:Class ;
+sd:Software rdf:type owl:Class ;
                                      rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
                                      skos:prefLabel "Software"@en .
 
@@ -502,6 +503,7 @@ pivmeta:ptv rdf:type owl:NamedIndividual ,
 pivmeta:piv_correlation_coefficient rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "piv_correlation_coefficient" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_correlation_coefficient"@en .
 
 
@@ -509,6 +511,7 @@ pivmeta:piv_correlation_coefficient rdf:type owl:NamedIndividual ,
 pivmeta:piv_first_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "piv_first_peak_correlation_coefficient" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_first_peak_correlation_coefficient"@en .
 
 
@@ -516,6 +519,7 @@ pivmeta:piv_first_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
 pivmeta:piv_second_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the second peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "piv_second_peak_correlation_coefficient" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_second_peak_correlation_coefficient"@en .
 
 
@@ -523,6 +527,7 @@ pivmeta:piv_second_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
 pivmeta:piv_third_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the third peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "piv_third_peak_correlation_coefficient" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_third_peak_correlation_coefficient"@en .
 
 
@@ -530,6 +535,7 @@ pivmeta:piv_third_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
 pivmeta:first_peak_x_displacement rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "first_peak_x_displacement" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_x_displacement"@en .
 
 
@@ -537,6 +543,7 @@ pivmeta:first_peak_x_displacement rdf:type owl:NamedIndividual ,
 pivmeta:first_peak_y_displacement rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "first_peak_y_displacement" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
 
 
@@ -544,6 +551,7 @@ pivmeta:first_peak_y_displacement rdf:type owl:NamedIndividual ,
 pivmeta:piv_flag rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by adding the values. For example, 33 would mean that the vector is active and interpolated."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "piv_flag" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_flag"@en .
 
 
@@ -551,6 +559,7 @@ pivmeta:piv_flag rdf:type owl:NamedIndividual ,
 pivmeta:image_particle_density rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Number of particle images per pixel. Equals the number of particles divided by the image area."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "image_particle_density" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_density"@en .
 
 
@@ -558,6 +567,7 @@ pivmeta:image_particle_density rdf:type owl:NamedIndividual ,
 pivmeta:image_particle_diameter rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The diameter of an image particle."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "image_particle_diameter" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_diameter"@en .
 
 
@@ -565,6 +575,7 @@ pivmeta:image_particle_diameter rdf:type owl:NamedIndividual ,
 pivmeta:piv_image_index rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Simple index of a PIV image. Starts at 1 and ends at the number of images N."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "piv_image_index" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_image_index"@en .
 
 
@@ -572,6 +583,7 @@ pivmeta:piv_image_index rdf:type owl:NamedIndividual ,
 pivmeta:inplane_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitute of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "inplane_velocity" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "inplane_velocity"@en .
 
@@ -580,6 +592,7 @@ pivmeta:inplane_velocity rdf:type owl:NamedIndividual ,
 pivmeta:laser_sheet_thickness rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The width of the laser beam illuminating the seeding particles. The width is defined"@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "laser_sheet_thickness" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_thickness"@en .
 
@@ -588,6 +601,7 @@ pivmeta:laser_sheet_thickness rdf:type owl:NamedIndividual ,
 pivmeta:mean_seeding_particle_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The mean diameter of the seeding particles."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "mean_seeding_particle_size" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "mean_seeding_particle_size"@en .
 
@@ -596,6 +610,7 @@ pivmeta:mean_seeding_particle_size rdf:type owl:NamedIndividual ,
 pivmeta:number_of_particles rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Number of seeding particles in the image or field of interest. See also image_particle_density."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "number_of_particles" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "number_of_particles"@en .
 
 
@@ -603,6 +618,7 @@ pivmeta:number_of_particles rdf:type owl:NamedIndividual ,
 pivmeta:laser_pulse_delay rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Time between two laser pulses."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "laser_pulse_delay" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_pulse_delay"@en .
 
@@ -611,6 +627,7 @@ pivmeta:laser_pulse_delay rdf:type owl:NamedIndividual ,
 pivmeta:saturated_pixel_number rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Number of pixels in the field of interest that exceed the maximal senor count."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "saturated_pixel_number" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "saturated_pixel_number"@en .
 
 
@@ -618,6 +635,7 @@ pivmeta:saturated_pixel_number rdf:type owl:NamedIndividual ,
 pivmeta:second_peak_x_displacement rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "second_peak_x_displacement" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "second_peak_x_displacement"@en .
 
 
@@ -625,6 +643,7 @@ pivmeta:second_peak_x_displacement rdf:type owl:NamedIndividual ,
 pivmeta:second_peak_y_displacement rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "second_peak_y_displacement" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "second_peak_y_displacement"@en .
 
 
@@ -632,6 +651,7 @@ pivmeta:second_peak_y_displacement rdf:type owl:NamedIndividual ,
 pivmeta:seeding_material rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS)."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "seeding_material" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "seeding_material"@en .
 
 
@@ -639,6 +659,7 @@ pivmeta:seeding_material rdf:type owl:NamedIndividual ,
 pivmeta:standard_deviation_of_image_particle_diameter rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The standard deviation of the image particle diameter in the field of interest."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "standard_deviation_of_image_particle_diameter" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_image_particle_diameter"@en .
 
 
@@ -646,6 +667,7 @@ pivmeta:standard_deviation_of_image_particle_diameter rdf:type owl:NamedIndividu
 pivmeta:third_peak_x_displacement rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "third_peak_x_displacement" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "third_peak_x_displacement"@en .
 
 
@@ -653,6 +675,7 @@ pivmeta:third_peak_x_displacement rdf:type owl:NamedIndividual ,
 pivmeta:third_peak_y_displacement rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "third_peak_y_displacement" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "third_peak_y_displacement"@en .
 
 
@@ -660,6 +683,7 @@ pivmeta:third_peak_y_displacement rdf:type owl:NamedIndividual ,
 pivmeta:time rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Datetime in ISO 8601 format."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "time" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "time"@en .
 
 
@@ -667,6 +691,7 @@ pivmeta:time rdf:type owl:NamedIndividual ,
 pivmeta:relative_time rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Recording time since start of recording."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "relative_time" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "relative_time"@en .
 
@@ -675,6 +700,7 @@ pivmeta:relative_time rdf:type owl:NamedIndividual ,
 pivmeta:velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Velocity."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "velocity" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "velocity"@en .
 
@@ -683,6 +709,7 @@ pivmeta:velocity rdf:type owl:NamedIndividual ,
 pivmeta:displacement rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "PIV displacement."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "displacement" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "displacement"@en .
 
 
@@ -690,6 +717,7 @@ pivmeta:displacement rdf:type owl:NamedIndividual ,
 pivmeta:x_final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Width of the final PIV interogation window overlap."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "x_final_interrogation_window_overlap_size" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_overlap_size"@en .
 
 
@@ -697,6 +725,7 @@ pivmeta:x_final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
 pivmeta:x_final_interrogation_window_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Width of the final PIV interogation window."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "x_final_interrogation_window_size" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
 
 
@@ -704,6 +733,7 @@ pivmeta:x_final_interrogation_window_size rdf:type owl:NamedIndividual ,
 pivmeta:x_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "x_initial_interrogation_window_size" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_initial_interrogation_window_size"@en .
 
 
@@ -711,6 +741,7 @@ pivmeta:x_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
 pivmeta:x_pixel_coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Image coordinate in horizontal direction."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "x_pixel_coordinate" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_pixel_coordinate"@en .
 
 
@@ -718,6 +749,7 @@ pivmeta:x_pixel_coordinate rdf:type owl:NamedIndividual ,
 pivmeta:y_final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The height of the final PIV interogation window overlap."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "y_final_interrogation_window_overlap_size" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_overlap_size"@en .
 
 
@@ -725,6 +757,7 @@ pivmeta:y_final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
 pivmeta:y_final_interrogation_window_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The height of the final PIV interogation window."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "y_final_interrogation_window_size" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_size"@en .
 
 
@@ -732,6 +765,7 @@ pivmeta:y_final_interrogation_window_size rdf:type owl:NamedIndividual ,
 pivmeta:y_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "y_initial_interrogation_window_size" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_initial_interrogation_window_size"@en .
 
 
@@ -739,6 +773,7 @@ pivmeta:y_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
 pivmeta:y_pixel_coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Image coordinate in vertical direction."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "y_pixel_coordinate" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_pixel_coordinate"@en .
 
 
@@ -746,6 +781,7 @@ pivmeta:y_pixel_coordinate rdf:type owl:NamedIndividual ,
 pivmeta:pixel_origin rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The pixel position of the origin used for PIV evaluation."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "pixel_origin" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "pixel_origin"@en .
 
 
@@ -753,6 +789,7 @@ pivmeta:pixel_origin rdf:type owl:NamedIndividual ,
 pivmeta:coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The spatial coordinate."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "coordinate" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "coordinate"@en .
 
@@ -761,6 +798,7 @@ pivmeta:coordinate rdf:type owl:NamedIndividual ,
 pivmeta:signal_to_noise_ratio rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The signal to noise ratio of the PIV evaluation."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "signal_to_noise_ratio" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "signal_to_noise_ratio"@en .
 
 
@@ -768,6 +806,7 @@ pivmeta:signal_to_noise_ratio rdf:type owl:NamedIndividual ,
 pivmeta:least_square_residual_of_z_displacement_reconstruction rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The least square residual of the z displacement reconstruction in stereo PIV."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "least_square_residual_of_z_displacement_reconstruction" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "least_square_residual_of_z_displacement_reconstruction"@en .
 
 
@@ -775,6 +814,7 @@ pivmeta:least_square_residual_of_z_displacement_reconstruction rdf:type owl:Name
 pivmeta:piv_scaling_factor rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "Image scaling factor."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "piv_scaling_factor" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/PER-M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_scaling_factor"@en .
 
@@ -783,4 +823,5 @@ pivmeta:piv_scaling_factor rdf:type owl:NamedIndividual ,
 pivmeta:image_filter_kernel_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#description> "The size of the image filter kernel."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "image_filter_kernel_size" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "image_filter_kernel_size"@en .
