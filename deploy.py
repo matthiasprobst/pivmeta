@@ -68,9 +68,9 @@ if __name__ == "__main__":
             f.write(f'\n\n### https://matthiasprobst.github.io/pivmeta#{k}')
             f.write(f'\npivmeta:{k} rdf:type owl:NamedIndividual ,')
             f.write(f'\n             <https://matthiasprobst.github.io/pivmeta#StandardName> ;')
-            f.write(f'\n             <https://matthiasprobst.github.io/ssno/#description> "{desc}"@en ;')
+            f.write(f'\n             <https://matthiasprobst.github.io/ssno#description> "{desc}"@en ;')
             if qudt_units:
-                f.write(f'\n             <https://matthiasprobst.github.io/ssno/#unit> <{qudt_units}> ;')
+                f.write(f'\n             <https://matthiasprobst.github.io/ssno#unit> <{qudt_units}> ;')
             f.write(f'\n             <http://www.w3.org/2004/02/skos/core#prefLabel> "{k}"@en .\n')
 
     print(' > update modification data')

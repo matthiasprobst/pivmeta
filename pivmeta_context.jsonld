@@ -33,28 +33,31 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "xml": "http://www.w3.org/XML/1998/namespace",
     "qudt": "http://qudt.org/schema/qudt/",
-    "pivmeta": "https://matthiasprobst.github.io/pivmeta#",
     "ssno": "https://matthiasprobst.github.io/ssno#",
+    "pivmeta": "https://matthiasprobst.github.io/pivmeta#",
     "realisierbare Entität": {
       "@id": "<http://purl.obolibrary.org/obo/BFO_0000017>"
     },
     "realizable entity": {
       "@id": "<http://purl.obolibrary.org/obo/BFO_0000017>"
     },
-    "Center of Mass": {
-      "@id": "pivmeta:CenterOfMass"
+    "background subtraction": {
+      "@id": "pivmeta:BackgroundSubtractionMethod"
+    },
+    "CorrelationAlgorithm": {
+      "@id": "pivmeta:CorrelationAlgorithm"
+    },
+    "image dewarp": {
+      "@id": "pivmeta:ImageDewarp"
     },
     "image filter": {
       "@id": "pivmeta:ImageFilter"
     },
     "image rotation": {
-      "@id": "pivmeta:ImageRotation"
+      "@id": "ssno:ImageRotation"
     },
     "Interrogation Method": {
       "@id": "pivmeta:InterrogationMethod"
-    },
-    "Least Squares Gauss": {
-      "@id": "pivmeta:LeastSquaresGauss"
     },
     "Multigrid": {
       "@id": "pivmeta:Multigrid"
@@ -62,8 +65,26 @@
     "Multipass": {
       "@id": "pivmeta:Multipass"
     },
+    "Outlier Detection Method": {
+      "@id": "pivmeta:OutlierDetectionMethod"
+    },
+    "piv evaluation": {
+      "@id": "pivmeta:PIVEvaluation"
+    },
+    "piv image distribution": {
+      "@id": "pivmeta:PivImageDistribution"
+    },
+    "piv post processing": {
+      "@id": "pivmeta:PivPostProcessing"
+    },
+    "piv pre processing": {
+      "@id": "pivmeta:PivPreProcessing"
+    },
     "piv processing step": {
       "@id": "pivmeta:PivProcessingStep"
+    },
+    "piv result distribution": {
+      "@id": "pivmeta:PivResultDistribution"
     },
     "Singlepass": {
       "@id": "pivmeta:Singlepass"
@@ -71,13 +92,16 @@
     "Sub Pixel Peak Fit Method": {
       "@id": "pivmeta:SubPixelPeakFitMethod"
     },
-    "Three Point Parabolic": {
-      "@id": "pivmeta:ThreePointParabolic"
+    "background image generation": {
+      "@id": "ssno:BackgroundImageGeneration"
     },
-    "Three Points Gauss": {
-      "@id": "pivmeta:ThreePointsGauss"
+    "mask generation": {
+      "@id": "ssno:MaskGeneration"
     },
-    "name": {
+    "Software": {
+      "@id": "<https://w3id.org/okn/o/sd#Software>"
+    },
+    "coorelation algorithm": {
       "@id": "schema:name"
     },
     "has standard name": {
@@ -87,6 +111,10 @@
     "piv image type": {
       "@id": "pivmeta:pivImageType",
       "@type": "pivmeta:ImageType"
+    },
+    "correlation algorithm": {
+      "@id": "pivmeta:usesCorrelationAlgorithm",
+      "@type": "pivmeta:CorrelationAlgorithm"
     },
     "canonical units": {
       "@id": "ssno:unit",
@@ -99,6 +127,10 @@
     "standard name": {
       "@id": "ssno:standard_name",
       "@type": "xsd:string"
+    },
+    "has documentation": {
+      "@id": "<https://w3id.org/okn/o/sd#hasDocumentation>",
+      "@type": "xsd:anyURI"
     },
     "experimental image": {
       "@id": "pivmeta:ExperimentalImage"
