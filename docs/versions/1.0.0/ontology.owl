@@ -161,16 +161,6 @@
     
 
 
-    <!-- https://schema.org/name -->
-
-
-    <owl:AnnotationProperty rdf:about="https://schema.org/name">
-        <skos:prefLabel xml:lang="en">coorelation algorithm</skos:prefLabel>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -308,6 +298,17 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     </owl:DatatypeProperty>
     
 
@@ -479,10 +480,7 @@
     <!-- https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
-        <skos:prefLabel xml:lang="en">CorrelationAlgorithm</skos:prefLabel>
-    </owl:Class>
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm"/>
     
 
 
@@ -1342,6 +1340,21 @@
 
 
     <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/SEC"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm">
+        <skos:prefLabel xml:lang="en">has correlation algorithm</skos:prefLabel>
+    </rdf:Description>
 </rdf:RDF>
 
 

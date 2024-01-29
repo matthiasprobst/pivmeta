@@ -232,13 +232,19 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "CorrelationAlgorithm"
+    "@value" : "has correlation algorithm"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalImage",
@@ -1374,16 +1380,6 @@
 }, {
   "@id" : "https://qudt.org/vocab/unit/SEC",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
-}, {
-  "@id" : "https://schema.org/name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "coorelation algorithm"
-  } ]
 }, {
   "@id" : "https://w3id.org/okn/o/sd#Software",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],

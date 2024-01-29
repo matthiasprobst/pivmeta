@@ -32,9 +32,9 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "xml": "http://www.w3.org/XML/1998/namespace",
+    "sd": "https://w3id.org/okn/o/sd#",
     "qudt": "http://qudt.org/schema/qudt/",
     "ssno": "https://matthiasprobst.github.io/ssno#",
-    "sd": "https://w3id.org/okn/o/sd#",
     "pivmeta": "https://matthiasprobst.github.io/pivmeta#",
     "realisierbare Entität": {
       "@id": "<http://purl.obolibrary.org/obo/BFO_0000017>"
@@ -42,11 +42,15 @@
     "realizable entity": {
       "@id": "<http://purl.obolibrary.org/obo/BFO_0000017>"
     },
+    "background image generation": {
+      "@id": "pivmeta:BackgroundImageGeneration"
+    },
     "background subtraction": {
       "@id": "pivmeta:BackgroundSubtractionMethod"
     },
-    "CorrelationAlgorithm": {
-      "@id": "pivmeta:CorrelationAlgorithm"
+    "has correlation algorithm": {
+      "@id": "pivmeta:CorrelationAlgorithm",
+      "@type": "rdfs:Literal"
     },
     "image dewarp": {
       "@id": "pivmeta:ImageDewarp"
@@ -60,6 +64,9 @@
     "Interrogation Method": {
       "@id": "pivmeta:InterrogationMethod"
     },
+    "mask generation": {
+      "@id": "pivmeta:MaskGeneration"
+    },
     "Multigrid": {
       "@id": "pivmeta:Multigrid"
     },
@@ -71,6 +78,9 @@
     },
     "piv evaluation": {
       "@id": "pivmeta:PIVEvaluation"
+    },
+    "Piv Software": {
+      "@id": "pivmeta:PIVSoftware"
     },
     "piv image distribution": {
       "@id": "pivmeta:PivImageDistribution"
@@ -93,20 +103,8 @@
     "Sub Pixel Peak Fit Method": {
       "@id": "pivmeta:SubPixelPeakFitMethod"
     },
-    "background image generation": {
-      "@id": "pivmeta:BackgroundImageGeneration"
-    },
-    "mask generation": {
-      "@id": "pivmeta:MaskGeneration"
-    },
-    "Piv Software": {
-      "@id": "pivmeta:PIVSoftware"
-    },
     "Software": {
       "@id": "sd:Software"
-    },
-    "coorelation algorithm": {
-      "@id": "schema:name"
     },
     "has standard name": {
       "@id": "pivmeta:hasStandardName",
