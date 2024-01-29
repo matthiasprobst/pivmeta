@@ -68,7 +68,7 @@ if __name__ == "__main__":
             f.write(f'\n\n### https://matthiasprobst.github.io/pivmeta#{k}')
             f.write(f'\npivmeta:{k} rdf:type owl:NamedIndividual ,')
             f.write(f'\n             <https://matthiasprobst.github.io/pivmeta#StandardName> ;')
-            f.write(f'\n             <https://matthiasprobst.github.io/ssno#description> "{desc}"@en ;')
+            f.write(f'\n             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "{desc}"@en ;')
             f.write(f'\n             <https://matthiasprobst.github.io/ssno#standard_name> "{k}" ;')
             if qudt_units:
                 f.write(f'\n             <https://matthiasprobst.github.io/ssno#unit> <{qudt_units}> ;')

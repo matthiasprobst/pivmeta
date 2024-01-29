@@ -51,12 +51,12 @@ def generate():
         m4i_context_data = json.load(f)['@context']
     m4i_context_data.pop('@vocab')
 
-    ssno = __this_dir__ / 'pivmeta.ttl'
-    assert ssno.exists()
+    pivmeta_ttl = __this_dir__ / 'pivmeta.ttl'
+    assert pivmeta_ttl.exists()
     context_file = __this_dir__ / 'pivmeta_context.jsonld'
 
     g = Graph()
-    g.parse(str(ssno))
+    g.parse(str(pivmeta_ttl))
 
     outfile = str(context_file)
     with open(outfile, "w", encoding="utf-8") as f:

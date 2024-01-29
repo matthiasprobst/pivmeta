@@ -1,14 +1,15 @@
-@prefix :        <https://matthiasprobst.github.io/pivmeta#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix qudt:    <http://qudt.org/schema/qudt/> .
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
-@prefix ssno:    <https://matthiasprobst.github.io/ssno#> .
-@prefix sd:      <https://w3id.org/okn/o/sd#> .
-@prefix pivmeta: <https://matthiasprobst.github.io/pivmeta#> .
+@prefix :           <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:        <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt:       <http://qudt.org/schema/qudt/> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssno:       <https://matthiasprobst.github.io/ssno#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix sd:         <https://w3id.org/okn/o/sd#> .
+@prefix pivmeta:    <https://matthiasprobst.github.io/pivmeta#> .
 @base <https://matthiasprobst.github.io/pivmeta#> .
 
 <https://matthiasprobst.github.io/pivmeta#>
@@ -211,13 +212,13 @@ ssno:unit
     rdfs:range         xsd:float .
 
 
-###  https://matthiasprobst.github.io/ssno#description
-ssno:description
+###  https://matthiasprobst.github.io/ssno#hasStandardNameDescription
+ssno:hasStandardNameDescription
     rdf:type        owl:DatatypeProperty ;
     rdfs:domain     pivmeta:StandardName ;
     rdfs:range      xsd:string ;
     skos:definition "Description of a standard name or a standard name table"@en ;
-    skos:prefLabel  "description"@en .
+    skos:prefLabel  "standard name description"@en .
 
 
 ###  https://matthiasprobst.github.io/ssno#standard_name
@@ -556,7 +557,7 @@ pivmeta:piv
 ###  https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient
 pivmeta:piv_first_peak_correlation_coefficient
     rdf:type       owl:NamedIndividual, pivmeta:StandardName ;
-    ssno:description
+    ssno:hasStandardNameDescription
                    "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."@en ;
     skos:prefLabel "piv_first_peak_correlation_coefficient"@en .
 

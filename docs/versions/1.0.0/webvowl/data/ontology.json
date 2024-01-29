@@ -49,16 +49,16 @@
         "value" : "https://matthiasprobst.github.io/pivmeta#",
         "type" : "label"
       } ],
-      "abstract" : [ {
-        "identifier" : "abstract",
-        "language" : "en",
-        "value" : "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "v1.0.0",
+        "type" : "label"
+      } ],
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "en",
+        "value" : "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.",
         "type" : "label"
       } ],
       "title" : [ {
@@ -305,7 +305,7 @@
     "id" : "11",
     "type" : "owl:Class"
   }, {
-    "id" : "169",
+    "id" : "171",
     "type" : "owl:Class"
   }, {
     "id" : "38",
@@ -368,7 +368,7 @@
     "id" : "153",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "237",
+    "id" : "239",
     "type" : "owl:Class"
   }, {
     "id" : "249",
@@ -407,19 +407,19 @@
     "id" : "135",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "239",
+    "id" : "238",
     "type" : "rdfs:Literal"
   }, {
     "id" : "67",
     "type" : "owl:Class"
   }, {
-    "id" : "261",
+    "id" : "262",
     "type" : "owl:unionOf"
   }, {
     "id" : "228",
     "type" : "owl:unionOf"
   }, {
-    "id" : "263",
+    "id" : "264",
     "type" : "owl:unionOf"
   }, {
     "id" : "36",
@@ -541,12 +541,12 @@
       "closeMatch" : [ {
         "identifier" : "closeMatch",
         "language" : "undefined",
-        "value" : "http://emmo.info/emmo#EMMO_b081b346_7279_46ef_9a3d_2c088fcd79f4",
+        "value" : "http://www.molmod.info/semantics/pims-ii.ttl#MeasurementUnit",
         "type" : "iri"
       }, {
         "identifier" : "closeMatch",
         "language" : "undefined",
-        "value" : "http://www.molmod.info/semantics/pims-ii.ttl#MeasurementUnit",
+        "value" : "http://emmo.info/emmo#EMMO_b081b346_7279_46ef_9a3d_2c088fcd79f4",
         "type" : "iri"
       } ],
       "prefLabel" : [ {
@@ -603,13 +603,13 @@
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "Eine Person als Akteur ist eine natürliche Person, also ein handelnder Mensch.",
+        "language" : "en",
+        "value" : "Person agents are people.",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "Person agents are people.",
+        "language" : "de",
+        "value" : "Eine Person als Akteur ist eine natürliche Person, also ein handelnder Mensch.",
         "type" : "label"
       } ]
     },
@@ -708,13 +708,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Verteilung",
+        "language" : "en",
+        "value" : "distribution",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "distribution",
+        "language" : "de",
+        "value" : "Verteilung",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -749,13 +749,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "variable",
+        "language" : "de",
+        "value" : "Variable",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Variable",
+        "language" : "en",
+        "value" : "variable",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -933,20 +933,6 @@
         "IRI-based" : "inplane_velocity"
       }
     }, {
-      "iri" : "https://matthiasprobst.github.io/pivmeta#displacement",
-      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-      "annotations" : {
-        "prefLabel" : [ {
-          "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "displacement",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "displacement"
-      }
-    }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size",
       "baseIri" : "https://matthiasprobst.github.io/pivmeta",
       "annotations" : {
@@ -959,6 +945,20 @@
       },
       "labels" : {
         "IRI-based" : "y_initial_interrogation_window_size"
+      }
+    }, {
+      "iri" : "https://matthiasprobst.github.io/pivmeta#displacement",
+      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+      "annotations" : {
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "en",
+          "value" : "displacement",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "displacement"
       }
     }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement",
@@ -1031,20 +1031,6 @@
         "IRI-based" : "laser_sheet_thickness"
       }
     }, {
-      "iri" : "https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size",
-      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-      "annotations" : {
-        "prefLabel" : [ {
-          "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "x_initial_interrogation_window_size",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "x_initial_interrogation_window_size"
-      }
-    }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#coordinate",
       "baseIri" : "https://matthiasprobst.github.io/pivmeta",
       "annotations" : {
@@ -1059,18 +1045,18 @@
         "IRI-based" : "coordinate"
       }
     }, {
-      "iri" : "https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient",
+      "iri" : "https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size",
       "baseIri" : "https://matthiasprobst.github.io/pivmeta",
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
           "language" : "en",
-          "value" : "piv_third_peak_correlation_coefficient",
+          "value" : "x_initial_interrogation_window_size",
           "type" : "label"
         } ]
       },
       "labels" : {
-        "IRI-based" : "piv_third_peak_correlation_coefficient"
+        "IRI-based" : "x_initial_interrogation_window_size"
       }
     }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient",
@@ -1085,6 +1071,20 @@
       },
       "labels" : {
         "IRI-based" : "piv_correlation_coefficient"
+      }
+    }, {
+      "iri" : "https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient",
+      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+      "annotations" : {
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "en",
+          "value" : "piv_third_peak_correlation_coefficient",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "piv_third_peak_correlation_coefficient"
       }
     }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#relative_time",
@@ -1241,20 +1241,6 @@
         "IRI-based" : "third_peak_y_displacement"
       }
     }, {
-      "iri" : "https://matthiasprobst.github.io/pivmeta#piv_flag",
-      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-      "annotations" : {
-        "prefLabel" : [ {
-          "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "piv_flag",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "piv_flag"
-      }
-    }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate",
       "baseIri" : "https://matthiasprobst.github.io/pivmeta",
       "annotations" : {
@@ -1283,6 +1269,34 @@
         "IRI-based" : "first_peak_x_displacement"
       }
     }, {
+      "iri" : "https://matthiasprobst.github.io/pivmeta#piv_flag",
+      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+      "annotations" : {
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "en",
+          "value" : "piv_flag",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "piv_flag"
+      }
+    }, {
+      "iri" : "https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate",
+      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+      "annotations" : {
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "en",
+          "value" : "y_pixel_coordinate",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "y_pixel_coordinate"
+      }
+    }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#saturated_pixel_number",
       "baseIri" : "https://matthiasprobst.github.io/pivmeta",
       "annotations" : {
@@ -1309,20 +1323,6 @@
       },
       "labels" : {
         "IRI-based" : "time"
-      }
-    }, {
-      "iri" : "https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate",
-      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-      "annotations" : {
-        "prefLabel" : [ {
-          "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "y_pixel_coordinate",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "y_pixel_coordinate"
       }
     }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#image_particle_density",
@@ -1405,13 +1405,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Zuweisung",
+        "language" : "en",
+        "value" : "assignment",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "assignment",
+        "language" : "de",
+        "value" : "Zuweisung",
         "type" : "label"
       } ]
     },
@@ -1575,13 +1575,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Überdeckungsintervall",
+        "language" : "en",
+        "value" : "coverage interval",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "coverage interval",
+        "language" : "de",
+        "value" : "Überdeckungsintervall",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -1621,13 +1621,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "processing step",
+        "language" : "de",
+        "value" : "Arbeitsschritt",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Arbeitsschritt",
+        "language" : "en",
+        "value" : "processing step",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -1768,13 +1768,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Organisation",
+        "language" : "en",
+        "value" : "organization",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "organization",
+        "language" : "de",
+        "value" : "Organisation",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -1832,13 +1832,13 @@
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "Eine Aktivität ist etwas, das über einen Zeitraum und mit oder an Entitäten erfolgt; dazu kann das Verbrauchen, Verarbeiten, Transformieren, Modifizieren, Relokalisieren, Verwenden, oder die Genese von Entitäten gehören.",
+        "language" : "en",
+        "value" : "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.",
+        "language" : "de",
+        "value" : "Eine Aktivität ist etwas, das über einen Zeitraum und mit oder an Entitäten erfolgt; dazu kann das Verbrauchen, Verarbeiten, Transformieren, Modifizieren, Relokalisieren, Verwenden, oder die Genese von Entitäten gehören.",
         "type" : "label"
       } ]
     },
@@ -1877,7 +1877,7 @@
     },
     "subClasses" : [ "174", "175", "176" ],
     "comment" : {
-      "undefined" : "exchanged foaf:Agent by prov:Agent to fulfill range definition of prov:agent property"
+      "undefined" : "DEPRECATED An agent (eg. person, group, software or physical artifact)."
     },
     "attributes" : [ "deprecated", "external" ],
     "id" : "173"
@@ -1952,7 +1952,7 @@
       "IRI-based" : "Organization"
     },
     "comment" : {
-      "undefined" : "Replace foaf:Organization by prov:Organization"
+      "undefined" : "DEPRECATED An organization."
     },
     "attributes" : [ "deprecated", "external" ],
     "id" : "175",
@@ -2126,13 +2126,13 @@
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "Ein Software als Akteur ist ein Stück laufender Programmcode, der eine Aufgabe in einem Prozess übernimmt.",
+        "language" : "en",
+        "value" : "A software agent is running software.",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "A software agent is running software.",
+        "language" : "de",
+        "value" : "Ein Software als Akteur ist ein Stück laufender Programmcode, der eine Aufgabe in einem Prozess übernimmt.",
         "type" : "label"
       } ]
     },
@@ -2178,7 +2178,7 @@
       "IRI-based" : "Person"
     },
     "comment" : {
-      "undefined" : "DEPRECATED A person."
+      "undefined" : "Replace foaf:Person by prov:Person"
     },
     "attributes" : [ "deprecated", "external" ],
     "id" : "176",
@@ -2237,13 +2237,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "dataset series",
+        "language" : "de",
+        "value" : "Datensatzserie",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Datensatzserie",
+        "language" : "en",
+        "value" : "dataset series",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -2266,13 +2266,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Methode",
+        "language" : "en",
+        "value" : "method",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "method",
+        "language" : "de",
+        "value" : "Methode",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -2391,16 +2391,16 @@
     "baseIri" : "http://qudt.org/schema/qudt",
     "instances" : 0,
     "annotations" : {
-      "editorialNote" : [ {
-        "identifier" : "editorialNote",
-        "language" : "en",
-        "value" : "changed by m4i: added german labels, added skos:prefLabel, harmonized spelling to OBO naming conventions (lower case, space separated)",
-        "type" : "label"
-      } ],
       "note" : [ {
         "identifier" : "note",
         "language" : "en",
         "value" : "we recommend using a persistent identifier resolving to a persistent URL",
+        "type" : "label"
+      } ],
+      "editorialNote" : [ {
+        "identifier" : "editorialNote",
+        "language" : "en",
+        "value" : "changed by m4i: added german labels, added skos:prefLabel, harmonized spelling to OBO naming conventions (lower case, space separated)",
         "type" : "label"
       } ],
       "prefLabel" : [ {
@@ -2428,7 +2428,7 @@
       "en" : "A <b>Quantity Kind</b> is any observable property that can be  measured and quantified numerically. Familiar examples include physical properties such as length, mass, time, force, energy, power, electric charge, etc. Less familiar examples include currency, interest rate, price to earning ratio, and information capacity."
     },
     "attributes" : [ "external" ],
-    "id" : "169",
+    "id" : "171",
     "superClasses" : [ "27" ]
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
@@ -2465,13 +2465,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "numerische Zuweisung",
+        "language" : "en",
+        "value" : "numerical assignment",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "numerical assignment",
+        "language" : "de",
+        "value" : "numerische Zuweisung",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -2614,13 +2614,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Ungreifbares",
+        "language" : "en",
+        "value" : "intangible",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "intangible",
+        "language" : "de",
+        "value" : "Ungreifbares",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -2633,7 +2633,7 @@
     "label" : {
       "IRI-based" : "Intangible"
     },
-    "subClasses" : [ "169", "67", "26", "8", "48", "49" ],
+    "subClasses" : [ "171", "67", "26", "8", "48", "49" ],
     "attributes" : [ "external" ],
     "id" : "27"
   }, {
@@ -2643,24 +2643,24 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "text variable",
+        "language" : "de",
+        "value" : "textbasierte Variable",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "textbasierte Variable",
+        "language" : "en",
+        "value" : "text variable",
         "type" : "label"
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "A variable that expects a string of characters as a value",
+        "language" : "de",
+        "value" : "Eine Variable, die eine Zeichenkette als Wert erwartet",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "Eine Variable, die eine Zeichenkette als Wert erwartet",
+        "language" : "en",
+        "value" : "A variable that expects a string of characters as a value",
         "type" : "label"
       } ]
     },
@@ -2862,13 +2862,13 @@
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "data curator",
+          "language" : "de",
+          "value" : "Datenkurator*in",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Datenkurator*in",
+          "language" : "en",
+          "value" : "data curator",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -2979,13 +2979,13 @@
         } ],
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "other person",
+          "language" : "de",
+          "value" : "weitere Person",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "weitere Person",
+          "language" : "en",
+          "value" : "other person",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3047,13 +3047,13 @@
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "data collector",
+          "language" : "de",
+          "value" : "Datenerfasser*in",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Datenerfasser*in",
+          "language" : "en",
+          "value" : "data collector",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3121,13 +3121,13 @@
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "data manager",
+          "language" : "de",
+          "value" : "Datenverwalter*in",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Datenverwalter*in",
+          "language" : "en",
+          "value" : "data manager",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3158,13 +3158,13 @@
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Registrierungsbehörde",
+          "language" : "en",
+          "value" : "registration authority",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "registration authority",
+          "language" : "de",
+          "value" : "Registrierungsbehörde",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3195,13 +3195,13 @@
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Anbieter*in",
+          "language" : "en",
+          "value" : "distributor",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "distributor",
+          "language" : "de",
+          "value" : "Anbieter*in",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3227,18 +3227,49 @@
         "IRI-based" : "Distributor"
       }
     }, {
-      "iri" : "http://w3id.org/nfdi4ing/metadata4ing#RelatedPerson",
+      "iri" : "http://w3id.org/nfdi4ing/metadata4ing#RightsHolder",
       "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
           "language" : "de",
-          "value" : "zugehörige Person",
+          "value" : "Rechteinhaber*in",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
           "language" : "en",
+          "value" : "rights holder",
+          "type" : "label"
+        } ],
+        "definition" : [ {
+          "identifier" : "definition",
+          "language" : "en",
+          "value" : "Person or institution owning or managing property rights, including intellectual property rights over the resource",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://schema.datacite.org/meta/kernel-4.4/doc/DataCite-MetadataKernel_v4.4.pdf#page=40",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "RightsHolder"
+      }
+    }, {
+      "iri" : "http://w3id.org/nfdi4ing/metadata4ing#RelatedPerson",
+      "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
+      "annotations" : {
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "en",
           "value" : "related person",
+          "type" : "label"
+        }, {
+          "identifier" : "prefLabel",
+          "language" : "de",
+          "value" : "zugehörige Person",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3262,68 +3293,6 @@
       },
       "labels" : {
         "IRI-based" : "RelatedPerson"
-      }
-    }, {
-      "iri" : "http://w3id.org/nfdi4ing/metadata4ing#RightsHolder",
-      "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
-      "annotations" : {
-        "prefLabel" : [ {
-          "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "rights holder",
-          "type" : "label"
-        }, {
-          "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Rechteinhaber*in",
-          "type" : "label"
-        } ],
-        "definition" : [ {
-          "identifier" : "definition",
-          "language" : "en",
-          "value" : "Person or institution owning or managing property rights, including intellectual property rights over the resource",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "https://schema.datacite.org/meta/kernel-4.4/doc/DataCite-MetadataKernel_v4.4.pdf#page=40",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "RightsHolder"
-      }
-    }, {
-      "iri" : "http://w3id.org/nfdi4ing/metadata4ing#WorkPackageLeader",
-      "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
-      "annotations" : {
-        "prefLabel" : [ {
-          "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Arbeitspaketleiter*in",
-          "type" : "label"
-        }, {
-          "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "work package leader",
-          "type" : "label"
-        } ],
-        "definition" : [ {
-          "identifier" : "definition",
-          "language" : "en",
-          "value" : "A Work Package is a recognized data product, not all of which is included in publication. The package, instead, may include notes, discarded documents, etc. The Work Package Leader is responsible for ensuring the comprehensive contents, versioning, and availability of the Work Package during the development of the resource.",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "https://schema.datacite.org/meta/kernel-4.4/doc/DataCite-MetadataKernel_v4.4.pdf#page=40",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "WorkPackageLeader"
       }
     }, {
       "iri" : "http://w3id.org/nfdi4ing/metadata4ing#ProjectManager",
@@ -3361,6 +3330,37 @@
       },
       "labels" : {
         "IRI-based" : "ProjectManager"
+      }
+    }, {
+      "iri" : "http://w3id.org/nfdi4ing/metadata4ing#WorkPackageLeader",
+      "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
+      "annotations" : {
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "de",
+          "value" : "Arbeitspaketleiter*in",
+          "type" : "label"
+        }, {
+          "identifier" : "prefLabel",
+          "language" : "en",
+          "value" : "work package leader",
+          "type" : "label"
+        } ],
+        "definition" : [ {
+          "identifier" : "definition",
+          "language" : "en",
+          "value" : "A Work Package is a recognized data product, not all of which is included in publication. The package, instead, may include notes, discarded documents, etc. The Work Package Leader is responsible for ensuring the comprehensive contents, versioning, and availability of the Work Package during the development of the resource.",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://schema.datacite.org/meta/kernel-4.4/doc/DataCite-MetadataKernel_v4.4.pdf#page=40",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "WorkPackageLeader"
       }
     }, {
       "iri" : "http://w3id.org/nfdi4ing/metadata4ing#ContactPerson",
@@ -3479,13 +3479,13 @@
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Forschungsgruppe",
+          "language" : "en",
+          "value" : "research group",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "research group",
+          "language" : "de",
+          "value" : "Forschungsgruppe",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3516,13 +3516,13 @@
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Projektleiter*in",
+          "language" : "en",
+          "value" : "project leader",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "project leader",
+          "language" : "de",
+          "value" : "Projektleiter*in",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3553,13 +3553,13 @@
       "annotations" : {
         "prefLabel" : [ {
           "identifier" : "prefLabel",
-          "language" : "de",
-          "value" : "Produzent*in",
+          "language" : "en",
+          "value" : "producer",
           "type" : "label"
         }, {
           "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "producer",
+          "language" : "de",
+          "value" : "Produzent*in",
           "type" : "label"
         } ],
         "definition" : [ {
@@ -3586,7 +3586,7 @@
       }
     } ],
     "attributes" : [ "external" ],
-    "id" : "237"
+    "id" : "239"
   }, {
     "iri" : "http://purl.org/spar/biro/BibliographicRecord",
     "baseIri" : "http://purl.org/spar/biro",
@@ -3637,13 +3637,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "property",
+        "language" : "de",
+        "value" : "Eigenschaft",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Eigenschaft",
+        "language" : "en",
+        "value" : "property",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -3709,23 +3709,23 @@
       "editorialNote" : [ {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: added German definition, added language tag to English definition, shortened definition",
+        "value" : "changed by m4i: use of skos:prefLabel instead of rdfs:label, added German label, added language tag to English label, harmonized spelling to OBO naming conventions (lower case, space separated)",
         "type" : "label"
       }, {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: use of skos:prefLabel instead of rdfs:label, added German label, added language tag to English label, harmonized spelling to OBO naming conventions (lower case, space separated)",
+        "value" : "changed by m4i: added German definition, added language tag to English definition, shortened definition",
         "type" : "label"
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Projekt",
+        "language" : "en",
+        "value" : "project",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "project",
+        "language" : "de",
+        "value" : "Projekt",
         "type" : "label"
       } ]
     },
@@ -3762,13 +3762,13 @@
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "realisierbare Entität",
+        "language" : "en",
+        "value" : "realizable entity",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "realizable entity",
+        "language" : "de",
+        "value" : "realisierbare Entität",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -3874,7 +3874,7 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "239",
+    "id" : "238",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -3886,13 +3886,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Unsicherheitsdeklaration",
+        "language" : "en",
+        "value" : "uncertainty declaration",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "uncertainty declaration",
+        "language" : "de",
+        "value" : "Unsicherheitsdeklaration",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -3911,9 +3911,9 @@
     "superClasses" : [ "27" ]
   }, {
     "instances" : 0,
-    "union" : [ "102", "169" ],
+    "union" : [ "102", "171" ],
     "attributes" : [ "union", "anonymous" ],
-    "id" : "261"
+    "id" : "262"
   }, {
     "instances" : 0,
     "union" : [ "29", "16" ],
@@ -3923,7 +3923,7 @@
     "instances" : 0,
     "union" : [ "53", "89" ],
     "attributes" : [ "union", "anonymous" ],
-    "id" : "263"
+    "id" : "264"
   }, {
     "instances" : 0,
     "union" : [ "53", "89" ],
@@ -3931,7 +3931,7 @@
     "id" : "36"
   }, {
     "instances" : 0,
-    "union" : [ "102", "169" ],
+    "union" : [ "102", "171" ],
     "attributes" : [ "union", "anonymous" ],
     "id" : "248"
   }, {
@@ -3973,7 +3973,7 @@
       "editorialNote" : [ {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: changed label to \"research project\" (no CamelCase)",
+        "value" : "changed by m4i: added German definition, added language tag to English definition",
         "type" : "label"
       }, {
         "identifier" : "editorialNote",
@@ -3983,18 +3983,18 @@
       }, {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: added German definition, added language tag to English definition",
+        "value" : "changed by m4i: changed label to \"research project\" (no CamelCase)",
         "type" : "label"
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Forschungsprojekt",
+        "language" : "en",
+        "value" : "research project",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "research project",
+        "language" : "de",
+        "value" : "Forschungsprojekt",
         "type" : "label"
       } ]
     },
@@ -4091,12 +4091,12 @@
       "scopeNote" : [ {
         "identifier" : "scopeNote",
         "language" : "en",
-        "value" : "The notion of dataset in DCAT is broad and inclusive, with the intention of accommodating resource types arising from all communities. Data comes in many forms including numbers, text, pixels, imagery, sound and other multi-media, and potentially other types, any of which might be collected into a dataset.",
+        "value" : "This class describes the conceptual dataset. One or more representations might be available, with differing schematic layouts and formats or serializations.",
         "type" : "label"
       }, {
         "identifier" : "scopeNote",
         "language" : "en",
-        "value" : "This class describes the conceptual dataset. One or more representations might be available, with differing schematic layouts and formats or serializations.",
+        "value" : "The notion of dataset in DCAT is broad and inclusive, with the intention of accommodating resource types arising from all communities. Data comes in many forms including numbers, text, pixels, imagery, sound and other multi-media, and potentially other types, any of which might be collected into a dataset.",
         "type" : "label"
       } ]
     },
@@ -4449,7 +4449,7 @@
     "id" : "207",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "171",
+    "id" : "169",
     "type" : "owl:objectProperty"
   }, {
     "id" : "151",
@@ -4521,7 +4521,7 @@
     "id" : "236",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "238",
+    "id" : "237",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "240",
@@ -4561,49 +4561,49 @@
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "255",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "256",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "257",
+    "id" : "256",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "257",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "258",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "259",
-    "type" : "owl:someValuesFrom"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "260",
     "type" : "owl:someValuesFrom"
   }, {
-    "id" : "262",
+    "id" : "261",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "263",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "210",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "264",
+    "id" : "265",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "265",
+    "id" : "266",
     "type" : "owl:objectProperty"
   }, {
     "id" : "245",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "266",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "267",
-    "type" : "owl:someValuesFrom"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "268",
     "type" : "owl:someValuesFrom"
   }, {
     "id" : "269",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "270",
     "type" : "rdfs:SubClassOf"
@@ -4611,20 +4611,20 @@
     "id" : "271",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "123",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "272",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "123",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "273",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "274",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "275",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "276",
     "type" : "rdfs:SubClassOf"
@@ -4685,13 +4685,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has runtime assignment",
+        "language" : "de",
+        "value" : "hat Laufzeitzuweisung",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Laufzeitzuweisung",
+        "language" : "en",
+        "value" : "has runtime assignment",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -4741,13 +4741,13 @@
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "end date of a project",
+        "language" : "de",
+        "value" : "Projektenddatum",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "Projektenddatum",
+        "language" : "en",
+        "value" : "end date of a project",
         "type" : "label"
       } ]
     },
@@ -4779,16 +4779,16 @@
         "value" : "starts with",
         "type" : "label"
       } ],
-      "altLabel" : [ {
-        "identifier" : "altLabel",
-        "language" : "en",
-        "value" : "started by",
-        "type" : "label"
-      } ],
       "definition" : [ {
         "identifier" : "definition",
         "language" : "en",
         "value" : "x starts with y if and only if x has part y and the time point at which x starts is equivalent to the time point at which y starts. Formally: α(y) = α(x) ∧ ω(y) < ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.",
+        "type" : "label"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "started by",
         "type" : "label"
       } ],
       "seeAlso" : [ {
@@ -4803,7 +4803,7 @@
     },
     "superproperty" : [ "23" ],
     "domain" : "7",
-    "attributes" : [ "transitive", "object", "external" ],
+    "attributes" : [ "object", "transitive", "external" ],
     "id" : "22"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#realizesMethod",
@@ -4812,13 +4812,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "realizes method",
+        "language" : "de",
+        "value" : "realisiert Methode",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "realisiert Methode",
+        "language" : "en",
+        "value" : "realizes method",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -4842,13 +4842,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Verwendungshinweis",
+        "language" : "en",
+        "value" : "usage instruction",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "usage instruction",
+        "language" : "de",
+        "value" : "Verwendungshinweis",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -4954,12 +4954,12 @@
       "editorialNote" : [ {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: copied obo:IAO_0000115 to a skos:definition",
+        "value" : "changed by m4i: added german labels, added skos:prefLabel",
         "type" : "label"
       }, {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: added german labels, added skos:prefLabel",
+        "value" : "changed by m4i: copied obo:IAO_0000115 to a skos:definition",
         "type" : "label"
       } ],
       "prefLabel" : [ {
@@ -5001,13 +5001,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Output",
+        "language" : "en",
+        "value" : "has output",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has output",
+        "language" : "de",
+        "value" : "hat Output",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5067,24 +5067,24 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "is employed tool",
+        "language" : "de",
+        "value" : "ist eingesetztes Werkzeug",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "ist eingesetztes Werkzeug",
+        "language" : "en",
+        "value" : "is employed tool",
         "type" : "label"
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "verweist auf einen Arbeitsschritt, in dem das Werkzeug eingesetzt wurde",
+        "language" : "en",
+        "value" : "Points to a processing step the tool has been used in",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "Points to a processing step the tool has been used in",
+        "language" : "de",
+        "value" : "verweist auf einen Arbeitsschritt, in dem das Werkzeug eingesetzt wurde",
         "type" : "label"
       } ]
     },
@@ -5107,13 +5107,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "input of",
+        "language" : "de",
+        "value" : "Input von",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Input von",
+        "language" : "en",
+        "value" : "input of",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5170,7 +5170,7 @@
     },
     "superproperty" : [ "23" ],
     "domain" : "7",
-    "attributes" : [ "transitive", "object", "external" ],
+    "attributes" : [ "object", "transitive", "external" ],
     "id" : "44"
   }, {
     "range" : "18",
@@ -5237,13 +5237,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Kompressionsformat",
+        "language" : "en",
+        "value" : "compression format",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "compression format",
+        "language" : "de",
+        "value" : "Kompressionsformat",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5308,6 +5308,11 @@
       } ],
       "altLabel" : [ {
         "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "has unique identifier",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
         "language" : "de",
         "value" : "besitzt eindeutigen Identifikator",
         "type" : "label"
@@ -5315,11 +5320,6 @@
         "identifier" : "altLabel",
         "language" : "en",
         "value" : "is represented through identifier",
-        "type" : "label"
-      }, {
-        "identifier" : "altLabel",
-        "language" : "en",
-        "value" : "has unique identifier",
         "type" : "label"
       }, {
         "identifier" : "altLabel",
@@ -5373,13 +5373,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Zahlenwert",
+        "language" : "en",
+        "value" : "has numerical value",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has numerical value",
+        "language" : "de",
+        "value" : "hat Zahlenwert",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5396,12 +5396,12 @@
       }, {
         "identifier" : "broader",
         "language" : "undefined",
-        "value" : "http://www.molmod.info/semantics/pims-ii.ttl#isLiterally",
+        "value" : "https://ptb.de/si/hasValue",
         "type" : "iri"
       }, {
         "identifier" : "broader",
         "language" : "undefined",
-        "value" : "https://ptb.de/si/hasValue",
+        "value" : "http://www.molmod.info/semantics/pims-ii.ttl#isLiterally",
         "type" : "iri"
       } ]
     },
@@ -5431,13 +5431,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Packformat",
+        "language" : "en",
+        "value" : "packaging format",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "packaging format",
+        "language" : "de",
+        "value" : "Packformat",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5484,17 +5484,17 @@
       "broader" : [ {
         "identifier" : "broader",
         "language" : "undefined",
-        "value" : "http://www.molmod.info/semantics/pims-ii.ttl#isLiterally",
-        "type" : "iri"
-      }, {
-        "identifier" : "broader",
-        "language" : "undefined",
         "value" : "https://ptb.de/si/hasValue",
         "type" : "iri"
       }, {
         "identifier" : "broader",
         "language" : "undefined",
         "value" : "http://qudt.org/schema/qudt/value",
+        "type" : "iri"
+      }, {
+        "identifier" : "broader",
+        "language" : "undefined",
+        "value" : "http://www.molmod.info/semantics/pims-ii.ttl#isLiterally",
         "type" : "iri"
       } ]
     },
@@ -5552,13 +5552,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Datumszuweisung erzeugt",
+        "language" : "en",
+        "value" : "has date assignment created",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has date assignment created",
+        "language" : "de",
+        "value" : "hat Datumszuweisung erzeugt",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5619,13 +5619,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "file size (in bytes)",
+        "language" : "de",
+        "value" : "Dateigröße (in Byte)",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Dateigröße (in Byte)",
+        "language" : "en",
+        "value" : "file size (in bytes)",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5672,17 +5672,17 @@
       "broader" : [ {
         "identifier" : "broader",
         "language" : "undefined",
+        "value" : "http://qudt.org/schema/qudt/value",
+        "type" : "iri"
+      }, {
+        "identifier" : "broader",
+        "language" : "undefined",
         "value" : "http://www.molmod.info/semantics/pims-ii.ttl#isLiterally",
         "type" : "iri"
       }, {
         "identifier" : "broader",
         "language" : "undefined",
         "value" : "https://ptb.de/si/hasValue",
-        "type" : "iri"
-      }, {
-        "identifier" : "broader",
-        "language" : "undefined",
-        "value" : "http://qudt.org/schema/qudt/value",
         "type" : "iri"
       } ]
     },
@@ -5705,13 +5705,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "räumliche Auflösung (in Metern)",
+        "language" : "en",
+        "value" : "spatial resolution (in metres)",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "spatial resolution (in metres)",
+        "language" : "de",
+        "value" : "räumliche Auflösung (in Metern)",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5723,12 +5723,12 @@
       "scopeNote" : [ {
         "identifier" : "scopeNote",
         "language" : "en",
-        "value" : "Alternative spatial resolutions might be provided as different dataset distributions.",
+        "value" : "If the dataset is an image or grid this should correspond to the spacing of items. For other kinds of spatial dataset, this property will usually indicate the smallest distance between items in the dataset.",
         "type" : "label"
       }, {
         "identifier" : "scopeNote",
         "language" : "en",
-        "value" : "If the dataset is an image or grid this should correspond to the spacing of items. For other kinds of spatial dataset, this property will usually indicate the smallest distance between items in the dataset.",
+        "value" : "Alternative spatial resolutions might be provided as different dataset distributions.",
         "type" : "label"
       } ]
     },
@@ -5781,13 +5781,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Zuweisungszeitstempel",
+        "language" : "en",
+        "value" : "has assignment timestamp",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has assignment timestamp",
+        "language" : "de",
+        "value" : "hat Zuweisungszeitstempel",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5853,12 +5853,12 @@
       "editorialNote" : [ {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: added german labels, added skos:prefLabel",
+        "value" : "changed by m4i: copied obo:IAO_0000115 to a skos:definition",
         "type" : "label"
       }, {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: copied obo:IAO_0000115 to a skos:definition",
+        "value" : "changed by m4i: added german labels, added skos:prefLabel",
         "type" : "label"
       }, {
         "identifier" : "editorialNote",
@@ -5868,13 +5868,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Teilnehmer",
+        "language" : "en",
+        "value" : "has participant",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has participant",
+        "language" : "de",
+        "value" : "hat Teilnehmer",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -5904,13 +5904,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "salutation",
+        "language" : "de",
+        "value" : "Anrede",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Anrede",
+        "language" : "en",
+        "value" : "salutation",
         "type" : "label"
       } ]
     },
@@ -5941,13 +5941,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "implemented by",
+        "language" : "de",
+        "value" : "wird implementiert durch",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "wird implementiert durch",
+        "language" : "en",
+        "value" : "implemented by",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -6046,17 +6046,6 @@
         "value" : "hat ROR ID",
         "type" : "label"
       } ],
-      "altLabel" : [ {
-        "identifier" : "altLabel",
-        "language" : "en",
-        "value" : "has research organization registry id",
-        "type" : "label"
-      }, {
-        "identifier" : "altLabel",
-        "language" : "de",
-        "value" : "hat Forschungsorganisationsid",
-        "type" : "label"
-      } ],
       "definition" : [ {
         "identifier" : "definition",
         "language" : "en",
@@ -6066,6 +6055,17 @@
         "identifier" : "definition",
         "language" : "de",
         "value" : "Eine Identifier für Organisationen der Research Organization Registry, die eine Forschungseinrichtung eindeutig identifiziert.",
+        "type" : "label"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "has research organization registry id",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "de",
+        "value" : "hat Forschungsorganisationsid",
         "type" : "label"
       } ]
     },
@@ -6088,13 +6088,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Deckungswahrscheinlichkeit",
+        "language" : "en",
+        "value" : "has coverage probability",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has coverage probability",
+        "language" : "de",
+        "value" : "hat Deckungswahrscheinlichkeit",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -6195,13 +6195,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "Vorname",
+        "language" : "en",
+        "value" : "first name",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "first name",
+        "language" : "de",
+        "value" : "Vorname",
         "type" : "label"
       } ]
     },
@@ -6265,13 +6265,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Standardunsicherheit",
+        "language" : "en",
+        "value" : "has standard uncertainty",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has standard uncertainty",
+        "language" : "de",
+        "value" : "hat Standardunsicherheit",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -6295,13 +6295,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat erweiterte Unsicherheit",
+        "language" : "en",
+        "value" : "has expanded uncertainty",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has expanded uncertainty",
+        "language" : "de",
+        "value" : "hat erweiterte Unsicherheit",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -6427,16 +6427,6 @@
     "annotations" : {
       "note" : [ {
         "identifier" : "note",
-        "language" : "en",
-        "value" : "We recommend using a resolvable PID from a controlled vocabulary, such as ISO 80000, IEC or QUDT",
-        "type" : "label"
-      }, {
-        "identifier" : "note",
-        "language" : "de",
-        "value" : "Obligation dieser Property bei der Beschreibung eines si:Real: recommended",
-        "type" : "label"
-      }, {
-        "identifier" : "note",
         "language" : "de",
         "value" : "Kardinalität dieser Property bei der Beschreibung eines si:Real: 0-1",
         "type" : "label"
@@ -6444,6 +6434,16 @@
         "identifier" : "note",
         "language" : "en",
         "value" : "cardinality of this property for the description of a si:Real: 0-1",
+        "type" : "label"
+      }, {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "We recommend using a resolvable PID from a controlled vocabulary, such as ISO 80000, IEC or QUDT",
+        "type" : "label"
+      }, {
+        "identifier" : "note",
+        "language" : "de",
+        "value" : "Obligation dieser Property bei der Beschreibung eines si:Real: recommended",
         "type" : "label"
       }, {
         "identifier" : "note",
@@ -6475,13 +6475,13 @@
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "Represents the unit of a numerical (real) value",
+        "language" : "de",
+        "value" : "Repräsentiert die Einheit eines numerischen (reelen) Wertes",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "Repräsentiert die Einheit eines numerischen (reelen) Wertes",
+        "language" : "en",
+        "value" : "Represents the unit of a numerical (real) value",
         "type" : "label"
       } ]
     },
@@ -6561,13 +6561,13 @@
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "Buchstabe oder Zeichenkette, die eine Variable repräsentiert",
+        "language" : "en",
+        "value" : "Letter or string that denotes a variable",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "Letter or string that denotes a variable",
+        "language" : "de",
+        "value" : "Buchstabe oder Zeichenkette, die eine Variable repräsentiert",
         "type" : "label"
       } ],
       "broader" : [ {
@@ -6590,13 +6590,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "wird implementiert durch",
+        "language" : "en",
+        "value" : "implemented by",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "implemented by",
+        "language" : "de",
+        "value" : "wird implementiert durch",
         "type" : "label"
       } ]
     },
@@ -6608,9 +6608,39 @@
     "attributes" : [ "object", "external" ],
     "id" : "124"
   }, {
+    "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "64",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "precedes",
+        "type" : "label"
+      }, {
+        "identifier" : "prefLabel",
+        "language" : "de",
+        "value" : "ist Voraussetzung für Schritt",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "BFO_0000063"
+    },
+    "domain" : "64",
+    "subproperty" : [ "169" ],
+    "attributes" : [ "object", "transitive", "external" ],
+    "id" : "168"
+  }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasKindOfQuantity",
     "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
-    "range" : "169",
+    "range" : "171",
     "annotations" : {
       "note" : [ {
         "identifier" : "note",
@@ -6641,36 +6671,6 @@
     },
     "domain" : "102",
     "attributes" : [ "object", "external" ],
-    "id" : "168"
-  }, {
-    "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
-    "baseIri" : "http://purl.obolibrary.org/obo",
-    "range" : "64",
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "ist Voraussetzung für Schritt",
-        "type" : "label"
-      }, {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "precedes",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "BFO_0000063"
-    },
-    "domain" : "64",
-    "subproperty" : [ "171" ],
-    "attributes" : [ "transitive", "object", "external" ],
     "id" : "170"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasAdmissibleValue",
@@ -6774,13 +6774,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Projekt-ID",
+        "language" : "en",
+        "value" : "has project ID",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has project ID",
+        "language" : "de",
+        "value" : "hat Projekt-ID",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -6821,13 +6821,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "realized in",
+        "language" : "de",
+        "value" : "realisiert in",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "realisiert in",
+        "language" : "en",
+        "value" : "realized in",
         "type" : "label"
       } ]
     },
@@ -6858,13 +6858,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has part",
+        "language" : "de",
+        "value" : "hat Teil",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Teil",
+        "language" : "en",
+        "value" : "has part",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -6879,7 +6879,7 @@
     },
     "domain" : "38",
     "subproperty" : [ "22", "44" ],
-    "attributes" : [ "transitive", "object", "external" ],
+    "attributes" : [ "object", "transitive", "external" ],
     "id" : "23"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000055",
@@ -6958,13 +6958,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has property",
+        "language" : "de",
+        "value" : "hat Eigenschaft",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Eigenschaft",
+        "language" : "en",
+        "value" : "has property",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7036,12 +7036,12 @@
       "editorialNote" : [ {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: added german labels, added skos:prefLabel",
+        "value" : "changed by m4i: copied obo:IAO_0000115 to a skos:definition",
         "type" : "label"
       }, {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: copied obo:IAO_0000115 to a skos:definition",
+        "value" : "changed by m4i: added german labels, added skos:prefLabel",
         "type" : "label"
       } ],
       "prefLabel" : [ {
@@ -7067,7 +7067,7 @@
     },
     "domain" : "38",
     "subproperty" : [ "196" ],
-    "attributes" : [ "transitive", "object", "external" ],
+    "attributes" : [ "object", "transitive", "external" ],
     "id" : "195"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#startOfProject",
@@ -7087,13 +7087,13 @@
       } ],
       "definition" : [ {
         "identifier" : "definition",
-        "language" : "en",
-        "value" : "start date of a project",
+        "language" : "de",
+        "value" : "Startdatum eines Projekts",
         "type" : "label"
       }, {
         "identifier" : "definition",
-        "language" : "de",
-        "value" : "Startdatum eines Projekts",
+        "language" : "en",
+        "value" : "start date of a project",
         "type" : "label"
       } ]
     },
@@ -7193,13 +7193,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "is assignment for",
+        "language" : "de",
+        "value" : "ist Zuweisung in Bezug auf",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "ist Zuweisung in Bezug auf",
+        "language" : "en",
+        "value" : "is assignment for",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7253,13 +7253,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "ist unmittelbare Voraussetzung für Schritt",
+        "language" : "en",
+        "value" : "immediately precedes",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "immediately precedes",
+        "language" : "de",
+        "value" : "ist unmittelbare Voraussetzung für Schritt",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7272,10 +7272,10 @@
     "label" : {
       "IRI-based" : "RO_0002090"
     },
-    "superproperty" : [ "170" ],
+    "superproperty" : [ "168" ],
     "domain" : "64",
     "attributes" : [ "object", "external" ],
-    "id" : "171"
+    "id" : "169"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasUncertaintyDeclaration",
     "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
@@ -7283,13 +7283,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has uncertainty declaration",
+        "language" : "de",
+        "value" : "hat Unsicherheitsdeklaration",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Unsicherheitsdeklaration",
+        "language" : "en",
+        "value" : "has uncertainty declaration",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7364,13 +7364,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat zugewiesenen Wert",
+        "language" : "en",
+        "value" : "has assigned value",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has assigned value",
+        "language" : "de",
+        "value" : "hat zugewiesenen Wert",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7413,13 +7413,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Zeichenwert",
+        "language" : "en",
+        "value" : "has string value",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has string value",
+        "language" : "de",
+        "value" : "hat Zeichenwert",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7538,13 +7538,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "ist Eigenschaft von",
+        "language" : "en",
+        "value" : "is property of",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "is property of",
+        "language" : "de",
+        "value" : "ist Eigenschaft von",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7578,13 +7578,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has agent",
+        "language" : "de",
+        "value" : "ist Akteur in",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "ist Akteur in",
+        "language" : "en",
+        "value" : "has agent",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7607,13 +7607,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has parameter",
+        "language" : "de",
+        "value" : "hat Parameter",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Parameter",
+        "language" : "en",
+        "value" : "has parameter",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7639,16 +7639,16 @@
     "baseIri" : "http://www.w3.org/ns/prov",
     "range" : "189",
     "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "In metadata4ing use obo:RO_0000057 as unqualified form for the relation between an activity and an agent.",
-        "type" : "label"
-      } ],
       "editorialNote" : [ {
         "identifier" : "editorialNote",
         "language" : "en",
         "value" : "changed by m4i: added german label, added skos:prefLabel, added skos:definition, skos:example and skos:note",
+        "type" : "label"
+      } ],
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "In metadata4ing use obo:RO_0000057 as unqualified form for the relation between an activity and an agent.",
         "type" : "label"
       } ],
       "isDefinedBy" : [ {
@@ -7659,13 +7659,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "qualified association",
+        "language" : "de",
+        "value" : "näher beschriebene Verbindung",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "näher beschriebene Verbindung",
+        "language" : "en",
+        "value" : "qualified association",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7704,13 +7704,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "investigates property",
+        "language" : "de",
+        "value" : "untersucht Eigenschaft",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "untersucht Eigenschaft",
+        "language" : "en",
+        "value" : "investigates property",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7761,7 +7761,7 @@
   }, {
     "iri" : "https://ptb.de/si/hasCoverageFactor",
     "baseIri" : "https://ptb.de/si",
-    "range" : "239",
+    "range" : "238",
     "annotations" : {
       "editorialNote" : [ {
         "identifier" : "editorialNote",
@@ -7771,13 +7771,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Überdeckungsfaktor",
+        "language" : "en",
+        "value" : "has coverage factor",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has coverage factor",
+        "language" : "de",
+        "value" : "hat Überdeckungsfaktor",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7793,7 +7793,7 @@
     "cardinality" : "1",
     "domain" : "69",
     "attributes" : [ "datatype", "external" ],
-    "id" : "238"
+    "id" : "237"
   }, {
     "range" : "54",
     "domain" : "89",
@@ -7908,13 +7908,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Intervallminimum",
+        "language" : "en",
+        "value" : "has interval minimum",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has interval minimum",
+        "language" : "de",
+        "value" : "hat Intervallminimum",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -7967,7 +7967,7 @@
     "comment" : {
       "undefined" : "redundant information: admissible unit can be deduced from quantity kind. If one wants to enforce the use of a specific unit, use a SHACL contraint."
     },
-    "attributes" : [ "deprecated", "object", "external" ],
+    "attributes" : [ "object", "deprecated", "external" ],
     "id" : "247"
   }, {
     "iri" : "http://www.molmod.info/semantics/pims-ii.ttl#isValueInAssignment",
@@ -8012,7 +8012,7 @@
     "id" : "215"
   }, {
     "range" : "27",
-    "domain" : "169",
+    "domain" : "171",
     "attributes" : [ "object", "anonymous" ],
     "id" : "251"
   }, {
@@ -8031,10 +8031,34 @@
     "attributes" : [ "object", "anonymous" ],
     "id" : "254"
   }, {
+    "iri" : "https://matthiasprobst.github.io/ssno#hasStandardNameDescription",
+    "baseIri" : "https://matthiasprobst.github.io/ssno",
+    "range" : "167",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "standard name description",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Description of a standard name or a standard name table",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasStandardNameDescription"
+    },
+    "domain" : "112",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "255"
+  }, {
     "range" : "77",
     "domain" : "118",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "255"
+    "id" : "256"
   }, {
     "iri" : "https://ptb.de/si/hasUncertainty",
     "baseIri" : "https://ptb.de/si",
@@ -8070,21 +8094,21 @@
     "cardinality" : "1",
     "domain" : "69",
     "attributes" : [ "datatype", "external" ],
-    "id" : "256"
+    "id" : "257"
   }, {
     "range" : "77",
     "domain" : "177",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "257"
+    "id" : "258"
   }, {
     "range" : "77",
     "domain" : "51",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "258"
+    "id" : "259"
   }, {
-    "iri" : "http://www.molmod.info/semantics/pims-ii.ttl#isVariableInAssignment",
+    "iri" : "http://www.molmod.info/semantics/pims-ii.ttl#isValueInAssignment",
     "baseIri" : "http://www.molmod.info/semantics/pims-ii.ttl",
-    "range" : "49",
+    "range" : "48",
     "annotations" : {
       "editorialNote" : [ {
         "identifier" : "editorialNote",
@@ -8095,18 +8119,18 @@
       "prefLabel" : [ {
         "identifier" : "prefLabel",
         "language" : "de",
-        "value" : "ist Variable in Zuweisung",
+        "value" : "ist Wert in Zuweisung",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
         "language" : "en",
-        "value" : "is variable in assignment",
+        "value" : "is value in assignment",
         "type" : "label"
       } ],
       "definition" : [ {
         "identifier" : "definition",
         "language" : "en",
-        "value" : "(x isVariableInAssignment a) means that a: x = y is an assignment where a value y is assigned to the variable x",
+        "value" : "(y isValueInAssignment a) means that a: x = y is an assignment where the value y is assigned to a variable x",
         "type" : "label"
       } ],
       "broader" : [ {
@@ -8117,11 +8141,11 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "isVariableInAssignment"
+      "IRI-based" : "isValueInAssignment"
     },
     "domain" : "8",
-    "attributes" : [ "someValues", "object", "external" ],
-    "id" : "259"
+    "attributes" : [ "object", "someValues", "external" ],
+    "id" : "260"
   }, {
     "iri" : "http://www.molmod.info/semantics/pims-ii.ttl#isAdmissibleValueFor",
     "baseIri" : "http://www.molmod.info/semantics/pims-ii.ttl",
@@ -8155,8 +8179,8 @@
       "IRI-based" : "isAdmissibleValueFor"
     },
     "domain" : "49",
-    "attributes" : [ "someValues", "object", "external" ],
-    "id" : "260"
+    "attributes" : [ "object", "someValues", "external" ],
+    "id" : "261"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasDateAssignmentModified",
     "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
@@ -8164,13 +8188,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has date assignment modified",
+        "language" : "de",
+        "value" : "hat Datumszuweisung bearbeitet",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Datumszuweisung bearbeitet",
+        "language" : "en",
+        "value" : "has date assignment modified",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -8191,7 +8215,7 @@
     },
     "domain" : "8",
     "attributes" : [ "datatype", "external" ],
-    "id" : "262"
+    "id" : "263"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasCoverageInterval",
     "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
@@ -8199,13 +8223,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has coverage interval",
+        "language" : "de",
+        "value" : "hat Überdeckungsintervall",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Überdeckungsintervall",
+        "language" : "en",
+        "value" : "has coverage interval",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -8235,13 +8259,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "temporal resolution",
+        "language" : "de",
+        "value" : "zeitliche Auflösung",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "zeitliche Auflösung",
+        "language" : "en",
+        "value" : "temporal resolution",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -8267,7 +8291,7 @@
     },
     "domain" : "38",
     "attributes" : [ "datatype", "external" ],
-    "id" : "264"
+    "id" : "265"
   }, {
     "iri" : "http://www.w3.org/ns/dcat#downloadURL",
     "baseIri" : "http://www.w3.org/ns/dcat",
@@ -8314,7 +8338,7 @@
     },
     "domain" : "56",
     "attributes" : [ "object", "external" ],
-    "id" : "265"
+    "id" : "266"
   }, {
     "iri" : "http://www.molmod.info/semantics/pims-ii.ttl#isVariableInAssignment",
     "baseIri" : "http://www.molmod.info/semantics/pims-ii.ttl",
@@ -8382,7 +8406,7 @@
     },
     "domain" : "38",
     "attributes" : [ "object", "external" ],
-    "id" : "266"
+    "id" : "267"
   }, {
     "iri" : "http://www.molmod.info/semantics/pims-ii.ttl#isValueInAssignment",
     "baseIri" : "http://www.molmod.info/semantics/pims-ii.ttl",
@@ -8422,12 +8446,12 @@
       "IRI-based" : "isValueInAssignment"
     },
     "domain" : "121",
-    "attributes" : [ "someValues", "object", "external" ],
-    "id" : "267"
+    "attributes" : [ "object", "someValues", "external" ],
+    "id" : "268"
   }, {
-    "iri" : "http://www.molmod.info/semantics/pims-ii.ttl#isValueInAssignment",
+    "iri" : "http://www.molmod.info/semantics/pims-ii.ttl#isVariableInAssignment",
     "baseIri" : "http://www.molmod.info/semantics/pims-ii.ttl",
-    "range" : "48",
+    "range" : "49",
     "annotations" : {
       "editorialNote" : [ {
         "identifier" : "editorialNote",
@@ -8438,18 +8462,18 @@
       "prefLabel" : [ {
         "identifier" : "prefLabel",
         "language" : "de",
-        "value" : "ist Wert in Zuweisung",
+        "value" : "ist Variable in Zuweisung",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
         "language" : "en",
-        "value" : "is value in assignment",
+        "value" : "is variable in assignment",
         "type" : "label"
       } ],
       "definition" : [ {
         "identifier" : "definition",
         "language" : "en",
-        "value" : "(y isValueInAssignment a) means that a: x = y is an assignment where the value y is assigned to a variable x",
+        "value" : "(x isVariableInAssignment a) means that a: x = y is an assignment where a value y is assigned to the variable x",
         "type" : "label"
       } ],
       "broader" : [ {
@@ -8460,26 +8484,26 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "isValueInAssignment"
+      "IRI-based" : "isVariableInAssignment"
     },
     "domain" : "8",
-    "attributes" : [ "someValues", "object", "external" ],
-    "id" : "268"
+    "attributes" : [ "object", "someValues", "external" ],
+    "id" : "269"
   }, {
     "range" : "29",
     "domain" : "143",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "269"
+    "id" : "270"
   }, {
     "range" : "29",
     "domain" : "129",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "270"
+    "id" : "271"
   }, {
     "range" : "211",
     "domain" : "212",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "271"
+    "id" : "272"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#implementsMethod",
     "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
@@ -8487,13 +8511,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "implementiert",
+        "language" : "en",
+        "value" : "implements",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "implements",
+        "language" : "de",
+        "value" : "implementiert",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -8514,12 +8538,12 @@
     "range" : "29",
     "domain" : "5",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "272"
+    "id" : "273"
   }, {
     "range" : "173",
     "domain" : "176",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "273"
+    "id" : "274"
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/mbox",
     "baseIri" : "http://xmlns.com/foaf/0.1",
@@ -8539,13 +8563,13 @@
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "E-Mail-Adresse",
+        "language" : "en",
+        "value" : "personal mailbox",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "personal mailbox",
+        "language" : "de",
+        "value" : "E-Mail-Adresse",
         "type" : "label"
       } ]
     },
@@ -8556,31 +8580,7 @@
     "comment" : {
       "undefined" : "A personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that   there is (across time and change) at most one individual that ever has any particular value for foaf:mbox."
     },
-    "attributes" : [ "object", "external", "inverse functional" ],
-    "id" : "274"
-  }, {
-    "iri" : "https://matthiasprobst.github.io/ssno#description",
-    "baseIri" : "https://matthiasprobst.github.io/ssno",
-    "range" : "167",
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "description",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "Description of a standard name or a standard name table",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "description"
-    },
-    "domain" : "112",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "object", "inverse functional", "external" ],
     "id" : "275"
   }, {
     "range" : "173",
@@ -8589,14 +8589,14 @@
     "id" : "276"
   }, {
     "iri" : "http://www.w3.org/ns/prov#hadRole",
-    "inverse" : "266",
+    "inverse" : "267",
     "baseIri" : "http://www.w3.org/ns/prov",
     "range" : "38",
     "annotations" : {
       "editorialNote" : [ {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: added german label",
+        "value" : "changed by m4i: simplified rdfs:domain to prov:Association",
         "type" : "label"
       }, {
         "identifier" : "editorialNote",
@@ -8606,7 +8606,7 @@
       }, {
         "identifier" : "editorialNote",
         "language" : "en",
-        "value" : "changed by m4i: simplified rdfs:domain to prov:Association",
+        "value" : "changed by m4i: added german label",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -8651,13 +8651,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat Variablenbeschreibung",
+        "language" : "en",
+        "value" : "has variable description",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has variable description",
+        "language" : "de",
+        "value" : "hat Variablenbeschreibung",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -8686,13 +8686,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "associated to project",
+        "language" : "de",
+        "value" : "gehört zu Projekt",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "gehört zu Projekt",
+        "language" : "en",
+        "value" : "associated to project",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -8705,7 +8705,7 @@
     "label" : {
       "IRI-based" : "inProject"
     },
-    "domain" : "263",
+    "domain" : "264",
     "attributes" : [ "object", "external" ],
     "id" : "283"
   }, {
@@ -8716,13 +8716,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "hat als zulässige Einheit",
+        "language" : "en",
+        "value" : "has admissible unit",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has admissible unit",
+        "language" : "de",
+        "value" : "hat als zulässige Einheit",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -8735,11 +8735,11 @@
     "label" : {
       "IRI-based" : "hasAdmissibleUnit"
     },
-    "domain" : "261",
+    "domain" : "262",
     "comment" : {
       "undefined" : "redundant information: applicable unit can be deduced from quantity kind. If one wants to enforce the use of a specific unit, use a SHACL constraint."
     },
-    "attributes" : [ "deprecated", "object", "external" ],
+    "attributes" : [ "object", "deprecated", "external" ],
     "id" : "284"
   }, {
     "range" : "25",

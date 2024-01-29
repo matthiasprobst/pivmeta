@@ -312,14 +312,14 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#description -->
+    <!-- https://matthiasprobst.github.io/ssno#hasStandardNameDescription -->
 
 
-    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/ssno#description">
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <skos:definition xml:lang="en">Description of a standard name or a standard name table</skos:definition>
-        <skos:prefLabel xml:lang="en">description</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">standard name description</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -805,7 +805,7 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
-        <ssno:description xml:lang="en">The spatial coordinate.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The spatial coordinate.</ssno:hasStandardNameDescription>
         <ssno:standard_name>coordinate</ssno:standard_name>
         <skos:prefLabel xml:lang="en">coordinate</skos:prefLabel>
     </owl:NamedIndividual>
@@ -817,7 +817,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">PIV displacement.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">PIV displacement.</ssno:hasStandardNameDescription>
         <ssno:standard_name>displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -829,7 +829,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>first_peak_x_displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">first_peak_x_displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -841,7 +841,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>first_peak_y_displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">first_peak_y_displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -853,7 +853,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The size of the image filter kernel.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The size of the image filter kernel.</ssno:hasStandardNameDescription>
         <ssno:standard_name>image_filter_kernel_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">image_filter_kernel_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -865,7 +865,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_particle_density">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Number of particle images per pixel. Equals the number of particles divided by the image area.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Number of particle images per pixel. Equals the number of particles divided by the image area.</ssno:hasStandardNameDescription>
         <ssno:standard_name>image_particle_density</ssno:standard_name>
         <skos:prefLabel xml:lang="en">image_particle_density</skos:prefLabel>
     </owl:NamedIndividual>
@@ -877,7 +877,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_particle_diameter">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The diameter of an image particle.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The diameter of an image particle.</ssno:hasStandardNameDescription>
         <ssno:standard_name>image_particle_diameter</ssno:standard_name>
         <skos:prefLabel xml:lang="en">image_particle_diameter</skos:prefLabel>
     </owl:NamedIndividual>
@@ -890,7 +890,7 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#inplane_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
-        <ssno:description xml:lang="en">Velocity is a vector quantity. Without a prefix &apos;x&apos;, &apos;y&apos; or &apos;z&apos; it indicates the magnitute of the velocity vector. &apos;inplane&apos; indicates that the velocity magnitude was computed based on the in-plane components only.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Velocity is a vector quantity. Without a prefix &apos;x&apos;, &apos;y&apos; or &apos;z&apos; it indicates the magnitute of the velocity vector. &apos;inplane&apos; indicates that the velocity magnitude was computed based on the in-plane components only.</ssno:hasStandardNameDescription>
         <ssno:standard_name>inplane_velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">inplane_velocity</skos:prefLabel>
     </owl:NamedIndividual>
@@ -903,7 +903,7 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:unit rdf:resource="https://qudt.org/vocab/unit/SEC"/>
-        <ssno:description xml:lang="en">Time between two laser pulses.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Time between two laser pulses.</ssno:hasStandardNameDescription>
         <ssno:standard_name>laser_pulse_delay</ssno:standard_name>
         <skos:prefLabel xml:lang="en">laser_pulse_delay</skos:prefLabel>
     </owl:NamedIndividual>
@@ -916,7 +916,7 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
-        <ssno:description xml:lang="en">The width of the laser beam illuminating the seeding particles. The width is defined</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The width of the laser beam illuminating the seeding particles. The width is defined</ssno:hasStandardNameDescription>
         <ssno:standard_name>laser_sheet_thickness</ssno:standard_name>
         <skos:prefLabel xml:lang="en">laser_sheet_thickness</skos:prefLabel>
     </owl:NamedIndividual>
@@ -928,7 +928,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The least square residual of the z displacement reconstruction in stereo PIV.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The least square residual of the z displacement reconstruction in stereo PIV.</ssno:hasStandardNameDescription>
         <ssno:standard_name>least_square_residual_of_z_displacement_reconstruction</ssno:standard_name>
         <skos:prefLabel xml:lang="en">least_square_residual_of_z_displacement_reconstruction</skos:prefLabel>
     </owl:NamedIndividual>
@@ -941,7 +941,7 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
-        <ssno:description xml:lang="en">The mean diameter of the seeding particles.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The mean diameter of the seeding particles.</ssno:hasStandardNameDescription>
         <ssno:standard_name>mean_seeding_particle_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">mean_seeding_particle_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -963,7 +963,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#number_of_particles">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Number of seeding particles in the image or field of interest. See also image_particle_density.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Number of seeding particles in the image or field of interest. See also image_particle_density.</ssno:hasStandardNameDescription>
         <ssno:standard_name>number_of_particles</ssno:standard_name>
         <skos:prefLabel xml:lang="en">number_of_particles</skos:prefLabel>
     </owl:NamedIndividual>
@@ -985,7 +985,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows.</ssno:hasStandardNameDescription>
         <ssno:standard_name>piv_correlation_coefficient</ssno:standard_name>
         <skos:prefLabel xml:lang="en">piv_correlation_coefficient</skos:prefLabel>
     </owl:NamedIndividual>
@@ -997,7 +997,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>piv_first_peak_correlation_coefficient</ssno:standard_name>
         <skos:prefLabel xml:lang="en">piv_first_peak_correlation_coefficient</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1009,7 +1009,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_flag">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by adding the values. For example, 33 would mean that the vector is active and interpolated.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by adding the values. For example, 33 would mean that the vector is active and interpolated.</ssno:hasStandardNameDescription>
         <ssno:standard_name>piv_flag</ssno:standard_name>
         <skos:prefLabel xml:lang="en">piv_flag</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1021,7 +1021,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_image_index">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Simple index of a PIV image. Starts at 1 and ends at the number of images N.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Simple index of a PIV image. Starts at 1 and ends at the number of images N.</ssno:hasStandardNameDescription>
         <ssno:standard_name>piv_image_index</ssno:standard_name>
         <skos:prefLabel xml:lang="en">piv_image_index</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1034,7 +1034,7 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_scaling_factor">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:unit rdf:resource="https://qudt.org/vocab/unit/PER-M"/>
-        <ssno:description xml:lang="en">Image scaling factor.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Image scaling factor.</ssno:hasStandardNameDescription>
         <ssno:standard_name>piv_scaling_factor</ssno:standard_name>
         <skos:prefLabel xml:lang="en">piv_scaling_factor</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1046,7 +1046,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the second peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the second peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>piv_second_peak_correlation_coefficient</ssno:standard_name>
         <skos:prefLabel xml:lang="en">piv_second_peak_correlation_coefficient</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1058,7 +1058,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the third peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the third peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>piv_third_peak_correlation_coefficient</ssno:standard_name>
         <skos:prefLabel xml:lang="en">piv_third_peak_correlation_coefficient</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1070,7 +1070,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#pixel_origin">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The pixel position of the origin used for PIV evaluation.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The pixel position of the origin used for PIV evaluation.</ssno:hasStandardNameDescription>
         <ssno:standard_name>pixel_origin</ssno:standard_name>
         <skos:prefLabel xml:lang="en">pixel_origin</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1093,7 +1093,7 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#relative_time">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:unit rdf:resource="https://qudt.org/vocab/unit/SEC"/>
-        <ssno:description xml:lang="en">Recording time since start of recording.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Recording time since start of recording.</ssno:hasStandardNameDescription>
         <ssno:standard_name>relative_time</ssno:standard_name>
         <skos:prefLabel xml:lang="en">relative_time</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1105,7 +1105,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#saturated_pixel_number">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Number of pixels in the field of interest that exceed the maximal senor count.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Number of pixels in the field of interest that exceed the maximal senor count.</ssno:hasStandardNameDescription>
         <ssno:standard_name>saturated_pixel_number</ssno:standard_name>
         <skos:prefLabel xml:lang="en">saturated_pixel_number</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1117,7 +1117,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>second_peak_x_displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">second_peak_x_displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1129,7 +1129,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>second_peak_y_displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">second_peak_y_displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1141,7 +1141,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#seeding_material">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS).</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS).</ssno:hasStandardNameDescription>
         <ssno:standard_name>seeding_material</ssno:standard_name>
         <skos:prefLabel xml:lang="en">seeding_material</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1153,7 +1153,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The signal to noise ratio of the PIV evaluation.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The signal to noise ratio of the PIV evaluation.</ssno:hasStandardNameDescription>
         <ssno:standard_name>signal_to_noise_ratio</ssno:standard_name>
         <skos:prefLabel xml:lang="en">signal_to_noise_ratio</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1165,7 +1165,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The standard deviation of the image particle diameter in the field of interest.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The standard deviation of the image particle diameter in the field of interest.</ssno:hasStandardNameDescription>
         <ssno:standard_name>standard_deviation_of_image_particle_diameter</ssno:standard_name>
         <skos:prefLabel xml:lang="en">standard_deviation_of_image_particle_diameter</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1177,7 +1177,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>third_peak_x_displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">third_peak_x_displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1189,7 +1189,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>third_peak_y_displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">third_peak_y_displacement</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1201,7 +1201,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#time">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Datetime in ISO 8601 format.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Datetime in ISO 8601 format.</ssno:hasStandardNameDescription>
         <ssno:standard_name>time</ssno:standard_name>
         <skos:prefLabel xml:lang="en">time</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1214,7 +1214,7 @@
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
-        <ssno:description xml:lang="en">Velocity.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Velocity.</ssno:hasStandardNameDescription>
         <ssno:standard_name>velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">velocity</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1226,7 +1226,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Width of the final PIV interogation window overlap.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Width of the final PIV interogation window overlap.</ssno:hasStandardNameDescription>
         <ssno:standard_name>x_final_interrogation_window_overlap_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">x_final_interrogation_window_overlap_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1238,7 +1238,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Width of the final PIV interogation window.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Width of the final PIV interogation window.</ssno:hasStandardNameDescription>
         <ssno:standard_name>x_final_interrogation_window_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">x_final_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1250,7 +1250,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm).</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm).</ssno:hasStandardNameDescription>
         <ssno:standard_name>x_initial_interrogation_window_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">x_initial_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1262,7 +1262,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Image coordinate in horizontal direction.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Image coordinate in horizontal direction.</ssno:hasStandardNameDescription>
         <ssno:standard_name>x_pixel_coordinate</ssno:standard_name>
         <skos:prefLabel xml:lang="en">x_pixel_coordinate</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1274,7 +1274,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The height of the final PIV interogation window overlap.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The height of the final PIV interogation window overlap.</ssno:hasStandardNameDescription>
         <ssno:standard_name>y_final_interrogation_window_overlap_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">y_final_interrogation_window_overlap_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1286,7 +1286,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">The height of the final PIV interogation window.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">The height of the final PIV interogation window.</ssno:hasStandardNameDescription>
         <ssno:standard_name>y_final_interrogation_window_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">y_final_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1298,7 +1298,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm).</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm).</ssno:hasStandardNameDescription>
         <ssno:standard_name>y_initial_interrogation_window_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">y_initial_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1310,7 +1310,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:description xml:lang="en">Image coordinate in vertical direction.</ssno:description>
+        <ssno:hasStandardNameDescription xml:lang="en">Image coordinate in vertical direction.</ssno:hasStandardNameDescription>
         <ssno:standard_name>y_pixel_coordinate</ssno:standard_name>
         <skos:prefLabel xml:lang="en">y_pixel_coordinate</skos:prefLabel>
     </owl:NamedIndividual>
