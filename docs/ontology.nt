@@ -71,6 +71,10 @@
 # http://www.w3.org/2004/02/skos/core#prefLabel
 <http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# https://matthiasprobst.github.io/pivmeta#CorrelationMethod
+<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
+# 
 # 
 # 
 # #################################################################
@@ -107,11 +111,11 @@
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#ImageType> .
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv image type"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm
-<https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm> .
-<https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm> <http://www.w3.org/2004/02/skos/core#prefLabel> "correlation algorithm"@en .
+# https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme
+<https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/ssno#PivValidation> .
+<https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> .
+<https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "uses outlier replacement scheme"@en .
 # 
 # https://matthiasprobst.github.io/ssno#unit
 <https://matthiasprobst.github.io/ssno#unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -130,36 +134,27 @@
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/owl/owlapi/turtle#final_window_size
-<http://www.semanticweb.org/owl/owlapi/turtle#final_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/owl/owlapi/turtle#final_window_size> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://www.semanticweb.org/owl/owlapi/turtle#final_window_size> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<http://www.semanticweb.org/owl/owlapi/turtle#final_window_size> <http://www.w3.org/2000/01/rdf-schema#comment> "The final window size used by any PIV interrogation method."@en .
+# https://matthiasprobst.github.io/pivmeta#filenamePattern
+<https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivDistribution> .
+<https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2004/02/skos/core#definition> "The regular expression string to determine the image filenames in the distribution."@en .
+<https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2004/02/skos/core#prefLabel> "filenamePattern"@en .
 # 
-# http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size
-<http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#Multigrid> .
-<http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size> <http://www.w3.org/2000/01/rdf-schema#comment> "The initial window size used by a Multigrid PIV method."@en .
+# https://matthiasprobst.github.io/pivmeta#imageBitDepth
+<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
+<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> .
+<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2004/02/skos/core#definition> "The pixel depth of an image."@en .
+<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2004/02/skos/core#prefLabel> "bitDepth"@en .
 # 
-# http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes
-<http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#Multipass> .
-<http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
-<http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of passes performed by the Multipass PIV Method."@en .
-# 
-# http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size
-<http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-# 
-# https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm
-<https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# https://matthiasprobst.github.io/pivmeta#number_of_records
+<https://matthiasprobst.github.io/pivmeta#number_of_records> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#number_of_records> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
+<https://matthiasprobst.github.io/pivmeta#number_of_records> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+<https://matthiasprobst.github.io/pivmeta#number_of_records> <http://www.w3.org/2004/02/skos/core#definition> "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."@en .
+<https://matthiasprobst.github.io/pivmeta#number_of_records> <http://www.w3.org/2004/02/skos/core#prefLabel> "numberOfRecords"@en .
 # 
 # https://matthiasprobst.github.io/ssno#hasStandardNameDescription
 <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -245,8 +240,9 @@
 <https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod> <http://www.w3.org/2004/02/skos/core#example> "Can be direct subtraction of background, division of image by background or a combination."@en .
 <https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "background subtraction"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm
-<https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# https://matthiasprobst.github.io/pivmeta#CorrelationMethod
+<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 # 
 # https://matthiasprobst.github.io/pivmeta#ImageDewarp
 <https://matthiasprobst.github.io/pivmeta#ImageDewarp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -282,7 +278,7 @@
 # https://matthiasprobst.github.io/pivmeta#InterrogationMethod
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
-<https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Interrogation Method"@en .
+<https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "interrogation method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#MaskGeneration
 <https://matthiasprobst.github.io/pivmeta#MaskGeneration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -292,27 +288,40 @@
 # https://matthiasprobst.github.io/pivmeta#Multigrid
 <https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multigrid"@en .
+<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#definition> "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."@en .
+<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#prefLabel> "multi grid"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#Multipass
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
+<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "multi pass"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
 <https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
-<https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Outlier Detection Method"@en .
+<https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier detection method"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme
+<https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier replacement scheme"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivProcessingStep> .
+<https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2004/02/skos/core#definition> "The PIV evaluation processing performing the correlation algorithm and interrogation method."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv evaluation"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVSoftware
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/okn/o/sd#Software> .
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Software"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#PeakSearchMethod
+<https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+<https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Method fitting the sub pixel peak in the correlation signal."@en .
+<https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "peak search method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivDistribution
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -325,8 +334,13 @@
 # https://matthiasprobst.github.io/pivmeta#PivImageDistribution
 <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivDistribution> .
-<https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV image. Can be syntheticlly generated or measured, which can be indicated via \"piv image type\"."@en .
+<https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."@en .
 <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv image distribution"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#PivMaskDistribution
+<https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivDistribution> .
+<https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv mask distribution"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivPostProcessing
 <https://matthiasprobst.github.io/pivmeta#PivPostProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -357,17 +371,16 @@
 # https://matthiasprobst.github.io/pivmeta#Singlepass
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Singlepass"@en .
+<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2004/02/skos/core#prefLabel> "single pass"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#StandardName
 <https://matthiasprobst.github.io/pivmeta#StandardName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#StandardName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
 # 
-# https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod
-<https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
-<https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Method fitting the sub pixel peak in the correlation signal."@en .
-<https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sub Pixel Peak Fit Method"@en .
+# https://matthiasprobst.github.io/ssno#PivValidation
+<https://matthiasprobst.github.io/ssno#PivValidation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/ssno#PivValidation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivProcessingStep> .
+<https://matthiasprobst.github.io/ssno#PivValidation> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv validation"@en .
 # 
 # https://w3id.org/okn/o/sd#Software
 <https://w3id.org/okn/o/sd#Software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -388,10 +401,20 @@
 <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageType> .
 <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#Interpolation
+<https://matthiasprobst.github.io/pivmeta#Interpolation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#Interpolation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> .
+<https://matthiasprobst.github.io/pivmeta#Interpolation> <http://www.w3.org/2004/02/skos/core#prefLabel> "interpolation"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#LeftRightFlip
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample
+<https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> .
+<https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample> <http://www.w3.org/2004/02/skos/core#prefLabel> "re-evaluate with larger sample"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#SplitImage
 <https://matthiasprobst.github.io/pivmeta#SplitImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -407,6 +430,11 @@
 <https://matthiasprobst.github.io/pivmeta#TopBottomFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#TopBottomFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
 <https://matthiasprobst.github.io/pivmeta#TopBottomFlip> <http://www.w3.org/2004/02/skos/core#prefLabel> "top bottom flip"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks
+<https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> .
+<https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks> <http://www.w3.org/2004/02/skos/core#prefLabel> "try lower order peaks"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#coordinate
 <https://matthiasprobst.github.io/pivmeta#coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -438,6 +466,13 @@
 <https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <https://matthiasprobst.github.io/ssno#standard_name> "first_peak_y_displacement" .
 <https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#image_density
+<https://matthiasprobst.github.io/pivmeta#image_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#image_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#image_density> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The image density is computed based on the source density $N_s$ and the interrogation window size."@en .
+<https://matthiasprobst.github.io/pivmeta#image_density> <https://matthiasprobst.github.io/ssno#standard_name> "image_density" .
+<https://matthiasprobst.github.io/pivmeta#image_density> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_density"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size
 <https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
@@ -455,7 +490,7 @@
 # https://matthiasprobst.github.io/pivmeta#image_particle_diameter
 <https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The diameter of an image particle."@en .
+<https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gausian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en .
 <https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <https://matthiasprobst.github.io/ssno#standard_name> "image_particle_diameter" .
 <https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_diameter"@en .
 # 
@@ -477,11 +512,18 @@
 <https://matthiasprobst.github.io/pivmeta#laser_pulse_delay> <https://matthiasprobst.github.io/ssno#standard_name> "laser_pulse_delay" .
 <https://matthiasprobst.github.io/pivmeta#laser_pulse_delay> <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_pulse_delay"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor
+<https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The shape factor used to approximate the expanded laser beam."@en .
+<https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor> <https://matthiasprobst.github.io/ssno#standard_name> "laser_sheet_shape_factor" .
+<https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor> <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_shape_factor"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness
 <https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
 <https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> .
-<https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the laser beam illuminating the seeding particles. The width is defined"@en .
+<https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the laser beam illuminating the seeding particles. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussain, but can be more top-hat-like. This is defined by the shap factor"@en .
 <https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <https://matthiasprobst.github.io/ssno#standard_name> "laser_sheet_thickness" .
 <https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_thickness"@en .
 # 
@@ -732,6 +774,7 @@
 # #################################################################
 # 
 # 
-<https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm> <http://www.w3.org/2004/02/skos/core#prefLabel> "has correlation algorithm"@en .
+<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2004/02/skos/core#definition> "The correlation algorithm used for the PIV Interrogation Method"@en .
+<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "correlation method"@en .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

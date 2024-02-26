@@ -69,60 +69,6 @@
   "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "http://www.semanticweb.org/owl/owlapi/turtle#final_window_size",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The final window size used by any PIV interrogation method."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
-  "@id" : "http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The initial window size used by a Multigrid PIV method."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#Multigrid"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
-  "@id" : "http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The number of passes performed by the Multipass PIV Method."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#Multipass"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#int"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
-  "@id" : "http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#float"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
@@ -231,20 +177,21 @@
     "@value" : "background subtraction"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#Class" ],
+  "@id" : "https://matthiasprobst.github.io/pivmeta#CorrelationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The correlation algorithm used for the PIV Interrogation Method"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "has correlation algorithm"
+    "@value" : "correlation method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalImage",
@@ -319,6 +266,16 @@
     "@value" : "Examples are synthetic or experimental sources."
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Interpolation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "interpolation"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -326,7 +283,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "Interrogation Method"
+    "@value" : "interrogation method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#LeftRightFlip",
@@ -354,9 +311,13 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "Multigrid"
+    "@value" : "multi grid"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Multipass",
@@ -366,7 +327,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "Multipass"
+    "@value" : "multi pass"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod",
@@ -376,13 +337,27 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "Outlier Detection Method"
+    "@value" : "outlier detection method"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "outlier replacement scheme"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The PIV evaluation processing performing the correlation algorithm and interrogation method."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -397,6 +372,20 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Piv Software"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PeakSearchMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Method fitting the sub pixel peak in the correlation signal."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "peak search method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution",
@@ -418,11 +407,21 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "A PIV image. Can be syntheticlly generated or measured, which can be indicated via \"piv image type\"."
+    "@value" : "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "piv image distribution"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PivMaskDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv mask distribution"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PivPostProcessing",
@@ -479,6 +478,16 @@
     "@id" : "http://purl.org/dc/terms/DCMIType"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "re-evaluate with larger sample"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Singlepass",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -486,7 +495,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "Singlepass"
+    "@value" : "single pass"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#SplitImage",
@@ -503,20 +512,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Method fitting the sub pixel peak in the correlation signal."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "Sub Pixel Peak Fit Method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#SyntheticImage",
@@ -537,6 +532,16 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "top bottom flip"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "try lower order peaks"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#coordinate",
@@ -574,6 +579,23 @@
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#filenamePattern",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The regular expression string to determine the image filenames in the distribution."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "filenamePattern"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement",
@@ -623,6 +645,42 @@
     "@value" : "has standard name"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#imageBitDepth",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution"
+  }, {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivMaskDistribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The pixel depth of an image."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "bitDepth"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#image_density",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "image_density"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The image density is computed based on the source density $N_s$ and the interrogation window size."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "image_density"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -668,7 +726,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The diameter of an image particle."
+    "@value" : "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gausian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "image_particle_diameter"
@@ -714,6 +772,23 @@
     "@id" : "https://qudt.org/vocab/unit/SEC"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "laser_sheet_shape_factor"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The shape factor used to approximate the expanded laser beam."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "laser_sheet_shape_factor"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -725,7 +800,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The width of the laser beam illuminating the seeding particles. The width is defined"
+    "@value" : "The width of the laser beam illuminating the seeding particles. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussain, but can be more top-hat-like. This is defined by the shap factor"
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "laser_sheet_thickness"
@@ -796,6 +871,23 @@
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "number_of_particles"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#number_of_records",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "numberOfRecords"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv",
@@ -1143,17 +1235,17 @@
     "@value" : "time"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
+    "@id" : "https://matthiasprobst.github.io/ssno#PivValidation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "correlation algorithm"
+    "@value" : "uses outlier replacement scheme"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#velocity",
@@ -1310,6 +1402,16 @@
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "y_pixel_coordinate"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#PivValidation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv validation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#hasStandardNameDescription",

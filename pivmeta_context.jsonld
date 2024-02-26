@@ -48,9 +48,8 @@
     "background subtraction": {
       "@id": "pivmeta:BackgroundSubtractionMethod"
     },
-    "has correlation algorithm": {
-      "@id": "pivmeta:CorrelationAlgorithm",
-      "@type": "rdfs:Literal"
+    "correlation method": {
+      "@id": "pivmeta:CorrelationMethod"
     },
     "image dewarp": {
       "@id": "pivmeta:ImageDewarp"
@@ -61,20 +60,23 @@
     "image rotation": {
       "@id": "pivmeta:ImageRotation"
     },
-    "Interrogation Method": {
+    "interrogation method": {
       "@id": "pivmeta:InterrogationMethod"
     },
     "mask generation": {
       "@id": "pivmeta:MaskGeneration"
     },
-    "Multigrid": {
+    "multi grid": {
       "@id": "pivmeta:Multigrid"
     },
-    "Multipass": {
+    "multi pass": {
       "@id": "pivmeta:Multipass"
     },
-    "Outlier Detection Method": {
+    "outlier detection method": {
       "@id": "pivmeta:OutlierDetectionMethod"
+    },
+    "outlier replacement scheme": {
+      "@id": "pivmeta:OutlierReplacementScheme"
     },
     "piv evaluation": {
       "@id": "pivmeta:PIVEvaluation"
@@ -82,8 +84,14 @@
     "Piv Software": {
       "@id": "pivmeta:PIVSoftware"
     },
+    "peak search method": {
+      "@id": "pivmeta:PeakSearchMethod"
+    },
     "piv image distribution": {
       "@id": "pivmeta:PivImageDistribution"
+    },
+    "piv mask distribution": {
+      "@id": "pivmeta:PivMaskDistribution"
     },
     "piv post processing": {
       "@id": "pivmeta:PivPostProcessing"
@@ -97,11 +105,11 @@
     "piv result distribution": {
       "@id": "pivmeta:PivResultDistribution"
     },
-    "Singlepass": {
+    "single pass": {
       "@id": "pivmeta:Singlepass"
     },
-    "Sub Pixel Peak Fit Method": {
-      "@id": "pivmeta:SubPixelPeakFitMethod"
+    "piv validation": {
+      "@id": "ssno:PivValidation"
     },
     "Software": {
       "@id": "sd:Software"
@@ -114,13 +122,25 @@
       "@id": "pivmeta:pivImageType",
       "@type": "pivmeta:ImageType"
     },
-    "correlation algorithm": {
-      "@id": "pivmeta:usesCorrelationAlgorithm",
-      "@type": "pivmeta:CorrelationAlgorithm"
+    "uses outlier replacement scheme": {
+      "@id": "pivmeta:useOutlierReplacementScheme",
+      "@type": "pivmeta:OutlierReplacementScheme"
     },
     "canonical units": {
       "@id": "ssno:unit",
       "@type": "qudt:Unit"
+    },
+    "filenamePattern": {
+      "@id": "pivmeta:filenamePattern",
+      "@type": "xsd:string"
+    },
+    "bitDepth": {
+      "@id": "pivmeta:imageBitDepth",
+      "@type": "xsd:positiveInteger"
+    },
+    "numberOfRecords": {
+      "@id": "pivmeta:number_of_records",
+      "@type": "xsd:positiveInteger"
     },
     "standard name description": {
       "@id": "ssno:hasStandardNameDescription",
@@ -137,8 +157,14 @@
     "experimental image": {
       "@id": "pivmeta:ExperimentalImage"
     },
+    "interpolation": {
+      "@id": "pivmeta:Interpolation"
+    },
     "left right flip": {
       "@id": "pivmeta:LeftRightFlip"
+    },
+    "re-evaluate with larger sample": {
+      "@id": "pivmeta:ReEvaluateWithLargerSample"
     },
     "split image": {
       "@id": "pivmeta:SplitImage"
@@ -148,6 +174,9 @@
     },
     "top bottom flip": {
       "@id": "pivmeta:TopBottomFlip"
+    },
+    "try lower order peaks": {
+      "@id": "pivmeta:TryLowerOrderPeaks"
     },
     "micro piv": {
       "@id": "pivmeta:micro_piv"
@@ -182,6 +211,9 @@
     "image_particle_density": {
       "@id": "pivmeta:image_particle_density"
     },
+    "image_density": {
+      "@id": "pivmeta:image_density"
+    },
     "image_particle_diameter": {
       "@id": "pivmeta:image_particle_diameter"
     },
@@ -193,6 +225,9 @@
     },
     "laser_sheet_thickness": {
       "@id": "pivmeta:laser_sheet_thickness"
+    },
+    "laser_sheet_shape_factor": {
+      "@id": "pivmeta:laser_sheet_shape_factor"
     },
     "mean_seeding_particle_size": {
       "@id": "pivmeta:mean_seeding_particle_size"

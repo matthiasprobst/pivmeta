@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-01-29", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-02-26", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-01-29</dt>
+<dt>Modified on: 2024-02-26</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -118,6 +118,12 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction</a>
    </li>
    <li>
+      <a href="#CorrelationMethod"
+         title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">
+         <span>correlation method</span>
+      </a>
+   </li>
+   <li>
       <a href="#ImageDewarp"
          title="https://matthiasprobst.github.io/pivmeta#ImageDewarp">image dewarp</a>
    </li>
@@ -149,7 +155,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#InterrogationMethod"
-         title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
+         title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
    </li>
    <li>
       <a href="#MaskGeneration"
@@ -162,15 +168,23 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#Multigrid"
-         title="https://matthiasprobst.github.io/pivmeta#Multigrid">Multigrid</a>
+         title="https://matthiasprobst.github.io/pivmeta#Multigrid">multi grid</a>
    </li>
    <li>
       <a href="#Multipass"
-         title="https://matthiasprobst.github.io/pivmeta#Multipass">Multipass</a>
+         title="https://matthiasprobst.github.io/pivmeta#Multipass">multi pass</a>
    </li>
    <li>
       <a href="#OutlierDetectionMethod"
-         title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">Outlier Detection Method</a>
+         title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a>
+   </li>
+   <li>
+      <a href="#OutlierReplacementScheme"
+         title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+   </li>
+   <li>
+      <a href="#PeakSearchMethod"
+         title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a>
    </li>
    <li>
       <a href="#PivDistribution"
@@ -191,6 +205,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#PivImageDistribution"
          title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
+   </li>
+   <li>
+      <a href="#PivMaskDistribution"
+         title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">piv mask distribution</a>
    </li>
    <li>
       <a href="#PivPostProcessing"
@@ -218,6 +236,10 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#https://matthiasprobst.github.io/ssno#PivValidation"
+         title="https://matthiasprobst.github.io/ssno#PivValidation">piv validation</a>
+   </li>
+   <li>
       <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
          title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">
          <span>processing step</span>
@@ -228,7 +250,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#Singlepass"
-         title="https://matthiasprobst.github.io/pivmeta#Singlepass">Singlepass</a>
+         title="https://matthiasprobst.github.io/pivmeta#Singlepass">single pass</a>
    </li>
    <li>
       <a href="#https://w3id.org/okn/o/sd#Software" title="https://w3id.org/okn/o/sd#Software">Software</a>
@@ -239,19 +261,11 @@ This ontology has the following classes and properties.</span>
          <span>standard name</span>
       </a>
    </li>
-   <li>
-      <a href="#SubPixelPeakFitMethod"
-         title="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod">Sub Pixel Peak Fit Method</a>
-   </li>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
       <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
-   </li>
-   <li>
-      <a href="#usesCorrelationAlgorithm"
-         title="https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm">correlation algorithm</a>
    </li>
    <li>
       <a href="#hasStandardName"
@@ -261,41 +275,27 @@ This ontology has the following classes and properties.</span>
       <a href="#pivImageType"
          title="https://matthiasprobst.github.io/pivmeta#pivImageType">piv image type</a>
    </li>
+   <li>
+      <a href="#useOutlierReplacementScheme"
+         title="https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme">uses outlier replacement scheme</a>
+   </li>
 </ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#http://www.semanticweb.org/owl/owlapi/turtle#final_window_size"
-         title="http://www.semanticweb.org/owl/owlapi/turtle#final_window_size">
-         <span>final window size</span>
-      </a>
+      <a href="#imageBitDepth"
+         title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bitDepth</a>
    </li>
    <li>
-      <a href="#CorrelationAlgorithm"
-         title="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm">
-         <span>has correlation algorithm</span>
-      </a>
+      <a href="#filenamePattern"
+         title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filenamePattern</a>
    </li>
    <li>
       <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
    </li>
    <li>
-      <a href="#http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size"
-         title="http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size">
-         <span>initial window size</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes"
-         title="http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes">
-         <span>number of passes</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size"
-         title="http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size">
-         <span>percentage of final window size</span>
-      </a>
+      <a href="#number_of_records"
+         title="https://matthiasprobst.github.io/pivmeta#number_of_records">numberOfRecords</a>
    </li>
    <li>
       <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -329,6 +329,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
    </li>
    <li>
+      <a href="#image_density"
+         title="https://matthiasprobst.github.io/pivmeta#image_density">image_density</a>
+   </li>
+   <li>
       <a href="#image_filter_kernel_size"
          title="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">image_filter_kernel_size</a>
    </li>
@@ -345,8 +349,16 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#inplane_velocity">inplane_velocity</a>
    </li>
    <li>
+      <a href="#Interpolation"
+         title="https://matthiasprobst.github.io/pivmeta#Interpolation">interpolation</a>
+   </li>
+   <li>
       <a href="#laser_pulse_delay"
          title="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">laser_pulse_delay</a>
+   </li>
+   <li>
+      <a href="#laser_sheet_shape_factor"
+         title="https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor">laser_sheet_shape_factor</a>
    </li>
    <li>
       <a href="#laser_sheet_thickness"
@@ -411,6 +423,10 @@ This ontology has the following classes and properties.</span>
       <a href="#ptv" title="https://matthiasprobst.github.io/pivmeta#ptv">ptv</a>
    </li>
    <li>
+      <a href="#ReEvaluateWithLargerSample"
+         title="https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample">re-evaluate with larger sample</a>
+   </li>
+   <li>
       <a href="#relative_time"
          title="https://matthiasprobst.github.io/pivmeta#relative_time">relative_time</a>
    </li>
@@ -460,6 +476,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#TopBottomFlip"
          title="https://matthiasprobst.github.io/pivmeta#TopBottomFlip">top bottom flip</a>
+   </li>
+   <li>
+      <a href="#TryLowerOrderPeaks"
+         title="https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks">try lower order peaks</a>
    </li>
    <li>
       <a href="#velocity"
@@ -529,6 +549,12 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction</a>
       </li>
       <li>
+         <a href="#CorrelationMethod"
+            title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">
+            <span>correlation method</span>
+         </a>
+      </li>
+      <li>
          <a href="#ImageDewarp"
             title="https://matthiasprobst.github.io/pivmeta#ImageDewarp">image dewarp</a>
       </li>
@@ -560,7 +586,7 @@ This section provides details for each class and property defined by PIVMeta.
       </li>
       <li>
          <a href="#InterrogationMethod"
-            title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
+            title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
       </li>
       <li>
          <a href="#MaskGeneration"
@@ -573,15 +599,23 @@ This section provides details for each class and property defined by PIVMeta.
       </li>
       <li>
          <a href="#Multigrid"
-            title="https://matthiasprobst.github.io/pivmeta#Multigrid">Multigrid</a>
+            title="https://matthiasprobst.github.io/pivmeta#Multigrid">multi grid</a>
       </li>
       <li>
          <a href="#Multipass"
-            title="https://matthiasprobst.github.io/pivmeta#Multipass">Multipass</a>
+            title="https://matthiasprobst.github.io/pivmeta#Multipass">multi pass</a>
       </li>
       <li>
          <a href="#OutlierDetectionMethod"
-            title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">Outlier Detection Method</a>
+            title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a>
+      </li>
+      <li>
+         <a href="#OutlierReplacementScheme"
+            title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+      </li>
+      <li>
+         <a href="#PeakSearchMethod"
+            title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a>
       </li>
       <li>
          <a href="#PivDistribution"
@@ -602,6 +636,10 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#PivImageDistribution"
             title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
+      </li>
+      <li>
+         <a href="#PivMaskDistribution"
+            title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">piv mask distribution</a>
       </li>
       <li>
          <a href="#PivPostProcessing"
@@ -629,6 +667,10 @@ This section provides details for each class and property defined by PIVMeta.
          </a>
       </li>
       <li>
+         <a href="#https://matthiasprobst.github.io/ssno#PivValidation"
+            title="https://matthiasprobst.github.io/ssno#PivValidation">piv validation</a>
+      </li>
+      <li>
          <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
             title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">
             <span>processing step</span>
@@ -639,7 +681,7 @@ This section provides details for each class and property defined by PIVMeta.
       </li>
       <li>
          <a href="#Singlepass"
-            title="https://matthiasprobst.github.io/pivmeta#Singlepass">Singlepass</a>
+            title="https://matthiasprobst.github.io/pivmeta#Singlepass">single pass</a>
       </li>
       <li>
          <a href="#https://w3id.org/okn/o/sd#Software" title="https://w3id.org/okn/o/sd#Software">Software</a>
@@ -649,10 +691,6 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#StandardName">
             <span>standard name</span>
          </a>
-      </li>
-      <li>
-         <a href="#SubPixelPeakFitMethod"
-            title="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod">Sub Pixel Peak Fit Method</a>
       </li>
    </ul>
    <div class="entity" id="http://www.w3.org/ns/prov#Activity">
@@ -713,6 +751,25 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#PivPreProcessing"
                title="https://matthiasprobst.github.io/pivmeta#PivPreProcessing">piv pre processing</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CorrelationMethod">
+      <h3>correlation method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#CorrelationMethod</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>
+            <a href="#CorrelationMethod">annotation property</a>
          </dd>
       </dl>
    </div>
@@ -852,7 +909,7 @@ This section provides details for each class and property defined by PIVMeta.
       </dl>
    </div>
    <div class="entity" id="InterrogationMethod">
-      <h3>Interrogation Method<sup class="type-c" title="class">c</sup>
+      <h3>interrogation method<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -867,24 +924,18 @@ This section provides details for each class and property defined by PIVMeta.
          <dt>has sub-classes</dt>
          <dd>
             <a href="#Multigrid"
-               title="https://matthiasprobst.github.io/pivmeta#Multigrid">Multigrid</a>
+               title="https://matthiasprobst.github.io/pivmeta#Multigrid">multi grid</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Multipass"
-               title="https://matthiasprobst.github.io/pivmeta#Multipass">Multipass</a>
+               title="https://matthiasprobst.github.io/pivmeta#Multipass">multi pass</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Singlepass"
-               title="https://matthiasprobst.github.io/pivmeta#Singlepass">Singlepass</a>
+               title="https://matthiasprobst.github.io/pivmeta#Singlepass">single pass</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#usesCorrelationAlgorithm"
-               title="https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm">correlation algorithm</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.semanticweb.org/owl/owlapi/turtle#final_window_size"
-               title="http://www.semanticweb.org/owl/owlapi/turtle#final_window_size">final window size</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#CorrelationAlgorithm"
-               title="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm">has correlation algorithm</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size"
-               title="http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size">percentage of final window size</a>
-            <sup class="type-dp" title="data property">dp</sup>
+            <a href="https://matthiasprobst.github.io/pivmeta#CorrelationMethod"
+               target="_blank"
+               title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a>
          </dd>
       </dl>
    </div>
@@ -919,42 +970,41 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#InterrogationMethod"
-               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OutlierDetectionMethod"
-               title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">Outlier Detection Method</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#SubPixelPeakFitMethod"
-               title="https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod">Sub Pixel Peak Fit Method</a>
+            <a href="#CorrelationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a>
             <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulationMethod"
                title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#InterrogationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#OutlierDetectionMethod"
+               title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeakSearchMethod"
+               title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="Multigrid">
-      <h3>Multigrid<sup class="type-c" title="class">c</sup>
+      <h3>multi grid<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Multigrid</p>
+      <div class="comment">
+         <span class="markdown">A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small.</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
             <a href="#InterrogationMethod"
-               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
+               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
             <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size"
-               title="http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size">initial window size</a>
-            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="Multipass">
-      <h3>Multipass<sup class="type-c" title="class">c</sup>
+      <h3>multi pass<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -964,24 +1014,69 @@ This section provides details for each class and property defined by PIVMeta.
          <dt>has super-classes</dt>
          <dd>
             <a href="#InterrogationMethod"
-               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
+               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
             <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes"
-               title="http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes">number of passes</a>
-            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="OutlierDetectionMethod">
-      <h3>Outlier Detection Method<sup class="type-c" title="class">c</sup>
+      <h3>outlier detection method<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OutlierReplacementScheme">
+      <h3>outlier replacement scheme<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core#Concept"
+               target="_blank"
+               title="http://www.w3.org/2004/02/skos/core#Concept">concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#useOutlierReplacementScheme"
+               title="https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme">uses outlier replacement scheme</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Interpolation"
+               title="https://matthiasprobst.github.io/pivmeta#Interpolation">interpolation</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ReEvaluateWithLargerSample"
+               title="https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample">re-evaluate with larger sample</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#TryLowerOrderPeaks"
+               title="https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks">try lower order peaks</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PeakSearchMethod">
+      <h3>peak search method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PeakSearchMethod</p>
+      <div class="comment">
+         <span class="markdown">Method fitting the sub pixel peak in the correlation signal.</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1009,9 +1104,17 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#PivImageDistribution"
                title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PivMaskDistribution"
+               title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">piv mask distribution</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PivResultDistribution"
                title="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">piv result distribution</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#filenamePattern"
+               title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filenamePattern</a>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
@@ -1022,6 +1125,9 @@ This section provides details for each class and property defined by PIVMeta.
       </h3>
       <p>
          <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVEvaluation</p>
+      <div class="comment">
+         <span class="markdown">The PIV evaluation processing performing the correlation algorithm and interrogation method.</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1056,7 +1162,7 @@ This section provides details for each class and property defined by PIVMeta.
       <p>
          <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PivImageDistribution</p>
       <div class="comment">
-         <span class="markdown">A PIV image. Can be syntheticlly generated or measured, which can be indicated via "piv image type".</span>
+         <span class="markdown">A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property "piv image type".</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -1067,9 +1173,35 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#pivImageType"
+            <a href="#imageBitDepth"
+               title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bitDepth</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#number_of_records"
+               title="https://matthiasprobst.github.io/pivmeta#number_of_records">numberOfRecords</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#pivImageType"
                title="https://matthiasprobst.github.io/pivmeta#pivImageType">piv image type</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PivMaskDistribution">
+      <h3>piv mask distribution<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PivMaskDistribution</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PivDistribution"
+               title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#imageBitDepth"
+               title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bitDepth</a>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
@@ -1152,6 +1284,8 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#PivPostProcessing">piv post processing</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PivPreProcessing"
                title="https://matthiasprobst.github.io/pivmeta#PivPreProcessing">piv pre processing</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://matthiasprobst.github.io/ssno#PivValidation"
+               title="https://matthiasprobst.github.io/ssno#PivValidation">piv validation</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1215,6 +1349,28 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#PivValidation">
+      <h3>piv validation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#PivValidation</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PivProcessingStep"
+               title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#useOutlierReplacementScheme"
+               title="https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme">uses outlier replacement scheme</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">
       <h3>processing step<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -1255,7 +1411,7 @@ This section provides details for each class and property defined by PIVMeta.
       </dl>
    </div>
    <div class="entity" id="Singlepass">
-      <h3>Singlepass<sup class="type-c" title="class">c</sup>
+      <h3>single pass<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -1265,7 +1421,7 @@ This section provides details for each class and property defined by PIVMeta.
          <dt>has super-classes</dt>
          <dd>
             <a href="#InterrogationMethod"
-               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
+               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1338,6 +1494,8 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement">first_peak_x_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#first_peak_y_displacement"
                title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_density"
+               title="https://matthiasprobst.github.io/pivmeta#image_density">image_density</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_filter_kernel_size"
                title="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">image_filter_kernel_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_particle_density"
@@ -1348,6 +1506,8 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#inplane_velocity">inplane_velocity</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#laser_pulse_delay"
                title="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">laser_pulse_delay</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#laser_sheet_shape_factor"
+               title="https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor">laser_sheet_shape_factor</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#laser_sheet_thickness"
                title="https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness">laser_sheet_thickness</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#least_square_residual_of_z_displacement_reconstruction"
@@ -1413,24 +1573,6 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="SubPixelPeakFitMethod">
-      <h3>Sub Pixel Peak Fit Method<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod</p>
-      <div class="comment">
-         <span class="markdown">Method fitting the sub pixel peak in the correlation signal.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      id="objectproperties">
@@ -1440,16 +1582,16 @@ This section provides details for each class and property defined by PIVMeta.
          <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
       </li>
       <li>
-         <a href="#usesCorrelationAlgorithm"
-            title="https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm">correlation algorithm</a>
-      </li>
-      <li>
          <a href="#hasStandardName"
             title="https://matthiasprobst.github.io/pivmeta#hasStandardName">has standard name</a>
       </li>
       <li>
          <a href="#pivImageType"
             title="https://matthiasprobst.github.io/pivmeta#pivImageType">piv image type</a>
+      </li>
+      <li>
+         <a href="#useOutlierReplacementScheme"
+            title="https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme">uses outlier replacement scheme</a>
       </li>
    </ul>
    <div class="entity" id="https://matthiasprobst.github.io/ssno#unit">
@@ -1475,31 +1617,6 @@ This section provides details for each class and property defined by PIVMeta.
                <a href="http://qudt.org/schema/qudt/Unit"
                   target="_blank"
                   title="http://qudt.org/schema/qudt/Unit">unit</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="usesCorrelationAlgorithm">
-      <h3>correlation algorithm<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#InterrogationMethod"
-                  title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm"
-                  target="_blank"
-                  title="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm">has correlation algorithm</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1554,43 +1671,49 @@ This section provides details for each class and property defined by PIVMeta.
          </dl>
       </div>
    </div>
+   <div class="entity" id="useOutlierReplacementScheme">
+      <h3>uses outlier replacement scheme<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://matthiasprobst.github.io/ssno#PivValidation"
+                  title="https://matthiasprobst.github.io/ssno#PivValidation">piv validation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#OutlierReplacementScheme"
+                  title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      id="dataproperties">
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#http://www.semanticweb.org/owl/owlapi/turtle#final_window_size"
-            title="http://www.semanticweb.org/owl/owlapi/turtle#final_window_size">
-            <span>final window size</span>
-         </a>
+         <a href="#imageBitDepth"
+            title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bitDepth</a>
       </li>
       <li>
-         <a href="#CorrelationAlgorithm"
-            title="https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm">
-            <span>has correlation algorithm</span>
-         </a>
+         <a href="#filenamePattern"
+            title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filenamePattern</a>
       </li>
       <li>
          <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
       </li>
       <li>
-         <a href="#http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size"
-            title="http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size">
-            <span>initial window size</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes"
-            title="http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes">
-            <span>number of passes</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size"
-            title="http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size">
-            <span>percentage of final window size</span>
-         </a>
+         <a href="#number_of_records"
+            title="https://matthiasprobst.github.io/pivmeta#number_of_records">numberOfRecords</a>
       </li>
       <li>
          <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -1601,62 +1724,62 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
       </li>
    </ul>
-   <div class="entity" id="http://www.semanticweb.org/owl/owlapi/turtle#final_window_size">
-      <h3>final window size<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="imageBitDepth">
+      <h3>bitDepth<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/owl/owlapi/turtle#final_window_size</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#imageBitDepth</p>
       <div class="comment">
-         <span class="markdown">The final window size used by any PIV interrogation method.</span>
+         <span class="markdown">The pixel depth of an image.</span>
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
-                  target="_blank"
-                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#InterrogationMethod"
-                  title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
+               <a href="#PivImageDistribution"
+                  title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="CorrelationAlgorithm">
-      <h3>has correlation algorithm<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
             <dd>
-               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
-                  target="_blank"
-                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#InterrogationMethod"
-                  title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
+               <a href="#PivMaskDistribution"
+                  title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">piv mask distribution</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+               <a href="http://www.w3.org/2001/XMLSchema#positiveInteger"
                   target="_blank"
-                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+                  title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</a>
             </dd>
-            <dt>is also defined as</dt>
-            <dd>class</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="filenamePattern">
+      <h3>filenamePattern<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#filenamePattern</p>
+      <div class="comment">
+         <span class="markdown">The regular expression string to determine the image filenames in the distribution.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PivDistribution"
+                  title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
          </dl>
       </div>
    </div>
@@ -1683,92 +1806,29 @@ This section provides details for each class and property defined by PIVMeta.
          </dl>
       </div>
    </div>
-   <div class="entity" id="http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size">
-      <h3>initial window size<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="number_of_records">
+      <h3>numberOfRecords<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#number_of_records</p>
       <div class="comment">
-         <span class="markdown">The initial window size used by a Multigrid PIV method.</span>
+         <span class="markdown">The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process.</span>
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
-                  target="_blank"
-                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Multigrid"
-                  title="https://matthiasprobst.github.io/pivmeta#Multigrid">Multigrid</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes">
-      <h3>number of passes<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes</p>
-      <div class="comment">
-         <span class="markdown">The number of passes performed by the Multipass PIV Method.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
-                  target="_blank"
-                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Multipass"
-                  title="https://matthiasprobst.github.io/pivmeta#Multipass">Multipass</a>
+               <a href="#PivImageDistribution"
+                  title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#int"
+               <a href="http://www.w3.org/2001/XMLSchema#positiveInteger"
                   target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size">
-      <h3>percentage of final window size<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
-                  target="_blank"
-                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#InterrogationMethod"
-                  title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">Interrogation Method</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#float"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+                  title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</a>
             </dd>
          </dl>
       </div>
@@ -1859,6 +1919,10 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
       </li>
       <li>
+         <a href="#image_density"
+            title="https://matthiasprobst.github.io/pivmeta#image_density">image_density</a>
+      </li>
+      <li>
          <a href="#image_filter_kernel_size"
             title="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">image_filter_kernel_size</a>
       </li>
@@ -1875,8 +1939,16 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#inplane_velocity">inplane_velocity</a>
       </li>
       <li>
+         <a href="#Interpolation"
+            title="https://matthiasprobst.github.io/pivmeta#Interpolation">interpolation</a>
+      </li>
+      <li>
          <a href="#laser_pulse_delay"
             title="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">laser_pulse_delay</a>
+      </li>
+      <li>
+         <a href="#laser_sheet_shape_factor"
+            title="https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor">laser_sheet_shape_factor</a>
       </li>
       <li>
          <a href="#laser_sheet_thickness"
@@ -1941,6 +2013,10 @@ This section provides details for each class and property defined by PIVMeta.
          <a href="#ptv" title="https://matthiasprobst.github.io/pivmeta#ptv">ptv</a>
       </li>
       <li>
+         <a href="#ReEvaluateWithLargerSample"
+            title="https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample">re-evaluate with larger sample</a>
+      </li>
+      <li>
          <a href="#relative_time"
             title="https://matthiasprobst.github.io/pivmeta#relative_time">relative_time</a>
       </li>
@@ -1990,6 +2066,10 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#TopBottomFlip"
             title="https://matthiasprobst.github.io/pivmeta#TopBottomFlip">top bottom flip</a>
+      </li>
+      <li>
+         <a href="#TryLowerOrderPeaks"
+            title="https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks">try lower order peaks</a>
       </li>
       <li>
          <a href="#velocity"
@@ -2167,6 +2247,35 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="image_density">
+      <h3>image_density<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#image_density</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The image density is computed based on the source density $N_s$ and the interrogation window size."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"image_density"</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="image_filter_kernel_size">
       <h3>image_filter_kernel_size<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2244,7 +2353,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The diameter of an image particle."@en</span>
+            <span class="literal">"The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gausian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -2290,6 +2399,22 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="Interpolation">
+      <h3>interpolation<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Interpolation</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OutlierReplacementScheme"
+               title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="laser_pulse_delay">
       <h3>laser_pulse_delay<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2326,6 +2451,35 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="laser_sheet_shape_factor">
+      <h3>laser_sheet_shape_factor<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The shape factor used to approximate the expanded laser beam."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"laser_sheet_shape_factor"</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="laser_sheet_thickness">
       <h3>laser_sheet_thickness<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2352,7 +2506,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The width of the laser beam illuminating the seeding particles. The width is defined"@en</span>
+            <span class="literal">"The width of the laser beam illuminating the seeding particles. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussain, but can be more top-hat-like. This is defined by the shap factor"@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -2756,6 +2910,22 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ReEvaluateWithLargerSample">
+      <h3>re-evaluate with larger sample<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OutlierReplacementScheme"
+               title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="relative_time">
       <h3>relative_time<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -3097,6 +3267,22 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#ImageManipulationMethod"
                title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="TryLowerOrderPeaks">
+      <h3>try lower order peaks<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OutlierReplacementScheme"
+               title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

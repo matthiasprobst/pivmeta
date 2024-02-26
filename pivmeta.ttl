@@ -98,6 +98,11 @@ skos:note rdf:type owl:AnnotationProperty .
 skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
+###  https://matthiasprobst.github.io/pivmeta#CorrelationMethod
+pivmeta:CorrelationMethod rdf:type owl:AnnotationProperty ;
+                          rdfs:domain pivmeta:InterrogationMethod .
+
+
 #################################################################
 #    Datatypes
 #################################################################
@@ -128,11 +133,11 @@ pivmeta:pivImageType rdf:type owl:ObjectProperty ;
                      skos:prefLabel "piv image type"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#usesCorrelationAlgorithm
-pivmeta:usesCorrelationAlgorithm rdf:type owl:ObjectProperty ;
-                                 rdfs:domain pivmeta:InterrogationMethod ;
-                                 rdfs:range pivmeta:CorrelationAlgorithm ;
-                                 skos:prefLabel "correlation algorithm"@en .
+###  https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme
+pivmeta:useOutlierReplacementScheme rdf:type owl:ObjectProperty ;
+                                    rdfs:domain ssno:PivValidation ;
+                                    rdfs:range pivmeta:OutlierReplacementScheme ;
+                                    skos:prefLabel "uses outlier replacement scheme"@en .
 
 
 ###  https://matthiasprobst.github.io/ssno#unit
@@ -148,40 +153,29 @@ ssno:unit rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/owl/owlapi/turtle#final_window_size
-:final_window_size rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf owl:topDataProperty ;
-                   rdfs:domain pivmeta:InterrogationMethod ;
-                   rdfs:comment "The final window size used by any PIV interrogation method."@en .
+###  https://matthiasprobst.github.io/pivmeta#filenamePattern
+pivmeta:filenamePattern rdf:type owl:DatatypeProperty ;
+                        rdfs:domain pivmeta:PivDistribution ;
+                        rdfs:range xsd:string ;
+                        skos:definition "The regular expression string to determine the image filenames in the distribution."@en ;
+                        skos:prefLabel "filenamePattern"@en .
 
 
-###  http://www.semanticweb.org/owl/owlapi/turtle#initial_window_size
-:initial_window_size rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf owl:topDataProperty ;
-                     rdfs:domain pivmeta:Multigrid ;
-                     rdfs:comment "The initial window size used by a Multigrid PIV method."@en .
+###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
+pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
+                      rdfs:domain pivmeta:PivImageDistribution ,
+                                  pivmeta:PivMaskDistribution ;
+                      rdfs:range xsd:positiveInteger ;
+                      skos:definition "The pixel depth of an image."@en ;
+                      skos:prefLabel "bitDepth"@en .
 
 
-###  http://www.semanticweb.org/owl/owlapi/turtle#number_of_passes
-:number_of_passes rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf owl:topDataProperty ;
-                  rdfs:domain pivmeta:Multipass ;
-                  rdfs:range xsd:int ;
-                  rdfs:comment "The number of passes performed by the Multipass PIV Method."@en .
-
-
-###  http://www.semanticweb.org/owl/owlapi/turtle#percentage_of_final_window_size
-:percentage_of_final_window_size rdf:type owl:DatatypeProperty ;
-                                 rdfs:subPropertyOf owl:topDataProperty ;
-                                 rdfs:domain pivmeta:InterrogationMethod ;
-                                 rdfs:range xsd:float .
-
-
-###  https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm
-pivmeta:CorrelationAlgorithm rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf owl:topDataProperty ;
-                             rdfs:domain pivmeta:InterrogationMethod ;
-                             rdfs:range rdfs:Literal .
+###  https://matthiasprobst.github.io/pivmeta#number_of_records
+pivmeta:number_of_records rdf:type owl:DatatypeProperty ;
+                          rdfs:domain pivmeta:PivImageDistribution ;
+                          rdfs:range xsd:positiveInteger ;
+                          skos:definition "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."@en ;
+                          skos:prefLabel "numberOfRecords"@en .
 
 
 ###  https://matthiasprobst.github.io/ssno#hasStandardNameDescription
@@ -280,8 +274,9 @@ pivmeta:BackgroundSubtractionMethod rdf:type owl:Class ;
                                     skos:prefLabel "background subtraction"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#CorrelationAlgorithm
-pivmeta:CorrelationAlgorithm rdf:type owl:Class .
+###  https://matthiasprobst.github.io/pivmeta#CorrelationMethod
+pivmeta:CorrelationMethod rdf:type owl:Class ;
+                          rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
@@ -324,7 +319,7 @@ pivmeta:ImageType rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod
 pivmeta:InterrogationMethod rdf:type owl:Class ;
                             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
-                            skos:prefLabel "Interrogation Method"@en .
+                            skos:prefLabel "interrogation method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
@@ -336,24 +331,32 @@ pivmeta:MaskGeneration rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#Multigrid
 pivmeta:Multigrid rdf:type owl:Class ;
                   rdfs:subClassOf pivmeta:InterrogationMethod ;
-                  skos:prefLabel "Multigrid"@en .
+                  skos:definition "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."@en ;
+                  skos:prefLabel "multi grid"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Multipass
 pivmeta:Multipass rdf:type owl:Class ;
                   rdfs:subClassOf pivmeta:InterrogationMethod ;
-                  skos:prefLabel "Multipass"@en .
+                  skos:prefLabel "multi pass"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
 pivmeta:OutlierDetectionMethod rdf:type owl:Class ;
                                rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
-                               skos:prefLabel "Outlier Detection Method"@en .
+                               skos:prefLabel "outlier detection method"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme
+pivmeta:OutlierReplacementScheme rdf:type owl:Class ;
+                                 rdfs:subClassOf skos:Concept ;
+                                 skos:prefLabel "outlier replacement scheme"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 pivmeta:PIVEvaluation rdf:type owl:Class ;
                       rdfs:subClassOf pivmeta:PivProcessingStep ;
+                      skos:definition "The PIV evaluation processing performing the correlation algorithm and interrogation method."@en ;
                       skos:prefLabel "piv evaluation"@en .
 
 
@@ -361,6 +364,13 @@ pivmeta:PIVEvaluation rdf:type owl:Class ;
 pivmeta:PIVSoftware rdf:type owl:Class ;
                     rdfs:subClassOf sd:Software ;
                     skos:prefLabel "Piv Software"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PeakSearchMethod
+pivmeta:PeakSearchMethod rdf:type owl:Class ;
+                         rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
+                         rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
+                         skos:prefLabel "peak search method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivDistribution
@@ -376,8 +386,14 @@ pivmeta:PivImage rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#PivImageDistribution
 pivmeta:PivImageDistribution rdf:type owl:Class ;
                              rdfs:subClassOf pivmeta:PivDistribution ;
-                             skos:definition "A PIV image. Can be syntheticlly generated or measured, which can be indicated via \"piv image type\"."@en ;
+                             skos:definition "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."@en ;
                              skos:prefLabel "piv image distribution"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PivMaskDistribution
+pivmeta:PivMaskDistribution rdf:type owl:Class ;
+                            rdfs:subClassOf pivmeta:PivDistribution ;
+                            skos:prefLabel "piv mask distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivPostProcessing
@@ -414,7 +430,7 @@ pivmeta:PivType rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#Singlepass
 pivmeta:Singlepass rdf:type owl:Class ;
                    rdfs:subClassOf pivmeta:InterrogationMethod ;
-                   skos:prefLabel "Singlepass"@en .
+                   skos:prefLabel "single pass"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#StandardName
@@ -422,11 +438,10 @@ pivmeta:StandardName rdf:type owl:Class ;
                      rdfs:subClassOf skos:Concept .
 
 
-###  https://matthiasprobst.github.io/pivmeta#SubPixelPeakFitMethod
-pivmeta:SubPixelPeakFitMethod rdf:type owl:Class ;
-                              rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
-                              rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
-                              skos:prefLabel "Sub Pixel Peak Fit Method"@en .
+###  https://matthiasprobst.github.io/ssno#PivValidation
+ssno:PivValidation rdf:type owl:Class ;
+                   rdfs:subClassOf pivmeta:PivProcessingStep ;
+                   skos:prefLabel "piv validation"@en .
 
 
 ###  https://w3id.org/okn/o/sd#Software
@@ -445,10 +460,22 @@ pivmeta:ExperimentalImage rdf:type owl:NamedIndividual ,
                           skos:prefLabel "experimental image"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#Interpolation
+pivmeta:Interpolation rdf:type owl:NamedIndividual ,
+                               pivmeta:OutlierReplacementScheme ;
+                      skos:prefLabel "interpolation"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#LeftRightFlip
 pivmeta:LeftRightFlip rdf:type owl:NamedIndividual ,
                                pivmeta:ImageManipulationMethod ;
                       skos:prefLabel "left right flip"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample
+pivmeta:ReEvaluateWithLargerSample rdf:type owl:NamedIndividual ,
+                                            pivmeta:OutlierReplacementScheme ;
+                                   skos:prefLabel "re-evaluate with larger sample"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SplitImage
@@ -467,6 +494,12 @@ pivmeta:SyntheticImage rdf:type owl:NamedIndividual ,
 pivmeta:TopBottomFlip rdf:type owl:NamedIndividual ,
                                pivmeta:ImageManipulationMethod ;
                       skos:prefLabel "top bottom flip"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks
+pivmeta:TryLowerOrderPeaks rdf:type owl:NamedIndividual ,
+                                    pivmeta:OutlierReplacementScheme ;
+                           skos:prefLabel "try lower order peaks"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#micro_piv
@@ -498,7 +531,8 @@ pivmeta:ptv rdf:type owl:NamedIndividual ,
 #    Annotations
 #################################################################
 
-pivmeta:CorrelationAlgorithm skos:prefLabel "has correlation algorithm"@en .
+pivmeta:CorrelationMethod skos:definition "The correlation algorithm used for the PIV Interrogation Method"@en ;
+                          skos:prefLabel "correlation method"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
@@ -570,10 +604,18 @@ pivmeta:image_particle_density rdf:type owl:NamedIndividual ,
              <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_density"@en .
 
 
+### https://matthiasprobst.github.io/pivmeta#image_density
+pivmeta:image_density rdf:type owl:NamedIndividual ,
+             <https://matthiasprobst.github.io/pivmeta#StandardName> ;
+             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The image density is computed based on the source density $N_s$ and the interrogation window size."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "image_density" ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "image_density"@en .
+
+
 ### https://matthiasprobst.github.io/pivmeta#image_particle_diameter
 pivmeta:image_particle_diameter rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The diameter of an image particle."@en ;
+             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gausian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "image_particle_diameter" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_diameter"@en .
 
@@ -598,10 +640,18 @@ pivmeta:inplane_velocity rdf:type owl:NamedIndividual ,
 ### https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness
 pivmeta:laser_sheet_thickness rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the laser beam illuminating the seeding particles. The width is defined"@en ;
+             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the laser beam illuminating the seeding particles. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussain, but can be more top-hat-like. This is defined by the shap factor"@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "laser_sheet_thickness" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_thickness"@en .
+
+
+### https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor
+pivmeta:laser_sheet_shape_factor rdf:type owl:NamedIndividual ,
+             <https://matthiasprobst.github.io/pivmeta#StandardName> ;
+             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The shape factor used to approximate the expanded laser beam."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "laser_sheet_shape_factor" ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_shape_factor"@en .
 
 
 ### https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size
