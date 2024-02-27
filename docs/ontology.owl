@@ -274,7 +274,7 @@
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PivDistribution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <skos:definition xml:lang="en">The regular expression string to determine the image filenames in the distribution.</skos:definition>
-        <skos:prefLabel xml:lang="en">filenamePattern</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">filename pattern</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -286,7 +286,7 @@
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PivImageDistribution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <skos:definition xml:lang="en">The pixel depth of an image.</skos:definition>
-        <skos:prefLabel xml:lang="en">bitDepth</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">image bit depth</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -1434,6 +1434,7 @@
 
     <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">
         <skos:definition xml:lang="en">The correlation algorithm used for the PIV Interrogation Method</skos:definition>
+        <skos:example xml:lang="en">A pattern identiying image filenames like &quot;Cam001_a.tif&quot; or &quot;Cam023_b.tif&quot; corresponds to &quot;C\d{3}_[a,b].tif&quot;</skos:example>
         <skos:prefLabel xml:lang="en">correlation method</skos:prefLabel>
     </rdf:Description>
 </rdf:RDF>

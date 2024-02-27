@@ -158,7 +158,7 @@ pivmeta:filenamePattern rdf:type owl:DatatypeProperty ;
                         rdfs:domain pivmeta:PivDistribution ;
                         rdfs:range xsd:string ;
                         skos:definition "The regular expression string to determine the image filenames in the distribution."@en ;
-                        skos:prefLabel "filenamePattern"@en .
+                        skos:prefLabel "filename pattern"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
@@ -166,7 +166,7 @@ pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
                       rdfs:domain pivmeta:PivImageDistribution ;
                       rdfs:range xsd:positiveInteger ;
                       skos:definition "The pixel depth of an image."@en ;
-                      skos:prefLabel "bitDepth"@en .
+                      skos:prefLabel "image bit depth"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#number_of_records
@@ -533,6 +533,7 @@ pivmeta:ptv rdf:type owl:NamedIndividual ,
 #################################################################
 
 pivmeta:CorrelationMethod skos:definition "The correlation algorithm used for the PIV Interrogation Method"@en ;
+                          skos:example "A pattern identiying image filenames like \"Cam001_a.tif\" or \"Cam023_b.tif\" corresponds to \"C\\d{3}_[a,b].tif\""@en ;
                           skos:prefLabel "correlation method"@en .
 
 

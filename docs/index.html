@@ -281,15 +281,15 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#imageBitDepth"
-         title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bitDepth</a>
-   </li>
-   <li>
       <a href="#filenamePattern"
-         title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filenamePattern</a>
+         title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a>
    </li>
    <li>
       <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
+   </li>
+   <li>
+      <a href="#imageBitDepth"
+         title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">image bit depth</a>
    </li>
    <li>
       <a href="#number_of_records"
@@ -1112,7 +1112,7 @@ This section provides details for each class and property defined by PIVMeta.
          <dt>is in domain of</dt>
          <dd>
             <a href="#filenamePattern"
-               title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filenamePattern</a>
+               title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
@@ -1173,7 +1173,7 @@ This section provides details for each class and property defined by PIVMeta.
          <dt>is in domain of</dt>
          <dd>
             <a href="#imageBitDepth"
-               title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bitDepth</a>
+               title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">image bit depth</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#number_of_records"
                title="https://matthiasprobst.github.io/pivmeta#number_of_records">numberOfRecords</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#pivImageType"
@@ -1694,15 +1694,15 @@ This section provides details for each class and property defined by PIVMeta.
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#imageBitDepth"
-            title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bitDepth</a>
-      </li>
-      <li>
          <a href="#filenamePattern"
-            title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filenamePattern</a>
+            title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a>
       </li>
       <li>
          <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
+      </li>
+      <li>
+         <a href="#imageBitDepth"
+            title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">image bit depth</a>
       </li>
       <li>
          <a href="#number_of_records"
@@ -1717,35 +1717,8 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
       </li>
    </ul>
-   <div class="entity" id="imageBitDepth">
-      <h3>bitDepth<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#imageBitDepth</p>
-      <div class="comment">
-         <span class="markdown">The pixel depth of an image.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#PivImageDistribution"
-                  title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#positiveInteger"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="filenamePattern">
-      <h3>filenamePattern<sup class="type-dp" title="data property">dp</sup>
+      <h3>filename pattern<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
@@ -1790,6 +1763,33 @@ This section provides details for each class and property defined by PIVMeta.
                <a href="http://www.w3.org/2001/XMLSchema#anyURI"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#anyURI">anyURI</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="imageBitDepth">
+      <h3>image bit depth<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#imageBitDepth</p>
+      <div class="comment">
+         <span class="markdown">The pixel depth of an image.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PivImageDistribution"
+                  title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</a>
             </dd>
          </dl>
       </div>

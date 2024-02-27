@@ -152,7 +152,7 @@ xsd:date rdf:type rdfs:Datatype .
                  rdfs:domain :PivDistribution ;
                  rdfs:range xsd:string ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The regular expression string to determine the image filenames in the distribution."@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "filenamePattern"@en .
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
@@ -160,7 +160,7 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:domain :PivImageDistribution ;
                rdfs:range xsd:positiveInteger ;
                <http://www.w3.org/2004/02/skos/core#definition> "The pixel depth of an image."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "bitDepth"@en .
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "image bit depth"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#number_of_records
@@ -880,6 +880,7 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 
 :CorrelationMethod <http://www.w3.org/2004/02/skos/core#definition> "The correlation algorithm used for the PIV Interrogation Method"@en ;
+                   <http://www.w3.org/2004/02/skos/core#example> "A pattern identiying image filenames like \"Cam001_a.tif\" or \"Cam023_b.tif\" corresponds to \"C\\d{3}_[a,b].tif\""@en ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "correlation method"@en .
 
 
