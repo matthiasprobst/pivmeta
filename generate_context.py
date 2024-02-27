@@ -2,13 +2,14 @@
 and only slightly adjusted. The original code is licensed under the CC-BY-4 license."""
 import hashlib
 import json
+import logging
 import pathlib
-import warnings
-
 import requests
 from rdflib import Graph
 from rdflib.namespace import NamespaceManager
 from rdflib.term import URIRef
+
+logger = logging.getLogger('pivmeta')
 
 __this_dir__ = pathlib.Path(__file__).parent
 
@@ -25,7 +26,7 @@ def download_file(url, known_hash, target=None):
             if not calculated_hash == known_hash:
                 raise ValueError('File does not match the expected has')
         else:
-            warnings.warn('No hash given!')
+            logger.warning(f'No hash given for {url}!')
 
         # Save the content to a file
         if target is None:
@@ -56,7 +57,11 @@ def generate():
     context_file = __this_dir__ / 'pivmeta_context.jsonld'
 
     g = Graph()
-    g.parse(str(pivmeta_ttl))
+    try:
+        g.parse(str(pivmeta_ttl))
+    except Exception as e:
+        logger.error(f'Error parsing the pivmeta.ttl file: {e}')
+        return
 
     outfile = str(context_file)
     with open(outfile, "w", encoding="utf-8") as f:
@@ -103,21 +108,21 @@ def generate():
             #               '  ?id skos:prefLabel ?label.\n'
             #               '  OPTIONAL {?id rdfs:range ?type .}. \n'
             #               '}')
-            print(f'*** Adding entities of type "{entity}" to the context file ***')
+            logger.debug(f'*** Adding entities of type "{entity}" to the context file ***')
             query_result = g.query(query)
 
-            print(f'Total: {len(query_result)}')
+            logger.debug(f'Total: {len(query_result)}')
             for row in query_result:
                 typestr = ""
                 if type(row.type) == URIRef:
                     typestr = f', "@type" : "{nm.normalizeUri(row.type)}"'
-                #            print(row.id, row.type, type(row.type))
+                #            logger.debug(row.id, row.type, type(row.type))
                 if row.label not in ids:
-                    print(row.label)
+                    logger.debug(row.label)
                     f.write(f',\n    "{row.label}" : {{"@id" : "{nm.normalizeUri(row.id)}"{typestr}}}')
                     ids.append(row.label.lower())
                 else:
-                    print(f'"{row.label}" is already used as a label, therefore {row.id} will be skipped')
+                    logger.debug(f'"{row.label}" is already used as a label, therefore {row.id} will be skipped')
         f.write("\n  }\n}")
 
     with open(outfile, 'r', encoding="utf-8") as f:
@@ -128,7 +133,7 @@ def generate():
         if key not in context['@context']:
             context['@context'][key] = value
         else:
-            print(f'"{key}" is already used as a label, therefore {value} will be skipped')
+            logger.debug(f'"{key}" is already used as a label, therefore {value} will be skipped')
 
     with open(outfile, 'w', encoding="utf-8") as f:
         json.dump(context, f, indent=2, ensure_ascii=False)

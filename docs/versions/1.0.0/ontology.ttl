@@ -157,8 +157,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
 :imageBitDepth rdf:type owl:DatatypeProperty ;
-               rdfs:domain :PivImageDistribution ,
-                           :PivMaskDistribution ;
+               rdfs:domain :PivImageDistribution ;
                rdfs:range xsd:positiveInteger ;
                <http://www.w3.org/2004/02/skos/core#definition> "The pixel depth of an image."@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "bitDepth"@en .
@@ -369,7 +368,9 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#PivDistribution
 :PivDistribution rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> .
+                 rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "piv distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivImage

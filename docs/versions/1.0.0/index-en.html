@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-02-26", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-02-27", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-02-26</dt>
+<dt>Modified on: 2024-02-27</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -188,9 +188,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#PivDistribution"
-         title="https://matthiasprobst.github.io/pivmeta#PivDistribution">
-         <span>piv distribution</span>
-      </a>
+         title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a>
    </li>
    <li>
       <a href="#PIVEvaluation"
@@ -619,9 +617,7 @@ This section provides details for each class and property defined by PIVMeta.
       </li>
       <li>
          <a href="#PivDistribution"
-            title="https://matthiasprobst.github.io/pivmeta#PivDistribution">
-            <span>piv distribution</span>
-         </a>
+            title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a>
       </li>
       <li>
          <a href="#PIVEvaluation"
@@ -1092,6 +1088,9 @@ This section provides details for each class and property defined by PIVMeta.
       </h3>
       <p>
          <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PivDistribution</p>
+      <div class="comment">
+         <span class="markdown">A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content.</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1196,12 +1195,6 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#PivDistribution"
                title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a>
             <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#imageBitDepth"
-               title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bitDepth</a>
-            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
@@ -1740,11 +1733,6 @@ This section provides details for each class and property defined by PIVMeta.
             <dd>
                <a href="#PivImageDistribution"
                   title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dd>
-               <a href="#PivMaskDistribution"
-                  title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">piv mask distribution</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

@@ -163,8 +163,7 @@ pivmeta:filenamePattern rdf:type owl:DatatypeProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
 pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
-                      rdfs:domain pivmeta:PivImageDistribution ,
-                                  pivmeta:PivMaskDistribution ;
+                      rdfs:domain pivmeta:PivImageDistribution ;
                       rdfs:range xsd:positiveInteger ;
                       skos:definition "The pixel depth of an image."@en ;
                       skos:prefLabel "bitDepth"@en .
@@ -375,7 +374,9 @@ pivmeta:PeakSearchMethod rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PivDistribution
 pivmeta:PivDistribution rdf:type owl:Class ;
-                        rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> .
+                        rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
+                        skos:definition "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
+                        skos:prefLabel "piv distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivImage

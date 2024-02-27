@@ -5,11 +5,25 @@
 3. run this script
 """
 import datetime
+import logging
 import pathlib
 import requests.exceptions
 import shutil
 import yaml
 from ssnolib.standard_name import qudt_canonical_unit_lookup
+
+DEFAULT_LOGGING_LEVEL = logging.DEBUG
+_formatter = logging.Formatter(
+    '%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
+    datefmt='%Y-%m-%d_%H:%M:%S')
+
+_stream_handler = logging.StreamHandler()
+_stream_handler.setLevel(DEFAULT_LOGGING_LEVEL)
+_stream_handler.setFormatter(_formatter)
+
+logger = logging.getLogger('pivmeta')
+logger.addHandler(_stream_handler)
+logger.setLevel(DEFAULT_LOGGING_LEVEL)
 
 __this_dir__ = pathlib.Path(__file__).parent
 
@@ -38,23 +52,23 @@ if __name__ == "__main__":
 
     sys.path.insert(0, '.')
     # call batch script build.bat
-    print('Start building docs')
+    logger.info('Start building docs')
 
-    print('Adding standard names to .ttl file from table')
+    logger.debug('Adding standard names to .ttl file from table')
     orig_ttl = __this_dir__ / 'pivmeta_orig.ttl'
     pub_ttl = __this_dir__ / 'pivmeta.ttl'
     snt_path = __this_dir__ / 'standard_name_table.yaml'
 
-    print(' > copy original ttl file')
+    logger.debug(' > copy original ttl file')
     shutil.copy(orig_ttl, pub_ttl)
 
-    print(' > read standard name table')
+    logger.debug(' > read standard name table')
     with open(snt_path, 'r') as f:
         snt_doc = yaml.safe_load(f)
 
     standard_names = snt_doc['standard_names']
 
-    print(' > add standard names')
+    logger.debug(' > add standard names')
     with open(pub_ttl, 'a') as f:
         f.write(f'\n\n### Standard Names automatically added by pivmeta repo script')
         for k, v in standard_names.items():
@@ -74,7 +88,7 @@ if __name__ == "__main__":
                 f.write(f'\n             <https://matthiasprobst.github.io/ssno#unit> <{qudt_units}> ;')
             f.write(f'\n             <http://www.w3.org/2004/02/skos/core#prefLabel> "{k}"@en .\n')
 
-    print(' > update modification data')
+    logger.debug(' > update modification data')
     # open widoco config file
     cfg_file = __this_dir__ / 'widoco.cfg'
     config = configparser.ConfigParser()
@@ -89,16 +103,18 @@ if __name__ == "__main__":
         for k, v in cfg_data.items():
             f.write(f'\n{k}={v}')
     script_path = __this_dir__ / 'build_onto_doc.bat'
-    print('calling ', script_path.absolute())
+    logger.debug(f'calling script {script_path.absolute()}')
     subprocess.run(str(script_path.absolute()))
 
     from generate_context import generate
 
-    print('Copy version to docs')
+    logger.debug('Copy version to docs')
     copy_version_to_docs()
 
-    print('Build context.jsonld')
+    logger.debug('Build context.jsonld')
     try:
         generate()
     except requests.exceptions.ConnectionError as e:
-        print(f'Could not generate context.jsonld ue to missing internet connection: {e}')
+        logger.debug(f'Could not generate context.jsonld ue to missing internet connection: {e}')
+
+    logger.info('Finished building docs')
