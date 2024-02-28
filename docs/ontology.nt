@@ -141,6 +141,12 @@
 <https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2004/02/skos/core#definition> "The regular expression string to determine the image filenames in the distribution."@en .
 <https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#fnumber
+<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#DigitalCamera> .
+<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#imageBitDepth
 <https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
@@ -245,9 +251,13 @@
 # 
 # https://matthiasprobst.github.io/pivmeta#DigitalCamera
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
+<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Hardware> .
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.obolibrary.org/obo/OBI_0001048> .
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#Hardware
+<https://matthiasprobst.github.io/pivmeta#Hardware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#Hardware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 # 
 # https://matthiasprobst.github.io/pivmeta#ImageDewarp
 <https://matthiasprobst.github.io/pivmeta#ImageDewarp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -285,6 +295,10 @@
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "interrogation method"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#Laser
+<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Hardware> .
 # 
 # https://matthiasprobst.github.io/pivmeta#MaskGeneration
 <https://matthiasprobst.github.io/pivmeta#MaskGeneration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -497,14 +511,6 @@
 <https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en .
 <https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <https://matthiasprobst.github.io/ssno#standard_name> "first_peak_y_displacement" .
 <https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#fnumber
-<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#fnumber> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> .
-<https://matthiasprobst.github.io/pivmeta#fnumber> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The f-number of a lens, also known as f-stop."@en .
-<https://matthiasprobst.github.io/pivmeta#fnumber> <https://matthiasprobst.github.io/ssno#standard_name> "fnumber" .
-<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#focal_length
 <https://matthiasprobst.github.io/pivmeta#focal_length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

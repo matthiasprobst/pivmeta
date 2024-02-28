@@ -128,6 +128,12 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
    </li>
    <li>
+      <a href="#Hardware"
+         title="https://matthiasprobst.github.io/pivmeta#Hardware">
+         <span>hardware</span>
+      </a>
+   </li>
+   <li>
       <a href="#ImageDewarp"
          title="https://matthiasprobst.github.io/pivmeta#ImageDewarp">image dewarp</a>
    </li>
@@ -158,6 +164,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#InterrogationMethod"
          title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
+   </li>
+   <li>
+      <a href="#Laser" title="https://matthiasprobst.github.io/pivmeta#Laser">
+         <span>laser</span>
+      </a>
    </li>
    <li>
       <a href="#MaskGeneration"
@@ -287,6 +298,9 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a>
    </li>
    <li>
+      <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
+   </li>
+   <li>
       <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
    </li>
    <li>
@@ -339,9 +353,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#first_peak_y_displacement"
          title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
-   </li>
-   <li>
-      <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
    </li>
    <li>
       <a href="#focal_length"
@@ -586,6 +597,12 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
       </li>
       <li>
+         <a href="#Hardware"
+            title="https://matthiasprobst.github.io/pivmeta#Hardware">
+            <span>hardware</span>
+         </a>
+      </li>
+      <li>
          <a href="#ImageDewarp"
             title="https://matthiasprobst.github.io/pivmeta#ImageDewarp">image dewarp</a>
       </li>
@@ -616,6 +633,11 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#InterrogationMethod"
             title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
+      </li>
+      <li>
+         <a href="#Laser" title="https://matthiasprobst.github.io/pivmeta#Laser">
+            <span>laser</span>
+         </a>
       </li>
       <li>
          <a href="#MaskGeneration"
@@ -816,9 +838,37 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
+            <a href="#Hardware"
+               title="https://matthiasprobst.github.io/pivmeta#Hardware">hardware</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Hardware">
+      <h3>hardware<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Hardware</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
             <a href="http://w3id.org/nfdi4ing/metadata4ing#Tool"
                target="_blank"
                title="http://w3id.org/nfdi4ing/metadata4ing#Tool">tool</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#DigitalCamera"
+               title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Laser" title="https://matthiasprobst.github.io/pivmeta#Laser">laser</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -986,6 +1036,22 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="https://matthiasprobst.github.io/pivmeta#CorrelationMethod"
                target="_blank"
                title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Laser">
+      <h3>laser<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Laser</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Hardware"
+               title="https://matthiasprobst.github.io/pivmeta#Hardware">hardware</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1547,7 +1613,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement">first_peak_x_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#first_peak_y_displacement"
                title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#focal_length"
                title="https://matthiasprobst.github.io/pivmeta#focal_length">focal_length</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_density"
@@ -1765,6 +1830,9 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a>
       </li>
       <li>
+         <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
       </li>
       <li>
@@ -1807,6 +1875,30 @@ This section provides details for each class and property defined by PIVMeta.
                <a href="http://www.w3.org/2001/XMLSchema#string"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="fnumber">
+      <h3>fnumber<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#fnumber</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DigitalCamera"
+                  title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
             </dd>
          </dl>
       </div>
@@ -1984,9 +2076,6 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#first_peak_y_displacement"
             title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
-      </li>
-      <li>
-         <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
       </li>
       <li>
          <a href="#focal_length"
@@ -2434,42 +2523,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"first_peak_y_displacement"</span>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="fnumber">
-      <h3>fnumber<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#fnumber</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#StandardName"
-               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has facts</dt>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <a href="https://qudt.org/vocab/unit/M"
-               target="_blank"
-               title="https://qudt.org/vocab/unit/M">m</a>
-         </dd>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
-               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The f-number of a lens, also known as f-stop."@en</span>
-         </dd>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
-               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"fnumber"</span>
          </dd>
       </dl>
    </div>

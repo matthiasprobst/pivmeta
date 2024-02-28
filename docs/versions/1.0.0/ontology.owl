@@ -279,6 +279,17 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#fnumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#fnumber">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#DigitalCamera"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <skos:prefLabel xml:lang="en">fnumber</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#imageBitDepth -->
 
 
@@ -480,9 +491,18 @@
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#DigitalCamera">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Hardware"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/OBI_0001048"/>
         <skos:prefLabel xml:lang="en">Digital Camera</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Hardware -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Hardware">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
     </owl:Class>
     
 
@@ -555,6 +575,15 @@
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <skos:prefLabel xml:lang="en">interrogation method</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Laser -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Laser">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Hardware"/>
     </owl:Class>
     
 
@@ -949,19 +978,6 @@
         <ssno:hasStandardNameDescription xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>first_peak_y_displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">first_peak_y_displacement</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#fnumber -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#fnumber">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
-        <ssno:hasStandardNameDescription xml:lang="en">The f-number of a lens, also known as f-stop.</ssno:hasStandardNameDescription>
-        <ssno:standard_name>fnumber</ssno:standard_name>
-        <skos:prefLabel xml:lang="en">fnumber</skos:prefLabel>
     </owl:NamedIndividual>
     
 

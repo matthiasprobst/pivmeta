@@ -204,7 +204,7 @@
     "@id" : "http://purl.obolibrary.org/obo/OBI_0001048"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Hardware"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -219,6 +219,12 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "experimental image"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Hardware",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ImageDewarp",
@@ -305,6 +311,12 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "interrogation method"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Laser",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Hardware"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#LeftRightFlip",
@@ -722,23 +734,16 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#fnumber",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCamera"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "fnumber"
-  } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The f-number of a lens, also known as f-stop."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
-    "@value" : "fnumber"
-  } ],
-  "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#focal_length",

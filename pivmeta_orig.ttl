@@ -161,6 +161,13 @@ pivmeta:filenamePattern rdf:type owl:DatatypeProperty ;
                         skos:prefLabel "filename pattern"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#fnumber
+pivmeta:fnumber rdf:type owl:DatatypeProperty ;
+                rdfs:domain pivmeta:DigitalCamera ;
+                rdfs:range rdfs:Literal ;
+                skos:prefLabel "fnumber"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
 pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
                       rdfs:domain pivmeta:PivImageDistribution ;
@@ -280,9 +287,14 @@ pivmeta:CorrelationMethod rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
 pivmeta:DigitalCamera rdf:type owl:Class ;
-                      rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
+                      rdfs:subClassOf pivmeta:Hardware ;
                       rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
                       skos:prefLabel "Digital Camera"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#Hardware
+pivmeta:Hardware rdf:type owl:Class ;
+                 rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
@@ -327,6 +339,11 @@ pivmeta:ImageType rdf:type owl:Class ;
 pivmeta:InterrogationMethod rdf:type owl:Class ;
                             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                             skos:prefLabel "interrogation method"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#Laser
+pivmeta:Laser rdf:type owl:Class ;
+              rdfs:subClassOf pivmeta:Hardware .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration

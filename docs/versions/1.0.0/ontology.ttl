@@ -155,6 +155,13 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#fnumber
+:fnumber rdf:type owl:DatatypeProperty ;
+         rdfs:domain :DigitalCamera ;
+         rdfs:range rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
 :imageBitDepth rdf:type owl:DatatypeProperty ;
                rdfs:domain :PivImageDistribution ;
@@ -274,9 +281,14 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
 :DigitalCamera rdf:type owl:Class ;
-               rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
+               rdfs:subClassOf :Hardware ;
                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#Hardware
+:Hardware rdf:type owl:Class ;
+          rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
@@ -321,6 +333,11 @@ xsd:date rdf:type rdfs:Datatype .
 :InterrogationMethod rdf:type owl:Class ;
                      rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                      <http://www.w3.org/2004/02/skos/core#prefLabel> "interrogation method"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#Laser
+:Laser rdf:type owl:Class ;
+       rdfs:subClassOf :Hardware .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
@@ -563,15 +580,6 @@ xsd:date rdf:type rdfs:Datatype .
                            <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en ;
                            <https://matthiasprobst.github.io/ssno#standard_name> "first_peak_y_displacement" ;
                            <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#fnumber
-:fnumber rdf:type owl:NamedIndividual ,
-                  :StandardName ;
-         <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
-         <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The f-number of a lens, also known as f-stop."@en ;
-         <https://matthiasprobst.github.io/ssno#standard_name> "fnumber" ;
-         <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#focal_length
