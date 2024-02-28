@@ -198,6 +198,19 @@
     "@value" : "correlation method"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCamera",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/OBI_0001048"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Digital Camera"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -268,6 +281,10 @@
   "http://www.w3.org/2004/02/skos/core#example" : [ {
     "@language" : "en",
     "@value" : "Examples are synthetic or experimental sources."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "image type"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Interpolation",
@@ -556,6 +573,66 @@
     "@value" : "try lower order peaks"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ccd_height",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "ccd_height"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The height of a ccd pixel."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "ccd_height"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ccd_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "ccd_size"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The size of a square ccd pixel."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "ccd_size"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ccd_width",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "ccd_width"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The width of a ccd pixel."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "ccd_width"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#coordinate",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -642,6 +719,46 @@
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "first_peak_y_displacement"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#fnumber",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "fnumber"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The f-number of a lens, also known as f-stop."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "fnumber"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#focal_length",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "focal_length"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The focal length. See also https://www.wikidata.org/wiki/Q193540."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "focal_length"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasStandardName",
@@ -1158,6 +1275,40 @@
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "seeding_material"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#sensor_pixel_height",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "sensor_pixel_height"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The height of the sensor in pixel."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "sensor_pixel_height"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#sensor_pixel_width",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "sensor_pixel_width"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The width of the sensor in pixel."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "sensor_pixel_width"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio",

@@ -278,6 +278,13 @@ pivmeta:CorrelationMethod rdf:type owl:Class ;
                           rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 
 
+###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
+pivmeta:DigitalCamera rdf:type owl:Class ;
+                      rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
+                      rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
+                      skos:prefLabel "Digital Camera"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
 pivmeta:ImageDewarp rdf:type owl:Class ;
                     rdfs:subClassOf pivmeta:PivPreProcessing ;
@@ -312,7 +319,8 @@ pivmeta:ImageRotation rdf:type owl:Class ;
 pivmeta:ImageType rdf:type owl:Class ;
                   rdfs:subClassOf skos:Concept ;
                   skos:definition "PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally)."@en ;
-                  skos:example "Examples are synthetic or experimental sources."@en .
+                  skos:example "Examples are synthetic or experimental sources."@en ;
+                  skos:prefLabel "image type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod

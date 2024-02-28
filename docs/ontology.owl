@@ -476,6 +476,17 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#DigitalCamera -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#DigitalCamera">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/OBI_0001048"/>
+        <skos:prefLabel xml:lang="en">Digital Camera</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#ImageDewarp -->
 
 
@@ -533,6 +544,7 @@
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <skos:definition xml:lang="en">PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally).</skos:definition>
         <skos:example xml:lang="en">Examples are synthetic or experimental sources.</skos:example>
+        <skos:prefLabel xml:lang="en">image type</skos:prefLabel>
     </owl:Class>
     
 
@@ -853,6 +865,45 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#ccd_height -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ccd_height">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:hasStandardNameDescription xml:lang="en">The height of a ccd pixel.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>ccd_height</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">ccd_height</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ccd_size -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ccd_size">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:hasStandardNameDescription xml:lang="en">The size of a square ccd pixel.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>ccd_size</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">ccd_size</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ccd_width -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ccd_width">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:hasStandardNameDescription xml:lang="en">The width of a ccd pixel.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>ccd_width</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">ccd_width</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#coordinate -->
 
 
@@ -898,6 +949,32 @@
         <ssno:hasStandardNameDescription xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</ssno:hasStandardNameDescription>
         <ssno:standard_name>first_peak_y_displacement</ssno:standard_name>
         <skos:prefLabel xml:lang="en">first_peak_y_displacement</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#fnumber -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#fnumber">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:hasStandardNameDescription xml:lang="en">The f-number of a lens, also known as f-stop.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>fnumber</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">fnumber</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#focal_length -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#focal_length">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:hasStandardNameDescription xml:lang="en">The focal length. See also https://www.wikidata.org/wiki/Q193540.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>focal_length</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">focal_length</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1222,6 +1299,30 @@
         <ssno:hasStandardNameDescription xml:lang="en">The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS).</ssno:hasStandardNameDescription>
         <ssno:standard_name>seeding_material</ssno:standard_name>
         <skos:prefLabel xml:lang="en">seeding_material</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#sensor_pixel_height -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:hasStandardNameDescription xml:lang="en">The height of the sensor in pixel.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>sensor_pixel_height</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">sensor_pixel_height</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#sensor_pixel_width -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:hasStandardNameDescription xml:lang="en">The width of the sensor in pixel.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>sensor_pixel_width</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">sensor_pixel_width</skos:prefLabel>
     </owl:NamedIndividual>
     
 

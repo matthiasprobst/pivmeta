@@ -27,6 +27,7 @@ context* to the JSON data written afterwards. Then, we will add multiple metadat
     "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld"
   },
   "@graph": [
+    ...
   ]
 }
 ```
@@ -52,17 +53,14 @@ We will add "John Doe" as a contact person. He can be identified by an ORCID ID.
   "@graph": [
     {
       "@id": "orcid:0000-0001-8729-0482",
-      "@type": [
-        "person",
-        "contact person"
-      ],
+      "@type": "person",
       "has ORCID Id": "0000-0001-8729-0482",
       "firstName": "John",
       "lastName": "Doe",
       "role": "contact person",
       "affiliation": {
         "@id": "local:myInstitution",
-        "@type": "organization",
+        "@type": "Organization",
         "name": "John Doe's Institute of Technology"
       }
     }

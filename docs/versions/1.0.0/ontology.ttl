@@ -272,6 +272,13 @@ xsd:date rdf:type rdfs:Datatype .
                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 
 
+###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
+:DigitalCamera rdf:type owl:Class ;
+               rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
+               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
 :ImageDewarp rdf:type owl:Class ;
              rdfs:subClassOf :PivPreProcessing ;
@@ -306,7 +313,8 @@ xsd:date rdf:type rdfs:Datatype .
 :ImageType rdf:type owl:Class ;
            rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
            <http://www.w3.org/2004/02/skos/core#definition> "PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally)."@en ;
-           <http://www.w3.org/2004/02/skos/core#example> "Examples are synthetic or experimental sources."@en .
+           <http://www.w3.org/2004/02/skos/core#example> "Examples are synthetic or experimental sources."@en ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "image type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod
@@ -497,6 +505,33 @@ xsd:date rdf:type rdfs:Datatype .
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "try lower order peaks"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#ccd_height
+:ccd_height rdf:type owl:NamedIndividual ,
+                     :StandardName ;
+            <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+            <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of a ccd pixel."@en ;
+            <https://matthiasprobst.github.io/ssno#standard_name> "ccd_height" ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_height"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ccd_size
+:ccd_size rdf:type owl:NamedIndividual ,
+                   :StandardName ;
+          <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+          <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The size of a square ccd pixel."@en ;
+          <https://matthiasprobst.github.io/ssno#standard_name> "ccd_size" ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_size"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ccd_width
+:ccd_width rdf:type owl:NamedIndividual ,
+                    :StandardName ;
+           <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+           <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of a ccd pixel."@en ;
+           <https://matthiasprobst.github.io/ssno#standard_name> "ccd_width" ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_width"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#coordinate
 :coordinate rdf:type owl:NamedIndividual ,
                      :StandardName ;
@@ -528,6 +563,24 @@ xsd:date rdf:type rdfs:Datatype .
                            <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en ;
                            <https://matthiasprobst.github.io/ssno#standard_name> "first_peak_y_displacement" ;
                            <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#fnumber
+:fnumber rdf:type owl:NamedIndividual ,
+                  :StandardName ;
+         <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+         <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The f-number of a lens, also known as f-stop."@en ;
+         <https://matthiasprobst.github.io/ssno#standard_name> "fnumber" ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#focal_length
+:focal_length rdf:type owl:NamedIndividual ,
+                       :StandardName ;
+              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The focal length. See also https://www.wikidata.org/wiki/Q193540."@en ;
+              <https://matthiasprobst.github.io/ssno#standard_name> "focal_length" ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "focal_length"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#image_density
@@ -744,6 +797,22 @@ xsd:date rdf:type rdfs:Datatype .
                   <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS)."@en ;
                   <https://matthiasprobst.github.io/ssno#standard_name> "seeding_material" ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "seeding_material"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_height
+:sensor_pixel_height rdf:type owl:NamedIndividual ,
+                              :StandardName ;
+                     <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of the sensor in pixel."@en ;
+                     <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_height" ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_width
+:sensor_pixel_width rdf:type owl:NamedIndividual ,
+                             :StandardName ;
+                    <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the sensor in pixel."@en ;
+                    <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_width" ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio
