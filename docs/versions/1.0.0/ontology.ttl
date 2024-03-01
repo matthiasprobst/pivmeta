@@ -162,14 +162,6 @@ xsd:date rdf:type rdfs:Datatype .
          <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
-:imageBitDepth rdf:type owl:DatatypeProperty ;
-               rdfs:domain :PivImageDistribution ;
-               rdfs:range xsd:positiveInteger ;
-               <http://www.w3.org/2004/02/skos/core#definition> "The pixel depth of an image."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "image bit depth"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#numberOfRecords
 :numberOfRecords rdf:type owl:DatatypeProperty ;
                  rdfs:domain :PivImageDistribution ;
@@ -281,14 +273,9 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
 :DigitalCamera rdf:type owl:Class ;
-               rdfs:subClassOf :Hardware ;
+               rdfs:subClassOf :PIVHardware ;
                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#Hardware
-:Hardware rdf:type owl:Class ;
-          rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
@@ -337,7 +324,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#Laser
 :Laser rdf:type owl:Class ;
-       rdfs:subClassOf :Hardware .
+       rdfs:subClassOf :PIVHardware .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
@@ -376,6 +363,11 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:subClassOf :PivProcessingStep ;
                <http://www.w3.org/2004/02/skos/core#definition> "The PIV evaluation processing performing the correlation algorithm and interrogation method."@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "piv evaluation"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVHardware
+:PIVHardware rdf:type owl:Class ;
+             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVSoftware
@@ -580,6 +572,14 @@ xsd:date rdf:type rdfs:Datatype .
               <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The focal length. See also https://www.wikidata.org/wiki/Q193540."@en ;
               <https://matthiasprobst.github.io/ssno#standard_name> "focal_length" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "focal_length"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#image_bit_depth
+:image_bit_depth rdf:type owl:NamedIndividual ,
+                          :StandardName ;
+                 <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The pixel deth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en ;
+                 <https://matthiasprobst.github.io/ssno#standard_name> "image_bit_depth" ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "image_bit_depth"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#image_density
@@ -806,12 +806,28 @@ xsd:date rdf:type rdfs:Datatype .
                      <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor
+:sensor_pixel_height_fill_factor rdf:type owl:NamedIndividual ,
+                                          :StandardName ;
+                                 <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en ;
+                                 <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_height_fill_factor" ;
+                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height_fill_factor"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_width
 :sensor_pixel_width rdf:type owl:NamedIndividual ,
                              :StandardName ;
                     <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the sensor in pixel."@en ;
                     <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_width" ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor
+:sensor_pixel_width_fill_factor rdf:type owl:NamedIndividual ,
+                                         :StandardName ;
+                                <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en ;
+                                <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_width_fill_factor" ;
+                                <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width_fill_factor"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio

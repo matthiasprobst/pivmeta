@@ -168,14 +168,6 @@ pivmeta:fnumber rdf:type owl:DatatypeProperty ;
                 skos:prefLabel "fnumber"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
-pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
-                      rdfs:domain pivmeta:PivImageDistribution ;
-                      rdfs:range xsd:positiveInteger ;
-                      skos:definition "The pixel depth of an image."@en ;
-                      skos:prefLabel "image bit depth"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#numberOfRecords
 pivmeta:numberOfRecords rdf:type owl:DatatypeProperty ;
                         rdfs:domain pivmeta:PivImageDistribution ;
@@ -287,14 +279,9 @@ pivmeta:CorrelationMethod rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
 pivmeta:DigitalCamera rdf:type owl:Class ;
-                      rdfs:subClassOf pivmeta:Hardware ;
+                      rdfs:subClassOf pivmeta:PIVHardware ;
                       rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
                       skos:prefLabel "Digital Camera"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#Hardware
-pivmeta:Hardware rdf:type owl:Class ;
-                 rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
@@ -343,7 +330,7 @@ pivmeta:InterrogationMethod rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#Laser
 pivmeta:Laser rdf:type owl:Class ;
-              rdfs:subClassOf pivmeta:Hardware .
+              rdfs:subClassOf pivmeta:PIVHardware .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
@@ -382,6 +369,11 @@ pivmeta:PIVEvaluation rdf:type owl:Class ;
                       rdfs:subClassOf pivmeta:PivProcessingStep ;
                       skos:definition "The PIV evaluation processing performing the correlation algorithm and interrogation method."@en ;
                       skos:prefLabel "piv evaluation"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVHardware
+pivmeta:PIVHardware rdf:type owl:Class ;
+                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVSoftware

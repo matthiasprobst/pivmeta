@@ -5,11 +5,13 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:ssno="https://matthiasprobst.github.io/ssno#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
      xmlns:pivmeta="https://matthiasprobst.github.io/pivmeta#"
      xmlns:metadata4ing="http://w3id.org/nfdi4ing/metadata4ing#">
     <owl:Ontology rdf:about="https://matthiasprobst.github.io/pivmeta#">
@@ -288,18 +290,6 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#imageBitDepth -->
-
-
-    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#imageBitDepth">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PivImageDistribution"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <skos:definition xml:lang="en">The pixel depth of an image.</skos:definition>
-        <skos:prefLabel xml:lang="en">image bit depth</skos:prefLabel>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#numberOfRecords -->
 
 
@@ -489,18 +479,9 @@
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#DigitalCamera">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Hardware"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVHardware"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/OBI_0001048"/>
         <skos:prefLabel xml:lang="en">Digital Camera</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#Hardware -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Hardware">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
     </owl:Class>
     
 
@@ -581,7 +562,7 @@
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Laser">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Hardware"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVHardware"/>
     </owl:Class>
     
 
@@ -644,6 +625,15 @@
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivProcessingStep"/>
         <skos:definition xml:lang="en">The PIV evaluation processing performing the correlation algorithm and interrogation method.</skos:definition>
         <skos:prefLabel xml:lang="en">piv evaluation</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#PIVHardware -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVHardware">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
     </owl:Class>
     
 
@@ -976,6 +966,18 @@
         <ssno:hasStandardNameDescription xml:lang="en">The focal length. See also https://www.wikidata.org/wiki/Q193540.</ssno:hasStandardNameDescription>
         <ssno:standard_name>focal_length</ssno:standard_name>
         <skos:prefLabel xml:lang="en">focal_length</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#image_bit_depth -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_bit_depth">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:hasStandardNameDescription xml:lang="en">The pixel deth of an image in bits. Typical bit depth are 8 bits or 16 bits.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>image_bit_depth</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">image_bit_depth</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1316,6 +1318,18 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:hasStandardNameDescription xml:lang="en">Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel&apos;s light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>sensor_pixel_height_fill_factor</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">sensor_pixel_height_fill_factor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#sensor_pixel_width -->
 
 
@@ -1324,6 +1338,18 @@
         <ssno:hasStandardNameDescription xml:lang="en">The width of the sensor in pixel.</ssno:hasStandardNameDescription>
         <ssno:standard_name>sensor_pixel_width</ssno:standard_name>
         <skos:prefLabel xml:lang="en">sensor_pixel_width</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:hasStandardNameDescription xml:lang="en">Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel&apos;s light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor.</ssno:hasStandardNameDescription>
+        <ssno:standard_name>sensor_pixel_width_fill_factor</ssno:standard_name>
+        <skos:prefLabel xml:lang="en">sensor_pixel_width_fill_factor</skos:prefLabel>
     </owl:NamedIndividual>
     
 

@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-02-28", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-03-01", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-02-28</dt>
+<dt>Modified on: 2024-03-01</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -77,7 +77,7 @@ $(function(){
 <img src="null" style="border-width:0" alt="License" />
 </a>
 <br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd><dt>Cite as:</dt>
 <dd>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen. PIVMeta: An ontology draft for describing particle image velocimetry data. Revision: v1.0.0. Retrieved from: https://matthiasprobst.github.io/pivmeta/1.0.0</dd>
 </dl>
 
@@ -126,12 +126,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#DigitalCamera"
          title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
-   </li>
-   <li>
-      <a href="#Hardware"
-         title="https://matthiasprobst.github.io/pivmeta#Hardware">
-         <span>hardware</span>
-      </a>
    </li>
    <li>
       <a href="#ImageDewarp"
@@ -194,6 +188,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#OutlierReplacementScheme"
          title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+   </li>
+   <li>
+      <a href="#PIVHardware"
+         title="https://matthiasprobst.github.io/pivmeta#PIVHardware">
+         <span>p i v hardware</span>
+      </a>
    </li>
    <li>
       <a href="#PeakSearchMethod"
@@ -304,10 +304,6 @@ This ontology has the following classes and properties.</span>
       <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
    </li>
    <li>
-      <a href="#imageBitDepth"
-         title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">image bit depth</a>
-   </li>
-   <li>
       <a href="#numberOfRecords"
          title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a>
    </li>
@@ -353,6 +349,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#focal_length"
          title="https://matthiasprobst.github.io/pivmeta#focal_length">focal_length</a>
+   </li>
+   <li>
+      <a href="#image_bit_depth"
+         title="https://matthiasprobst.github.io/pivmeta#image_bit_depth">image_bit_depth</a>
    </li>
    <li>
       <a href="#image_density"
@@ -477,8 +477,16 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height">sensor_pixel_height</a>
    </li>
    <li>
+      <a href="#sensor_pixel_height_fill_factor"
+         title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor">sensor_pixel_height_fill_factor</a>
+   </li>
+   <li>
       <a href="#sensor_pixel_width"
          title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width">sensor_pixel_width</a>
+   </li>
+   <li>
+      <a href="#sensor_pixel_width_fill_factor"
+         title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor">sensor_pixel_width_fill_factor</a>
    </li>
    <li>
       <a href="#signal_to_noise_ratio"
@@ -593,12 +601,6 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
       </li>
       <li>
-         <a href="#Hardware"
-            title="https://matthiasprobst.github.io/pivmeta#Hardware">
-            <span>hardware</span>
-         </a>
-      </li>
-      <li>
          <a href="#ImageDewarp"
             title="https://matthiasprobst.github.io/pivmeta#ImageDewarp">image dewarp</a>
       </li>
@@ -659,6 +661,12 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#OutlierReplacementScheme"
             title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+      </li>
+      <li>
+         <a href="#PIVHardware"
+            title="https://matthiasprobst.github.io/pivmeta#PIVHardware">
+            <span>p i v hardware</span>
+         </a>
       </li>
       <li>
          <a href="#PeakSearchMethod"
@@ -834,38 +842,14 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Hardware"
-               title="https://matthiasprobst.github.io/pivmeta#Hardware">hardware</a>
+            <a href="#PIVHardware"
+               title="https://matthiasprobst.github.io/pivmeta#PIVHardware">p i v hardware</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
             <sup class="type-dp" title="data property">dp</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Hardware">
-      <h3>hardware<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Hardware</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="http://w3id.org/nfdi4ing/metadata4ing#Tool"
-               target="_blank"
-               title="http://w3id.org/nfdi4ing/metadata4ing#Tool">tool</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#DigitalCamera"
-               title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Laser" title="https://matthiasprobst.github.io/pivmeta#Laser">laser</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1045,8 +1029,8 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Hardware"
-               title="https://matthiasprobst.github.io/pivmeta#Hardware">hardware</a>
+            <a href="#PIVHardware"
+               title="https://matthiasprobst.github.io/pivmeta#PIVHardware">p i v hardware</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1179,6 +1163,30 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="PIVHardware">
+      <h3>p i v hardware<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVHardware</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://w3id.org/nfdi4ing/metadata4ing#Tool"
+               target="_blank"
+               title="http://w3id.org/nfdi4ing/metadata4ing#Tool">tool</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#DigitalCamera"
+               title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Laser" title="https://matthiasprobst.github.io/pivmeta#Laser">laser</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="PeakSearchMethod">
       <h3>peak search method<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -1288,9 +1296,7 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#imageBitDepth"
-               title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">image bit depth</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#numberOfRecords"
+            <a href="#numberOfRecords"
                title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#pivImageType"
                title="https://matthiasprobst.github.io/pivmeta#pivImageType">piv image type</a>
@@ -1609,6 +1615,8 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">first_peak_y_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#focal_length"
                title="https://matthiasprobst.github.io/pivmeta#focal_length">focal_length</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_bit_depth"
+               title="https://matthiasprobst.github.io/pivmeta#image_bit_depth">image_bit_depth</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_density"
                title="https://matthiasprobst.github.io/pivmeta#image_density">image_density</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_filter_kernel_size"
@@ -1659,8 +1667,12 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#seeding_material">seeding_material</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#sensor_pixel_height"
                title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height">sensor_pixel_height</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#sensor_pixel_height_fill_factor"
+               title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor">sensor_pixel_height_fill_factor</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#sensor_pixel_width"
                title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width">sensor_pixel_width</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#sensor_pixel_width_fill_factor"
+               title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor">sensor_pixel_width_fill_factor</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#signal_to_noise_ratio"
                title="https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio">signal_to_noise_ratio</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#standard_deviation_of_image_particle_diameter"
@@ -1830,10 +1842,6 @@ This section provides details for each class and property defined by PIVMeta.
          <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
       </li>
       <li>
-         <a href="#imageBitDepth"
-            title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">image bit depth</a>
-      </li>
-      <li>
          <a href="#numberOfRecords"
             title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a>
       </li>
@@ -1916,33 +1924,6 @@ This section provides details for each class and property defined by PIVMeta.
                <a href="http://www.w3.org/2001/XMLSchema#anyURI"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#anyURI">anyURI</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="imageBitDepth">
-      <h3>image bit depth<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#imageBitDepth</p>
-      <div class="comment">
-         <span class="markdown">The pixel depth of an image.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#PivImageDistribution"
-                  title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#positiveInteger"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</a>
             </dd>
          </dl>
       </div>
@@ -2072,6 +2053,10 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#focal_length">focal_length</a>
       </li>
       <li>
+         <a href="#image_bit_depth"
+            title="https://matthiasprobst.github.io/pivmeta#image_bit_depth">image_bit_depth</a>
+      </li>
+      <li>
          <a href="#image_density"
             title="https://matthiasprobst.github.io/pivmeta#image_density">image_density</a>
       </li>
@@ -2194,8 +2179,16 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height">sensor_pixel_height</a>
       </li>
       <li>
+         <a href="#sensor_pixel_height_fill_factor"
+            title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor">sensor_pixel_height_fill_factor</a>
+      </li>
+      <li>
          <a href="#sensor_pixel_width"
             title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width">sensor_pixel_width</a>
+      </li>
+      <li>
+         <a href="#sensor_pixel_width_fill_factor"
+            title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor">sensor_pixel_width_fill_factor</a>
       </li>
       <li>
          <a href="#signal_to_noise_ratio"
@@ -2513,6 +2506,35 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"focal_length"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="image_bit_depth">
+      <h3>image_bit_depth<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#image_bit_depth</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The pixel deth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"image_bit_depth"</span>
          </dd>
       </dl>
    </div>
@@ -3376,6 +3398,35 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="sensor_pixel_height_fill_factor">
+      <h3>sensor_pixel_height_fill_factor<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"sensor_pixel_height_fill_factor"</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="sensor_pixel_width">
       <h3>sensor_pixel_width<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -3402,6 +3453,35 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"sensor_pixel_width"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="sensor_pixel_width_fill_factor">
+      <h3>sensor_pixel_width_fill_factor<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"sensor_pixel_width_fill_factor"</span>
          </dd>
       </dl>
    </div>

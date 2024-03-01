@@ -147,13 +147,6 @@
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#imageBitDepth
-<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
-<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
-<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2004/02/skos/core#definition> "The pixel depth of an image."@en .
-<https://matthiasprobst.github.io/pivmeta#imageBitDepth> <http://www.w3.org/2004/02/skos/core#prefLabel> "image bit depth"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#numberOfRecords
 <https://matthiasprobst.github.io/pivmeta#numberOfRecords> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://matthiasprobst.github.io/pivmeta#numberOfRecords> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
@@ -251,13 +244,9 @@
 # 
 # https://matthiasprobst.github.io/pivmeta#DigitalCamera
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Hardware> .
+<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVHardware> .
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.obolibrary.org/obo/OBI_0001048> .
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#Hardware
-<https://matthiasprobst.github.io/pivmeta#Hardware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#Hardware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 # 
 # https://matthiasprobst.github.io/pivmeta#ImageDewarp
 <https://matthiasprobst.github.io/pivmeta#ImageDewarp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -298,7 +287,7 @@
 # 
 # https://matthiasprobst.github.io/pivmeta#Laser
 <https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Hardware> .
+<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVHardware> .
 # 
 # https://matthiasprobst.github.io/pivmeta#MaskGeneration
 <https://matthiasprobst.github.io/pivmeta#MaskGeneration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -331,6 +320,10 @@
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivProcessingStep> .
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2004/02/skos/core#definition> "The PIV evaluation processing performing the correlation algorithm and interrogation method."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv evaluation"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#PIVHardware
+<https://matthiasprobst.github.io/pivmeta#PIVHardware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PIVHardware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVSoftware
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -511,6 +504,13 @@
 <https://matthiasprobst.github.io/pivmeta#focal_length> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The focal length. See also https://www.wikidata.org/wiki/Q193540."@en .
 <https://matthiasprobst.github.io/pivmeta#focal_length> <https://matthiasprobst.github.io/ssno#standard_name> "focal_length" .
 <https://matthiasprobst.github.io/pivmeta#focal_length> <http://www.w3.org/2004/02/skos/core#prefLabel> "focal_length"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#image_bit_depth
+<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The pixel deth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en .
+<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <https://matthiasprobst.github.io/ssno#standard_name> "image_bit_depth" .
+<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_bit_depth"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#image_density
 <https://matthiasprobst.github.io/pivmeta#image_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -711,12 +711,26 @@
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_height> <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_height" .
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_height> <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en .
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_height_fill_factor" .
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height_fill_factor"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#sensor_pixel_width
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the sensor in pixel."@en .
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_width" .
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en .
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <https://matthiasprobst.github.io/ssno#standard_name> "sensor_pixel_width_fill_factor" .
+<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width_fill_factor"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio
 <https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
