@@ -1,8 +1,7 @@
 {
   "@context": {
-    "dct": "http://purl.org/dc/terms/",
-    "dcat": "http://www.w3.org/ns/dcat#",
-    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld"
+    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld",
+    "local": "https://example.org/"
   },
   "@graph": [
     {
@@ -12,7 +11,8 @@
       "dct:description": "Strong wall reflection in an impeller (background images and mask are provided), (provided by Stanislas) < real > [1K x 512] ",
       "dcat:landingPage": "https://www.pivchallenge.org/pub/index.html#c",
       "dcterms:modified": "2000-10-28",
-      "dcat:creator": {
+      "dcterms:creator": {
+        "@id": "local:stanislas",
         "@type": "prov:Person",
         "last name": "Stanislas",
         "personal mailbox": "pivnet-sig32@univ-lille1.fr"

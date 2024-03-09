@@ -77,8 +77,14 @@ if __name__ == '__main__':
          'piv_challenge/piv_challenge_1C.json',
          'piv_challenge/piv_challenge_1E.json'],
         'piv_challenge/piv_challenge_data.json')
-    datasets = get_datasets('piv_challenge/piv_challenge_data.json')
+    from pivmetalib.dcat import Dataset
+    from ontolutils import query
+
+    datasets = query(Dataset, 'piv_challenge/piv_challenge_data.json')
     for ds in datasets:
-        print(ds)
+        print(ds.model_dump(exclude_none=True))
+    # datasets = get_datasets('piv_challenge/piv_challenge_data.json')
+    # for ds in datasets:
+    #     print(ds)
 
     # print(get_distribution(datasets[0]))

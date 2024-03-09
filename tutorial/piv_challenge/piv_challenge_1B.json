@@ -1,8 +1,7 @@
 {
   "@context": {
-    "dct": "http://purl.org/dc/terms/",
-    "dcat": "http://www.w3.org/ns/dcat#",
-    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld"
+    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld",
+    "local": "https://example.org/"
   },
   "@graph": [
     {
@@ -13,7 +12,8 @@
       "dcat:landingPage": "https://www.pivchallenge.org/pub/index.html#a",
       "dcterms:title": "Strong vortex",
       "dcterms:modified": "2000-10-28",
-      "dcat:creator": {
+      "dcterms:creator": {
+        "@id": "local:okamoto",
         "@type": "prov:Person",
         "last name": "Okamoto",
         "personal mailbox": "okamoto@tokai.t.u-tokyo.ac.jp"
