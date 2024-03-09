@@ -119,6 +119,14 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  https://codemeta.github.io/terms/hasSourceCode
+<https://codemeta.github.io/terms/hasSourceCode> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain pivmeta:DigitalCameraModel ,
+                                                             pivmeta:LaserModel ,
+                                                             ssno:SyntheticParticle ;
+                                                 rdfs:range <https://schema.org/SoftwareSourceCode> .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#hasStandardName
 pivmeta:hasStandardName rdf:type owl:ObjectProperty ;
                         rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
@@ -284,6 +292,13 @@ pivmeta:DigitalCamera rdf:type owl:Class ;
                       skos:prefLabel "Digital Camera"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#DigitalCameraModel
+pivmeta:DigitalCameraModel rdf:type owl:Class ;
+                           rdfs:subClassOf pivmeta:DigitalCamera ;
+                           skos:definition "A model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en ;
+                           skos:prefLabel "Digital Camera Model"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
 pivmeta:ImageDewarp rdf:type owl:Class ;
                     rdfs:subClassOf pivmeta:PivPreProcessing ;
@@ -331,6 +346,11 @@ pivmeta:InterrogationMethod rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#Laser
 pivmeta:Laser rdf:type owl:Class ;
               rdfs:subClassOf pivmeta:PIVHardware .
+
+
+###  https://matthiasprobst.github.io/pivmeta#LaserModel
+pivmeta:LaserModel rdf:type owl:Class ;
+                   rdfs:subClassOf pivmeta:Laser .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
@@ -456,10 +476,32 @@ pivmeta:StandardName rdf:type owl:Class ;
                      rdfs:subClassOf skos:Concept .
 
 
+###  https://matthiasprobst.github.io/ssno#Particle
+ssno:Particle rdf:type owl:Class ;
+              rdfs:subClassOf pivmeta:PIVHardware ;
+              skos:definition "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en ;
+              skos:prefLabel "Particle"@en .
+
+
 ###  https://matthiasprobst.github.io/ssno#PivValidation
 ssno:PivValidation rdf:type owl:Class ;
                    rdfs:subClassOf pivmeta:PivProcessingStep ;
                    skos:prefLabel "piv validation"@en .
+
+
+###  https://matthiasprobst.github.io/ssno#SyntheticParticle
+ssno:SyntheticParticle rdf:type owl:Class ;
+                       rdfs:subClassOf ssno:Particle ;
+                       skos:definition "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en .
+
+
+###  https://schema.org/CreativeWork
+<https://schema.org/CreativeWork> rdf:type owl:Class .
+
+
+###  https://schema.org/SoftwareSourceCode
+<https://schema.org/SoftwareSourceCode> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://schema.org/CreativeWork> .
 
 
 ###  https://w3id.org/okn/o/sd#Software

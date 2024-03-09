@@ -9,19 +9,19 @@ standard_names:
   piv_first_peak_correlation_coefficient:
     description: The correlation coefficient is a measure for the quality of the PIV
       evaluation. It is computed based on the cross-correlation of the interrogation
-      windows. The first peak correlation coeficient is the correlation coefficient
+      windows. The first peak correlation coefficient is the correlation coefficient
       of the first peak of the cross-correlation function.
     units: ''
   piv_second_peak_correlation_coefficient:
     description: The correlation coefficient is a measure for the quality of the PIV
       evaluation. It is computed based on the cross-correlation of the interrogation
-      windows. The first peak correlation coeficient is the correlation coefficient
+      windows. The first peak correlation coefficient is the correlation coefficient
       of the second peak of the cross-correlation function.
     units: ''
   piv_third_peak_correlation_coefficient:
     description: The correlation coefficient is a measure for the quality of the PIV
       evaluation. It is computed based on the cross-correlation of the interrogation
-      windows. The first peak correlation coeficient is the correlation coefficient
+      windows. The first peak correlation coefficient is the correlation coefficient
       of the third peak of the cross-correlation function.
     units: ''
   first_peak_x_displacement:
@@ -61,16 +61,23 @@ standard_names:
     units: ''
   inplane_velocity:
     description: Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it
-      indicates the magnitute of the velocity vector. 'inplane' indicates that the
+      indicates the magnitude of the velocity vector. 'inplane' indicates that the
       velocity magnitude was computed based on the in-plane components only.
     units: m/s
-  laser_sheet_thickness:
-    description: The width of the laser beam illuminating the seeding particles. The
-      width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be
-      Gaussain, but can be more top-hat-like. This is defined by the shap factor
+  model_laser_sheet_thickness:
+    description: The width of the laser sheet illuminating the seeding particles as used in a model (synthetic
+      PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be
+      Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor).
     units: m
-  laser_sheet_shape_factor:
-    description: The shape factor used to approximate the expanded laser beam.
+  laser_sheet_thickness:
+    description: The laser sheet thickness used in a measurement. For a model laser sheet thickness, use
+      model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity
+      of the laser sheet drops significantly.
+    units: m
+  model_laser_sheet_shape_factor:
+    description: The shape factor used to model the expanded laser beam. The shape factor is introduced in
+      'Particle Image Velocimetry A Practical Guide' by Raffel et al. (2018). It deforms a Gaussian beam. High
+      values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam.
     units: ''
   mean_seeding_particle_size:
     description: The mean diameter of the seeding particles.
@@ -131,28 +138,28 @@ standard_names:
     vector: true
   x_final_interrogation_window_overlap_size:
     alias: x_interrogation_window_overlap_size
-    description: Width of the final PIV interogation window overlap.
+    description: Width of the final PIV interrogation window overlap.
     units: ''
   x_final_interrogation_window_size:
     alias: x_final_interrogation_spot_size
-    description: Width of the final PIV interogation window.
+    description: Width of the final PIV interrogation window.
     units: ''
   x_initial_interrogation_window_size:
-    description: Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm).
+    description: Width of the initial PIV interrogation window (in case of a multi-grid PIV algorithm).
     units: ''
   x_pixel_coordinate:
     description: Image coordinate in horizontal direction.
     units: ''
   y_final_interrogation_window_overlap_size:
     alias: interrogation_window_overlap_size
-    description: The height of the final PIV interogation window overlap.
+    description: The height of the final PIV interrogation window overlap.
     units: ''
   y_final_interrogation_window_size:
     alias: y_final_interrogation_spot_size
-    description: The height of the final PIV interogation window.
+    description: The height of the final PIV interrogation window.
     units: ''
   y_initial_interrogation_window_size:
-    description: Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm).
+    description: Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm).
     units: ''
   y_pixel_coordinate:
     description: Image coordinate in vertical direction.
