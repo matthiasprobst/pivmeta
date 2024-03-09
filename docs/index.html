@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-03-01", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-03-09", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-03-01</dt>
+<dt>Modified on: 2024-03-09</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -128,6 +128,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
    </li>
    <li>
+      <a href="#DigitalCameraModel"
+         title="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel">Digital Camera Model</a>
+   </li>
+   <li>
       <a href="#ImageDewarp"
          title="https://matthiasprobst.github.io/pivmeta#ImageDewarp">image dewarp</a>
    </li>
@@ -165,6 +169,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#LaserModel"
+         title="https://matthiasprobst.github.io/pivmeta#LaserModel">
+         <span>laser model</span>
+      </a>
+   </li>
+   <li>
       <a href="#MaskGeneration"
          title="https://matthiasprobst.github.io/pivmeta#MaskGeneration">mask generation</a>
    </li>
@@ -194,6 +204,9 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#PIVHardware">
          <span>p i v hardware</span>
       </a>
+   </li>
+   <li>
+      <a href="#https://matthiasprobst.github.io/ssno#Particle" title="https://matthiasprobst.github.io/ssno#Particle">Particle</a>
    </li>
    <li>
       <a href="#PeakSearchMethod"
@@ -267,9 +280,20 @@ This ontology has the following classes and properties.</span>
       <a href="#https://w3id.org/okn/o/sd#Software" title="https://w3id.org/okn/o/sd#Software">Software</a>
    </li>
    <li>
+      <a href="#https://schema.org/SoftwareSourceCode" title="https://schema.org/SoftwareSourceCode">
+         <span>software source code</span>
+      </a>
+   </li>
+   <li>
       <a href="#StandardName"
          title="https://matthiasprobst.github.io/pivmeta#StandardName">
          <span>standard name</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://matthiasprobst.github.io/ssno#SyntheticParticle"
+         title="https://matthiasprobst.github.io/ssno#SyntheticParticle">
+         <span>synthetic particle</span>
       </a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
@@ -277,6 +301,11 @@ This ontology has the following classes and properties.</span>
     class="hlist">
    <li>
       <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+   </li>
+   <li>
+      <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">
+         <span>has source code</span>
+      </a>
    </li>
    <li>
       <a href="#hasStandardName"
@@ -383,10 +412,6 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">laser_pulse_delay</a>
    </li>
    <li>
-      <a href="#laser_sheet_shape_factor"
-         title="https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor">laser_sheet_shape_factor</a>
-   </li>
-   <li>
       <a href="#laser_sheet_thickness"
          title="https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness">laser_sheet_thickness</a>
    </li>
@@ -405,6 +430,14 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#micro_piv"
          title="https://matthiasprobst.github.io/pivmeta#micro_piv">micro piv</a>
+   </li>
+   <li>
+      <a href="#model_laser_sheet_shape_factor"
+         title="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor">model_laser_sheet_shape_factor</a>
+   </li>
+   <li>
+      <a href="#model_laser_sheet_thickness"
+         title="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness">model_laser_sheet_thickness</a>
    </li>
    <li>
       <a href="#number_of_particles"
@@ -601,6 +634,10 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
       </li>
       <li>
+         <a href="#DigitalCameraModel"
+            title="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel">Digital Camera Model</a>
+      </li>
+      <li>
          <a href="#ImageDewarp"
             title="https://matthiasprobst.github.io/pivmeta#ImageDewarp">image dewarp</a>
       </li>
@@ -638,6 +675,12 @@ This section provides details for each class and property defined by PIVMeta.
          </a>
       </li>
       <li>
+         <a href="#LaserModel"
+            title="https://matthiasprobst.github.io/pivmeta#LaserModel">
+            <span>laser model</span>
+         </a>
+      </li>
+      <li>
          <a href="#MaskGeneration"
             title="https://matthiasprobst.github.io/pivmeta#MaskGeneration">mask generation</a>
       </li>
@@ -667,6 +710,9 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#PIVHardware">
             <span>p i v hardware</span>
          </a>
+      </li>
+      <li>
+         <a href="#https://matthiasprobst.github.io/ssno#Particle" title="https://matthiasprobst.github.io/ssno#Particle">Particle</a>
       </li>
       <li>
          <a href="#PeakSearchMethod"
@@ -740,9 +786,20 @@ This section provides details for each class and property defined by PIVMeta.
          <a href="#https://w3id.org/okn/o/sd#Software" title="https://w3id.org/okn/o/sd#Software">Software</a>
       </li>
       <li>
+         <a href="#https://schema.org/SoftwareSourceCode" title="https://schema.org/SoftwareSourceCode">
+            <span>software source code</span>
+         </a>
+      </li>
+      <li>
          <a href="#StandardName"
             title="https://matthiasprobst.github.io/pivmeta#StandardName">
             <span>standard name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://matthiasprobst.github.io/ssno#SyntheticParticle"
+            title="https://matthiasprobst.github.io/ssno#SyntheticParticle">
+            <span>synthetic particle</span>
          </a>
       </li>
    </ul>
@@ -846,10 +903,40 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#PIVHardware">p i v hardware</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#DigitalCameraModel"
+               title="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel">Digital Camera Model</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
             <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DigitalCameraModel">
+      <h3>Digital Camera Model<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#DigitalCameraModel</p>
+      <div class="comment">
+         <span class="markdown">A model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#DigitalCamera"
+               title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -1033,6 +1120,32 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#PIVHardware">p i v hardware</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#LaserModel"
+               title="https://matthiasprobst.github.io/pivmeta#LaserModel">laser model</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LaserModel">
+      <h3>laser model<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#LaserModel</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Laser" title="https://matthiasprobst.github.io/pivmeta#Laser">laser</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="MaskGeneration">
@@ -1182,7 +1295,33 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#DigitalCamera"
                title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">Digital Camera</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://matthiasprobst.github.io/ssno#Particle" title="https://matthiasprobst.github.io/ssno#Particle">Particle</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Laser" title="https://matthiasprobst.github.io/pivmeta#Laser">laser</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#Particle">
+      <h3>Particle<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#Particle</p>
+      <div class="comment">
+         <span class="markdown">Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PIVHardware"
+               title="https://matthiasprobst.github.io/pivmeta#PIVHardware">p i v hardware</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#SyntheticParticle"
+               title="https://matthiasprobst.github.io/ssno#SyntheticParticle">synthetic particle</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1569,6 +1708,28 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="https://schema.org/SoftwareSourceCode">
+      <h3>software source code<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/SoftwareSourceCode</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://schema.org/CreativeWork"
+               target="_blank"
+               title="https://schema.org/CreativeWork">creative work</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="StandardName">
       <h3>standard name<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -1629,14 +1790,16 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#inplane_velocity">inplane_velocity</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#laser_pulse_delay"
                title="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">laser_pulse_delay</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#laser_sheet_shape_factor"
-               title="https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor">laser_sheet_shape_factor</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#laser_sheet_thickness"
                title="https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness">laser_sheet_thickness</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#least_square_residual_of_z_displacement_reconstruction"
                title="https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction">least_square_residual_of_z_displacement_reconstruction</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#mean_seeding_particle_size"
                title="https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size">mean_seeding_particle_size</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#model_laser_sheet_shape_factor"
+               title="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor">model_laser_sheet_shape_factor</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#model_laser_sheet_thickness"
+               title="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness">model_laser_sheet_thickness</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#number_of_particles"
                title="https://matthiasprobst.github.io/pivmeta#number_of_particles">number_of_particles</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#piv_correlation_coefficient"
@@ -1704,6 +1867,29 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="https://matthiasprobst.github.io/ssno#SyntheticParticle">
+      <h3>synthetic particle<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/ssno#SyntheticParticle</p>
+      <div class="comment">
+         <span class="markdown">Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#Particle" title="https://matthiasprobst.github.io/ssno#Particle">Particle</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      id="objectproperties">
@@ -1711,6 +1897,11 @@ This section provides details for each class and property defined by PIVMeta.
    <ul class="hlist">
       <li>
          <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+      </li>
+      <li>
+         <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">
+            <span>has source code</span>
+         </a>
       </li>
       <li>
          <a href="#hasStandardName"
@@ -1748,6 +1939,39 @@ This section provides details for each class and property defined by PIVMeta.
                <a href="http://qudt.org/schema/qudt/Unit"
                   target="_blank"
                   title="http://qudt.org/schema/qudt/Unit">unit</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://codemeta.github.io/terms/hasSourceCode">
+      <h3>has source code<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://codemeta.github.io/terms/hasSourceCode</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DigitalCameraModel"
+                  title="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel">Digital Camera Model</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#LaserModel"
+                  title="https://matthiasprobst.github.io/pivmeta#LaserModel">laser model</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://matthiasprobst.github.io/ssno#SyntheticParticle"
+                  title="https://matthiasprobst.github.io/ssno#SyntheticParticle">synthetic particle</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/SoftwareSourceCode" title="https://schema.org/SoftwareSourceCode">software source code</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2085,10 +2309,6 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">laser_pulse_delay</a>
       </li>
       <li>
-         <a href="#laser_sheet_shape_factor"
-            title="https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor">laser_sheet_shape_factor</a>
-      </li>
-      <li>
          <a href="#laser_sheet_thickness"
             title="https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness">laser_sheet_thickness</a>
       </li>
@@ -2107,6 +2327,14 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#micro_piv"
             title="https://matthiasprobst.github.io/pivmeta#micro_piv">micro piv</a>
+      </li>
+      <li>
+         <a href="#model_laser_sheet_shape_factor"
+            title="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor">model_laser_sheet_shape_factor</a>
+      </li>
+      <li>
+         <a href="#model_laser_sheet_thickness"
+            title="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness">model_laser_sheet_thickness</a>
       </li>
       <li>
          <a href="#number_of_particles"
@@ -2680,7 +2908,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitute of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."@en</span>
+            <span class="literal">"Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitude of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -2742,35 +2970,6 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="laser_sheet_shape_factor">
-      <h3>laser_sheet_shape_factor<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#StandardName"
-               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has facts</dt>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
-               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The shape factor used to approximate the expanded laser beam."@en</span>
-         </dd>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
-               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"laser_sheet_shape_factor"</span>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="laser_sheet_thickness">
       <h3>laser_sheet_thickness<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2797,7 +2996,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The width of the laser beam illuminating the seeding particles. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussain, but can be more top-hat-like. This is defined by the shap factor"@en</span>
+            <span class="literal">"The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -2903,6 +3102,71 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="model_laser_sheet_shape_factor">
+      <h3>model_laser_sheet_shape_factor<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The shape factor used to model the expanded laser beam. The shape factor is introduced in 'Particle Image Velocimetry A Practical Guide' by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"model_laser_sheet_shape_factor"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="model_laser_sheet_thickness">
+      <h3>model_laser_sheet_thickness<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="https://qudt.org/vocab/unit/M"
+               target="_blank"
+               title="https://qudt.org/vocab/unit/M">m</a>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor)."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"model_laser_sheet_thickness"</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="number_of_particles">
       <h3>number_of_particles<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2991,6 +3255,12 @@ This section provides details for each class and property defined by PIVMeta.
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function."@en</span>
+         </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
@@ -3118,7 +3388,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the second peak of the cross-correlation function."@en</span>
+            <span class="literal">"The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3147,7 +3417,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the third peak of the cross-correlation function."@en</span>
+            <span class="literal">"The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3749,7 +4019,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Width of the final PIV interogation window overlap."@en</span>
+            <span class="literal">"Width of the final PIV interrogation window overlap."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3778,7 +4048,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Width of the final PIV interogation window."@en</span>
+            <span class="literal">"Width of the final PIV interrogation window."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3807,7 +4077,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en</span>
+            <span class="literal">"Width of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3865,7 +4135,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The height of the final PIV interogation window overlap."@en</span>
+            <span class="literal">"The height of the final PIV interrogation window overlap."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3894,7 +4164,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The height of the final PIV interogation window."@en</span>
+            <span class="literal">"The height of the final PIV interrogation window."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3923,7 +4193,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en</span>
+            <span class="literal">"Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"

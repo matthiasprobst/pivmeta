@@ -113,6 +113,14 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  https://codemeta.github.io/terms/hasSourceCode
+<https://codemeta.github.io/terms/hasSourceCode> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain :DigitalCameraModel ,
+                                                             :LaserModel ,
+                                                             <https://matthiasprobst.github.io/ssno#SyntheticParticle> ;
+                                                 rdfs:range <https://schema.org/SoftwareSourceCode> .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#hasStandardName
 :hasStandardName rdf:type owl:ObjectProperty ;
                  rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
@@ -278,6 +286,13 @@ xsd:date rdf:type rdfs:Datatype .
                <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#DigitalCameraModel
+:DigitalCameraModel rdf:type owl:Class ;
+                    rdfs:subClassOf :DigitalCamera ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "A model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera Model"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
 :ImageDewarp rdf:type owl:Class ;
              rdfs:subClassOf :PivPreProcessing ;
@@ -325,6 +340,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#Laser
 :Laser rdf:type owl:Class ;
        rdfs:subClassOf :PIVHardware .
+
+
+###  https://matthiasprobst.github.io/pivmeta#LaserModel
+:LaserModel rdf:type owl:Class ;
+            rdfs:subClassOf :Laser .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
@@ -450,10 +470,32 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
+###  https://matthiasprobst.github.io/ssno#Particle
+<https://matthiasprobst.github.io/ssno#Particle> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :PIVHardware ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle"@en .
+
+
 ###  https://matthiasprobst.github.io/ssno#PivValidation
 <https://matthiasprobst.github.io/ssno#PivValidation> rdf:type owl:Class ;
                                                       rdfs:subClassOf :PivProcessingStep ;
                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "piv validation"@en .
+
+
+###  https://matthiasprobst.github.io/ssno#SyntheticParticle
+<https://matthiasprobst.github.io/ssno#SyntheticParticle> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <https://matthiasprobst.github.io/ssno#Particle> ;
+                                                          <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en .
+
+
+###  https://schema.org/CreativeWork
+<https://schema.org/CreativeWork> rdf:type owl:Class .
+
+
+###  https://schema.org/SoftwareSourceCode
+<https://schema.org/SoftwareSourceCode> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://schema.org/CreativeWork> .
 
 
 ###  https://w3id.org/okn/o/sd#Software
@@ -618,7 +660,7 @@ xsd:date rdf:type rdfs:Datatype .
 :inplane_velocity rdf:type owl:NamedIndividual ,
                            :StandardName ;
                   <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
-                  <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitute of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."@en ;
+                  <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitude of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."@en ;
                   <https://matthiasprobst.github.io/ssno#standard_name> "inplane_velocity" ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "inplane_velocity"@en .
 
@@ -632,19 +674,11 @@ xsd:date rdf:type rdfs:Datatype .
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_pulse_delay"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor
-:laser_sheet_shape_factor rdf:type owl:NamedIndividual ,
-                                   :StandardName ;
-                          <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The shape factor used to approximate the expanded laser beam."@en ;
-                          <https://matthiasprobst.github.io/ssno#standard_name> "laser_sheet_shape_factor" ;
-                          <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_shape_factor"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness
 :laser_sheet_thickness rdf:type owl:NamedIndividual ,
                                 :StandardName ;
                        <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
-                       <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the laser beam illuminating the seeding particles. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussain, but can be more top-hat-like. This is defined by the shap factor"@en ;
+                       <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly."@en ;
                        <https://matthiasprobst.github.io/ssno#standard_name> "laser_sheet_thickness" ;
                        <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_thickness"@en .
 
@@ -672,6 +706,23 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#prefLabel> "micro piv"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor
+:model_laser_sheet_shape_factor rdf:type owl:NamedIndividual ,
+                                         :StandardName ;
+                                <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The shape factor used to model the expanded laser beam. The shape factor is introduced in 'Particle Image Velocimetry A Practical Guide' by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam."@en ;
+                                <https://matthiasprobst.github.io/ssno#standard_name> "model_laser_sheet_shape_factor" ;
+                                <http://www.w3.org/2004/02/skos/core#prefLabel> "model_laser_sheet_shape_factor"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness
+:model_laser_sheet_thickness rdf:type owl:NamedIndividual ,
+                                      :StandardName ;
+                             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+                             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor)."@en ;
+                             <https://matthiasprobst.github.io/ssno#standard_name> "model_laser_sheet_thickness" ;
+                             <http://www.w3.org/2004/02/skos/core#prefLabel> "model_laser_sheet_thickness"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#number_of_particles
 :number_of_particles rdf:type owl:NamedIndividual ,
                               :StandardName ;
@@ -697,7 +748,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient
 :piv_first_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
                                                  :StandardName ;
-                                        <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."@en ;
+                                        <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function."@en ,
+                                                                                                           "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."@en ;
                                         <https://matthiasprobst.github.io/ssno#standard_name> "piv_first_peak_correlation_coefficient" ;
                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_first_peak_correlation_coefficient"@en .
 
@@ -730,7 +782,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient
 :piv_second_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
                                                   :StandardName ;
-                                         <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the second peak of the cross-correlation function."@en ;
+                                         <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function."@en ;
                                          <https://matthiasprobst.github.io/ssno#standard_name> "piv_second_peak_correlation_coefficient" ;
                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_second_peak_correlation_coefficient"@en .
 
@@ -738,7 +790,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient
 :piv_third_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
                                                  :StandardName ;
-                                        <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the third peak of the cross-correlation function."@en ;
+                                        <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function."@en ;
                                         <https://matthiasprobst.github.io/ssno#standard_name> "piv_third_peak_correlation_coefficient" ;
                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_third_peak_correlation_coefficient"@en .
 
@@ -882,7 +934,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size
 :x_final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
                                                     :StandardName ;
-                                           <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the final PIV interogation window overlap."@en ;
+                                           <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the final PIV interrogation window overlap."@en ;
                                            <https://matthiasprobst.github.io/ssno#standard_name> "x_final_interrogation_window_overlap_size" ;
                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_overlap_size"@en .
 
@@ -890,7 +942,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size
 :x_final_interrogation_window_size rdf:type owl:NamedIndividual ,
                                             :StandardName ;
-                                   <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the final PIV interogation window."@en ;
+                                   <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the final PIV interrogation window."@en ;
                                    <https://matthiasprobst.github.io/ssno#standard_name> "x_final_interrogation_window_size" ;
                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
 
@@ -898,7 +950,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size
 :x_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
                                               :StandardName ;
-                                     <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en ;
+                                     <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en ;
                                      <https://matthiasprobst.github.io/ssno#standard_name> "x_initial_interrogation_window_size" ;
                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "x_initial_interrogation_window_size"@en .
 
@@ -914,7 +966,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size
 :y_final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
                                                     :StandardName ;
-                                           <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of the final PIV interogation window overlap."@en ;
+                                           <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of the final PIV interrogation window overlap."@en ;
                                            <https://matthiasprobst.github.io/ssno#standard_name> "y_final_interrogation_window_overlap_size" ;
                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_overlap_size"@en .
 
@@ -922,7 +974,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size
 :y_final_interrogation_window_size rdf:type owl:NamedIndividual ,
                                             :StandardName ;
-                                   <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of the final PIV interogation window."@en ;
+                                   <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of the final PIV interrogation window."@en ;
                                    <https://matthiasprobst.github.io/ssno#standard_name> "y_final_interrogation_window_size" ;
                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_size"@en .
 
@@ -930,7 +982,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size
 :y_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
                                               :StandardName ;
-                                     <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."@en ;
+                                     <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en ;
                                      <https://matthiasprobst.github.io/ssno#standard_name> "y_initial_interrogation_window_size" ;
                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "y_initial_interrogation_window_size"@en .
 

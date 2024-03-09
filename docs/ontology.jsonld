@@ -112,6 +112,19 @@
     "@id" : "http://purl.obolibrary.org/obo/Process"
   } ]
 }, {
+  "@id" : "https://codemeta.github.io/terms/hasSourceCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCameraModel"
+  }, {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#LaserModel"
+  }, {
+    "@id" : "https://matthiasprobst.github.io/ssno#SyntheticParticle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://schema.org/SoftwareSourceCode"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/abstract" : [ {
@@ -209,6 +222,20 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Digital Camera"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCameraModel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCamera"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Digital Camera Model"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalImage",
@@ -311,6 +338,12 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVHardware"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#LaserModel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Laser"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#LeftRightFlip",
@@ -855,7 +888,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitute of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."
+    "@value" : "Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitude of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "inplane_velocity"
@@ -884,23 +917,6 @@
     "@id" : "https://qudt.org/vocab/unit/SEC"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#laser_sheet_shape_factor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "laser_sheet_shape_factor"
-  } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The shape factor used to approximate the expanded laser beam."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
-    "@value" : "laser_sheet_shape_factor"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -912,7 +928,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The width of the laser beam illuminating the seeding particles. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussain, but can be more top-hat-like. This is defined by the shap factor"
+    "@value" : "The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "laser_sheet_thickness"
@@ -966,6 +982,43 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "micro piv"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "model_laser_sheet_shape_factor"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The shape factor used to model the expanded laser beam. The shape factor is introduced in 'Particle Image Velocimetry A Practical Guide' by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "model_laser_sheet_shape_factor"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "model_laser_sheet_thickness"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor)."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "model_laser_sheet_thickness"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#numberOfRecords",
@@ -1053,6 +1106,9 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function."
+  }, {
+    "@language" : "en",
     "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
@@ -1124,7 +1180,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the second peak of the cross-correlation function."
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "piv_second_peak_correlation_coefficient"
@@ -1141,7 +1197,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the third peak of the cross-correlation function."
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "piv_third_peak_correlation_coefficient"
@@ -1459,7 +1515,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Width of the final PIV interogation window overlap."
+    "@value" : "Width of the final PIV interrogation window overlap."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "x_final_interrogation_window_overlap_size"
@@ -1476,7 +1532,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Width of the final PIV interogation window."
+    "@value" : "Width of the final PIV interrogation window."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "x_final_interrogation_window_size"
@@ -1493,7 +1549,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Width of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."
+    "@value" : "Width of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "x_initial_interrogation_window_size"
@@ -1527,7 +1583,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The height of the final PIV interogation window overlap."
+    "@value" : "The height of the final PIV interrogation window overlap."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "y_final_interrogation_window_overlap_size"
@@ -1544,7 +1600,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The height of the final PIV interogation window."
+    "@value" : "The height of the final PIV interrogation window."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "y_final_interrogation_window_size"
@@ -1561,7 +1617,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Height of the initial PIV interogation window (in case of a multi-grid PIV algorithm)."
+    "@value" : "Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "y_initial_interrogation_window_size"
@@ -1584,6 +1640,20 @@
     "@value" : "y_pixel_coordinate"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/ssno#Particle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVHardware"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Particle"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/ssno#PivValidation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -1592,6 +1662,16 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "piv validation"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#SyntheticParticle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#Particle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#hasStandardNameDescription",
@@ -1662,6 +1742,15 @@
 }, {
   "@id" : "https://qudt.org/vocab/unit/SEC",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://schema.org/CreativeWork",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/SoftwareSourceCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://schema.org/CreativeWork"
+  } ]
 }, {
   "@id" : "https://w3id.org/okn/o/sd#Software",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
