@@ -134,6 +134,14 @@ pivmeta:hasStandardName rdf:type owl:ObjectProperty ;
                         skos:prefLabel "has standard name"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#manufacturer
+pivmeta:manufacturer rdf:type owl:ObjectProperty ;
+                     rdfs:domain pivmeta:PIVHardware ;
+                     rdfs:range <http://www.w3.org/ns/prov#Organization> ;
+                     rdfs:isDefinedBy <https://schema.org/manufacturer> ;
+                     skos:definition "Manufacturer of a m4i:Tool"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#pivImageType
 pivmeta:pivImageType rdf:type owl:ObjectProperty ;
                      rdfs:domain pivmeta:PivImageDistribution ;
