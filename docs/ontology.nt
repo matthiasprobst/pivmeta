@@ -112,6 +112,11 @@
 <https://matthiasprobst.github.io/pivmeta#hasStandardName> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#StandardName> .
 <https://matthiasprobst.github.io/pivmeta#hasStandardName> <http://www.w3.org/2004/02/skos/core#prefLabel> "has standard name"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#iInterrogationMethod
+<https://matthiasprobst.github.io/pivmeta#iInterrogationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/pivmeta#iInterrogationMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> .
+<https://matthiasprobst.github.io/pivmeta#iInterrogationMethod> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
+# 
 # https://matthiasprobst.github.io/pivmeta#manufacturer
 <https://matthiasprobst.github.io/pivmeta#manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://matthiasprobst.github.io/pivmeta#manufacturer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PIVHardware> .
@@ -318,17 +323,6 @@
 <https://matthiasprobst.github.io/pivmeta#MaskGeneration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivProcessingStep> .
 <https://matthiasprobst.github.io/pivmeta#MaskGeneration> <http://www.w3.org/2004/02/skos/core#prefLabel> "mask generation"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#Multigrid
-<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#definition> "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."@en .
-<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#prefLabel> "multi grid"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#Multipass
-<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "multi pass"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
 <https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
@@ -407,11 +401,6 @@
 <https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/DCMIType> .
 # 
-# https://matthiasprobst.github.io/pivmeta#Singlepass
-<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2004/02/skos/core#prefLabel> "single pass"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#StandardName
 <https://matthiasprobst.github.io/pivmeta#StandardName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#StandardName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -468,10 +457,25 @@
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#Multigrid
+<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
+<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multigrid"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#Multipass
+<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
+<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample
 <https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> .
 <https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample> <http://www.w3.org/2004/02/skos/core#prefLabel> "re-evaluate with larger sample"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#Singlepass
+<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
+<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Singlepass"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#SplitImage
 <https://matthiasprobst.github.io/pivmeta#SplitImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

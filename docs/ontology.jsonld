@@ -367,27 +367,23 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Multigrid",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "multi grid"
+    "@value" : "Multigrid"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Multipass",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "multi pass"
+    "@value" : "Multipass"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod",
@@ -563,13 +559,13 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Singlepass",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "single pass"
+    "@value" : "Singlepass"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#SplitImage",
@@ -790,6 +786,15 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "has standard name"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#iInterrogationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#image_bit_depth",

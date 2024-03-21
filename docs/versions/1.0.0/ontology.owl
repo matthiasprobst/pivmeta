@@ -232,6 +232,16 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#iInterrogationMethod -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#iInterrogationMethod">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVEvaluation"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#manufacturer -->
 
 
@@ -621,27 +631,6 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#Multigrid -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Multigrid">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
-        <skos:definition xml:lang="en">A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small.</skos:definition>
-        <skos:prefLabel xml:lang="en">multi grid</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#Multipass -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Multipass">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
-        <skos:prefLabel xml:lang="en">multi pass</skos:prefLabel>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod -->
 
 
@@ -795,16 +784,6 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#Singlepass -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Singlepass">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
-        <skos:prefLabel xml:lang="en">single pass</skos:prefLabel>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#StandardName -->
 
 
@@ -913,12 +892,42 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#Multigrid -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#Multigrid">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+        <skos:prefLabel xml:lang="en">Multigrid</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Multipass -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#Multipass">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+        <skos:prefLabel xml:lang="en">Multipass</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample -->
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"/>
         <skos:prefLabel xml:lang="en">re-evaluate with larger sample</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Singlepass -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#Singlepass">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
+        <skos:prefLabel xml:lang="en">Singlepass</skos:prefLabel>
     </owl:NamedIndividual>
     
 
