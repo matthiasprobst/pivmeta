@@ -134,6 +134,12 @@ pivmeta:hasStandardName rdf:type owl:ObjectProperty ;
                         skos:prefLabel "has standard name"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#iInterrogationMethod
+pivmeta:iInterrogationMethod rdf:type owl:ObjectProperty ;
+                             rdfs:domain pivmeta:PIVEvaluation ;
+                             rdfs:range pivmeta:InterrogationMethod .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer
 pivmeta:manufacturer rdf:type owl:ObjectProperty ;
                      rdfs:domain pivmeta:PIVHardware ;
@@ -367,19 +373,6 @@ pivmeta:MaskGeneration rdf:type owl:Class ;
                        skos:prefLabel "mask generation"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#Multigrid
-pivmeta:Multigrid rdf:type owl:Class ;
-                  rdfs:subClassOf pivmeta:InterrogationMethod ;
-                  skos:definition "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."@en ;
-                  skos:prefLabel "multi grid"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#Multipass
-pivmeta:Multipass rdf:type owl:Class ;
-                  rdfs:subClassOf pivmeta:InterrogationMethod ;
-                  skos:prefLabel "multi pass"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
 pivmeta:OutlierDetectionMethod rdf:type owl:Class ;
                                rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
@@ -473,12 +466,6 @@ pivmeta:PivType rdf:type owl:Class ;
                 rdfs:subClassOf dcterms:DCMIType .
 
 
-###  https://matthiasprobst.github.io/pivmeta#Singlepass
-pivmeta:Singlepass rdf:type owl:Class ;
-                   rdfs:subClassOf pivmeta:InterrogationMethod ;
-                   skos:prefLabel "single pass"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#StandardName
 pivmeta:StandardName rdf:type owl:Class ;
                      rdfs:subClassOf skos:Concept .
@@ -538,6 +525,19 @@ pivmeta:Interpolation rdf:type owl:NamedIndividual ,
 pivmeta:LeftRightFlip rdf:type owl:NamedIndividual ,
                                pivmeta:ImageManipulationMethod ;
                       skos:prefLabel "left right flip"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#Multigrid
+pivmeta:Multigrid rdf:type owl:NamedIndividual ,
+                           pivmeta:InterrogationMethod .
+
+###  https://matthiasprobst.github.io/pivmeta#Multipass
+pivmeta:Multipass rdf:type owl:NamedIndividual ,
+                           pivmeta:InterrogationMethod .
+
+###  https://matthiasprobst.github.io/pivmeta#Singlepass
+pivmeta:Singlepass rdf:type owl:NamedIndividual ,
+                           pivmeta:InterrogationMethod .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample

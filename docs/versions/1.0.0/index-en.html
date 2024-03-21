@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-03-20", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-03-21", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-03-20</dt>
+<dt>Modified on: 2024-03-21</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -184,14 +184,6 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#Multigrid"
-         title="https://matthiasprobst.github.io/pivmeta#Multigrid">multi grid</a>
-   </li>
-   <li>
-      <a href="#Multipass"
-         title="https://matthiasprobst.github.io/pivmeta#Multipass">multi pass</a>
-   </li>
-   <li>
       <a href="#OutlierDetectionMethod"
          title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a>
    </li>
@@ -273,10 +265,6 @@ This ontology has the following classes and properties.</span>
       <a href="#http://purl.obolibrary.org/obo/BFO_0000017" title="http://purl.obolibrary.org/obo/BFO_0000017">realizable entity</a>
    </li>
    <li>
-      <a href="#Singlepass"
-         title="https://matthiasprobst.github.io/pivmeta#Singlepass">single pass</a>
-   </li>
-   <li>
       <a href="#https://w3id.org/okn/o/sd#Software" title="https://w3id.org/okn/o/sd#Software">Software</a>
    </li>
    <li>
@@ -310,6 +298,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#hasStandardName"
          title="https://matthiasprobst.github.io/pivmeta#hasStandardName">has standard name</a>
+   </li>
+   <li>
+      <a href="#iInterrogationMethod"
+         title="https://matthiasprobst.github.io/pivmeta#iInterrogationMethod">
+         <span>i interrogation method</span>
+      </a>
    </li>
    <li>
       <a href="#manufacturer"
@@ -446,6 +440,18 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness">model_laser_sheet_thickness</a>
    </li>
    <li>
+      <a href="#Multigrid"
+         title="https://matthiasprobst.github.io/pivmeta#Multigrid">
+         <span>multigrid</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Multipass"
+         title="https://matthiasprobst.github.io/pivmeta#Multipass">
+         <span>multipass</span>
+      </a>
+   </li>
+   <li>
       <a href="#number_of_particles"
          title="https://matthiasprobst.github.io/pivmeta#number_of_particles">number_of_particles</a>
    </li>
@@ -530,6 +536,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#signal_to_noise_ratio"
          title="https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio">signal_to_noise_ratio</a>
+   </li>
+   <li>
+      <a href="#Singlepass"
+         title="https://matthiasprobst.github.io/pivmeta#Singlepass">
+         <span>singlepass</span>
+      </a>
    </li>
    <li>
       <a href="#SplitImage"
@@ -696,14 +708,6 @@ This section provides details for each class and property defined by PIVMeta.
          </a>
       </li>
       <li>
-         <a href="#Multigrid"
-            title="https://matthiasprobst.github.io/pivmeta#Multigrid">multi grid</a>
-      </li>
-      <li>
-         <a href="#Multipass"
-            title="https://matthiasprobst.github.io/pivmeta#Multipass">multi pass</a>
-      </li>
-      <li>
          <a href="#OutlierDetectionMethod"
             title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a>
       </li>
@@ -783,10 +787,6 @@ This section provides details for each class and property defined by PIVMeta.
       </li>
       <li>
          <a href="#http://purl.obolibrary.org/obo/BFO_0000017" title="http://purl.obolibrary.org/obo/BFO_0000017">realizable entity</a>
-      </li>
-      <li>
-         <a href="#Singlepass"
-            title="https://matthiasprobst.github.io/pivmeta#Singlepass">single pass</a>
       </li>
       <li>
          <a href="#https://w3id.org/okn/o/sd#Software" title="https://w3id.org/okn/o/sd#Software">Software</a>
@@ -1094,21 +1094,27 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Multigrid"
-               title="https://matthiasprobst.github.io/pivmeta#Multigrid">multi grid</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Multipass"
-               title="https://matthiasprobst.github.io/pivmeta#Multipass">multi pass</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Singlepass"
-               title="https://matthiasprobst.github.io/pivmeta#Singlepass">single pass</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="https://matthiasprobst.github.io/pivmeta#CorrelationMethod"
                target="_blank"
                title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#iInterrogationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#iInterrogationMethod">i interrogation method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Multigrid"
+               title="https://matthiasprobst.github.io/pivmeta#Multigrid">multigrid</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Multipass"
+               title="https://matthiasprobst.github.io/pivmeta#Multipass">multipass</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Singlepass"
+               title="https://matthiasprobst.github.io/pivmeta#Singlepass">singlepass</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
@@ -1195,41 +1201,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PeakSearchMethod"
                title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Multigrid">
-      <h3>multi grid<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Multigrid</p>
-      <div class="comment">
-         <span class="markdown">A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#InterrogationMethod"
-               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Multipass">
-      <h3>multi pass<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Multipass</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#InterrogationMethod"
-               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1408,6 +1379,12 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#PivProcessingStep"
                title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#iInterrogationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#iInterrogationMethod">i interrogation method</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -1676,22 +1653,6 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="Singlepass">
-      <h3>single pass<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Singlepass</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#InterrogationMethod"
-               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="https://w3id.org/okn/o/sd#Software">
       <h3>Software<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -1920,6 +1881,12 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#hasStandardName">has standard name</a>
       </li>
       <li>
+         <a href="#iInterrogationMethod"
+            title="https://matthiasprobst.github.io/pivmeta#iInterrogationMethod">
+            <span>i interrogation method</span>
+         </a>
+      </li>
+      <li>
          <a href="#manufacturer"
             title="https://matthiasprobst.github.io/pivmeta#manufacturer">
             <span>manufacturer</span>
@@ -2015,6 +1982,30 @@ This section provides details for each class and property defined by PIVMeta.
             <dd>
                <a href="#StandardName"
                   title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="iInterrogationMethod">
+      <h3>i interrogation method<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#iInterrogationMethod</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PIVEvaluation"
+                  title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">piv evaluation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#InterrogationMethod"
+                  title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2388,6 +2379,18 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness">model_laser_sheet_thickness</a>
       </li>
       <li>
+         <a href="#Multigrid"
+            title="https://matthiasprobst.github.io/pivmeta#Multigrid">
+            <span>multigrid</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Multipass"
+            title="https://matthiasprobst.github.io/pivmeta#Multipass">
+            <span>multipass</span>
+         </a>
+      </li>
+      <li>
          <a href="#number_of_particles"
             title="https://matthiasprobst.github.io/pivmeta#number_of_particles">number_of_particles</a>
       </li>
@@ -2472,6 +2475,12 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#signal_to_noise_ratio"
             title="https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio">signal_to_noise_ratio</a>
+      </li>
+      <li>
+         <a href="#Singlepass"
+            title="https://matthiasprobst.github.io/pivmeta#Singlepass">
+            <span>singlepass</span>
+         </a>
       </li>
       <li>
          <a href="#SplitImage"
@@ -3218,6 +3227,38 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="Multigrid">
+      <h3>multigrid<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Multigrid</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#InterrogationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Multipass">
+      <h3>multipass<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Multipass</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#InterrogationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="number_of_particles">
       <h3>number_of_particles<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -3832,6 +3873,22 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"signal_to_noise_ratio"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Singlepass">
+      <h3>singlepass<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Singlepass</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#InterrogationMethod"
+               title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
