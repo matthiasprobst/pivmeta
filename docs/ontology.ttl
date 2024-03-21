@@ -150,6 +150,12 @@ xsd:date rdf:type rdfs:Datatype .
                              <http://www.w3.org/2004/02/skos/core#prefLabel> "uses outlier replacement scheme"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#windowWeightingFunction
+:windowWeightingFunction rdf:type owl:ObjectProperty ;
+                         rdfs:domain :CorrelationMethod ;
+                         rdfs:range :WindowWeightingFunction .
+
+
 ###  https://matthiasprobst.github.io/ssno#unit
 <https://matthiasprobst.github.io/ssno#unit> rdf:type owl:ObjectProperty ;
                                              rdfs:domain :StandardName ;
@@ -478,6 +484,11 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
+###  https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction
+:WindowWeightingFunction rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
 ###  https://matthiasprobst.github.io/ssno#Particle
 <https://matthiasprobst.github.io/ssno#Particle> rdf:type owl:Class ;
                                                  rdfs:subClassOf :PIVHardware ;
@@ -522,6 +533,11 @@ xsd:date rdf:type rdfs:Datatype .
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction
+:GaussWindowWeightingFunction rdf:type owl:NamedIndividual ,
+                                       :WindowWeightingFunction .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#Interpolation
 :Interpolation rdf:type owl:NamedIndividual ,
                         :OutlierReplacementScheme ;
@@ -544,6 +560,11 @@ xsd:date rdf:type rdfs:Datatype .
 :SplitImage rdf:type owl:NamedIndividual ,
                      :ImageManipulationMethod ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "split image"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction
+:SquareWindowWeightingFunction rdf:type owl:NamedIndividual ,
+                                        :WindowWeightingFunction .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage

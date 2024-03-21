@@ -296,6 +296,12 @@ This ontology has the following classes and properties.</span>
          <span>synthetic particle</span>
       </a>
    </li>
+   <li>
+      <a href="#WindowWeightingFunction"
+         title="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction">
+         <span>window weighting function</span>
+      </a>
+   </li>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
@@ -324,6 +330,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#useOutlierReplacementScheme"
          title="https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme">uses outlier replacement scheme</a>
+   </li>
+   <li>
+      <a href="#windowWeightingFunction"
+         title="https://matthiasprobst.github.io/pivmeta#windowWeightingFunction">
+         <span>window weighting function</span>
+      </a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -384,6 +396,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#focal_length"
          title="https://matthiasprobst.github.io/pivmeta#focal_length">focal_length</a>
+   </li>
+   <li>
+      <a href="#GaussWindowWeightingFunction"
+         title="https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction">
+         <span>gauss window weighting function</span>
+      </a>
    </li>
    <li>
       <a href="#image_bit_depth"
@@ -534,6 +552,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#SplitImage"
          title="https://matthiasprobst.github.io/pivmeta#SplitImage">split image</a>
+   </li>
+   <li>
+      <a href="#SquareWindowWeightingFunction"
+         title="https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction">
+         <span>square window weighting function</span>
+      </a>
    </li>
    <li>
       <a href="#standard_deviation_of_image_particle_diameter"
@@ -808,6 +832,12 @@ This section provides details for each class and property defined by PIVMeta.
             <span>synthetic particle</span>
          </a>
       </li>
+      <li>
+         <a href="#WindowWeightingFunction"
+            title="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction">
+            <span>window weighting function</span>
+         </a>
+      </li>
    </ul>
    <div class="entity" id="http://www.w3.org/ns/prov#Activity">
       <h3>Activity<sup class="type-c" title="class">c</sup>
@@ -882,6 +912,12 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#windowWeightingFunction"
+               title="https://matthiasprobst.github.io/pivmeta#windowWeightingFunction">window weighting function</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is also defined as</dt>
          <dd>
@@ -1902,6 +1938,37 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="WindowWeightingFunction">
+      <h3>window weighting function<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core#Concept"
+               target="_blank"
+               title="http://www.w3.org/2004/02/skos/core#Concept">concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#windowWeightingFunction"
+               title="https://matthiasprobst.github.io/pivmeta#windowWeightingFunction">window weighting function</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#GaussWindowWeightingFunction"
+               title="https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction">gauss window weighting function</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SquareWindowWeightingFunction"
+               title="https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction">square window weighting function</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      id="objectproperties">
@@ -1932,6 +1999,12 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#useOutlierReplacementScheme"
             title="https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme">uses outlier replacement scheme</a>
+      </li>
+      <li>
+         <a href="#windowWeightingFunction"
+            title="https://matthiasprobst.github.io/pivmeta#windowWeightingFunction">
+            <span>window weighting function</span>
+         </a>
       </li>
    </ul>
    <div class="entity" id="https://matthiasprobst.github.io/ssno#unit">
@@ -2096,6 +2169,30 @@ This section provides details for each class and property defined by PIVMeta.
             <dd>
                <a href="#OutlierReplacementScheme"
                   title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="windowWeightingFunction">
+      <h3>window weighting function<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#windowWeightingFunction</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#CorrelationMethod"
+                  title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#WindowWeightingFunction"
+                  title="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction">window weighting function</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2328,6 +2425,12 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#focal_length">focal_length</a>
       </li>
       <li>
+         <a href="#GaussWindowWeightingFunction"
+            title="https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction">
+            <span>gauss window weighting function</span>
+         </a>
+      </li>
+      <li>
          <a href="#image_bit_depth"
             title="https://matthiasprobst.github.io/pivmeta#image_bit_depth">image_bit_depth</a>
       </li>
@@ -2476,6 +2579,12 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#SplitImage"
             title="https://matthiasprobst.github.io/pivmeta#SplitImage">split image</a>
+      </li>
+      <li>
+         <a href="#SquareWindowWeightingFunction"
+            title="https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction">
+            <span>square window weighting function</span>
+         </a>
       </li>
       <li>
          <a href="#standard_deviation_of_image_particle_diameter"
@@ -2785,6 +2894,22 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"focal_length"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="GaussWindowWeightingFunction">
+      <h3>gauss window weighting function<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#WindowWeightingFunction"
+               title="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction">window weighting function</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3847,6 +3972,22 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#ImageManipulationMethod"
                title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SquareWindowWeightingFunction">
+      <h3>square window weighting function<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#WindowWeightingFunction"
+               title="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction">window weighting function</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

@@ -248,6 +248,12 @@
     "@value" : "experimental image"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ImageDewarp",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -582,6 +588,12 @@
     "@value" : "split image"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -616,6 +628,12 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "try lower order peaks"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ccd_height",
@@ -1518,6 +1536,15 @@
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
     "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#windowWeightingFunction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#CorrelationMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size",

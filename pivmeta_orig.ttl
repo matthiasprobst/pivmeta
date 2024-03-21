@@ -156,6 +156,12 @@ pivmeta:useOutlierReplacementScheme rdf:type owl:ObjectProperty ;
                                     skos:prefLabel "uses outlier replacement scheme"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#windowWeightingFunction
+pivmeta:windowWeightingFunction rdf:type owl:ObjectProperty ;
+                                rdfs:domain pivmeta:CorrelationMethod ;
+                                rdfs:range pivmeta:WindowWeightingFunction .
+
+
 ###  https://matthiasprobst.github.io/ssno#unit
 ssno:unit rdf:type owl:ObjectProperty ;
           rdfs:domain pivmeta:StandardName ;
@@ -484,6 +490,11 @@ pivmeta:StandardName rdf:type owl:Class ;
                      rdfs:subClassOf skos:Concept .
 
 
+###  https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction
+pivmeta:WindowWeightingFunction rdf:type owl:Class ;
+                                rdfs:subClassOf skos:Concept .
+
+
 ###  https://matthiasprobst.github.io/ssno#Particle
 ssno:Particle rdf:type owl:Class ;
               rdfs:subClassOf pivmeta:PIVHardware ;
@@ -528,6 +539,11 @@ pivmeta:ExperimentalImage rdf:type owl:NamedIndividual ,
                           skos:prefLabel "experimental image"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction
+pivmeta:GaussWindowWeightingFunction rdf:type owl:NamedIndividual ,
+                                              pivmeta:WindowWeightingFunction .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#Interpolation
 pivmeta:Interpolation rdf:type owl:NamedIndividual ,
                                pivmeta:OutlierReplacementScheme ;
@@ -550,6 +566,11 @@ pivmeta:ReEvaluateWithLargerSample rdf:type owl:NamedIndividual ,
 pivmeta:SplitImage rdf:type owl:NamedIndividual ,
                             pivmeta:ImageManipulationMethod ;
                    skos:prefLabel "split image"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction
+pivmeta:SquareWindowWeightingFunction rdf:type owl:NamedIndividual ,
+                                               pivmeta:WindowWeightingFunction .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
