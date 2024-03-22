@@ -591,6 +591,23 @@ xsd:date rdf:type rdfs:Datatype .
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "try lower order peaks"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter
+:arithmetic_mean_of_image_particle_diameter rdf:type owl:NamedIndividual ,
+                                                     :StandardName ;
+                                            <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en ;
+                                            <https://matthiasprobst.github.io/ssno#standard_name> "arithmetic_mean_of_image_particle_diameter" ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_image_particle_diameter"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size
+:arithmetic_mean_of_seeding_particle_size rdf:type owl:NamedIndividual ,
+                                                   :StandardName ;
+                                          <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+                                          <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The arithmetic mean of the diameter of the seeding particles."@en ;
+                                          <https://matthiasprobst.github.io/ssno#standard_name> "arithmetic_mean_of_seeding_particle_size" ;
+                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_seeding_particle_size"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ccd_height
 :ccd_height rdf:type owl:NamedIndividual ,
                      :StandardName ;
@@ -748,15 +765,6 @@ xsd:date rdf:type rdfs:Datatype .
                        <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."@en ;
                        <https://matthiasprobst.github.io/ssno#standard_name> "magnitude_of_velocity" ;
                        <http://www.w3.org/2004/02/skos/core#prefLabel> "magnitude_of_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size
-:mean_seeding_particle_size rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
-                            <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The mean diameter of the seeding particles."@en ;
-                            <https://matthiasprobst.github.io/ssno#standard_name> "mean_seeding_particle_size" ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "mean_seeding_particle_size"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#micro_piv
@@ -947,6 +955,15 @@ xsd:date rdf:type rdfs:Datatype .
                                                <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard deviation of the image particle diameter in the field of interest."@en ;
                                                <https://matthiasprobst.github.io/ssno#standard_name> "standard_deviation_of_image_particle_diameter" ;
                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_image_particle_diameter"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size
+:standard_deviation_of_seeding_particle_size rdf:type owl:NamedIndividual ,
+                                                      :StandardName ;
+                                             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+                                             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard deviation of the seeding particles sizes."@en ;
+                                             <https://matthiasprobst.github.io/ssno#standard_name> "standard_deviation_of_seeding_particle_size" ;
+                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_seeding_particle_size"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement

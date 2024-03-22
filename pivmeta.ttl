@@ -707,6 +707,22 @@ pivmeta:image_particle_diameter rdf:type owl:NamedIndividual ,
              <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_diameter"@en .
 
 
+### https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter
+pivmeta:arithmetic_mean_of_image_particle_diameter rdf:type owl:NamedIndividual ,
+             <https://matthiasprobst.github.io/pivmeta#StandardName> ;
+             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "arithmetic_mean_of_image_particle_diameter" ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_image_particle_diameter"@en .
+
+
+### https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter
+pivmeta:standard_deviation_of_image_particle_diameter rdf:type owl:NamedIndividual ,
+             <https://matthiasprobst.github.io/pivmeta#StandardName> ;
+             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard deviation of the image particle diameter in the field of interest."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "standard_deviation_of_image_particle_diameter" ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_image_particle_diameter"@en .
+
+
 ### https://matthiasprobst.github.io/pivmeta#piv_image_index
 pivmeta:piv_image_index rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
@@ -768,13 +784,22 @@ pivmeta:model_laser_sheet_shape_factor rdf:type owl:NamedIndividual ,
              <http://www.w3.org/2004/02/skos/core#prefLabel> "model_laser_sheet_shape_factor"@en .
 
 
-### https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size
-pivmeta:mean_seeding_particle_size rdf:type owl:NamedIndividual ,
+### https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size
+pivmeta:arithmetic_mean_of_seeding_particle_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The mean diameter of the seeding particles."@en ;
-             <https://matthiasprobst.github.io/ssno#standard_name> "mean_seeding_particle_size" ;
+             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The arithmetic mean of the diameter of the seeding particles."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "arithmetic_mean_of_seeding_particle_size" ;
              <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "mean_seeding_particle_size"@en .
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_seeding_particle_size"@en .
+
+
+### https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size
+pivmeta:standard_deviation_of_seeding_particle_size rdf:type owl:NamedIndividual ,
+             <https://matthiasprobst.github.io/pivmeta#StandardName> ;
+             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard deviation of the seeding particles sizes."@en ;
+             <https://matthiasprobst.github.io/ssno#standard_name> "standard_deviation_of_seeding_particle_size" ;
+             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_seeding_particle_size"@en .
 
 
 ### https://matthiasprobst.github.io/pivmeta#number_of_particles
@@ -816,14 +841,6 @@ pivmeta:second_peak_y_displacement rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "second_peak_y_displacement" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "second_peak_y_displacement"@en .
-
-
-### https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter
-pivmeta:standard_deviation_of_image_particle_diameter rdf:type owl:NamedIndividual ,
-             <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard deviation of the image particle diameter in the field of interest."@en ;
-             <https://matthiasprobst.github.io/ssno#standard_name> "standard_deviation_of_image_particle_diameter" ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_image_particle_diameter"@en .
 
 
 ### https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement
