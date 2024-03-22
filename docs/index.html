@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-03-21", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-01-21", "dateModified":"2024-03-22", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-03-21</dt>
+<dt>Modified on: 2024-03-22</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -351,6 +351,10 @@ This ontology has the following classes and properties.</span>
       <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
    </li>
    <li>
+      <a href="#material"
+         title="https://matthiasprobst.github.io/pivmeta#material">material</a>
+   </li>
+   <li>
       <a href="#numberOfRecords"
          title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a>
    </li>
@@ -374,16 +378,20 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#ccd_width">ccd_width</a>
    </li>
    <li>
-      <a href="#coordinate"
-         title="https://matthiasprobst.github.io/pivmeta#coordinate">coordinate</a>
-   </li>
-   <li>
       <a href="#displacement"
          title="https://matthiasprobst.github.io/pivmeta#displacement">displacement</a>
    </li>
    <li>
       <a href="#ExperimentalImage"
          title="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">experimental image</a>
+   </li>
+   <li>
+      <a href="#final_interrogation_window_overlap_size"
+         title="https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size">final_interrogation_window_overlap_size</a>
+   </li>
+   <li>
+      <a href="#final_interrogation_window_size"
+         title="https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size">final_interrogation_window_size</a>
    </li>
    <li>
       <a href="#first_peak_x_displacement"
@@ -422,6 +430,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#image_particle_diameter">image_particle_diameter</a>
    </li>
    <li>
+      <a href="#initial_interrogation_window_size"
+         title="https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size">initial_interrogation_window_size</a>
+   </li>
+   <li>
       <a href="#inplane_velocity"
          title="https://matthiasprobst.github.io/pivmeta#inplane_velocity">inplane_velocity</a>
    </li>
@@ -444,6 +456,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#LeftRightFlip"
          title="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">left right flip</a>
+   </li>
+   <li>
+      <a href="#magnitude_of_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity">magnitude_of_velocity</a>
    </li>
    <li>
       <a href="#mean_seeding_particle_size"
@@ -524,10 +540,6 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement">second_peak_y_displacement</a>
    </li>
    <li>
-      <a href="#seeding_material"
-         title="https://matthiasprobst.github.io/pivmeta#seeding_material">seeding_material</a>
-   </li>
-   <li>
       <a href="#sensor_pixel_height"
          title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height">sensor_pixel_height</a>
    </li>
@@ -583,8 +595,12 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks">try lower order peaks</a>
    </li>
    <li>
-      <a href="#velocity"
-         title="https://matthiasprobst.github.io/pivmeta#velocity">velocity</a>
+      <a href="#x_coordinate"
+         title="https://matthiasprobst.github.io/pivmeta#x_coordinate">x_coordinate</a>
+   </li>
+   <li>
+      <a href="#x_displacement"
+         title="https://matthiasprobst.github.io/pivmeta#x_displacement">x_displacement</a>
    </li>
    <li>
       <a href="#x_final_interrogation_window_overlap_size"
@@ -599,8 +615,24 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">x_initial_interrogation_window_size</a>
    </li>
    <li>
+      <a href="#x_inplane_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#x_inplane_velocity">x_inplane_velocity</a>
+   </li>
+   <li>
       <a href="#x_pixel_coordinate"
          title="https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate">x_pixel_coordinate</a>
+   </li>
+   <li>
+      <a href="#x_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#x_velocity">x_velocity</a>
+   </li>
+   <li>
+      <a href="#y_coordinate"
+         title="https://matthiasprobst.github.io/pivmeta#y_coordinate">y_coordinate</a>
+   </li>
+   <li>
+      <a href="#y_displacement"
+         title="https://matthiasprobst.github.io/pivmeta#y_displacement">y_displacement</a>
    </li>
    <li>
       <a href="#y_final_interrogation_window_overlap_size"
@@ -615,8 +647,20 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">y_initial_interrogation_window_size</a>
    </li>
    <li>
+      <a href="#y_inplane_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#y_inplane_velocity">y_inplane_velocity</a>
+   </li>
+   <li>
       <a href="#y_pixel_coordinate"
          title="https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate">y_pixel_coordinate</a>
+   </li>
+   <li>
+      <a href="#y_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#y_velocity">y_velocity</a>
+   </li>
+   <li>
+      <a href="#z_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#z_velocity">z_velocity</a>
    </li>
 </ul><h4> Rules </h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -915,10 +959,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#windowWeightingFunction">window weighting function</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
-         <dt>is also defined as</dt>
-         <dd>
-            <a href="#CorrelationMethod">annotation property</a>
-         </dd>
       </dl>
    </div>
    <div class="entity" id="DigitalCamera">
@@ -1136,12 +1176,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#Singlepass">single pass</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="https://matthiasprobst.github.io/pivmeta#CorrelationMethod"
-               target="_blank"
-               title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a>
-         </dd>
       </dl>
    </div>
    <div class="entity" id="Laser">
@@ -1355,6 +1389,12 @@ This section provides details for each class and property defined by PIVMeta.
       <div class="comment">
          <span class="markdown">Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter.</span>
       </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>For data property pivmeta:material, please provide a wikidata URI, for e.g. for DEHS use https://www.wikidata.org/wiki/Q4387284.</pre>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1367,6 +1407,12 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#SyntheticParticle"
                title="https://matthiasprobst.github.io/ssno#SyntheticParticle">synthetic particle</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#material"
+               title="https://matthiasprobst.github.io/pivmeta#material">material</a>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
@@ -1810,10 +1856,12 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#ccd_height">ccd_height</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#ccd_width"
                title="https://matthiasprobst.github.io/pivmeta#ccd_width">ccd_width</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#coordinate"
-               title="https://matthiasprobst.github.io/pivmeta#coordinate">coordinate</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#displacement"
                title="https://matthiasprobst.github.io/pivmeta#displacement">displacement</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#final_interrogation_window_overlap_size"
+               title="https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size">final_interrogation_window_overlap_size</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#final_interrogation_window_size"
+               title="https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size">final_interrogation_window_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#first_peak_x_displacement"
                title="https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement">first_peak_x_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#first_peak_y_displacement"
@@ -1830,6 +1878,8 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#image_particle_density">image_particle_density</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#image_particle_diameter"
                title="https://matthiasprobst.github.io/pivmeta#image_particle_diameter">image_particle_diameter</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#initial_interrogation_window_size"
+               title="https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size">initial_interrogation_window_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#inplane_velocity"
                title="https://matthiasprobst.github.io/pivmeta#inplane_velocity">inplane_velocity</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#laser_pulse_delay"
@@ -1838,6 +1888,8 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness">laser_sheet_thickness</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#least_square_residual_of_z_displacement_reconstruction"
                title="https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction">least_square_residual_of_z_displacement_reconstruction</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#magnitude_of_velocity"
+               title="https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity">magnitude_of_velocity</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#mean_seeding_particle_size"
                title="https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size">mean_seeding_particle_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#model_laser_sheet_shape_factor"
@@ -1870,8 +1922,6 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement">second_peak_x_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#second_peak_y_displacement"
                title="https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement">second_peak_y_displacement</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#seeding_material"
-               title="https://matthiasprobst.github.io/pivmeta#seeding_material">seeding_material</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#sensor_pixel_height"
                title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height">sensor_pixel_height</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#sensor_pixel_height_fill_factor"
@@ -1889,24 +1939,40 @@ This section provides details for each class and property defined by PIVMeta.
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#third_peak_y_displacement"
                title="https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement">third_peak_y_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#time" title="https://matthiasprobst.github.io/pivmeta#time">time</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#velocity"
-               title="https://matthiasprobst.github.io/pivmeta#velocity">velocity</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_coordinate"
+               title="https://matthiasprobst.github.io/pivmeta#x_coordinate">x_coordinate</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_displacement"
+               title="https://matthiasprobst.github.io/pivmeta#x_displacement">x_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_final_interrogation_window_overlap_size"
                title="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size">x_final_interrogation_window_overlap_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_final_interrogation_window_size"
                title="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size">x_final_interrogation_window_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_initial_interrogation_window_size"
                title="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">x_initial_interrogation_window_size</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_inplane_velocity"
+               title="https://matthiasprobst.github.io/pivmeta#x_inplane_velocity">x_inplane_velocity</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_pixel_coordinate"
                title="https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate">x_pixel_coordinate</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#x_velocity"
+               title="https://matthiasprobst.github.io/pivmeta#x_velocity">x_velocity</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_coordinate"
+               title="https://matthiasprobst.github.io/pivmeta#y_coordinate">y_coordinate</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_displacement"
+               title="https://matthiasprobst.github.io/pivmeta#y_displacement">y_displacement</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_final_interrogation_window_overlap_size"
                title="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size">y_final_interrogation_window_overlap_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_final_interrogation_window_size"
                title="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size">y_final_interrogation_window_size</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_initial_interrogation_window_size"
                title="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">y_initial_interrogation_window_size</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_inplane_velocity"
+               title="https://matthiasprobst.github.io/pivmeta#y_inplane_velocity">y_inplane_velocity</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_pixel_coordinate"
                title="https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate">y_pixel_coordinate</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#y_velocity"
+               title="https://matthiasprobst.github.io/pivmeta#y_velocity">y_velocity</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#z_velocity"
+               title="https://matthiasprobst.github.io/pivmeta#z_velocity">z_velocity</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
@@ -2210,6 +2276,10 @@ This section provides details for each class and property defined by PIVMeta.
          <a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a>
       </li>
       <li>
+         <a href="#material"
+            title="https://matthiasprobst.github.io/pivmeta#material">material</a>
+      </li>
+      <li>
          <a href="#numberOfRecords"
             title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a>
       </li>
@@ -2285,6 +2355,32 @@ This section provides details for each class and property defined by PIVMeta.
             <dt>has domain</dt>
             <dd>
                <a href="#https://w3id.org/okn/o/sd#Software" title="https://w3id.org/okn/o/sd#Software">Software</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#anyURI">anyURI</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="material">
+      <h3>material<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#material</p>
+      <div class="comment">
+         <span class="markdown">Used with PIV Particles, this describes the seeding material. Provide a URI like https://www.wikidata.org/wiki/Q4387284.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://matthiasprobst.github.io/ssno#Particle" title="https://matthiasprobst.github.io/ssno#Particle">Particle</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2397,16 +2493,20 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#ccd_width">ccd_width</a>
       </li>
       <li>
-         <a href="#coordinate"
-            title="https://matthiasprobst.github.io/pivmeta#coordinate">coordinate</a>
-      </li>
-      <li>
          <a href="#displacement"
             title="https://matthiasprobst.github.io/pivmeta#displacement">displacement</a>
       </li>
       <li>
          <a href="#ExperimentalImage"
             title="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">experimental image</a>
+      </li>
+      <li>
+         <a href="#final_interrogation_window_overlap_size"
+            title="https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size">final_interrogation_window_overlap_size</a>
+      </li>
+      <li>
+         <a href="#final_interrogation_window_size"
+            title="https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size">final_interrogation_window_size</a>
       </li>
       <li>
          <a href="#first_peak_x_displacement"
@@ -2445,6 +2545,10 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#image_particle_diameter">image_particle_diameter</a>
       </li>
       <li>
+         <a href="#initial_interrogation_window_size"
+            title="https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size">initial_interrogation_window_size</a>
+      </li>
+      <li>
          <a href="#inplane_velocity"
             title="https://matthiasprobst.github.io/pivmeta#inplane_velocity">inplane_velocity</a>
       </li>
@@ -2467,6 +2571,10 @@ This section provides details for each class and property defined by PIVMeta.
       <li>
          <a href="#LeftRightFlip"
             title="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">left right flip</a>
+      </li>
+      <li>
+         <a href="#magnitude_of_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity">magnitude_of_velocity</a>
       </li>
       <li>
          <a href="#mean_seeding_particle_size"
@@ -2547,10 +2655,6 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement">second_peak_y_displacement</a>
       </li>
       <li>
-         <a href="#seeding_material"
-            title="https://matthiasprobst.github.io/pivmeta#seeding_material">seeding_material</a>
-      </li>
-      <li>
          <a href="#sensor_pixel_height"
             title="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height">sensor_pixel_height</a>
       </li>
@@ -2606,8 +2710,12 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks">try lower order peaks</a>
       </li>
       <li>
-         <a href="#velocity"
-            title="https://matthiasprobst.github.io/pivmeta#velocity">velocity</a>
+         <a href="#x_coordinate"
+            title="https://matthiasprobst.github.io/pivmeta#x_coordinate">x_coordinate</a>
+      </li>
+      <li>
+         <a href="#x_displacement"
+            title="https://matthiasprobst.github.io/pivmeta#x_displacement">x_displacement</a>
       </li>
       <li>
          <a href="#x_final_interrogation_window_overlap_size"
@@ -2622,8 +2730,24 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">x_initial_interrogation_window_size</a>
       </li>
       <li>
+         <a href="#x_inplane_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#x_inplane_velocity">x_inplane_velocity</a>
+      </li>
+      <li>
          <a href="#x_pixel_coordinate"
             title="https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate">x_pixel_coordinate</a>
+      </li>
+      <li>
+         <a href="#x_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#x_velocity">x_velocity</a>
+      </li>
+      <li>
+         <a href="#y_coordinate"
+            title="https://matthiasprobst.github.io/pivmeta#y_coordinate">y_coordinate</a>
+      </li>
+      <li>
+         <a href="#y_displacement"
+            title="https://matthiasprobst.github.io/pivmeta#y_displacement">y_displacement</a>
       </li>
       <li>
          <a href="#y_final_interrogation_window_overlap_size"
@@ -2638,8 +2762,20 @@ This section provides details for each class and property defined by PIVMeta.
             title="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">y_initial_interrogation_window_size</a>
       </li>
       <li>
+         <a href="#y_inplane_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#y_inplane_velocity">y_inplane_velocity</a>
+      </li>
+      <li>
          <a href="#y_pixel_coordinate"
             title="https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate">y_pixel_coordinate</a>
+      </li>
+      <li>
+         <a href="#y_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#y_velocity">y_velocity</a>
+      </li>
+      <li>
+         <a href="#z_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#z_velocity">z_velocity</a>
       </li>
    </ul>
    <div class="entity" id="ccd_height">
@@ -2714,42 +2850,6 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="coordinate">
-      <h3>coordinate<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#coordinate</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#StandardName"
-               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has facts</dt>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <a href="https://qudt.org/vocab/unit/M"
-               target="_blank"
-               title="https://qudt.org/vocab/unit/M">m</a>
-         </dd>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
-               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The spatial coordinate."@en</span>
-         </dd>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
-               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"coordinate"</span>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="displacement">
       <h3>displacement<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2769,7 +2869,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"PIV displacement."@en</span>
+            <span class="literal">"PIV pixel displacement magnitude in the image plane."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -2792,6 +2892,64 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#ImageType"
                title="https://matthiasprobst.github.io/pivmeta#ImageType">image type</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="final_interrogation_window_overlap_size">
+      <h3>final_interrogation_window_overlap_size<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Width and height of a square final PIV interrogation window overlap."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"final_interrogation_window_overlap_size"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="final_interrogation_window_size">
+      <h3>final_interrogation_window_size<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Width and height of a square final PIV interrogation window."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"final_interrogation_window_size"</span>
          </dd>
       </dl>
    </div>
@@ -2924,7 +3082,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The pixel deth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en</span>
+            <span class="literal">"The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3040,13 +3198,42 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gausian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en</span>
+            <span class="literal">"The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"image_particle_diameter"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="initial_interrogation_window_size">
+      <h3>initial_interrogation_window_size<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"initial_interrogation_window_size"</span>
          </dd>
       </dl>
    </div>
@@ -3076,7 +3263,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitude of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."@en</span>
+            <span class="literal">"The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -3216,6 +3403,42 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#ImageManipulationMethod"
                title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="magnitude_of_velocity">
+      <h3>magnitude_of_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="https://qudt.org/vocab/unit/M-PER-SEC"
+               target="_blank"
+               title="https://qudt.org/vocab/unit/M-PER-SEC">m p e r s e c</a>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"magnitude_of_velocity"</span>
          </dd>
       </dl>
    </div>
@@ -3778,35 +4001,6 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="seeding_material">
-      <h3>seeding_material<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#seeding_material</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#StandardName"
-               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has facts</dt>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
-               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS)."@en</span>
-         </dd>
-         <dd>
-            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
-               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"seeding_material"</span>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="sensor_pixel_height">
       <h3>sensor_pixel_height<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -4148,13 +4342,13 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="velocity">
-      <h3>velocity<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="x_coordinate">
+      <h3>x_coordinate<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#velocity</p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#x_coordinate</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
@@ -4166,21 +4360,50 @@ This section provides details for each class and property defined by PIVMeta.
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
             <sup class="type-op" title="object property">op</sup> 
-            <a href="https://qudt.org/vocab/unit/M-PER-SEC"
+            <a href="https://qudt.org/vocab/unit/M"
                target="_blank"
-               title="https://qudt.org/vocab/unit/M-PER-SEC">m p e r s e c</a>
+               title="https://qudt.org/vocab/unit/M">m</a>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Velocity."@en</span>
+            <span class="literal">"The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"velocity"</span>
+            <span class="literal">"x_coordinate"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="x_displacement">
+      <h3>x_displacement<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#x_displacement</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Displacement is a      vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"x_displacement"</span>
          </dd>
       </dl>
    </div>
@@ -4203,7 +4426,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Width of the final PIV interrogation window overlap."@en</span>
+            <span class="literal">"Width of a final PIV interrogation window overlap."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -4232,7 +4455,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Width of the final PIV interrogation window."@en</span>
+            <span class="literal">"Width of a final PIV interrogation window."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -4261,13 +4484,49 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"Width of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en</span>
+            <span class="literal">"Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"x_initial_interrogation_window_size"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="x_inplane_velocity">
+      <h3>x_inplane_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#x_inplane_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="https://qudt.org/vocab/unit/M-PER-SEC"
+               target="_blank"
+               title="https://qudt.org/vocab/unit/M-PER-SEC">m p e r s e c</a>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"x_inplane_velocity"</span>
          </dd>
       </dl>
    </div>
@@ -4300,6 +4559,107 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="x_velocity">
+      <h3>x_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#x_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="https://qudt.org/vocab/unit/M-PER-SEC"
+               target="_blank"
+               title="https://qudt.org/vocab/unit/M-PER-SEC">m p e r s e c</a>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"x_velocity"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="y_coordinate">
+      <h3>y_coordinate<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#y_coordinate</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="https://qudt.org/vocab/unit/M"
+               target="_blank"
+               title="https://qudt.org/vocab/unit/M">m</a>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"y_coordinate"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="y_displacement">
+      <h3>y_displacement<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#y_displacement</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"y_displacement"</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="y_final_interrogation_window_overlap_size">
       <h3>y_final_interrogation_window_overlap_size<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -4319,7 +4679,7 @@ This section provides details for each class and property defined by PIVMeta.
             <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
                title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The height of the final PIV interrogation window overlap."@en</span>
+            <span class="literal">"The height of a final PIV interrogation window overlap."@en</span>
          </dd>
          <dd>
             <a href="#https://matthiasprobst.github.io/ssno#standard_name"
@@ -4387,6 +4747,42 @@ This section provides details for each class and property defined by PIVMeta.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="y_inplane_velocity">
+      <h3>y_inplane_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#y_inplane_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="https://qudt.org/vocab/unit/M-PER-SEC"
+               target="_blank"
+               title="https://qudt.org/vocab/unit/M-PER-SEC">m p e r s e c</a>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"y_inplane_velocity"</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="y_pixel_coordinate">
       <h3>y_pixel_coordinate<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -4413,6 +4809,78 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"y_pixel_coordinate"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="y_velocity">
+      <h3>y_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#y_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="https://qudt.org/vocab/unit/M-PER-SEC"
+               target="_blank"
+               title="https://qudt.org/vocab/unit/M-PER-SEC">m p e r s e c</a>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"y_velocity"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="z_velocity">
+      <h3>z_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#z_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#StandardName"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">canonical units</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="https://qudt.org/vocab/unit/M-PER-SEC"
+               target="_blank"
+               title="https://qudt.org/vocab/unit/M-PER-SEC">m p e r s e c</a>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#hasStandardNameDescription"
+               title="https://matthiasprobst.github.io/ssno#hasStandardNameDescription">standard name description</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z."@en</span>
+         </dd>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standard_name"
+               title="https://matthiasprobst.github.io/ssno#standard_name">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"z_velocity"</span>
          </dd>
       </dl>
    </div>

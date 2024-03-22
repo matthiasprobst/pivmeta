@@ -71,10 +71,6 @@
 # http://www.w3.org/2004/02/skos/core#prefLabel
 <http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# https://matthiasprobst.github.io/pivmeta#CorrelationMethod
-<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-# 
 # 
 # 
 # #################################################################
@@ -165,6 +161,13 @@
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#DigitalCamera> .
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#material
+<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/ssno#Particle> .
+<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2000/01/rdf-schema#comment> "Used with PIV Particles, this describes the seeding material. Provide a URI like https://www.wikidata.org/wiki/Q4387284."@en .
+<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2004/02/skos/core#prefLabel> "material"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#numberOfRecords
 <https://matthiasprobst.github.io/pivmeta#numberOfRecords> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -429,6 +432,7 @@
 <https://matthiasprobst.github.io/ssno#Particle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/ssno#Particle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVHardware> .
 <https://matthiasprobst.github.io/ssno#Particle> <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en .
+<https://matthiasprobst.github.io/ssno#Particle> <http://www.w3.org/2004/02/skos/core#example> "For data property pivmeta:material, please provide a wikidata URI, for e.g. for DEHS use https://www.wikidata.org/wiki/Q4387284."@en .
 <https://matthiasprobst.github.io/ssno#Particle> <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle"@en .
 # 
 # https://matthiasprobst.github.io/ssno#PivValidation
@@ -529,20 +533,26 @@
 <https://matthiasprobst.github.io/pivmeta#ccd_width> <https://matthiasprobst.github.io/ssno#standard_name> "ccd_width" .
 <https://matthiasprobst.github.io/pivmeta#ccd_width> <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_width"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#coordinate
-<https://matthiasprobst.github.io/pivmeta#coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#coordinate> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> .
-<https://matthiasprobst.github.io/pivmeta#coordinate> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The spatial coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#coordinate> <https://matthiasprobst.github.io/ssno#standard_name> "coordinate" .
-<https://matthiasprobst.github.io/pivmeta#coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "coordinate"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#displacement
 <https://matthiasprobst.github.io/pivmeta#displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#displacement> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "PIV displacement."@en .
+<https://matthiasprobst.github.io/pivmeta#displacement> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "PIV pixel displacement magnitude in the image plane."@en .
 <https://matthiasprobst.github.io/pivmeta#displacement> <https://matthiasprobst.github.io/ssno#standard_name> "displacement" .
 <https://matthiasprobst.github.io/pivmeta#displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "displacement"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width and height of a square final PIV interrogation window overlap."@en .
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <https://matthiasprobst.github.io/ssno#standard_name> "final_interrogation_window_overlap_size" .
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "final_interrogation_window_overlap_size"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width and height of a square final PIV interrogation window."@en .
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <https://matthiasprobst.github.io/ssno#standard_name> "final_interrogation_window_size" .
+<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "final_interrogation_window_size"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement
 <https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -569,7 +579,7 @@
 # https://matthiasprobst.github.io/pivmeta#image_bit_depth
 <https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The pixel deth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en .
+<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en .
 <https://matthiasprobst.github.io/pivmeta#image_bit_depth> <https://matthiasprobst.github.io/ssno#standard_name> "image_bit_depth" .
 <https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_bit_depth"@en .
 # 
@@ -597,16 +607,23 @@
 # https://matthiasprobst.github.io/pivmeta#image_particle_diameter
 <https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gausian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en .
+<https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en .
 <https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <https://matthiasprobst.github.io/ssno#standard_name> "image_particle_diameter" .
 <https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_diameter"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size
+<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en .
+<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <https://matthiasprobst.github.io/ssno#standard_name> "initial_interrogation_window_size" .
+<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "initial_interrogation_window_size"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#inplane_velocity
 <https://matthiasprobst.github.io/pivmeta#inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
 <https://matthiasprobst.github.io/pivmeta#inplane_velocity> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> .
 <https://qudt.org/vocab/unit/M-PER-SEC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#inplane_velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitude of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."@en .
+<https://matthiasprobst.github.io/pivmeta#inplane_velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity."@en .
 <https://matthiasprobst.github.io/pivmeta#inplane_velocity> <https://matthiasprobst.github.io/ssno#standard_name> "inplane_velocity" .
 <https://matthiasprobst.github.io/pivmeta#inplane_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "inplane_velocity"@en .
 # 
@@ -633,6 +650,14 @@
 <https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The least square residual of the z displacement reconstruction in stereo PIV."@en .
 <https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction> <https://matthiasprobst.github.io/ssno#standard_name> "least_square_residual_of_z_displacement_reconstruction" .
 <https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction> <http://www.w3.org/2004/02/skos/core#prefLabel> "least_square_residual_of_z_displacement_reconstruction"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity
+<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> .
+<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."@en .
+<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <https://matthiasprobst.github.io/ssno#standard_name> "magnitude_of_velocity" .
+<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "magnitude_of_velocity"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size
 <https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -767,13 +792,6 @@
 <https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement> <https://matthiasprobst.github.io/ssno#standard_name> "second_peak_y_displacement" .
 <https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "second_peak_y_displacement"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#seeding_material
-<https://matthiasprobst.github.io/pivmeta#seeding_material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#seeding_material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#seeding_material> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS)."@en .
-<https://matthiasprobst.github.io/pivmeta#seeding_material> <https://matthiasprobst.github.io/ssno#standard_name> "seeding_material" .
-<https://matthiasprobst.github.io/pivmeta#seeding_material> <http://www.w3.org/2004/02/skos/core#prefLabel> "seeding_material"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#sensor_pixel_height
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#sensor_pixel_height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
@@ -837,34 +855,49 @@
 <https://matthiasprobst.github.io/pivmeta#time> <https://matthiasprobst.github.io/ssno#standard_name> "time" .
 <https://matthiasprobst.github.io/pivmeta#time> <http://www.w3.org/2004/02/skos/core#prefLabel> "time"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#velocity
-<https://matthiasprobst.github.io/pivmeta#velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#velocity> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> .
-<https://matthiasprobst.github.io/pivmeta#velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity."@en .
-<https://matthiasprobst.github.io/pivmeta#velocity> <https://matthiasprobst.github.io/ssno#standard_name> "velocity" .
-<https://matthiasprobst.github.io/pivmeta#velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "velocity"@en .
+# https://matthiasprobst.github.io/pivmeta#x_coordinate
+<https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#x_coordinate> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> .
+<https://matthiasprobst.github.io/pivmeta#x_coordinate> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#x_coordinate> <https://matthiasprobst.github.io/ssno#standard_name> "x_coordinate" .
+<https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_coordinate"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#x_displacement
+<https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#x_displacement> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Displacement is a      vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x."@en .
+<https://matthiasprobst.github.io/pivmeta#x_displacement> <https://matthiasprobst.github.io/ssno#standard_name> "x_displacement" .
+<https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_displacement"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the final PIV interrogation window overlap."@en .
+<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of a final PIV interrogation window overlap."@en .
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <https://matthiasprobst.github.io/ssno#standard_name> "x_final_interrogation_window_overlap_size" .
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_overlap_size"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the final PIV interrogation window."@en .
+<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of a final PIV interrogation window."@en .
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <https://matthiasprobst.github.io/ssno#standard_name> "x_final_interrogation_window_size" .
 <https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size
 <https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en .
+<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en .
 <https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <https://matthiasprobst.github.io/ssno#standard_name> "x_initial_interrogation_window_size" .
 <https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_initial_interrogation_window_size"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#x_inplane_velocity
+<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> .
+<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."@en .
+<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <https://matthiasprobst.github.io/ssno#standard_name> "x_inplane_velocity" .
+<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_inplane_velocity"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate
 <https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -873,10 +906,33 @@
 <https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <https://matthiasprobst.github.io/ssno#standard_name> "x_pixel_coordinate" .
 <https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_pixel_coordinate"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#x_velocity
+<https://matthiasprobst.github.io/pivmeta#x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#x_velocity> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> .
+<https://matthiasprobst.github.io/pivmeta#x_velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x."@en .
+<https://matthiasprobst.github.io/pivmeta#x_velocity> <https://matthiasprobst.github.io/ssno#standard_name> "x_velocity" .
+<https://matthiasprobst.github.io/pivmeta#x_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_velocity"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#y_coordinate
+<https://matthiasprobst.github.io/pivmeta#y_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#y_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#y_coordinate> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> .
+<https://matthiasprobst.github.io/pivmeta#y_coordinate> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#y_coordinate> <https://matthiasprobst.github.io/ssno#standard_name> "y_coordinate" .
+<https://matthiasprobst.github.io/pivmeta#y_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_coordinate"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#y_displacement
+<https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#y_displacement> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane."@en .
+<https://matthiasprobst.github.io/pivmeta#y_displacement> <https://matthiasprobst.github.io/ssno#standard_name> "y_displacement" .
+<https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_displacement"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size
 <https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of the final PIV interrogation window overlap."@en .
+<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of a final PIV interrogation window overlap."@en .
 <https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <https://matthiasprobst.github.io/ssno#standard_name> "y_final_interrogation_window_overlap_size" .
 <https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_overlap_size"@en .
 # 
@@ -894,12 +950,36 @@
 <https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <https://matthiasprobst.github.io/ssno#standard_name> "y_initial_interrogation_window_size" .
 <https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_initial_interrogation_window_size"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#y_inplane_velocity
+<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> .
+<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."@en .
+<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <https://matthiasprobst.github.io/ssno#standard_name> "y_inplane_velocity" .
+<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_inplane_velocity"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate
 <https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
 <https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Image coordinate in vertical direction."@en .
 <https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <https://matthiasprobst.github.io/ssno#standard_name> "y_pixel_coordinate" .
 <https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_pixel_coordinate"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#y_velocity
+<https://matthiasprobst.github.io/pivmeta#y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#y_velocity> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> .
+<https://matthiasprobst.github.io/pivmeta#y_velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."@en .
+<https://matthiasprobst.github.io/pivmeta#y_velocity> <https://matthiasprobst.github.io/ssno#standard_name> "y_velocity" .
+<https://matthiasprobst.github.io/pivmeta#y_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_velocity"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#z_velocity
+<https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#z_velocity> <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> .
+<https://matthiasprobst.github.io/pivmeta#z_velocity> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z."@en .
+<https://matthiasprobst.github.io/pivmeta#z_velocity> <https://matthiasprobst.github.io/ssno#standard_name> "z_velocity" .
+<https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "z_velocity"@en .
 # 
 # https://qudt.org/vocab/unit/M
 # 
@@ -908,18 +988,5 @@
 # https://qudt.org/vocab/unit/PER-M
 # 
 # https://qudt.org/vocab/unit/SEC
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Annotations
-# #
-# #################################################################
-# 
-# 
-<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2004/02/skos/core#definition> "The correlation algorithm used for the PIV Interrogation Method"@en .
-<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2004/02/skos/core#example> "A pattern identiying image filenames like \"Cam001_a.tif\" or \"Cam023_b.tif\" corresponds to \"C\\d{3}_[a,b].tif\""@en .
-<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "correlation method"@en .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

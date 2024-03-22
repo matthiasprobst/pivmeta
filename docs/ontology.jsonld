@@ -191,24 +191,9 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#CorrelationMethod",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "The correlation algorithm used for the PIV Interrogation Method"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#example" : [ {
-    "@language" : "en",
-    "@value" : "A pattern identiying image filenames like \"Cam001_a.tif\" or \"Cam023_b.tif\" corresponds to \"C\\d{3}_[a,b].tif\""
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "correlation method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCamera",
@@ -684,26 +669,6 @@
     "@id" : "https://qudt.org/vocab/unit/M"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#coordinate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "coordinate"
-  } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The spatial coordinate."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
-    "@value" : "coordinate"
-  } ],
-  "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -715,7 +680,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "PIV displacement."
+    "@value" : "PIV pixel displacement magnitude in the image plane."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "displacement"
@@ -736,6 +701,40 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "filename pattern"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "final_interrogation_window_overlap_size"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "Width and height of a square final PIV interrogation window overlap."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "final_interrogation_window_overlap_size"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "final_interrogation_window_size"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "Width and height of a square final PIV interrogation window."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "final_interrogation_window_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement",
@@ -829,7 +828,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The pixel deth of an image in bits. Typical bit depth are 8 bits or 16 bits."
+    "@value" : "The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "image_bit_depth"
@@ -897,10 +896,27 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gausian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."
+    "@value" : "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "image_particle_diameter"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "initial_interrogation_window_size"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "initial_interrogation_window_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#inplane_velocity",
@@ -914,7 +930,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Velocity is a vector quantity. Without a prefix 'x', 'y' or 'z' it indicates the magnitude of the velocity vector. 'inplane' indicates that the velocity magnitude was computed based on the in-plane components only."
+    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "inplane_velocity"
@@ -980,6 +996,26 @@
     "@value" : "least_square_residual_of_z_displacement_reconstruction"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "magnitude_of_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "magnitude_of_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#manufacturer",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -994,6 +1030,23 @@
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Manufacturer of a m4i:Tool"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#material",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Used with PIV Particles, this describes the seeding material. Provide a URI like https://www.wikidata.org/wiki/Q4387284."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#Particle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "material"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#mean_seeding_particle_size",
@@ -1343,23 +1396,6 @@
     "@value" : "second_peak_y_displacement"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#seeding_material",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "seeding_material"
-  } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The type of particles used for seeding the flow, e.g. Di-ethyl-hexyl-sebacate (DEHS)."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
-    "@value" : "seeding_material"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#sensor_pixel_height",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1526,26 +1562,6 @@
     "@value" : "uses outlier replacement scheme"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#velocity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "velocity"
-  } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Velocity."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
-    "@value" : "velocity"
-  } ],
-  "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#windowWeightingFunction",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1553,6 +1569,43 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_coordinate"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "x_coordinate"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_displacement"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a      vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "x_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size",
@@ -1566,7 +1619,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Width of the final PIV interrogation window overlap."
+    "@value" : "Width of a final PIV interrogation window overlap."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "x_final_interrogation_window_overlap_size"
@@ -1583,7 +1636,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Width of the final PIV interrogation window."
+    "@value" : "Width of a final PIV interrogation window."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "x_final_interrogation_window_size"
@@ -1600,10 +1653,30 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "Width of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
+    "@value" : "Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "x_initial_interrogation_window_size"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_inplane_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_inplane_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "x_inplane_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate",
@@ -1623,6 +1696,63 @@
     "@value" : "x_pixel_coordinate"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "x_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_coordinate"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "y_coordinate"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_displacement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_displacement"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "y_displacement"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1634,7 +1764,7 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The height of the final PIV interrogation window overlap."
+    "@value" : "The height of a final PIV interrogation window overlap."
   } ],
   "https://matthiasprobst.github.io/ssno#standard_name" : [ {
     "@value" : "y_final_interrogation_window_overlap_size"
@@ -1674,6 +1804,26 @@
     "@value" : "y_initial_interrogation_window_size"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_inplane_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_inplane_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "y_inplane_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1691,6 +1841,46 @@
     "@value" : "y_pixel_coordinate"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "y_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#z_velocity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "z_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z."
+  } ],
+  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+    "@value" : "z_velocity"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/ssno#Particle",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -1699,6 +1889,10 @@
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "For data property pivmeta:material, please provide a wikidata URI, for e.g. for DEHS use https://www.wikidata.org/wiki/Q4387284."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
