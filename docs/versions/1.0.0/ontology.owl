@@ -203,9 +203,15 @@
 
 
     <owl:ObjectProperty rdf:about="https://codemeta.github.io/terms/hasSourceCode">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel"/>
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#LaserModel"/>
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/ssno#SyntheticParticle"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#LaserModel"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/ssno#SyntheticParticle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://schema.org/SoftwareSourceCode"/>
     </owl:ObjectProperty>
     
@@ -905,6 +911,34 @@
     
 
 
+    <!-- http://qudt.org/vocab/unit/M -->
+
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit/M"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/M-PER-SEC -->
+
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit/M-PER-SEC"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/PER-M -->
+
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit/PER-M"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/SEC -->
+
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit/SEC"/>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#ExperimentalImage -->
 
 
@@ -1022,7 +1056,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The arithmetic mean of the diameter of the seeding particles.</ssno:hasStandardNameDescription>
         <ssno:standard_name>arithmetic_mean_of_seeding_particle_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">arithmetic_mean_of_seeding_particle_size</skos:prefLabel>
@@ -1035,7 +1069,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ccd_height">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The height of a ccd pixel.</ssno:hasStandardNameDescription>
         <ssno:standard_name>ccd_height</ssno:standard_name>
         <skos:prefLabel xml:lang="en">ccd_height</skos:prefLabel>
@@ -1048,7 +1082,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ccd_width">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The width of a ccd pixel.</ssno:hasStandardNameDescription>
         <ssno:standard_name>ccd_width</ssno:standard_name>
         <skos:prefLabel xml:lang="en">ccd_width</skos:prefLabel>
@@ -1121,7 +1155,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#focal_length">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The focal length. See also https://www.wikidata.org/wiki/Q193540.</ssno:hasStandardNameDescription>
         <ssno:standard_name>focal_length</ssno:standard_name>
         <skos:prefLabel xml:lang="en">focal_length</skos:prefLabel>
@@ -1206,7 +1240,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#inplane_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity.</ssno:hasStandardNameDescription>
         <ssno:standard_name>inplane_velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">inplane_velocity</skos:prefLabel>
@@ -1219,7 +1253,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">Time between two laser pulses.</ssno:hasStandardNameDescription>
         <ssno:standard_name>laser_pulse_delay</ssno:standard_name>
         <skos:prefLabel xml:lang="en">laser_pulse_delay</skos:prefLabel>
@@ -1232,7 +1266,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly.</ssno:hasStandardNameDescription>
         <ssno:standard_name>laser_sheet_thickness</ssno:standard_name>
         <skos:prefLabel xml:lang="en">laser_sheet_thickness</skos:prefLabel>
@@ -1257,7 +1291,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector.</ssno:hasStandardNameDescription>
         <ssno:standard_name>magnitude_of_velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">magnitude_of_velocity</skos:prefLabel>
@@ -1292,7 +1326,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor).</ssno:hasStandardNameDescription>
         <ssno:standard_name>model_laser_sheet_thickness</ssno:standard_name>
         <skos:prefLabel xml:lang="en">model_laser_sheet_thickness</skos:prefLabel>
@@ -1376,7 +1410,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_scaling_factor">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/PER-M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-M"/>
         <ssno:hasStandardNameDescription xml:lang="en">Image scaling factor.</ssno:hasStandardNameDescription>
         <ssno:standard_name>piv_scaling_factor</ssno:standard_name>
         <skos:prefLabel xml:lang="en">piv_scaling_factor</skos:prefLabel>
@@ -1435,7 +1469,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#relative_time">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">Recording time since start of recording.</ssno:hasStandardNameDescription>
         <ssno:standard_name>relative_time</ssno:standard_name>
         <skos:prefLabel xml:lang="en">relative_time</skos:prefLabel>
@@ -1556,7 +1590,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The standard deviation of the seeding particles sizes.</ssno:hasStandardNameDescription>
         <ssno:standard_name>standard_deviation_of_seeding_particle_size</ssno:standard_name>
         <skos:prefLabel xml:lang="en">standard_deviation_of_seeding_particle_size</skos:prefLabel>
@@ -1605,7 +1639,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate.</ssno:hasStandardNameDescription>
         <ssno:standard_name>x_coordinate</ssno:standard_name>
         <skos:prefLabel xml:lang="en">x_coordinate</skos:prefLabel>
@@ -1666,7 +1700,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_inplane_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x.</ssno:hasStandardNameDescription>
         <ssno:standard_name>x_inplane_velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">x_inplane_velocity</skos:prefLabel>
@@ -1691,7 +1725,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x.</ssno:hasStandardNameDescription>
         <ssno:standard_name>x_velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">x_velocity</skos:prefLabel>
@@ -1704,7 +1738,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
         <ssno:hasStandardNameDescription xml:lang="en">The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate.</ssno:hasStandardNameDescription>
         <ssno:standard_name>y_coordinate</ssno:standard_name>
         <skos:prefLabel xml:lang="en">y_coordinate</skos:prefLabel>
@@ -1765,7 +1799,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_inplane_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x.</ssno:hasStandardNameDescription>
         <ssno:standard_name>y_inplane_velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">y_inplane_velocity</skos:prefLabel>
@@ -1790,7 +1824,7 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y.</ssno:hasStandardNameDescription>
         <ssno:standard_name>y_velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">y_velocity</skos:prefLabel>
@@ -1803,39 +1837,11 @@
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:unit rdf:resource="https://qudt.org/vocab/unit/M-PER-SEC"/>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
         <ssno:hasStandardNameDescription xml:lang="en">Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z.</ssno:hasStandardNameDescription>
         <ssno:standard_name>z_velocity</ssno:standard_name>
         <skos:prefLabel xml:lang="en">z_velocity</skos:prefLabel>
     </owl:NamedIndividual>
-    
-
-
-    <!-- https://qudt.org/vocab/unit/M -->
-
-
-    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/M"/>
-    
-
-
-    <!-- https://qudt.org/vocab/unit/M-PER-SEC -->
-
-
-    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/M-PER-SEC"/>
-    
-
-
-    <!-- https://qudt.org/vocab/unit/PER-M -->
-
-
-    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/PER-M"/>
-    
-
-
-    <!-- https://qudt.org/vocab/unit/SEC -->
-
-
-    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/SEC"/>
 </rdf:RDF>
 
 

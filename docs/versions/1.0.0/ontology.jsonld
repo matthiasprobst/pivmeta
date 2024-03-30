@@ -1,4 +1,16 @@
 [ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCameraModel"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#LaserModel"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/ssno#SyntheticParticle"
+    } ]
+  } ]
+}, {
   "@id" : "http://purl.obolibrary.org/obo/BFO_0000017",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
@@ -47,6 +59,18 @@
 }, {
   "@id" : "http://qudt.org/schema/qudt/Unit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://qudt.org/vocab/unit/M",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://qudt.org/vocab/unit/M-PER-SEC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://qudt.org/vocab/unit/PER-M",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://qudt.org/vocab/unit/SEC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ContactPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -115,11 +139,7 @@
   "@id" : "https://codemeta.github.io/terms/hasSourceCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCameraModel"
-  }, {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#LaserModel"
-  }, {
-    "@id" : "https://matthiasprobst.github.io/ssno#SyntheticParticle"
+    "@id" : "_:genid1"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://schema.org/SoftwareSourceCode"
@@ -663,7 +683,7 @@
     "@value" : "arithmetic_mean_of_seeding_particle_size"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ccd_height",
@@ -683,7 +703,7 @@
     "@value" : "ccd_height"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ccd_width",
@@ -703,7 +723,7 @@
     "@value" : "ccd_width"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#displacement",
@@ -838,7 +858,7 @@
     "@value" : "focal_length"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasStandardName",
@@ -973,7 +993,7 @@
     "@value" : "inplane_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+    "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#laser_pulse_delay",
@@ -993,7 +1013,7 @@
     "@value" : "laser_pulse_delay"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/SEC"
+    "@id" : "http://qudt.org/vocab/unit/SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness",
@@ -1013,7 +1033,7 @@
     "@value" : "laser_sheet_thickness"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction",
@@ -1050,7 +1070,7 @@
     "@value" : "magnitude_of_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+    "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#manufacturer",
@@ -1130,7 +1150,7 @@
     "@value" : "model_laser_sheet_thickness"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#numberOfRecords",
@@ -1278,7 +1298,7 @@
     "@value" : "piv_scaling_factor"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/PER-M"
+    "@id" : "http://qudt.org/vocab/unit/PER-M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient",
@@ -1359,7 +1379,7 @@
     "@value" : "relative_time"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/SEC"
+    "@id" : "http://qudt.org/vocab/unit/SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#saturated_pixel_number",
@@ -1532,7 +1552,7 @@
     "@value" : "standard_deviation_of_seeding_particle_size"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement",
@@ -1625,7 +1645,7 @@
     "@value" : "x_coordinate"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_displacement",
@@ -1713,7 +1733,7 @@
     "@value" : "x_inplane_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+    "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate",
@@ -1750,7 +1770,7 @@
     "@value" : "x_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+    "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_coordinate",
@@ -1770,7 +1790,7 @@
     "@value" : "y_coordinate"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M"
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_displacement",
@@ -1858,7 +1878,7 @@
     "@value" : "y_inplane_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+    "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate",
@@ -1895,7 +1915,7 @@
     "@value" : "y_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+    "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#z_velocity",
@@ -1915,7 +1935,7 @@
     "@value" : "z_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
-    "@id" : "https://qudt.org/vocab/unit/M-PER-SEC"
+    "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#Particle",
@@ -2012,18 +2032,6 @@
     "@language" : "en",
     "@value" : "canonical units"
   } ]
-}, {
-  "@id" : "https://qudt.org/vocab/unit/M",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
-}, {
-  "@id" : "https://qudt.org/vocab/unit/M-PER-SEC",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
-}, {
-  "@id" : "https://qudt.org/vocab/unit/PER-M",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
-}, {
-  "@id" : "https://qudt.org/vocab/unit/SEC",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "https://schema.org/CreativeWork",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]

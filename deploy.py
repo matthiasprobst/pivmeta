@@ -7,10 +7,12 @@
 import datetime
 import logging
 import pathlib
-import requests.exceptions
 import shutil
+
+import requests.exceptions
 import yaml
-from ssnolib.standard_name import qudt_canonical_unit_lookup
+
+from pivmetalib.qudt.unit import qudt_lookup
 
 DEFAULT_LOGGING_LEVEL = logging.DEBUG
 _formatter = logging.Formatter(
@@ -76,7 +78,7 @@ if __name__ == "__main__":
             units = v['units']
             qudt_units = None
             if units.strip() != '':
-                qudt_units = qudt_canonical_unit_lookup.get(units, None)
+                qudt_units = qudt_lookup.get(units, None)
                 if qudt_units is None:
                     raise KeyError(f'Cannot determine qudt unit from "{units}"')
             f.write(f'\n\n### https://matthiasprobst.github.io/pivmeta#{k}')

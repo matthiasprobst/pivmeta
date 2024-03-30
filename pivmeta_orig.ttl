@@ -116,9 +116,12 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://codemeta.github.io/terms/hasSourceCode
 <https://codemeta.github.io/terms/hasSourceCode> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain pivmeta:DigitalCameraModel ,
-                                                             pivmeta:LaserModel ,
-                                                             ssno:SyntheticParticle ;
+                                                 rdfs:domain [ rdf:type owl:Class ;
+                                                               owl:unionOf ( pivmeta:DigitalCameraModel
+                                                                             pivmeta:LaserModel
+                                                                             ssno:SyntheticParticle
+                                                                           )
+                                                             ] ;
                                                  rdfs:range <https://schema.org/SoftwareSourceCode> .
 
 

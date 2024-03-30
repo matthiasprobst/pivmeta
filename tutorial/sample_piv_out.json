@@ -1,0 +1,156 @@
+{
+  "@context": {
+    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "obo": "http://purl.obolibrary.org/obo/"
+  },
+  "@graph": [
+    {
+      "@id": "_:piv_background_recording",
+      "@type": "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
+      "dct:description": "The background image is recorded with the laser but without tracer particles",
+      "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool": [
+        {
+          "@type": "http://w3id.org/nfdi4ing/metadata4ing#Tool",
+          "@value": "local:camera"
+        },
+        {
+          "@type": "http://w3id.org/nfdi4ing/metadata4ing#Tool",
+          "@value": "local:laser"
+        }
+      ],
+      "obo:BFO_0000050": "local:piv_background_computation",
+      "obo:RO_0002234": {
+        "@id": "_:piv_background_images"
+      }
+    },
+    {
+      "@id": "_:bgA",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": {
+        "@id": "_:bgA_distribution"
+      },
+      "dct:description": "Background image is intended to be subtracted of all PIV images",
+      "dct:format": "https://www.iana.org/assignments/media-types/image/tiff",
+      "dct:title": "Background image for image B",
+      "dct:type": "pivm:BackgroundImage"
+    },
+    {
+      "@id": "_:piv_measurement",
+      "@type": "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
+      "obo:RO_0000057": "orcid:0000-0001-8729-0482",
+      "obo:RO_0002224": {
+        "@type": "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
+        "@value": "local:piv_calibration"
+      },
+      "obo:RO_0002230": {
+        "@type": "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
+        "@value": "local:piv_recording"
+      },
+      "schema:endTime": {
+        "@type": "schema:DateTime",
+        "@value": "2024-09-01T10:30:04"
+      },
+      "schema:startTime": {
+        "@type": "schema:DateTime",
+        "@value": "2024-09-01T08:14:31"
+      }
+    },
+    {
+      "@id": "_:bgA_distribution",
+      "@type": "dcat:Distribution",
+      "dcat:downloadURL": [
+        "file://path/to/bgA.tiff",
+        "file://path/to/bgB.tiff"
+      ],
+      "dcat:mediaType": "image/tiff"
+    },
+    {
+      "@id": "_:myInstitution",
+      "@type": "prov:Organization",
+      "http://w3id.org/nfdi4ing/metadata4ing#name": "John Doe's Institute of Technology"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8729-0482",
+      "@type": [
+        "prov:Person",
+        "http://w3id.org/nfdi4ing/metadata4ing#ContactPerson"
+      ],
+      "http://w3id.org/nfdi4ing/metadata4ing#firstName": "John",
+      "http://w3id.org/nfdi4ing/metadata4ing#lastName": "Doe",
+      "http://w3id.org/nfdi4ing/metadata4ing#orcidId": "0000-0001-8729-0482",
+      "prov:Role": "contact person",
+      "schema:affiliation": {
+        "@id": "_:myInstitution"
+      }
+    },
+    {
+      "@id": "_:MyResearchProject",
+      "@type": "http://w3id.org/nfdi4ing/metadata4ing#ResearchProject",
+      "dct:description": "Very important research project",
+      "http://w3id.org/nfdi4ing/metadata4ing#keywords": [
+        "2D2C",
+        "PIV",
+        "flow around a duck"
+      ],
+      "http://w3id.org/nfdi4ing/metadata4ing#members": "orcid:0000-0001-8729-0482"
+    },
+    {
+      "@id": "_:piv_recording",
+      "@type": "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
+      "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool": [
+        {
+          "@type": "http://w3id.org/nfdi4ing/metadata4ing#Tool",
+          "@value": "local:camera"
+        },
+        {
+          "@type": "http://w3id.org/nfdi4ing/metadata4ing#Tool",
+          "@value": "local:laser"
+        },
+        {
+          "@type": "http://w3id.org/nfdi4ing/metadata4ing#Tool",
+          "@value": "local:DEHS"
+        }
+      ],
+      "obo:BFO_0000050": "local:piv_measurement",
+      "obo:RO_0002234": {
+        "@id": "_:piv_background_images"
+      }
+    },
+    {
+      "@id": "_:piv_background_images",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": {
+        "@id": "_:bgimages"
+      },
+      "obo:RO_0002234": [
+        {
+          "@id": "_:bgA"
+        },
+        {
+          "@id": "_:N2101b580b9514648b00b80a9e88bce49"
+        }
+      ]
+    },
+    {
+      "@id": "_:N2101b580b9514648b00b80a9e88bce49"
+    },
+    {
+      "@id": "_:bgimages",
+      "@type": "dcat:Distribution",
+      "dcat:downloadURL": "file://path/to/bg_images.zip",
+      "dcat:mediaType": "application/zip",
+      "dct:description": "Background images"
+    },
+    {
+      "@id": "_:piv_calibration",
+      "@type": "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
+      "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool": {
+        "@type": "http://w3id.org/nfdi4ing/metadata4ing#Tool",
+        "@value": "local:camera"
+      },
+      "obo:BFO_0000050": "local:piv_measurement"
+    }
+  ]
+}

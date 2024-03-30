@@ -1,0 +1,120 @@
+{
+  "@context": {
+    "@import": "https://git.rwth-aachen.de/nfdi4ing/metadata4ing/metadata4ing/-/raw/master/m4i_context.jsonld",
+    "orcid": "https://orcid.org/",
+    "local": "_:"
+  },
+  "@graph": [
+    {
+      "@id": "orcid:0000-0001-8729-0482",
+      "@type": [
+        "person",
+        "contact person"
+      ],
+      "has ORCID ID": "0000-0001-8729-0482",
+      "firstName": "John",
+      "lastName": "Doe",
+      "role": "contact person",
+      "affiliation": {
+        "@id": "local:myInstitution",
+        "@type": "organization",
+        "name": "John Doe's Institute of Technology"
+      }
+    },
+    {
+      "@id": "local:MyResearchProject",
+      "@type": "m4i:ResearchProject",
+      "keywords": [
+        "2D2C",
+        "PIV",
+        "flow around a duck"
+      ],
+      "description": "Very important research project",
+      "members": [
+        "orcid:0000-0001-8729-0482"
+      ]
+    },
+    {
+      "@id": "local:piv_measurement",
+      "@type": "processing step",
+      "has participant": "orcid:0000-0001-8729-0482",
+      "start time": "2024-09-01T08:14:31",
+      "end time": "2024-09-01T10:30:04",
+      "starts with": "local:piv_calibration",
+      "ends with": "local:piv_recording"
+    },
+    {
+      "@id": "local:piv_calibration",
+      "@type": "processing step",
+      "part of": "local:piv_measurement",
+      "has employed tool": "local:camera"
+    },
+    {
+      "@id": "local:piv_background_recording",
+      "@type": "processing step",
+      "description": "The background image is recorded with the laser but without tracer particles",
+      "part of": "local:piv_background_computation",
+      "has employed tool": [
+        "local:camera",
+        "local:laser"
+      ],
+      "has output": {
+        "@id": "local:piv_background_images",
+        "@type": "dataset",
+        "has output": [
+          {
+            "@id": "local:bgA",
+            "@type": "dcat:Dataset",
+            "dcterms:title": "Background image for image B",
+            "dcterms:type": "pivm:BackgroundImage",
+            "dcterms:format": "https://www.iana.org/assignments/media-types/image/tiff",
+            "description": "Background image is intended to be subtracted of all PIV images",
+            "has distribution": {
+              "@id": "local:bgA_distribution",
+              "@type": "distribution",
+              "download URL": "file://path/to/bgA.tiff",
+              "media type": "image/tiff"
+            }
+          },
+          {
+            "@id": "local:bgA",
+            "@type": "dcat:Dataset",
+            "dcterms:title": "Background image for image B",
+            "dcterms:type": "pivm:BackgroundImage",
+            "dcterms:format": "https://www.iana.org/assignments/media-types/image/tiff",
+            "description": "Background image is intended to be subtracted of all PIV images",
+            "has distribution": {
+              "@id": "local:bgA_distribution",
+              "@type": "distribution",
+              "download URL": "file://path/to/bgB.tiff",
+              "media type": "image/tiff"
+            }
+          },
+          {
+          }
+        ]
+      }
+    },
+    {
+      "@id": "local:piv_recording",
+      "@type": "processing step",
+      "part of": "local:piv_measurement",
+      "has employed tool": [
+        "local:camera",
+        "local:laser",
+        "local:DEHS"
+      ],
+      "has output": {
+        "@id": "local:piv_background_images",
+        "@type": "dataset",
+        "has distribution": {
+          "@id": "_:bgimages",
+          "@type": "dcat:Distribution",
+          "dct:description": "Background images",
+          "download URL": "file://path/to/bg_images.zip",
+          "dcat:mediaType": "application/zip"
+        }
+      }
+    }
+  ]
+}

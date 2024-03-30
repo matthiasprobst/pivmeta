@@ -116,9 +116,12 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://codemeta.github.io/terms/hasSourceCode
 <https://codemeta.github.io/terms/hasSourceCode> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain pivmeta:DigitalCameraModel ,
-                                                             pivmeta:LaserModel ,
-                                                             ssno:SyntheticParticle ;
+                                                 rdfs:domain [ rdf:type owl:Class ;
+                                                               owl:unionOf ( pivmeta:DigitalCameraModel
+                                                                             pivmeta:LaserModel
+                                                                             ssno:SyntheticParticle
+                                                                           )
+                                                             ] ;
                                                  rdfs:range <https://schema.org/SoftwareSourceCode> .
 
 
@@ -736,7 +739,7 @@ pivmeta:inplane_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "inplane_velocity" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "inplane_velocity"@en .
 
 
@@ -745,7 +748,7 @@ pivmeta:x_inplane_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "x_inplane_velocity" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_inplane_velocity"@en .
 
 
@@ -754,7 +757,7 @@ pivmeta:y_inplane_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "y_inplane_velocity" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_inplane_velocity"@en .
 
 
@@ -763,7 +766,7 @@ pivmeta:model_laser_sheet_thickness rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor)."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "model_laser_sheet_thickness" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "model_laser_sheet_thickness"@en .
 
 
@@ -772,7 +775,7 @@ pivmeta:laser_sheet_thickness rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "laser_sheet_thickness" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_thickness"@en .
 
 
@@ -789,7 +792,7 @@ pivmeta:arithmetic_mean_of_seeding_particle_size rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The arithmetic mean of the diameter of the seeding particles."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "arithmetic_mean_of_seeding_particle_size" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_seeding_particle_size"@en .
 
 
@@ -798,7 +801,7 @@ pivmeta:standard_deviation_of_seeding_particle_size rdf:type owl:NamedIndividual
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The standard deviation of the seeding particles sizes."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "standard_deviation_of_seeding_particle_size" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_seeding_particle_size"@en .
 
 
@@ -815,7 +818,7 @@ pivmeta:laser_pulse_delay rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Time between two laser pulses."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "laser_pulse_delay" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_pulse_delay"@en .
 
 
@@ -872,7 +875,7 @@ pivmeta:relative_time rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Recording time since start of recording."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "relative_time" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "relative_time"@en .
 
 
@@ -881,7 +884,7 @@ pivmeta:magnitude_of_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "magnitude_of_velocity" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "magnitude_of_velocity"@en .
 
 
@@ -890,7 +893,7 @@ pivmeta:x_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "x_velocity" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_velocity"@en .
 
 
@@ -899,7 +902,7 @@ pivmeta:y_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "y_velocity" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_velocity"@en .
 
 
@@ -908,7 +911,7 @@ pivmeta:z_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "z_velocity" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M-PER-SEC> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "z_velocity"@en .
 
 
@@ -1037,7 +1040,7 @@ pivmeta:x_coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "x_coordinate" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_coordinate"@en .
 
 
@@ -1046,7 +1049,7 @@ pivmeta:y_coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "y_coordinate" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_coordinate"@en .
 
 
@@ -1071,7 +1074,7 @@ pivmeta:piv_scaling_factor rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "Image scaling factor."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "piv_scaling_factor" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/PER-M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PER-M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_scaling_factor"@en .
 
 
@@ -1088,7 +1091,7 @@ pivmeta:ccd_width rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The width of a ccd pixel."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "ccd_width" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_width"@en .
 
 
@@ -1097,7 +1100,7 @@ pivmeta:ccd_height rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The height of a ccd pixel."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "ccd_height" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_height"@en .
 
 
@@ -1106,7 +1109,7 @@ pivmeta:focal_length rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The focal length. See also https://www.wikidata.org/wiki/Q193540."@en ;
              <https://matthiasprobst.github.io/ssno#standard_name> "focal_length" ;
-             <https://matthiasprobst.github.io/ssno#unit> <https://qudt.org/vocab/unit/M> ;
+             <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "focal_length"@en .
 
 
