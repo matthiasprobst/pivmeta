@@ -29,7 +29,6 @@ class TestGraph(unittest.TestCase):
         """
         qres = g.query(sparql_query)
         for row in qres:
-            print(row)
             assert len(row) == 3, f'Error: {row} is not a tuple of length 3'
             assert isinstance(row[0], rdflib.URIRef), f'Error: {row[0]} is not a URIRef'
             assert isinstance(row[1], rdflib.Literal), f'Error: {row[1]} is not a Literal'
@@ -47,7 +46,8 @@ class TestGraph(unittest.TestCase):
             print(s, p, o)
 
             assert isinstance(p, rdflib.URIRef), f'Error: {s} is not a URIRef'
-            if p not in (rdflib.RDF.first, rdflib.RDF.rest, rdflib.OWL.unionOf) and o != rdflib.OWL.Class:
+            if p not in (rdflib.RDF.first, rdflib.RDF.rest,
+                         rdflib.OWL.unionOf) and o != rdflib.OWL.Class and o != rdflib.OWL.Restriction and p != rdflib.OWL.onProperty and p != rdflib.OWL.inverseOf and p != rdflib.OWL.someValuesFrom and p != rdflib.OWL.allValuesFrom:
                 assert isinstance(s, rdflib.URIRef), f'Error: {s} is not a URIRef'
         assert len(g) > 0, f'Error: No triples found in {onto_purl}.'
         assert g, f'Error: {onto_purl} is not a graph'

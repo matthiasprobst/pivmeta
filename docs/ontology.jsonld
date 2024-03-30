@@ -131,6 +131,10 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://schema.org/SoftwareSourceCode"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "source code"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#",
@@ -1132,7 +1136,7 @@
     "@value" : "material"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#micro_piv",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#microPIV",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PivType"
@@ -1223,6 +1227,20 @@
     "@value" : "piv"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv_first_peak_correlation_coefficient"
+  } ],
+  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#pivImageType",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1265,10 +1283,6 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "piv_first_peak_correlation_coefficient"
-  } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."
   } ],
   "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_first_peak_correlation_coefficient"
@@ -1998,9 +2012,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#standardName",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/ssno#standard_name",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
