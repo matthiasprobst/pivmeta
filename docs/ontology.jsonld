@@ -60,18 +60,6 @@
   "@id" : "http://qudt.org/schema/qudt/Unit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "http://qudt.org/vocab/unit/M",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
-}, {
-  "@id" : "http://qudt.org/vocab/unit/M-PER-SEC",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
-}, {
-  "@id" : "http://qudt.org/vocab/unit/PER-M",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
-}, {
-  "@id" : "http://qudt.org/vocab/unit/SEC",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
-}, {
   "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ContactPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -455,6 +443,24 @@
     "@value" : "Piv Software"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Particle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVHardware"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "For data property pivmeta:material, please provide a wikidata URI, for e.g. for DEHS use https://www.wikidata.org/wiki/Q4387284."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Particle"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PeakSearchMethod",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -567,6 +573,16 @@
     "@id" : "http://purl.org/dc/terms/DCMIType"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PivValidation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv validation"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -623,6 +639,16 @@
     "@value" : "synthetic image"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#SyntheticParticle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#Particle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#TopBottomFlip",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -651,6 +677,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -658,16 +688,16 @@
     "@language" : "en",
     "@value" : "arithmetic_mean_of_image_particle_diameter"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "arithmetic_mean_of_image_particle_diameter"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The arithmetic mean of the diameter of the seeding particles."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -675,11 +705,7 @@
     "@language" : "en",
     "@value" : "arithmetic_mean_of_seeding_particle_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The arithmetic mean of the diameter of the seeding particles."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "arithmetic_mean_of_seeding_particle_size"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -688,6 +714,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ccd_height",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The height of a ccd pixel."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -695,11 +725,7 @@
     "@language" : "en",
     "@value" : "ccd_height"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The height of a ccd pixel."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "ccd_height"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -708,6 +734,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ccd_width",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The width of a ccd pixel."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -715,11 +745,7 @@
     "@language" : "en",
     "@value" : "ccd_width"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The width of a ccd pixel."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "ccd_width"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -728,6 +754,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "PIV pixel displacement magnitude in the image plane."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -735,11 +765,7 @@
     "@language" : "en",
     "@value" : "displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "PIV pixel displacement magnitude in the image plane."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "displacement"
   } ]
 }, {
@@ -762,6 +788,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Width and height of a square final PIV interrogation window overlap."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -769,16 +799,16 @@
     "@language" : "en",
     "@value" : "final_interrogation_window_overlap_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Width and height of a square final PIV interrogation window overlap."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "final_interrogation_window_overlap_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Width and height of a square final PIV interrogation window."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -786,16 +816,16 @@
     "@language" : "en",
     "@value" : "final_interrogation_window_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Width and height of a square final PIV interrogation window."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "final_interrogation_window_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -803,16 +833,16 @@
     "@language" : "en",
     "@value" : "first_peak_x_displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "first_peak_x_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -820,11 +850,7 @@
     "@language" : "en",
     "@value" : "first_peak_y_displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "first_peak_y_displacement"
   } ]
 }, {
@@ -843,6 +869,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#focal_length",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The focal length. See also https://www.wikidata.org/wiki/Q193540."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -850,11 +880,7 @@
     "@language" : "en",
     "@value" : "focal_length"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The focal length. See also https://www.wikidata.org/wiki/Q193540."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "focal_length"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -876,6 +902,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#image_bit_depth",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -883,16 +913,16 @@
     "@language" : "en",
     "@value" : "image_bit_depth"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "image_bit_depth"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#image_density",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The image density is computed based on the source density $N_s$ and the interrogation window size."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -900,16 +930,16 @@
     "@language" : "en",
     "@value" : "image_density"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The image density is computed based on the source density $N_s$ and the interrogation window size."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "image_density"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The size of the image filter kernel."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -917,16 +947,16 @@
     "@language" : "en",
     "@value" : "image_filter_kernel_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The size of the image filter kernel."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "image_filter_kernel_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#image_particle_density",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Number of particle images per pixel. Equals the number of particles divided by the image area."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -934,16 +964,16 @@
     "@language" : "en",
     "@value" : "image_particle_density"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Number of particle images per pixel. Equals the number of particles divided by the image area."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "image_particle_density"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#image_particle_diameter",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -951,16 +981,16 @@
     "@language" : "en",
     "@value" : "image_particle_diameter"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "image_particle_diameter"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -968,16 +998,16 @@
     "@language" : "en",
     "@value" : "initial_interrogation_window_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "initial_interrogation_window_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#inplane_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -985,11 +1015,7 @@
     "@language" : "en",
     "@value" : "inplane_velocity"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "inplane_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -998,6 +1024,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#laser_pulse_delay",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Time between two laser pulses."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1005,11 +1035,7 @@
     "@language" : "en",
     "@value" : "laser_pulse_delay"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Time between two laser pulses."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "laser_pulse_delay"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1018,6 +1044,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1025,11 +1055,7 @@
     "@language" : "en",
     "@value" : "laser_sheet_thickness"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "laser_sheet_thickness"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1038,6 +1064,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The least square residual of the z displacement reconstruction in stereo PIV."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1045,16 +1075,16 @@
     "@language" : "en",
     "@value" : "least_square_residual_of_z_displacement_reconstruction"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The least square residual of the z displacement reconstruction in stereo PIV."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "least_square_residual_of_z_displacement_reconstruction"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1062,11 +1092,7 @@
     "@language" : "en",
     "@value" : "magnitude_of_velocity"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "magnitude_of_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1118,6 +1144,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The shape factor used to model the expanded laser beam. The shape factor is introduced in 'Particle Image Velocimetry A Practical Guide' by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1125,16 +1155,16 @@
     "@language" : "en",
     "@value" : "model_laser_sheet_shape_factor"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The shape factor used to model the expanded laser beam. The shape factor is introduced in 'Particle Image Velocimetry A Practical Guide' by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "model_laser_sheet_shape_factor"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor)."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1142,11 +1172,7 @@
     "@language" : "en",
     "@value" : "model_laser_sheet_thickness"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor)."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "model_laser_sheet_thickness"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1172,6 +1198,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#number_of_particles",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Number of seeding particles in the image or field of interest. See also image_particle_density."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1179,11 +1209,7 @@
     "@language" : "en",
     "@value" : "number_of_particles"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Number of seeding particles in the image or field of interest. See also image_particle_density."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "number_of_particles"
   } ]
 }, {
@@ -1212,6 +1238,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1219,16 +1249,16 @@
     "@language" : "en",
     "@value" : "piv_correlation_coefficient"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_correlation_coefficient"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1238,17 +1268,18 @@
   } ],
   "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
     "@language" : "en",
-    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function."
-  }, {
-    "@language" : "en",
     "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."
   } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_first_peak_correlation_coefficient"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv_flag",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by adding the values. For example, 33 would mean that the vector is active and interpolated."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1256,16 +1287,16 @@
     "@language" : "en",
     "@value" : "piv_flag"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by adding the values. For example, 33 would mean that the vector is active and interpolated."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_flag"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv_image_index",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Simple index of a PIV image. Starts at 1 and ends at the number of images N."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1273,16 +1304,16 @@
     "@language" : "en",
     "@value" : "piv_image_index"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Simple index of a PIV image. Starts at 1 and ends at the number of images N."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_image_index"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv_scaling_factor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Image scaling factor."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1290,11 +1321,7 @@
     "@language" : "en",
     "@value" : "piv_scaling_factor"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Image scaling factor."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_scaling_factor"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1303,6 +1330,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1310,16 +1341,16 @@
     "@language" : "en",
     "@value" : "piv_second_peak_correlation_coefficient"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_second_peak_correlation_coefficient"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1327,16 +1358,16 @@
     "@language" : "en",
     "@value" : "piv_third_peak_correlation_coefficient"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_third_peak_correlation_coefficient"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#pixel_origin",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The pixel position of the origin used for PIV evaluation."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1344,11 +1375,7 @@
     "@language" : "en",
     "@value" : "pixel_origin"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The pixel position of the origin used for PIV evaluation."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "pixel_origin"
   } ]
 }, {
@@ -1364,6 +1391,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#relative_time",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Recording time since start of recording."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1371,11 +1402,7 @@
     "@language" : "en",
     "@value" : "relative_time"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Recording time since start of recording."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "relative_time"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1384,6 +1411,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#saturated_pixel_number",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Number of pixels in the field of interest that exceed the maximal senor count."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1391,16 +1422,16 @@
     "@language" : "en",
     "@value" : "saturated_pixel_number"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Number of pixels in the field of interest that exceed the maximal senor count."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "saturated_pixel_number"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1408,16 +1439,16 @@
     "@language" : "en",
     "@value" : "second_peak_x_displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "second_peak_x_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1425,16 +1456,16 @@
     "@language" : "en",
     "@value" : "second_peak_y_displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "second_peak_y_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#sensor_pixel_height",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The height of the sensor in pixel."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1442,16 +1473,16 @@
     "@language" : "en",
     "@value" : "sensor_pixel_height"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The height of the sensor in pixel."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "sensor_pixel_height"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1459,16 +1490,16 @@
     "@language" : "en",
     "@value" : "sensor_pixel_height_fill_factor"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "sensor_pixel_height_fill_factor"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#sensor_pixel_width",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The width of the sensor in pixel."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1476,16 +1507,16 @@
     "@language" : "en",
     "@value" : "sensor_pixel_width"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The width of the sensor in pixel."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "sensor_pixel_width"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1493,16 +1524,16 @@
     "@language" : "en",
     "@value" : "sensor_pixel_width_fill_factor"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "sensor_pixel_width_fill_factor"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The signal to noise ratio of the PIV evaluation."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1510,16 +1541,16 @@
     "@language" : "en",
     "@value" : "signal_to_noise_ratio"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The signal to noise ratio of the PIV evaluation."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "signal_to_noise_ratio"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The standard deviation of the image particle diameter in the field of interest."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1527,16 +1558,16 @@
     "@language" : "en",
     "@value" : "standard_deviation_of_image_particle_diameter"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The standard deviation of the image particle diameter in the field of interest."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "standard_deviation_of_image_particle_diameter"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The standard deviation of the seeding particles sizes."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1544,11 +1575,7 @@
     "@language" : "en",
     "@value" : "standard_deviation_of_seeding_particle_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The standard deviation of the seeding particles sizes."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "standard_deviation_of_seeding_particle_size"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1557,6 +1584,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1564,16 +1595,16 @@
     "@language" : "en",
     "@value" : "third_peak_x_displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "third_peak_x_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1581,16 +1612,16 @@
     "@language" : "en",
     "@value" : "third_peak_y_displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "third_peak_y_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#time",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Datetime in ISO 8601 format."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1598,11 +1629,7 @@
     "@language" : "en",
     "@value" : "time"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Datetime in ISO 8601 format."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "time"
   } ]
 }, {
@@ -1630,6 +1657,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_coordinate",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1637,11 +1668,7 @@
     "@language" : "en",
     "@value" : "x_coordinate"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "x_coordinate"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1650,6 +1677,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Displacement is a vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1657,16 +1688,16 @@
     "@language" : "en",
     "@value" : "x_displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Displacement is a vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "x_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Width of a final PIV interrogation window overlap."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1674,16 +1705,16 @@
     "@language" : "en",
     "@value" : "x_final_interrogation_window_overlap_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Width of a final PIV interrogation window overlap."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "x_final_interrogation_window_overlap_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Width of a final PIV interrogation window."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1691,16 +1722,16 @@
     "@language" : "en",
     "@value" : "x_final_interrogation_window_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Width of a final PIV interrogation window."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "x_final_interrogation_window_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1708,16 +1739,16 @@
     "@language" : "en",
     "@value" : "x_initial_interrogation_window_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "x_initial_interrogation_window_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_inplane_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1725,11 +1756,7 @@
     "@language" : "en",
     "@value" : "x_inplane_velocity"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "x_inplane_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1738,6 +1765,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Image coordinate in horizontal direction."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1745,16 +1776,16 @@
     "@language" : "en",
     "@value" : "x_pixel_coordinate"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Image coordinate in horizontal direction."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "x_pixel_coordinate"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1762,11 +1793,7 @@
     "@language" : "en",
     "@value" : "x_velocity"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "x_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1775,6 +1802,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_coordinate",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1782,11 +1813,7 @@
     "@language" : "en",
     "@value" : "y_coordinate"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "y_coordinate"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1795,6 +1822,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_displacement",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1802,16 +1833,16 @@
     "@language" : "en",
     "@value" : "y_displacement"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "y_displacement"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The height of a final PIV interrogation window overlap."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1819,16 +1850,16 @@
     "@language" : "en",
     "@value" : "y_final_interrogation_window_overlap_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The height of a final PIV interrogation window overlap."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "y_final_interrogation_window_overlap_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The height of the final PIV interrogation window."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1836,16 +1867,16 @@
     "@language" : "en",
     "@value" : "y_final_interrogation_window_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The height of the final PIV interrogation window."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "y_final_interrogation_window_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1853,16 +1884,16 @@
     "@language" : "en",
     "@value" : "y_initial_interrogation_window_size"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "y_initial_interrogation_window_size"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_inplane_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1870,11 +1901,7 @@
     "@language" : "en",
     "@value" : "y_inplane_velocity"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "y_inplane_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1883,6 +1910,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Image coordinate in vertical direction."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1890,16 +1921,16 @@
     "@language" : "en",
     "@value" : "y_pixel_coordinate"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Image coordinate in vertical direction."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "y_pixel_coordinate"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1907,11 +1938,7 @@
     "@language" : "en",
     "@value" : "y_velocity"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "y_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1920,6 +1947,10 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#z_velocity",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z."
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
@@ -1927,11 +1958,7 @@
     "@language" : "en",
     "@value" : "z_velocity"
   } ],
-  "https://matthiasprobst.github.io/ssno#hasStandardNameDescription" : [ {
-    "@language" : "en",
-    "@value" : "Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z."
-  } ],
-  "https://matthiasprobst.github.io/ssno#standard_name" : [ {
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "z_velocity"
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
@@ -1939,59 +1966,39 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#Particle",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVHardware"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#example" : [ {
-    "@language" : "en",
-    "@value" : "For data property pivmeta:material, please provide a wikidata URI, for e.g. for DEHS use https://www.wikidata.org/wiki/Q4387284."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "Particle"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#PivValidation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "piv validation"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#SyntheticParticle",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#Particle"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/ssno#hasStandardNameDescription",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "https://matthiasprobst.github.io/ssno#canonicalUnits",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "http://qudt.org/schema/qudt/Unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasUnit"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Description of a standard name or a standard name table"
+    "@value" : "The canonical unit of the standard name"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "standard name description"
+    "@value" : "canonical units"
   } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#hasStandardNameDescription",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#standardName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#standard_name",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
@@ -2014,24 +2021,7 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#unit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://qudt.org/schema/qudt/Unit"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasUnit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "The canonical unit of the standard name"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "canonical units"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://schema.org/CreativeWork",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]

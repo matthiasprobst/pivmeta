@@ -6,7 +6,34 @@ import rdflib
 from rdflib import Graph
 
 
-class TestClasses(unittest.TestCase):
+class TestGraph(unittest.TestCase):
+
+    def test_standard_names(self):
+        rdflib.Graph()
+        m4i = Path(__file__).parent.parent / 'pivmeta.ttl'
+        onto_purl = str(m4i)
+
+        g = Graph()
+        g.parse(onto_purl, format="ttl")
+        sparql_query = """
+        PREFIX ssno: <https://matthiasprobst.github.io/ssno#>
+        PREFIX pivmeta: <https://matthiasprobst.github.io/pivmeta#>
+        
+        SELECT ?standard_name ?description ?unit
+        WHERE {
+            ?standard_name a ssno:StandardName ;
+                <http://purl.org/dc/terms/description> ?description ;
+                ssno:standardName ?standard_name ;
+                ssno:canonicalUnits ?unit .
+        }
+        """
+        qres = g.query(sparql_query)
+        for row in qres:
+            print(row)
+            assert len(row) == 3, f'Error: {row} is not a tuple of length 3'
+            assert isinstance(row[0], rdflib.URIRef), f'Error: {row[0]} is not a URIRef'
+            assert isinstance(row[1], rdflib.Literal), f'Error: {row[1]} is not a Literal'
+            assert isinstance(row[2], rdflib.URIRef), f'Error: {row[2]} is not a URIRef'
 
     def test_graph(self):
         print('Start testing graph')
