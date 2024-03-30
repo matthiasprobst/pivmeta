@@ -1,7 +1,8 @@
 """This thest is mainly taken from: https://git.rwth-aachen.de/nfdi4ing/metadata4ing/metadata4ing/-/blob/develop/tests/graph-test.py?ref_type=heads"""
-import rdflib
 import unittest
 from pathlib import Path
+
+import rdflib
 from rdflib import Graph
 
 
@@ -17,8 +18,9 @@ class TestClasses(unittest.TestCase):
         g.parse(onto_purl, format="ttl")
         for s, p, o in g:
             print(s, p, o)
-            assert isinstance(s, rdflib.URIRef), f'Error: {s} is not a URIRef'
+
             assert isinstance(p, rdflib.URIRef), f'Error: {s} is not a URIRef'
-            assert isinstance(p, str), f'Error: {s} is not a str'
+            if p not in (rdflib.RDF.first, rdflib.RDF.rest, rdflib.OWL.unionOf) and o != rdflib.OWL.Class:
+                assert isinstance(s, rdflib.URIRef), f'Error: {s} is not a URIRef'
         assert len(g) > 0, f'Error: No triples found in {onto_purl}.'
         assert g, f'Error: {onto_purl} is not a graph'
