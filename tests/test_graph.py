@@ -16,6 +16,7 @@ class TestClasses(unittest.TestCase):
         g = Graph()
         g.parse(onto_purl, format="ttl")
         for s, p, o in g:
+            print(s, p, o)
             assert isinstance(s, rdflib.URIRef), f'Error: {s} is not a URIRef'
             assert isinstance(p, rdflib.URIRef), f'Error: {s} is not a URIRef'
             assert isinstance(p, str), f'Error: {s} is not a str'
