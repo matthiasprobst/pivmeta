@@ -1,0 +1,1 @@
+The ontology is still under development. Please participate in this ontology by posting problems or contributions <a href="https://github.com/matthiasprobst/pivmeta">to the GitHub repository</a>.

@@ -1,0 +1,1 @@
+The ontology pivmeta is developed with the aim to describe Particle Image Velocimetry data. It is build upon the <a href="https://nfdi4ing.pages.rwth-aachen.de/metadata4ing/metadata4ing/">Metadata4Ing ontology</a>. The ontology is in an early stage and will extend with many more relations and properties. Currently, the focus is set on planar and stereo (2D2C and 2D3C) setups.
