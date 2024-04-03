@@ -548,7 +548,10 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#PivType
 :PivType rdf:type owl:Class ;
-         rdfs:subClassOf <http://purl.org/dc/terms/DCMIType> .
+         rdfs:subClassOf <http://purl.org/dc/terms/DCMIType> ;
+         rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry type, e.g. PIV, PTV or other specialized methods."@en ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivValidation
@@ -630,6 +633,29 @@ A JSON-LD excerpt could look like this:
 :LeftRightFlip rdf:type owl:NamedIndividual ,
                         :ImageManipulationMethod ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
+:ParticleImageVelocimetry rdf:type owl:NamedIndividual ,
+                                   [ rdf:type owl:Class ;
+                                     owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Method>
+                                                   :PivType
+                                                 )
+                                   ] ;
+                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q1756248> ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Method to measure velocities in fluid."@en ;
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Image Velocimetry"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry
+:ParticleTrackingVelocimetry rdf:type owl:NamedIndividual ,
+                                      [ rdf:type owl:Class ;
+                                        owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Method>
+                                                      :PivType
+                                                    )
+                                      ] ;
+                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q7140505> ;
+                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Tracking Velocimetry"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample
@@ -846,8 +872,13 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#microPIV
 :microPIV rdf:type owl:NamedIndividual ,
-                   :PivType ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "micro piv"@en .
+                   [ rdf:type owl:Class ;
+                     owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Method>
+                                   :PivType
+                                 )
+                   ] ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "Micro PIV"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor
@@ -873,12 +904,6 @@ A JSON-LD excerpt could look like this:
                      <https://matthiasprobst.github.io/ssno#standardName> "number_of_particles" ;
                      <http://purl.org/dc/terms/description> "Number of seeding particles in the image or field of interest. See also image_particle_density."@en ;
                      <http://www.w3.org/2004/02/skos/core#prefLabel> "number_of_particles"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#piv
-:piv rdf:type owl:NamedIndividual ,
-              :PivType ;
-     <http://www.w3.org/2004/02/skos/core#prefLabel> "piv"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient
@@ -951,12 +976,6 @@ A JSON-LD excerpt could look like this:
               <https://matthiasprobst.github.io/ssno#standardName> "pixel_origin" ;
               <http://purl.org/dc/terms/description> "The pixel position of the origin used for PIV evaluation."@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "pixel_origin"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#ptv
-:ptv rdf:type owl:NamedIndividual ,
-              :PivType ;
-     <http://www.w3.org/2004/02/skos/core#prefLabel> "ptv"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#relative_time

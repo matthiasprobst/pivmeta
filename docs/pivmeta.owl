@@ -899,6 +899,9 @@ A JSON-LD excerpt could look like this:
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivType">
         <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/DCMIType"/>
+        <rdfs:comment xml:lang="en">Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types.</rdfs:comment>
+        <skos:definition xml:lang="en">Particle Image Velocimetry type, e.g. PIV, PTV or other specialized methods.</skos:definition>
+        <skos:prefLabel xml:lang="en">PIV Type</skos:prefLabel>
     </owl:Class>
     
 
@@ -1041,6 +1044,43 @@ A JSON-LD excerpt could look like this:
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
         <skos:prefLabel xml:lang="en">left right flip</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry">
+        <rdf:type>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PivType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdf:type>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q1756248"/>
+        <skos:definition xml:lang="en">Method to measure velocities in fluid.</skos:definition>
+        <skos:prefLabel xml:lang="en">Particle Image Velocimetry</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry">
+        <rdf:type>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PivType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdf:type>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q7140505"/>
+        <skos:prefLabel xml:lang="en">Particle Tracking Velocimetry</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1369,8 +1409,16 @@ A JSON-LD excerpt could look like this:
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#microPIV">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PivType"/>
-        <skos:prefLabel xml:lang="en">micro piv</skos:prefLabel>
+        <rdf:type>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PivType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdf:type>
+        <skos:definition xml:lang="en">Microscopic PIV. Example Applications can be found in Raffel et al. (2018) &quot;Particle Image Velocimetry: A Practical Guide&quot;, Springer, https://doi.org/10.1007/978-3-319-68852-7.</skos:definition>
+        <skos:prefLabel xml:lang="en">Micro PIV</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1408,16 +1456,6 @@ A JSON-LD excerpt could look like this:
         <ssno:standardName>number_of_particles</ssno:standardName>
         <terms:description xml:lang="en">Number of seeding particles in the image or field of interest. See also image_particle_density.</terms:description>
         <skos:prefLabel xml:lang="en">number_of_particles</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#piv -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PivType"/>
-        <skos:prefLabel xml:lang="en">piv</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1526,16 +1564,6 @@ A JSON-LD excerpt could look like this:
         <ssno:standardName>pixel_origin</ssno:standardName>
         <terms:description xml:lang="en">The pixel position of the origin used for PIV evaluation.</terms:description>
         <skos:prefLabel xml:lang="en">pixel_origin</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#ptv -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ptv">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PivType"/>
-        <skos:prefLabel xml:lang="en">ptv</skos:prefLabel>
     </owl:NamedIndividual>
     
 

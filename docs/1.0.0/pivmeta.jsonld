@@ -11,6 +11,36 @@
     } ]
   } ]
 }, {
+  "@id" : "_:genid11",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PivType"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PivType"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PivType"
+    } ]
+  } ]
+}, {
   "@id" : "http://purl.obolibrary.org/obo/BFO_0000017",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
@@ -497,6 +527,36 @@
     "@value" : "Particle"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "_:genid5"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1756248"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Method to measure velocities in fluid."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Particle Image Velocimetry"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "_:genid8"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q7140505"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Particle Tracking Velocimetry"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PeakSearchMethod",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -605,8 +665,20 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PivType",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/dc/terms/DCMIType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Particle Image Velocimetry type, e.g. PIV, PTV or other specialized methods."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Type"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PivValidation",
@@ -1221,11 +1293,15 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#microPIV",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivType"
+    "@id" : "_:genid11"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "micro piv"
+    "@value" : "Micro PIV"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor",
@@ -1314,16 +1390,6 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "outlier replacement scheme"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#piv",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivType"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "piv"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient",
@@ -1498,16 +1564,6 @@
   } ],
   "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "pixel_origin"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#ptv",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivType"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "ptv"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#relative_time",

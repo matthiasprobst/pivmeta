@@ -466,6 +466,9 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#PivType
 <https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/DCMIType> .
+<https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2000/01/rdf-schema#comment> "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en .
+<https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry type, e.g. PIV, PTV or other specialized methods."@en .
+<https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Type"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivValidation
 <https://matthiasprobst.github.io/pivmeta#PivValidation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -538,6 +541,35 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
+<https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PivType> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q1756248> .
+<https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/2004/02/skos/core#definition> "Method to measure velocities in fluid."@en .
+<https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Image Velocimetry"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry
+<https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PivType> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q7140505> .
+<https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Tracking Velocimetry"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample
 <https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -726,8 +758,17 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://matthiasprobst.github.io/pivmeta#microPIV
 <https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PivType> .
-<https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/2004/02/skos/core#prefLabel> "micro piv"@en .
+<https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PivType> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/2004/02/skos/core#definition> "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en .
+<https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/2004/02/skos/core#prefLabel> "Micro PIV"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor
 <https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -750,11 +791,6 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#number_of_particles> <https://matthiasprobst.github.io/ssno#standardName> "number_of_particles" .
 <https://matthiasprobst.github.io/pivmeta#number_of_particles> <http://purl.org/dc/terms/description> "Number of seeding particles in the image or field of interest. See also image_particle_density."@en .
 <https://matthiasprobst.github.io/pivmeta#number_of_particles> <http://www.w3.org/2004/02/skos/core#prefLabel> "number_of_particles"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#piv
-<https://matthiasprobst.github.io/pivmeta#piv> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#piv> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PivType> .
-<https://matthiasprobst.github.io/pivmeta#piv> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient
 <https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -818,11 +854,6 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#pixel_origin> <https://matthiasprobst.github.io/ssno#standardName> "pixel_origin" .
 <https://matthiasprobst.github.io/pivmeta#pixel_origin> <http://purl.org/dc/terms/description> "The pixel position of the origin used for PIV evaluation."@en .
 <https://matthiasprobst.github.io/pivmeta#pixel_origin> <http://www.w3.org/2004/02/skos/core#prefLabel> "pixel_origin"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#ptv
-<https://matthiasprobst.github.io/pivmeta#ptv> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#ptv> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PivType> .
-<https://matthiasprobst.github.io/pivmeta#ptv> <http://www.w3.org/2004/02/skos/core#prefLabel> "ptv"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#relative_time
 <https://matthiasprobst.github.io/pivmeta#relative_time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
