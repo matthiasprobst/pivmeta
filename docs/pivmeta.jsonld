@@ -7,7 +7,7 @@
     }, {
       "@id" : "https://matthiasprobst.github.io/pivmeta#LaserModel"
     }, {
-      "@id" : "https://matthiasprobst.github.io/ssno#SyntheticParticle"
+      "@id" : "https://matthiasprobst.github.io/pivmeta#SyntheticParticle"
     } ]
   } ]
 }, {
@@ -206,6 +206,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The correlation method used by the PIV evaluation process"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Correlation Method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCamera",
@@ -228,7 +236,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "A model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"
+    "@value" : "A model of a digital camera used to generate synthetic PIV images. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -281,6 +289,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The image manipulation method used by the PIV pre-processing step, e.g. image rotation."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Image Manipulation Method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ImageManipulationType",
@@ -338,7 +354,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "interrogation method"
+    "@value" : "Interrogation Method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Laser",
@@ -351,6 +367,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#Laser"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A virtual laser used in synthetic PIV codes."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Laser Model"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#LeftRightFlip",
@@ -384,7 +408,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "multi grid"
+    "@value" : "Multigrid"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Multipass",
@@ -392,9 +416,13 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A PIV multiple pass interrogation window, which uses the local integer displacement in a subsequent interrogation pas by offsetting the the interrogation windows. This increases the singal-to-noise ratio of the coorelation peak as unmatched particle images are avoided."
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "multi pass"
+    "@value" : "Multipass"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod",
@@ -404,7 +432,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "outlier detection method"
+    "@value" : "Outlier Detection Method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme",
@@ -435,6 +463,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Hardware"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSoftware",
@@ -476,7 +508,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "peak search method"
+    "@value" : "Peak Search Method"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution",
@@ -602,9 +634,13 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Standard single pass interrogation algorithm."
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "single pass"
+    "@value" : "Singlepass"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#SplitImage",
@@ -651,6 +687,10 @@
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Synthetic Particle"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#TopBottomFlip",
@@ -872,7 +912,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#example" : [ {
     "@language" : "en",
-    "@value" : "Example: For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"
+    "@value" : "For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -893,7 +933,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#example" : [ {
     "@language" : "en",
-    "@value" : "[0, 1, 2, 4, 8, 16, 32, 64, 128]. The corresponing meaning would be\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]\n\nA flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation."
+    "@value" : "pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].\n\nThe corresponing meaning would be:\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]\n\nA flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation.\n\nA JSON-LD excerpt could look like this:\n{\n    \"@type\": \"m4i:NumericalVariable\",\n    \"pivmeta:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],\n    \"pivmeta:flagMeanings\": [\n        \"inactive\",\n        \"active\",\n        \"masked\",\n        \"noresult\",\n        \"disabled\",\n        \"filtered\", \n        \"interpolated\",\n        \"replaced\", \n        \"manualedit\"\n    ],\n    \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"\n}"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1259,6 +1299,23 @@
     "@value" : "number_of_particles"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/ssno#PivValidation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Points to the outlier replacement scheme used by the PIV validation process."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "outlier replacement scheme"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#piv",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1290,6 +1347,14 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#ImageType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The type of image, e.g. an eperimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1689,19 +1754,6 @@
     "@value" : "time"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#PivValidation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "uses outlier replacement scheme"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#windowWeightingFunction",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1709,6 +1761,14 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Points to the window weighting function used by the correlation method."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "window weighting function"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_coordinate",
@@ -2027,9 +2087,6 @@
   "@id" : "https://matthiasprobst.github.io/ssno#PivValidation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/ssno#SyntheticParticle",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
   "@id" : "https://matthiasprobst.github.io/ssno#canonicalUnits",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2075,6 +2132,23 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#unit",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/ssno#withImageDeformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Multipass"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Flag, indicating whether the algorithm uses image deformation technique as described in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "with image deformation"
+  } ]
 }, {
   "@id" : "https://schema.org/CreativeWork",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]

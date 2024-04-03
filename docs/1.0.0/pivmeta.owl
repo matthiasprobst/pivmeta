@@ -222,7 +222,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel"/>
                     <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#LaserModel"/>
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/ssno#SyntheticParticle"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#SyntheticParticle"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -255,24 +255,27 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/ssno#PivValidation"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"/>
+        <skos:definition xml:lang="en">Points to the outlier replacement scheme used by the PIV validation process.</skos:definition>
+        <skos:prefLabel xml:lang="en">outlier replacement scheme</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#pivImageType -->
 
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#pivImageType">
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PivImageDistribution"/>
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageType"/>
+        <skos:definition xml:lang="en">The type of image, e.g. an eperimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data.</skos:definition>
+        <skos:example xml:lang="en">Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage</skos:example>
         <skos:prefLabel xml:lang="en">piv image type</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme -->
-
-
-    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/ssno#PivValidation"/>
-        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"/>
-        <skos:prefLabel xml:lang="en">uses outlier replacement scheme</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -283,6 +286,8 @@
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#windowWeightingFunction">
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#CorrelationMethod"/>
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
+        <skos:definition xml:lang="en">Points to the window weighting function used by the correlation method.</skos:definition>
+        <skos:prefLabel xml:lang="en">window weighting function</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -331,7 +336,7 @@
         <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <skos:definition xml:lang="en">The flag meanings data property provides the string representations of the pvmeta:flagValues data property.</skos:definition>
-        <skos:example xml:lang="en">Example: For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
+        <skos:example xml:lang="en">For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
 pivmeta:flagMeanings=[&quot;inactive&quot;, &quot;active&quot;, &quot;masked&quot;, &quot;noresult&quot;, &quot;disabled&quot;, &quot;filtered&quot;, &quot;interpolated&quot;, &quot;replaced&quot;, &quot;manualedit&quot;]</skos:example>
         <skos:prefLabel xml:lang="en">flag meanings</skos:prefLabel>
     </owl:DatatypeProperty>
@@ -345,10 +350,30 @@ pivmeta:flagMeanings=[&quot;inactive&quot;, &quot;active&quot;, &quot;masked&quo
         <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <skos:definition xml:lang="en">The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17.</skos:definition>
-        <skos:example xml:lang="en">[0, 1, 2, 4, 8, 16, 32, 64, 128]. The corresponing meaning would be
+        <skos:example xml:lang="en">pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
+
+The corresponing meaning would be:
 pivmeta:flagMeanings=[&quot;inactive&quot;, &quot;active&quot;, &quot;masked&quot;, &quot;noresult&quot;, &quot;disabled&quot;, &quot;filtered&quot;, &quot;interpolated&quot;, &quot;replaced&quot;, &quot;manualedit&quot;]
 
-A flag value of 17 means &quot;active and filtered&quot;, which is obtained by bitwise AND operation.</skos:example>
+A flag value of 17 means &quot;active and filtered&quot;, which is obtained by bitwise AND operation.
+
+A JSON-LD excerpt could look like this:
+{
+    &quot;@type&quot;: &quot;m4i:NumericalVariable&quot;,
+    &quot;pivmeta:flagValues&quot;: [0, 1, 2, 4, 8, 16, 32, 64, 128],
+    &quot;pivmeta:flagMeanings&quot;: [
+        &quot;inactive&quot;,
+        &quot;active&quot;,
+        &quot;masked&quot;,
+        &quot;noresult&quot;,
+        &quot;disabled&quot;,
+        &quot;filtered&quot;, 
+        &quot;interpolated&quot;,
+        &quot;replaced&quot;, 
+        &quot;manualedit&quot;
+    ],
+    &quot;units&quot;: &quot;http://qudt.org/vocab/unit/M-PER-SEC&quot;
+}</skos:example>
         <skos:prefLabel xml:lang="en">flag values</skos:prefLabel>
     </owl:DatatypeProperty>
     
@@ -398,6 +423,18 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
         <skos:definition xml:lang="en">Name for a standard name, e.g. &quot;x_velocity&quot;. The construction of a standard name string is defined by the standard name table. E.g. no spaces are allowed and specific pre- and suffixes are allowed.</skos:definition>
         <skos:example>x_derivative_of_y_velocity</skos:example>
         <skos:prefLabel xml:lang="en">standard name</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/ssno#withImageDeformation -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/ssno#withImageDeformation">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Multipass"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <skos:definition xml:lang="en">Flag, indicating whether the algorithm uses image deformation technique as described in Raffel et al. (2018) &quot;Particle Image Velocimetry: A Practical Guide&quot;, Springer, https://doi.org/10.1007/978-3-319-68852-7.</skos:definition>
+        <skos:prefLabel xml:lang="en">with image deformation</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -546,6 +583,8 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+        <skos:definition xml:lang="en">The correlation method used by the PIV evaluation process</skos:definition>
+        <skos:prefLabel xml:lang="en">Correlation Method</skos:prefLabel>
     </owl:Class>
     
 
@@ -566,7 +605,7 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#DigitalCamera"/>
-        <skos:definition xml:lang="en">A model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode</skos:definition>
+        <skos:definition xml:lang="en">A model of a digital camera used to generate synthetic PIV images. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode</skos:definition>
         <skos:prefLabel xml:lang="en">Digital Camera Model</skos:prefLabel>
     </owl:Class>
     
@@ -598,6 +637,8 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+        <skos:definition xml:lang="en">The image manipulation method used by the PIV pre-processing step, e.g. image rotation.</skos:definition>
+        <skos:prefLabel xml:lang="en">Image Manipulation Method</skos:prefLabel>
     </owl:Class>
     
 
@@ -639,7 +680,7 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
-        <skos:prefLabel xml:lang="en">interrogation method</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Interrogation Method</skos:prefLabel>
     </owl:Class>
     
 
@@ -658,6 +699,8 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#LaserModel">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Laser"/>
+        <skos:definition xml:lang="en">A virtual laser used in synthetic PIV codes.</skos:definition>
+        <skos:prefLabel xml:lang="en">Laser Model</skos:prefLabel>
     </owl:Class>
     
 
@@ -678,7 +721,7 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Multigrid">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
         <skos:definition xml:lang="en">A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small.</skos:definition>
-        <skos:prefLabel xml:lang="en">multi grid</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Multigrid</skos:prefLabel>
     </owl:Class>
     
 
@@ -688,7 +731,8 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Multipass">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
-        <skos:prefLabel xml:lang="en">multi pass</skos:prefLabel>
+        <skos:definition xml:lang="en">A PIV multiple pass interrogation window, which uses the local integer displacement in a subsequent interrogation pas by offsetting the the interrogation windows. This increases the singal-to-noise ratio of the coorelation peak as unmatched particle images are avoided.</skos:definition>
+        <skos:prefLabel xml:lang="en">Multipass</skos:prefLabel>
     </owl:Class>
     
 
@@ -698,7 +742,7 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
-        <skos:prefLabel xml:lang="en">outlier detection method</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Outlier Detection Method</skos:prefLabel>
     </owl:Class>
     
 
@@ -729,6 +773,7 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVHardware">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
+        <skos:prefLabel xml:lang="en">PIV Hardware</skos:prefLabel>
     </owl:Class>
     
 
@@ -761,7 +806,7 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <rdfs:comment xml:lang="en">Method fitting the sub pixel peak in the correlation signal.</rdfs:comment>
-        <skos:prefLabel xml:lang="en">peak search method</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Peak Search Method</skos:prefLabel>
     </owl:Class>
     
 
@@ -873,7 +918,8 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Singlepass">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
-        <skos:prefLabel xml:lang="en">single pass</skos:prefLabel>
+        <skos:definition xml:lang="en">Standard single pass interrogation algorithm.</skos:definition>
+        <skos:prefLabel xml:lang="en">Singlepass</skos:prefLabel>
     </owl:Class>
     
 
@@ -893,6 +939,7 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#SyntheticParticle">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/ssno#Particle"/>
         <skos:definition xml:lang="en">Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode.</skos:definition>
+        <skos:prefLabel xml:lang="en">Synthetic Particle</skos:prefLabel>
     </owl:Class>
     
 
@@ -917,13 +964,6 @@ A flag value of 17 means &quot;active and filtered&quot;, which is obtained by b
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#PivValidation"/>
-    
-
-
-    <!-- https://matthiasprobst.github.io/ssno#SyntheticParticle -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#SyntheticParticle"/>
     
 
 

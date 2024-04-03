@@ -108,7 +108,7 @@ _:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid4 .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/ssno#SyntheticParticle> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#LaserModel> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
@@ -131,22 +131,27 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#manufacturer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/manufacturer> .
 <https://matthiasprobst.github.io/pivmeta#manufacturer> <http://www.w3.org/2004/02/skos/core#definition> "Manufacturer of a m4i:Tool"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme
+<https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/ssno#PivValidation> .
+<https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> .
+<https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#definition> "Points to the outlier replacement scheme used by the PIV validation process."@en .
+<https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier replacement scheme"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#pivImageType
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#ImageType> .
+<https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2004/02/skos/core#definition> "The type of image, e.g. an eperimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."@en .
+<https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2004/02/skos/core#example> "Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage"@en .
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv image type"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme
-<https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/ssno#PivValidation> .
-<https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> .
-<https://matthiasprobst.github.io/pivmeta#useOutlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "uses outlier replacement scheme"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#windowWeightingFunction
 <https://matthiasprobst.github.io/pivmeta#windowWeightingFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://matthiasprobst.github.io/pivmeta#windowWeightingFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#CorrelationMethod> .
 <https://matthiasprobst.github.io/pivmeta#windowWeightingFunction> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> .
+<https://matthiasprobst.github.io/pivmeta#windowWeightingFunction> <http://www.w3.org/2004/02/skos/core#definition> "Points to the window weighting function used by the correlation method."@en .
+<https://matthiasprobst.github.io/pivmeta#windowWeightingFunction> <http://www.w3.org/2004/02/skos/core#prefLabel> "window weighting function"@en .
 # 
 # https://matthiasprobst.github.io/ssno#canonicalUnits
 <https://matthiasprobst.github.io/ssno#canonicalUnits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -177,7 +182,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> .
 <https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en .
-<https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2004/02/skos/core#example> "Example: For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"@en .
+<https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2004/02/skos/core#example> "For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"@en .
 <https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag meanings"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#flagValues
@@ -185,7 +190,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> .
 <https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en .
-<https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2004/02/skos/core#example> "[0, 1, 2, 4, 8, 16, 32, 64, 128]. The corresponing meaning would be\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]\n\nA flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation."@en .
+<https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2004/02/skos/core#example> "pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].\n\nThe corresponing meaning would be:\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]\n\nA flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation.\n\nA JSON-LD excerpt could look like this:\n{\n    \"@type\": \"m4i:NumericalVariable\",\n    \"pivmeta:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],\n    \"pivmeta:flagMeanings\": [\n        \"inactive\",\n        \"active\",\n        \"masked\",\n        \"noresult\",\n        \"disabled\",\n        \"filtered\", \n        \"interpolated\",\n        \"replaced\", \n        \"manualedit\"\n    ],\n    \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"\n}"@en .
 <https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag values"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#fnumber
@@ -215,6 +220,13 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/ssno#standardName> <http://www.w3.org/2004/02/skos/core#definition> "Name for a standard name, e.g. \"x_velocity\". The construction of a standard name string is defined by the standard name table. E.g. no spaces are allowed and specific pre- and suffixes are allowed."@en .
 <https://matthiasprobst.github.io/ssno#standardName> <http://www.w3.org/2004/02/skos/core#example> "x_derivative_of_y_velocity" .
 <https://matthiasprobst.github.io/ssno#standardName> <http://www.w3.org/2004/02/skos/core#prefLabel> "standard name"@en .
+# 
+# https://matthiasprobst.github.io/ssno#withImageDeformation
+<https://matthiasprobst.github.io/ssno#withImageDeformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/ssno#withImageDeformation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#Multipass> .
+<https://matthiasprobst.github.io/ssno#withImageDeformation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://matthiasprobst.github.io/ssno#withImageDeformation> <http://www.w3.org/2004/02/skos/core#definition> "Flag, indicating whether the algorithm uses image deformation technique as described in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en .
+<https://matthiasprobst.github.io/ssno#withImageDeformation> <http://www.w3.org/2004/02/skos/core#prefLabel> "with image deformation"@en .
 # 
 # https://w3id.org/okn/o/sd#hasDocumentation
 <https://w3id.org/okn/o/sd#hasDocumentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -288,6 +300,8 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#CorrelationMethod
 <https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2004/02/skos/core#definition> "The correlation method used by the PIV evaluation process"@en .
+<https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Correlation Method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#DigitalCamera
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -298,7 +312,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#DigitalCameraModel
 <https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#DigitalCamera> .
-<https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/2004/02/skos/core#definition> "A model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en .
+<https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/2004/02/skos/core#definition> "A model of a digital camera used to generate synthetic PIV images. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en .
 <https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera Model"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ImageDewarp
@@ -315,6 +329,8 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod
 <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
+<https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> <http://www.w3.org/2004/02/skos/core#definition> "The image manipulation method used by the PIV pre-processing step, e.g. image rotation."@en .
+<https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Image Manipulation Method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ImageManipulationType
 <https://matthiasprobst.github.io/pivmeta#ImageManipulationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -336,7 +352,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#InterrogationMethod
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
-<https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "interrogation method"@en .
+<https://matthiasprobst.github.io/pivmeta#InterrogationMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Interrogation Method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#Laser
 <https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -345,6 +361,8 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#LaserModel
 <https://matthiasprobst.github.io/pivmeta#LaserModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#LaserModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Laser> .
+<https://matthiasprobst.github.io/pivmeta#LaserModel> <http://www.w3.org/2004/02/skos/core#definition> "A virtual laser used in synthetic PIV codes."@en .
+<https://matthiasprobst.github.io/pivmeta#LaserModel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser Model"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#MaskGeneration
 <https://matthiasprobst.github.io/pivmeta#MaskGeneration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -355,17 +373,18 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
 <https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#definition> "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."@en .
-<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#prefLabel> "multi grid"@en .
+<https://matthiasprobst.github.io/pivmeta#Multigrid> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multigrid"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#Multipass
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "multi pass"@en .
+<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#definition> "A PIV multiple pass interrogation window, which uses the local integer displacement in a subsequent interrogation pas by offsetting the the interrogation windows. This increases the singal-to-noise ratio of the coorelation peak as unmatched particle images are avoided."@en .
+<https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
 <https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
-<https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier detection method"@en .
+<https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Outlier Detection Method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme
 <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -381,6 +400,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#PIVHardware
 <https://matthiasprobst.github.io/pivmeta#PIVHardware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVHardware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
+<https://matthiasprobst.github.io/pivmeta#PIVHardware> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Hardware"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVSoftware
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -398,7 +418,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Method fitting the sub pixel peak in the correlation signal."@en .
-<https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "peak search method"@en .
+<https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Peak Search Method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivDistribution
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -455,7 +475,8 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#Singlepass
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
-<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2004/02/skos/core#prefLabel> "single pass"@en .
+<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2004/02/skos/core#definition> "Standard single pass interrogation algorithm."@en .
+<https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Singlepass"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#StandardName
 <https://matthiasprobst.github.io/pivmeta#StandardName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -465,6 +486,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/ssno#Particle> .
 <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en .
+<https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction
 <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -475,9 +497,6 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://matthiasprobst.github.io/ssno#PivValidation
 <https://matthiasprobst.github.io/ssno#PivValidation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://matthiasprobst.github.io/ssno#SyntheticParticle
-<https://matthiasprobst.github.io/ssno#SyntheticParticle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://schema.org/CreativeWork
 <https://schema.org/CreativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
