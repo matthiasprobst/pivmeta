@@ -37,9 +37,10 @@ standard_names:
   piv_flag:
     description: A flag indicates the processing status of a vector. It can be disabled,
       active or processed in any other way by a post-processing step. The flag meaning
-      must be provided with the dataset. Recommendation for the flag meaning are 0-inactive,
+      must be provided with the dataset through flag meanings and flag values. Recommendation for the flag 
+      meaning are 0-inactive,
       1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced,
-      128-manualedit. Combinations of the flags can be used by adding the values.
+      128-manualedit. Combinations of the flags can be used by bitwise OR operation.
       For example, 33 would mean that the vector is active and interpolated.
     units: ''
     alias: piv_flags

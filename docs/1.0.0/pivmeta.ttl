@@ -184,6 +184,28 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#flagMeanings
+:flagMeanings rdf:type owl:DatatypeProperty ;
+              rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+              rdfs:range xsd:string ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en ;
+              <http://www.w3.org/2004/02/skos/core#example> """Example: For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
+pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"""@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "flag meanings"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#flagValues
+:flagValues rdf:type owl:DatatypeProperty ;
+            rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+            rdfs:range xsd:int ;
+            <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en ;
+            <http://www.w3.org/2004/02/skos/core#example> """[0, 1, 2, 4, 8, 16, 32, 64, 128]. The corresponing meaning would be
+pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]
+
+A flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation."""@en ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "flag values"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#fnumber
 :fnumber rdf:type owl:DatatypeProperty ;
          rdfs:domain :DigitalCamera ;
@@ -847,7 +869,7 @@ xsd:date rdf:type rdfs:Datatype .
 :piv_flag rdf:type owl:NamedIndividual ,
                    :StandardName ;
           <https://matthiasprobst.github.io/ssno#standardName> "piv_flag" ;
-          <http://purl.org/dc/terms/description> "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by adding the values. For example, 33 would mean that the vector is active and interpolated."@en ;
+          <http://purl.org/dc/terms/description> "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated."@en ;
           <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_flag"@en .
 
 
