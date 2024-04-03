@@ -6,6 +6,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:ssno="https://matthiasprobst.github.io/ssno#"
@@ -95,6 +96,20 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/hasQuantityKind -->
+
+
+    <owl:AnnotationProperty rdf:about="http://qudt.org/schema/qudt/hasQuantityKind"/>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/symbol -->
+
+
+    <owl:AnnotationProperty rdf:about="http://qudt.org/schema/qudt/symbol"/>
     
 
 
@@ -494,6 +509,13 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- http://qudt.org/schema/qudt/QuantityKind -->
+
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/QuantityKind"/>
+    
+
+
     <!-- http://qudt.org/schema/qudt/Unit -->
 
 
@@ -670,7 +692,7 @@ A JSON-LD excerpt could look like this:
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <skos:definition xml:lang="en">PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally).</skos:definition>
         <skos:example xml:lang="en">Examples are synthetic or experimental sources.</skos:example>
-        <skos:prefLabel xml:lang="en">image type</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Image Type</skos:prefLabel>
     </owl:Class>
     
 
@@ -720,7 +742,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Multigrid">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#InterrogationMethod"/>
-        <skos:definition xml:lang="en">A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small.</skos:definition>
+        <skos:definition xml:lang="en">PIV multi grid method. The correlation and validation methods are executed on different interrogation window sizes starting from large to small.</skos:definition>
         <skos:prefLabel xml:lang="en">Multigrid</skos:prefLabel>
     </owl:Class>
     
@@ -742,6 +764,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
+        <skos:definition xml:lang="en">Outlier detection method used to mark or interpolate spurious vectors.</skos:definition>
         <skos:prefLabel xml:lang="en">Outlier Detection Method</skos:prefLabel>
     </owl:Class>
     
@@ -752,7 +775,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <skos:prefLabel xml:lang="en">outlier replacement scheme</skos:prefLabel>
+        <skos:definition xml:lang="en">Method used, to replace outliers.</skos:definition>
+        <skos:prefLabel xml:lang="en">Outlier Replacement Scheme</skos:prefLabel>
     </owl:Class>
     
 
@@ -806,6 +830,7 @@ A JSON-LD excerpt could look like this:
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <rdfs:comment xml:lang="en">Method fitting the sub pixel peak in the correlation signal.</rdfs:comment>
+        <skos:example xml:lang="en">Peak centroid, Paralbolic peak fit or Gaussian peak fit.</skos:example>
         <skos:prefLabel xml:lang="en">Peak Search Method</skos:prefLabel>
     </owl:Class>
     
@@ -930,9 +955,7 @@ A JSON-LD excerpt could look like this:
     <!-- https://matthiasprobst.github.io/pivmeta#StandardName -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#StandardName">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </owl:Class>
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#StandardName"/>
     
 
 
@@ -952,6 +975,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
+        <skos:prefLabel xml:lang="en">Window Weighting Function</skos:prefLabel>
     </owl:Class>
     
 
@@ -1008,6 +1033,13 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#BlackmanWindow -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#BlackmanWindow"/>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#ExperimentalImage -->
 
 
@@ -1018,12 +1050,33 @@ A JSON-LD excerpt could look like this:
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction -->
+    <!-- https://matthiasprobst.github.io/pivmeta#GaussianWindow -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction">
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#GaussianWindow">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
-        <skos:prefLabel xml:lang="en">gauss</skos:prefLabel>
+        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
+        <skos:prefLabel xml:lang="en">Gaussian Window</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#HammingWindow -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#HammingWindow">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
+        <skos:prefLabel xml:lang="en">Hamming Window</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#HannWindow -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#HannWindow">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
+        <skos:prefLabel xml:lang="en">Hann Window</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1033,7 +1086,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#Interpolation">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"/>
-        <skos:prefLabel xml:lang="en">interpolation</skos:prefLabel>
+        <skos:definition xml:lang="en">Method to replace vectors identified as invalid by interpolating from surrounding data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Interpolation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1044,6 +1098,19 @@ A JSON-LD excerpt could look like this:
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
         <skos:prefLabel xml:lang="en">left right flip</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <terms:description xml:lang="en">Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image.</terms:description>
+        <qudt:hasQuantityKind rdf:resource="https://matthiasprobst.github.io/pivmeta#SpatialResolution"/>
+        <qudt:symbol>mm/pixel</qudt:symbol>
+        <skos:prefLabel xml:lang="en">millimetre per pixel</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1095,6 +1162,17 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#SpatialResolution -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#SpatialResolution">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityKind"/>
+        <rdfs:comment>A quantity kind representing length per pixel in an image.</rdfs:comment>
+        <skos:prefLabel xml:lang="en">spatial resolution</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#SplitImage -->
 
 
@@ -1105,12 +1183,13 @@ A JSON-LD excerpt could look like this:
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction -->
+    <!-- https://matthiasprobst.github.io/pivmeta#SquareWindow -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction">
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#SquareWindow">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
-        <skos:prefLabel xml:lang="en">square</skos:prefLabel>
+        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
+        <skos:prefLabel xml:lang="en">Square Window</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1141,6 +1220,16 @@ A JSON-LD excerpt could look like this:
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#TryLowerOrderPeaks">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"/>
         <skos:prefLabel xml:lang="en">try lower order peaks</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#TukeyWindow -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#TukeyWindow">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
+        <skos:prefLabel xml:lang="en">Tukey Window</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1460,6 +1549,19 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#optical_magnification -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#optical_magnification">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>optical_magnification</ssno:standardName>
+        <terms:description xml:lang="en">The optical magnification of the imaging system.</terms:description>
+        <skos:prefLabel xml:lang="en">optical_magnification</skos:prefLabel>
+        <ssno:unit rdf:resource="https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient -->
 
 
@@ -1552,18 +1654,6 @@ A JSON-LD excerpt could look like this:
         <ssno:standardName>piv_third_peak_correlation_coefficient</ssno:standardName>
         <terms:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function.</terms:description>
         <skos:prefLabel xml:lang="en">piv_third_peak_correlation_coefficient</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#pixel_origin -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#pixel_origin">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>pixel_origin</ssno:standardName>
-        <terms:description xml:lang="en">The pixel position of the origin used for PIV evaluation.</terms:description>
-        <skos:prefLabel xml:lang="en">pixel_origin</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1744,7 +1834,7 @@ A JSON-LD excerpt could look like this:
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:standardName>x_coordinate</ssno:standardName>
-        <terms:description xml:lang="en">The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate.</terms:description>
+        <terms:description xml:lang="en">The spatial coordinate in horizontal direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate.</terms:description>
         <skos:prefLabel xml:lang="en">x_coordinate</skos:prefLabel>
         <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
@@ -1787,6 +1877,19 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#x_image_origin_coordinate -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_image_origin_coordinate">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>x_image_origin_coordinate</ssno:standardName>
+        <terms:description xml:lang="en">The spatial coordinate in horizontal direction of the origin in the image.</terms:description>
+        <skos:prefLabel xml:lang="en">x_image_origin_coordinate</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PIXEL"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size -->
 
 
@@ -1808,6 +1911,19 @@ A JSON-LD excerpt could look like this:
         <terms:description xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x.</terms:description>
         <skos:prefLabel xml:lang="en">x_inplane_velocity</skos:prefLabel>
         <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#x_origin_offset -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_origin_offset">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>x_origin_offset</ssno:standardName>
+        <terms:description xml:lang="en">The physical offset of the x_image_origin_coordinate in the global coordinate system.</terms:description>
+        <skos:prefLabel xml:lang="en">x_origin_offset</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1843,7 +1959,7 @@ A JSON-LD excerpt could look like this:
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <ssno:standardName>y_coordinate</ssno:standardName>
-        <terms:description xml:lang="en">The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate.</terms:description>
+        <terms:description xml:lang="en">The spatial coordinate in vertical direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate.</terms:description>
         <skos:prefLabel xml:lang="en">y_coordinate</skos:prefLabel>
         <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
@@ -1886,6 +2002,19 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#y_image_origin_coordinate -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_image_origin_coordinate">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>y_image_origin_coordinate</ssno:standardName>
+        <terms:description xml:lang="en">The spatial coordinate in vertical direction of the origin in the image.</terms:description>
+        <skos:prefLabel xml:lang="en">y_image_origin_coordinate</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PIXEL"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size -->
 
 
@@ -1907,6 +2036,19 @@ A JSON-LD excerpt could look like this:
         <terms:description xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x.</terms:description>
         <skos:prefLabel xml:lang="en">y_inplane_velocity</skos:prefLabel>
         <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#y_origin_offset -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_origin_offset">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>y_origin_offset</ssno:standardName>
+        <terms:description xml:lang="en">The physical offset of the y_image_origin_coordinate in the global coordinate system.</terms:description>
+        <skos:prefLabel xml:lang="en">y_origin_offset</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 

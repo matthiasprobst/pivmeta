@@ -56,6 +56,14 @@
 <http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
 
 
+###  http://qudt.org/schema/qudt/hasQuantityKind
+<http://qudt.org/schema/qudt/hasQuantityKind> rdf:type owl:AnnotationProperty .
+
+
+###  http://qudt.org/schema/qudt/symbol
+<http://qudt.org/schema/qudt/symbol> rdf:type owl:AnnotationProperty .
+
+
 ###  http://w3id.org/nfdi4ing/metadata4ing#ContactPerson
 <http://w3id.org/nfdi4ing/metadata4ing#ContactPerson> rdf:type owl:AnnotationProperty .
 
@@ -301,6 +309,10 @@ A JSON-LD excerpt could look like this:
 <http://purl.org/dc/terms/DCMIType> rdf:type owl:Class .
 
 
+###  http://qudt.org/schema/qudt/QuantityKind
+<http://qudt.org/schema/qudt/QuantityKind> rdf:type owl:Class .
+
+
 ###  http://qudt.org/schema/qudt/Unit
 <http://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
 
@@ -408,7 +420,7 @@ A JSON-LD excerpt could look like this:
            rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
            <http://www.w3.org/2004/02/skos/core#definition> "PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally)."@en ;
            <http://www.w3.org/2004/02/skos/core#example> "Examples are synthetic or experimental sources."@en ;
-           <http://www.w3.org/2004/02/skos/core#prefLabel> "image type"@en .
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Image Type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod
@@ -438,7 +450,7 @@ A JSON-LD excerpt could look like this:
 ###  https://matthiasprobst.github.io/pivmeta#Multigrid
 :Multigrid rdf:type owl:Class ;
            rdfs:subClassOf :InterrogationMethod ;
-           <http://www.w3.org/2004/02/skos/core#definition> "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "PIV multi grid method. The correlation and validation methods are executed on different interrogation window sizes starting from large to small."@en ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "Multigrid"@en .
 
 
@@ -452,13 +464,15 @@ A JSON-LD excerpt could look like this:
 ###  https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
 :OutlierDetectionMethod rdf:type owl:Class ;
                         rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "Outlier detection method used to mark or interpolate spurious vectors."@en ;
                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Outlier Detection Method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme
 :OutlierReplacementScheme rdf:type owl:Class ;
                           rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-                          <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier replacement scheme"@en .
+                          <http://www.w3.org/2004/02/skos/core#definition> "Method used, to replace outliers."@en ;
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Outlier Replacement Scheme"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
@@ -492,6 +506,7 @@ A JSON-LD excerpt could look like this:
 :PeakSearchMethod rdf:type owl:Class ;
                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                   rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
+                  <http://www.w3.org/2004/02/skos/core#example> "Peak centroid, Paralbolic peak fit or Gaussian peak fit."@en ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Peak Search Method"@en .
 
 
@@ -568,8 +583,7 @@ A JSON-LD excerpt could look like this:
 
 
 ###  https://matthiasprobst.github.io/pivmeta#StandardName
-:StandardName rdf:type owl:Class ;
-              rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+:StandardName rdf:type owl:Class .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticParticle
@@ -581,7 +595,9 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction
 :WindowWeightingFunction rdf:type owl:Class ;
-                         rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+                         rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                         rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
+                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Window Weighting Function"@en .
 
 
 ###  https://matthiasprobst.github.io/ssno#Particle
@@ -611,28 +627,55 @@ A JSON-LD excerpt could look like this:
 #    Individuals
 #################################################################
 
+###  https://matthiasprobst.github.io/pivmeta#BlackmanWindow
+:BlackmanWindow rdf:type owl:NamedIndividual .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 :ExperimentalImage rdf:type owl:NamedIndividual ,
                             :ImageType ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction
-:GaussWindowWeightingFunction rdf:type owl:NamedIndividual ,
-                                       :WindowWeightingFunction ;
-                              <http://www.w3.org/2004/02/skos/core#prefLabel> "gauss"@en .
+###  https://matthiasprobst.github.io/pivmeta#GaussianWindow
+:GaussianWindow rdf:type owl:NamedIndividual ,
+                         :WindowWeightingFunction ;
+                rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "Gaussian Window"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#HammingWindow
+:HammingWindow rdf:type owl:NamedIndividual ,
+                        :WindowWeightingFunction ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Hamming Window"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#HannWindow
+:HannWindow rdf:type owl:NamedIndividual ,
+                     :WindowWeightingFunction ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Hann Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Interpolation
 :Interpolation rdf:type owl:NamedIndividual ,
                         :OutlierReplacementScheme ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "interpolation"@en .
+               <http://www.w3.org/2004/02/skos/core#definition> "Method to replace vectors identified as invalid by interpolating from surrounding data."@en ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Interpolation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#LeftRightFlip
 :LeftRightFlip rdf:type owl:NamedIndividual ,
                         :ImageManipulationMethod ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL
+:MilliM_PER_PIXEL rdf:type owl:NamedIndividual ,
+                           <http://qudt.org/schema/qudt/Unit> ;
+                  <http://purl.org/dc/terms/description> "Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image."@en ;
+                  <http://qudt.org/schema/qudt/hasQuantityKind> :SpatialResolution ;
+                  <http://qudt.org/schema/qudt/symbol> "mm/pixel" ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "millimetre per pixel"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
@@ -664,16 +707,24 @@ A JSON-LD excerpt could look like this:
                             <http://www.w3.org/2004/02/skos/core#prefLabel> "re-evaluate with larger sample"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#SpatialResolution
+:SpatialResolution rdf:type owl:NamedIndividual ,
+                            <http://qudt.org/schema/qudt/QuantityKind> ;
+                   rdfs:comment "A quantity kind representing length per pixel in an image." ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "spatial resolution"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#SplitImage
 :SplitImage rdf:type owl:NamedIndividual ,
                      :ImageManipulationMethod ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "split image"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction
-:SquareWindowWeightingFunction rdf:type owl:NamedIndividual ,
-                                        :WindowWeightingFunction ;
-                               <http://www.w3.org/2004/02/skos/core#prefLabel> "square"@en .
+###  https://matthiasprobst.github.io/pivmeta#SquareWindow
+:SquareWindow rdf:type owl:NamedIndividual ,
+                       :WindowWeightingFunction ;
+              rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Square Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
@@ -692,6 +743,12 @@ A JSON-LD excerpt could look like this:
 :TryLowerOrderPeaks rdf:type owl:NamedIndividual ,
                              :OutlierReplacementScheme ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "try lower order peaks"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#TukeyWindow
+:TukeyWindow rdf:type owl:NamedIndividual ,
+                      :WindowWeightingFunction ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Tukey Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter
@@ -906,6 +963,15 @@ A JSON-LD excerpt could look like this:
                      <http://www.w3.org/2004/02/skos/core#prefLabel> "number_of_particles"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#optical_magnification
+:optical_magnification rdf:type owl:NamedIndividual ,
+                                :StandardName ;
+                       <https://matthiasprobst.github.io/ssno#standardName> "optical_magnification" ;
+                       <http://purl.org/dc/terms/description> "The optical magnification of the imaging system."@en ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "optical_magnification"@en ;
+                       <https://matthiasprobst.github.io/ssno#unit> :MilliM_PER_PIXEL .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient
 :pivFirstPeakCorrelationCoefficient rdf:type owl:NamedIndividual ,
                                              :StandardName ;
@@ -968,14 +1034,6 @@ A JSON-LD excerpt could look like this:
                                         <https://matthiasprobst.github.io/ssno#standardName> "piv_third_peak_correlation_coefficient" ;
                                         <http://purl.org/dc/terms/description> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function."@en ;
                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_third_peak_correlation_coefficient"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#pixel_origin
-:pixel_origin rdf:type owl:NamedIndividual ,
-                       :StandardName ;
-              <https://matthiasprobst.github.io/ssno#standardName> "pixel_origin" ;
-              <http://purl.org/dc/terms/description> "The pixel position of the origin used for PIV evaluation."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "pixel_origin"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#relative_time
@@ -1096,7 +1154,7 @@ A JSON-LD excerpt could look like this:
 :x_coordinate rdf:type owl:NamedIndividual ,
                        :StandardName ;
               <https://matthiasprobst.github.io/ssno#standardName> "x_coordinate" ;
-              <http://purl.org/dc/terms/description> "The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."@en ;
+              <http://purl.org/dc/terms/description> "The spatial coordinate in horizontal direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "x_coordinate"@en ;
               <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> .
 
@@ -1125,6 +1183,15 @@ A JSON-LD excerpt could look like this:
                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#x_image_origin_coordinate
+:x_image_origin_coordinate rdf:type owl:NamedIndividual ,
+                                    :StandardName ;
+                           <https://matthiasprobst.github.io/ssno#standardName> "x_image_origin_coordinate" ;
+                           <http://purl.org/dc/terms/description> "The spatial coordinate in horizontal direction of the origin in the image."@en ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "x_image_origin_coordinate"@en ;
+                           <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PIXEL> .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size
 :x_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
                                               :StandardName ;
@@ -1140,6 +1207,15 @@ A JSON-LD excerpt could look like this:
                     <http://purl.org/dc/terms/description> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."@en ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "x_inplane_velocity"@en ;
                     <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> .
+
+
+###  https://matthiasprobst.github.io/pivmeta#x_origin_offset
+:x_origin_offset rdf:type owl:NamedIndividual ,
+                          :StandardName ;
+                 <https://matthiasprobst.github.io/ssno#standardName> "x_origin_offset" ;
+                 <http://purl.org/dc/terms/description> "The physical offset of the x_image_origin_coordinate in the global coordinate system."@en ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "x_origin_offset"@en ;
+                 <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate
@@ -1163,7 +1239,7 @@ A JSON-LD excerpt could look like this:
 :y_coordinate rdf:type owl:NamedIndividual ,
                        :StandardName ;
               <https://matthiasprobst.github.io/ssno#standardName> "y_coordinate" ;
-              <http://purl.org/dc/terms/description> "The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."@en ;
+              <http://purl.org/dc/terms/description> "The spatial coordinate in vertical direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "y_coordinate"@en ;
               <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> .
 
@@ -1192,6 +1268,15 @@ A JSON-LD excerpt could look like this:
                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_size"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#y_image_origin_coordinate
+:y_image_origin_coordinate rdf:type owl:NamedIndividual ,
+                                    :StandardName ;
+                           <https://matthiasprobst.github.io/ssno#standardName> "y_image_origin_coordinate" ;
+                           <http://purl.org/dc/terms/description> "The spatial coordinate in vertical direction of the origin in the image."@en ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "y_image_origin_coordinate"@en ;
+                           <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PIXEL> .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size
 :y_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
                                               :StandardName ;
@@ -1207,6 +1292,15 @@ A JSON-LD excerpt could look like this:
                     <http://purl.org/dc/terms/description> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."@en ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "y_inplane_velocity"@en ;
                     <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> .
+
+
+###  https://matthiasprobst.github.io/pivmeta#y_origin_offset
+:y_origin_offset rdf:type owl:NamedIndividual ,
+                          :StandardName ;
+                 <https://matthiasprobst.github.io/ssno#standardName> "y_origin_offset" ;
+                 <http://purl.org/dc/terms/description> "The physical offset of the y_image_origin_coordinate in the global coordinate system."@en ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "y_origin_offset"@en ;
+                 <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate

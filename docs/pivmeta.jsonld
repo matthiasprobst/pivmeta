@@ -87,8 +87,17 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://qudt.org/schema/qudt/QuantityKind",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "http://qudt.org/schema/qudt/Unit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://qudt.org/schema/qudt/hasQuantityKind",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://qudt.org/schema/qudt/symbol",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ContactPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -232,6 +241,9 @@
     "@value" : "background subtraction"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#BlackmanWindow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#CorrelationMethod",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -283,14 +295,37 @@
     "@value" : "experimental image"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#GaussWindowWeightingFunction",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#GaussianWindow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1404885"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Gaussian Window"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#HammingWindow",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "gauss"
+    "@value" : "Hamming Window"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#HannWindow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Hann Window"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ImageDewarp",
@@ -364,7 +399,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "image type"
+    "@value" : "Image Type"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Interpolation",
@@ -372,9 +407,13 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Method to replace vectors identified as invalid by interpolating from surrounding data."
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "interpolation"
+    "@value" : "Interpolation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod",
@@ -427,6 +466,26 @@
     "@value" : "mask generation"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image."
+  } ],
+  "http://qudt.org/schema/qudt/hasQuantityKind" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#SpatialResolution"
+  } ],
+  "http://qudt.org/schema/qudt/symbol" : [ {
+    "@value" : "mm/pixel"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Unit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "millimetre per pixel"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Multigrid",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -434,7 +493,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "A PIV multi grid method. The correlation and validation methods are executed on different interrogation window size starting from large to small."
+    "@value" : "PIV multi grid method. The correlation and validation methods are executed on different interrogation window sizes starting from large to small."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -460,6 +519,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Outlier detection method used to mark or interpolate spurious vectors."
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Outlier Detection Method"
@@ -470,9 +533,13 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Method used, to replace outliers."
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "outlier replacement scheme"
+    "@value" : "Outlier Replacement Scheme"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation",
@@ -565,6 +632,10 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "Peak centroid, Paralbolic peak fit or Gaussian peak fit."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -715,6 +786,19 @@
     "@value" : "Singlepass"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#SpatialResolution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://qudt.org/schema/qudt/QuantityKind"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A quantity kind representing length per pixel in an image."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "spatial resolution"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#SplitImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -725,21 +809,21 @@
     "@value" : "split image"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#SquareWindowWeightingFunction",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#SquareWindow",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1404885"
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "square"
+    "@value" : "Square Window"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#SyntheticImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
@@ -785,10 +869,27 @@
     "@value" : "try lower order peaks"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#TukeyWindow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Tukey Window"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1404885"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Window Weighting Function"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter",
@@ -1375,6 +1476,26 @@
     "@value" : "number_of_particles"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#optical_magnification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The optical magnification of the imaging system."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "optical_magnification"
+  } ],
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
+    "@value" : "optical_magnification"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1547,23 +1668,6 @@
   } ],
   "https://matthiasprobst.github.io/ssno#standardName" : [ {
     "@value" : "piv_third_peak_correlation_coefficient"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#pixel_origin",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/dc/terms/description" : [ {
-    "@language" : "en",
-    "@value" : "The pixel position of the origin used for PIV evaluation."
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "pixel_origin"
-  } ],
-  "https://matthiasprobst.github.io/ssno#standardName" : [ {
-    "@value" : "pixel_origin"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#relative_time",
@@ -1831,7 +1935,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
-    "@value" : "The spatial coordinate in horizontal direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."
+    "@value" : "The spatial coordinate in horizontal direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
@@ -1898,6 +2002,26 @@
     "@value" : "x_final_interrogation_window_size"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_image_origin_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The spatial coordinate in horizontal direction of the origin in the image."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_image_origin_coordinate"
+  } ],
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
+    "@value" : "x_image_origin_coordinate"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PIXEL"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/description" : [ {
@@ -1933,6 +2057,26 @@
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
     "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#x_origin_offset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The physical offset of the x_image_origin_coordinate in the global coordinate system."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "x_origin_offset"
+  } ],
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
+    "@value" : "x_origin_offset"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate",
@@ -1976,7 +2120,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
-    "@value" : "The spatial coordinate in vertical direction, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."
+    "@value" : "The spatial coordinate in vertical direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
@@ -2043,6 +2187,26 @@
     "@value" : "y_final_interrogation_window_size"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_image_origin_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The spatial coordinate in vertical direction of the origin in the image."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_image_origin_coordinate"
+  } ],
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
+    "@value" : "y_image_origin_coordinate"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PIXEL"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/description" : [ {
@@ -2078,6 +2242,26 @@
   } ],
   "https://matthiasprobst.github.io/ssno#unit" : [ {
     "@id" : "http://qudt.org/vocab/unit/M-PER-SEC"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#y_origin_offset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "The physical offset of the y_image_origin_coordinate in the global coordinate system."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "y_origin_offset"
+  } ],
+  "https://matthiasprobst.github.io/ssno#standardName" : [ {
+    "@value" : "y_origin_offset"
+  } ],
+  "https://matthiasprobst.github.io/ssno#unit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/M"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate",

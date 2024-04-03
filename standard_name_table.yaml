@@ -112,9 +112,6 @@ standard_names:
     description: Number of seeding particles in the image or field of interest. See
       also image_particle_density.
     units: ''
-  laser_pulse_delay:
-    description: Time between two laser pulses.
-    units: s
   saturated_pixel_number:
     description: Number of pixels in the field of interest that exceed the maximal
       senor count.
@@ -211,16 +208,24 @@ standard_names:
   y_pixel_coordinate:
     description: Image coordinate in vertical direction.
     units: ''
-  pixel_origin:
-    vector: true
-    description: The pixel position of the origin used for PIV evaluation.
-    units: ''
+  x_image_origin_coordinate:
+    description: The spatial coordinate in horizontal direction of the origin in the image.
+    units: 'pixel'
+  x_origin_offset:
+    description: The physical offset of the x_image_origin_coordinate in the global coordinate system.
+    units: 'm'
+  y_image_origin_coordinate:
+    description: The spatial coordinate in vertical direction of the origin in the image.
+    units: 'pixel'
+  y_origin_offset:
+    description: The physical offset of the y_image_origin_coordinate in the global coordinate system.
+    units: 'm'
   x_coordinate:
-    description: The spatial coordinate in horizontal direction, which is aligned with the sensor orientation.
+    description: The spatial coordinate in horizontal direction in the global coordinate system, which is aligned with the sensor orientation.
       The sensor width therefore corresponds to sensor size in direction of x_coordinate.
     units: m
   y_coordinate:
-    description: The spatial coordinate in vertical direction, which is aligned with the sensor orientation.
+    description: The spatial coordinate in vertical direction in the global coordinate system, which is aligned with the sensor orientation.
       The sensor width therefore corresponds to sensor size in direction of y_coordinate.
     units: m
   signal_to_noise_ratio:
@@ -259,3 +264,9 @@ standard_names:
   image_bit_depth:
     description: The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits.
     units: ''
+  optical_magnification:
+    description: The optical magnification of the imaging system.
+    units: 'mm/pixel'
+  laser_pulse_delay:
+    description: Time between two laser pulses.
+    units: s
