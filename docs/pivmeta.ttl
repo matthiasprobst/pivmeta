@@ -859,6 +859,14 @@ A JSON-LD excerpt could look like this:
                           <http://www.w3.org/2004/02/skos/core#prefLabel> "image_filter_kernel_size"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#image_index
+:image_index rdf:type owl:NamedIndividual ,
+                      :StandardName ;
+             <https://matthiasprobst.github.io/ssno#standardName> "image_index" ;
+             <http://purl.org/dc/terms/description> "Index of a PIV image collection. Starts at 1 and ends at the number of images N."@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "image_index"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#image_particle_density
 :image_particle_density rdf:type owl:NamedIndividual ,
                                  :StandardName ;
@@ -1001,14 +1009,6 @@ A JSON-LD excerpt could look like this:
           <https://matthiasprobst.github.io/ssno#standardName> "piv_flag" ;
           <http://purl.org/dc/terms/description> "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated."@en ;
           <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_flag"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#piv_image_index
-:piv_image_index rdf:type owl:NamedIndividual ,
-                          :StandardName ;
-                 <https://matthiasprobst.github.io/ssno#standardName> "piv_image_index" ;
-                 <http://purl.org/dc/terms/description> "Simple index of a PIV image. Starts at 1 and ends at the number of images N."@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_image_index"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#piv_scaling_factor
@@ -1183,13 +1183,13 @@ A JSON-LD excerpt could look like this:
                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#x_image_origin_coordinate
-:x_image_origin_coordinate rdf:type owl:NamedIndividual ,
-                                    :StandardName ;
-                           <https://matthiasprobst.github.io/ssno#standardName> "x_image_origin_coordinate" ;
-                           <http://purl.org/dc/terms/description> "The spatial coordinate in horizontal direction of the origin in the image."@en ;
-                           <http://www.w3.org/2004/02/skos/core#prefLabel> "x_image_origin_coordinate"@en ;
-                           <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PIXEL> .
+###  https://matthiasprobst.github.io/pivmeta#x_image_coordinate
+:x_image_coordinate rdf:type owl:NamedIndividual ,
+                             :StandardName ;
+                    <https://matthiasprobst.github.io/ssno#standardName> "x_image_coordinate" ;
+                    <http://purl.org/dc/terms/description> "The spatial coordinate in horizontal direction. The origin is at the top left."@en ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "x_image_coordinate"@en ;
+                    <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PIXEL> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size
@@ -1222,7 +1222,7 @@ A JSON-LD excerpt could look like this:
 :x_pixel_coordinate rdf:type owl:NamedIndividual ,
                              :StandardName ;
                     <https://matthiasprobst.github.io/ssno#standardName> "x_pixel_coordinate" ;
-                    <http://purl.org/dc/terms/description> "Image coordinate in horizontal direction."@en ;
+                    <http://purl.org/dc/terms/description> "Pixel coordinate in horizontal direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (x_coordinate), not the image coordinate (x_image_coordinate) which has its origin in the top left of the image."@en ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "x_pixel_coordinate"@en .
 
 
@@ -1268,13 +1268,13 @@ A JSON-LD excerpt could look like this:
                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_size"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#y_image_origin_coordinate
-:y_image_origin_coordinate rdf:type owl:NamedIndividual ,
-                                    :StandardName ;
-                           <https://matthiasprobst.github.io/ssno#standardName> "y_image_origin_coordinate" ;
-                           <http://purl.org/dc/terms/description> "The spatial coordinate in vertical direction of the origin in the image."@en ;
-                           <http://www.w3.org/2004/02/skos/core#prefLabel> "y_image_origin_coordinate"@en ;
-                           <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PIXEL> .
+###  https://matthiasprobst.github.io/pivmeta#y_image_coordinate
+:y_image_coordinate rdf:type owl:NamedIndividual ,
+                             :StandardName ;
+                    <https://matthiasprobst.github.io/ssno#standardName> "y_image_coordinate" ;
+                    <http://purl.org/dc/terms/description> "The spatial coordinate in vertical direction. The origin is in the top left."@en ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "y_image_coordinate"@en ;
+                    <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PIXEL> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size
@@ -1307,7 +1307,7 @@ A JSON-LD excerpt could look like this:
 :y_pixel_coordinate rdf:type owl:NamedIndividual ,
                              :StandardName ;
                     <https://matthiasprobst.github.io/ssno#standardName> "y_pixel_coordinate" ;
-                    <http://purl.org/dc/terms/description> "Image coordinate in vertical direction."@en ;
+                    <http://purl.org/dc/terms/description> "Pixel coordinate in vertical direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (y_coordinate), not the image coordinate (y_image_coordinate) which has its origin in the top left of the image."@en ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "y_pixel_coordinate"@en .
 
 

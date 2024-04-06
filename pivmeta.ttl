@@ -961,12 +961,12 @@ pivmeta:standard_deviation_of_image_particle_diameter rdf:type owl:NamedIndividu
              <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_image_particle_diameter"@en .
 
 
-### https://matthiasprobst.github.io/pivmeta#piv_image_index
-pivmeta:piv_image_index rdf:type owl:NamedIndividual ,
+### https://matthiasprobst.github.io/pivmeta#image_index
+pivmeta:image_index rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <http://purl.org/dc/terms/description> "Simple index of a PIV image. Starts at 1 and ends at the number of images N."@en ;
-             <https://matthiasprobst.github.io/ssno#standardName> "piv_image_index" ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_image_index"@en .
+             <http://purl.org/dc/terms/description> "Index of a PIV image collection. Starts at 1 and ends at the number of images N."@en ;
+             <https://matthiasprobst.github.io/ssno#standardName> "image_index" ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "image_index"@en .
 
 
 ### https://matthiasprobst.github.io/pivmeta#inplane_velocity
@@ -1216,7 +1216,7 @@ pivmeta:x_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
 ### https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate
 pivmeta:x_pixel_coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <http://purl.org/dc/terms/description> "Image coordinate in horizontal direction."@en ;
+             <http://purl.org/dc/terms/description> "Pixel coordinate in horizontal direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (x_coordinate), not the image coordinate (x_image_coordinate) which has its origin in the top left of the image."@en ;
              <https://matthiasprobst.github.io/ssno#standardName> "x_pixel_coordinate" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_pixel_coordinate"@en .
 
@@ -1248,18 +1248,18 @@ pivmeta:y_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
 ### https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate
 pivmeta:y_pixel_coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <http://purl.org/dc/terms/description> "Image coordinate in vertical direction."@en ;
+             <http://purl.org/dc/terms/description> "Pixel coordinate in vertical direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (y_coordinate), not the image coordinate (y_image_coordinate) which has its origin in the top left of the image."@en ;
              <https://matthiasprobst.github.io/ssno#standardName> "y_pixel_coordinate" ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_pixel_coordinate"@en .
 
 
-### https://matthiasprobst.github.io/pivmeta#x_image_origin_coordinate
-pivmeta:x_image_origin_coordinate rdf:type owl:NamedIndividual ,
+### https://matthiasprobst.github.io/pivmeta#x_image_coordinate
+pivmeta:x_image_coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <http://purl.org/dc/terms/description> "The spatial coordinate in horizontal direction of the origin in the image."@en ;
-             <https://matthiasprobst.github.io/ssno#standardName> "x_image_origin_coordinate" ;
+             <http://purl.org/dc/terms/description> "The spatial coordinate in horizontal direction. The origin is at the top left."@en ;
+             <https://matthiasprobst.github.io/ssno#standardName> "x_image_coordinate" ;
              <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PIXEL> ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "x_image_origin_coordinate"@en .
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "x_image_coordinate"@en .
 
 
 ### https://matthiasprobst.github.io/pivmeta#x_origin_offset
@@ -1271,13 +1271,13 @@ pivmeta:x_origin_offset rdf:type owl:NamedIndividual ,
              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_origin_offset"@en .
 
 
-### https://matthiasprobst.github.io/pivmeta#y_image_origin_coordinate
-pivmeta:y_image_origin_coordinate rdf:type owl:NamedIndividual ,
+### https://matthiasprobst.github.io/pivmeta#y_image_coordinate
+pivmeta:y_image_coordinate rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             <http://purl.org/dc/terms/description> "The spatial coordinate in vertical direction of the origin in the image."@en ;
-             <https://matthiasprobst.github.io/ssno#standardName> "y_image_origin_coordinate" ;
+             <http://purl.org/dc/terms/description> "The spatial coordinate in vertical direction. The origin is in the top left."@en ;
+             <https://matthiasprobst.github.io/ssno#standardName> "y_image_coordinate" ;
              <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PIXEL> ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "y_image_origin_coordinate"@en .
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "y_image_coordinate"@en .
 
 
 ### https://matthiasprobst.github.io/pivmeta#y_origin_offset

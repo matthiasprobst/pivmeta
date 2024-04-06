@@ -11,16 +11,25 @@ The ontology is documented online [here](https://matthiasprobst.github.io/pivmet
 ## Motivation/Background
 
 Particle Image Velocimetry is missing a common standard to describe the resources (images, results, setups, ...).
-However, state-of-the-art and good scientific practice require to enrich scientific data with metadata. *PIVMeta* is a
-first attempt to establish a standard for the description of PIV data, based on current good scientific practice like
-ensuring FAIRness of data.
+However, it is important to make data understandable, especially if made available for others or to re-interpret
+past results. In both cases, without proper description of used software, algorithms and their parameters, data quickly
+becomes useless as those meta information constitute vital information.
+
+Moreover, state-of-the-art and good scientific practice of current and future research require to enrich scientific
+data with metadata.
+
+*PIVMeta* is a first attempt to establish a standard for the description of PIV data. The concept is based on
+semantic web technology by describing PIV data with a newly established ontology. The main design principle is to
+reuse already existing ontologies and concepts, which reduces the overhead and allows smooth integration in other
+engineering workflows and datasets. Ultimately, PIVMeta contributes to significantly improve the FAIRness scientific
+practice like
+of data sets.
 
 [//]: # (The ontology shall enrich your PIV data with information about involved researchers, projects and most importantly about)
 
 [//]: # (the parameters and variables used or created.)
-Using a standardized metadata approach like *PIVMeta*, PIV data becomes interoperable, which improves sharing and
-reusing of it. As data becomes machine-actionable, PIV post-processing can easily be automated, resulting in efficient
-workflows.
+As a main outcome of adopting the concept to your data, it not only becomes self-descriptive and
+hence easily re-usable, a great benefit by automatic exploration and post-processing is obtained.
 
 ## Usage and Documentation
 

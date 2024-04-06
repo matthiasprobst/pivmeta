@@ -37,7 +37,7 @@ standard_names:
   piv_flag:
     description: A flag indicates the processing status of a vector. It can be disabled,
       active or processed in any other way by a post-processing step. The flag meaning
-      must be provided with the dataset through flag meanings and flag values. Recommendation for the flag 
+      must be provided with the dataset through flag meanings and flag values. Recommendation for the flag
       meaning are 0-inactive,
       1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced,
       128-manualedit. Combinations of the flags can be used by bitwise OR operation.
@@ -69,8 +69,8 @@ standard_names:
       distribution. Note, that there might be other definitions, too, however, this one is the most common one in
       literature.
     units: ''
-  piv_image_index:
-    description: Simple index of a PIV image. Starts at 1 and ends at the number of images N.
+  image_index:
+    description: Index of a PIV image collection. Starts at 1 and ends at the number of images N.
     units: ''
   inplane_velocity:
     description: The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane
@@ -192,7 +192,10 @@ standard_names:
     description: Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm).
     units: ''
   x_pixel_coordinate:
-    description: Image coordinate in horizontal direction.
+    description: Pixel coordinate in horizontal direction. It depicts the position of each velocity vector in
+      the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical
+      coordinate axis (x_coordinate), not the image coordinate (x_image_coordinate) which has its origin in the top
+      left of the image.
     units: ''
   y_final_interrogation_window_overlap_size:
     alias: interrogation_window_overlap_size
@@ -206,16 +209,19 @@ standard_names:
     description: Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm).
     units: ''
   y_pixel_coordinate:
-    description: Image coordinate in vertical direction.
+    description: Pixel coordinate in vertical direction. It depicts the position of each velocity vector in
+      the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical
+      coordinate axis (y_coordinate), not the image coordinate (y_image_coordinate) which has its origin in the top
+      left of the image.
     units: ''
-  x_image_origin_coordinate:
-    description: The spatial coordinate in horizontal direction of the origin in the image.
+  x_image_coordinate:
+    description: The spatial coordinate in horizontal direction. The origin is at the top left.
     units: 'pixel'
   x_origin_offset:
     description: The physical offset of the x_image_origin_coordinate in the global coordinate system.
     units: 'm'
-  y_image_origin_coordinate:
-    description: The spatial coordinate in vertical direction of the origin in the image.
+  y_image_coordinate:
+    description: The spatial coordinate in vertical direction. The origin is in the top left.
     units: 'pixel'
   y_origin_offset:
     description: The physical offset of the y_image_origin_coordinate in the global coordinate system.
