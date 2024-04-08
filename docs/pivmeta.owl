@@ -99,6 +99,13 @@
     
 
 
+    <!-- http://qudt.org/schema/qudt/applicableUnit -->
+
+
+    <owl:AnnotationProperty rdf:about="http://qudt.org/schema/qudt/applicableUnit"/>
+    
+
+
     <!-- http://qudt.org/schema/qudt/hasQuantityKind -->
 
 
@@ -159,6 +166,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#label -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#label"/>
     
 
 
@@ -1018,6 +1032,19 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityKind"/>
+        <terms:description xml:lang="en">Amount of Substance per unit area</terms:description>
+        <qudt:applicableUnit rdf:resource="https://matthiasprobst.github.io/pivmeta#PER-PIXEL"/>
+        <skos:example xml:lang="en">Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel).</skos:example>
+        <skos:label xml:lang="en">Amount of Substance per Unit Area</skos:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#BlackmanWindow -->
 
 
@@ -1087,10 +1114,10 @@ A JSON-LD excerpt could look like this:
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL -->
+    <!-- https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL">
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL">
         <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
         <terms:description xml:lang="en">Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image.</terms:description>
         <qudt:hasQuantityKind rdf:resource="https://matthiasprobst.github.io/pivmeta#SpatialResolution"/>
@@ -1100,10 +1127,10 @@ A JSON-LD excerpt could look like this:
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#PER_PIXEL -->
+    <!-- https://matthiasprobst.github.io/pivmeta#PER-PIXEL -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#PER_PIXEL">
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#PER-PIXEL">
         <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
         <terms:description xml:lang="en">A reciprocal unit of pixel.</terms:description>
         <qudt:hasQuantityKind rdf:resource="https://matthiasprobst.github.io/pivmeta#SpatialResolution"/>

@@ -44,6 +44,9 @@
 # http://purl.org/vocab/vann/preferredNamespaceUri
 <http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://qudt.org/schema/qudt/applicableUnit
+<http://qudt.org/schema/qudt/applicableUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://qudt.org/schema/qudt/hasQuantityKind
 <http://qudt.org/schema/qudt/hasQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -70,6 +73,9 @@
 # 
 # http://www.w3.org/2004/02/skos/core#example
 <http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#label
+<http://www.w3.org/2004/02/skos/core#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/2004/02/skos/core#note
 <http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -528,6 +534,14 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
+# https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea
+<https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://qudt.org/schema/qudt/QuantityKind> .
+<https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea> <http://purl.org/dc/terms/description> "Amount of Substance per unit area"@en .
+<https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea> <http://qudt.org/schema/qudt/applicableUnit> <https://matthiasprobst.github.io/pivmeta#PER-PIXEL> .
+<https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea> <http://www.w3.org/2004/02/skos/core#example> "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."@en .
+<https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea> <http://www.w3.org/2004/02/skos/core#label> "Amount of Substance per Unit Area"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#BlackmanWindow
 <https://matthiasprobst.github.io/pivmeta#BlackmanWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 # 
@@ -563,22 +577,22 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod> .
 <https://matthiasprobst.github.io/pivmeta#LeftRightFlip> <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL
-<https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://qudt.org/schema/qudt/Unit> .
-<https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL> <http://purl.org/dc/terms/description> "Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image."@en .
-<https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL> <http://qudt.org/schema/qudt/hasQuantityKind> <https://matthiasprobst.github.io/pivmeta#SpatialResolution> .
-<https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL> <http://qudt.org/schema/qudt/symbol> "mm/pixel" .
-<https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL> <http://www.w3.org/2004/02/skos/core#prefLabel> "millimetre per pixel"@en .
+# https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL
+<https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://qudt.org/schema/qudt/Unit> .
+<https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://purl.org/dc/terms/description> "Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image."@en .
+<https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://qudt.org/schema/qudt/hasQuantityKind> <https://matthiasprobst.github.io/pivmeta#SpatialResolution> .
+<https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://qudt.org/schema/qudt/symbol> "mm/pixel" .
+<https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://www.w3.org/2004/02/skos/core#prefLabel> "millimetre per pixel"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#PER_PIXEL
-<https://matthiasprobst.github.io/pivmeta#PER_PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#PER_PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://qudt.org/schema/qudt/Unit> .
-<https://matthiasprobst.github.io/pivmeta#PER_PIXEL> <http://purl.org/dc/terms/description> "A reciprocal unit of pixel."@en .
-<https://matthiasprobst.github.io/pivmeta#PER_PIXEL> <http://qudt.org/schema/qudt/hasQuantityKind> <https://matthiasprobst.github.io/pivmeta#SpatialResolution> .
-<https://matthiasprobst.github.io/pivmeta#PER_PIXEL> <http://qudt.org/schema/qudt/symbol> "1/pixel" .
-<https://matthiasprobst.github.io/pivmeta#PER_PIXEL> <http://www.w3.org/2004/02/skos/core#example> "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."@en .
-<https://matthiasprobst.github.io/pivmeta#PER_PIXEL> <http://www.w3.org/2004/02/skos/core#prefLabel> "millimetre per pixel"@en .
+# https://matthiasprobst.github.io/pivmeta#PER-PIXEL
+<https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://qudt.org/schema/qudt/Unit> .
+<https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://purl.org/dc/terms/description> "A reciprocal unit of pixel."@en .
+<https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://qudt.org/schema/qudt/hasQuantityKind> <https://matthiasprobst.github.io/pivmeta#SpatialResolution> .
+<https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://qudt.org/schema/qudt/symbol> "1/pixel" .
+<https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://www.w3.org/2004/02/skos/core#example> "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."@en .
+<https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://www.w3.org/2004/02/skos/core#prefLabel> "millimetre per pixel"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
 <https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

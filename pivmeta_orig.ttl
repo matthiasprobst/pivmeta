@@ -783,20 +783,21 @@ pivmeta:PER-PIXEL
 
 ###  https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea
 pivmeta:AmountOfSubstancePerUnitArea
-    rdf:type                         owl:NamedIndividual, qudt:QuantityKind ;
-    dcterms:description              "Amount of Substance per unit area"@en ;
-    qudt:applicableUnit              pivmeta:PER-PIXEL ;
-    skos:example                     "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."@en ;
-    skos:label                       "Amount of Substance per Unit Area"@en ;
+    rdf:type            owl:NamedIndividual, qudt:QuantityKind ;
+    dcterms:description "Amount of Substance per unit area"@en ;
+    qudt:applicableUnit pivmeta:PER-PIXEL ;
+    skos:example        "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."@en ;
+    skos:label          "Amount of Substance per Unit Area"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
-    pivmeta:ParticleImageVelocimetry rdf:type        owl:NamedIndividual, [ rdf:type    owl:Class ;
+pivmeta:ParticleImageVelocimetry
+    rdf:type        owl:NamedIndividual, [ rdf:type    owl:Class ;
                                            owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Method>
                                                          pivmeta:PivType ) ] ;
     skos:closeMatch <https://www.wikidata.org/wiki/Q1756248> ;
     skos:definition "Method to measure velocities in fluid."@en ;
-        skos:prefLabel  "Particle Image Velocimetry"@en .
+    skos:prefLabel  "Particle Image Velocimetry"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry

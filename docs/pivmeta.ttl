@@ -56,6 +56,10 @@
 <http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
 
 
+###  http://qudt.org/schema/qudt/applicableUnit
+<http://qudt.org/schema/qudt/applicableUnit> rdf:type owl:AnnotationProperty .
+
+
 ###  http://qudt.org/schema/qudt/hasQuantityKind
 <http://qudt.org/schema/qudt/hasQuantityKind> rdf:type owl:AnnotationProperty .
 
@@ -90,6 +94,10 @@
 
 ###  http://www.w3.org/2004/02/skos/core#example
 <http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#label
+<http://www.w3.org/2004/02/skos/core#label> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#note
@@ -618,6 +626,15 @@ A JSON-LD excerpt could look like this:
 #    Individuals
 #################################################################
 
+###  https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea
+:AmountOfSubstancePerUnitArea rdf:type owl:NamedIndividual ,
+                                       <http://qudt.org/schema/qudt/QuantityKind> ;
+                              <http://purl.org/dc/terms/description> "Amount of Substance per unit area"@en ;
+                              <http://qudt.org/schema/qudt/applicableUnit> :PER-PIXEL ;
+                              <http://www.w3.org/2004/02/skos/core#example> "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."@en ;
+                              <http://www.w3.org/2004/02/skos/core#label> "Amount of Substance per Unit Area"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#BlackmanWindow
 :BlackmanWindow rdf:type owl:NamedIndividual .
 
@@ -660,8 +677,8 @@ A JSON-LD excerpt could look like this:
                <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL
-:MilliM_PER_PIXEL rdf:type owl:NamedIndividual ,
+###  https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL
+:MilliM-PER-PIXEL rdf:type owl:NamedIndividual ,
                            <http://qudt.org/schema/qudt/Unit> ;
                   <http://purl.org/dc/terms/description> "Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image."@en ;
                   <http://qudt.org/schema/qudt/hasQuantityKind> :SpatialResolution ;
@@ -669,8 +686,8 @@ A JSON-LD excerpt could look like this:
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "millimetre per pixel"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PER_PIXEL
-:PER_PIXEL rdf:type owl:NamedIndividual ,
+###  https://matthiasprobst.github.io/pivmeta#PER-PIXEL
+:PER-PIXEL rdf:type owl:NamedIndividual ,
                     <http://qudt.org/schema/qudt/Unit> ;
            <http://purl.org/dc/terms/description> "A reciprocal unit of pixel."@en ;
            <http://qudt.org/schema/qudt/hasQuantityKind> :SpatialResolution ;

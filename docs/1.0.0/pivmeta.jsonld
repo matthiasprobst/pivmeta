@@ -93,6 +93,9 @@
   "@id" : "http://qudt.org/schema/qudt/Unit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
+  "@id" : "http://qudt.org/schema/qudt/applicableUnit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://qudt.org/schema/qudt/hasQuantityKind",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -142,6 +145,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#example",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#label",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#note",
@@ -215,6 +221,27 @@
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "v1.0.0"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Amount of Substance per unit area"
+  } ],
+  "http://qudt.org/schema/qudt/applicableUnit" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PER-PIXEL"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://qudt.org/schema/qudt/QuantityKind"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#label" : [ {
+    "@language" : "en",
+    "@value" : "Amount of Substance per Unit Area"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration",
@@ -466,7 +493,7 @@
     "@value" : "mask generation"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
@@ -542,7 +569,7 @@
     "@value" : "Outlier Replacement Scheme"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PER_PIXEL",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PER-PIXEL",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
