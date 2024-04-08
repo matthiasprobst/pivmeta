@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2024-04-06", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2024-04-08", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -59,7 +59,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-04-06</dt>
+<dt>Modified on: 2024-04-08</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.0.0">https://matthiasprobst.github.io/pivmeta/1.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -619,6 +619,18 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#x_coordinate">x_coordinate</a>
    </li>
    <li>
+      <a href="#x_derivative_of_x_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity">x_derivative_of_x_velocity</a>
+   </li>
+   <li>
+      <a href="#x_derivative_of_y_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity">x_derivative_of_y_velocity</a>
+   </li>
+   <li>
+      <a href="#x_derivative_of_z_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity">x_derivative_of_z_velocity</a>
+   </li>
+   <li>
       <a href="#x_displacement"
          title="https://matthiasprobst.github.io/pivmeta#x_displacement">x_displacement</a>
    </li>
@@ -659,6 +671,18 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#y_coordinate">y_coordinate</a>
    </li>
    <li>
+      <a href="#y_derivative_of_x_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity">y_derivative_of_x_velocity</a>
+   </li>
+   <li>
+      <a href="#y_derivative_of_y_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity">y_derivative_of_y_velocity</a>
+   </li>
+   <li>
+      <a href="#y_derivative_of_z_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity">y_derivative_of_z_velocity</a>
+   </li>
+   <li>
       <a href="#y_displacement"
          title="https://matthiasprobst.github.io/pivmeta#y_displacement">y_displacement</a>
    </li>
@@ -693,6 +717,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#y_velocity"
          title="https://matthiasprobst.github.io/pivmeta#y_velocity">y_velocity</a>
+   </li>
+   <li>
+      <a href="#z_derivative_of_x_velocity"
+         title="https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity">z_derivative_of_x_velocity</a>
    </li>
    <li>
       <a href="#z_velocity"
@@ -1402,6 +1430,12 @@ This section provides details for each class and property defined by PIVMeta.
                title="https://matthiasprobst.github.io/pivmeta#PIVHardware">PIV Hardware</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#SyntheticParticle"
+               title="https://matthiasprobst.github.io/pivmeta#SyntheticParticle">Synthetic Particle</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="PeakSearchMethod">
@@ -1854,9 +1888,8 @@ This section provides details for each class and property defined by PIVMeta.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="https://matthiasprobst.github.io/ssno#Particle"
-               target="_blank"
-               title="https://matthiasprobst.github.io/ssno#Particle">particle</a>
+            <a href="#Particle"
+               title="https://matthiasprobst.github.io/pivmeta#Particle">Particle</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2358,13 +2391,6 @@ A JSON-LD excerpt could look like this:
       </div>
       <div class="description">
          <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://matthiasprobst.github.io/ssno#Particle"
-                  target="_blank"
-                  title="https://matthiasprobst.github.io/ssno#Particle">particle</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
             <dt>has range</dt>
             <dd>
                <a href="http://www.w3.org/2001/XMLSchema#anyURI"
@@ -2731,6 +2757,18 @@ A JSON-LD excerpt could look like this:
             title="https://matthiasprobst.github.io/pivmeta#x_coordinate">x_coordinate</a>
       </li>
       <li>
+         <a href="#x_derivative_of_x_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity">x_derivative_of_x_velocity</a>
+      </li>
+      <li>
+         <a href="#x_derivative_of_y_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity">x_derivative_of_y_velocity</a>
+      </li>
+      <li>
+         <a href="#x_derivative_of_z_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity">x_derivative_of_z_velocity</a>
+      </li>
+      <li>
          <a href="#x_displacement"
             title="https://matthiasprobst.github.io/pivmeta#x_displacement">x_displacement</a>
       </li>
@@ -2771,6 +2809,18 @@ A JSON-LD excerpt could look like this:
             title="https://matthiasprobst.github.io/pivmeta#y_coordinate">y_coordinate</a>
       </li>
       <li>
+         <a href="#y_derivative_of_x_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity">y_derivative_of_x_velocity</a>
+      </li>
+      <li>
+         <a href="#y_derivative_of_y_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity">y_derivative_of_y_velocity</a>
+      </li>
+      <li>
+         <a href="#y_derivative_of_z_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity">y_derivative_of_z_velocity</a>
+      </li>
+      <li>
          <a href="#y_displacement"
             title="https://matthiasprobst.github.io/pivmeta#y_displacement">y_displacement</a>
       </li>
@@ -2805,6 +2855,10 @@ A JSON-LD excerpt could look like this:
       <li>
          <a href="#y_velocity"
             title="https://matthiasprobst.github.io/pivmeta#y_velocity">y_velocity</a>
+      </li>
+      <li>
+         <a href="#z_derivative_of_x_velocity"
+            title="https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity">z_derivative_of_x_velocity</a>
       </li>
       <li>
          <a href="#z_velocity"
@@ -4246,6 +4300,78 @@ A JSON-LD excerpt could look like this:
          </dd>
       </dl>
    </div>
+   <div class="entity" id="x_derivative_of_x_velocity">
+      <h3>x_derivative_of_x_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="https://matthiasprobst.github.io/pivmeta#StandardName"
+               target="_blank"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standardName"
+               title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"x_derivative_of_x_velocity"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="x_derivative_of_y_velocity">
+      <h3>x_derivative_of_y_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="https://matthiasprobst.github.io/pivmeta#StandardName"
+               target="_blank"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standardName"
+               title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"x_derivative_of_y_velocity"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="x_derivative_of_z_velocity">
+      <h3>x_derivative_of_z_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="https://matthiasprobst.github.io/pivmeta#StandardName"
+               target="_blank"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standardName"
+               title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"x_derivative_of_z_velocity"</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="x_displacement">
       <h3>x_displacement<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -4486,6 +4612,78 @@ A JSON-LD excerpt could look like this:
          </dd>
       </dl>
    </div>
+   <div class="entity" id="y_derivative_of_x_velocity">
+      <h3>y_derivative_of_x_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="https://matthiasprobst.github.io/pivmeta#StandardName"
+               target="_blank"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standardName"
+               title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"y_derivative_of_x_velocity"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="y_derivative_of_y_velocity">
+      <h3>y_derivative_of_y_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="https://matthiasprobst.github.io/pivmeta#StandardName"
+               target="_blank"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standardName"
+               title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"y_derivative_of_y_velocity"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="y_derivative_of_z_velocity">
+      <h3>y_derivative_of_z_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="https://matthiasprobst.github.io/pivmeta#StandardName"
+               target="_blank"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standardName"
+               title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"y_derivative_of_z_velocity"</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="y_displacement">
       <h3>y_displacement<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -4699,6 +4897,30 @@ A JSON-LD excerpt could look like this:
                title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"y_velocity"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="z_derivative_of_x_velocity">
+      <h3>z_derivative_of_x_velocity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="https://matthiasprobst.github.io/pivmeta#StandardName"
+               target="_blank"
+               title="https://matthiasprobst.github.io/pivmeta#StandardName">standard name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#https://matthiasprobst.github.io/ssno#standardName"
+               title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"z_derivative_of_x_velocity"</span>
          </dd>
       </dl>
    </div>

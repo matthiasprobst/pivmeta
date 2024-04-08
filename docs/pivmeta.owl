@@ -409,7 +409,6 @@ A JSON-LD excerpt could look like this:
 
 
     <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#material">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/ssno#Particle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment xml:lang="en">Used with PIV Particles, this describes the seeding material. Provide a URI like https://www.wikidata.org/wiki/Q4387284.</rdfs:comment>
         <skos:prefLabel xml:lang="en">material</skos:prefLabel>
@@ -963,7 +962,7 @@ A JSON-LD excerpt could look like this:
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#SyntheticParticle">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/ssno#Particle"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Particle"/>
         <skos:definition xml:lang="en">Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode.</skos:definition>
         <skos:prefLabel xml:lang="en">Synthetic Particle</skos:prefLabel>
     </owl:Class>
@@ -978,13 +977,6 @@ A JSON-LD excerpt could look like this:
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
         <skos:prefLabel xml:lang="en">Window Weighting Function</skos:prefLabel>
     </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/ssno#Particle -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#Particle"/>
     
 
 
@@ -1841,6 +1833,45 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>x_derivative_of_x_velocity</ssno:standardName>
+        <terms:description xml:lang="en">The standard name x_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the x coordinate.</terms:description>
+        <skos:prefLabel xml:lang="en">x_derivative_of_x_velocity</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>x_derivative_of_y_velocity</ssno:standardName>
+        <terms:description xml:lang="en">The standard name x_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the x coordinate.</terms:description>
+        <skos:prefLabel xml:lang="en">x_derivative_of_y_velocity</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>x_derivative_of_z_velocity</ssno:standardName>
+        <terms:description xml:lang="en">The standard name x_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the x coordinate.</terms:description>
+        <skos:prefLabel xml:lang="en">x_derivative_of_z_velocity</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#x_displacement -->
 
 
@@ -1966,6 +1997,45 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>y_derivative_of_x_velocity</ssno:standardName>
+        <terms:description xml:lang="en">The standard name y_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the y coordinate.</terms:description>
+        <skos:prefLabel xml:lang="en">y_derivative_of_x_velocity</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>y_derivative_of_y_velocity</ssno:standardName>
+        <terms:description xml:lang="en">The standard name y_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the y coordinate.</terms:description>
+        <skos:prefLabel xml:lang="en">y_derivative_of_y_velocity</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>y_derivative_of_z_velocity</ssno:standardName>
+        <terms:description xml:lang="en">The standard name y_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the y coordinate.</terms:description>
+        <skos:prefLabel xml:lang="en">y_derivative_of_z_velocity</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#y_displacement -->
 
 
@@ -2074,6 +2144,19 @@ A JSON-LD excerpt could look like this:
         <terms:description xml:lang="en">Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y.</terms:description>
         <skos:prefLabel xml:lang="en">y_velocity</skos:prefLabel>
         <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
+        <ssno:standardName>z_derivative_of_x_velocity</ssno:standardName>
+        <terms:description xml:lang="en">The standard name z_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the z coordinate.</terms:description>
+        <skos:prefLabel xml:lang="en">z_derivative_of_x_velocity</skos:prefLabel>
+        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
     </owl:NamedIndividual>
     
 

@@ -207,7 +207,6 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://matthiasprobst.github.io/pivmeta#material
 <https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/ssno#Particle> .
 <https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
 <https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2000/01/rdf-schema#comment> "Used with PIV Particles, this describes the seeding material. Provide a URI like https://www.wikidata.org/wiki/Q4387284."@en .
 <https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2004/02/skos/core#prefLabel> "material"@en .
@@ -498,7 +497,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://matthiasprobst.github.io/pivmeta#SyntheticParticle
 <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/ssno#Particle> .
+<https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Particle> .
 <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en .
 <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
 # 
@@ -507,9 +506,6 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.wikidata.org/wiki/Q1404885> .
 <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> <http://www.w3.org/2004/02/skos/core#prefLabel> "Window Weighting Function"@en .
-# 
-# https://matthiasprobst.github.io/ssno#Particle
-<https://matthiasprobst.github.io/ssno#Particle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://matthiasprobst.github.io/ssno#PivValidation
 <https://matthiasprobst.github.io/ssno#PivValidation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1012,6 +1008,30 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_coordinate"@en .
 <https://matthiasprobst.github.io/pivmeta#x_coordinate> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> .
 # 
+# https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <https://matthiasprobst.github.io/ssno#standardName> "x_derivative_of_x_velocity" .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <http://purl.org/dc/terms/description> "The standard name x_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the x coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_x_velocity"@en .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PER-SEC> .
+# 
+# https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <https://matthiasprobst.github.io/ssno#standardName> "x_derivative_of_y_velocity" .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <http://purl.org/dc/terms/description> "The standard name x_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the x coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_y_velocity"@en .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PER-SEC> .
+# 
+# https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <https://matthiasprobst.github.io/ssno#standardName> "x_derivative_of_z_velocity" .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <http://purl.org/dc/terms/description> "The standard name x_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the x coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_z_velocity"@en .
+<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PER-SEC> .
+# 
 # https://matthiasprobst.github.io/pivmeta#x_displacement
 <https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
@@ -1087,6 +1107,30 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#y_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_coordinate"@en .
 <https://matthiasprobst.github.io/pivmeta#y_coordinate> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M> .
 # 
+# https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <https://matthiasprobst.github.io/ssno#standardName> "y_derivative_of_x_velocity" .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <http://purl.org/dc/terms/description> "The standard name y_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the y coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_x_velocity"@en .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PER-SEC> .
+# 
+# https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <https://matthiasprobst.github.io/ssno#standardName> "y_derivative_of_y_velocity" .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <http://purl.org/dc/terms/description> "The standard name y_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the y coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_y_velocity"@en .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PER-SEC> .
+# 
+# https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <https://matthiasprobst.github.io/ssno#standardName> "y_derivative_of_z_velocity" .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <http://purl.org/dc/terms/description> "The standard name y_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the y coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_z_velocity"@en .
+<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PER-SEC> .
+# 
 # https://matthiasprobst.github.io/pivmeta#y_displacement
 <https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
@@ -1153,6 +1197,14 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#y_velocity> <http://purl.org/dc/terms/description> "Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."@en .
 <https://matthiasprobst.github.io/pivmeta#y_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_velocity"@en .
 <https://matthiasprobst.github.io/pivmeta#y_velocity> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/M-PER-SEC> .
+# 
+# https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity
+<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <https://matthiasprobst.github.io/ssno#standardName> "z_derivative_of_x_velocity" .
+<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <http://purl.org/dc/terms/description> "The standard name z_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the z coordinate."@en .
+<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "z_derivative_of_x_velocity"@en .
+<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <https://matthiasprobst.github.io/ssno#unit> <http://qudt.org/vocab/unit/PER-SEC> .
 # 
 # https://matthiasprobst.github.io/pivmeta#z_velocity
 <https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
