@@ -1,0 +1,1 @@
+widoco.jar -ontFile pivmeta.ttl -outFolder docs/1.0.0 -webVowl -uniteSections -oops -rewriteAll -confFile widoco.cfg

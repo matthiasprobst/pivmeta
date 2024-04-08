@@ -183,13 +183,6 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#unit -->
-
-
-    <owl:AnnotationProperty rdf:about="https://matthiasprobst.github.io/ssno#unit"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -367,7 +360,7 @@ pivmeta:flagMeanings=[&quot;inactive&quot;, &quot;active&quot;, &quot;masked&quo
         <skos:definition xml:lang="en">The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17.</skos:definition>
         <skos:example xml:lang="en">pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
 
-The corresponing meaning would be:
+The corresponding meaning would be:
 pivmeta:flagMeanings=[&quot;inactive&quot;, &quot;active&quot;, &quot;masked&quot;, &quot;noresult&quot;, &quot;disabled&quot;, &quot;filtered&quot;, &quot;interpolated&quot;, &quot;replaced&quot;, &quot;manualedit&quot;]
 
 A flag value of 17 means &quot;active and filtered&quot;, which is obtained by bitwise AND operation.
@@ -1107,6 +1100,20 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#PER_PIXEL -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#PER_PIXEL">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <terms:description xml:lang="en">A reciprocal unit of pixel.</terms:description>
+        <qudt:hasQuantityKind rdf:resource="https://matthiasprobst.github.io/pivmeta#SpatialResolution"/>
+        <qudt:symbol>1/pixel</qudt:symbol>
+        <skos:example xml:lang="en">Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel).</skos:example>
+        <skos:prefLabel xml:lang="en">millimetre per pixel</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry -->
 
 
@@ -1231,8 +1238,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>arithmetic_mean_of_image_particle_diameter</ssno:standardName>
-        <terms:description xml:lang="en">Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature.</terms:description>
+        <skos:definition xml:lang="en">Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature.</skos:definition>
         <skos:prefLabel xml:lang="en">arithmetic_mean_of_image_particle_diameter</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1243,10 +1249,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>arithmetic_mean_of_seeding_particle_size</ssno:standardName>
-        <terms:description xml:lang="en">The arithmetic mean of the diameter of the seeding particles.</terms:description>
+        <skos:definition xml:lang="en">The arithmetic mean of the diameter of the seeding particles.</skos:definition>
         <skos:prefLabel xml:lang="en">arithmetic_mean_of_seeding_particle_size</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1256,10 +1260,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ccd_height">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>ccd_height</ssno:standardName>
-        <terms:description xml:lang="en">The height of a ccd pixel.</terms:description>
+        <skos:definition xml:lang="en">The height of a ccd pixel.</skos:definition>
         <skos:prefLabel xml:lang="en">ccd_height</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1269,10 +1271,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ccd_width">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>ccd_width</ssno:standardName>
-        <terms:description xml:lang="en">The width of a ccd pixel.</terms:description>
+        <skos:definition xml:lang="en">The width of a ccd pixel.</skos:definition>
         <skos:prefLabel xml:lang="en">ccd_width</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1282,8 +1282,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>displacement</ssno:standardName>
-        <terms:description xml:lang="en">PIV pixel displacement magnitude in the image plane.</terms:description>
+        <skos:definition xml:lang="en">PIV pixel displacement magnitude in the image plane.</skos:definition>
         <skos:prefLabel xml:lang="en">displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1294,8 +1293,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>final_interrogation_window_overlap_size</ssno:standardName>
-        <terms:description xml:lang="en">Width and height of a square final PIV interrogation window overlap.</terms:description>
+        <skos:definition xml:lang="en">Width and height of a square final PIV interrogation window overlap.</skos:definition>
         <skos:prefLabel xml:lang="en">final_interrogation_window_overlap_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1306,8 +1304,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>final_interrogation_window_size</ssno:standardName>
-        <terms:description xml:lang="en">Width and height of a square final PIV interrogation window.</terms:description>
+        <skos:definition xml:lang="en">Width and height of a square final PIV interrogation window.</skos:definition>
         <skos:prefLabel xml:lang="en">final_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1318,8 +1315,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>first_peak_x_displacement</ssno:standardName>
-        <terms:description xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">first_peak_x_displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1330,8 +1326,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>first_peak_y_displacement</ssno:standardName>
-        <terms:description xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">first_peak_y_displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1342,10 +1337,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#focal_length">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>focal_length</ssno:standardName>
-        <terms:description xml:lang="en">The focal length. See also https://www.wikidata.org/wiki/Q193540.</terms:description>
+        <skos:definition xml:lang="en">The focal length. See also https://www.wikidata.org/wiki/Q193540.</skos:definition>
         <skos:prefLabel xml:lang="en">focal_length</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1355,8 +1348,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_bit_depth">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>image_bit_depth</ssno:standardName>
-        <terms:description xml:lang="en">The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits.</terms:description>
+        <skos:definition xml:lang="en">The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits.</skos:definition>
         <skos:prefLabel xml:lang="en">image_bit_depth</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1367,8 +1359,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_density">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>image_density</ssno:standardName>
-        <terms:description xml:lang="en">The image density is computed based on the source density $N_s$ and the interrogation window size.</terms:description>
+        <skos:definition xml:lang="en">The image density is computed based on the source density $N_s$ and the interrogation window size.</skos:definition>
         <skos:prefLabel xml:lang="en">image_density</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1379,8 +1370,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>image_filter_kernel_size</ssno:standardName>
-        <terms:description xml:lang="en">The size of the image filter kernel.</terms:description>
+        <skos:definition xml:lang="en">The size of the image filter kernel.</skos:definition>
         <skos:prefLabel xml:lang="en">image_filter_kernel_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1391,8 +1381,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_index">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>image_index</ssno:standardName>
-        <terms:description xml:lang="en">Index of a PIV image collection. Starts at 1 and ends at the number of images N.</terms:description>
+        <skos:definition xml:lang="en">Index of a PIV image collection. Starts at 1 and ends at the number of images N.</skos:definition>
         <skos:prefLabel xml:lang="en">image_index</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1403,8 +1392,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_particle_density">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>image_particle_density</ssno:standardName>
-        <terms:description xml:lang="en">Number of particle images per pixel. Equals the number of particles divided by the image area.</terms:description>
+        <skos:definition xml:lang="en">Number of particle images per pixel. Equals the number of particles divided by the image area.</skos:definition>
         <skos:prefLabel xml:lang="en">image_particle_density</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1415,8 +1403,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#image_particle_diameter">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>image_particle_diameter</ssno:standardName>
-        <terms:description xml:lang="en">The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature.</terms:description>
+        <skos:definition xml:lang="en">The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature.</skos:definition>
         <skos:prefLabel xml:lang="en">image_particle_diameter</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1427,8 +1414,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>initial_interrogation_window_size</ssno:standardName>
-        <terms:description xml:lang="en">Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm).</terms:description>
+        <skos:definition xml:lang="en">Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm).</skos:definition>
         <skos:prefLabel xml:lang="en">initial_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1439,10 +1425,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#inplane_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>inplane_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity.</terms:description>
+        <skos:definition xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity.</skos:definition>
         <skos:prefLabel xml:lang="en">inplane_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1452,10 +1436,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#laser_pulse_delay">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>laser_pulse_delay</ssno:standardName>
-        <terms:description xml:lang="en">Time between two laser pulses.</terms:description>
+        <skos:definition xml:lang="en">Time between two laser pulses.</skos:definition>
         <skos:prefLabel xml:lang="en">laser_pulse_delay</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1465,10 +1447,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>laser_sheet_thickness</ssno:standardName>
-        <terms:description xml:lang="en">The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly.</terms:description>
+        <skos:definition xml:lang="en">The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly.</skos:definition>
         <skos:prefLabel xml:lang="en">laser_sheet_thickness</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1478,8 +1458,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>least_square_residual_of_z_displacement_reconstruction</ssno:standardName>
-        <terms:description xml:lang="en">The least square residual of the z displacement reconstruction in stereo PIV.</terms:description>
+        <skos:definition xml:lang="en">The least square residual of the z displacement reconstruction in stereo PIV.</skos:definition>
         <skos:prefLabel xml:lang="en">least_square_residual_of_z_displacement_reconstruction</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1490,10 +1469,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>magnitude_of_velocity</ssno:standardName>
-        <terms:description xml:lang="en">Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector.</terms:description>
+        <skos:definition xml:lang="en">Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector.</skos:definition>
         <skos:prefLabel xml:lang="en">magnitude_of_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1521,8 +1498,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>model_laser_sheet_shape_factor</ssno:standardName>
-        <terms:description xml:lang="en">The shape factor used to model the expanded laser beam. The shape factor is introduced in &apos;Particle Image Velocimetry A Practical Guide&apos; by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam.</terms:description>
+        <skos:definition xml:lang="en">The shape factor used to model the expanded laser beam. The shape factor is introduced in &apos;Particle Image Velocimetry A Practical Guide&apos; by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam.</skos:definition>
         <skos:prefLabel xml:lang="en">model_laser_sheet_shape_factor</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1533,10 +1509,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>model_laser_sheet_thickness</ssno:standardName>
-        <terms:description xml:lang="en">The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor).</terms:description>
+        <skos:definition xml:lang="en">The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor).</skos:definition>
         <skos:prefLabel xml:lang="en">model_laser_sheet_thickness</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1546,8 +1520,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#number_of_particles">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>number_of_particles</ssno:standardName>
-        <terms:description xml:lang="en">Number of seeding particles in the image or field of interest. See also image_particle_density.</terms:description>
+        <skos:definition xml:lang="en">Number of seeding particles in the image or field of interest. See also image_particle_density.</skos:definition>
         <skos:prefLabel xml:lang="en">number_of_particles</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1558,10 +1531,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#optical_magnification">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>optical_magnification</ssno:standardName>
-        <terms:description xml:lang="en">The optical magnification of the imaging system.</terms:description>
+        <skos:definition xml:lang="en">The optical magnification of the imaging system.</skos:definition>
         <skos:prefLabel xml:lang="en">optical_magnification</skos:prefLabel>
-        <ssno:unit rdf:resource="https://matthiasprobst.github.io/pivmeta#MilliM_PER_PIXEL"/>
     </owl:NamedIndividual>
     
 
@@ -1582,8 +1553,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>piv_correlation_coefficient</ssno:standardName>
-        <terms:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows.</terms:description>
+        <skos:definition xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows.</skos:definition>
         <skos:prefLabel xml:lang="en">piv_correlation_coefficient</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1594,8 +1564,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>piv_first_peak_correlation_coefficient</ssno:standardName>
-        <terms:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">piv_first_peak_correlation_coefficient</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1606,8 +1575,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_flag">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>piv_flag</ssno:standardName>
-        <terms:description xml:lang="en">A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.</terms:description>
+        <skos:definition xml:lang="en">A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.</skos:definition>
         <skos:prefLabel xml:lang="en">piv_flag</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1618,10 +1586,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_scaling_factor">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>piv_scaling_factor</ssno:standardName>
-        <terms:description xml:lang="en">Image scaling factor.</terms:description>
+        <skos:definition xml:lang="en">Image scaling factor.</skos:definition>
         <skos:prefLabel xml:lang="en">piv_scaling_factor</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-M"/>
     </owl:NamedIndividual>
     
 
@@ -1631,8 +1597,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>piv_second_peak_correlation_coefficient</ssno:standardName>
-        <terms:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">piv_second_peak_correlation_coefficient</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1643,8 +1608,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>piv_third_peak_correlation_coefficient</ssno:standardName>
-        <terms:description xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">piv_third_peak_correlation_coefficient</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1655,10 +1619,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#relative_time">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>relative_time</ssno:standardName>
-        <terms:description xml:lang="en">Recording time since start of recording.</terms:description>
+        <skos:definition xml:lang="en">Recording time since start of recording.</skos:definition>
         <skos:prefLabel xml:lang="en">relative_time</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1668,8 +1630,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#saturated_pixel_number">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>saturated_pixel_number</ssno:standardName>
-        <terms:description xml:lang="en">Number of pixels in the field of interest that exceed the maximal senor count.</terms:description>
+        <skos:definition xml:lang="en">Number of pixels in the field of interest that exceed the maximal senor count.</skos:definition>
         <skos:prefLabel xml:lang="en">saturated_pixel_number</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1680,8 +1641,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>second_peak_x_displacement</ssno:standardName>
-        <terms:description xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">second_peak_x_displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1692,8 +1652,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>second_peak_y_displacement</ssno:standardName>
-        <terms:description xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">second_peak_y_displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1704,8 +1663,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>sensor_pixel_height</ssno:standardName>
-        <terms:description xml:lang="en">The height of the sensor in pixel.</terms:description>
+        <skos:definition xml:lang="en">The height of the sensor in pixel.</skos:definition>
         <skos:prefLabel xml:lang="en">sensor_pixel_height</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1716,8 +1674,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>sensor_pixel_height_fill_factor</ssno:standardName>
-        <terms:description xml:lang="en">Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel&apos;s light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor.</terms:description>
+        <skos:definition xml:lang="en">Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel&apos;s light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor.</skos:definition>
         <skos:prefLabel xml:lang="en">sensor_pixel_height_fill_factor</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1728,8 +1685,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>sensor_pixel_width</ssno:standardName>
-        <terms:description xml:lang="en">The width of the sensor in pixel.</terms:description>
+        <skos:definition xml:lang="en">The width of the sensor in pixel.</skos:definition>
         <skos:prefLabel xml:lang="en">sensor_pixel_width</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1740,8 +1696,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>sensor_pixel_width_fill_factor</ssno:standardName>
-        <terms:description xml:lang="en">Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel&apos;s light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor.</terms:description>
+        <skos:definition xml:lang="en">Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel&apos;s light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor.</skos:definition>
         <skos:prefLabel xml:lang="en">sensor_pixel_width_fill_factor</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1752,8 +1707,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>signal_to_noise_ratio</ssno:standardName>
-        <terms:description xml:lang="en">The signal to noise ratio of the PIV evaluation.</terms:description>
+        <skos:definition xml:lang="en">The signal to noise ratio of the PIV evaluation.</skos:definition>
         <skos:prefLabel xml:lang="en">signal_to_noise_ratio</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1764,8 +1718,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>standard_deviation_of_image_particle_diameter</ssno:standardName>
-        <terms:description xml:lang="en">The standard deviation of the image particle diameter in the field of interest.</terms:description>
+        <skos:definition xml:lang="en">The standard deviation of the image particle diameter in the field of interest.</skos:definition>
         <skos:prefLabel xml:lang="en">standard_deviation_of_image_particle_diameter</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1776,10 +1729,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>standard_deviation_of_seeding_particle_size</ssno:standardName>
-        <terms:description xml:lang="en">The standard deviation of the seeding particles sizes.</terms:description>
+        <skos:definition xml:lang="en">The standard deviation of the seeding particles sizes.</skos:definition>
         <skos:prefLabel xml:lang="en">standard_deviation_of_seeding_particle_size</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1789,8 +1740,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>third_peak_x_displacement</ssno:standardName>
-        <terms:description xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">third_peak_x_displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1801,8 +1751,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>third_peak_y_displacement</ssno:standardName>
-        <terms:description xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</terms:description>
+        <skos:definition xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">third_peak_y_displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1813,8 +1762,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#time">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>time</ssno:standardName>
-        <terms:description xml:lang="en">Datetime in ISO 8601 format.</terms:description>
+        <skos:definition xml:lang="en">Datetime in ISO 8601 format.</skos:definition>
         <skos:prefLabel xml:lang="en">time</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1825,10 +1773,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_coordinate</ssno:standardName>
-        <terms:description xml:lang="en">The spatial coordinate in horizontal direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate.</terms:description>
+        <skos:definition xml:lang="en">The spatial coordinate in horizontal direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">x_coordinate</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1838,10 +1784,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_derivative_of_x_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name x_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the x coordinate.</terms:description>
+        <skos:definition xml:lang="en">The standard name x_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the x coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">x_derivative_of_x_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1851,10 +1795,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_derivative_of_y_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name x_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the x coordinate.</terms:description>
+        <skos:definition xml:lang="en">The standard name x_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the x coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">x_derivative_of_y_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1864,10 +1806,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_derivative_of_z_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name x_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the x coordinate.</terms:description>
+        <skos:definition xml:lang="en">The standard name x_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the x coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">x_derivative_of_z_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1877,8 +1817,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_displacement</ssno:standardName>
-        <terms:description xml:lang="en">Displacement is a vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x.</terms:description>
+        <skos:definition xml:lang="en">Displacement is a vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x.</skos:definition>
         <skos:prefLabel xml:lang="en">x_displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1889,8 +1828,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_final_interrogation_window_overlap_size</ssno:standardName>
-        <terms:description xml:lang="en">Width of a final PIV interrogation window overlap.</terms:description>
+        <skos:definition xml:lang="en">Width of a final PIV interrogation window overlap.</skos:definition>
         <skos:prefLabel xml:lang="en">x_final_interrogation_window_overlap_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1901,8 +1839,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_final_interrogation_window_size</ssno:standardName>
-        <terms:description xml:lang="en">Width of a final PIV interrogation window.</terms:description>
+        <skos:definition xml:lang="en">Width of a final PIV interrogation window.</skos:definition>
         <skos:prefLabel xml:lang="en">x_final_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1913,10 +1850,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_image_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_image_coordinate</ssno:standardName>
-        <terms:description xml:lang="en">The spatial coordinate in horizontal direction. The origin is at the top left.</terms:description>
+        <skos:definition xml:lang="en">The spatial coordinate in horizontal direction. The origin is at the top left.</skos:definition>
         <skos:prefLabel xml:lang="en">x_image_coordinate</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PIXEL"/>
     </owl:NamedIndividual>
     
 
@@ -1926,8 +1861,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_initial_interrogation_window_size</ssno:standardName>
-        <terms:description xml:lang="en">Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm).</terms:description>
+        <skos:definition xml:lang="en">Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm).</skos:definition>
         <skos:prefLabel xml:lang="en">x_initial_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1938,10 +1872,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_inplane_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_inplane_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x.</terms:description>
+        <skos:definition xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x.</skos:definition>
         <skos:prefLabel xml:lang="en">x_inplane_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1951,10 +1883,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_origin_offset">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_origin_offset</ssno:standardName>
-        <terms:description xml:lang="en">The physical offset of the x_image_origin_coordinate in the global coordinate system.</terms:description>
+        <skos:definition xml:lang="en">The physical offset of the x_image_origin_coordinate in the global coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">x_origin_offset</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -1964,8 +1894,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_pixel_coordinate</ssno:standardName>
-        <terms:description xml:lang="en">Pixel coordinate in horizontal direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (x_coordinate), not the image coordinate (x_image_coordinate) which has its origin in the top left of the image.</terms:description>
+        <skos:definition xml:lang="en">Pixel coordinate in horizontal direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (x_coordinate), not the image coordinate (x_image_coordinate) which has its origin in the top left of the image.</skos:definition>
         <skos:prefLabel xml:lang="en">x_pixel_coordinate</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1976,10 +1905,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#x_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>x_velocity</ssno:standardName>
-        <terms:description xml:lang="en">Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x.</terms:description>
+        <skos:definition xml:lang="en">Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x.</skos:definition>
         <skos:prefLabel xml:lang="en">x_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -1989,10 +1916,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_coordinate</ssno:standardName>
-        <terms:description xml:lang="en">The spatial coordinate in vertical direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate.</terms:description>
+        <skos:definition xml:lang="en">The spatial coordinate in vertical direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">y_coordinate</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -2002,10 +1927,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_derivative_of_x_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name y_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the y coordinate.</terms:description>
+        <skos:definition xml:lang="en">The standard name y_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the y coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">y_derivative_of_x_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -2015,10 +1938,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_derivative_of_y_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name y_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the y coordinate.</terms:description>
+        <skos:definition xml:lang="en">The standard name y_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the y coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">y_derivative_of_y_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -2028,10 +1949,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_derivative_of_z_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name y_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the y coordinate.</terms:description>
+        <skos:definition xml:lang="en">The standard name y_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the y coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">y_derivative_of_z_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -2041,8 +1960,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_displacement">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_displacement</ssno:standardName>
-        <terms:description xml:lang="en">y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane.</terms:description>
+        <skos:definition xml:lang="en">y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane.</skos:definition>
         <skos:prefLabel xml:lang="en">y_displacement</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -2053,8 +1971,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_final_interrogation_window_overlap_size</ssno:standardName>
-        <terms:description xml:lang="en">The height of a final PIV interrogation window overlap.</terms:description>
+        <skos:definition xml:lang="en">The height of a final PIV interrogation window overlap.</skos:definition>
         <skos:prefLabel xml:lang="en">y_final_interrogation_window_overlap_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -2065,8 +1982,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_final_interrogation_window_size</ssno:standardName>
-        <terms:description xml:lang="en">The height of the final PIV interrogation window.</terms:description>
+        <skos:definition xml:lang="en">The height of the final PIV interrogation window.</skos:definition>
         <skos:prefLabel xml:lang="en">y_final_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -2077,10 +1993,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_image_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_image_coordinate</ssno:standardName>
-        <terms:description xml:lang="en">The spatial coordinate in vertical direction. The origin is in the top left.</terms:description>
+        <skos:definition xml:lang="en">The spatial coordinate in vertical direction. The origin is in the top left.</skos:definition>
         <skos:prefLabel xml:lang="en">y_image_coordinate</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PIXEL"/>
     </owl:NamedIndividual>
     
 
@@ -2090,8 +2004,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_initial_interrogation_window_size</ssno:standardName>
-        <terms:description xml:lang="en">Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm).</terms:description>
+        <skos:definition xml:lang="en">Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm).</skos:definition>
         <skos:prefLabel xml:lang="en">y_initial_interrogation_window_size</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -2102,10 +2015,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_inplane_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_inplane_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x.</terms:description>
+        <skos:definition xml:lang="en">The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x.</skos:definition>
         <skos:prefLabel xml:lang="en">y_inplane_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -2115,10 +2026,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_origin_offset">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_origin_offset</ssno:standardName>
-        <terms:description xml:lang="en">The physical offset of the y_image_origin_coordinate in the global coordinate system.</terms:description>
+        <skos:definition xml:lang="en">The physical offset of the y_image_origin_coordinate in the global coordinate system.</skos:definition>
         <skos:prefLabel xml:lang="en">y_origin_offset</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M"/>
     </owl:NamedIndividual>
     
 
@@ -2128,8 +2037,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_pixel_coordinate</ssno:standardName>
-        <terms:description xml:lang="en">Pixel coordinate in vertical direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (y_coordinate), not the image coordinate (y_image_coordinate) which has its origin in the top left of the image.</terms:description>
+        <skos:definition xml:lang="en">Pixel coordinate in vertical direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (y_coordinate), not the image coordinate (y_image_coordinate) which has its origin in the top left of the image.</skos:definition>
         <skos:prefLabel xml:lang="en">y_pixel_coordinate</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -2140,10 +2048,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#y_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>y_velocity</ssno:standardName>
-        <terms:description xml:lang="en">Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y.</terms:description>
+        <skos:definition xml:lang="en">Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y.</skos:definition>
         <skos:prefLabel xml:lang="en">y_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -2153,10 +2059,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>z_derivative_of_x_velocity</ssno:standardName>
-        <terms:description xml:lang="en">The standard name z_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the z coordinate.</terms:description>
+        <skos:definition xml:lang="en">The standard name z_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the z coordinate.</skos:definition>
         <skos:prefLabel xml:lang="en">z_derivative_of_x_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/PER-SEC"/>
     </owl:NamedIndividual>
     
 
@@ -2166,10 +2070,8 @@ A JSON-LD excerpt could look like this:
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#z_velocity">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <ssno:standardName>z_velocity</ssno:standardName>
-        <terms:description xml:lang="en">Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z.</terms:description>
+        <skos:definition xml:lang="en">Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z.</skos:definition>
         <skos:prefLabel xml:lang="en">z_velocity</skos:prefLabel>
-        <ssno:unit rdf:resource="http://qudt.org/vocab/unit/M-PER-SEC"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

@@ -28,12 +28,12 @@ standard_names:
     description: Displacement is a vector quantity. X indicates the component in x-axis
       direction. This component is an in-plane component. The displacement is computed
       based on the first peak of the cross-correlation function.
-    units: ''
+    units: 'pixel'
   first_peak_y_displacement:
     description: Displacement is a vector quantity. Y indicates the component in y-axis
       direction. This component is an in-plane component. The displacement is computed
       based on the first peak of the cross-correlation function.
-    units: ''
+    units: 'pixel'
   x_derivative_of_x_velocity:
     description: The standard name x_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the x coordinate.
     units: 1/s
@@ -68,7 +68,7 @@ standard_names:
   image_particle_density:
     description: Number of particle images per pixel. Equals the number of particles
       divided by the image area.
-    units: ''
+    units: '1/pixel'
   image_density:
     description: The image density is computed based on the source density $N_s$ and the interrogation window size.
     units: ''
@@ -77,19 +77,19 @@ standard_names:
       diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian
       distribution. Note, that there might be other definitions, too, however, this one is the most common one in
       literature.
-    units: ''
+    units: 'pixel'
   arithmetic_mean_of_image_particle_diameter:
     description: Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the
       diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian
       distribution. Note, that there might be other definitions, too, however, this one is the most common one in
       literature.
-    units: ''
+    units: 'pixel'
   standard_deviation_of_image_particle_diameter:
     description: Standard deviation of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the
       diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian
       distribution. Note, that there might be other definitions, too, however, this one is the most common one in
       literature.
-    units: ''
+    units: 'pixel'
   image_index:
     description: Index of a PIV image collection. Starts at 1 and ends at the number of images N.
     units: ''
@@ -141,27 +141,27 @@ standard_names:
     description: Displacement is a vector quantity. X indicates the component in x-axis
       direction. This component is an in-plane component. The displacement is computed
       based on the second peak of the cross-correlation function.
-    units: ''
+    units: 'pixel'
   second_peak_y_displacement:
     description: Displacement is a vector quantity. Y indicates the component in y-axis
       direction. This component is an in-plane component. The displacement is computed
       based on the second peak of the cross-correlation function.
-    units: ''
+    units: 'pixel'
   standard_deviation_of_image_particle_diameter:
     alias: standard_deviation_of_image_particle_size
     description: The standard deviation of the image particle diameter in the field
       of interest.
-    units: ''
+    units: 'pixel'
   third_peak_x_displacement:
     description: Displacement is a vector quantity. X indicates the component in x-axis
       direction. This component is an in-plane component. The displacement is computed
       based on the third peak of the cross-correlation function.
-    units: ''
+    units: 'pixel'
   third_peak_y_displacement:
     description: Displacement is a vector quantity. Y indicates the component in y-axis
       direction. This component is an in-plane component. The displacement is computed
       based on the third peak of the cross-correlation function.
-    units: ''
+    units: 'pixel'
   time:
     description: Datetime in ISO 8601 format.
     units: ''
@@ -182,59 +182,59 @@ standard_names:
     units: m/s
   displacement:
     description: PIV pixel displacement magnitude in the image plane.
-    units: ''
+    units: 'pixel'
   x_displacement:
     description: Displacement is a vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x.
-    units: ''
+    units: 'pixel'
   y_displacement:
     description: y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a
       vector quantity and describes the particle displacement in pixels in the image plane.
-    units: ''
+    units: 'pixel'
   final_interrogation_window_overlap_size:
     alias: interrogation_window_overlap_size
     description: Width and height of a square final PIV interrogation window overlap.
-    units: ''
+    units: 'pixel'
   x_final_interrogation_window_overlap_size:
     alias: x_interrogation_window_overlap_size
     description: Width of a final PIV interrogation window overlap.
-    units: ''
+    units: 'pixel'
   final_interrogation_window_size:
     alias: final_interrogation_spot_size
     description: Width and height of a square final PIV interrogation window.
-    units: ''
+    units: 'pixel'
   x_final_interrogation_window_size:
     alias: x_final_interrogation_spot_size
     description: Width of a final PIV interrogation window.
-    units: ''
+    units: 'pixel'
   initial_interrogation_window_size:
     description: Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm).
-    units: ''
+    units: 'pixel'
   x_initial_interrogation_window_size:
     description: Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm).
-    units: ''
+    units: 'pixel'
   x_pixel_coordinate:
     description: Pixel coordinate in horizontal direction. It depicts the position of each velocity vector in
       the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical
       coordinate axis (x_coordinate), not the image coordinate (x_image_coordinate) which has its origin in the top
       left of the image.
-    units: ''
+    units: 'pixel'
   y_final_interrogation_window_overlap_size:
     alias: interrogation_window_overlap_size
     description: The height of a final PIV interrogation window overlap.
-    units: ''
+    units: 'pixel'
   y_final_interrogation_window_size:
     alias: y_final_interrogation_spot_size
     description: The height of the final PIV interrogation window.
-    units: ''
+    units: 'pixel'
   y_initial_interrogation_window_size:
     description: Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm).
-    units: ''
+    units: 'pixel'
   y_pixel_coordinate:
     description: Pixel coordinate in vertical direction. It depicts the position of each velocity vector in
       the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical
       coordinate axis (y_coordinate), not the image coordinate (y_image_coordinate) which has its origin in the top
       left of the image.
-    units: ''
+    units: 'pixel'
   x_image_coordinate:
     description: The spatial coordinate in horizontal direction. The origin is at the top left.
     units: 'pixel'
@@ -278,10 +278,10 @@ standard_names:
     units: 'm'
   sensor_pixel_width:
     description: The width of the sensor in pixel.
-    units: ''
+    units: 'm'
   sensor_pixel_height:
     description: The height of the sensor in pixel.
-    units: ''
+    units: 'm'
   sensor_pixel_width_fill_factor:
     description: Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor.
     units: ''

@@ -12,8 +12,10 @@ import pathlib
 import shutil
 import subprocess
 import sys
-
 import yaml
+from bs4 import BeautifulSoup
+from typing import Dict
+
 from pivmetalib.qudt.unit import qudt_lookup
 
 sys.path.insert(0, '.')
@@ -34,6 +36,47 @@ logger.setLevel(DEFAULT_LOGGING_LEVEL)
 __this_dir__ = pathlib.Path(__file__).parent
 
 ONTOLOGY_NAME = 'pivmeta'
+
+
+def update_standard_name_repr(html_file, standard_names):
+    # Create BeautifulSoup object
+    with open(html_file, 'r') as f:
+        html_text = f.read()
+
+    soup = BeautifulSoup(html_text, 'html.parser')
+
+    # Find the description list element
+    for sn, v in standard_names.items():
+        sn_div = soup.find('div', class_='entity', id=f'{sn}')
+
+        new_dt = soup.new_tag('dt')
+        new_dt.string = 'canonical units'
+
+        u = v['units']
+        qudt = qudt_lookup[u]
+        assert qudt.startswith('http')
+        new_dd = soup.new_tag('dd')
+        new_a = soup.new_tag('a', href=qudt, target='_blank', title=qudt)
+        if u == '':
+            u = 'unitless'
+        new_a.string = u
+        new_a_sup = soup.new_tag('sup', class_='type-ni', title='named individual')
+        new_a_sup.string = 'ni'
+        new_dd.append(new_a)
+        new_dd.append(new_a_sup)
+
+        descr_dl = sn_div.find('dl')
+        # belongs_to.extract()
+
+        descr_dl.insert(0, new_dt)
+        descr_dl.insert(1, new_dd)
+
+    # Convert the modified soup back to HTML
+    new_html_text = soup.prettify()
+    # print(new_html_text)
+    print(html_file)
+    with open(html_file, 'w') as f:
+        f.write(new_html_text)
 
 
 def copy_version_to_docs(version_string):
@@ -79,7 +122,8 @@ def copy_version_to_docs(version_string):
     logger.debug('done copying version to docs')
 
 
-def create_version(version_folder, version_string, previousVersionURI: str = None):
+def create_version(version_folder, version_string, standard_names: Dict[str, Dict[str, str]],
+                   previousVersionURI: str = None):
     assert version_string.startswith('v')
     # call batch script build.bat
     logger.info('Start building docs')
@@ -143,6 +187,10 @@ def create_version(version_folder, version_string, previousVersionURI: str = Non
 
     generate(version_folder / f'{ONTOLOGY_NAME}.ttl')
 
+    # manipulate the HTML by inserting canonical units for standard names
+    update_standard_name_repr(version_folder / 'docs' / f'{version_string.strip("v")}' / 'index-en.html',
+                              standard_names)
+
     copy_version_to_docs(version_string)
 
     script_path_vers.unlink(missing_ok=True)
@@ -184,10 +232,11 @@ if __name__ == "__main__":
             f.write(f'\n\n### https://matthiasprobst.github.io/pivmeta#{k}')
             f.write(f'\npivmeta:{k} rdf:type owl:NamedIndividual ,')
             f.write(f'\n             <https://matthiasprobst.github.io/pivmeta#StandardName> ;')
-            f.write(f'\n             <http://purl.org/dc/terms/description> "{desc}"@en ;')
-            f.write(f'\n             <https://matthiasprobst.github.io/ssno#standardName> "{k}" ;')
-            if qudt_units:
-                f.write(f'\n             <https://matthiasprobst.github.io/ssno#unit> <{qudt_units}> ;')
+            # f.write(f'\n             <http://purl.org/dc/terms/description> "{desc}"@en ;')
+            f.write(f'\n             skos:definition "{desc}"@en ;')
+            # f.write(f'\n             <https://matthiasprobst.github.io/ssno#standardName> "{k}" ;')
+            # if qudt_units:
+            #     f.write(f'\n             <https://matthiasprobst.github.io/ssno#unit> <{qudt_units}> ;')
             f.write(f'\n             <http://www.w3.org/2004/02/skos/core#prefLabel> "{k}"@en .\n')
 
     force = True
@@ -196,6 +245,6 @@ if __name__ == "__main__":
         raise ValueError(f'Version {version_dir} already exists. You might be about to create '
                          f'a new version. Please provide a new version number if something has changed!.')
 
-    create_version(__this_dir__, version_string, previousVersionURI=None)
+    create_version(__this_dir__, version_string, standard_names=standard_names, previousVersionURI=None)
     # create_version(__this_dir__, 'v1.1.0',
     #                previousVersionURI=f'https://matthiasprobst.github.io/{ONTOLOGY_NAME}/1.0.0')
