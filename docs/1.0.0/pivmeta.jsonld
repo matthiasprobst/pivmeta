@@ -510,7 +510,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "millimetre per pixel"
+    "@value" : "millimeter per pixel"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Multigrid",
@@ -898,6 +898,20 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Synthetic Particle"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#TemporalVariable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#TextVariable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Temporal Variable"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#TopBottomFlip",
@@ -1771,18 +1785,25 @@
     "@value" : "third_peak_y_displacement"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#time",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName"
+  "@id" : "https://matthiasprobst.github.io/pivmeta#timeFormat",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#TemporalVariable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Datetime in ISO 8601 format."
+    "@value" : "Defines the format string used to decode a date time format."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "YYYY-MM-DDTHH:MM:SS.ffffff"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "time"
+    "@value" : "time format"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#windowWeightingFunction",

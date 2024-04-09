@@ -435,6 +435,19 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#timeFormat -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#timeFormat">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#TemporalVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <skos:definition xml:lang="en">Defines the format string used to decode a date time format.</skos:definition>
+        <skos:example xml:lang="en">YYYY-MM-DDTHH:MM:SS.ffffff</skos:example>
+        <skos:prefLabel xml:lang="en">time format</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://matthiasprobst.github.io/ssno#standardName -->
 
 
@@ -976,6 +989,17 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#TemporalVariable -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#TemporalVariable">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#TextVariable"/>
+        <skos:definition xml:lang="en">A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat</skos:definition>
+        <skos:prefLabel xml:lang="en">Temporal Variable</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction -->
 
 
@@ -1122,7 +1146,7 @@ A JSON-LD excerpt could look like this:
         <terms:description xml:lang="en">Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image.</terms:description>
         <qudt:hasQuantityKind rdf:resource="https://matthiasprobst.github.io/pivmeta#SpatialResolution"/>
         <qudt:symbol>mm/pixel</qudt:symbol>
-        <skos:prefLabel xml:lang="en">millimetre per pixel</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">millimeter per pixel</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1780,17 +1804,6 @@ A JSON-LD excerpt could look like this:
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <skos:definition xml:lang="en">Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">third_peak_y_displacement</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#time -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#time">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <skos:definition xml:lang="en">Datetime in ISO 8601 format.</skos:definition>
-        <skos:prefLabel xml:lang="en">time</skos:prefLabel>
     </owl:NamedIndividual>
     
 

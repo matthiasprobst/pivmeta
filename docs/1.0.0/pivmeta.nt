@@ -221,6 +221,14 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#numberOfRecords> <http://www.w3.org/2004/02/skos/core#definition> "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."@en .
 <https://matthiasprobst.github.io/pivmeta#numberOfRecords> <http://www.w3.org/2004/02/skos/core#prefLabel> "number of records"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#timeFormat
+<https://matthiasprobst.github.io/pivmeta#timeFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#timeFormat> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#TemporalVariable> .
+<https://matthiasprobst.github.io/pivmeta#timeFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://matthiasprobst.github.io/pivmeta#timeFormat> <http://www.w3.org/2004/02/skos/core#definition> "Defines the format string used to decode a date time format."@en .
+<https://matthiasprobst.github.io/pivmeta#timeFormat> <http://www.w3.org/2004/02/skos/core#example> "YYYY-MM-DDTHH:MM:SS.ffffff"@en .
+<https://matthiasprobst.github.io/pivmeta#timeFormat> <http://www.w3.org/2004/02/skos/core#prefLabel> "time format"@en .
+# 
 # https://matthiasprobst.github.io/ssno#standardName
 <https://matthiasprobst.github.io/ssno#standardName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://matthiasprobst.github.io/ssno#standardName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#StandardName> .
@@ -504,6 +512,12 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en .
 <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#TemporalVariable
+<https://matthiasprobst.github.io/pivmeta#TemporalVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#TemporalVariable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#TextVariable> .
+<https://matthiasprobst.github.io/pivmeta#TemporalVariable> <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat"@en .
+<https://matthiasprobst.github.io/pivmeta#TemporalVariable> <http://www.w3.org/2004/02/skos/core#prefLabel> "Temporal Variable"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction
 <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -583,7 +597,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://purl.org/dc/terms/description> "Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image."@en .
 <https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://qudt.org/schema/qudt/hasQuantityKind> <https://matthiasprobst.github.io/pivmeta#SpatialResolution> .
 <https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://qudt.org/schema/qudt/symbol> "mm/pixel" .
-<https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://www.w3.org/2004/02/skos/core#prefLabel> "millimetre per pixel"@en .
+<https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL> <http://www.w3.org/2004/02/skos/core#prefLabel> "millimeter per pixel"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PER-PIXEL
 <https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -954,12 +968,6 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
 <https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."@en .
 <https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "third_peak_y_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#time
-<https://matthiasprobst.github.io/pivmeta#time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#time> <http://www.w3.org/2004/02/skos/core#definition> "Datetime in ISO 8601 format."@en .
-<https://matthiasprobst.github.io/pivmeta#time> <http://www.w3.org/2004/02/skos/core#prefLabel> "time"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#x_coordinate
 <https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

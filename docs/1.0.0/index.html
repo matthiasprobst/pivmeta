@@ -11,7 +11,7 @@
   </title>
   <!-- SCHEMA.ORG METADATA -->
   <script type="application/ld+json">
-   {"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2024-04-08", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery"}]}
+   {"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2024-04-09", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery"}]}
   </script>
   <script src="resources/jquery.js">
   </script>
@@ -75,7 +75,7 @@ $(function(){
     </h2>
     <dl>
      <dt>
-      Modified on: 2024-04-08
+      Modified on: 2024-04-09
      </dt>
      <dt>
       This version:
@@ -519,6 +519,11 @@ $(function(){
       </a>
      </li>
      <li>
+      <a href="#TemporalVariable" title="https://matthiasprobst.github.io/pivmeta#TemporalVariable">
+       Temporal Variable
+      </a>
+     </li>
+     <li>
       <a href="#WindowWeightingFunction" title="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction">
        Window Weighting Function
       </a>
@@ -608,6 +613,11 @@ $(function(){
      <li>
       <a href="#https://matthiasprobst.github.io/ssno#standardName" title="https://matthiasprobst.github.io/ssno#standardName">
        standard name
+      </a>
+     </li>
+     <li>
+      <a href="#timeFormat" title="https://matthiasprobst.github.io/pivmeta#timeFormat">
+       time format
       </a>
      </li>
      <li>
@@ -774,7 +784,7 @@ $(function(){
      </li>
      <li>
       <a href="#MilliM-PER-PIXEL" title="https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL">
-       millimetre per pixel
+       millimeter per pixel
       </a>
      </li>
      <li>
@@ -935,11 +945,6 @@ $(function(){
      <li>
       <a href="#third_peak_y_displacement" title="https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement">
        third_peak_y_displacement
-      </a>
-     </li>
-     <li>
-      <a href="#time" title="https://matthiasprobst.github.io/pivmeta#time">
-       time
       </a>
      </li>
      <li>
@@ -1372,6 +1377,11 @@ $(function(){
       <li>
        <a href="#SyntheticParticle" title="https://matthiasprobst.github.io/pivmeta#SyntheticParticle">
         Synthetic Particle
+       </a>
+      </li>
+      <li>
+       <a href="#TemporalVariable" title="https://matthiasprobst.github.io/pivmeta#TemporalVariable">
+        Temporal Variable
        </a>
       </li>
       <li>
@@ -3547,6 +3557,56 @@ $(function(){
        </dd>
       </dl>
      </div>
+     <div class="entity" id="TemporalVariable">
+      <h3>
+       Temporal Variable
+       <sup class="type-c" title="class">
+        c
+       </sup>
+       <span class="backlink">
+        back to
+        <a href="#toc">
+         ToC
+        </a>
+        or
+        <a href="#classes">
+         Class ToC
+        </a>
+       </span>
+      </h3>
+      <p>
+       <strong>
+        IRI:
+       </strong>
+       https://matthiasprobst.github.io/pivmeta#TemporalVariable
+      </p>
+      <div class="comment">
+       <span class="markdown">
+        A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat
+       </span>
+      </div>
+      <dl class="description">
+       <dt>
+        has super-classes
+       </dt>
+       <dd>
+        <a href="http://w3id.org/nfdi4ing/metadata4ing#TextVariable" target="_blank" title="http://w3id.org/nfdi4ing/metadata4ing#TextVariable">
+         text variable
+        </a>
+       </dd>
+       <dt>
+        is in domain of
+       </dt>
+       <dd>
+        <a href="#timeFormat" title="https://matthiasprobst.github.io/pivmeta#timeFormat">
+         time format
+        </a>
+        <sup class="type-dp" title="data property">
+         dp
+        </sup>
+       </dd>
+      </dl>
+     </div>
      <div class="entity" id="WindowWeightingFunction">
       <h3>
        Window Weighting Function
@@ -4133,6 +4193,11 @@ $(function(){
        </a>
       </li>
       <li>
+       <a href="#timeFormat" title="https://matthiasprobst.github.io/pivmeta#timeFormat">
+        time format
+       </a>
+      </li>
+      <li>
        <a href="#https://matthiasprobst.github.io/ssno#withImageDeformation" title="https://matthiasprobst.github.io/ssno#withImageDeformation">
         with image deformation
        </a>
@@ -4581,6 +4646,66 @@ A JSON-LD excerpt could look like this:
        </dl>
       </div>
      </div>
+     <div class="entity" id="timeFormat">
+      <h3>
+       time format
+       <sup class="type-dp" title="data property">
+        dp
+       </sup>
+       <span class="backlink">
+        back to
+        <a href="#toc">
+         ToC
+        </a>
+        or
+        <a href="#dataproperties">
+         Data Property ToC
+        </a>
+       </span>
+      </h3>
+      <p>
+       <strong>
+        IRI:
+       </strong>
+       https://matthiasprobst.github.io/pivmeta#timeFormat
+      </p>
+      <div class="comment">
+       <span class="markdown">
+        Defines the format string used to decode a date time format.
+       </span>
+      </div>
+      <dl>
+       <dt>
+        Example
+       </dt>
+       <dd>
+        <pre>YYYY-MM-DDTHH:MM:SS.ffffff</pre>
+       </dd>
+      </dl>
+      <div class="description">
+       <dl>
+        <dt>
+         has domain
+        </dt>
+        <dd>
+         <a href="#TemporalVariable" title="https://matthiasprobst.github.io/pivmeta#TemporalVariable">
+          Temporal Variable
+         </a>
+         <sup class="type-c" title="class">
+          c
+         </sup>
+        </dd>
+        <dt>
+         has range
+        </dt>
+        <dd>
+         <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">
+          string
+         </a>
+        </dd>
+       </dl>
+      </div>
+     </div>
      <div class="entity" id="https://matthiasprobst.github.io/ssno#withImageDeformation">
       <h3>
        with image deformation
@@ -4793,7 +4918,7 @@ A JSON-LD excerpt could look like this:
       </li>
       <li>
        <a href="#MilliM-PER-PIXEL" title="https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL">
-        millimetre per pixel
+        millimeter per pixel
        </a>
       </li>
       <li>
@@ -4954,11 +5079,6 @@ A JSON-LD excerpt could look like this:
       <li>
        <a href="#third_peak_y_displacement" title="https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement">
         third_peak_y_displacement
-       </a>
-      </li>
-      <li>
-       <a href="#time" title="https://matthiasprobst.github.io/pivmeta#time">
-        time
        </a>
       </li>
       <li>
@@ -6595,7 +6715,7 @@ A JSON-LD excerpt could look like this:
      </div>
      <div class="entity" id="MilliM-PER-PIXEL">
       <h3>
-       millimetre per pixel
+       millimeter per pixel
        <sup class="type-ni" title="named individual">
         ni
        </sup>
@@ -8162,59 +8282,6 @@ A JSON-LD excerpt could look like this:
        <dd>
         <a href="http://qudt.org/vocab/unit/PIXEL" target="_blank" title="http://qudt.org/vocab/unit/PIXEL">
          pixel
-        </a>
-        <sup class_="type-ni" title="named individual">
-         ni
-        </sup>
-       </dd>
-       <dt>
-        belongs to
-       </dt>
-       <dd>
-        <a href="https://matthiasprobst.github.io/pivmeta#StandardName" target="_blank" title="https://matthiasprobst.github.io/pivmeta#StandardName">
-         standard name
-        </a>
-        <sup class="type-c" title="class">
-         c
-        </sup>
-       </dd>
-      </dl>
-     </div>
-     <div class="entity" id="time">
-      <h3>
-       time
-       <sup class="type-ni" title="named individual">
-        ni
-       </sup>
-       <span class="backlink">
-        back to
-        <a href="#toc">
-         ToC
-        </a>
-        or
-        <a href="#namedindividuals">
-         Named Individual ToC
-        </a>
-       </span>
-      </h3>
-      <p>
-       <strong>
-        IRI:
-       </strong>
-       https://matthiasprobst.github.io/pivmeta#time
-      </p>
-      <div class="comment">
-       <span class="markdown">
-        Datetime in ISO 8601 format.
-       </span>
-      </div>
-      <dl class="description">
-       <dt>
-        canonical units
-       </dt>
-       <dd>
-        <a href="http://qudt.org/vocab/unit/UNITLESS" target="_blank" title="http://qudt.org/vocab/unit/UNITLESS">
-         unitless
         </a>
         <sup class_="type-ni" title="named individual">
          ni

@@ -265,6 +265,15 @@ A JSON-LD excerpt could look like this:
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "number of records"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#timeFormat
+:timeFormat rdf:type owl:DatatypeProperty ;
+            rdfs:domain :TemporalVariable ;
+            rdfs:range xsd:string ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Defines the format string used to decode a date time format."@en ;
+            <http://www.w3.org/2004/02/skos/core#example> "YYYY-MM-DDTHH:MM:SS.ffffff"@en ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "time format"@en .
+
+
 ###  https://matthiasprobst.github.io/ssno#standardName
 <https://matthiasprobst.github.io/ssno#standardName> rdf:type owl:DatatypeProperty ;
                                                      rdfs:domain :StandardName ;
@@ -596,6 +605,13 @@ A JSON-LD excerpt could look like this:
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#TemporalVariable
+:TemporalVariable rdf:type owl:Class ;
+                  rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#TextVariable> ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat"@en ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Temporal Variable"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction
 :WindowWeightingFunction rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
@@ -683,7 +699,7 @@ A JSON-LD excerpt could look like this:
                   <http://purl.org/dc/terms/description> "Millimeters per pixel, representing the optical magnification where the length in millimeters corresponds to the number of pixels in the image."@en ;
                   <http://qudt.org/schema/qudt/hasQuantityKind> :SpatialResolution ;
                   <http://qudt.org/schema/qudt/symbol> "mm/pixel" ;
-                  <http://www.w3.org/2004/02/skos/core#prefLabel> "millimetre per pixel"@en .
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "millimeter per pixel"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PER-PIXEL
@@ -1100,13 +1116,6 @@ A JSON-LD excerpt could look like this:
                                     :StandardName ;
                            <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."@en ;
                            <http://www.w3.org/2004/02/skos/core#prefLabel> "third_peak_y_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#time
-:time rdf:type owl:NamedIndividual ,
-               :StandardName ;
-      <http://www.w3.org/2004/02/skos/core#definition> "Datetime in ISO 8601 format."@en ;
-      <http://www.w3.org/2004/02/skos/core#prefLabel> "time"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#x_coordinate
