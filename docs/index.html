@@ -11,7 +11,7 @@
   </title>
   <!-- SCHEMA.ORG METADATA -->
   <script type="application/ld+json">
-   {"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2024-04-09", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery"}]}
+   {"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing particle image velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2024-04-10", "version":"v1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery"}]}
   </script>
   <script src="resources/jquery.js">
   </script>
@@ -75,7 +75,7 @@ $(function(){
     </h2>
     <dl>
      <dt>
-      Modified on: 2024-04-09
+      Modified on: 2024-04-10
      </dt>
      <dt>
       This version:
@@ -324,6 +324,11 @@ $(function(){
      <li>
       <a href="#DigitalCameraModel" title="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel">
        Digital Camera Model
+      </a>
+     </li>
+     <li>
+      <a href="#FlagVariable" title="https://matthiasprobst.github.io/pivmeta#FlagVariable">
+       Flag Variable
       </a>
      </li>
      <li>
@@ -838,11 +843,6 @@ $(function(){
       </a>
      </li>
      <li>
-      <a href="#piv_flag" title="https://matthiasprobst.github.io/pivmeta#piv_flag">
-       piv_flag
-      </a>
-     </li>
-     <li>
       <a href="#piv_scaling_factor" title="https://matthiasprobst.github.io/pivmeta#piv_scaling_factor">
        piv_scaling_factor
       </a>
@@ -1185,6 +1185,11 @@ $(function(){
       <li>
        <a href="#DigitalCameraModel" title="https://matthiasprobst.github.io/pivmeta#DigitalCameraModel">
         Digital Camera Model
+       </a>
+      </li>
+      <li>
+       <a href="#FlagVariable" title="https://matthiasprobst.github.io/pivmeta#FlagVariable">
+        Flag Variable
        </a>
       </li>
       <li>
@@ -1680,6 +1685,73 @@ $(function(){
         </a>
         <sup class="type-c" title="class">
          c
+        </sup>
+       </dd>
+      </dl>
+     </div>
+     <div class="entity" id="FlagVariable">
+      <h3>
+       Flag Variable
+       <sup class="type-c" title="class">
+        c
+       </sup>
+       <span class="backlink">
+        back to
+        <a href="#toc">
+         ToC
+        </a>
+        or
+        <a href="#classes">
+         Class ToC
+        </a>
+       </span>
+      </h3>
+      <p>
+       <strong>
+        IRI:
+       </strong>
+       https://matthiasprobst.github.io/pivmeta#FlagVariable
+      </p>
+      <div class="comment">
+       <span class="markdown">
+        A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.
+
+Provide pivmeta:flagMeaning und pivmeta:flagValues with it.
+       </span>
+      </div>
+      <div class="comment">
+       <span class="markdown">
+        A variable that expects flag values as integer values.
+       </span>
+      </div>
+      <dl class="description">
+       <dt>
+        has super-classes
+       </dt>
+       <dd>
+        <a href="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable" target="_blank" title="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable">
+         numerical variable
+        </a>
+        <sup class="type-c" title="class">
+         c
+        </sup>
+       </dd>
+       <dt>
+        is in domain of
+       </dt>
+       <dd>
+        <a href="#flagMeanings" title="https://matthiasprobst.github.io/pivmeta#flagMeanings">
+         flag meanings
+        </a>
+        <sup class="type-dp" title="data property">
+         dp
+        </sup>
+        ,
+        <a href="#flagValues" title="https://matthiasprobst.github.io/pivmeta#flagValues">
+         flag values
+        </a>
+        <sup class="type-dp" title="data property">
+         dp
         </sup>
        </dd>
       </dl>
@@ -4298,8 +4370,8 @@ pivmeta:flagMeanings=["inactive", "active", "masked", "noresult", "disabled", "f
          has domain
         </dt>
         <dd>
-         <a href="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable" target="_blank" title="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable">
-          numerical variable
+         <a href="#FlagVariable" title="https://matthiasprobst.github.io/pivmeta#FlagVariable">
+          Flag Variable
          </a>
          <sup class="type-c" title="class">
           c
@@ -4381,8 +4453,8 @@ A JSON-LD excerpt could look like this:
          has domain
         </dt>
         <dd>
-         <a href="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable" target="_blank" title="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable">
-          numerical variable
+         <a href="#FlagVariable" title="https://matthiasprobst.github.io/pivmeta#FlagVariable">
+          Flag Variable
          </a>
          <sup class="type-c" title="class">
           c
@@ -4969,11 +5041,6 @@ A JSON-LD excerpt could look like this:
       <li>
        <a href="#piv_first_peak_correlation_coefficient" title="https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient">
         piv_first_peak_correlation_coefficient
-       </a>
-      </li>
-      <li>
-       <a href="#piv_flag" title="https://matthiasprobst.github.io/pivmeta#piv_flag">
-        piv_flag
        </a>
       </li>
       <li>
@@ -7182,59 +7249,6 @@ A JSON-LD excerpt could look like this:
       <div class="comment">
        <span class="markdown">
         The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function.
-       </span>
-      </div>
-      <dl class="description">
-       <dt>
-        canonical units
-       </dt>
-       <dd>
-        <a href="http://qudt.org/vocab/unit/UNITLESS" target="_blank" title="http://qudt.org/vocab/unit/UNITLESS">
-         unitless
-        </a>
-        <sup class_="type-ni" title="named individual">
-         ni
-        </sup>
-       </dd>
-       <dt>
-        belongs to
-       </dt>
-       <dd>
-        <a href="https://matthiasprobst.github.io/pivmeta#StandardName" target="_blank" title="https://matthiasprobst.github.io/pivmeta#StandardName">
-         standard name
-        </a>
-        <sup class="type-c" title="class">
-         c
-        </sup>
-       </dd>
-      </dl>
-     </div>
-     <div class="entity" id="piv_flag">
-      <h3>
-       piv_flag
-       <sup class="type-ni" title="named individual">
-        ni
-       </sup>
-       <span class="backlink">
-        back to
-        <a href="#toc">
-         ToC
-        </a>
-        or
-        <a href="#namedindividuals">
-         Named Individual ToC
-        </a>
-       </span>
-      </h3>
-      <p>
-       <strong>
-        IRI:
-       </strong>
-       https://matthiasprobst.github.io/pivmeta#piv_flag
-      </p>
-      <div class="comment">
-       <span class="markdown">
-        A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.
        </span>
       </div>
       <dl class="description">

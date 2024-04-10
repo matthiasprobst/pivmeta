@@ -203,7 +203,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#flagMeanings
 :flagMeanings rdf:type owl:DatatypeProperty ;
-              rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+              rdfs:domain :FlagVariable ;
               rdfs:range xsd:string ;
               <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en ;
               <http://www.w3.org/2004/02/skos/core#example> """For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
@@ -213,7 +213,7 @@ pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disa
 
 ###  https://matthiasprobst.github.io/pivmeta#flagValues
 :flagValues rdf:type owl:DatatypeProperty ;
-            rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+            rdfs:domain :FlagVariable ;
             rdfs:range xsd:int ;
             <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en ;
             <http://www.w3.org/2004/02/skos/core#example> """pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
@@ -393,6 +393,16 @@ A JSON-LD excerpt could look like this:
                     rdfs:subClassOf :DigitalCamera ;
                     <http://www.w3.org/2004/02/skos/core#definition> "A model of a digital camera used to generate synthetic PIV images. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera Model"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#FlagVariable
+:FlagVariable rdf:type owl:Class ;
+              rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+              rdfs:comment """A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.
+
+Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects flag values as integer values."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Flag Variable"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
@@ -997,13 +1007,6 @@ A JSON-LD excerpt could look like this:
                                                  :StandardName ;
                                         <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function."@en ;
                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_first_peak_correlation_coefficient"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#piv_flag
-:piv_flag rdf:type owl:NamedIndividual ,
-                   :StandardName ;
-          <http://www.w3.org/2004/02/skos/core#definition> "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated."@en ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_flag"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#piv_scaling_factor

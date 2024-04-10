@@ -209,7 +209,7 @@ pivmeta:filenamePattern rdf:type owl:DatatypeProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#flagMeanings
 pivmeta:flagMeanings rdf:type owl:DatatypeProperty ;
-                     rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+                     rdfs:domain pivmeta:FlagVariable ;
                      rdfs:range xsd:string ;
                      skos:definition "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en ;
                      skos:example """For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
@@ -219,7 +219,7 @@ pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disa
 
 ###  https://matthiasprobst.github.io/pivmeta#flagValues
 pivmeta:flagValues rdf:type owl:DatatypeProperty ;
-                   rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+                   rdfs:domain pivmeta:FlagVariable ;
                    rdfs:range xsd:int ;
                    skos:definition "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en ;
                    skos:example """pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
@@ -629,6 +629,16 @@ pivmeta:WindowWeightingFunction rdf:type owl:Class ;
 ssno:PivValidation rdf:type owl:Class .
 
 
+###  https://matthiasprobst.github.io/ssno#pivmet:FlagVariable
+pivmeta:FlagVariable rdf:type owl:Class ;
+                         rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+                         rdfs:comment """A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.
+
+Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
+                         skos:definition "A variable that expects flag values as integer values."@en ;
+                         skos:prefLabel "Flag Variable"@en .
+
+
 ###  https://schema.org/CreativeWork
 <https://schema.org/CreativeWork> rdf:type owl:Class .
 
@@ -917,13 +927,6 @@ pivmeta:z_derivative_of_z_velocity rdf:type owl:NamedIndividual ,
              <https://matthiasprobst.github.io/pivmeta#StandardName> ;
              skos:definition "The standard name z_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the z coordinate."@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "z_derivative_of_z_velocity"@en .
-
-
-### https://matthiasprobst.github.io/pivmeta#piv_flag
-pivmeta:piv_flag rdf:type owl:NamedIndividual ,
-             <https://matthiasprobst.github.io/pivmeta#StandardName> ;
-             skos:definition "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated."@en ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_flag"@en .
 
 
 ### https://matthiasprobst.github.io/pivmeta#image_particle_density

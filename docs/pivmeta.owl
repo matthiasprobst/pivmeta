@@ -355,7 +355,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#flagMeanings">
-        <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagVariable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <skos:definition xml:lang="en">The flag meanings data property provides the string representations of the pvmeta:flagValues data property.</skos:definition>
         <skos:example xml:lang="en">For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
@@ -369,7 +369,7 @@ pivmeta:flagMeanings=[&quot;inactive&quot;, &quot;active&quot;, &quot;masked&quo
 
 
     <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#flagValues">
-        <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagVariable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <skos:definition xml:lang="en">The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17.</skos:definition>
         <skos:example xml:lang="en">pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
@@ -648,6 +648,20 @@ A JSON-LD excerpt could look like this:
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#DigitalCamera"/>
         <skos:definition xml:lang="en">A model of a digital camera used to generate synthetic PIV images. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode</skos:definition>
         <skos:prefLabel xml:lang="en">Digital Camera Model</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#FlagVariable -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#FlagVariable">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <rdfs:comment xml:lang="en">A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.
+
+Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
+        <skos:definition xml:lang="en">A variable that expects flag values as integer values.</skos:definition>
+        <skos:prefLabel xml:lang="en">Flag Variable</skos:prefLabel>
     </owl:Class>
     
 
@@ -1617,17 +1631,6 @@ A JSON-LD excerpt could look like this:
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
         <skos:definition xml:lang="en">The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function.</skos:definition>
         <skos:prefLabel xml:lang="en">piv_first_peak_correlation_coefficient</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#piv_flag -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#piv_flag">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#StandardName"/>
-        <skos:definition xml:lang="en">A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.</skos:definition>
-        <skos:prefLabel xml:lang="en">piv_flag</skos:prefLabel>
     </owl:NamedIndividual>
     
 

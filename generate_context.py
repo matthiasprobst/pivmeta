@@ -13,7 +13,7 @@ __this_dir__ = Path(__file__).parent
 
 
 def generate(ttl_file):
-    """Generat context JSON-LD file"""
+    """Generate context JSON-LD file"""
     assert ttl_file.suffix == '.ttl'
     assert ttl_file.exists()
 
