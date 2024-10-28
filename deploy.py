@@ -12,11 +12,11 @@ import pathlib
 import shutil
 import subprocess
 import sys
-import yaml
-from bs4 import BeautifulSoup
 from typing import Dict
 
-from pivmetalib.qudt.unit import qudt_lookup
+import yaml
+from bs4 import BeautifulSoup
+from ontolutils.utils.qudt_units import qudt_lookup
 
 sys.path.insert(0, '.')
 
