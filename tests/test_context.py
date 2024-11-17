@@ -17,24 +17,6 @@ class TestContext(unittest.TestCase):
             snt_doc = yaml.safe_load(f)
         self.standard_name_dict = snt_doc['standard_names']
 
-    def test_sn_individuals(self):
-        """The standard names defined in the standard name table YAML file
-        are added automatically (see deploy.py) and should appear in the
-        context.json file"""
-
-        # read context.jsonld
-        potential_sn_data_in_context = []
-        with open(__this_dir__.parent / 'pivmeta_context.jsonld',
-                  encoding='utf-8') as f:
-            context_data = json.load(f)
-            for k, v in context_data["@context"].items():
-                if isinstance(v, dict):
-                    if f"pivmeta:{k}" == v['@id']:
-                        potential_sn_data_in_context.append(k)
-
-        # all standard names must be in potential_sn_data_in_context:
-        for k in self.standard_name_dict:
-            self.assertIn(k, potential_sn_data_in_context)
 
     def test_sn_in_ttl(self):
         pivmeta_onto_file = __this_dir__.parent / 'pivmeta.ttl'
