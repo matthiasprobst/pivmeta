@@ -7,17 +7,16 @@
 @base <https://matthiasprobst.github.io/pivmeta#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
-                                             owl:imports <http://w3id.org/nfdi4ing/metadata4ing/1.2.1> ;
                                              <http://purl.org/dc/terms/abstract> "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."@en ;
                                              <http://purl.org/dc/terms/created> "2024-01-03" ;
                                              <http://purl.org/dc/terms/creator> "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen" ;
                                              <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
                                              <http://purl.org/dc/terms/modified> "2024-01-03" ;
-                                             <http://purl.org/dc/terms/title> "PivMeta: An ontology draft for describing particle image velocimetry data."@en ;
+                                             <http://purl.org/dc/terms/title> "pivmeta: An ontology draft for describing particle image velocimetry data."@en ;
                                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "pivmeta" ;
                                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://matthiasprobst.github.io/pivmeta#" ;
                                              <http://w3id.org/nfdi4ing/metadata4ing#ContactPerson> "https://orcid.org/0000-0001-8729-0482" ;
-                                             rdfs:label "PivMeta" ;
+                                             rdfs:label "pivmeta" ;
                                              owl:versionInfo "v1.0.0" .
 
 #################################################################
@@ -34,6 +33,10 @@
 
 ###  http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
@@ -112,6 +115,14 @@
 <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> rdf:type owl:AnnotationProperty .
 
 
+###  https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54
+<https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> rdf:type owl:AnnotationProperty ;
+                                                                  rdfs:comment "URL corresponding to entry in Wikidata."@en ;
+                                                                  rdfs:isDefinedBy "" ;
+                                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "wikidataReference"@en ;
+                                                                  rdfs:subPropertyOf rdfs:seeAlso .
+
+
 #################################################################
 #    Datatypes
 #################################################################
@@ -128,16 +139,54 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://w3id.org/nfdi4ing/metadata4ing#hasParameter
+<http://w3id.org/nfdi4ing/metadata4ing#hasParameter> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain [ rdf:type owl:Class ;
+                                                                   owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Method>
+                                                                                 <http://w3id.org/nfdi4ing/metadata4ing#Tool>
+                                                                                 :VirtualTool
+                                                                               )
+                                                                 ] ;
+                                                     rdfs:range <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> "Points to a parameter of a given method or tool."@en ;
+                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "has parameter"@en .
+
+
 ###  https://codemeta.github.io/terms/hasSourceCode
 <https://codemeta.github.io/terms/hasSourceCode> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain [ rdf:type owl:Class ;
-                                                               owl:unionOf ( :DigitalCameraModel
-                                                                             :LaserModel
-                                                                             :SyntheticParticle
-                                                                           )
-                                                             ] ;
+                                                 owl:inverseOf <https://codemeta.github.io/terms/isSourceCodeOf> ;
+                                                 rdfs:domain :VirtualTool ;
                                                  rdfs:range <https://schema.org/SoftwareSourceCode> ;
-                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "source code"@en .
+                                                 rdfs:isDefinedBy <https://codemeta.github.io/terms/> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational model or concept to the source code that implements it."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "has source code"@en .
+
+
+###  https://codemeta.github.io/terms/isSourceCodeOf
+<https://codemeta.github.io/terms/isSourceCodeOf> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <https://schema.org/SoftwareSourceCode> ;
+                                                  rdfs:range :VirtualTool ;
+                                                  rdfs:isDefinedBy <https://codemeta.github.io/terms/> ;
+                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "is source code of"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#flag
+:flag rdf:type owl:ObjectProperty ;
+      owl:inverseOf :flagIn ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset>
+                                  :FlagCount
+                                )
+                  ] ;
+      rdfs:range :FlagVariable ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Relates something to a Flag Variable"@en ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "flag"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#flagIn
+:flagIn rdf:type owl:ObjectProperty ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Relates a Flag Variable to its used concept"@en ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#hasStandardName
@@ -167,7 +216,7 @@ xsd:date rdf:type rdfs:Datatype .
 :pivImageType rdf:type owl:ObjectProperty ;
               rdfs:domain :PivImageDistribution ;
               rdfs:range :ImageType ;
-              <http://www.w3.org/2004/02/skos/core#definition> "The type of image, e.g. an eperimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The type of image, e.g. an experimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."@en ;
               <http://www.w3.org/2004/02/skos/core#example> "Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage"@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "piv image type"@en .
 
@@ -180,18 +229,32 @@ xsd:date rdf:type rdfs:Datatype .
                          <http://www.w3.org/2004/02/skos/core#prefLabel> "window weighting function"@en .
 
 
-###  https://matthiasprobst.github.io/ssno#canonicalUnits
-<https://matthiasprobst.github.io/ssno#canonicalUnits> rdf:type owl:ObjectProperty ;
-                                                       rdfs:domain :StandardName ;
-                                                       rdfs:range <http://qudt.org/schema/qudt/Unit> ;
-                                                       rdfs:seeAlso <http://w3id.org/nfdi4ing/metadata4ing#hasUnit> ;
-                                                       <http://www.w3.org/2004/02/skos/core#definition> "The canonical unit of the standard name"@en ;
-                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "canonical units"@en .
+###  https://matthiasprobst.github.io/ssno#unit
+<https://matthiasprobst.github.io/ssno#unit> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain :StandardName ;
+                                             rdfs:range <http://qudt.org/schema/qudt/Unit> ;
+                                             rdfs:seeAlso <http://w3id.org/nfdi4ing/metadata4ing#hasUnit> ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "The canonical unit of the standard name"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "unit"@en .
 
 
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue
+<http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#hasValue> ;
+                                                          rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+                                                          rdfs:range xsd:decimal .
+
+
+###  http://w3id.org/nfdi4ing/metadata4ing#hasValue
+<http://w3id.org/nfdi4ing/metadata4ing#hasValue> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "A value of any type"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "has value"@en .
+
 
 ###  https://matthiasprobst.github.io/pivmeta#filenamePattern
 :filenamePattern rdf:type owl:DatatypeProperty ;
@@ -201,22 +264,30 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#flagMeanings
-:flagMeanings rdf:type owl:DatatypeProperty ;
-              rdfs:domain :FlagVariable ;
-              rdfs:range xsd:string ;
-              <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en ;
-              <http://www.w3.org/2004/02/skos/core#example> """For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
+###  https://matthiasprobst.github.io/pivmeta#fnumber
+:fnumber rdf:type owl:DatatypeProperty ;
+         rdfs:domain :DigitalCamera ;
+         rdfs:range rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#hasFlagMeaning
+:hasFlagMeaning rdf:type owl:DatatypeProperty ;
+                rdfs:domain :FlagVariable ;
+                rdfs:range xsd:string ;
+                <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en ;
+                <http://www.w3.org/2004/02/skos/core#example> """For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
 pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"""@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "flag meanings"@en .
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag meaning"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#flagValues
-:flagValues rdf:type owl:DatatypeProperty ;
-            rdfs:domain :FlagVariable ;
-            rdfs:range xsd:int ;
-            <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en ;
-            <http://www.w3.org/2004/02/skos/core#example> """pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
+###  https://matthiasprobst.github.io/pivmeta#hasFlagValue
+:hasFlagValue rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> ;
+              rdfs:domain :FlagVariable ;
+              rdfs:range xsd:int ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en ;
+              <http://www.w3.org/2004/02/skos/core#example> """pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
 
 The corresponding meaning would be:
 pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]
@@ -240,14 +311,7 @@ A JSON-LD excerpt could look like this:
     ],
     \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"
 }"""@en ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "flag values"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#fnumber
-:fnumber rdf:type owl:DatatypeProperty ;
-         rdfs:domain :DigitalCamera ;
-         rdfs:range rdfs:Literal ;
-         <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag value"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#material
@@ -302,6 +366,13 @@ A JSON-LD excerpt could look like this:
 #    Classes
 #################################################################
 
+###  http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset
+<http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset> rdf:type owl:Class ;
+                                                        rdfs:isDefinedBy <http://purl.allotrope.org/ontologies/hdf5/1.8#> ;
+                                                        <http://www.w3.org/2004/02/skos/core#definition> "An HDF5 Dataset."@en ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "HDF5 Dataset"@en .
+
+
 ###  http://purl.obolibrary.org/obo/BFO_0000017
 <http://purl.obolibrary.org/obo/BFO_0000017> rdf:type owl:Class ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "To say that b is a realizable entity is to say that b is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type. (axiom label in BFO2 Reference: [058-002])" ;
@@ -313,12 +384,10 @@ A JSON-LD excerpt could look like this:
 <http://purl.obolibrary.org/obo/Process> rdf:type owl:Class .
 
 
-###  http://purl.org/dc/dcmitype/Image
-<http://purl.org/dc/dcmitype/Image> rdf:type owl:Class .
-
-
 ###  http://purl.org/dc/terms/DCMIType
-<http://purl.org/dc/terms/DCMIType> rdf:type owl:Class .
+<http://purl.org/dc/terms/DCMIType> rdf:type owl:Class ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."@en ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "DCMI Type"@en .
 
 
 ###  http://qudt.org/schema/qudt/QuantityKind
@@ -326,16 +395,21 @@ A JSON-LD excerpt could look like this:
 
 
 ###  http://qudt.org/schema/qudt/Unit
-<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "Unit of measure"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Unit"@en .
 
 
 ###  http://w3id.org/nfdi4ing/metadata4ing#Method
 <http://w3id.org/nfdi4ing/metadata4ing#Method> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000017> .
+                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000017> ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "Abstract description of a method for analysis, generation and transformation of data and material objects like, e.g., 'Fourier Transform Infrared Spectroscopy' or 'Molecular Dynamics Simulation'. Note that while values for relevant parameters should be provided, m4i:Method does not refer to the actual execution of the process that is described (use m4i:ProcessingStep for that), but rather a description of the underlying principle."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Method"@en .
 
 
 ###  http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable
-<http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> rdf:type owl:Class .
+<http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
 
 
 ###  http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep
@@ -343,8 +417,32 @@ A JSON-LD excerpt could look like this:
                                                        rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> .
 
 
+###  http://w3id.org/nfdi4ing/metadata4ing#TextVariable
+<http://w3id.org/nfdi4ing/metadata4ing#TextVariable> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
+                                                     rdfs:isDefinedBy <http://w3id.org/nfdi4ing/metadata4ing#> ;
+                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Text Variable"@en .
+
+
 ###  http://w3id.org/nfdi4ing/metadata4ing#Tool
-<http://w3id.org/nfdi4ing/metadata4ing#Tool> rdf:type owl:Class .
+<http://w3id.org/nfdi4ing/metadata4ing#Tool> rdf:type owl:Class ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "bject that helps an agent perform an action (e.g., John wrote a book with a pen), i.e., an object of the relation schema:instrument or m4i:hasTool"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Tool"@en .
+
+
+###  http://www.molmod.info/semantics/pims-ii.ttl#Property
+<http://www.molmod.info/semantics/pims-ii.ttl#Property> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
+                                                        <http://www.w3.org/2004/02/skos/core#closeMatch> <http://emmo.info/emmo#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> ;
+                                                        <http://www.w3.org/2004/02/skos/core#definition> "Property, i.e., a variable that can be considered (as an investigated property, i.e., target property) within a processing step"@en ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Property"@en .
+
+
+###  http://www.molmod.info/semantics/pims-ii.ttl#Variable
+<http://www.molmod.info/semantics/pims-ii.ttl#Variable> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <https://schema.org/Intangible> ;
+                                                        <http://www.w3.org/2004/02/skos/core#definition> "Variable, i.e., a conventional that is employed for something to which values can be assigned (this may include different notations for the same variable including, e.g., computational representations); this is to be understood very generally, e.g., a variable may be an array or set of elements or have another kind of internal structure"@en ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Variable"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
@@ -361,6 +459,10 @@ A JSON-LD excerpt could look like this:
                                      rdfs:label "Activity"@en .
 
 
+###  http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> rdf:type owl:Class .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration
 :BackgroundImageGeneration rdf:type owl:Class ;
                            rdfs:subClassOf :PivProcessingStep ;
@@ -374,6 +476,13 @@ A JSON-LD excerpt could look like this:
                              <http://www.w3.org/2004/02/skos/core#prefLabel> "background subtraction"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#Camera
+:Camera rdf:type owl:Class ;
+        rdfs:subClassOf :OpticSensor ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Camera"@en ;
+        <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q15328> .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#CorrelationMethod
 :CorrelationMethod rdf:type owl:Class ;
                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
@@ -383,16 +492,19 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
 :DigitalCamera rdf:type owl:Class ;
-               rdfs:subClassOf :PIVHardware ;
+               rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
+                               :Camera ;
                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
+               <http://www.w3.org/2004/02/skos/core#definition> "A Digital Camera captures photographs or videos in a digital format."@en ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en ;
+               <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q62927> .
 
 
-###  https://matthiasprobst.github.io/pivmeta#DigitalCameraModel
-:DigitalCameraModel rdf:type owl:Class ;
-                    rdfs:subClassOf :DigitalCamera ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "A model of a digital camera used to generate synthetic PIV images. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera Model"@en .
+###  https://matthiasprobst.github.io/pivmeta#FlagCount
+:FlagCount rdf:type owl:Class ;
+           rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Holds the number of data points associated with a Flag Variable."@en ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Flag Count"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagVariable
@@ -453,14 +565,18 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#Laser
 :Laser rdf:type owl:Class ;
-       rdfs:subClassOf :PIVHardware .
+       rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
+                       :LightSource ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A Device which emits light via amplification."@en ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser"@en ;
+       <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q38867> .
 
 
-###  https://matthiasprobst.github.io/pivmeta#LaserModel
-:LaserModel rdf:type owl:Class ;
-            rdfs:subClassOf :Laser ;
-            <http://www.w3.org/2004/02/skos/core#definition> "A virtual laser used in synthetic PIV codes."@en ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser Model"@en .
+###  https://matthiasprobst.github.io/pivmeta#LightSource
+:LightSource rdf:type owl:Class ;
+             <http://www.w3.org/2004/02/skos/core#definition> "An object or device that emits light"@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Light Source"@en ;
+             <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1146001> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
@@ -481,6 +597,12 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
            rdfs:subClassOf :InterrogationMethod ;
            <http://www.w3.org/2004/02/skos/core#definition> "A PIV multiple pass interrogation window, which uses the local integer displacement in a subsequent interrogation pas by offsetting the the interrogation windows. This increases the singal-to-noise ratio of the coorelation peak as unmatched particle images are avoided."@en ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#OpticSensor
+:OpticSensor rdf:type owl:Class ;
+             <http://www.w3.org/2004/02/skos/core#closeMatch> <http://kif.cs.lth.se/ontologies/rosetta.owl#OpticSensor> ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Optic Sensor"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
@@ -510,25 +632,25 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Hardware"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#PIVParticle
+:PIVParticle rdf:type owl:Class ;
+             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
+                             :Substance ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Particle"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#PIVSoftware
 :PIVSoftware rdf:type owl:Class ;
              rdfs:subClassOf <https://w3id.org/okn/o/sd#Software> ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Software"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#Particle
-:Particle rdf:type owl:Class ;
-          rdfs:subClassOf :PIVHardware ;
-          <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en ;
-          <http://www.w3.org/2004/02/skos/core#example> "For data property pivmeta:material, please provide a wikidata URI, for e.g. for DEHS use https://www.wikidata.org/wiki/Q4387284."@en ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#PeakSearchMethod
 :PeakSearchMethod rdf:type owl:Class ;
                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                   rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
-                  <http://www.w3.org/2004/02/skos/core#example> "Peak centroid, Paralbolic peak fit or Gaussian peak fit."@en ;
+                  <http://www.w3.org/2004/02/skos/core#example> "Peak centroid, Parabolic peak fit or Gaussian peak fit."@en ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Peak Search Method"@en .
 
 
@@ -537,11 +659,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                  rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
                  <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "piv distribution"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivImage
-:PivImage rdf:type owl:Class ;
-          rdfs:subClassOf <http://purl.org/dc/dcmitype/Image> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivImageDistribution
@@ -583,14 +700,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                        <http://www.w3.org/2004/02/skos/core#prefLabel> "piv result distribution"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PivType
-:PivType rdf:type owl:Class ;
-         rdfs:subClassOf <http://purl.org/dc/terms/DCMIType> ;
-         rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
-         <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry type, e.g. PIV, PTV or other specialized methods."@en ;
-         <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Type"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#PivValidation
 :PivValidation rdf:type owl:Class ;
                rdfs:subClassOf :PivProcessingStep ;
@@ -608,11 +717,18 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :StandardName rdf:type owl:Class .
 
 
-###  https://matthiasprobst.github.io/pivmeta#SyntheticParticle
-:SyntheticParticle rdf:type owl:Class ;
-                   rdfs:subClassOf :Particle ;
-                   <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en ;
-                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
+###  https://matthiasprobst.github.io/pivmeta#Substance
+:Substance rdf:type owl:Class ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Substance"@en ;
+           <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q578779> .
+
+
+###  https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle
+:SyntheticPIVParticle rdf:type owl:Class ;
+                      rdfs:subClassOf :Substance ,
+                                      :VirtualTool ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#TemporalVariable
@@ -620,6 +736,29 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#TextVariable> ;
                   <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat"@en ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Temporal Variable"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#VirtualCamera
+:VirtualCamera rdf:type owl:Class ;
+               rdfs:subClassOf :Camera ,
+                               :VirtualTool ;
+               <http://www.w3.org/2004/02/skos/core#definition> "A computational model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Virtual Camera"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#VirtualLaser
+:VirtualLaser rdf:type owl:Class ;
+              rdfs:subClassOf :LightSource ,
+                              :VirtualTool ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A virtual laser used in synthetic PIV codes."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Virtual Laser"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#VirtualTool
+:VirtualTool rdf:type owl:Class ;
+             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "The virtual or computational object that helped the agent perform the action, e.g. John took a photo with his modelled camera."@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Virtual Tool"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction
@@ -637,9 +776,17 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 <https://schema.org/CreativeWork> rdf:type owl:Class .
 
 
+###  https://schema.org/Intangible
+<https://schema.org/Intangible> rdf:type owl:Class ;
+                                <http://www.w3.org/2004/02/skos/core#definition> "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc."@en ;
+                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Intangible"@en .
+
+
 ###  https://schema.org/SoftwareSourceCode
 <https://schema.org/SoftwareSourceCode> rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://schema.org/CreativeWork> .
+                                        rdfs:subClassOf <https://schema.org/CreativeWork> ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates."@en ;
+                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "software source code"@en .
 
 
 ###  https://w3id.org/okn/o/sd#Software
@@ -651,6 +798,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://purl.org/dc/dcmitype/Image
+<http://purl.org/dc/dcmitype/Image> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/dc/terms/DCMIType> ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "A visual representation other than text."@en ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Image"@en .
+
 
 ###  https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea
 :AmountOfSubstancePerUnitArea rdf:type owl:NamedIndividual ,
@@ -665,10 +819,26 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :BlackmanWindow rdf:type owl:NamedIndividual .
 
 
+###  https://matthiasprobst.github.io/pivmeta#DEHS
+:DEHS rdf:type owl:NamedIndividual ,
+               :PIVParticle ;
+      <http://www.w3.org/2004/02/skos/core#definition> "diethylhexyl sebacate"@en ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "DEHS" ;
+      <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q4387284> .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 :ExperimentalImage rdf:type owl:NamedIndividual ,
                             :ImageType ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#FlagActive
+:FlagActive rdf:type owl:NamedIndividual ,
+                     :FlagVariable ;
+            :hasFlagMeaning "active" ;
+            :hasFlagValue 1 ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "active"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#GaussianWindow
@@ -722,26 +892,32 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "per pixel"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#PIVData
+:PIVData rdf:type owl:NamedIndividual ;
+         rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVImageAAA
+:PIVImageAAA rdf:type owl:NamedIndividual ,
+                      <http://purl.org/dc/terms/DCMIType> ;
+             <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/dcmitype/Image> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
-:ParticleImageVelocimetry rdf:type owl:NamedIndividual ,
-                                   [ rdf:type owl:Class ;
-                                     owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Method>
-                                                   :PivType
-                                                 )
-                                   ] ;
+:ParticleImageVelocimetry rdf:type owl:NamedIndividual ;
                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q1756248> ;
                           <http://www.w3.org/2004/02/skos/core#definition> "Method to measure velocities in fluid."@en ;
                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Image Velocimetry"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry
-:ParticleTrackingVelocimetry rdf:type owl:NamedIndividual ,
-                                      [ rdf:type owl:Class ;
-                                        owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Method>
-                                                      :PivType
-                                                    )
-                                      ] ;
+:ParticleTrackingVelocimetry rdf:type owl:NamedIndividual ;
                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q7140505> ;
+                             <http://www.w3.org/2004/02/skos/core#definition> "A measurement technique to measure the velocity of particles."@en ;
                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Tracking Velocimetry"@en .
 
 
@@ -795,547 +971,10 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "Tukey Window"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter
-:arithmetic_mean_of_image_particle_diameter rdf:type owl:NamedIndividual ,
-                                                     :StandardName ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_image_particle_diameter"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size
-:arithmetic_mean_of_seeding_particle_size rdf:type owl:NamedIndividual ,
-                                                   :StandardName ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "The arithmetic mean of the diameter of the seeding particles."@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_seeding_particle_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#ccd_height
-:ccd_height rdf:type owl:NamedIndividual ,
-                     :StandardName ;
-            <http://www.w3.org/2004/02/skos/core#definition> "The height of a ccd pixel."@en ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_height"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#ccd_width
-:ccd_width rdf:type owl:NamedIndividual ,
-                    :StandardName ;
-           <http://www.w3.org/2004/02/skos/core#definition> "The width of a ccd pixel."@en ;
-           <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_width"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#displacement
-:displacement rdf:type owl:NamedIndividual ,
-                       :StandardName ;
-              <http://www.w3.org/2004/02/skos/core#definition> "PIV pixel displacement magnitude in the image plane."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size
-:final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
-                                                  :StandardName ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "Width and height of a square final PIV interrogation window overlap."@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "final_interrogation_window_overlap_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size
-:final_interrogation_window_size rdf:type owl:NamedIndividual ,
-                                          :StandardName ;
-                                 <http://www.w3.org/2004/02/skos/core#definition> "Width and height of a square final PIV interrogation window."@en ;
-                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "final_interrogation_window_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement
-:first_peak_x_displacement rdf:type owl:NamedIndividual ,
-                                    :StandardName ;
-                           <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en ;
-                           <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_x_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement
-:first_peak_y_displacement rdf:type owl:NamedIndividual ,
-                                    :StandardName ;
-                           <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en ;
-                           <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#focal_length
-:focal_length rdf:type owl:NamedIndividual ,
-                       :StandardName ;
-              <http://www.w3.org/2004/02/skos/core#definition> "The focal length. See also https://www.wikidata.org/wiki/Q193540."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "focal_length"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#image_bit_depth
-:image_bit_depth rdf:type owl:NamedIndividual ,
-                          :StandardName ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "image_bit_depth"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#image_density
-:image_density rdf:type owl:NamedIndividual ,
-                        :StandardName ;
-               <http://www.w3.org/2004/02/skos/core#definition> "The image density is computed based on the source density $N_s$ and the interrogation window size."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "image_density"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size
-:image_filter_kernel_size rdf:type owl:NamedIndividual ,
-                                   :StandardName ;
-                          <http://www.w3.org/2004/02/skos/core#definition> "The size of the image filter kernel."@en ;
-                          <http://www.w3.org/2004/02/skos/core#prefLabel> "image_filter_kernel_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#image_index
-:image_index rdf:type owl:NamedIndividual ,
-                      :StandardName ;
-             <http://www.w3.org/2004/02/skos/core#definition> "Index of a PIV image collection. Starts at 1 and ends at the number of images N."@en ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "image_index"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#image_particle_density
-:image_particle_density rdf:type owl:NamedIndividual ,
-                                 :StandardName ;
-                        <http://www.w3.org/2004/02/skos/core#definition> "Number of particle images per pixel. Equals the number of particles divided by the image area."@en ;
-                        <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_density"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#image_particle_diameter
-:image_particle_diameter rdf:type owl:NamedIndividual ,
-                                  :StandardName ;
-                         <http://www.w3.org/2004/02/skos/core#definition> "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en ;
-                         <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_diameter"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size
-:initial_interrogation_window_size rdf:type owl:NamedIndividual ,
-                                            :StandardName ;
-                                   <http://www.w3.org/2004/02/skos/core#definition> "Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en ;
-                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "initial_interrogation_window_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#inplane_velocity
-:inplane_velocity rdf:type owl:NamedIndividual ,
-                           :StandardName ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity."@en ;
-                  <http://www.w3.org/2004/02/skos/core#prefLabel> "inplane_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#laser_pulse_delay
-:laser_pulse_delay rdf:type owl:NamedIndividual ,
-                            :StandardName ;
-                   <http://www.w3.org/2004/02/skos/core#definition> "Time between two laser pulses."@en ;
-                   <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_pulse_delay"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness
-:laser_sheet_thickness rdf:type owl:NamedIndividual ,
-                                :StandardName ;
-                       <http://www.w3.org/2004/02/skos/core#definition> "The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly."@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_thickness"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction
-:least_square_residual_of_z_displacement_reconstruction rdf:type owl:NamedIndividual ,
-                                                                 :StandardName ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> "The least square residual of the z displacement reconstruction in stereo PIV."@en ;
-                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "least_square_residual_of_z_displacement_reconstruction"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity
-:magnitude_of_velocity rdf:type owl:NamedIndividual ,
-                                :StandardName ;
-                       <http://www.w3.org/2004/02/skos/core#definition> "Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "magnitude_of_velocity"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#microPIV
-:microPIV rdf:type owl:NamedIndividual ,
-                   [ rdf:type owl:Class ;
-                     owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Method>
-                                   :PivType
-                                 )
-                   ] ;
+:microPIV rdf:type owl:NamedIndividual ;
           <http://www.w3.org/2004/02/skos/core#definition> "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en ;
           <http://www.w3.org/2004/02/skos/core#prefLabel> "Micro PIV"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor
-:model_laser_sheet_shape_factor rdf:type owl:NamedIndividual ,
-                                         :StandardName ;
-                                <http://www.w3.org/2004/02/skos/core#definition> "The shape factor used to model the expanded laser beam. The shape factor is introduced in 'Particle Image Velocimetry A Practical Guide' by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam."@en ;
-                                <http://www.w3.org/2004/02/skos/core#prefLabel> "model_laser_sheet_shape_factor"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness
-:model_laser_sheet_thickness rdf:type owl:NamedIndividual ,
-                                      :StandardName ;
-                             <http://www.w3.org/2004/02/skos/core#definition> "The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor)."@en ;
-                             <http://www.w3.org/2004/02/skos/core#prefLabel> "model_laser_sheet_thickness"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#number_of_particles
-:number_of_particles rdf:type owl:NamedIndividual ,
-                              :StandardName ;
-                     <http://www.w3.org/2004/02/skos/core#definition> "Number of seeding particles in the image or field of interest. See also image_particle_density."@en ;
-                     <http://www.w3.org/2004/02/skos/core#prefLabel> "number_of_particles"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#optical_magnification
-:optical_magnification rdf:type owl:NamedIndividual ,
-                                :StandardName ;
-                       <http://www.w3.org/2004/02/skos/core#definition> "The optical magnification of the imaging system."@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "optical_magnification"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient
-:pivFirstPeakCorrelationCoefficient rdf:type owl:NamedIndividual ,
-                                             :StandardName ;
-                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_first_peak_correlation_coefficient"@en ;
-                                    <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient
-:piv_correlation_coefficient rdf:type owl:NamedIndividual ,
-                                      :StandardName ;
-                             <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows."@en ;
-                             <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_correlation_coefficient"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient
-:piv_first_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
-                                                 :StandardName ;
-                                        <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function."@en ;
-                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_first_peak_correlation_coefficient"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#piv_scaling_factor
-:piv_scaling_factor rdf:type owl:NamedIndividual ,
-                             :StandardName ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "Image scaling factor."@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_scaling_factor"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient
-:piv_second_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
-                                                  :StandardName ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function."@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_second_peak_correlation_coefficient"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient
-:piv_third_peak_correlation_coefficient rdf:type owl:NamedIndividual ,
-                                                 :StandardName ;
-                                        <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function."@en ;
-                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_third_peak_correlation_coefficient"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#relative_time
-:relative_time rdf:type owl:NamedIndividual ,
-                        :StandardName ;
-               <http://www.w3.org/2004/02/skos/core#definition> "Recording time since start of recording."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "relative_time"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#saturated_pixel_number
-:saturated_pixel_number rdf:type owl:NamedIndividual ,
-                                 :StandardName ;
-                        <http://www.w3.org/2004/02/skos/core#definition> "Number of pixels in the field of interest that exceed the maximal senor count."@en ;
-                        <http://www.w3.org/2004/02/skos/core#prefLabel> "saturated_pixel_number"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement
-:second_peak_x_displacement rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "second_peak_x_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement
-:second_peak_y_displacement rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "second_peak_y_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_height
-:sensor_pixel_height rdf:type owl:NamedIndividual ,
-                              :StandardName ;
-                     <http://www.w3.org/2004/02/skos/core#definition> "The height of the sensor in pixel."@en ;
-                     <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor
-:sensor_pixel_height_fill_factor rdf:type owl:NamedIndividual ,
-                                          :StandardName ;
-                                 <http://www.w3.org/2004/02/skos/core#definition> "Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en ;
-                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height_fill_factor"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_width
-:sensor_pixel_width rdf:type owl:NamedIndividual ,
-                             :StandardName ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "The width of the sensor in pixel."@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor
-:sensor_pixel_width_fill_factor rdf:type owl:NamedIndividual ,
-                                         :StandardName ;
-                                <http://www.w3.org/2004/02/skos/core#definition> "Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en ;
-                                <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width_fill_factor"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio
-:signal_to_noise_ratio rdf:type owl:NamedIndividual ,
-                                :StandardName ;
-                       <http://www.w3.org/2004/02/skos/core#definition> "The signal to noise ratio of the PIV evaluation."@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "signal_to_noise_ratio"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter
-:standard_deviation_of_image_particle_diameter rdf:type owl:NamedIndividual ,
-                                                        :StandardName ;
-                                               <http://www.w3.org/2004/02/skos/core#definition> "The standard deviation of the image particle diameter in the field of interest."@en ;
-                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_image_particle_diameter"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size
-:standard_deviation_of_seeding_particle_size rdf:type owl:NamedIndividual ,
-                                                      :StandardName ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "The standard deviation of the seeding particles sizes."@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_seeding_particle_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement
-:third_peak_x_displacement rdf:type owl:NamedIndividual ,
-                                    :StandardName ;
-                           <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."@en ;
-                           <http://www.w3.org/2004/02/skos/core#prefLabel> "third_peak_x_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement
-:third_peak_y_displacement rdf:type owl:NamedIndividual ,
-                                    :StandardName ;
-                           <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."@en ;
-                           <http://www.w3.org/2004/02/skos/core#prefLabel> "third_peak_y_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_coordinate
-:x_coordinate rdf:type owl:NamedIndividual ,
-                       :StandardName ;
-              <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in horizontal direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "x_coordinate"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity
-:x_derivative_of_x_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name x_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the x coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_x_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity
-:x_derivative_of_y_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name x_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the x coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_y_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity
-:x_derivative_of_z_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name x_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the x coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_z_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_displacement
-:x_displacement rdf:type owl:NamedIndividual ,
-                         :StandardName ;
-                <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x."@en ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "x_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size
-:x_final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
-                                                    :StandardName ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "Width of a final PIV interrogation window overlap."@en ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_overlap_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size
-:x_final_interrogation_window_size rdf:type owl:NamedIndividual ,
-                                            :StandardName ;
-                                   <http://www.w3.org/2004/02/skos/core#definition> "Width of a final PIV interrogation window."@en ;
-                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_image_coordinate
-:x_image_coordinate rdf:type owl:NamedIndividual ,
-                             :StandardName ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in horizontal direction. The origin is at the top left."@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "x_image_coordinate"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size
-:x_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
-                                              :StandardName ;
-                                     <http://www.w3.org/2004/02/skos/core#definition> "Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en ;
-                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "x_initial_interrogation_window_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_inplane_velocity
-:x_inplane_velocity rdf:type owl:NamedIndividual ,
-                             :StandardName ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "x_inplane_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_origin_offset
-:x_origin_offset rdf:type owl:NamedIndividual ,
-                          :StandardName ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "The physical offset of the x_image_origin_coordinate in the global coordinate system."@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "x_origin_offset"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate
-:x_pixel_coordinate rdf:type owl:NamedIndividual ,
-                             :StandardName ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "Pixel coordinate in horizontal direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (x_coordinate), not the image coordinate (x_image_coordinate) which has its origin in the top left of the image."@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "x_pixel_coordinate"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#x_velocity
-:x_velocity rdf:type owl:NamedIndividual ,
-                     :StandardName ;
-            <http://www.w3.org/2004/02/skos/core#definition> "Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x."@en ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "x_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_coordinate
-:y_coordinate rdf:type owl:NamedIndividual ,
-                       :StandardName ;
-              <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in vertical direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "y_coordinate"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity
-:y_derivative_of_x_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name y_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the y coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_x_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity
-:y_derivative_of_y_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name y_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the y coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_y_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity
-:y_derivative_of_z_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name y_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the y coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_z_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_displacement
-:y_displacement rdf:type owl:NamedIndividual ,
-                         :StandardName ;
-                <http://www.w3.org/2004/02/skos/core#definition> "y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane."@en ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "y_displacement"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size
-:y_final_interrogation_window_overlap_size rdf:type owl:NamedIndividual ,
-                                                    :StandardName ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "The height of a final PIV interrogation window overlap."@en ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_overlap_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size
-:y_final_interrogation_window_size rdf:type owl:NamedIndividual ,
-                                            :StandardName ;
-                                   <http://www.w3.org/2004/02/skos/core#definition> "The height of the final PIV interrogation window."@en ;
-                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_image_coordinate
-:y_image_coordinate rdf:type owl:NamedIndividual ,
-                             :StandardName ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in vertical direction. The origin is in the top left."@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "y_image_coordinate"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size
-:y_initial_interrogation_window_size rdf:type owl:NamedIndividual ,
-                                              :StandardName ;
-                                     <http://www.w3.org/2004/02/skos/core#definition> "Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en ;
-                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "y_initial_interrogation_window_size"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_inplane_velocity
-:y_inplane_velocity rdf:type owl:NamedIndividual ,
-                             :StandardName ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "y_inplane_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_origin_offset
-:y_origin_offset rdf:type owl:NamedIndividual ,
-                          :StandardName ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "The physical offset of the y_image_origin_coordinate in the global coordinate system."@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "y_origin_offset"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate
-:y_pixel_coordinate rdf:type owl:NamedIndividual ,
-                             :StandardName ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "Pixel coordinate in vertical direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (y_coordinate), not the image coordinate (y_image_coordinate) which has its origin in the top left of the image."@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "y_pixel_coordinate"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#y_velocity
-:y_velocity rdf:type owl:NamedIndividual ,
-                     :StandardName ;
-            <http://www.w3.org/2004/02/skos/core#definition> "Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."@en ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "y_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#z_coordinate
-:z_coordinate rdf:type owl:NamedIndividual ,
-                       :StandardName ;
-              <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in depth direction in the global coordinate system and hence perpendicular to the sensor plane."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "z_coordinate"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity
-:z_derivative_of_x_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name z_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the z coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "z_derivative_of_x_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#z_derivative_of_y_velocity
-:z_derivative_of_y_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name z_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the z coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "z_derivative_of_y_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#z_derivative_of_z_velocity
-:z_derivative_of_z_velocity rdf:type owl:NamedIndividual ,
-                                     :StandardName ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "The standard name z_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the z coordinate."@en ;
-                            <http://www.w3.org/2004/02/skos/core#prefLabel> "z_derivative_of_z_velocity"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#z_velocity
-:z_velocity rdf:type owl:NamedIndividual ,
-                     :StandardName ;
-            <http://www.w3.org/2004/02/skos/core#definition> "Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z."@en ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "z_velocity"@en .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

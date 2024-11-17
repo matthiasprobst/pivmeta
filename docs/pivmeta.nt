@@ -1,15 +1,14 @@
 <https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/2002/07/owl#imports> <http://w3id.org/nfdi4ing/metadata4ing/1.2.1> .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/abstract> "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."@en .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/created> "2024-01-03" .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/creator> "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen" .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/modified> "2024-01-03" .
-<https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/title> "PivMeta: An ontology draft for describing particle image velocimetry data."@en .
+<https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/title> "pivmeta: An ontology draft for describing particle image velocimetry data."@en .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "pivmeta" .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://matthiasprobst.github.io/pivmeta#" .
 <https://matthiasprobst.github.io/pivmeta#> <http://w3id.org/nfdi4ing/metadata4ing#ContactPerson> "https://orcid.org/0000-0001-8729-0482" .
-<https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/2000/01/rdf-schema#label> "PivMeta" .
+<https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/2000/01/rdf-schema#label> "pivmeta" .
 <https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
 # 
 # 
@@ -28,6 +27,9 @@
 # 
 # http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -86,6 +88,13 @@
 # https://matthiasprobst.github.io/ssno#hasStandardNameDescription
 <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54
+<https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <http://www.w3.org/2000/01/rdf-schema#comment> "URL corresponding to entry in Wikidata."@en .
+<https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "" .
+<https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <http://www.w3.org/2004/02/skos/core#prefLabel> "wikidataReference"@en .
+<https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+# 
 # 
 # 
 # #################################################################
@@ -110,22 +119,60 @@
 # #################################################################
 # 
 # 
-# https://codemeta.github.io/terms/hasSourceCode
-<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+# http://w3id.org/nfdi4ing/metadata4ing#hasParameter
+<http://w3id.org/nfdi4ing/metadata4ing#hasParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/nfdi4ing/metadata4ing#hasParameter> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
 _:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid4 .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#SyntheticParticle> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#VirtualTool> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#LaserModel> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/nfdi4ing/metadata4ing#hasParameter> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
+<http://w3id.org/nfdi4ing/metadata4ing#hasParameter> <http://www.w3.org/2004/02/skos/core#definition> "Points to a parameter of a given method or tool."@en .
+<http://w3id.org/nfdi4ing/metadata4ing#hasParameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "has parameter"@en .
+# 
+# https://codemeta.github.io/terms/hasSourceCode
+<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/2002/07/owl#inverseOf> <https://codemeta.github.io/terms/isSourceCodeOf> .
+<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#VirtualTool> .
 <https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/SoftwareSourceCode> .
-<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/2004/02/skos/core#prefLabel> "source code"@en .
+<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://codemeta.github.io/terms/> .
+<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational model or concept to the source code that implements it."@en .
+<https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/2004/02/skos/core#prefLabel> "has source code"@en .
+# 
+# https://codemeta.github.io/terms/isSourceCodeOf
+<https://codemeta.github.io/terms/isSourceCodeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://codemeta.github.io/terms/isSourceCodeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/SoftwareSourceCode> .
+<https://codemeta.github.io/terms/isSourceCodeOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#VirtualTool> .
+<https://codemeta.github.io/terms/isSourceCodeOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://codemeta.github.io/terms/> .
+<https://codemeta.github.io/terms/isSourceCodeOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is source code of"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#flag
+<https://matthiasprobst.github.io/pivmeta#flag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/pivmeta#flag> <http://www.w3.org/2002/07/owl#inverseOf> <https://matthiasprobst.github.io/pivmeta#flagIn> .
+<https://matthiasprobst.github.io/pivmeta#flag> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#FlagCount> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#flag> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#FlagVariable> .
+<https://matthiasprobst.github.io/pivmeta#flag> <http://www.w3.org/2004/02/skos/core#definition> "Relates something to a Flag Variable"@en .
+<https://matthiasprobst.github.io/pivmeta#flag> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#flagIn
+<https://matthiasprobst.github.io/pivmeta#flagIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/pivmeta#flagIn> <http://www.w3.org/2004/02/skos/core#definition> "Relates a Flag Variable to its used concept"@en .
+<https://matthiasprobst.github.io/pivmeta#flagIn> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#hasStandardName
 <https://matthiasprobst.github.io/pivmeta#hasStandardName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -151,7 +198,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#ImageType> .
-<https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2004/02/skos/core#definition> "The type of image, e.g. an eperimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."@en .
+<https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2004/02/skos/core#definition> "The type of image, e.g. an experimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."@en .
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2004/02/skos/core#example> "Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage"@en .
 <https://matthiasprobst.github.io/pivmeta#pivImageType> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv image type"@en .
 # 
@@ -162,13 +209,13 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#windowWeightingFunction> <http://www.w3.org/2004/02/skos/core#definition> "Points to the window weighting function used by the correlation method."@en .
 <https://matthiasprobst.github.io/pivmeta#windowWeightingFunction> <http://www.w3.org/2004/02/skos/core#prefLabel> "window weighting function"@en .
 # 
-# https://matthiasprobst.github.io/ssno#canonicalUnits
-<https://matthiasprobst.github.io/ssno#canonicalUnits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://matthiasprobst.github.io/ssno#canonicalUnits> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/ssno#canonicalUnits> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/Unit> .
-<https://matthiasprobst.github.io/ssno#canonicalUnits> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/nfdi4ing/metadata4ing#hasUnit> .
-<https://matthiasprobst.github.io/ssno#canonicalUnits> <http://www.w3.org/2004/02/skos/core#definition> "The canonical unit of the standard name"@en .
-<https://matthiasprobst.github.io/ssno#canonicalUnits> <http://www.w3.org/2004/02/skos/core#prefLabel> "canonical units"@en .
+# https://matthiasprobst.github.io/ssno#unit
+<https://matthiasprobst.github.io/ssno#unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/ssno#unit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#StandardName> .
+<https://matthiasprobst.github.io/ssno#unit> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/Unit> .
+<https://matthiasprobst.github.io/ssno#unit> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/nfdi4ing/metadata4ing#hasUnit> .
+<https://matthiasprobst.github.io/ssno#unit> <http://www.w3.org/2004/02/skos/core#definition> "The canonical unit of the standard name"@en .
+<https://matthiasprobst.github.io/ssno#unit> <http://www.w3.org/2004/02/skos/core#prefLabel> "unit"@en .
 # 
 # 
 # 
@@ -179,6 +226,18 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
+# http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue
+<http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/nfdi4ing/metadata4ing#hasValue> .
+<http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> .
+<http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://w3id.org/nfdi4ing/metadata4ing#hasValue
+<http://w3id.org/nfdi4ing/metadata4ing#hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/nfdi4ing/metadata4ing#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
+<http://w3id.org/nfdi4ing/metadata4ing#hasValue> <http://www.w3.org/2004/02/skos/core#definition> "A value of any type"@en .
+<http://w3id.org/nfdi4ing/metadata4ing#hasValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "has value"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#filenamePattern
 <https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivDistribution> .
@@ -186,27 +245,28 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2004/02/skos/core#definition> "The regular expression string to determine the image filenames in the distribution."@en .
 <https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#flagMeanings
-<https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#FlagVariable> .
-<https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en .
-<https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2004/02/skos/core#example> "For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:\r\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"@en .
-<https://matthiasprobst.github.io/pivmeta#flagMeanings> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag meanings"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#flagValues
-<https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#FlagVariable> .
-<https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
-<https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en .
-<https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2004/02/skos/core#example> "pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].\r\n\r\nThe corresponding meaning would be:\r\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]\r\n\r\nA flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation.\r\n\r\nA JSON-LD excerpt could look like this:\r\n{\r\n    \"@type\": \"m4i:NumericalVariable\",\r\n    \"pivmeta:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],\r\n    \"pivmeta:flagMeanings\": [\r\n        \"inactive\",\r\n        \"active\",\r\n        \"masked\",\r\n        \"noresult\",\r\n        \"disabled\",\r\n        \"filtered\", \r\n        \"interpolated\",\r\n        \"replaced\", \r\n        \"manualedit\"\r\n    ],\r\n    \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"\r\n}"@en .
-<https://matthiasprobst.github.io/pivmeta#flagValues> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag values"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#fnumber
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#DigitalCamera> .
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#hasFlagMeaning
+<https://matthiasprobst.github.io/pivmeta#hasFlagMeaning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagMeaning> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#FlagVariable> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagMeaning> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagMeaning> <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en .
+<https://matthiasprobst.github.io/pivmeta#hasFlagMeaning> <http://www.w3.org/2004/02/skos/core#example> "For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:\r\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"@en .
+<https://matthiasprobst.github.io/pivmeta#hasFlagMeaning> <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag meaning"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#hasFlagValue
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#FlagVariable> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2004/02/skos/core#example> "pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].\r\n\r\nThe corresponding meaning would be:\r\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]\r\n\r\nA flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation.\r\n\r\nA JSON-LD excerpt could look like this:\r\n{\r\n    \"@type\": \"m4i:NumericalVariable\",\r\n    \"pivmeta:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],\r\n    \"pivmeta:flagMeanings\": [\r\n        \"inactive\",\r\n        \"active\",\r\n        \"masked\",\r\n        \"noresult\",\r\n        \"disabled\",\r\n        \"filtered\", \r\n        \"interpolated\",\r\n        \"replaced\", \r\n        \"manualedit\"\r\n    ],\r\n    \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"\r\n}"@en .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag value"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#material
 <https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -259,6 +319,12 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
+# http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset
+<http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.allotrope.org/ontologies/hdf5/1.8#> .
+<http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset> <http://www.w3.org/2004/02/skos/core#definition> "An HDF5 Dataset."@en .
+<http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset> <http://www.w3.org/2004/02/skos/core#prefLabel> "HDF5 Dataset"@en .
+# 
 # http://purl.obolibrary.org/obo/BFO_0000017
 <http://purl.obolibrary.org/obo/BFO_0000017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.obolibrary.org/obo/BFO_0000017> <http://www.w3.org/2004/02/skos/core#definition> "To say that b is a realizable entity is to say that b is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type. (axiom label in BFO2 Reference: [058-002])" .
@@ -268,31 +334,56 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.obolibrary.org/obo/Process
 <http://purl.obolibrary.org/obo/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# http://purl.org/dc/dcmitype/Image
-<http://purl.org/dc/dcmitype/Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
 # http://purl.org/dc/terms/DCMIType
 <http://purl.org/dc/terms/DCMIType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/DCMIType> <http://www.w3.org/2004/02/skos/core#definition> "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."@en .
+<http://purl.org/dc/terms/DCMIType> <http://www.w3.org/2004/02/skos/core#prefLabel> "DCMI Type"@en .
 # 
 # http://qudt.org/schema/qudt/QuantityKind
 <http://qudt.org/schema/qudt/QuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://qudt.org/schema/qudt/Unit
 <http://qudt.org/schema/qudt/Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://qudt.org/schema/qudt/Unit> <http://www.w3.org/2004/02/skos/core#definition> "Unit of measure"@en .
+<http://qudt.org/schema/qudt/Unit> <http://www.w3.org/2004/02/skos/core#prefLabel> "Unit"@en .
 # 
 # http://w3id.org/nfdi4ing/metadata4ing#Method
 <http://w3id.org/nfdi4ing/metadata4ing#Method> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/nfdi4ing/metadata4ing#Method> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/BFO_0000017> .
+<http://w3id.org/nfdi4ing/metadata4ing#Method> <http://www.w3.org/2004/02/skos/core#definition> "Abstract description of a method for analysis, generation and transformation of data and material objects like, e.g., 'Fourier Transform Infrared Spectroscopy' or 'Molecular Dynamics Simulation'. Note that while values for relevant parameters should be provided, m4i:Method does not refer to the actual execution of the process that is described (use m4i:ProcessingStep for that), but rather a description of the underlying principle."@en .
+<http://w3id.org/nfdi4ing/metadata4ing#Method> <http://www.w3.org/2004/02/skos/core#prefLabel> "Method"@en .
 # 
 # http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable
 <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
 # 
 # http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep
 <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
 # 
+# http://w3id.org/nfdi4ing/metadata4ing#TextVariable
+<http://w3id.org/nfdi4ing/metadata4ing#TextVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/nfdi4ing/metadata4ing#TextVariable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
+<http://w3id.org/nfdi4ing/metadata4ing#TextVariable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/nfdi4ing/metadata4ing#> .
+<http://w3id.org/nfdi4ing/metadata4ing#TextVariable> <http://www.w3.org/2004/02/skos/core#prefLabel> "Text Variable"@en .
+# 
 # http://w3id.org/nfdi4ing/metadata4ing#Tool
 <http://w3id.org/nfdi4ing/metadata4ing#Tool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/nfdi4ing/metadata4ing#Tool> <http://www.w3.org/2004/02/skos/core#definition> "bject that helps an agent perform an action (e.g., John wrote a book with a pen), i.e., an object of the relation schema:instrument or m4i:hasTool"@en .
+<http://w3id.org/nfdi4ing/metadata4ing#Tool> <http://www.w3.org/2004/02/skos/core#prefLabel> "Tool"@en .
+# 
+# http://www.molmod.info/semantics/pims-ii.ttl#Property
+<http://www.molmod.info/semantics/pims-ii.ttl#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.molmod.info/semantics/pims-ii.ttl#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
+<http://www.molmod.info/semantics/pims-ii.ttl#Property> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://emmo.info/emmo#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> .
+<http://www.molmod.info/semantics/pims-ii.ttl#Property> <http://www.w3.org/2004/02/skos/core#definition> "Property, i.e., a variable that can be considered (as an investigated property, i.e., target property) within a processing step"@en .
+<http://www.molmod.info/semantics/pims-ii.ttl#Property> <http://www.w3.org/2004/02/skos/core#prefLabel> "Property"@en .
+# 
+# http://www.molmod.info/semantics/pims-ii.ttl#Variable
+<http://www.molmod.info/semantics/pims-ii.ttl#Variable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.molmod.info/semantics/pims-ii.ttl#Variable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/Intangible> .
+<http://www.molmod.info/semantics/pims-ii.ttl#Variable> <http://www.w3.org/2004/02/skos/core#definition> "Variable, i.e., a conventional that is employed for something to which values can be assigned (this may include different notations for the same variable including, e.g., computational representations); this is to be understood very generally, e.g., a variable may be an array or set of elements or have another kind of internal structure"@en .
+<http://www.molmod.info/semantics/pims-ii.ttl#Variable> <http://www.w3.org/2004/02/skos/core#prefLabel> "Variable"@en .
 # 
 # http://www.w3.org/2004/02/skos/core#Concept
 <http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -305,6 +396,9 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/Process> .
 <http://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#label> "Activity"@en .
 # 
+# http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
 # https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration
 <https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivProcessingStep> .
@@ -316,6 +410,12 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod> <http://www.w3.org/2004/02/skos/core#example> "Can be direct subtraction of background, division of image by background or a combination."@en .
 <https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "background subtraction"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#Camera
+<https://matthiasprobst.github.io/pivmeta#Camera> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#Camera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#OpticSensor> .
+<https://matthiasprobst.github.io/pivmeta#Camera> <http://www.w3.org/2004/02/skos/core#prefLabel> "Camera"@en .
+<https://matthiasprobst.github.io/pivmeta#Camera> <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q15328> .
+# 
 # https://matthiasprobst.github.io/pivmeta#CorrelationMethod
 <https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#CorrelationMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
@@ -324,15 +424,18 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://matthiasprobst.github.io/pivmeta#DigitalCamera
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVHardware> .
+<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
+<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Camera> .
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.obolibrary.org/obo/OBI_0001048> .
+<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2004/02/skos/core#definition> "A Digital Camera captures photographs or videos in a digital format."@en .
 <https://matthiasprobst.github.io/pivmeta#DigitalCamera> <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
+<https://matthiasprobst.github.io/pivmeta#DigitalCamera> <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q62927> .
 # 
-# https://matthiasprobst.github.io/pivmeta#DigitalCameraModel
-<https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#DigitalCamera> .
-<https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/2004/02/skos/core#definition> "A model of a digital camera used to generate synthetic PIV images. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en .
-<https://matthiasprobst.github.io/pivmeta#DigitalCameraModel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera Model"@en .
+# https://matthiasprobst.github.io/pivmeta#FlagCount
+<https://matthiasprobst.github.io/pivmeta#FlagCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#FlagCount> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> .
+<https://matthiasprobst.github.io/pivmeta#FlagCount> <http://www.w3.org/2004/02/skos/core#definition> "Holds the number of data points associated with a Flag Variable."@en .
+<https://matthiasprobst.github.io/pivmeta#FlagCount> <http://www.w3.org/2004/02/skos/core#prefLabel> "Flag Count"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#FlagVariable
 <https://matthiasprobst.github.io/pivmeta#FlagVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -382,13 +485,17 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://matthiasprobst.github.io/pivmeta#Laser
 <https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVHardware> .
+<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
+<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#LightSource> .
+<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2004/02/skos/core#definition> "A Device which emits light via amplification."@en .
+<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser"@en .
+<https://matthiasprobst.github.io/pivmeta#Laser> <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q38867> .
 # 
-# https://matthiasprobst.github.io/pivmeta#LaserModel
-<https://matthiasprobst.github.io/pivmeta#LaserModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#LaserModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Laser> .
-<https://matthiasprobst.github.io/pivmeta#LaserModel> <http://www.w3.org/2004/02/skos/core#definition> "A virtual laser used in synthetic PIV codes."@en .
-<https://matthiasprobst.github.io/pivmeta#LaserModel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser Model"@en .
+# https://matthiasprobst.github.io/pivmeta#LightSource
+<https://matthiasprobst.github.io/pivmeta#LightSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#LightSource> <http://www.w3.org/2004/02/skos/core#definition> "An object or device that emits light"@en .
+<https://matthiasprobst.github.io/pivmeta#LightSource> <http://www.w3.org/2004/02/skos/core#prefLabel> "Light Source"@en .
+<https://matthiasprobst.github.io/pivmeta#LightSource> <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1146001> .
 # 
 # https://matthiasprobst.github.io/pivmeta#MaskGeneration
 <https://matthiasprobst.github.io/pivmeta#MaskGeneration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -406,6 +513,11 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#InterrogationMethod> .
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#definition> "A PIV multiple pass interrogation window, which uses the local integer displacement in a subsequent interrogation pas by offsetting the the interrogation windows. This increases the singal-to-noise ratio of the coorelation peak as unmatched particle images are avoided."@en .
 <https://matthiasprobst.github.io/pivmeta#Multipass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Multipass"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#OpticSensor
+<https://matthiasprobst.github.io/pivmeta#OpticSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#OpticSensor> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://kif.cs.lth.se/ontologies/rosetta.owl#OpticSensor> .
+<https://matthiasprobst.github.io/pivmeta#OpticSensor> <http://www.w3.org/2004/02/skos/core#prefLabel> "Optic Sensor"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
 <https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -430,23 +542,23 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#PIVHardware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 <https://matthiasprobst.github.io/pivmeta#PIVHardware> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Hardware"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#PIVParticle
+<https://matthiasprobst.github.io/pivmeta#PIVParticle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PIVParticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
+<https://matthiasprobst.github.io/pivmeta#PIVParticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Substance> .
+<https://matthiasprobst.github.io/pivmeta#PIVParticle> <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en .
+<https://matthiasprobst.github.io/pivmeta#PIVParticle> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Particle"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#PIVSoftware
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/okn/o/sd#Software> .
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Software"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#Particle
-<https://matthiasprobst.github.io/pivmeta#Particle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#Particle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVHardware> .
-<https://matthiasprobst.github.io/pivmeta#Particle> <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en .
-<https://matthiasprobst.github.io/pivmeta#Particle> <http://www.w3.org/2004/02/skos/core#example> "For data property pivmeta:material, please provide a wikidata URI, for e.g. for DEHS use https://www.wikidata.org/wiki/Q4387284."@en .
-<https://matthiasprobst.github.io/pivmeta#Particle> <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#PeakSearchMethod
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Method fitting the sub pixel peak in the correlation signal."@en .
-<https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2004/02/skos/core#example> "Peak centroid, Paralbolic peak fit or Gaussian peak fit."@en .
+<https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2004/02/skos/core#example> "Peak centroid, Parabolic peak fit or Gaussian peak fit."@en .
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Peak Search Method"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivDistribution
@@ -454,10 +566,6 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Distribution> .
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en .
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv distribution"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#PivImage
-<https://matthiasprobst.github.io/pivmeta#PivImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PivImage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/dcmitype/Image> .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivImageDistribution
 <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -492,13 +600,6 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#PivResultDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV result distribution containing displacements and optionally other derived variables"@en .
 <https://matthiasprobst.github.io/pivmeta#PivResultDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv result distribution"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#PivType
-<https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/DCMIType> .
-<https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2000/01/rdf-schema#comment> "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en .
-<https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry type, e.g. PIV, PTV or other specialized methods."@en .
-<https://matthiasprobst.github.io/pivmeta#PivType> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Type"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#PivValidation
 <https://matthiasprobst.github.io/pivmeta#PivValidation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PivValidation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivProcessingStep> .
@@ -513,17 +614,43 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#StandardName
 <https://matthiasprobst.github.io/pivmeta#StandardName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# https://matthiasprobst.github.io/pivmeta#SyntheticParticle
-<https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Particle> .
-<https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en .
-<https://matthiasprobst.github.io/pivmeta#SyntheticParticle> <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
+# https://matthiasprobst.github.io/pivmeta#Substance
+<https://matthiasprobst.github.io/pivmeta#Substance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#Substance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Substance"@en .
+<https://matthiasprobst.github.io/pivmeta#Substance> <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q578779> .
+# 
+# https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle
+<https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Substance> .
+<https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#VirtualTool> .
+<https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle> <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en .
+<https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle> <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#TemporalVariable
 <https://matthiasprobst.github.io/pivmeta#TemporalVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#TemporalVariable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#TextVariable> .
 <https://matthiasprobst.github.io/pivmeta#TemporalVariable> <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat"@en .
 <https://matthiasprobst.github.io/pivmeta#TemporalVariable> <http://www.w3.org/2004/02/skos/core#prefLabel> "Temporal Variable"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#VirtualCamera
+<https://matthiasprobst.github.io/pivmeta#VirtualCamera> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#VirtualCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Camera> .
+<https://matthiasprobst.github.io/pivmeta#VirtualCamera> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#VirtualTool> .
+<https://matthiasprobst.github.io/pivmeta#VirtualCamera> <http://www.w3.org/2004/02/skos/core#definition> "A computational model of a digital camera. A set of parameters should be added using h4i:hasParameter and the source code relation using codemeta:hasSourceCode"@en .
+<https://matthiasprobst.github.io/pivmeta#VirtualCamera> <http://www.w3.org/2004/02/skos/core#prefLabel> "Virtual Camera"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#VirtualLaser
+<https://matthiasprobst.github.io/pivmeta#VirtualLaser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#VirtualLaser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#LightSource> .
+<https://matthiasprobst.github.io/pivmeta#VirtualLaser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#VirtualTool> .
+<https://matthiasprobst.github.io/pivmeta#VirtualLaser> <http://www.w3.org/2004/02/skos/core#definition> "A virtual laser used in synthetic PIV codes."@en .
+<https://matthiasprobst.github.io/pivmeta#VirtualLaser> <http://www.w3.org/2004/02/skos/core#prefLabel> "Virtual Laser"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#VirtualTool
+<https://matthiasprobst.github.io/pivmeta#VirtualTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#VirtualTool> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
+<https://matthiasprobst.github.io/pivmeta#VirtualTool> <http://www.w3.org/2004/02/skos/core#definition> "The virtual or computational object that helped the agent perform the action, e.g. John took a photo with his modelled camera."@en .
+<https://matthiasprobst.github.io/pivmeta#VirtualTool> <http://www.w3.org/2004/02/skos/core#prefLabel> "Virtual Tool"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction
 <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -537,9 +664,16 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://schema.org/CreativeWork
 <https://schema.org/CreativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
+# https://schema.org/Intangible
+<https://schema.org/Intangible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Intangible> <http://www.w3.org/2004/02/skos/core#definition> "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc."@en .
+<https://schema.org/Intangible> <http://www.w3.org/2004/02/skos/core#prefLabel> "Intangible"@en .
+# 
 # https://schema.org/SoftwareSourceCode
 <https://schema.org/SoftwareSourceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/CreativeWork> .
+<https://schema.org/SoftwareSourceCode> <http://www.w3.org/2004/02/skos/core#definition> "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates."@en .
+<https://schema.org/SoftwareSourceCode> <http://www.w3.org/2004/02/skos/core#prefLabel> "software source code"@en .
 # 
 # https://w3id.org/okn/o/sd#Software
 <https://w3id.org/okn/o/sd#Software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -555,6 +689,12 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
+# http://purl.org/dc/dcmitype/Image
+<http://purl.org/dc/dcmitype/Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/dc/dcmitype/Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/DCMIType> .
+<http://purl.org/dc/dcmitype/Image> <http://www.w3.org/2004/02/skos/core#definition> "A visual representation other than text."@en .
+<http://purl.org/dc/dcmitype/Image> <http://www.w3.org/2004/02/skos/core#prefLabel> "Image"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea
 <https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://qudt.org/schema/qudt/QuantityKind> .
@@ -566,10 +706,24 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://matthiasprobst.github.io/pivmeta#BlackmanWindow
 <https://matthiasprobst.github.io/pivmeta#BlackmanWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 # 
+# https://matthiasprobst.github.io/pivmeta#DEHS
+<https://matthiasprobst.github.io/pivmeta#DEHS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#DEHS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVParticle> .
+<https://matthiasprobst.github.io/pivmeta#DEHS> <http://www.w3.org/2004/02/skos/core#definition> "diethylhexyl sebacate"@en .
+<https://matthiasprobst.github.io/pivmeta#DEHS> <http://www.w3.org/2004/02/skos/core#prefLabel> "DEHS" .
+<https://matthiasprobst.github.io/pivmeta#DEHS> <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q4387284> .
+# 
 # https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ImageType> .
 <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#FlagActive
+<https://matthiasprobst.github.io/pivmeta#FlagActive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#FlagActive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#FlagVariable> .
+<https://matthiasprobst.github.io/pivmeta#FlagActive> <https://matthiasprobst.github.io/pivmeta#hasFlagMeaning> "active" .
+<https://matthiasprobst.github.io/pivmeta#FlagActive> <https://matthiasprobst.github.io/pivmeta#hasFlagValue> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://matthiasprobst.github.io/pivmeta#FlagActive> <http://www.w3.org/2004/02/skos/core#prefLabel> "active"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#GaussianWindow
 <https://matthiasprobst.github.io/pivmeta#GaussianWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -615,33 +769,29 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://www.w3.org/2004/02/skos/core#example> "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."@en .
 <https://matthiasprobst.github.io/pivmeta#PER-PIXEL> <http://www.w3.org/2004/02/skos/core#prefLabel> "per pixel"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#PIVData
+<https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/2000/01/rdf-schema#comment> "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en .
+<https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en .
+<https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#PIVImageAAA
+<https://matthiasprobst.github.io/pivmeta#PIVImageAAA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#PIVImageAAA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/DCMIType> .
+<https://matthiasprobst.github.io/pivmeta#PIVImageAAA> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/dcmitype/Image> .
+<https://matthiasprobst.github.io/pivmeta#PIVImageAAA> <http://www.w3.org/2004/02/skos/core#definition> "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en .
+<https://matthiasprobst.github.io/pivmeta#PIVImageAAA> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
 <https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:genid5 .
-_:genid5 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PivType> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q1756248> .
 <https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/2004/02/skos/core#definition> "Method to measure velocities in fluid."@en .
 <https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry> <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Image Velocimetry"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry
 <https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:genid8 .
-_:genid8 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PivType> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q7140505> .
+<https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/2004/02/skos/core#definition> "A measurement technique to measure the velocity of particles."@en .
 <https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry> <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Tracking Velocimetry"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample
@@ -686,474 +836,9 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#TukeyWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction> .
 <https://matthiasprobst.github.io/pivmeta#TukeyWindow> <http://www.w3.org/2004/02/skos/core#prefLabel> "Tukey Window"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter
-<https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter> <http://www.w3.org/2004/02/skos/core#definition> "Arithmetic mean of the image particle diameters in the flow. The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en .
-<https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_image_particle_diameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_image_particle_diameter"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size
-<https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size> <http://www.w3.org/2004/02/skos/core#definition> "The arithmetic mean of the diameter of the seeding particles."@en .
-<https://matthiasprobst.github.io/pivmeta#arithmetic_mean_of_seeding_particle_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "arithmetic_mean_of_seeding_particle_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#ccd_height
-<https://matthiasprobst.github.io/pivmeta#ccd_height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#ccd_height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#ccd_height> <http://www.w3.org/2004/02/skos/core#definition> "The height of a ccd pixel."@en .
-<https://matthiasprobst.github.io/pivmeta#ccd_height> <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_height"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#ccd_width
-<https://matthiasprobst.github.io/pivmeta#ccd_width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#ccd_width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#ccd_width> <http://www.w3.org/2004/02/skos/core#definition> "The width of a ccd pixel."@en .
-<https://matthiasprobst.github.io/pivmeta#ccd_width> <http://www.w3.org/2004/02/skos/core#prefLabel> "ccd_width"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#displacement
-<https://matthiasprobst.github.io/pivmeta#displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#displacement> <http://www.w3.org/2004/02/skos/core#definition> "PIV pixel displacement magnitude in the image plane."@en .
-<https://matthiasprobst.github.io/pivmeta#displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size
-<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#definition> "Width and height of a square final PIV interrogation window overlap."@en .
-<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "final_interrogation_window_overlap_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size
-<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#definition> "Width and height of a square final PIV interrogation window."@en .
-<https://matthiasprobst.github.io/pivmeta#final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "final_interrogation_window_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement
-<https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement> <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#first_peak_x_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_x_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement
-<https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the first peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#first_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "first_peak_y_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#focal_length
-<https://matthiasprobst.github.io/pivmeta#focal_length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#focal_length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#focal_length> <http://www.w3.org/2004/02/skos/core#definition> "The focal length. See also https://www.wikidata.org/wiki/Q193540."@en .
-<https://matthiasprobst.github.io/pivmeta#focal_length> <http://www.w3.org/2004/02/skos/core#prefLabel> "focal_length"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#image_bit_depth
-<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/2004/02/skos/core#definition> "The pixel depth of an image in bits. Typical bit depth are 8 bits or 16 bits."@en .
-<https://matthiasprobst.github.io/pivmeta#image_bit_depth> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_bit_depth"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#image_density
-<https://matthiasprobst.github.io/pivmeta#image_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#image_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_density> <http://www.w3.org/2004/02/skos/core#definition> "The image density is computed based on the source density $N_s$ and the interrogation window size."@en .
-<https://matthiasprobst.github.io/pivmeta#image_density> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_density"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size
-<https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/2004/02/skos/core#definition> "The size of the image filter kernel."@en .
-<https://matthiasprobst.github.io/pivmeta#image_filter_kernel_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_filter_kernel_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#image_index
-<https://matthiasprobst.github.io/pivmeta#image_index> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#image_index> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_index> <http://www.w3.org/2004/02/skos/core#definition> "Index of a PIV image collection. Starts at 1 and ends at the number of images N."@en .
-<https://matthiasprobst.github.io/pivmeta#image_index> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_index"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#image_particle_density
-<https://matthiasprobst.github.io/pivmeta#image_particle_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#image_particle_density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_particle_density> <http://www.w3.org/2004/02/skos/core#definition> "Number of particle images per pixel. Equals the number of particles divided by the image area."@en .
-<https://matthiasprobst.github.io/pivmeta#image_particle_density> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_density"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#image_particle_diameter
-<https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/2004/02/skos/core#definition> "The diameter of an image particle approximated by a circular Gaussian intensity bell, where the diameter is defined at the e-2 intensity, thus the particle diameter is equal to 4 sigma of the Gaussian distribution. Note, that there might be other definitions, too, however, this one is the most common one in literature."@en .
-<https://matthiasprobst.github.io/pivmeta#image_particle_diameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "image_particle_diameter"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size
-<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#definition> "Width and height of a square initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en .
-<https://matthiasprobst.github.io/pivmeta#initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "initial_interrogation_window_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#inplane_velocity
-<https://matthiasprobst.github.io/pivmeta#inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#inplane_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector, which . Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. The component in the third direction is called outofplane_velocity."@en .
-<https://matthiasprobst.github.io/pivmeta#inplane_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "inplane_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#laser_pulse_delay
-<https://matthiasprobst.github.io/pivmeta#laser_pulse_delay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#laser_pulse_delay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#laser_pulse_delay> <http://www.w3.org/2004/02/skos/core#definition> "Time between two laser pulses."@en .
-<https://matthiasprobst.github.io/pivmeta#laser_pulse_delay> <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_pulse_delay"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness
-<https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <http://www.w3.org/2004/02/skos/core#definition> "The laser sheet thickness used in a measurement. For a model laser sheet thickness, use model_laser_sheet_thickness. The use of laser_sheet_thickness has no clear definition, but is where the intensity of the laser sheet drops significantly."@en .
-<https://matthiasprobst.github.io/pivmeta#laser_sheet_thickness> <http://www.w3.org/2004/02/skos/core#prefLabel> "laser_sheet_thickness"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction
-<https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction> <http://www.w3.org/2004/02/skos/core#definition> "The least square residual of the z displacement reconstruction in stereo PIV."@en .
-<https://matthiasprobst.github.io/pivmeta#least_square_residual_of_z_displacement_reconstruction> <http://www.w3.org/2004/02/skos/core#prefLabel> "least_square_residual_of_z_displacement_reconstruction"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity
-<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <http://www.w3.org/2004/02/skos/core#definition> "Velocity is defined as a three-dimensional velocity vector. Magnitude denotes the length of the vector."@en .
-<https://matthiasprobst.github.io/pivmeta#magnitude_of_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "magnitude_of_velocity"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#microPIV
 <https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:genid11 .
-_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PivType> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/2004/02/skos/core#definition> "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en .
 <https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/2004/02/skos/core#prefLabel> "Micro PIV"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor
-<https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor> <http://www.w3.org/2004/02/skos/core#definition> "The shape factor used to model the expanded laser beam. The shape factor is introduced in 'Particle Image Velocimetry A Practical Guide' by Raffel et al. (2018). It deforms a Gaussian beam. High values result in a more top-hat-like beam, while low values result in a more Gaussian-like beam."@en .
-<https://matthiasprobst.github.io/pivmeta#model_laser_sheet_shape_factor> <http://www.w3.org/2004/02/skos/core#prefLabel> "model_laser_sheet_shape_factor"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness
-<https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness> <http://www.w3.org/2004/02/skos/core#definition> "The width of the laser sheet illuminating the seeding particles as used in a model (synthetic PIV. The width is defined at the e-2 intensity of a Gaussian bell curve. However, the laser beam shape must not be Gaussian, but can be more top-hat-like. The shape is defined by the shap factor (laser_sheet_shape_factor)."@en .
-<https://matthiasprobst.github.io/pivmeta#model_laser_sheet_thickness> <http://www.w3.org/2004/02/skos/core#prefLabel> "model_laser_sheet_thickness"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#number_of_particles
-<https://matthiasprobst.github.io/pivmeta#number_of_particles> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#number_of_particles> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#number_of_particles> <http://www.w3.org/2004/02/skos/core#definition> "Number of seeding particles in the image or field of interest. See also image_particle_density."@en .
-<https://matthiasprobst.github.io/pivmeta#number_of_particles> <http://www.w3.org/2004/02/skos/core#prefLabel> "number_of_particles"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#optical_magnification
-<https://matthiasprobst.github.io/pivmeta#optical_magnification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#optical_magnification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#optical_magnification> <http://www.w3.org/2004/02/skos/core#definition> "The optical magnification of the imaging system."@en .
-<https://matthiasprobst.github.io/pivmeta#optical_magnification> <http://www.w3.org/2004/02/skos/core#prefLabel> "optical_magnification"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient
-<https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_first_peak_correlation_coefficient"@en .
-<https://matthiasprobst.github.io/pivmeta#pivFirstPeakCorrelationCoefficient> <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coeficient is the correlation coefficient of the first peak of the cross-correlation function."@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient
-<https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient> <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows."@en .
-<https://matthiasprobst.github.io/pivmeta#piv_correlation_coefficient> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_correlation_coefficient"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient
-<https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient> <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the first peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#piv_first_peak_correlation_coefficient> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_first_peak_correlation_coefficient"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#piv_scaling_factor
-<https://matthiasprobst.github.io/pivmeta#piv_scaling_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#piv_scaling_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#piv_scaling_factor> <http://www.w3.org/2004/02/skos/core#definition> "Image scaling factor."@en .
-<https://matthiasprobst.github.io/pivmeta#piv_scaling_factor> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_scaling_factor"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient
-<https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient> <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the second peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#piv_second_peak_correlation_coefficient> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_second_peak_correlation_coefficient"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient
-<https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient> <http://www.w3.org/2004/02/skos/core#definition> "The correlation coefficient is a measure for the quality of the PIV evaluation. It is computed based on the cross-correlation of the interrogation windows. The first peak correlation coefficient is the correlation coefficient of the third peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#piv_third_peak_correlation_coefficient> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv_third_peak_correlation_coefficient"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#relative_time
-<https://matthiasprobst.github.io/pivmeta#relative_time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#relative_time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#relative_time> <http://www.w3.org/2004/02/skos/core#definition> "Recording time since start of recording."@en .
-<https://matthiasprobst.github.io/pivmeta#relative_time> <http://www.w3.org/2004/02/skos/core#prefLabel> "relative_time"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#saturated_pixel_number
-<https://matthiasprobst.github.io/pivmeta#saturated_pixel_number> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#saturated_pixel_number> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#saturated_pixel_number> <http://www.w3.org/2004/02/skos/core#definition> "Number of pixels in the field of interest that exceed the maximal senor count."@en .
-<https://matthiasprobst.github.io/pivmeta#saturated_pixel_number> <http://www.w3.org/2004/02/skos/core#prefLabel> "saturated_pixel_number"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement
-<https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement> <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#second_peak_x_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "second_peak_x_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement
-<https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the second peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#second_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "second_peak_y_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#sensor_pixel_height
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height> <http://www.w3.org/2004/02/skos/core#definition> "The height of the sensor in pixel."@en .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height> <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <http://www.w3.org/2004/02/skos/core#definition> "Fill factor in vertical direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_height_fill_factor> <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_height_fill_factor"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#sensor_pixel_width
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <http://www.w3.org/2004/02/skos/core#definition> "The width of the sensor in pixel."@en .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width> <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <http://www.w3.org/2004/02/skos/core#definition> "Fill factor in horizontal direction. The fill factor of an image sensor array is the ratio of a pixel's light sensitive area to its total area. See https://en.wikipedia.org/wiki/Fill_factor_(image_sensor). The value must be between 0 and 1, where 1 depicts a 100 percent. The higher the fill factor, the more sensitive the sensor."@en .
-<https://matthiasprobst.github.io/pivmeta#sensor_pixel_width_fill_factor> <http://www.w3.org/2004/02/skos/core#prefLabel> "sensor_pixel_width_fill_factor"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio
-<https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio> <http://www.w3.org/2004/02/skos/core#definition> "The signal to noise ratio of the PIV evaluation."@en .
-<https://matthiasprobst.github.io/pivmeta#signal_to_noise_ratio> <http://www.w3.org/2004/02/skos/core#prefLabel> "signal_to_noise_ratio"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter
-<https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter> <http://www.w3.org/2004/02/skos/core#definition> "The standard deviation of the image particle diameter in the field of interest."@en .
-<https://matthiasprobst.github.io/pivmeta#standard_deviation_of_image_particle_diameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_image_particle_diameter"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size
-<https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size> <http://www.w3.org/2004/02/skos/core#definition> "The standard deviation of the seeding particles sizes."@en .
-<https://matthiasprobst.github.io/pivmeta#standard_deviation_of_seeding_particle_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "standard_deviation_of_seeding_particle_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement
-<https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement> <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. X indicates the component in x-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#third_peak_x_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "third_peak_x_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement
-<https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity. Y indicates the component in y-axis direction. This component is an in-plane component. The displacement is computed based on the third peak of the cross-correlation function."@en .
-<https://matthiasprobst.github.io/pivmeta#third_peak_y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "third_peak_y_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_coordinate
-<https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in horizontal direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of x_coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#x_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_coordinate"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name x_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the x coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_x_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name x_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the x coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_y_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_y_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name x_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the x coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#x_derivative_of_z_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_derivative_of_z_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_displacement
-<https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/2004/02/skos/core#definition> "Displacement is a vector quantity and describes the particle displacement in pixels in the image plane. x indicates a vector component along the grid x-axis, positive with increasing x."@en .
-<https://matthiasprobst.github.io/pivmeta#x_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#definition> "Width of a final PIV interrogation window overlap."@en .
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_overlap_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#definition> "Width of a final PIV interrogation window."@en .
-<https://matthiasprobst.github.io/pivmeta#x_final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_final_interrogation_window_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_image_coordinate
-<https://matthiasprobst.github.io/pivmeta#x_image_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_image_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_image_coordinate> <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in horizontal direction. The origin is at the top left."@en .
-<https://matthiasprobst.github.io/pivmeta#x_image_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_image_coordinate"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size
-<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#definition> "Width of a initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en .
-<https://matthiasprobst.github.io/pivmeta#x_initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_initial_interrogation_window_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_inplane_velocity
-<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. x indicates a vector component along the grid x-axis, positive with increasing x."@en .
-<https://matthiasprobst.github.io/pivmeta#x_inplane_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_inplane_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_origin_offset
-<https://matthiasprobst.github.io/pivmeta#x_origin_offset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_origin_offset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_origin_offset> <http://www.w3.org/2004/02/skos/core#definition> "The physical offset of the x_image_origin_coordinate in the global coordinate system."@en .
-<https://matthiasprobst.github.io/pivmeta#x_origin_offset> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_origin_offset"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate
-<https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <http://www.w3.org/2004/02/skos/core#definition> "Pixel coordinate in horizontal direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (x_coordinate), not the image coordinate (x_image_coordinate) which has its origin in the top left of the image."@en .
-<https://matthiasprobst.github.io/pivmeta#x_pixel_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_pixel_coordinate"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#x_velocity
-<https://matthiasprobst.github.io/pivmeta#x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#x_velocity> <http://www.w3.org/2004/02/skos/core#definition> "Velocity is defined as a three-dimensional velocity vector. x indicates a vector component along the grid x-axis, positive with increasing x."@en .
-<https://matthiasprobst.github.io/pivmeta#x_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "x_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_coordinate
-<https://matthiasprobst.github.io/pivmeta#y_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_coordinate> <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in vertical direction in the global coordinate system, which is aligned with the sensor orientation. The sensor width therefore corresponds to sensor size in direction of y_coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#y_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_coordinate"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name y_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the y coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_x_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name y_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the y coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_y_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_y_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name y_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the y coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#y_derivative_of_z_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_derivative_of_z_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_displacement
-<https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/2004/02/skos/core#definition> "y indicates a vector component along the grid y-axis, positive with increasing y.Displacement is a vector quantity and describes the particle displacement in pixels in the image plane."@en .
-<https://matthiasprobst.github.io/pivmeta#y_displacement> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_displacement"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#definition> "The height of a final PIV interrogation window overlap."@en .
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_overlap_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_overlap_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#definition> "The height of the final PIV interrogation window."@en .
-<https://matthiasprobst.github.io/pivmeta#y_final_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_final_interrogation_window_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_image_coordinate
-<https://matthiasprobst.github.io/pivmeta#y_image_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_image_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_image_coordinate> <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in vertical direction. The origin is in the top left."@en .
-<https://matthiasprobst.github.io/pivmeta#y_image_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_image_coordinate"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size
-<https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#definition> "Height of the initial PIV interrogation window (in case of a multi-grid PIV algorithm)."@en .
-<https://matthiasprobst.github.io/pivmeta#y_initial_interrogation_window_size> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_initial_interrogation_window_size"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_inplane_velocity
-<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name inplane_velocity denotes the magnitude of a two-dimensional velocity vector. Plane is spanned by the x and y axis of PIV plane. The PIV plane is the plane illuminated by the laser. y indicates a vector component along the grid y-axis, positive with increasing x."@en .
-<https://matthiasprobst.github.io/pivmeta#y_inplane_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_inplane_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_origin_offset
-<https://matthiasprobst.github.io/pivmeta#y_origin_offset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_origin_offset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_origin_offset> <http://www.w3.org/2004/02/skos/core#definition> "The physical offset of the y_image_origin_coordinate in the global coordinate system."@en .
-<https://matthiasprobst.github.io/pivmeta#y_origin_offset> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_origin_offset"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate
-<https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/2004/02/skos/core#definition> "Pixel coordinate in vertical direction. It depicts the position of each velocity vector in the result data in pixel units, where the origin is at the lower left. The coordinate is aligned with the physical coordinate axis (y_coordinate), not the image coordinate (y_image_coordinate) which has its origin in the top left of the image."@en .
-<https://matthiasprobst.github.io/pivmeta#y_pixel_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_pixel_coordinate"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#y_velocity
-<https://matthiasprobst.github.io/pivmeta#y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#y_velocity> <http://www.w3.org/2004/02/skos/core#definition> "Velocity is defined as a three-dimensional velocity vector. y indicates a vector component along the grid y-axis, positive with increasing y."@en .
-<https://matthiasprobst.github.io/pivmeta#y_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "y_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#z_coordinate
-<https://matthiasprobst.github.io/pivmeta#z_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#z_coordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#z_coordinate> <http://www.w3.org/2004/02/skos/core#definition> "The spatial coordinate in depth direction in the global coordinate system and hence perpendicular to the sensor plane."@en .
-<https://matthiasprobst.github.io/pivmeta#z_coordinate> <http://www.w3.org/2004/02/skos/core#prefLabel> "z_coordinate"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name z_derivative_of_x_velocity denotes the derivative of the x component of the velocity vector with respect to the z coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_x_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "z_derivative_of_x_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#z_derivative_of_y_velocity
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_y_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_y_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name z_derivative_of_y_velocity denotes the derivative of the y component of the velocity vector with respect to the z coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_y_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "z_derivative_of_y_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#z_derivative_of_z_velocity
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_z_velocity> <http://www.w3.org/2004/02/skos/core#definition> "The standard name z_derivative_of_z_velocity denotes the derivative of the z component of the velocity vector with respect to the z coordinate."@en .
-<https://matthiasprobst.github.io/pivmeta#z_derivative_of_z_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "z_derivative_of_z_velocity"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#z_velocity
-<https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#StandardName> .
-<https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/2004/02/skos/core#definition> "Velocity is defined as a three-dimensional velocity vector. z indicates a vector component along the grid y-axis, positive with increasing z."@en .
-<https://matthiasprobst.github.io/pivmeta#z_velocity> <http://www.w3.org/2004/02/skos/core#prefLabel> "z_velocity"@en .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
