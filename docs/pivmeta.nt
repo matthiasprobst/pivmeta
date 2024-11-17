@@ -268,12 +268,6 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2004/02/skos/core#example> "pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].\r\n\r\nThe corresponding meaning would be:\r\npivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]\r\n\r\nA flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation.\r\n\r\nA JSON-LD excerpt could look like this:\r\n{\r\n    \"@type\": \"m4i:NumericalVariable\",\r\n    \"pivmeta:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],\r\n    \"pivmeta:flagMeanings\": [\r\n        \"inactive\",\r\n        \"active\",\r\n        \"masked\",\r\n        \"noresult\",\r\n        \"disabled\",\r\n        \"filtered\", \r\n        \"interpolated\",\r\n        \"replaced\", \r\n        \"manualedit\"\r\n    ],\r\n    \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"\r\n}"@en .
 <https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag value"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#material
-<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2000/01/rdf-schema#comment> "Used with PIV Particles, this describes the seeding material. Provide a URI like https://www.wikidata.org/wiki/Q4387284."@en .
-<https://matthiasprobst.github.io/pivmeta#material> <http://www.w3.org/2004/02/skos/core#prefLabel> "material"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#numberOfRecords
 <https://matthiasprobst.github.io/pivmeta#numberOfRecords> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://matthiasprobst.github.io/pivmeta#numberOfRecords> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
