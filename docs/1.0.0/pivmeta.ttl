@@ -140,7 +140,14 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://purl.obolibrary.org/obo/BFO_0000050
-<http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ;
+<http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ,
+                                                      owl:TransitiveProperty ;
+                                             rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
+                                             rdfs:range [ rdf:type owl:Class ;
+                                                          owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Tool>
+                                                                        :PIVSetup
+                                                                      )
+                                                        ] ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "a core relation that holds between a part and its whole"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "part of"@en .
 
@@ -148,6 +155,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.obolibrary.org/obo/BFO_0000051
 <http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ,
                                                       owl:TransitiveProperty ;
+                                             rdfs:domain [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Tool>
+                                                                         :PIVSetup
+                                                                       )
+                                                         ] ;
+                                             rdfs:range <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "a core relation that holds between a whole and its part"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "has part"@en .
 
@@ -202,16 +215,6 @@ xsd:date rdf:type rdfs:Datatype .
         <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#hasObjective
-:hasObjective rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
-              owl:inverseOf :isObjectiveOf ;
-              rdfs:domain :Camera ;
-              rdfs:range :Objective ;
-              <http://www.w3.org/2004/02/skos/core#definition> "Relates the objectiv to a camera."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "has objective"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#hasStandardName
 :hasStandardName rdf:type owl:ObjectProperty ;
                  rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
@@ -219,20 +222,11 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "has standard name"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#isObjectiveOf
-:isObjectiveOf rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000050> ;
-               rdfs:domain :Objective ;
-               rdfs:range :Camera ;
-               <http://www.w3.org/2004/02/skos/core#definition> "Relates an objective to a camera."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "is objective of"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer
 :manufacturer rdf:type owl:ObjectProperty ;
               rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
               rdfs:range <http://www.w3.org/ns/prov#Organization> ;
-              rdfs:isDefinedBy <https://schema.org/manufacturer> ;
+              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/manufacturer> ;
               <http://www.w3.org/2004/02/skos/core#definition> "Manufacturer of a m4i:Tool"@en .
 
 
@@ -298,7 +292,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#fnumber
 :fnumber rdf:type owl:DatatypeProperty ;
-         rdfs:domain :DigitalCamera ;
+         rdfs:domain :Camera ;
          rdfs:range rdfs:Literal ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
 
@@ -451,7 +445,7 @@ A JSON-LD excerpt could look like this:
 
 ###  http://w3id.org/nfdi4ing/metadata4ing#Tool
 <http://w3id.org/nfdi4ing/metadata4ing#Tool> rdf:type owl:Class ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "bject that helps an agent perform an action (e.g., John wrote a book with a pen), i.e., an object of the relation schema:instrument or m4i:hasTool"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "Object that helps an agent perform an action (e.g., John wrote a book with a pen), i.e., an object of the relation schema:instrument or m4i:hasTool"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Tool"@en .
 
 
@@ -518,8 +512,7 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
 :DigitalCamera rdf:type owl:Class ;
-               rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
-                               :Camera ;
+               rdfs:subClassOf :Camera ;
                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
                <http://www.w3.org/2004/02/skos/core#definition> "A Digital Camera captures photographs or videos in a digital format."@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en ;
@@ -583,8 +576,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#Laser
 :Laser rdf:type owl:Class ;
-       rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
-                       :LightSource ;
+       rdfs:subClassOf :LightSource ;
        <http://www.w3.org/2004/02/skos/core#definition> "A Device which emits light via amplification."@en ;
        <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser"@en ;
        <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q38867> .
@@ -650,6 +642,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#OpticalComponent
 :OpticalComponent rdf:type owl:Class ;
+                  rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Optical Component"@en ;
                   <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q65037298> .
 
@@ -677,32 +670,24 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVParticle
 :PIVParticle rdf:type owl:Class ;
-             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
-                             :Substance ;
+             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
              <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Particle"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVSetup
 :PIVSetup rdf:type owl:Class ;
-          rdfs:subClassOf [ rdf:type owl:Class ;
-                            owl:unionOf ( [ rdf:type owl:Restriction ;
-                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                            owl:someValuesFrom :PIVParticle
-                                          ]
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                            owl:someValuesFrom :SyntheticPIVParticle
-                                          ]
-                                        )
-                          ] ,
-                          [ rdf:type owl:Restriction ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
                             owl:someValuesFrom :LightSource
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
                             owl:someValuesFrom :OpticSensor
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                            owl:someValuesFrom :PIVParticle
                           ] ;
           <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Setup"@en .
 
@@ -784,18 +769,12 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :StandardName rdf:type owl:Class .
 
 
-###  https://matthiasprobst.github.io/pivmeta#Substance
-:Substance rdf:type owl:Class ;
-           <http://www.w3.org/2004/02/skos/core#prefLabel> "Substance"@en ;
-           <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q578779> .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle
 :SyntheticPIVParticle rdf:type owl:Class ;
-                      rdfs:subClassOf :Substance ,
+                      rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
                                       :VirtualTool ;
                       <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many synthetically generated (modelled) tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter. The source code generating the particles should be stated via codemeta:hasSourceCode."@en ;
-                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Particle"@en .
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic PIV Particle"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#TemporalVariable
