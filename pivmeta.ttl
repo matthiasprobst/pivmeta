@@ -13,6 +13,7 @@
 @base <http://www.semanticweb.org/owl/owlapi/turtle#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
+                                             owl:versionIRI <https://matthiasprobst.github.io/pivmeta/1.0.0> ;
                                              dcterms:abstract "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."@en ;
                                              dcterms:created "2024-01-03" ;
                                              dcterms:creator "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen" ;
@@ -182,6 +183,14 @@ xsd:date rdf:type rdfs:Datatype .
                                                      rdfs:range <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
                                                      skos:definition "Points to a parameter of a given method or tool."@en ;
                                                      skos:prefLabel "has parameter"@en .
+
+
+###  http://www.w3.org/ns/dcat#distribution
+<http://www.w3.org/ns/dcat#distribution> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://www.w3.org/ns/dcat#Dataset> ;
+                                         rdfs:range <http://www.w3.org/ns/dcat#Distribution> ;
+                                         skos:definition "An available distribution of the dataset."@en ;
+                                         skos:prefLabel "distribution"@en .
 
 
 ###  https://codemeta.github.io/terms/hasSourceCode
@@ -474,6 +483,10 @@ qudt:Unit rdf:type owl:Class ;
 skos:Concept rdf:type owl:Class .
 
 
+###  http://www.w3.org/ns/dcat#Dataset
+<http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class .
+
+
 ###  http://www.w3.org/ns/dcat#Distribution
 <http://www.w3.org/ns/dcat#Distribution> rdf:type owl:Class .
 
@@ -582,6 +595,7 @@ pivmeta:InterrogationMethod rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#Laser
 pivmeta:Laser rdf:type owl:Class ;
+              owl:equivalentClass <https://www.wikidata.org/wiki/Q38867> ;
               rdfs:subClassOf pivmeta:LightSource ;
               skos:definition "A Device which emits light via amplification."@en ;
               skos:prefLabel "Laser"@en ;
@@ -604,6 +618,7 @@ pivmeta:LensSystem rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#LightSource
 pivmeta:LightSource rdf:type owl:Class ;
+                    owl:equivalentClass <https://www.wikidata.org/wiki/Q1146001> ;
                     rdfs:subClassOf pivmeta:OpticalComponent ;
                     skos:definition "An object or device that emits light"@en ;
                     skos:prefLabel "Light Source"@en ;
@@ -667,6 +682,28 @@ pivmeta:OutlierReplacementScheme rdf:type owl:Class ;
                                  skos:prefLabel "Outlier Replacement Scheme"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#PIVDataset
+pivmeta:PIVDataset rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ,
+                                   [ rdf:type owl:Class ;
+                                     owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.w3.org/ns/dcat#distribution> ;
+                                                     owl:someValuesFrom pivmeta:PivImageDistribution
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.w3.org/ns/dcat#distribution> ;
+                                                     owl:someValuesFrom pivmeta:PivMaskDistribution
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.w3.org/ns/dcat#distribution> ;
+                                                     owl:someValuesFrom pivmeta:PivResultDistribution
+                                                   ]
+                                                 )
+                                   ] ;
+                   skos:definition "A collection of Particle Image Velocimetry (PIV) data, published or curated by a single agent, and available for access or download in one or more representations."@en ;
+                   skos:prefLabel "PIV Dataset"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 pivmeta:PIVEvaluation rdf:type owl:Class ;
                       rdfs:subClassOf pivmeta:PivProcessingStep ;
@@ -716,20 +753,20 @@ pivmeta:PeakSearchMethod rdf:type owl:Class ;
 pivmeta:PivDistribution rdf:type owl:Class ;
                         rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
                         skos:definition "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
-                        skos:prefLabel "piv distribution"@en .
+                        skos:prefLabel "PIV Distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivImageDistribution
 pivmeta:PivImageDistribution rdf:type owl:Class ;
                              rdfs:subClassOf pivmeta:PivDistribution ;
                              skos:definition "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."@en ;
-                             skos:prefLabel "piv image distribution"@en .
+                             skos:prefLabel "PIV Image Distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivMaskDistribution
 pivmeta:PivMaskDistribution rdf:type owl:Class ;
                             rdfs:subClassOf pivmeta:PivDistribution ;
-                            skos:prefLabel "piv mask distribution"@en .
+                            skos:prefLabel "Piv Mask Distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivPostProcessing
@@ -755,7 +792,7 @@ pivmeta:PivProcessingStep rdf:type owl:Class ;
 pivmeta:PivResultDistribution rdf:type owl:Class ;
                               rdfs:subClassOf pivmeta:PivDistribution ;
                               skos:definition "A PIV result distribution containing displacements and optionally other derived variables"@en ;
-                              skos:prefLabel "piv result distribution"@en .
+                              skos:prefLabel "PIV Result Distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PivValidation
@@ -841,6 +878,15 @@ pivmeta:WindowWeightingFunction rdf:type owl:Class ;
 sd:Software rdf:type owl:Class ;
             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
             skos:prefLabel "Software"@en .
+
+
+###  https://www.wikidata.org/wiki/Q1146001
+<https://www.wikidata.org/wiki/Q1146001> rdf:type owl:Class .
+
+
+###  https://www.wikidata.org/wiki/Q38867
+<https://www.wikidata.org/wiki/Q38867> rdf:type owl:Class ;
+                                       rdfs:comment "Class from wikidata representing a Laser"@en .
 
 
 #################################################################

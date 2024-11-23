@@ -138,6 +138,7 @@ This is an ontology draft for the description of Particle Image Velocimetry data
 <tr><td><b>ssno</b></td><td>&lt;https://matthiasprobst.github.io/ssno#&gt;</td></tr>
 <tr><td><b>terms</b></td><td>&lt;https://codemeta.github.io/terms/&gt;</td></tr>
 <tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann/&gt;</td></tr>
+<tr><td><b>wiki</b></td><td>&lt;https://www.wikidata.org/wiki/&gt;</td></tr>
 <tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
 </tbody>
@@ -281,8 +282,12 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">Peak Search Method</a>
    </li>
    <li>
+      <a href="#PIVDataset"
+         title="https://matthiasprobst.github.io/pivmeta#PIVDataset">PIV Dataset</a>
+   </li>
+   <li>
       <a href="#PivDistribution"
-         title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a>
+         title="https://matthiasprobst.github.io/pivmeta#PivDistribution">PIV Distribution</a>
    </li>
    <li>
       <a href="#PIVEvaluation"
@@ -290,11 +295,11 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#PivImageDistribution"
-         title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a>
+         title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">PIV Image Distribution</a>
    </li>
    <li>
       <a href="#PivMaskDistribution"
-         title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">piv mask distribution</a>
+         title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">Piv Mask Distribution</a>
    </li>
    <li>
       <a href="#PIVParticle"
@@ -314,7 +319,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#PivResultDistribution"
-         title="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">piv result distribution</a>
+         title="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">PIV Result Distribution</a>
    </li>
    <li>
       <a href="#PIVSetup"
@@ -337,6 +342,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://www.molmod.info/semantics/pims-ii.ttl#Property"
          title="http://www.molmod.info/semantics/pims-ii.ttl#Property">Property</a>
+   </li>
+   <li>
+      <a href="#https://www.wikidata.org/wiki/Q38867" title="https://www.wikidata.org/wiki/Q38867">
+         <span>Q38867</span>
+      </a>
    </li>
    <li>
       <a href="#http://purl.obolibrary.org/obo/BFO_0000017" title="http://purl.obolibrary.org/obo/BFO_0000017">realizable entity</a>
@@ -392,6 +402,9 @@ This ontology has the following classes and properties.</span>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">distribution</a>
+   </li>
    <li>
       <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a>
    </li>
@@ -640,20 +653,22 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">Outlier Detection Method</a></li>
   <li><a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">Outlier Replacement Scheme</a></li>
   <li><a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">Peak Search Method</a></li>
-  <li><a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a></li>
+  <li><a href="#PIVDataset" title="https://matthiasprobst.github.io/pivmeta#PIVDataset">PIV Dataset</a></li>
+  <li><a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">PIV Distribution</a></li>
   <li><a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">piv evaluation</a></li>
-  <li><a href="#PivImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a></li>
-  <li><a href="#PivMaskDistribution" title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">piv mask distribution</a></li>
+  <li><a href="#PivImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">PIV Image Distribution</a></li>
+  <li><a href="#PivMaskDistribution" title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">Piv Mask Distribution</a></li>
   <li><a href="#PIVParticle" title="https://matthiasprobst.github.io/pivmeta#PIVParticle">PIV Particle</a></li>
   <li><a href="#PivPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PivPostProcessing">piv post processing</a></li>
   <li><a href="#PivPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PivPreProcessing">piv pre processing</a></li>
   <li><a href="#PivProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PivProcessingStep">piv processing step</a></li>
-  <li><a href="#PivResultDistribution" title="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">piv result distribution</a></li>
+  <li><a href="#PivResultDistribution" title="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">PIV Result Distribution</a></li>
   <li><a href="#PIVSetup" title="https://matthiasprobst.github.io/pivmeta#PIVSetup">PIV Setup</a></li>
   <li><a href="#PIVSoftware" title="https://matthiasprobst.github.io/pivmeta#PIVSoftware">Piv Software</a></li>
   <li><a href="#PivValidation" title="https://matthiasprobst.github.io/pivmeta#PivValidation">piv validation</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"> <span>Processing Step</span> </a></li>
   <li><a href="#http://www.molmod.info/semantics/pims-ii.ttl#Property" title="http://www.molmod.info/semantics/pims-ii.ttl#Property">Property</a></li>
+  <li><a href="#https://www.wikidata.org/wiki/Q38867" title="https://www.wikidata.org/wiki/Q38867"> <span>Q38867</span> </a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000017" title="http://purl.obolibrary.org/obo/BFO_0000017">realizable entity</a></li>
   <li><a href="#Singlepass" title="https://matthiasprobst.github.io/pivmeta#Singlepass">Singlepass</a></li>
   <li><a href="#https://w3id.org/okn/o/sd#Software" title="https://w3id.org/okn/o/sd#Software">Software</a></li>
@@ -1004,6 +1019,12 @@ This section provides details for each class and property defined by PIVMeta.
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#https://www.wikidata.org/wiki/Q38867" title="https://www.wikidata.org/wiki/Q38867">Q38867</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -1051,6 +1072,12 @@ This section provides details for each class and property defined by PIVMeta.
    <span class="markdown">An object or device that emits light</span>
   </div>
   <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="https://www.wikidata.org/wiki/Q1146001" target="_blank" title="https://www.wikidata.org/wiki/Q1146001">Q1146001</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has super-classes
    </dt>
@@ -1286,8 +1313,23 @@ This section provides details for each class and property defined by PIVMeta.
    </dd>
   </dl>
  </div>
+ <div class="entity" id="PIVDataset">
+  <h3>PIV Dataset<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVDataset</p>
+  <div class="comment">
+   <span class="markdown">A collection of Particle Image Velocimetry (PIV) data, published or curated by a single agent, and available for access or download in one or more representations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/dcat#Dataset" target="_blank" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="PivDistribution">
-  <h3>piv distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>PIV Distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PivDistribution</p>
   <div class="comment">
    <span class="markdown">A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content.</span>
@@ -1303,7 +1345,7 @@ This section provides details for each class and property defined by PIVMeta.
     has sub-classes
    </dt>
    <dd>
-    <a href="#PivImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a> <sup class="type-c" title="class">c</sup>, <a href="#PivMaskDistribution" title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">piv mask distribution</a> <sup class="type-c" title="class">c</sup>, <a href="#PivResultDistribution" title="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">piv result distribution</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PivImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">PIV Image Distribution</a> <sup class="type-c" title="class">c</sup>, <a href="#PivResultDistribution" title="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">PIV Result Distribution</a> <sup class="type-c" title="class">c</sup>, <a href="#PivMaskDistribution" title="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">Piv Mask Distribution</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -1329,7 +1371,7 @@ This section provides details for each class and property defined by PIVMeta.
   </dl>
  </div>
  <div class="entity" id="PivImageDistribution">
-  <h3>piv image distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>PIV Image Distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PivImageDistribution</p>
   <div class="comment">
    <span class="markdown">A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property "piv image type".</span>
@@ -1339,7 +1381,7 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">PIV Distribution</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -1350,14 +1392,14 @@ This section provides details for each class and property defined by PIVMeta.
   </dl>
  </div>
  <div class="entity" id="PivMaskDistribution">
-  <h3>piv mask distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>Piv Mask Distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PivMaskDistribution</p>
   <dl class="description">
    <dt>
     has super-classes
    </dt>
    <dd>
-    <a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">PIV Distribution</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1440,7 +1482,7 @@ This section provides details for each class and property defined by PIVMeta.
   </dl>
  </div>
  <div class="entity" id="PivResultDistribution">
-  <h3>piv result distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>PIV Result Distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PivResultDistribution</p>
   <div class="comment">
    <span class="markdown">A PIV result distribution containing displacements and optionally other derived variables</span>
@@ -1450,7 +1492,7 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">PIV Distribution</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1538,6 +1580,14 @@ This section provides details for each class and property defined by PIVMeta.
     <a href="#http://www.molmod.info/semantics/pims-ii.ttl#Variable" title="http://www.molmod.info/semantics/pims-ii.ttl#Variable">Variable</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
+ </div>
+ <div class="entity" id="https://www.wikidata.org/wiki/Q38867">
+  <h3>Q38867<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://www.wikidata.org/wiki/Q38867</p>
+  <div class="comment">
+   <span class="markdown">Class from wikidata representing a Laser</span>
+  </div>
+  <dl class="description"></dl>
  </div>
  <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000017">
   <h3>realizable entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
@@ -1853,6 +1903,7 @@ This section provides details for each class and property defined by PIVMeta.
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
+  <li><a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">distribution</a></li>
   <li><a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a></li>
   <li><a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a></li>
@@ -1867,6 +1918,29 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">unit</a></li>
   <li><a href="#windowWeightingFunction" title="https://matthiasprobst.github.io/pivmeta#windowWeightingFunction">window weighting function</a></li>
  </ul>
+ <div class="entity" id="http://www.w3.org/ns/dcat#distribution">
+  <h3>distribution<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#distribution</p>
+  <div class="comment">
+   <span class="markdown">An available distribution of the dataset.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/ns/dcat#Dataset" target="_blank" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/ns/dcat#Distribution" target="_blank" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="flag">
   <h3>flag<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#flag</p>
@@ -2141,7 +2215,7 @@ This section provides details for each class and property defined by PIVMeta.
      has domain
     </dt>
     <dd>
-     <a href="#PivImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a> <sup class="type-c" title="class">c</sup>
+     <a href="#PivImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">PIV Image Distribution</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -2225,7 +2299,7 @@ This section provides details for each class and property defined by PIVMeta.
      has domain
     </dt>
     <dd>
-     <a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">piv distribution</a> <sup class="type-c" title="class">c</sup>
+     <a href="#PivDistribution" title="https://matthiasprobst.github.io/pivmeta#PivDistribution">PIV Distribution</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -2435,7 +2509,7 @@ A JSON-LD excerpt could look like this:
      has domain
     </dt>
     <dd>
-     <a href="#PivImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">piv image distribution</a> <sup class="type-c" title="class">c</sup>
+     <a href="#PivImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">PIV Image Distribution</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range

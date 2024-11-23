@@ -15,6 +15,7 @@
      xmlns:pivmeta="https://matthiasprobst.github.io/pivmeta#"
      xmlns:metadata4ing="http://w3id.org/nfdi4ing/metadata4ing#">
     <owl:Ontology rdf:about="https://matthiasprobst.github.io/pivmeta#">
+        <owl:versionIRI rdf:resource="https://matthiasprobst.github.io/pivmeta/1.0.0"/>
         <terms:abstract xml:lang="en">This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.</terms:abstract>
         <terms:created>2024-01-03</terms:created>
         <terms:creator>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen</terms:creator>
@@ -309,6 +310,18 @@
         <rdfs:range rdf:resource="http://www.molmod.info/semantics/pims-ii.ttl#Variable"/>
         <skos:definition xml:lang="en">Points to a parameter of a given method or tool.</skos:definition>
         <skos:prefLabel xml:lang="en">has parameter</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#distribution -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#distribution">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <skos:definition xml:lang="en">An available distribution of the dataset.</skos:definition>
+        <skos:prefLabel xml:lang="en">distribution</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -759,6 +772,13 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- http://www.w3.org/ns/dcat#Dataset -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+    
+
+
     <!-- http://www.w3.org/ns/dcat#Distribution -->
 
 
@@ -931,6 +951,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Laser">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/wiki/Q38867"/>
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#LightSource"/>
         <skos:definition xml:lang="en">A Device which emits light via amplification.</skos:definition>
         <skos:prefLabel xml:lang="en">Laser</skos:prefLabel>
@@ -965,6 +986,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#LightSource">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/wiki/Q1146001"/>
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#OpticalComponent"/>
         <skos:definition xml:lang="en">An object or device that emits light</skos:definition>
         <skos:prefLabel xml:lang="en">Light Source</skos:prefLabel>
@@ -1062,6 +1084,35 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#PIVDataset -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVDataset">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#distribution"/>
+                        <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PivImageDistribution"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#distribution"/>
+                        <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#distribution"/>
+                        <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PivResultDistribution"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <skos:definition xml:lang="en">A collection of Particle Image Velocimetry (PIV) data, published or curated by a single agent, and available for access or download in one or more representations.</skos:definition>
+        <skos:prefLabel xml:lang="en">PIV Dataset</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#PIVEvaluation -->
 
 
@@ -1139,7 +1190,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivDistribution">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
         <skos:definition xml:lang="en">A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content.</skos:definition>
-        <skos:prefLabel xml:lang="en">piv distribution</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">PIV Distribution</skos:prefLabel>
     </owl:Class>
     
 
@@ -1150,7 +1201,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivImageDistribution">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivDistribution"/>
         <skos:definition xml:lang="en">A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property &quot;piv image type&quot;.</skos:definition>
-        <skos:prefLabel xml:lang="en">piv image distribution</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">PIV Image Distribution</skos:prefLabel>
     </owl:Class>
     
 
@@ -1160,7 +1211,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivMaskDistribution">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivDistribution"/>
-        <skos:prefLabel xml:lang="en">piv mask distribution</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Piv Mask Distribution</skos:prefLabel>
     </owl:Class>
     
 
@@ -1202,7 +1253,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PivResultDistribution">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PivDistribution"/>
         <skos:definition xml:lang="en">A PIV result distribution containing displacements and optionally other derived variables</skos:definition>
-        <skos:prefLabel xml:lang="en">piv result distribution</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">PIV Result Distribution</skos:prefLabel>
     </owl:Class>
     
 
@@ -1338,6 +1389,22 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:Class rdf:about="https://w3id.org/okn/o/sd#Software">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
         <skos:prefLabel xml:lang="en">Software</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q1146001 -->
+
+
+    <owl:Class rdf:about="https://www.wikidata.org/wiki/Q1146001"/>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q38867 -->
+
+
+    <owl:Class rdf:about="https://www.wikidata.org/wiki/Q38867">
+        <rdfs:comment xml:lang="en">Class from wikidata representing a Laser</rdfs:comment>
     </owl:Class>
     
 

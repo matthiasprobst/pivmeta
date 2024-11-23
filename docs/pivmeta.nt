@@ -1,4 +1,5 @@
 <https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/2002/07/owl#versionIRI> <https://matthiasprobst.github.io/pivmeta/1.0.0> .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/abstract> "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."@en .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/created> "2024-01-03" .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/creator> "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen" .
@@ -168,6 +169,13 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/nfdi4ing/metadata4ing#hasParameter> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
 <http://w3id.org/nfdi4ing/metadata4ing#hasParameter> <http://www.w3.org/2004/02/skos/core#definition> "Points to a parameter of a given method or tool."@en .
 <http://w3id.org/nfdi4ing/metadata4ing#hasParameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "has parameter"@en .
+# 
+# http://www.w3.org/ns/dcat#distribution
+<http://www.w3.org/ns/dcat#distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/dcat#distribution> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/dcat#Dataset> .
+<http://www.w3.org/ns/dcat#distribution> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/dcat#Distribution> .
+<http://www.w3.org/ns/dcat#distribution> <http://www.w3.org/2004/02/skos/core#definition> "An available distribution of the dataset."@en .
+<http://www.w3.org/ns/dcat#distribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "distribution"@en .
 # 
 # https://codemeta.github.io/terms/hasSourceCode
 <https://codemeta.github.io/terms/hasSourceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -414,6 +422,9 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # http://www.w3.org/2004/02/skos/core#Concept
 <http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
+# http://www.w3.org/ns/dcat#Dataset
+<http://www.w3.org/ns/dcat#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
 # http://www.w3.org/ns/dcat#Distribution
 <http://www.w3.org/ns/dcat#Distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
@@ -504,6 +515,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#Laser
 <https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.wikidata.org/wiki/Q38867> .
 <https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#LightSource> .
 <https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2004/02/skos/core#definition> "A Device which emits light via amplification."@en .
 <https://matthiasprobst.github.io/pivmeta#Laser> <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser"@en .
@@ -523,6 +535,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#LightSource
 <https://matthiasprobst.github.io/pivmeta#LightSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#LightSource> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.wikidata.org/wiki/Q1146001> .
 <https://matthiasprobst.github.io/pivmeta#LightSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#OpticalComponent> .
 <https://matthiasprobst.github.io/pivmeta#LightSource> <http://www.w3.org/2004/02/skos/core#definition> "An object or device that emits light"@en .
 <https://matthiasprobst.github.io/pivmeta#LightSource> <http://www.w3.org/2004/02/skos/core#prefLabel> "Light Source"@en .
@@ -577,6 +590,33 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#definition> "Method used, to replace outliers."@en .
 <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "Outlier Replacement Scheme"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#PIVDataset
+<https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Dataset> .
+<https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PivResultDistribution> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/dcat#distribution> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/dcat#distribution> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/dcat#distribution> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2004/02/skos/core#definition> "A collection of Particle Image Velocimetry (PIV) data, published or curated by a single agent, and available for access or download in one or more representations."@en .
+<https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Dataset"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivProcessingStep> .
@@ -591,18 +631,18 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVSetup
 <https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
-_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#LightSource> .
-_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
-_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#OpticSensor> .
-_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
-_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVParticle> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#LightSource> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#OpticSensor> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVParticle> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Setup"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVSoftware
@@ -621,18 +661,18 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Distribution> .
 <https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en .
-<https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv distribution"@en .
+<https://matthiasprobst.github.io/pivmeta#PivDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Distribution"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivImageDistribution
 <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivDistribution> .
 <https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."@en .
-<https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv image distribution"@en .
+<https://matthiasprobst.github.io/pivmeta#PivImageDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Image Distribution"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivMaskDistribution
 <https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivDistribution> .
-<https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv mask distribution"@en .
+<https://matthiasprobst.github.io/pivmeta#PivMaskDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Mask Distribution"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivPostProcessing
 <https://matthiasprobst.github.io/pivmeta#PivPostProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -654,7 +694,7 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#PivResultDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PivResultDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PivDistribution> .
 <https://matthiasprobst.github.io/pivmeta#PivResultDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV result distribution containing displacements and optionally other derived variables"@en .
-<https://matthiasprobst.github.io/pivmeta#PivResultDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "piv result distribution"@en .
+<https://matthiasprobst.github.io/pivmeta#PivResultDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Result Distribution"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PivValidation
 <https://matthiasprobst.github.io/pivmeta#PivValidation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -727,6 +767,13 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/okn/o/sd#Software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/okn/o/sd#Software> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
 <https://w3id.org/okn/o/sd#Software> <http://www.w3.org/2004/02/skos/core#prefLabel> "Software"@en .
+# 
+# https://www.wikidata.org/wiki/Q1146001
+<https://www.wikidata.org/wiki/Q1146001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://www.wikidata.org/wiki/Q38867
+<https://www.wikidata.org/wiki/Q38867> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.wikidata.org/wiki/Q38867> <http://www.w3.org/2000/01/rdf-schema#comment> "Class from wikidata representing a Laser"@en .
 # 
 # 
 # 
