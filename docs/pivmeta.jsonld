@@ -11,13 +11,59 @@
     } ]
   } ]
 }, {
+  "@id" : "_:genid10",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVParticle"
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#LightSource"
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OpticSensor"
+  } ]
+}, {
   "@id" : "_:genid5",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset"
     }, {
-      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagCount"
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagStatistics"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid12"
+    }, {
+      "@id" : "_:genid10"
     } ]
   } ]
 }, {
@@ -46,6 +92,28 @@
   }, {
     "@language" : "en",
     "@value" : "realizable entity"
+  } ]
+}, {
+  "@id" : "http://purl.obolibrary.org/obo/BFO_0000050",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "a core relation that holds between a part and its whole"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "part of"
+  } ]
+}, {
+  "@id" : "http://purl.obolibrary.org/obo/BFO_0000051",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "a core relation that holds between a whole and its part"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "has part"
   } ]
 }, {
   "@id" : "http://purl.obolibrary.org/obo/Process",
@@ -425,10 +493,24 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#BlackmanWindow",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Blackman Window"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1404885"
+  } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Camera",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Use 'has part' to relate components like an objective to the camera"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#OpticSensor"
   } ],
@@ -495,7 +577,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#ImageType"
+    "@id" : "http://purl.org/dc/terms/DCMIType"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -519,18 +601,18 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagCount",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagStatistics",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Holds the number of data points associated with a Flag Variable."
+    "@value" : "Holds statistics, e.g. the number of data points associated with a Flag Variable."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "Flag Count"
+    "@value" : "Flag Statistics"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable",
@@ -556,12 +638,12 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q1404885"
-  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Gaussian Window"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1404885"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#HammingWindow",
@@ -572,6 +654,9 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Hamming Window"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q112166625"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#HannWindow",
@@ -582,6 +667,9 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Hann Window"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1404885"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ImageDewarp",
@@ -640,24 +728,6 @@
     "@value" : "image rotation"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#ImageType",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally)."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#example" : [ {
-    "@language" : "en",
-    "@value" : "Examples are synthetic or experimental sources."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "Image Type"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Interpolation",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -711,8 +781,38 @@
     "@value" : "left right flip"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Lens",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OpticalComponent"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Lens"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q768575"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#LensSystem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OpticalComponent"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A number of lenses used in combination."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Lens System"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#LightSource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OpticalComponent"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "An object or device that emits light"
@@ -783,14 +883,46 @@
     "@value" : "Multipass"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Objective",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
+  }, {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#LensSystem"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The optical element that gathers light and focuses it on the camera sensor."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Objective"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q3880557"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#OpticSensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OpticalComponent"
+  } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "http://kif.cs.lth.se/ontologies/rosetta.owl#OpticSensor"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Optic Sensor"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#OpticalComponent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Optical Component"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q65037298"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod",
@@ -847,6 +979,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVData",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/dc/terms/DCMIType"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."
@@ -872,16 +1007,6 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "piv evaluation"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVHardware",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "PIV Hardware"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageAAA",
@@ -917,6 +1042,20 @@
     "@value" : "PIV Particle"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid8"
+  }, {
+    "@id" : "_:genid13"
+  }, {
+    "@id" : "_:genid14"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Setup"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSoftware",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -929,8 +1068,8 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q1756248"
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -939,12 +1078,15 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Particle Image Velocimetry"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1756248"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q7140505"
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -953,6 +1095,9 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Particle Tracking Velocimetry"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q7140505"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PeakSearchMethod",
@@ -1121,12 +1266,12 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q1404885"
-  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Square Window"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1404885"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#StandardName",
@@ -1145,7 +1290,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#SyntheticImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#ImageType"
+    "@id" : "http://purl.org/dc/terms/DCMIType"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1210,6 +1355,9 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Tukey Window"
+  } ],
+  "https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q1404885"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#VirtualCamera",
@@ -1377,6 +1525,29 @@
     "@value" : "has flag value"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasObjective",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Camera"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Objective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#isObjectiveOf"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Relates the objectiv to a camera."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "has objective"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasStandardName",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1390,10 +1561,30 @@
     "@value" : "has standard name"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#isObjectiveOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Objective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Camera"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000050"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Relates an objective to a camera."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "is objective of"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#manufacturer",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVHardware"
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://schema.org/manufacturer"
@@ -1408,6 +1599,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#microPIV",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Method"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."
@@ -1437,7 +1631,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/ssno#PivValidation"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PivValidation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
@@ -1457,7 +1651,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#ImageType"
+    "@id" : "http://purl.org/dc/terms/DCMIType"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1509,9 +1703,6 @@
     "@language" : "en",
     "@value" : "window weighting function"
   } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/ssno#PivValidation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#hasStandardNameDescription",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]

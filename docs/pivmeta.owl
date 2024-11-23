@@ -253,6 +253,27 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <skos:definition xml:lang="en">a core relation that holds between a part and its whole</skos:definition>
+        <skos:prefLabel xml:lang="en">part of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <skos:definition xml:lang="en">a core relation that holds between a whole and its part</skos:definition>
+        <skos:prefLabel xml:lang="en">has part</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://w3id.org/nfdi4ing/metadata4ing#hasParameter -->
 
 
@@ -308,7 +329,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset"/>
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagCount"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagStatistics"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -329,6 +350,20 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#hasObjective -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasObjective">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        <owl:inverseOf rdf:resource="https://matthiasprobst.github.io/pivmeta#isObjectiveOf"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Camera"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#Objective"/>
+        <skos:definition xml:lang="en">Relates the objectiv to a camera.</skos:definition>
+        <skos:prefLabel xml:lang="en">has objective</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#hasStandardName -->
 
 
@@ -340,11 +375,24 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#isObjectiveOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#isObjectiveOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Objective"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#Camera"/>
+        <skos:definition xml:lang="en">Relates an objective to a camera.</skos:definition>
+        <skos:prefLabel xml:lang="en">is objective of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#manufacturer -->
 
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#manufacturer">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVHardware"/>
+        <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
         <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Organization"/>
         <rdfs:isDefinedBy rdf:resource="https://schema.org/manufacturer"/>
         <skos:definition xml:lang="en">Manufacturer of a m4i:Tool</skos:definition>
@@ -356,7 +404,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/ssno#PivValidation"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PivValidation"/>
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"/>
         <skos:definition xml:lang="en">Points to the outlier replacement scheme used by the PIV validation process.</skos:definition>
         <skos:prefLabel xml:lang="en">outlier replacement scheme</skos:prefLabel>
@@ -369,7 +417,7 @@
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#pivImageType">
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PivImageDistribution"/>
-        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageType"/>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/DCMIType"/>
         <skos:definition xml:lang="en">The type of image, e.g. an experimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data.</skos:definition>
         <skos:example xml:lang="en">Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage</skos:example>
         <skos:prefLabel xml:lang="en">piv image type</skos:prefLabel>
@@ -769,6 +817,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Camera">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#OpticSensor"/>
+        <rdfs:comment xml:lang="en">Use &apos;has part&apos; to relate components like an objective to the camera</rdfs:comment>
         <skos:prefLabel xml:lang="en">Camera</skos:prefLabel>
         <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q15328"/>
     </owl:Class>
@@ -800,13 +849,13 @@ A JSON-LD excerpt could look like this:
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#FlagCount -->
+    <!-- https://matthiasprobst.github.io/pivmeta#FlagStatistics -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#FlagCount">
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#FlagStatistics">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
-        <skos:definition xml:lang="en">Holds the number of data points associated with a Flag Variable.</skos:definition>
-        <skos:prefLabel xml:lang="en">Flag Count</skos:prefLabel>
+        <skos:definition xml:lang="en">Holds statistics, e.g. the number of data points associated with a Flag Variable.</skos:definition>
+        <skos:prefLabel xml:lang="en">Flag Statistics</skos:prefLabel>
     </owl:Class>
     
 
@@ -877,18 +926,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#ImageType -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ImageType">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <skos:definition xml:lang="en">PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally).</skos:definition>
-        <skos:example xml:lang="en">Examples are synthetic or experimental sources.</skos:example>
-        <skos:prefLabel xml:lang="en">Image Type</skos:prefLabel>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#InterrogationMethod -->
 
 
@@ -912,10 +949,33 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#Lens -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Lens">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#OpticalComponent"/>
+        <skos:prefLabel xml:lang="en">Lens</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q768575"/>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#LensSystem -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#LensSystem">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#OpticalComponent"/>
+        <skos:definition xml:lang="en">A number of lenses used in combination.</skos:definition>
+        <skos:prefLabel xml:lang="en">Lens System</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#LightSource -->
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#LightSource">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#OpticalComponent"/>
         <skos:definition xml:lang="en">An object or device that emits light</skos:definition>
         <skos:prefLabel xml:lang="en">Light Source</skos:prefLabel>
         <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q1146001"/>
@@ -955,12 +1015,36 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#Objective -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Objective">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#LensSystem"/>
+        <skos:definition xml:lang="en">The optical element that gathers light and focuses it on the camera sensor.</skos:definition>
+        <skos:prefLabel xml:lang="en">Objective</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q3880557"/>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#OpticSensor -->
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#OpticSensor">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#OpticalComponent"/>
         <skos:closeMatch rdf:resource="http://kif.cs.lth.se/ontologies/rosetta.owl#OpticSensor"/>
         <skos:prefLabel xml:lang="en">Optic Sensor</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#OpticalComponent -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#OpticalComponent">
+        <skos:prefLabel xml:lang="en">Optical Component</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q65037298"/>
     </owl:Class>
     
 
@@ -998,16 +1082,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#PIVHardware -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVHardware">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
-        <skos:prefLabel xml:lang="en">PIV Hardware</skos:prefLabel>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#PIVParticle -->
 
 
@@ -1016,6 +1090,41 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Substance"/>
         <skos:definition xml:lang="en">Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter.</skos:definition>
         <skos:prefLabel xml:lang="en">PIV Particle</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#PIVSetup -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVSetup">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVParticle"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#SyntheticPIVParticle"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#LightSource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#OpticSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:prefLabel xml:lang="en">PIV Setup</skos:prefLabel>
     </owl:Class>
     
 
@@ -1223,13 +1332,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
-    <!-- https://matthiasprobst.github.io/ssno#PivValidation -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/ssno#PivValidation"/>
-    
-
-
     <!-- https://schema.org/CreativeWork -->
 
 
@@ -1307,7 +1409,11 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <!-- https://matthiasprobst.github.io/pivmeta#BlackmanWindow -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#BlackmanWindow"/>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#BlackmanWindow">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
+        <skos:prefLabel xml:lang="en">Blackman Window</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1327,7 +1433,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageType"/>
+        <rdf:type rdf:resource="http://purl.org/dc/terms/DCMIType"/>
         <skos:prefLabel xml:lang="en">experimental image</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1350,8 +1456,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#GaussianWindow">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
-        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
         <skos:prefLabel xml:lang="en">Gaussian Window</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
     </owl:NamedIndividual>
     
 
@@ -1362,6 +1468,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#HammingWindow">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
         <skos:prefLabel xml:lang="en">Hamming Window</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q112166625"/>
     </owl:NamedIndividual>
     
 
@@ -1372,6 +1479,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#HannWindow">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
         <skos:prefLabel xml:lang="en">Hann Window</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
     </owl:NamedIndividual>
     
 
@@ -1428,6 +1536,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#PIVData">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/DCMIType"/>
         <rdfs:comment xml:lang="en">Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types.</rdfs:comment>
         <skos:definition xml:lang="en">Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods.</skos:definition>
         <skos:prefLabel xml:lang="en">PIV data</skos:prefLabel>
@@ -1451,9 +1560,10 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry">
-        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q1756248"/>
+        <rdf:type rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <skos:definition xml:lang="en">Method to measure velocities in fluid.</skos:definition>
         <skos:prefLabel xml:lang="en">Particle Image Velocimetry</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q1756248"/>
     </owl:NamedIndividual>
     
 
@@ -1462,9 +1572,10 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry">
-        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q7140505"/>
+        <rdf:type rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <skos:definition xml:lang="en">A measurement technique to measure the velocity of particles.</skos:definition>
         <skos:prefLabel xml:lang="en">Particle Tracking Velocimetry</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q7140505"/>
     </owl:NamedIndividual>
     
 
@@ -1505,8 +1616,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#SquareWindow">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
-        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
         <skos:prefLabel xml:lang="en">Square Window</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
     </owl:NamedIndividual>
     
 
@@ -1515,7 +1626,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#SyntheticImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageType"/>
+        <rdf:type rdf:resource="http://purl.org/dc/terms/DCMIType"/>
         <skos:prefLabel xml:lang="en">synthetic image</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1547,6 +1658,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#TukeyWindow">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
         <skos:prefLabel xml:lang="en">Tukey Window</skos:prefLabel>
+        <emmo:EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54 rdf:resource="https://www.wikidata.org/wiki/Q1404885"/>
     </owl:NamedIndividual>
     
 
@@ -1555,6 +1667,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#microPIV">
+        <rdf:type rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <skos:definition xml:lang="en">Microscopic PIV. Example Applications can be found in Raffel et al. (2018) &quot;Particle Image Velocimetry: A Practical Guide&quot;, Springer, https://doi.org/10.1007/978-3-319-68852-7.</skos:definition>
         <skos:prefLabel xml:lang="en">Micro PIV</skos:prefLabel>
     </owl:NamedIndividual>

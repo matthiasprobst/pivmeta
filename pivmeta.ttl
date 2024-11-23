@@ -145,6 +145,19 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://purl.obolibrary.org/obo/BFO_0000050
+<http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ;
+                                             skos:definition "a core relation that holds between a part and its whole"@en ;
+                                             skos:prefLabel "part of"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000051
+<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ,
+                                                      owl:TransitiveProperty ;
+                                             skos:definition "a core relation that holds between a whole and its part"@en ;
+                                             skos:prefLabel "has part"@en .
+
+
 ###  http://w3id.org/nfdi4ing/metadata4ing#hasParameter
 <http://w3id.org/nfdi4ing/metadata4ing#hasParameter> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain [ rdf:type owl:Class ;
@@ -181,7 +194,7 @@ pivmeta:flag rdf:type owl:ObjectProperty ;
              owl:inverseOf pivmeta:flagIn ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset>
-                                         pivmeta:FlagCount
+                                         pivmeta:FlagStatistics
                                        )
                          ] ;
              rdfs:range pivmeta:FlagVariable ;
@@ -195,6 +208,16 @@ pivmeta:flagIn rdf:type owl:ObjectProperty ;
                skos:prefLabel "flag in"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#hasObjective
+pivmeta:hasObjective rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                     owl:inverseOf pivmeta:isObjectiveOf ;
+                     rdfs:domain pivmeta:Camera ;
+                     rdfs:range pivmeta:Objective ;
+                     skos:definition "Relates the objectiv to a camera."@en ;
+                     skos:prefLabel "has objective"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#hasStandardName
 pivmeta:hasStandardName rdf:type owl:ObjectProperty ;
                         rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
@@ -202,9 +225,18 @@ pivmeta:hasStandardName rdf:type owl:ObjectProperty ;
                         skos:prefLabel "has standard name"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#isObjectiveOf
+pivmeta:isObjectiveOf rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000050> ;
+                      rdfs:domain pivmeta:Objective ;
+                      rdfs:range pivmeta:Camera ;
+                      skos:definition "Relates an objective to a camera."@en ;
+                      skos:prefLabel "is objective of"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer
 pivmeta:manufacturer rdf:type owl:ObjectProperty ;
-                     rdfs:domain pivmeta:PIVHardware ;
+                     rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
                      rdfs:range <http://www.w3.org/ns/prov#Organization> ;
                      rdfs:isDefinedBy <https://schema.org/manufacturer> ;
                      skos:definition "Manufacturer of a m4i:Tool"@en .
@@ -212,7 +244,7 @@ pivmeta:manufacturer rdf:type owl:ObjectProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme
 pivmeta:outlierReplacementScheme rdf:type owl:ObjectProperty ;
-                                 rdfs:domain ssno:PivValidation ;
+                                 rdfs:domain pivmeta:PivValidation ;
                                  rdfs:range pivmeta:OutlierReplacementScheme ;
                                  skos:definition "Points to the outlier replacement scheme used by the PIV validation process."@en ;
                                  skos:prefLabel "outlier replacement scheme"@en .
@@ -221,7 +253,7 @@ pivmeta:outlierReplacementScheme rdf:type owl:ObjectProperty ;
 ###  https://matthiasprobst.github.io/pivmeta#pivImageType
 pivmeta:pivImageType rdf:type owl:ObjectProperty ;
                      rdfs:domain pivmeta:PivImageDistribution ;
-                     rdfs:range pivmeta:ImageType ;
+                     rdfs:range dcterms:DCMIType ;
                      skos:definition "The type of image, e.g. an experimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."@en ;
                      skos:example "Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage"@en ;
                      skos:prefLabel "piv image type"@en .
@@ -478,6 +510,7 @@ pivmeta:BackgroundSubtractionMethod rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#Camera
 pivmeta:Camera rdf:type owl:Class ;
                rdfs:subClassOf pivmeta:OpticSensor ;
+               rdfs:comment "Use 'has part' to relate components like an objective to the camera"@en ;
                skos:prefLabel "Camera"@en ;
                <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q15328> .
 
@@ -499,11 +532,11 @@ pivmeta:DigitalCamera rdf:type owl:Class ;
                       <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q62927> .
 
 
-###  https://matthiasprobst.github.io/pivmeta#FlagCount
-pivmeta:FlagCount rdf:type owl:Class ;
-                  rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
-                  skos:definition "Holds the number of data points associated with a Flag Variable."@en ;
-                  skos:prefLabel "Flag Count"@en .
+###  https://matthiasprobst.github.io/pivmeta#FlagStatistics
+pivmeta:FlagStatistics rdf:type owl:Class ;
+                       rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+                       skos:definition "Holds statistics, e.g. the number of data points associated with a Flag Variable."@en ;
+                       skos:prefLabel "Flag Statistics"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagVariable
@@ -548,14 +581,6 @@ pivmeta:ImageRotation rdf:type owl:Class ;
                       skos:prefLabel "image rotation"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#ImageType
-pivmeta:ImageType rdf:type owl:Class ;
-                  rdfs:subClassOf skos:Concept ;
-                  skos:definition "PIV image source type. Used to describe whether images were generated (synthetically) or measured (experimentally)."@en ;
-                  skos:example "Examples are synthetic or experimental sources."@en ;
-                  skos:prefLabel "Image Type"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod
 pivmeta:InterrogationMethod rdf:type owl:Class ;
                             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
@@ -571,8 +596,23 @@ pivmeta:Laser rdf:type owl:Class ;
               <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q38867> .
 
 
+###  https://matthiasprobst.github.io/pivmeta#Lens
+pivmeta:Lens rdf:type owl:Class ;
+             rdfs:subClassOf pivmeta:OpticalComponent ;
+             skos:prefLabel "Lens"@en ;
+             <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q768575> .
+
+
+###  https://matthiasprobst.github.io/pivmeta#LensSystem
+pivmeta:LensSystem rdf:type owl:Class ;
+                   rdfs:subClassOf pivmeta:OpticalComponent ;
+                   skos:definition "A number of lenses used in combination."@en ;
+                   skos:prefLabel "Lens System"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#LightSource
 pivmeta:LightSource rdf:type owl:Class ;
+                    rdfs:subClassOf pivmeta:OpticalComponent ;
                     skos:definition "An object or device that emits light"@en ;
                     skos:prefLabel "Light Source"@en ;
                     <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1146001> .
@@ -598,10 +638,26 @@ pivmeta:Multipass rdf:type owl:Class ;
                   skos:prefLabel "Multipass"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#Objective
+pivmeta:Objective rdf:type owl:Class ;
+                  rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
+                                  pivmeta:LensSystem ;
+                  skos:definition "The optical element that gathers light and focuses it on the camera sensor."@en ;
+                  skos:prefLabel "Objective"@en ;
+                  <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q3880557> .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#OpticSensor
 pivmeta:OpticSensor rdf:type owl:Class ;
+                    rdfs:subClassOf pivmeta:OpticalComponent ;
                     skos:closeMatch <http://kif.cs.lth.se/ontologies/rosetta.owl#OpticSensor> ;
                     skos:prefLabel "Optic Sensor"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#OpticalComponent
+pivmeta:OpticalComponent rdf:type owl:Class ;
+                         skos:prefLabel "Optical Component"@en ;
+                         <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q65037298> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
@@ -625,18 +681,36 @@ pivmeta:PIVEvaluation rdf:type owl:Class ;
                       skos:prefLabel "piv evaluation"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PIVHardware
-pivmeta:PIVHardware rdf:type owl:Class ;
-                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
-                    skos:prefLabel "PIV Hardware"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#PIVParticle
 pivmeta:PIVParticle rdf:type owl:Class ;
                     rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
                                     pivmeta:Substance ;
                     skos:definition "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en ;
                     skos:prefLabel "PIV Particle"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVSetup
+pivmeta:PIVSetup rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Class ;
+                                   owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                   owl:someValuesFrom pivmeta:PIVParticle
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                   owl:someValuesFrom pivmeta:SyntheticPIVParticle
+                                                 ]
+                                               )
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                   owl:someValuesFrom pivmeta:LightSource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                   owl:someValuesFrom pivmeta:OpticSensor
+                                 ] ;
+                 skos:prefLabel "PIV Setup"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVSoftware
@@ -767,10 +841,6 @@ pivmeta:WindowWeightingFunction rdf:type owl:Class ;
                                 skos:prefLabel "Window Weighting Function"@en .
 
 
-###  https://matthiasprobst.github.io/ssno#PivValidation
-ssno:PivValidation rdf:type owl:Class .
-
-
 ###  https://schema.org/CreativeWork
 <https://schema.org/CreativeWork> rdf:type owl:Class .
 
@@ -815,7 +885,10 @@ pivmeta:AmountOfSubstancePerUnitArea rdf:type owl:NamedIndividual ,
 
 
 ###  https://matthiasprobst.github.io/pivmeta#BlackmanWindow
-pivmeta:BlackmanWindow rdf:type owl:NamedIndividual .
+pivmeta:BlackmanWindow rdf:type owl:NamedIndividual ,
+                                pivmeta:ImageManipulationMethod ;
+                       skos:prefLabel "Blackman Window"@en ;
+                       <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#DEHS
@@ -828,7 +901,7 @@ pivmeta:DEHS rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 pivmeta:ExperimentalImage rdf:type owl:NamedIndividual ,
-                                   pivmeta:ImageType ;
+                                   dcterms:DCMIType ;
                           skos:prefLabel "experimental image"@en .
 
 
@@ -843,20 +916,22 @@ pivmeta:FlagActive rdf:type owl:NamedIndividual ,
 ###  https://matthiasprobst.github.io/pivmeta#GaussianWindow
 pivmeta:GaussianWindow rdf:type owl:NamedIndividual ,
                                 pivmeta:WindowWeightingFunction ;
-                       rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
-                       skos:prefLabel "Gaussian Window"@en .
+                       skos:prefLabel "Gaussian Window"@en ;
+                       <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#HammingWindow
 pivmeta:HammingWindow rdf:type owl:NamedIndividual ,
                                pivmeta:WindowWeightingFunction ;
-                      skos:prefLabel "Hamming Window"@en .
+                      skos:prefLabel "Hamming Window"@en ;
+                      <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q112166625> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#HannWindow
 pivmeta:HannWindow rdf:type owl:NamedIndividual ,
                             pivmeta:WindowWeightingFunction ;
-                   skos:prefLabel "Hann Window"@en .
+                   skos:prefLabel "Hann Window"@en ;
+                   <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Interpolation
@@ -892,7 +967,8 @@ pivmeta:PER-PIXEL rdf:type owl:NamedIndividual ,
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVData
-pivmeta:PIVData rdf:type owl:NamedIndividual ;
+pivmeta:PIVData rdf:type owl:NamedIndividual ,
+                         dcterms:DCMIType ;
                 rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
                 skos:definition "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en ;
                 skos:prefLabel "PIV data"@en .
@@ -907,17 +983,19 @@ pivmeta:PIVImageAAA rdf:type owl:NamedIndividual ,
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
-pivmeta:ParticleImageVelocimetry rdf:type owl:NamedIndividual ;
-                                 skos:closeMatch <https://www.wikidata.org/wiki/Q1756248> ;
+pivmeta:ParticleImageVelocimetry rdf:type owl:NamedIndividual ,
+                                          <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                                  skos:definition "Method to measure velocities in fluid."@en ;
-                                 skos:prefLabel "Particle Image Velocimetry"@en .
+                                 skos:prefLabel "Particle Image Velocimetry"@en ;
+                                 <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1756248> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry
-pivmeta:ParticleTrackingVelocimetry rdf:type owl:NamedIndividual ;
-                                    skos:closeMatch <https://www.wikidata.org/wiki/Q7140505> ;
+pivmeta:ParticleTrackingVelocimetry rdf:type owl:NamedIndividual ,
+                                             <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                                     skos:definition "A measurement technique to measure the velocity of particles."@en ;
-                                    skos:prefLabel "Particle Tracking Velocimetry"@en .
+                                    skos:prefLabel "Particle Tracking Velocimetry"@en ;
+                                    <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q7140505> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample
@@ -942,13 +1020,13 @@ pivmeta:SplitImage rdf:type owl:NamedIndividual ,
 ###  https://matthiasprobst.github.io/pivmeta#SquareWindow
 pivmeta:SquareWindow rdf:type owl:NamedIndividual ,
                               pivmeta:WindowWeightingFunction ;
-                     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
-                     skos:prefLabel "Square Window"@en .
+                     skos:prefLabel "Square Window"@en ;
+                     <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
 pivmeta:SyntheticImage rdf:type owl:NamedIndividual ,
-                                pivmeta:ImageType ;
+                                dcterms:DCMIType ;
                        skos:prefLabel "synthetic image"@en .
 
 
@@ -967,11 +1045,13 @@ pivmeta:TryLowerOrderPeaks rdf:type owl:NamedIndividual ,
 ###  https://matthiasprobst.github.io/pivmeta#TukeyWindow
 pivmeta:TukeyWindow rdf:type owl:NamedIndividual ,
                              pivmeta:WindowWeightingFunction ;
-                    skos:prefLabel "Tukey Window"@en .
+                    skos:prefLabel "Tukey Window"@en ;
+                    <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#microPIV
-pivmeta:microPIV rdf:type owl:NamedIndividual ;
+pivmeta:microPIV rdf:type owl:NamedIndividual ,
+                          <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                  skos:definition "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en ;
                  skos:prefLabel "Micro PIV"@en .
 
