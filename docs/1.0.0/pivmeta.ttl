@@ -241,7 +241,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme
 :outlierReplacementScheme rdf:type owl:ObjectProperty ;
-                          rdfs:domain :PivValidation ;
+                          rdfs:domain :PIVValidation ;
                           rdfs:range :OutlierReplacementScheme ;
                           <http://www.w3.org/2004/02/skos/core#definition> "Points to the outlier replacement scheme used by the PIV validation process."@en ;
                           <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier replacement scheme"@en .
@@ -249,7 +249,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#pivImageType
 :pivImageType rdf:type owl:ObjectProperty ;
-              rdfs:domain :PivImageDistribution ;
+              rdfs:domain :PIVImageDistribution ;
               rdfs:range <http://purl.org/dc/terms/DCMIType> ;
               <http://www.w3.org/2004/02/skos/core#definition> "The type of image, e.g. an experimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."@en ;
               <http://www.w3.org/2004/02/skos/core#example> "Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage"@en ;
@@ -293,7 +293,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#filenamePattern
 :filenamePattern rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :PivDistribution ;
+                 rdfs:domain :PIVDistribution ;
                  rdfs:range xsd:string ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The regular expression string to determine the image filenames in the distribution."@en ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
@@ -351,7 +351,7 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#numberOfRecords
 :numberOfRecords rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :PivImageDistribution ;
+                 rdfs:domain :PIVImageDistribution ;
                  rdfs:range xsd:positiveInteger ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."@en ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "number of records"@en .
@@ -497,13 +497,13 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration
 :BackgroundImageGeneration rdf:type owl:Class ;
-                           rdfs:subClassOf :PivProcessingStep ;
+                           rdfs:subClassOf :PIVProcessingStep ;
                            <http://www.w3.org/2004/02/skos/core#prefLabel> "background image generation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod
 :BackgroundSubtractionMethod rdf:type owl:Class ;
-                             rdfs:subClassOf :PivPreProcessing ;
+                             rdfs:subClassOf :PIVPreProcessing ;
                              <http://www.w3.org/2004/02/skos/core#example> "Can be direct subtraction of background, division of image by background or a combination."@en ;
                              <http://www.w3.org/2004/02/skos/core#prefLabel> "background subtraction"@en .
 
@@ -551,14 +551,14 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
 :ImageDewarp rdf:type owl:Class ;
-             rdfs:subClassOf :PivPreProcessing ;
+             rdfs:subClassOf :PIVPreProcessing ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "image dewarp"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageFilter
 :ImageFilter rdf:type owl:Class ;
-             rdfs:subClassOf :PivPostProcessing ,
-                             :PivPreProcessing ;
+             rdfs:subClassOf :PIVPostProcessing ,
+                             :PIVPreProcessing ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "image filter"@en .
 
 
@@ -576,7 +576,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageRotation
 :ImageRotation rdf:type owl:Class ;
-               rdfs:subClassOf :PivPreProcessing ;
+               rdfs:subClassOf :PIVPreProcessing ;
                rdfs:comment "If not further specified assume anti-clockwise."@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "image rotation"@en .
 
@@ -621,7 +621,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
 :MaskGeneration rdf:type owl:Class ;
-                rdfs:subClassOf :PivProcessingStep ;
+                rdfs:subClassOf :PIVProcessingStep ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "mask generation"@en .
 
 
@@ -682,15 +682,15 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                             [ rdf:type owl:Class ;
                               owl:unionOf ( [ rdf:type owl:Restriction ;
                                               owl:onProperty <http://www.w3.org/ns/dcat#distribution> ;
-                                              owl:someValuesFrom :PivImageDistribution
+                                              owl:someValuesFrom :PIVImageDistribution
                                             ]
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty <http://www.w3.org/ns/dcat#distribution> ;
-                                              owl:someValuesFrom :PivMaskDistribution
+                                              owl:someValuesFrom :PIVMaskDistribution
                                             ]
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty <http://www.w3.org/ns/dcat#distribution> ;
-                                              owl:someValuesFrom :PivResultDistribution
+                                              owl:someValuesFrom :PIVResultDistribution
                                             ]
                                           )
                             ] ;
@@ -698,11 +698,31 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Dataset"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#PIVDistribution
+:PIVDistribution rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Distribution"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 :PIVEvaluation rdf:type owl:Class ;
-               rdfs:subClassOf :PivProcessingStep ;
+               rdfs:subClassOf :PIVProcessingStep ;
                <http://www.w3.org/2004/02/skos/core#definition> "The PIV evaluation processing performing the correlation algorithm and interrogation method."@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "piv evaluation"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
+:PIVImageDistribution rdf:type owl:Class ;
+                      rdfs:subClassOf :PIVDistribution ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."@en ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Image Distribution"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVMaskDistribution
+:PIVMaskDistribution rdf:type owl:Class ;
+                     rdfs:subClassOf :PIVDistribution ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Mask Distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVParticle
@@ -710,6 +730,32 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
              rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
              <http://www.w3.org/2004/02/skos/core#definition> "Refers to one or generally many tracer particles, also called seeding particles. Its parameters should be described via m4i:hasParameter."@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Particle"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVPostProcessing
+:PIVPostProcessing rdf:type owl:Class ;
+                   rdfs:subClassOf :PIVProcessingStep ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "piv post processing"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVPreProcessing
+:PIVPreProcessing rdf:type owl:Class ;
+                  rdfs:subClassOf :PIVProcessingStep ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "piv pre processing"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
+:PIVProcessingStep rdf:type owl:Class ;
+                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "PIV-specific action undertaken during PIV data handling from recording to processing."@en ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "piv processing step"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVResultDistribution
+:PIVResultDistribution rdf:type owl:Class ;
+                       rdfs:subClassOf :PIVDistribution ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "A PIV result distribution containing displacements and optionally other derived variables"@en ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Result Distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVSetup
@@ -732,7 +778,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#PIVSoftware
 :PIVSoftware rdf:type owl:Class ;
              rdfs:subClassOf <https://w3id.org/okn/o/sd#Software> ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Software"@en .
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Software"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVValidation
+:PIVValidation rdf:type owl:Class ;
+               rdfs:subClassOf :PIVProcessingStep ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "piv validation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PeakSearchMethod
@@ -741,58 +793,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                   rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
                   <http://www.w3.org/2004/02/skos/core#example> "Peak centroid, Parabolic peak fit or Gaussian peak fit."@en ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Peak Search Method"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivDistribution
-:PivDistribution rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Distribution"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivImageDistribution
-:PivImageDistribution rdf:type owl:Class ;
-                      rdfs:subClassOf :PivDistribution ;
-                      <http://www.w3.org/2004/02/skos/core#definition> "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."@en ;
-                      <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Image Distribution"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivMaskDistribution
-:PivMaskDistribution rdf:type owl:Class ;
-                     rdfs:subClassOf :PivDistribution ;
-                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Mask Distribution"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivPostProcessing
-:PivPostProcessing rdf:type owl:Class ;
-                   rdfs:subClassOf :PivProcessingStep ;
-                   <http://www.w3.org/2004/02/skos/core#prefLabel> "piv post processing"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivPreProcessing
-:PivPreProcessing rdf:type owl:Class ;
-                  rdfs:subClassOf :PivProcessingStep ;
-                  <http://www.w3.org/2004/02/skos/core#prefLabel> "piv pre processing"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivProcessingStep
-:PivProcessingStep rdf:type owl:Class ;
-                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
-                   <http://www.w3.org/2004/02/skos/core#definition> "PIV-specific action undertaken during PIV data handling from recording to processing."@en ;
-                   <http://www.w3.org/2004/02/skos/core#prefLabel> "piv processing step"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivResultDistribution
-:PivResultDistribution rdf:type owl:Class ;
-                       rdfs:subClassOf :PivDistribution ;
-                       <http://www.w3.org/2004/02/skos/core#definition> "A PIV result distribution containing displacements and optionally other derived variables"@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Result Distribution"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PivValidation
-:PivValidation rdf:type owl:Class ;
-               rdfs:subClassOf :PivProcessingStep ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "piv validation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Singlepass

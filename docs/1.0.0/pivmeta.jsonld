@@ -37,7 +37,7 @@
     "@id" : "http://www.w3.org/ns/dcat#distribution"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivResultDistribution"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVResultDistribution"
   } ]
 }, {
   "@id" : "_:genid18",
@@ -46,7 +46,7 @@
     "@id" : "http://www.w3.org/ns/dcat#distribution"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivMaskDistribution"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVMaskDistribution"
   } ]
 }, {
   "@id" : "_:genid20",
@@ -55,7 +55,7 @@
     "@id" : "http://www.w3.org/ns/dcat#distribution"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageDistribution"
   } ]
 }, {
   "@id" : "_:genid21",
@@ -546,7 +546,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -556,7 +556,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivPreProcessing"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
   } ],
   "http://www.w3.org/2004/02/skos/core#example" : [ {
     "@language" : "en",
@@ -748,7 +748,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#ImageDewarp",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivPreProcessing"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -758,9 +758,9 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#ImageFilter",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivPostProcessing"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
   }, {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivPreProcessing"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -794,7 +794,7 @@
     "@value" : "If not further specified assume anti-clockwise."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivPreProcessing"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -905,7 +905,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#MaskGeneration",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1091,10 +1091,24 @@
     "@value" : "PIV Dataset"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Distribution"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Distribution"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1122,6 +1136,30 @@
     "@value" : "PIV image"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Image Distribution"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVMaskDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Mask Distribution"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVParticle",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -1134,6 +1172,54 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "PIV Particle"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv post processing"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv pre processing"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "PIV-specific action undertaken during PIV data handling from recording to processing."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv processing step"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVResultDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A PIV result distribution containing displacements and optionally other derived variables"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Result Distribution"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup",
@@ -1157,7 +1243,17 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "Piv Software"
+    "@value" : "PIV Software"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVValidation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "piv validation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry",
@@ -1210,102 +1306,6 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Peak Search Method"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/dcat#Distribution"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "PIV Distribution"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "PIV Image Distribution"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PivMaskDistribution",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "Piv Mask Distribution"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PivPostProcessing",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "piv post processing"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PivPreProcessing",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "piv pre processing"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "PIV-specific action undertaken during PIV data handling from recording to processing."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "piv processing step"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PivResultDistribution",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A PIV result distribution containing displacements and optionally other derived variables"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "PIV Result Distribution"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PivValidation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivProcessingStep"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "piv validation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample",
@@ -1506,7 +1506,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#filenamePattern",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivDistribution"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -1655,7 +1655,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#numberOfRecords",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageDistribution"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
@@ -1672,7 +1672,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivValidation"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVValidation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"
@@ -1689,7 +1689,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#pivImageType",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PivImageDistribution"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageDistribution"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://purl.org/dc/terms/DCMIType"
