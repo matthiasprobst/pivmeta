@@ -116,14 +116,6 @@
 <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54
-<https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> rdf:type owl:AnnotationProperty ;
-                                                                  rdfs:comment "URL corresponding to entry in Wikidata."@en ;
-                                                                  rdfs:isDefinedBy "" ;
-                                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "wikidataReference"@en ;
-                                                                  rdfs:subPropertyOf rdfs:seeAlso .
-
-
 #################################################################
 #    Datatypes
 #################################################################
@@ -143,12 +135,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.obolibrary.org/obo/BFO_0000050
 <http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ,
                                                       owl:TransitiveProperty ;
-                                             rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
-                                             rdfs:range [ rdf:type owl:Class ;
-                                                          owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Tool>
-                                                                        :PIVSetup
-                                                                      )
-                                                        ] ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "a core relation that holds between a part and its whole"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "part of"@en .
 
@@ -156,12 +142,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.obolibrary.org/obo/BFO_0000051
 <http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ,
                                                       owl:TransitiveProperty ;
-                                             rdfs:domain [ rdf:type owl:Class ;
-                                                           owl:unionOf ( <http://w3id.org/nfdi4ing/metadata4ing#Tool>
-                                                                         :PIVSetup
-                                                                       )
-                                                         ] ;
-                                             rdfs:range <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "a core relation that holds between a whole and its part"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "has part"@en .
 
@@ -190,7 +170,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://codemeta.github.io/terms/hasSourceCode
 <https://codemeta.github.io/terms/hasSourceCode> rdf:type owl:ObjectProperty ;
                                                  owl:inverseOf <https://codemeta.github.io/terms/isSourceCodeOf> ;
-                                                 rdfs:domain :VirtualTool ;
+                                                 rdfs:domain [ rdf:type owl:Class ;
+                                                               owl:unionOf ( :VirtualPIVSetup
+                                                                             :VirtualTool
+                                                                           )
+                                                             ] ;
                                                  rdfs:range <https://schema.org/SoftwareSourceCode> ;
                                                  rdfs:isDefinedBy <https://codemeta.github.io/terms/> ;
                                                  <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational model or concept to the source code that implements it."@en ;
@@ -200,7 +184,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://codemeta.github.io/terms/isSourceCodeOf
 <https://codemeta.github.io/terms/isSourceCodeOf> rdf:type owl:ObjectProperty ;
                                                   rdfs:domain <https://schema.org/SoftwareSourceCode> ;
-                                                  rdfs:range :VirtualTool ;
+                                                  rdfs:range [ rdf:type owl:Class ;
+                                                               owl:unionOf ( :VirtualPIVSetup
+                                                                             :VirtualTool
+                                                                           )
+                                                             ] ;
                                                   rdfs:isDefinedBy <https://codemeta.github.io/terms/> ;
                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "is source code of"@en .
 
@@ -339,9 +327,9 @@ A JSON-LD excerpt could look like this:
         \"masked\",
         \"noresult\",
         \"disabled\",
-        \"filtered\", 
+        \"filtered\",
         \"interpolated\",
-        \"replaced\", 
+        \"replaced\",
         \"manualedit\"
     ],
     \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"
@@ -393,6 +381,18 @@ A JSON-LD excerpt could look like this:
 #################################################################
 #    Classes
 #################################################################
+
+###  http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db
+<http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db> rdf:type owl:Class ;
+                                                                  <http://www.w3.org/2004/02/skos/core#definition> "An experiment is a process that is intended to replicate a physical phenomenon in a controlled environment."@en ;
+                                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Experiment"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f
+<http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> rdf:type owl:Class ;
+                                                                  <http://www.w3.org/2004/02/skos/core#definition> "A simulation that relies on physics based models, according to the Review of Materials Modelling and CWA 17284:2018."@en ;
+                                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Physics Based Simulation"@en .
+
 
 ###  http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset
 <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset> rdf:type owl:Class ;
@@ -478,7 +478,8 @@ A JSON-LD excerpt could look like this:
 
 
 ###  http://www.w3.org/ns/dcat#Dataset
-<http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class .
+<http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Dataset"@en .
 
 
 ###  http://www.w3.org/ns/dcat#Distribution
@@ -512,8 +513,8 @@ A JSON-LD excerpt could look like this:
 :Camera rdf:type owl:Class ;
         rdfs:subClassOf :OpticSensor ;
         rdfs:comment "Use 'has part' to relate components like an objective to the camera"@en ;
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Camera"@en ;
-        <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q15328> .
+        rdfs:seeAlso <https://www.wikidata.org/wiki/Q15328> ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Camera"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#CorrelationMethod
@@ -527,9 +528,18 @@ A JSON-LD excerpt could look like this:
 :DigitalCamera rdf:type owl:Class ;
                rdfs:subClassOf :Camera ;
                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0001048> ;
+               rdfs:seeAlso <https://www.wikidata.org/wiki/Q62927> ;
                <http://www.w3.org/2004/02/skos/core#definition> "A Digital Camera captures photographs or videos in a digital format."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en ;
-               <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q62927> .
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Digital Camera"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup
+:ExperimentalPIVSetup rdf:type owl:Class ;
+                      rdfs:subClassOf <http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db> ,
+                                      :PIVSetup ;
+                      rdfs:comment "Use prov:hasPart to relate the tools used."@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "An experimental setup applying the Particle Image Velocimetry method. The class should be related to the tools used in the experiment."@en ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Experimental PIV Setup"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagStatistics
@@ -591,16 +601,16 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :Laser rdf:type owl:Class ;
        owl:equivalentClass <https://www.wikidata.org/wiki/Q38867> ;
        rdfs:subClassOf :LightSource ;
+       rdfs:seeAlso <https://www.wikidata.org/wiki/Q38867> ;
        <http://www.w3.org/2004/02/skos/core#definition> "A Device which emits light via amplification."@en ;
-       <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser"@en ;
-       <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q38867> .
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "Laser"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Lens
 :Lens rdf:type owl:Class ;
       rdfs:subClassOf :OpticalComponent ;
-      <http://www.w3.org/2004/02/skos/core#prefLabel> "Lens"@en ;
-      <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q768575> .
+      rdfs:seeAlso <https://www.wikidata.org/wiki/Q768575> ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Lens"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#LensSystem
@@ -614,9 +624,9 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :LightSource rdf:type owl:Class ;
              owl:equivalentClass <https://www.wikidata.org/wiki/Q1146001> ;
              rdfs:subClassOf :OpticalComponent ;
+             rdfs:seeAlso <https://www.wikidata.org/wiki/Q1146001> ;
              <http://www.w3.org/2004/02/skos/core#definition> "An object or device that emits light"@en ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "Light Source"@en ;
-             <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1146001> .
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Light Source"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
@@ -643,9 +653,9 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :Objective rdf:type owl:Class ;
            rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
                            :LensSystem ;
+           rdfs:seeAlso <https://www.wikidata.org/wiki/Q3880557> ;
            <http://www.w3.org/2004/02/skos/core#definition> "The optical element that gathers light and focuses it on the camera sensor."@en ;
-           <http://www.w3.org/2004/02/skos/core#prefLabel> "Objective"@en ;
-           <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q3880557> .
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Objective"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#OpticSensor
@@ -658,8 +668,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#OpticalComponent
 :OpticalComponent rdf:type owl:Class ;
                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
-                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Optical Component"@en ;
-                  <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q65037298> .
+                  rdfs:seeAlso <https://www.wikidata.org/wiki/Q65037298> ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Optical Component"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod
@@ -694,6 +704,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                                             ]
                                           )
                             ] ;
+            rdfs:comment "Use obo:hasPart to relate a used Tool like a camera or laser to the PIV Dataset"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "A collection of Particle Image Velocimetry (PIV) data, published or curated by a single agent, and available for access or download in one or more representations."@en ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Dataset"@en .
 
@@ -837,6 +848,14 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "Virtual Laser"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup
+:VirtualPIVSetup rdf:type owl:Class ;
+                 rdfs:subClassOf <http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> ,
+                                 :PIVSetup ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A simulation that relies on physics based models for a PIV Experiment."@en ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Virtual PIV Setup"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#VirtualTool
 :VirtualTool rdf:type owl:Class ;
              rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
@@ -906,16 +925,16 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#BlackmanWindow
 :BlackmanWindow rdf:type owl:NamedIndividual ,
                          :ImageManipulationMethod ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "Blackman Window"@en ;
-                <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
+                rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "Blackman Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#DEHS
 :DEHS rdf:type owl:NamedIndividual ,
                :PIVParticle ;
+      rdfs:seeAlso <https://www.wikidata.org/wiki/Q4387284> ;
       <http://www.w3.org/2004/02/skos/core#definition> "diethylhexyl sebacate"@en ;
-      <http://www.w3.org/2004/02/skos/core#prefLabel> "DEHS" ;
-      <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q4387284> .
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "DEHS" .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
@@ -935,22 +954,22 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#GaussianWindow
 :GaussianWindow rdf:type owl:NamedIndividual ,
                          :WindowWeightingFunction ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "Gaussian Window"@en ;
-                <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
+                rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "Gaussian Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#HammingWindow
 :HammingWindow rdf:type owl:NamedIndividual ,
                         :WindowWeightingFunction ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "Hamming Window"@en ;
-               <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q112166625> .
+               rdfs:seeAlso <https://www.wikidata.org/wiki/Q112166625> ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Hamming Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#HannWindow
 :HannWindow rdf:type owl:NamedIndividual ,
                      :WindowWeightingFunction ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "Hann Window"@en ;
-            <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
+            rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Hann Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Interpolation
@@ -1004,17 +1023,17 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
 :ParticleImageVelocimetry rdf:type owl:NamedIndividual ,
                                    <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
+                          rdfs:seeAlso <https://www.wikidata.org/wiki/Q1756248> ;
                           <http://www.w3.org/2004/02/skos/core#definition> "Method to measure velocities in fluid."@en ;
-                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Image Velocimetry"@en ;
-                          <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1756248> .
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Image Velocimetry"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry
 :ParticleTrackingVelocimetry rdf:type owl:NamedIndividual ,
                                       <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
+                             rdfs:seeAlso <https://www.wikidata.org/wiki/Q7140505> ;
                              <http://www.w3.org/2004/02/skos/core#definition> "A measurement technique to measure the velocity of particles."@en ;
-                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Tracking Velocimetry"@en ;
-                             <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q7140505> .
+                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Tracking Velocimetry"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample
@@ -1039,8 +1058,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#SquareWindow
 :SquareWindow rdf:type owl:NamedIndividual ,
                        :WindowWeightingFunction ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "Square Window"@en ;
-              <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
+              rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Square Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
@@ -1064,8 +1083,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#TukeyWindow
 :TukeyWindow rdf:type owl:NamedIndividual ,
                       :WindowWeightingFunction ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "Tukey Window"@en ;
-             <https://w3id.org/emmo#EMMO_26bf1bef_d192_4da6_b0eb_d2209698fb54> <https://www.wikidata.org/wiki/Q1404885> .
+             rdfs:seeAlso <https://www.wikidata.org/wiki/Q1404885> ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Tukey Window"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#microPIV
