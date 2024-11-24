@@ -146,6 +146,34 @@ xsd:date rdf:type rdfs:Datatype .
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "has part"@en .
 
 
+###  http://purl.obolibrary.org/obo/BFO_0000063
+<http://purl.obolibrary.org/obo/BFO_0000063> rdf:type owl:ObjectProperty ,
+                                                      owl:TransitiveProperty ;
+                                             rdfs:domain <http://purl.obolibrary.org/obo/Process> ;
+                                             rdfs:range <http://purl.obolibrary.org/obo/Process> ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point."@en ;
+                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "precedes"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002090
+<http://purl.obolibrary.org/obo/RO_0002090> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                            rdfs:domain <http://purl.obolibrary.org/obo/Process> ;
+                                            rdfs:range <http://purl.obolibrary.org/obo/Process> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "X immediately precedes_Y iff: end(X) simultaneous_with start(Y)"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "immediately precedes"@en .
+
+
+###  http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool
+<http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf <https://schema.org/instrument> ;
+                                                        owl:inverseOf <http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn> ;
+                                                        rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
+                                                        rdfs:range <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
+                                                        <http://www.w3.org/2004/02/skos/core#definition> "Points to a tool that is used within a given processing step"@en ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "has employed tool"@en .
+
+
 ###  http://w3id.org/nfdi4ing/metadata4ing#hasParameter
 <http://w3id.org/nfdi4ing/metadata4ing#hasParameter> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain [ rdf:type owl:Class ;
@@ -157,6 +185,12 @@ xsd:date rdf:type rdfs:Datatype .
                                                      rdfs:range <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
                                                      <http://www.w3.org/2004/02/skos/core#definition> "Points to a parameter of a given method or tool."@en ;
                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "has parameter"@en .
+
+
+###  http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn
+<http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn> rdf:type owl:ObjectProperty ;
+                                                         <http://www.w3.org/2004/02/skos/core#definition> "Points to a processing step the tool has been used in"@en ;
+                                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "is employed tool"@en .
 
 
 ###  http://www.w3.org/ns/dcat#distribution
@@ -259,6 +293,13 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:seeAlso <http://w3id.org/nfdi4ing/metadata4ing#hasUnit> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "The canonical unit of the standard name"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "unit"@en .
+
+
+###  https://schema.org/instrument
+<https://schema.org/instrument> rdf:type owl:ObjectProperty ;
+                                rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
+                                <http://www.w3.org/2004/02/skos/core#definition> "points to an object that helped the agent perform the action (e.g., John wrote a book with a pen)"@en ;
+                                <http://www.w3.org/2004/02/skos/core#prefLabel> "uses instrument"@en .
 
 
 #################################################################
@@ -498,15 +539,16 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration
 :BackgroundImageGeneration rdf:type owl:Class ;
-                           rdfs:subClassOf :PIVProcessingStep ;
-                           <http://www.w3.org/2004/02/skos/core#prefLabel> "background image generation"@en .
+                           rdfs:subClassOf :PIVPreProcessing ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "The process of creating or recording background images"@en ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Background Image Generation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod
 :BackgroundSubtractionMethod rdf:type owl:Class ;
                              rdfs:subClassOf :PIVPreProcessing ;
                              <http://www.w3.org/2004/02/skos/core#example> "Can be direct subtraction of background, division of image by background or a combination."@en ;
-                             <http://www.w3.org/2004/02/skos/core#prefLabel> "background subtraction"@en .
+                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Background Subtraction"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Camera
@@ -559,17 +601,18 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "Flag Variable"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#ImageDewarp
-:ImageDewarp rdf:type owl:Class ;
-             rdfs:subClassOf :PIVPreProcessing ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "image dewarp"@en .
+###  https://matthiasprobst.github.io/pivmeta#ImageDewarping
+:ImageDewarping rdf:type owl:Class ;
+                rdfs:subClassOf :PIVPreProcessing ;
+                <http://www.w3.org/2004/02/skos/core#definition> "The process of dewarping an distorted image, e.g. due to the fisheye effect."@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "Image Dewarping"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#ImageFilter
-:ImageFilter rdf:type owl:Class ;
-             rdfs:subClassOf :PIVPostProcessing ,
-                             :PIVPreProcessing ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "image filter"@en .
+###  https://matthiasprobst.github.io/pivmeta#ImageFiltering
+:ImageFiltering rdf:type owl:Class ;
+                rdfs:subClassOf :PIVPreProcessing ;
+                <http://www.w3.org/2004/02/skos/core#definition> "A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image."@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "Image Filtering"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod
@@ -588,7 +631,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :ImageRotation rdf:type owl:Class ;
                rdfs:subClassOf :PIVPreProcessing ;
                rdfs:comment "If not further specified assume anti-clockwise."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "image rotation"@en .
+               <http://www.w3.org/2004/02/skos/core#definition> "The process of rotating an Image"@en ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Image Rotation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod
@@ -631,8 +675,9 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
 :MaskGeneration rdf:type owl:Class ;
-                rdfs:subClassOf :PIVProcessingStep ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "mask generation"@en .
+                rdfs:subClassOf :PIVPreProcessing ;
+                <http://www.w3.org/2004/02/skos/core#definition> "The process of creating a mask to disabled parts in an image."@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "Mask Generation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Multigrid
@@ -718,9 +763,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 :PIVEvaluation rdf:type owl:Class ;
-               rdfs:subClassOf :PIVProcessingStep ;
+               rdfs:subClassOf :PIVProcessingStep ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                 owl:someValuesFrom :PIVPostProcessing
+                               ] ;
                <http://www.w3.org/2004/02/skos/core#definition> "The PIV evaluation processing performing the correlation algorithm and interrogation method."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "piv evaluation"@en .
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Evaluation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
@@ -746,20 +795,33 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#PIVPostProcessing
 :PIVPostProcessing rdf:type owl:Class ;
                    rdfs:subClassOf :PIVProcessingStep ;
-                   <http://www.w3.org/2004/02/skos/core#prefLabel> "piv post processing"@en .
+                   <http://www.w3.org/2004/02/skos/core#definition> "The process after the main evaluation. Used to remove or mark outliers (invalid data) in the PIV solution"@en ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Post Processing"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVPreProcessing
 :PIVPreProcessing rdf:type owl:Class ;
-                  rdfs:subClassOf :PIVProcessingStep ;
-                  <http://www.w3.org/2004/02/skos/core#prefLabel> "piv pre processing"@en .
+                  rdfs:subClassOf :PIVProcessingStep ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                    owl:someValuesFrom :PIVEvaluation
+                                  ] ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Piv Pre processing"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
 :PIVProcessingStep rdf:type owl:Class ;
                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
                    <http://www.w3.org/2004/02/skos/core#definition> "PIV-specific action undertaken during PIV data handling from recording to processing."@en ;
-                   <http://www.w3.org/2004/02/skos/core#prefLabel> "piv processing step"@en .
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Processing Step"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVRecording
+:PIVRecording rdf:type owl:Class ;
+              rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
+              rdfs:comment "Use schema:instrument or m4i:hasEmployedTool to related the used tools like camera and laser to the recording"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The process of performing the Particle Image Velocimetry experiment."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Recording"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVResultDistribution
@@ -794,8 +856,9 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVValidation
 :PIVValidation rdf:type owl:Class ;
-               rdfs:subClassOf :PIVProcessingStep ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "piv validation"@en .
+               rdfs:subClassOf :PIVPostProcessing ;
+               <http://www.w3.org/2004/02/skos/core#definition> "The process of validating an PIV solution."@en ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Validation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PeakSearchMethod

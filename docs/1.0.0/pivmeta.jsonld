@@ -63,13 +63,31 @@
   "@id" : "_:genid21",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#LightSource"
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid24",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -78,7 +96,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#OpticSensor"
   } ]
 }, {
-  "@id" : "_:genid23",
+  "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -178,8 +196,45 @@
     "@value" : "has part"
   } ]
 }, {
+  "@id" : "http://purl.obolibrary.org/obo/BFO_0000063",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/Process"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/Process"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "precedes"
+  } ]
+}, {
   "@id" : "http://purl.obolibrary.org/obo/Process",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.obolibrary.org/obo/RO_0002090",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/Process"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/Process"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "X immediately precedes_Y iff: end(X) simultaneous_with start(Y)"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "immediately precedes"
+  } ]
 }, {
   "@id" : "http://purl.org/dc/dcmitype/Image",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
@@ -309,6 +364,29 @@
     "@value" : "Tool"
   } ]
 }, {
+  "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://schema.org/instrument"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Points to a tool that is used within a given processing step"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "has employed tool"
+  } ]
+}, {
   "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -350,6 +428,17 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "has value"
+  } ]
+}, {
+  "@id" : "http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Points to a processing step the tool has been used in"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "is employed tool"
   } ]
 }, {
   "@id" : "http://www.molmod.info/semantics/pims-ii.ttl#Property",
@@ -560,11 +649,15 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The process of creating or recording background images"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "background image generation"
+    "@value" : "Background Image Generation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod",
@@ -578,7 +671,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "background subtraction"
+    "@value" : "Background Subtraction"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#BlackmanWindow",
@@ -779,26 +872,32 @@
     "@value" : "Hann Window"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#ImageDewarp",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ImageDewarping",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The process of dewarping an distorted image, e.g. due to the fisheye effect."
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "image dewarp"
+    "@value" : "Image Dewarping"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#ImageFilter",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#ImageFiltering",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
-  }, {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "image filter"
+    "@value" : "Image Filtering"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod",
@@ -830,9 +929,13 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The process of rotating an Image"
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "image rotation"
+    "@value" : "Image Rotation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#Interpolation",
@@ -939,11 +1042,15 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#MaskGeneration",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The process of creating a mask to disabled parts in an image."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "mask generation"
+    "@value" : "Mask Generation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL",
@@ -1147,6 +1254,8 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  }, {
+    "@id" : "_:genid21"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1154,7 +1263,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "piv evaluation"
+    "@value" : "PIV Evaluation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageAAA",
@@ -1217,19 +1326,25 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The process after the main evaluation. Used to remove or mark outliers (invalid data) in the PIV solution"
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "piv post processing"
+    "@value" : "PIV Post Processing"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  }, {
+    "@id" : "_:genid22"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "piv pre processing"
+    "@value" : "Piv Pre processing"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep",
@@ -1243,7 +1358,25 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "piv processing step"
+    "@value" : "PIV Processing Step"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVRecording",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Use schema:instrument or m4i:hasEmployedTool to related the used tools like camera and laser to the recording"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The process of performing the Particle Image Velocimetry experiment."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Recording"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVResultDistribution",
@@ -1263,11 +1396,11 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid21"
-  }, {
-    "@id" : "_:genid22"
-  }, {
     "@id" : "_:genid23"
+  }, {
+    "@id" : "_:genid24"
+  }, {
+    "@id" : "_:genid25"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1287,11 +1420,15 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVValidation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The process of validating an PIV solution."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "piv validation"
+    "@value" : "PIV Validation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry",
@@ -1885,6 +2022,20 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "software source code"
+  } ]
+}, {
+  "@id" : "https://schema.org/instrument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Activity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "points to an object that helped the agent perform the action (e.g., John wrote a book with a pen)"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "uses instrument"
   } ]
 }, {
   "@id" : "https://w3id.org/okn/o/sd#Software",
