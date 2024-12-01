@@ -500,6 +500,10 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
+      <a href="#imageBitDepth"
+         title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bit depth</a>
+   </li>
+   <li>
       <a href="#filenamePattern"
          title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a>
    </li>
@@ -533,10 +537,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#https://matthiasprobst.github.io/ssno#standardName"
          title="https://matthiasprobst.github.io/ssno#standardName">standard name</a>
-   </li>
-   <li>
-      <a href="#imageBitDepth"
-         title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">The bit depth of an image</a>
    </li>
    <li>
       <a href="#timeFormat"
@@ -1553,7 +1553,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">The bit depth of an image</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#numberOfRecords" title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#pivImageType" title="https://matthiasprobst.github.io/pivmeta#pivImageType">piv image type</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bit depth</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#numberOfRecords" title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#pivImageType" title="https://matthiasprobst.github.io/pivmeta#pivImageType">piv image type</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2597,6 +2597,7 @@ This section provides details for each class and property defined by PIVMeta.
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
+  <li><a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bit depth</a></li>
   <li><a href="#filenamePattern" title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a></li>
   <li><a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a></li>
   <li><a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a></li>
@@ -2606,10 +2607,32 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has value</a></li>
   <li><a href="#numberOfRecords" title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#standardName" title="https://matthiasprobst.github.io/ssno#standardName">standard name</a></li>
-  <li><a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">The bit depth of an image</a></li>
   <li><a href="#timeFormat" title="https://matthiasprobst.github.io/pivmeta#timeFormat">time format</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#withImageDeformation" title="https://matthiasprobst.github.io/ssno#withImageDeformation">with image deformation</a></li>
  </ul>
+ <div class="entity" id="imageBitDepth">
+  <h3>bit depth<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#imageBitDepth</p>
+  <div class="comment">
+   <span class="markdown">The bit depth of an image</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#PIVImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">PIV Image Distribution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#positiveInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive Integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="filenamePattern">
   <h3>filename pattern<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#filenamePattern</p>
@@ -2870,26 +2893,6 @@ A JSON-LD excerpt could look like this:
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="imageBitDepth">
-  <h3>The bit depth of an image<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#imageBitDepth</p>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#PIVImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">PIV Image Distribution</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#positiveInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive Integer</a>
     </dd>
    </dl>
   </div>
