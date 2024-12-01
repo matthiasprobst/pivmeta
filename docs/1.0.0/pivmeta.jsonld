@@ -25,6 +25,8 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
+      "@id" : "_:genid22"
+    }, {
       "@id" : "_:genid20"
     }, {
       "@id" : "_:genid18"
@@ -60,7 +62,16 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageDistribution"
   } ]
 }, {
-  "@id" : "_:genid21",
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup"
+  } ]
+}, {
+  "@id" : "_:genid23",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
@@ -69,7 +80,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid24",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
@@ -78,7 +89,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
   } ]
 }, {
-  "@id" : "_:genid23",
+  "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -87,7 +98,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#LightSource"
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid26",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -96,7 +107,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#OpticSensor"
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid27",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -679,9 +690,6 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q1404885"
-  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Blackman Window"
@@ -761,7 +769,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "experimental image"
+    "@value" : "Experimental Image"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup",
@@ -854,6 +862,9 @@
   "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
     "@id" : "https://www.wikidata.org/wiki/Q112166625"
   } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://www.wikidata.org/wiki/Q112166625"
+  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Hamming Window"
@@ -863,9 +874,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q1404885"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1255,7 +1263,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   }, {
-    "@id" : "_:genid21"
+    "@id" : "_:genid23"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1340,7 +1348,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   }, {
-    "@id" : "_:genid22"
+    "@id" : "_:genid24"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1396,11 +1404,11 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid23"
-  }, {
-    "@id" : "_:genid24"
-  }, {
     "@id" : "_:genid25"
+  }, {
+    "@id" : "_:genid26"
+  }, {
+    "@id" : "_:genid27"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1535,9 +1543,6 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q1404885"
-  } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Square Window"
@@ -1610,9 +1615,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "https://www.wikidata.org/wiki/Q1404885"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1811,6 +1813,22 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "has standard name"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#imageBitDepth",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageDistribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "The bit depth of an image"
+  }, {
+    "@language" : "en",
+    "@value" : "bit depth"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#manufacturer",
@@ -2077,6 +2095,9 @@
     "@language" : "en",
     "@value" : "NdYAG laser"
   } ]
+}, {
+  "@id" : "https://www.wikidata.org/wiki/Q112166625",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "https://www.wikidata.org/wiki/Q1146001",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
