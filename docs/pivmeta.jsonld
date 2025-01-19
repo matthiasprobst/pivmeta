@@ -452,6 +452,9 @@
     "@value" : "is employed tool"
   } ]
 }, {
+  "@id" : "http://w3id.org/nfdi4ing/metadata4ing#orcidId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://www.molmod.info/semantics/pims-ii.ttl#Property",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -605,7 +608,7 @@
     "@value" : "2024-01-03"
   } ],
   "http://purl.org/dc/terms/creator" : [ {
-    "@value" : "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen"
+    "@id" : "https://orcid.org/0000-0001-8729-0482"
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://creativecommons.org/licenses/by/4.0/"
@@ -2015,6 +2018,36 @@
     "@value" : "with image deformation"
   } ]
 }, {
+  "@id" : "https://orcid.org/0000-0001-8729-0482",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://w3id.org/nfdi4ing/metadata4ing#orcidId" : [ {
+    "@value" : "0000-0001-8729-0482"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.org/Person"
+  } ],
+  "https://schema.org/affiliation" : [ {
+    "@id" : "https://ror.org/04t3en479"
+  } ],
+  "https://schema.org/email" : [ {
+    "@value" : "matth.probst@gmail.com"
+  } ],
+  "https://schema.org/familyName" : [ {
+    "@value" : "Probst"
+  } ],
+  "https://schema.org/givenName" : [ {
+    "@value" : "Matthias"
+  } ]
+}, {
+  "@id" : "https://ror.org/04t3en479",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.org/Organization"
+  } ],
+  "https://schema.org/name" : [ {
+    "@value" : "Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery"
+  } ]
+}, {
   "@id" : "https://schema.org/CreativeWork",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
@@ -2028,6 +2061,12 @@
     "@language" : "en",
     "@value" : "Intangible"
   } ]
+}, {
+  "@id" : "https://schema.org/Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://schema.org/SoftwareSourceCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -2043,6 +2082,18 @@
     "@value" : "software source code"
   } ]
 }, {
+  "@id" : "https://schema.org/affiliation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/email",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/familyName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/givenName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "https://schema.org/instrument",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2056,6 +2107,9 @@
     "@language" : "en",
     "@value" : "uses instrument"
   } ]
+}, {
+  "@id" : "https://schema.org/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://w3id.org/okn/o/sd#Software",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],

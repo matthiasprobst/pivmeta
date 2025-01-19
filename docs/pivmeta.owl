@@ -11,13 +11,14 @@
      xmlns:ssno="https://matthiasprobst.github.io/ssno#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
      xmlns:pivmeta="https://matthiasprobst.github.io/pivmeta#"
      xmlns:metadata4ing="http://w3id.org/nfdi4ing/metadata4ing#">
     <owl:Ontology rdf:about="https://matthiasprobst.github.io/pivmeta#">
         <owl:versionIRI rdf:resource="https://matthiasprobst.github.io/pivmeta/1.0.1"/>
         <terms:abstract xml:lang="en">This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.</terms:abstract>
         <terms:created>2024-01-03</terms:created>
-        <terms:creator>Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen</terms:creator>
+        <terms:creator rdf:resource="https://orcid.org/0000-0001-8729-0482"/>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <terms:modified>2024-01-03</terms:modified>
         <terms:title xml:lang="en">pivmeta: An ontology draft for describing particle image velocimetry data.</terms:title>
@@ -133,6 +134,13 @@
     
 
 
+    <!-- http://w3id.org/nfdi4ing/metadata4ing#orcidId -->
+
+
+    <owl:AnnotationProperty rdf:about="http://w3id.org/nfdi4ing/metadata4ing#orcidId"/>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
 
 
@@ -200,6 +208,41 @@
 
 
     <owl:AnnotationProperty rdf:about="https://matthiasprobst.github.io/ssno#hasStandardNameDescription"/>
+    
+
+
+    <!-- https://schema.org/affiliation -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/affiliation"/>
+    
+
+
+    <!-- https://schema.org/email -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/email"/>
+    
+
+
+    <!-- https://schema.org/familyName -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/familyName"/>
+    
+
+
+    <!-- https://schema.org/givenName -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/givenName"/>
+    
+
+
+    <!-- https://schema.org/name -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/name"/>
     
 
 
@@ -1510,6 +1553,20 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
+    <!-- https://schema.org/Organization -->
+
+
+    <owl:Class rdf:about="https://schema.org/Organization"/>
+    
+
+
+    <!-- https://schema.org/Person -->
+
+
+    <owl:Class rdf:about="https://schema.org/Person"/>
+    
+
+
     <!-- https://schema.org/SoftwareSourceCode -->
 
 
@@ -1862,6 +1919,30 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
         <rdf:type rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <skos:definition xml:lang="en">Microscopic PIV. Example Applications can be found in Raffel et al. (2018) &quot;Particle Image Velocimetry: A Practical Guide&quot;, Springer, https://doi.org/10.1007/978-3-319-68852-7.</skos:definition>
         <skos:prefLabel xml:lang="en">Micro PIV</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://orcid.org/0000-0001-8729-0482 -->
+
+
+    <owl:NamedIndividual rdf:about="https://orcid.org/0000-0001-8729-0482">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <metadata4ing:orcidId>0000-0001-8729-0482</metadata4ing:orcidId>
+        <schema:affiliation rdf:resource="https://ror.org/04t3en479"/>
+        <schema:email>matth.probst@gmail.com</schema:email>
+        <schema:familyName>Probst</schema:familyName>
+        <schema:givenName>Matthias</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://ror.org/04t3en479 -->
+
+
+    <owl:NamedIndividual rdf:about="https://ror.org/04t3en479">
+        <rdf:type rdf:resource="https://schema.org/Organization"/>
+        <schema:name>Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery</schema:name>
     </owl:NamedIndividual>
     
 

@@ -2,7 +2,7 @@
 <https://matthiasprobst.github.io/pivmeta#> <http://www.w3.org/2002/07/owl#versionIRI> <https://matthiasprobst.github.io/pivmeta/1.0.1> .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/abstract> "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."@en .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/created> "2024-01-03" .
-<https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/creator> "Matthias Probst (https://orcid.org/0000-0001-8729-0482), Institut für Thermische Strömungsmaschinen" .
+<https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0001-8729-0482> .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/modified> "2024-01-03" .
 <https://matthiasprobst.github.io/pivmeta#> <http://purl.org/dc/terms/title> "pivmeta: An ontology draft for describing particle image velocimetry data."@en .
@@ -59,6 +59,9 @@
 # http://w3id.org/nfdi4ing/metadata4ing#ContactPerson
 <http://w3id.org/nfdi4ing/metadata4ing#ContactPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://w3id.org/nfdi4ing/metadata4ing#orcidId
+<http://w3id.org/nfdi4ing/metadata4ing#orcidId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://www.w3.org/2004/02/skos/core#altLabel
 <http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -88,6 +91,21 @@
 # 
 # https://matthiasprobst.github.io/ssno#hasStandardNameDescription
 <https://matthiasprobst.github.io/ssno#hasStandardNameDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/affiliation
+<https://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/email
+<https://schema.org/email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/familyName
+<https://schema.org/familyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/givenName
+<https://schema.org/givenName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/name
+<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # 
 # 
@@ -843,6 +861,12 @@ _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://schema.org/Intangible> <http://www.w3.org/2004/02/skos/core#definition> "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc."@en .
 <https://schema.org/Intangible> <http://www.w3.org/2004/02/skos/core#prefLabel> "Intangible"@en .
 # 
+# https://schema.org/Organization
+<https://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://schema.org/Person
+<https://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
 # https://schema.org/SoftwareSourceCode
 <https://schema.org/SoftwareSourceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/CreativeWork> .
@@ -1036,6 +1060,20 @@ _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/nfdi4ing/metadata4ing#Method> .
 <https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/2004/02/skos/core#definition> "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en .
 <https://matthiasprobst.github.io/pivmeta#microPIV> <http://www.w3.org/2004/02/skos/core#prefLabel> "Micro PIV"@en .
+# 
+# https://orcid.org/0000-0001-8729-0482
+<https://orcid.org/0000-0001-8729-0482> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://orcid.org/0000-0001-8729-0482> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://orcid.org/0000-0001-8729-0482> <http://w3id.org/nfdi4ing/metadata4ing#orcidId> "0000-0001-8729-0482" .
+<https://orcid.org/0000-0001-8729-0482> <https://schema.org/affiliation> <https://ror.org/04t3en479> .
+<https://orcid.org/0000-0001-8729-0482> <https://schema.org/email> "matth.probst@gmail.com" .
+<https://orcid.org/0000-0001-8729-0482> <https://schema.org/familyName> "Probst" .
+<https://orcid.org/0000-0001-8729-0482> <https://schema.org/givenName> "Matthias" .
+# 
+# https://ror.org/04t3en479
+<https://ror.org/04t3en479> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://ror.org/04t3en479> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+<https://ror.org/04t3en479> <https://schema.org/name> "Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery" .
 # 
 # https://www.wikidata.org/wiki/Q112166625
 <https://www.wikidata.org/wiki/Q112166625> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
