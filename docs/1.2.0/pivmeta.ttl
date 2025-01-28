@@ -190,8 +190,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/dc/terms/type
 <http://purl.org/dc/terms/type> rdf:type owl:ObjectProperty ;
-                                rdfs:domain :PIVDistribution ;
-                                rdfs:range :PIVDataType ;
                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "type"@en .
 
 
@@ -307,6 +305,13 @@ xsd:date rdf:type rdfs:Datatype .
                           rdfs:range :OutlierReplacementScheme ;
                           <http://www.w3.org/2004/02/skos/core#definition> "Points to the outlier replacement scheme used by the PIV validation process."@en ;
                           <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier replacement scheme"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#pivDistributionType
+:pivDistributionType rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
+                     rdfs:domain :PIVDistribution ;
+                     rdfs:range :PIVDistributionType .
 
 
 ###  https://matthiasprobst.github.io/ssno#hasStandardName
@@ -770,13 +775,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV analysis"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PIVDataType
-:PIVDataType rdf:type owl:Class ;
-             <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/terms/DCMIType> ;
-             <http://www.w3.org/2004/02/skos/core#definition> "The type of data"@en ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data type"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#PIVDataset
 :PIVDataset rdf:type owl:Class ;
             rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ,
@@ -797,6 +795,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                  rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
                  <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV distribution"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVDistributionType
+:PIVDistributionType rdf:type owl:Class ;
+                     <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/terms/DCMIType> ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "The type of distribution"@en ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV distribution type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
@@ -1038,7 +1043,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 :ExperimentalImage rdf:type owl:NamedIndividual ,
-                            :PIVDataType ;
+                            :PIVDistributionType ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
 
 
@@ -1107,7 +1112,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVData
 :PIVData rdf:type owl:NamedIndividual ,
-                  :PIVDataType ;
+                  :PIVDistributionType ;
          rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
          <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data"@en .
@@ -1115,14 +1120,14 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImage
 :PIVImage rdf:type owl:NamedIndividual ,
-                   :PIVDataType ;
+                   :PIVDistributionType ;
           <http://www.w3.org/2004/02/skos/core#definition> "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en ;
           <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVMask
 :PIVMask rdf:type owl:NamedIndividual ,
-                  :PIVDataType ;
+                  :PIVDistributionType ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV mask"@en .
 
 
@@ -1169,7 +1174,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
 :SyntheticImage rdf:type owl:NamedIndividual ,
-                         :PIVDataType ;
+                         :PIVDistributionType ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "synthetic image"@en .
 
 

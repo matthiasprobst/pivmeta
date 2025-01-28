@@ -304,16 +304,16 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV analysis</a>
    </li>
    <li>
-      <a href="#PIVDataType"
-         title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a>
-   </li>
-   <li>
       <a href="#PIVDataset"
          title="https://matthiasprobst.github.io/pivmeta#PIVDataset">PIV dataset</a>
    </li>
    <li>
       <a href="#PIVDistribution"
          title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a>
+   </li>
+   <li>
+      <a href="#PIVDistributionType"
+         title="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">PIV distribution type</a>
    </li>
    <li>
       <a href="#PIVEvaluation"
@@ -479,6 +479,12 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a>
+   </li>
+   <li>
+      <a href="#pivDistributionType"
+         title="https://matthiasprobst.github.io/pivmeta#pivDistributionType">
+         <span>piv Distribution Type</span>
+      </a>
    </li>
    <li>
       <a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a>
@@ -717,9 +723,9 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a></li>
   <li><a href="#http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f" title="http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f">physics based simulation</a></li>
   <li><a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV analysis</a></li>
-  <li><a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a></li>
   <li><a href="#PIVDataset" title="https://matthiasprobst.github.io/pivmeta#PIVDataset">PIV dataset</a></li>
   <li><a href="#PIVDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a></li>
+  <li><a href="#PIVDistributionType" title="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">PIV distribution type</a></li>
   <li><a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a></li>
   <li><a href="#PIVImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">PIV image distribution</a></li>
   <li><a href="#PIVParticle" title="https://matthiasprobst.github.io/pivmeta#PIVParticle">PIV particle</a></li>
@@ -1492,27 +1498,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dd>
   </dl>
  </div>
- <div class="entity" id="PIVDataType">
-  <h3>PIV data type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVDataType</p>
-  <div class="comment">
-   <span class="markdown">The type of data</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-   <dt>
-    has members
-   </dt>
-   <dd>
-    <a href="#PIVData" title="https://matthiasprobst.github.io/pivmeta#PIVData">PIV data</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#PIVImage" title="https://matthiasprobst.github.io/pivmeta#PIVImage">PIV image</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#PIVMask" title="https://matthiasprobst.github.io/pivmeta#PIVMask">PIV mask</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ExperimentalImage" title="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">experimental image</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#SyntheticImage" title="https://matthiasprobst.github.io/pivmeta#SyntheticImage">synthetic image</a> <sup class="type-ni" title="named individual">ni</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="PIVDataset">
   <h3>PIV dataset<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVDataset</p>
@@ -1560,7 +1545,28 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bit depth</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#filenamePattern" title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bit depth</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#filenamePattern" title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#pivDistributionType" title="https://matthiasprobst.github.io/pivmeta#pivDistributionType">piv Distribution Type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PIVDistributionType">
+  <h3>PIV distribution type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVDistributionType</p>
+  <div class="comment">
+   <span class="markdown">The type of distribution</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#pivDistributionType" title="https://matthiasprobst.github.io/pivmeta#pivDistributionType">piv Distribution Type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#PIVData" title="https://matthiasprobst.github.io/pivmeta#PIVData">PIV data</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#PIVImage" title="https://matthiasprobst.github.io/pivmeta#PIVImage">PIV image</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#PIVMask" title="https://matthiasprobst.github.io/pivmeta#PIVMask">PIV mask</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ExperimentalImage" title="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">experimental image</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#SyntheticImage" title="https://matthiasprobst.github.io/pivmeta#SyntheticImage">synthetic image</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -2148,6 +2154,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#manufacturer" title="https://matthiasprobst.github.io/pivmeta#manufacturer">manufacturer</a></li>
   <li><a href="#outlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">outlier replacement scheme</a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a></li>
+  <li><a href="#pivDistributionType" title="https://matthiasprobst.github.io/pivmeta#pivDistributionType"> <span>piv Distribution Type</span> </a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a></li>
   <li><a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">unit</a></li>
@@ -2501,6 +2508,32 @@ This section provides details for each class and property defined by PIVMeta.
    <span class="markdown">a core relation that holds between a part and its whole</span>
   </div>
  </div>
+ <div class="entity" id="pivDistributionType">
+  <h3>piv Distribution Type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#pivDistributionType</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#PIVDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#PIVDistributionType" title="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">PIV distribution type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000063">
   <h3>precedes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/BFO_0000063</p>
@@ -2537,16 +2570,10 @@ This section provides details for each class and property defined by PIVMeta.
   <div class="description">
    <dl>
     <dt>
-     has domain
+     has sub-properties
     </dt>
     <dd>
-     <a href="#PIVDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+     <a href="#pivDistributionType" title="https://matthiasprobst.github.io/pivmeta#pivDistributionType">piv Distribution Type</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -3138,7 +3165,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVDistributionType" title="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">PIV distribution type</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3435,7 +3462,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVDistributionType" title="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">PIV distribution type</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3459,7 +3486,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVDistributionType" title="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">PIV distribution type</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3480,7 +3507,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVDistributionType" title="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">PIV distribution type</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3573,7 +3600,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVDistributionType" title="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">PIV distribution type</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts

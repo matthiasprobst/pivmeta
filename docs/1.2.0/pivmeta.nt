@@ -161,8 +161,6 @@
 # 
 # http://purl.org/dc/terms/type
 <http://purl.org/dc/terms/type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/dc/terms/type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PIVDistribution> .
-<http://purl.org/dc/terms/type> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#PIVDataType> .
 <http://purl.org/dc/terms/type> <http://www.w3.org/2004/02/skos/core#prefLabel> "type"@en .
 # 
 # http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool
@@ -284,6 +282,12 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme> .
 <https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#definition> "Points to the outlier replacement scheme used by the PIV validation process."@en .
 <https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier replacement scheme"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#pivDistributionType
+<https://matthiasprobst.github.io/pivmeta#pivDistributionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/pivmeta#pivDistributionType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/type> .
+<https://matthiasprobst.github.io/pivmeta#pivDistributionType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PIVDistribution> .
+<https://matthiasprobst.github.io/pivmeta#pivDistributionType> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#PIVDistributionType> .
 # 
 # https://matthiasprobst.github.io/ssno#hasStandardName
 <https://matthiasprobst.github.io/ssno#hasStandardName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -669,12 +673,6 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> <http://www.w3.org/2004/02/skos/core#definition> "PIV-specific action undertaken during PIV data handling from recording to processing."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV analysis"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#PIVDataType
-<https://matthiasprobst.github.io/pivmeta#PIVDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PIVDataType> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/terms/DCMIType> .
-<https://matthiasprobst.github.io/pivmeta#PIVDataType> <http://www.w3.org/2004/02/skos/core#definition> "The type of data"@en .
-<https://matthiasprobst.github.io/pivmeta#PIVDataType> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data type"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#PIVDataset
 <https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Dataset> .
@@ -696,6 +694,12 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#PIVDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Distribution> .
 <https://matthiasprobst.github.io/pivmeta#PIVDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV distribution"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#PIVDistributionType
+<https://matthiasprobst.github.io/pivmeta#PIVDistributionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PIVDistributionType> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/terms/DCMIType> .
+<https://matthiasprobst.github.io/pivmeta#PIVDistributionType> <http://www.w3.org/2004/02/skos/core#definition> "The type of distribution"@en .
+<https://matthiasprobst.github.io/pivmeta#PIVDistributionType> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV distribution type"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -909,7 +913,7 @@ _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDataType> .
+<https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDistributionType> .
 <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#FlagActive
@@ -969,20 +973,20 @@ _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVData
 <https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDataType> .
+<https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDistributionType> .
 <https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/2000/01/rdf-schema#comment> "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVData> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVImage
 <https://matthiasprobst.github.io/pivmeta#PIVImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#PIVImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDataType> .
+<https://matthiasprobst.github.io/pivmeta#PIVImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDistributionType> .
 <https://matthiasprobst.github.io/pivmeta#PIVImage> <http://www.w3.org/2004/02/skos/core#definition> "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVImage> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVMask
 <https://matthiasprobst.github.io/pivmeta#PIVMask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#PIVMask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDataType> .
+<https://matthiasprobst.github.io/pivmeta#PIVMask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDistributionType> .
 <https://matthiasprobst.github.io/pivmeta#PIVMask> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV mask"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
@@ -1022,7 +1026,7 @@ _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#SyntheticImage
 <https://matthiasprobst.github.io/pivmeta#SyntheticImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://matthiasprobst.github.io/pivmeta#SyntheticImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDataType> .
+<https://matthiasprobst.github.io/pivmeta#SyntheticImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PIVDistributionType> .
 <https://matthiasprobst.github.io/pivmeta#SyntheticImage> <http://www.w3.org/2004/02/skos/core#prefLabel> "synthetic image"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#TopBottomFlip
