@@ -50,19 +50,19 @@
   "@id" : "_:genid18",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#imageBitDepth"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
+    "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
   } ]
 }, {
   "@id" : "_:genid19",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#LightSource"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
   } ]
 }, {
   "@id" : "_:genid20",
@@ -71,7 +71,7 @@
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#OpticSensor"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#LightSource"
   } ]
 }, {
   "@id" : "_:genid21",
@@ -80,10 +80,19 @@
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVParticle"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#OpticSensor"
   } ]
 }, {
   "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVParticle"
+  } ]
+}, {
+  "@id" : "_:genid23",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -1298,7 +1307,21 @@
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageDistribution",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid18"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A distribution holding a PIV image"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV image distribution"
+  } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVMask",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
@@ -1343,7 +1366,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVAnalysis"
   }, {
-    "@id" : "_:genid18"
+    "@id" : "_:genid19"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1385,11 +1408,11 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid19"
-  }, {
     "@id" : "_:genid20"
   }, {
     "@id" : "_:genid21"
+  }, {
+    "@id" : "_:genid22"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1803,6 +1826,9 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#imageBitDepth",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
   } ],
@@ -1852,7 +1878,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#numberOfRecords",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImageDistribution"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDataset"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"

@@ -320,6 +320,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a>
    </li>
    <li>
+      <a href="#PIVImageDistribution"
+         title="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">PIV image distribution</a>
+   </li>
+   <li>
       <a href="#PIVParticle"
          title="https://matthiasprobst.github.io/pivmeta#PIVParticle">PIV particle</a>
    </li>
@@ -717,6 +721,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#PIVDataset" title="https://matthiasprobst.github.io/pivmeta#PIVDataset">PIV dataset</a></li>
   <li><a href="#PIVDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a></li>
   <li><a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a></li>
+  <li><a href="#PIVImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">PIV image distribution</a></li>
   <li><a href="#PIVParticle" title="https://matthiasprobst.github.io/pivmeta#PIVParticle">PIV particle</a></li>
   <li><a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a></li>
   <li><a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a></li>
@@ -1524,6 +1529,12 @@ This section provides details for each class and property defined by PIVMeta.
    <dd>
     <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>
    </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#numberOfRecords" title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="PIVDistribution">
@@ -1540,10 +1551,16 @@ This section provides details for each class and property defined by PIVMeta.
     <a href="http://www.w3.org/ns/dcat#Distribution" target="_blank" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#PIVImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">PIV image distribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#filenamePattern" title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bit depth</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#filenamePattern" title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1559,6 +1576,27 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV analysis</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PIVImageDistribution">
+  <h3>PIV image distribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVImageDistribution</p>
+  <div class="comment">
+   <span class="markdown">A distribution holding a PIV image</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">bit depth</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#positiveInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive Integer</a>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PIVDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -2604,6 +2642,12 @@ This section provides details for each class and property defined by PIVMeta.
   <div class="description">
    <dl>
     <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#PIVDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
      has range
     </dt>
     <dd>
@@ -2834,7 +2878,7 @@ A JSON-LD excerpt could look like this:
      has domain
     </dt>
     <dd>
-     <a href="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution" target="_blank" title="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">P I V Image Distribution</a> <sup class="type-c" title="class">c</sup>
+     <a href="#PIVDataset" title="https://matthiasprobst.github.io/pivmeta#PIVDataset">PIV dataset</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range

@@ -425,6 +425,7 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
 pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
+                      rdfs:domain pivmeta:PIVDistribution ;
                       rdfs:range xsd:positiveInteger ;
                       skos:definition "The bit depth of an image"@en ;
                       skos:prefLabel "bit depth"@en .
@@ -432,7 +433,7 @@ pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#numberOfRecords
 pivmeta:numberOfRecords rdf:type owl:DatatypeProperty ;
-                        rdfs:domain pivmeta:PIVImageDistribution ;
+                        rdfs:domain pivmeta:PIVDataset ;
                         rdfs:range xsd:positiveInteger ;
                         skos:definition "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."@en ;
                         skos:prefLabel "number of records"@en .
@@ -825,8 +826,14 @@ pivmeta:PIVEvaluation rdf:type owl:Class ;
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
-pivmeta:PIVImageDistribution rdf:type owl:Class .
-
+pivmeta:PIVImageDistribution rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty pivmeta:imageBitDepth ;
+                                                   owl:someValuesFrom xsd:positiveInteger
+                                                 ] ;
+                             rdfs:subClassOf pivmeta:PIVDistribution ;
+                             skos:definition "A distribution holding a PIV image"@en ;
+                             skos:prefLabel "PIV image distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVParticle
@@ -1129,6 +1136,12 @@ pivmeta:PIVImage rdf:type owl:NamedIndividual ,
                  skos:prefLabel "PIV image"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#PIVMask
+pivmeta:PIVMask rdf:type owl:NamedIndividual ,
+                         pivmeta:PIVDataType ;
+                skos:prefLabel "PIV mask"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
 pivmeta:ParticleImageVelocimetry rdf:type owl:NamedIndividual ,
                                           m4i:Method ;
@@ -1174,11 +1187,6 @@ pivmeta:SquareWindow rdf:type owl:NamedIndividual ,
 pivmeta:SyntheticImage rdf:type owl:NamedIndividual ,
                                 pivmeta:PIVDataType ;
                        skos:prefLabel "synthetic image"@en .
-
-###  https://matthiasprobst.github.io/pivmeta#PIVMask
-pivmeta:PIVMask rdf:type owl:NamedIndividual ,
-                                pivmeta:PIVDataType ;
-                       skos:prefLabel "PIV mask"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#TopBottomFlip

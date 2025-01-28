@@ -410,6 +410,7 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
 :imageBitDepth rdf:type owl:DatatypeProperty ;
+               rdfs:domain :PIVDistribution ;
                rdfs:range xsd:positiveInteger ;
                <http://www.w3.org/2004/02/skos/core#definition> "The bit depth of an image"@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "bit depth"@en .
@@ -417,7 +418,7 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#numberOfRecords
 :numberOfRecords rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :PIVImageDistribution ;
+                 rdfs:domain :PIVDataset ;
                  rdfs:range xsd:positiveInteger ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."@en ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "number of records"@en .
@@ -810,7 +811,14 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
-:PIVImageDistribution rdf:type owl:Class .
+:PIVImageDistribution rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty :imageBitDepth ;
+                                            owl:someValuesFrom xsd:positiveInteger
+                                          ] ;
+                      rdfs:subClassOf :PIVDistribution ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "A distribution holding a PIV image"@en ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVParticle
