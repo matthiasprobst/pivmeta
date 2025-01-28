@@ -22,7 +22,7 @@
 @base <http://www.semanticweb.org/owl/owlapi/turtle#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
-                                             owl:versionIRI <https://matthiasprobst.github.io/pivmeta/1.1.2> ;
+                                             owl:versionIRI <https://matthiasprobst.github.io/pivmeta/1.2.0> ;
                                              dcterms:abstract "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."@en ;
                                              dcterms:created "2024-01-03" ;
                                              dcterms:creator <https://orcid.org/0000-0001-8729-0482> ;
@@ -33,7 +33,7 @@
                                              vann:preferredNamespaceUri "https://matthiasprobst.github.io/pivmeta#" ;
                                              m4i:ContactPerson "https://orcid.org/0000-0001-8729-0482" ;
                                              rdfs:label "pivmeta" ;
-                                             owl:versionInfo "v1.1.2" .
+                                             owl:versionInfo "v1.2.0" .
 
 #################################################################
 #    Annotation properties
@@ -203,6 +203,13 @@ obo:RO_0002090 rdf:type owl:ObjectProperty ;
                skos:prefLabel "immediately precedes"@en .
 
 
+###  http://purl.org/dc/terms/type
+dcterms:type rdf:type owl:ObjectProperty ;
+             rdfs:domain pivmeta:PIVDistribution ;
+             rdfs:range pivmeta:PIVDataType ;
+             skos:prefLabel "type"@en .
+
+
 ###  http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool
 m4i:hasEmployedTool rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf schema:instrument ;
@@ -317,15 +324,6 @@ pivmeta:outlierReplacementScheme rdf:type owl:ObjectProperty ;
                                  skos:prefLabel "outlier replacement scheme"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#pivImageType
-pivmeta:pivImageType rdf:type owl:ObjectProperty ;
-                     rdfs:domain pivmeta:PIVImageDistribution ;
-                     rdfs:range dcterms:DCMIType ;
-                     skos:definition "The type of image, e.g. an experimental or synthetic one. Helps to identify the image source and hence assists processing or analysing PIV data."@en ;
-                     skos:example "Individuals of type ImageType are provided by the ontology, e.g. pivmeta:ExperimentalImage"@en ;
-                     skos:prefLabel "piv image type"@en .
-
-
 ###  https://matthiasprobst.github.io/ssno#hasStandardName
 ssno:hasStandardName rdf:type owl:ObjectProperty ;
                      rdfs:domain m4i:NumericalVariable ;
@@ -427,7 +425,6 @@ A JSON-LD excerpt could look like this:
 
 ###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
 pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
-                      rdfs:domain pivmeta:PIVImageDistribution ;
                       rdfs:range xsd:positiveInteger ;
                       skos:definition "The bit depth of an image"@en ;
                       skos:prefLabel "bit depth"@en .
@@ -506,12 +503,6 @@ obo:BFO_0000017 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/Process
 obo:Process rdf:type owl:Class .
-
-
-###  http://purl.org/dc/terms/DCMIType
-dcterms:DCMIType rdf:type owl:Class ;
-                 skos:definition "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."@en ;
-                 skos:prefLabel "DCMI Type"@en .
 
 
 ###  http://qudt.org/schema/qudt/QuantityKind
@@ -788,9 +779,16 @@ pivmeta:OutlierReplacementScheme rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVAnalysis
 pivmeta:PIVAnalysis rdf:type owl:Class ;
-                    rdfs:subClassOf m4i:ProcessingStep ;
+                    rdfs:subClassOf pivmeta:PIVProcessingStep ;
                     skos:definition "PIV-specific action undertaken during PIV data handling from recording to processing."@en ;
                     skos:prefLabel "PIV analysis"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PIVDataType
+pivmeta:PIVDataType rdf:type owl:Class ;
+                    skos:closeMatch dcterms:DCMIType ;
+                    skos:definition "The type of data"@en ;
+                    skos:prefLabel "PIV data type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVDataset
@@ -800,18 +798,6 @@ pivmeta:PIVDataset rdf:type owl:Class ;
                                      owl:unionOf ( [ rdf:type owl:Restriction ;
                                                      owl:onProperty obo:BFO_0000051 ;
                                                      owl:someValuesFrom pivmeta:PIVSetup
-                                                   ]
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty dcat:distribution ;
-                                                     owl:someValuesFrom pivmeta:PIVImageDistribution
-                                                   ]
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty dcat:distribution ;
-                                                     owl:someValuesFrom pivmeta:PIVMaskDistribution
-                                                   ]
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty dcat:distribution ;
-                                                     owl:someValuesFrom pivmeta:PIVResultDistribution
                                                    ]
                                                  )
                                    ] ;
@@ -839,16 +825,8 @@ pivmeta:PIVEvaluation rdf:type owl:Class ;
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
-pivmeta:PIVImageDistribution rdf:type owl:Class ;
-                             rdfs:subClassOf pivmeta:PIVDistribution ;
-                             skos:definition "A PIV image, which has been recorded by a camera or created synthetically. To distinguish between physical and synthetical images, use the object property \"piv image type\"."@en ;
-                             skos:prefLabel "PIV image distribution"@en .
+pivmeta:PIVImageDistribution rdf:type owl:Class .
 
-
-###  https://matthiasprobst.github.io/pivmeta#PIVMaskDistribution
-pivmeta:PIVMaskDistribution rdf:type owl:Class ;
-                            rdfs:subClassOf pivmeta:PIVDistribution ;
-                            skos:prefLabel "PIV mask distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVParticle
@@ -875,19 +853,19 @@ pivmeta:PIVPreProcessing rdf:type owl:Class ;
                          skos:prefLabel "Piv pre processing"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
+pivmeta:PIVProcessingStep rdf:type owl:Class ;
+                          rdfs:subClassOf m4i:ProcessingStep ;
+                          skos:definition "A processing step related to a Particle Image Velocimetry Experiment or Analysis."@en ;
+                          skos:prefLabel "PIV processing step"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#PIVRecording
 pivmeta:PIVRecording rdf:type owl:Class ;
-                     rdfs:subClassOf m4i:ProcessingStep ;
+                     rdfs:subClassOf pivmeta:PIVProcessingStep ;
                      rdfs:comment "Use schema:instrument or m4i:hasEmployedTool to related the used tools like camera and laser to the recording"@en ;
                      skos:definition "The process of performing a real or virtual Particle Image Velocimetry experiment."@en ;
                      skos:prefLabel "PIV recording"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PIVResultDistribution
-pivmeta:PIVResultDistribution rdf:type owl:Class ;
-                              rdfs:subClassOf pivmeta:PIVDistribution ;
-                              skos:definition "A PIV result distribution containing displacements and optionally other derived variables"@en ;
-                              skos:prefLabel "PIV result distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVSetup
@@ -1043,13 +1021,6 @@ sd:Software rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://purl.org/dc/dcmitype/Image
-<http://purl.org/dc/dcmitype/Image> rdf:type owl:NamedIndividual ,
-                                             dcterms:DCMIType ;
-                                    skos:definition "A visual representation other than text."@en ;
-                                    skos:prefLabel "image"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea
 pivmeta:AmountOfSubstancePerUnitArea rdf:type owl:NamedIndividual ,
                                               qudt:QuantityKind ;
@@ -1075,7 +1046,8 @@ pivmeta:DEHS rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 pivmeta:ExperimentalImage rdf:type owl:NamedIndividual ,
-                                   dcterms:DCMIType ;
+                                   pivmeta:PIVDataType ;
+                          owl:differentFrom pivmeta:SyntheticImage ;
                           skos:prefLabel "experimental image"@en .
 
 
@@ -1144,7 +1116,7 @@ pivmeta:PER-PIXEL rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVData
 pivmeta:PIVData rdf:type owl:NamedIndividual ,
-                         dcterms:DCMIType ;
+                         pivmeta:PIVDataType ;
                 rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
                 skos:definition "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en ;
                 skos:prefLabel "PIV data"@en .
@@ -1152,8 +1124,7 @@ pivmeta:PIVData rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImage
 pivmeta:PIVImage rdf:type owl:NamedIndividual ,
-                          dcterms:DCMIType ;
-                 skos:closeMatch <http://purl.org/dc/dcmitype/Image> ;
+                          pivmeta:PIVDataType ;
                  skos:definition "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en ;
                  skos:prefLabel "PIV image"@en .
 
@@ -1201,8 +1172,13 @@ pivmeta:SquareWindow rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
 pivmeta:SyntheticImage rdf:type owl:NamedIndividual ,
-                                dcterms:DCMIType ;
+                                pivmeta:PIVDataType ;
                        skos:prefLabel "synthetic image"@en .
+
+###  https://matthiasprobst.github.io/pivmeta#PIVMask
+pivmeta:PIVMask rdf:type owl:NamedIndividual ,
+                                pivmeta:PIVDataType ;
+                       skos:prefLabel "PIV mask"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#TopBottomFlip
