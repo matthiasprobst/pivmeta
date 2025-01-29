@@ -556,10 +556,6 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#BackgroundImageGeneration"
-         title="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">background image generation</a>
-   </li>
-   <li>
       <a href="#BlackmanWindow"
          title="https://matthiasprobst.github.io/pivmeta#BlackmanWindow">blackman window</a>
    </li>
@@ -1437,6 +1433,9 @@ This section provides details for each class and property defined by PIVMeta.
  <div class="entity" id="PIVBackgroundGeneration">
   <h3>PIV background generation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration</p>
+  <div class="comment">
+   <span class="markdown">Processing step of measuring or calculating the background image or images.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -1449,6 +1448,9 @@ This section provides details for each class and property defined by PIVMeta.
  <div class="entity" id="PIVCalibration">
   <h3>PIV calibration<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVCalibration</p>
+  <div class="comment">
+   <span class="markdown">Processing step to determine the optical magnification and field of view</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -1533,6 +1535,9 @@ This section provides details for each class and property defined by PIVMeta.
  <div class="entity" id="PIVEvaluation">
   <h3>PIV evaluation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVEvaluation</p>
+  <div class="comment">
+   <span class="markdown">Main step of a PIV evlauation applying the methods to determine the velocity</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -1566,6 +1571,9 @@ This section provides details for each class and property defined by PIVMeta.
  <div class="entity" id="PIVMaskGeneration">
   <h3>PIV mask generation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration</p>
+  <div class="comment">
+   <span class="markdown">Processing step creating a PIV mask</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -1599,6 +1607,9 @@ This section provides details for each class and property defined by PIVMeta.
  <div class="entity" id="PIVPostProcessing">
   <h3>PIV post processing<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVPostProcessing</p>
+  <div class="comment">
+   <span class="markdown">Processing step after the main evaluation applying methods like validation and filtering.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -1611,6 +1622,9 @@ This section provides details for each class and property defined by PIVMeta.
  <div class="entity" id="PIVPreProcessing">
   <h3>PIV pre processing<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVPreProcessing</p>
+  <div class="comment">
+   <span class="markdown">Processing step applying methods before the main evluation like image enhancements.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -1644,6 +1658,9 @@ This section provides details for each class and property defined by PIVMeta.
  <div class="entity" id="PIVRecording">
   <h3>PIV recording<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVRecording</p>
+  <div class="comment">
+   <span class="markdown">Processing step of taking the images</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -2976,7 +2993,6 @@ A JSON-LD excerpt could look like this:
  <ul class="hlist">
   <li><a href="#FlagActive" title="https://matthiasprobst.github.io/pivmeta#FlagActive">active</a></li>
   <li><a href="#AmountOfSubstancePerUnitArea" title="https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea"> <span>Amount Of Substance Per Unit Area</span> </a></li>
-  <li><a href="#BackgroundImageGeneration" title="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">background image generation</a></li>
   <li><a href="#BlackmanWindow" title="https://matthiasprobst.github.io/pivmeta#BlackmanWindow">blackman window</a></li>
   <li><a href="#DEHS" title="https://matthiasprobst.github.io/pivmeta#DEHS">DEHS</a></li>
   <li><a href="#ExperimentalImage" title="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">experimental image</a></li>
@@ -3057,13 +3073,6 @@ A JSON-LD excerpt could look like this:
     <a href="http://www.w3.org/2004/02/skos/core#label" target="_blank" title="http://www.w3.org/2004/02/skos/core#label">label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Amount of Substance per Unit Area"@en</span>
    </dd>
   </dl>
- </div>
- <div class="entity" id="BackgroundImageGeneration">
-  <h3>background image generation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration</p>
-  <div class="comment">
-   <span class="markdown">Type of process, which creates or records a background image</span>
-  </div>
  </div>
  <div class="entity" id="BlackmanWindow">
   <h3>blackman window<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>

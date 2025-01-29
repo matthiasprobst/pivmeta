@@ -788,6 +788,7 @@ pivmeta:PIVBackgroundGeneration rdf:type owl:Class ;
                                                   owl:onProperty obo:BFO_0000063 ;
                                                   owl:someValuesFrom pivmeta:PIVPreProcessing
                                                 ] ;
+                                skos:definition "Processing step of measuring or calculating the background image or images."@en ;
                                 skos:prefLabel "PIV background generation"@en .
 
 
@@ -798,6 +799,7 @@ pivmeta:PIVCalibration rdf:type owl:Class ;
                                          owl:onProperty obo:BFO_0000063 ;
                                          owl:someValuesFrom pivmeta:PIVRecording
                                        ] ;
+                       skos:definition "Processing step to determine the optical magnification and field of view"@en ;
                        skos:prefLabel "PIV calibration"@en .
 
 
@@ -842,6 +844,7 @@ pivmeta:PIVEvaluation rdf:type owl:Class ;
                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass pivmeta:PIVSoftware
                                       ] ;
+                      skos:definition "Main step of a PIV evlauation applying the methods to determine the velocity"@en ;
                       skos:prefLabel "PIV evaluation"@en .
 
 
@@ -863,6 +866,7 @@ pivmeta:PIVMaskGeneration rdf:type owl:Class ;
                                             owl:onProperty obo:BFO_0000050 ;
                                             owl:someValuesFrom pivmeta:PIVPreProcessing
                                           ] ;
+                          skos:definition "Processing step creating a PIV mask"@en ;
                           skos:prefLabel "PIV mask generation"@en .
 
 
@@ -876,6 +880,7 @@ pivmeta:PIVParticle rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#PIVPostProcessing
 pivmeta:PIVPostProcessing rdf:type owl:Class ;
                           rdfs:subClassOf pivmeta:PIVProcessingStep ;
+                          skos:definition "Processing step after the main evaluation applying methods like validation and filtering."@en ;
                           skos:prefLabel "PIV post processing"@en .
 
 
@@ -886,6 +891,7 @@ pivmeta:PIVPreProcessing rdf:type owl:Class ;
                                            owl:onProperty obo:BFO_0000063 ;
                                            owl:someValuesFrom pivmeta:PIVEvaluation
                                          ] ;
+                         skos:definition "Processing step applying methods before the main evluation like image enhancements."@en ;
                          skos:prefLabel "PIV pre processing"@en .
 
 
@@ -913,6 +919,7 @@ pivmeta:PIVRecording rdf:type owl:Class ;
                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass pivmeta:LightSource
                                      ] ;
+                     skos:definition "Processing step of taking the images"@en ;
                      skos:prefLabel "PIV recording"@en .
 
 
@@ -1069,12 +1076,6 @@ pivmeta:AmountOfSubstancePerUnitArea rdf:type owl:NamedIndividual ,
                                      qudt:applicableUnit pivmeta:PER-PIXEL ;
                                      skos:example "Typically used to describe the particle image density in a PIV image, also known as ppp (particle per pixel)."@en ;
                                      skos:label "Amount of Substance per Unit Area"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration
-pivmeta:BackgroundImageGeneration rdf:type owl:NamedIndividual ;
-                                  skos:definition "Type of process, which creates or records a background image"@en ;
-                                  skos:prefLabel "background image generation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#BlackmanWindow
