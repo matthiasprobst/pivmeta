@@ -289,6 +289,8 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
+        <rdfs:range rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
         <skos:definition xml:lang="en">a core relation that holds between a part and its whole</skos:definition>
         <skos:prefLabel xml:lang="en">part of</skos:prefLabel>
     </owl:ObjectProperty>
@@ -525,17 +527,6 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#processingType -->
-
-
-    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#processingType">
-        <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
-        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
-        <skos:prefLabel xml:lang="en">processing type</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://matthiasprobst.github.io/ssno#hasStandardName -->
 
 
@@ -695,14 +686,6 @@ A JSON-LD excerpt could look like this:
 
 
     <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#numberOfImages">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod"/>
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <owl:propertyDisjointWith rdf:resource="https://matthiasprobst.github.io/pivmeta#numberOfRecords"/>
         <skos:definition xml:lang="en">Number of images taken into account for a process or method</skos:definition>
@@ -1011,22 +994,31 @@ A JSON-LD excerpt could look like this:
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
-        <skos:prefLabel xml:lang="en">evaluation processing step type</skos:prefLabel>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup -->
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db"/>
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSetup"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#DigitalCamera"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#Laser"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVParticle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup"/>
         <rdfs:comment xml:lang="en">Use prov:hasPart to relate the tools used.</rdfs:comment>
         <skos:definition xml:lang="en">An experimental setup applying the Particle Image Velocimetry method. The class should be related to the tools used in the experiment.</skos:definition>
         <skos:prefLabel xml:lang="en">experimental PIV setup</skos:prefLabel>
@@ -1227,27 +1219,33 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#PIVAnalysis -->
+    <!-- https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType"/>
-                            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType"/>
-                            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
-        <skos:definition xml:lang="en">PIV-specific action undertaken during PIV data handling from recording to processing.</skos:definition>
-        <skos:prefLabel xml:lang="en">PIV analysis</skos:prefLabel>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#PIVCalibration -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVCalibration">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVRecording"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:prefLabel xml:lang="en">PIV calibration</skos:prefLabel>
     </owl:Class>
     
 
@@ -1300,20 +1298,20 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVAnalysis"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
                 <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <skos:definition xml:lang="en">The PIV evaluation processing performing the correlation algorithm and interrogation method.</skos:definition>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSoftware"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <skos:prefLabel xml:lang="en">PIV evaluation</skos:prefLabel>
     </owl:Class>
     
@@ -1336,6 +1334,21 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#PIVParticle -->
 
 
@@ -1351,14 +1364,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVAnalysis"/>
-        <skos:definition xml:lang="en">The process after the main evaluation. Used to remove or mark outliers (invalid data) in the PIV solution</skos:definition>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
         <skos:prefLabel xml:lang="en">PIV post processing</skos:prefLabel>
     </owl:Class>
     
@@ -1368,13 +1374,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVAnalysis"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
@@ -1382,7 +1382,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <skos:prefLabel xml:lang="en">PIV pre processing</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">The process before the main evaluation. Used dewarp or filter the images.</skos:prefLabel>
     </owl:Class>
     
 
@@ -1391,14 +1390,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
-        <skos:definition xml:lang="en">A processing step related to a Particle Image Velocimetry Experiment or Analysis.</skos:definition>
+        <skos:definition xml:lang="en">Processing step of a PIV measurement. The concrete subclasses should be used to clearly define the individual steps in their order to enable tracability of a PIV measurement.</skos:definition>
         <skos:prefLabel xml:lang="en">PIV processing step</skos:prefLabel>
     </owl:Class>
     
@@ -1409,8 +1402,26 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVRecording">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
-        <rdfs:comment xml:lang="en">Use schema:instrument or m4i:hasEmployedTool to related the used tools like camera and laser to the recording</rdfs:comment>
-        <skos:definition xml:lang="en">The process of performing a real or virtual Particle Image Velocimetry experiment.</skos:definition>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://matthiasprobst.github.io/pivmeta#Camera"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://matthiasprobst.github.io/pivmeta#LightSource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <skos:prefLabel xml:lang="en">PIV recording</skos:prefLabel>
     </owl:Class>
     
@@ -1420,24 +1431,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVSetup">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#LightSource"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#OpticSensor"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVParticle"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:definition xml:lang="en">A Particle Image Velocimetry Setup</skos:definition>
         <skos:prefLabel xml:lang="en">PIV setup</skos:prefLabel>
     </owl:Class>
@@ -1463,37 +1456,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
         <rdfs:comment xml:lang="en">Method fitting the sub pixel peak in the correlation signal.</rdfs:comment>
         <skos:example xml:lang="en">Peak centroid, Parabolic peak fit or Gaussian peak fit.</skos:example>
         <skos:prefLabel xml:lang="en">peak search method</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#PostProcessingStepType -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
-        <skos:prefLabel xml:lang="en">post processing step type</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#PreProcessingStepType -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
-        <skos:prefLabel xml:lang="en">pre processing step type</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#ProcessingType -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ProcessingType">
-        <rdfs:comment xml:lang="en">Allows identifying specific, well-defined processing steps</rdfs:comment>
-        <skos:definition xml:lang="en">A type assigned to a Processing Step</skos:definition>
-        <skos:prefLabel xml:lang="en">Processing type</skos:prefLabel>
     </owl:Class>
     
 
@@ -1561,6 +1523,24 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f"/>
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSetup"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVParticle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#VirtualCamera"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#VirtualLaser"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <skos:definition xml:lang="en">A simulation that relies on physics based models for a PIV Experiment.</skos:definition>
         <skos:prefLabel xml:lang="en">virtual PIV experiment</skos:prefLabel>
     </owl:Class>
@@ -1703,7 +1683,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
         <skos:definition xml:lang="en">Type of process, which creates or records a background image</skos:definition>
         <skos:prefLabel xml:lang="en">background image generation</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1798,7 +1777,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ImageDewarping">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
         <skos:definition xml:lang="en">The process of dewarping an distorted image, e.g. due to the fisheye effect.</skos:definition>
         <skos:prefLabel xml:lang="en">image dewarping</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1809,32 +1788,20 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ImageFiltering">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
         <skos:definition xml:lang="en">A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image.</skos:definition>
         <skos:prefLabel xml:lang="en">image filtering</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#ImageRecording -->
+    <!-- https://matthiasprobst.github.io/pivmeta#ImageHorizontalFlip -->
 
 
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ImageRecording">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
-        <skos:definition xml:lang="en">type of process that records an image</skos:definition>
-        <skos:prefLabel xml:lang="en">image recording</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#ImageRotation -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ImageRotation">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
-        <rdfs:comment xml:lang="en">If not further specified assume anti-clockwise.</rdfs:comment>
-        <skos:definition xml:lang="en">Type of process that rotates an image</skos:definition>
-        <skos:prefLabel xml:lang="en">image rotation</skos:prefLabel>
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ImageHorizontalFlip">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
+        <skos:definition xml:lang="en">method of flipping an image horizontally</skos:definition>
+        <skos:prefLabel xml:lang="en">image horizontal flip</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -1856,17 +1823,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod"/>
         <skos:prefLabel xml:lang="en">left right flip</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#MaskGeneration -->
-
-
-    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#MaskGeneration">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
-        <skos:definition xml:lang="en">The process of creating a mask to disabled parts in an image.</skos:definition>
-        <skos:prefLabel xml:lang="en">mask generation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
