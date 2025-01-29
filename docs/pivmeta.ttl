@@ -292,6 +292,14 @@ xsd:date rdf:type rdfs:Datatype .
                             <http://www.w3.org/2004/02/skos/core#prefLabel> "has window weighting function"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#isPIVDistributionType
+:isPIVDistributionType rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
+                       rdfs:domain :PIVDistribution ;
+                       rdfs:range :PIVDistributionType ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "isPIVDistributionType"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer
 :manufacturer rdf:type owl:ObjectProperty ;
               rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#Tool> ;
@@ -306,13 +314,6 @@ xsd:date rdf:type rdfs:Datatype .
                           rdfs:range :OutlierReplacementScheme ;
                           <http://www.w3.org/2004/02/skos/core#definition> "Points to the outlier replacement scheme used by the PIV validation process."@en ;
                           <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier replacement scheme"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#pivDistributionType
-:pivDistributionType rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
-                     rdfs:domain :PIVDistribution ;
-                     rdfs:range :PIVDistributionType .
 
 
 ###  https://matthiasprobst.github.io/ssno#hasStandardName

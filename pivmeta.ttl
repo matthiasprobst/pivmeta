@@ -307,6 +307,14 @@ pivmeta:hasWindowWeightingFunction rdf:type owl:ObjectProperty ;
                                    skos:prefLabel "has window weighting function"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#isPIVDistributionType
+pivmeta:isPIVDistributionType rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf dcterms:type ;
+                              rdfs:domain pivmeta:PIVDistribution ;
+                              rdfs:range pivmeta:PIVDistributionType ;
+                              skos:prefLabel "isPIVDistributionType"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer
 pivmeta:manufacturer rdf:type owl:ObjectProperty ;
                      rdfs:domain m4i:Tool ;
@@ -321,13 +329,6 @@ pivmeta:outlierReplacementScheme rdf:type owl:ObjectProperty ;
                                  rdfs:range pivmeta:OutlierReplacementScheme ;
                                  skos:definition "Points to the outlier replacement scheme used by the PIV validation process."@en ;
                                  skos:prefLabel "outlier replacement scheme"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#pivDistributionType
-pivmeta:pivDistributionType rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf dcterms:type ;
-                            rdfs:domain pivmeta:PIVDistribution ;
-                            rdfs:range pivmeta:PIVDistributionType .
 
 
 ###  https://matthiasprobst.github.io/ssno#hasStandardName
