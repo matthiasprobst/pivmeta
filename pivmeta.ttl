@@ -316,7 +316,6 @@ pivmeta:manufacturer rdf:type owl:ObjectProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme
 pivmeta:outlierReplacementScheme rdf:type owl:ObjectProperty ;
-                                 rdfs:domain pivmeta:PIVValidation ;
                                  rdfs:range pivmeta:OutlierReplacementScheme ;
                                  skos:definition "Points to the outlier replacement scheme used by the PIV validation process."@en ;
                                  skos:prefLabel "outlier replacement scheme"@en .
@@ -327,6 +326,13 @@ pivmeta:pivDistributionType rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf dcterms:type ;
                             rdfs:domain pivmeta:PIVDistribution ;
                             rdfs:range pivmeta:PIVDistributionType .
+
+
+###  https://matthiasprobst.github.io/pivmeta#processingType
+pivmeta:processingType rdf:type owl:ObjectProperty ;
+                       rdfs:domain m4i:ProcessingStep ;
+                       rdfs:range pivmeta:ProcessingType ;
+                       skos:prefLabel "processing type"@en .
 
 
 ###  https://matthiasprobst.github.io/ssno#hasStandardName
@@ -436,8 +442,23 @@ pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
                       skos:prefLabel "bit depth"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#numberOfImages
+pivmeta:numberOfImages rdf:type owl:DatatypeProperty ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( pivmeta:MinimumIntensityBackgroundSubtractionMethod
+                                                   pivmeta:PIVAnalysis
+                                                   pivmeta:PIVRecording
+                                                 )
+                                   ] ;
+                       rdfs:range xsd:positiveInteger ;
+                       owl:propertyDisjointWith pivmeta:numberOfRecords ;
+                       skos:definition "Number of images taken into account for a process or method"@en ;
+                       skos:prefLabel "number of images"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#numberOfRecords
 pivmeta:numberOfRecords rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
                         rdfs:domain pivmeta:PIVDataset ;
                         rdfs:range xsd:positiveInteger ;
                         skos:definition "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."@en ;
@@ -589,18 +610,11 @@ prov:Activity rdf:type owl:Class ;
 prov:Organization rdf:type owl:Class .
 
 
-###  https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration
-pivmeta:BackgroundImageGeneration rdf:type owl:Class ;
-                                  rdfs:subClassOf pivmeta:PIVPreProcessing ;
-                                  skos:definition "The process of creating or recording background images"@en ;
-                                  skos:prefLabel "background image generation"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod
 pivmeta:BackgroundSubtractionMethod rdf:type owl:Class ;
-                                    rdfs:subClassOf pivmeta:PIVPreProcessing ;
+                                    rdfs:subClassOf m4i:Method ;
                                     skos:example "Can be direct subtraction of background, division of image by background or a combination."@en ;
-                                    skos:prefLabel "background subtraction"@en .
+                                    skos:prefLabel "background subtraction method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Camera
@@ -653,20 +667,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                      skos:prefLabel "flag variable"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#ImageDewarping
-pivmeta:ImageDewarping rdf:type owl:Class ;
-                       rdfs:subClassOf pivmeta:PIVPreProcessing ;
-                       skos:definition "The process of dewarping an distorted image, e.g. due to the fisheye effect."@en ;
-                       skos:prefLabel "image dewarping"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#ImageFiltering
-pivmeta:ImageFiltering rdf:type owl:Class ;
-                       rdfs:subClassOf pivmeta:PIVPreProcessing ;
-                       skos:definition "A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image."@en ;
-                       skos:prefLabel "image filtering"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod
 pivmeta:ImageManipulationMethod rdf:type owl:Class ;
                                 rdfs:subClassOf m4i:Method ;
@@ -677,14 +677,6 @@ pivmeta:ImageManipulationMethod rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#ImageManipulationType
 pivmeta:ImageManipulationType rdf:type owl:Class ;
                               rdfs:subClassOf skos:Concept .
-
-
-###  https://matthiasprobst.github.io/pivmeta#ImageRotation
-pivmeta:ImageRotation rdf:type owl:Class ;
-                      rdfs:subClassOf pivmeta:PIVPreProcessing ;
-                      rdfs:comment "If not further specified assume anti-clockwise."@en ;
-                      skos:definition "The process of rotating an Image"@en ;
-                      skos:prefLabel "image rotation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod
@@ -725,11 +717,11 @@ pivmeta:LightSource rdf:type owl:Class ;
                     skos:prefLabel "light source"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
-pivmeta:MaskGeneration rdf:type owl:Class ;
-                       rdfs:subClassOf pivmeta:PIVPreProcessing ;
-                       skos:definition "The process of creating a mask to disabled parts in an image."@en ;
-                       skos:prefLabel "mask generation"@en .
+###  https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod
+pivmeta:MinimumIntensityBackgroundSubtractionMethod rdf:type owl:Class ;
+                                                    rdfs:subClassOf pivmeta:BackgroundSubtractionMethod ;
+                                                    skos:definition "Background subtraction method which takes the minimum intensity at all pixels over a defined number of images from the experiment (with tracer particles) and subtracts it from each image which is taken for the PIV analysis.."@en ;
+                                                    skos:prefLabel "minimum intensity background subtraction method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Multigrid
@@ -850,6 +842,10 @@ pivmeta:PIVParticle rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVPostProcessing
 pivmeta:PIVPostProcessing rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty pivmeta:processingType ;
+                                                owl:someValuesFrom pivmeta:PostProcessingType
+                                              ] ;
                           rdfs:subClassOf pivmeta:PIVAnalysis ;
                           skos:definition "The process after the main evaluation. Used to remove or mark outliers (invalid data) in the PIV solution"@en ;
                           skos:prefLabel "PIV post processing"@en .
@@ -857,12 +853,16 @@ pivmeta:PIVPostProcessing rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVPreProcessing
 pivmeta:PIVPreProcessing rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty pivmeta:processingType ;
+                                               owl:someValuesFrom pivmeta:PreProcessingStepType
+                                             ] ;
                          rdfs:subClassOf pivmeta:PIVAnalysis ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty obo:BFO_0000063 ;
                                            owl:someValuesFrom pivmeta:PIVEvaluation
                                          ] ;
-                         skos:prefLabel "Piv pre processing"@en .
+                         skos:prefLabel "PIV pre processing"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
@@ -918,6 +918,25 @@ pivmeta:PeakSearchMethod rdf:type owl:Class ;
                          rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
                          skos:example "Peak centroid, Parabolic peak fit or Gaussian peak fit."@en ;
                          skos:prefLabel "peak search method"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PostProcessingType
+pivmeta:PostProcessingType rdf:type owl:Class ;
+                           rdfs:subClassOf pivmeta:ProcessingType ;
+                           skos:prefLabel "post processing type"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#PreProcessingStepType
+pivmeta:PreProcessingStepType rdf:type owl:Class ;
+                              rdfs:subClassOf pivmeta:ProcessingType ;
+                              skos:prefLabel "pre processing step type"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ProcessingType
+pivmeta:ProcessingType rdf:type owl:Class ;
+                       rdfs:comment "Allows identifying specific, well-defined processing steps"@en ;
+                       skos:definition "A type assigned to a Processing Step"@en ;
+                       skos:prefLabel "Processing type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Singlepass
@@ -1042,6 +1061,13 @@ pivmeta:AmountOfSubstancePerUnitArea rdf:type owl:NamedIndividual ,
                                      skos:label "Amount of Substance per Unit Area"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration
+pivmeta:BackgroundImageGeneration rdf:type owl:NamedIndividual ,
+                                           pivmeta:PreProcessingStepType ;
+                                  skos:definition "Type of process, which creates or records a background image"@en ;
+                                  skos:prefLabel "background image generation"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#BlackmanWindow
 pivmeta:BlackmanWindow rdf:type owl:NamedIndividual ,
                                 pivmeta:ImageManipulationMethod ;
@@ -1094,6 +1120,28 @@ pivmeta:HannWindow rdf:type owl:NamedIndividual ,
                    skos:prefLabel "Hann window"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#ImageDewarping
+pivmeta:ImageDewarping rdf:type owl:NamedIndividual ,
+                                pivmeta:PreProcessingStepType ;
+                       skos:definition "The process of dewarping an distorted image, e.g. due to the fisheye effect."@en ;
+                       skos:prefLabel "image dewarping"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ImageFiltering
+pivmeta:ImageFiltering rdf:type owl:NamedIndividual ,
+                                pivmeta:PreProcessingStepType ;
+                       skos:definition "A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image."@en ;
+                       skos:prefLabel "image filtering"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ImageRotation
+pivmeta:ImageRotation rdf:type owl:NamedIndividual ,
+                               pivmeta:PreProcessingStepType ;
+                      rdfs:comment "If not further specified assume anti-clockwise."@en ;
+                      skos:definition "The process of rotating an Image"@en ;
+                      skos:prefLabel "image rotation"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#Interpolation
 pivmeta:Interpolation rdf:type owl:NamedIndividual ,
                                pivmeta:OutlierReplacementScheme ;
@@ -1105,6 +1153,13 @@ pivmeta:Interpolation rdf:type owl:NamedIndividual ,
 pivmeta:LeftRightFlip rdf:type owl:NamedIndividual ,
                                pivmeta:ImageManipulationMethod ;
                       skos:prefLabel "left right flip"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#MaskGeneration
+pivmeta:MaskGeneration rdf:type owl:NamedIndividual ,
+                                pivmeta:PreProcessingStepType ;
+                       skos:definition "The process of creating a mask to disabled parts in an image."@en ;
+                       skos:prefLabel "mask generation"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL
@@ -1161,6 +1216,13 @@ pivmeta:ParticleTrackingVelocimetry rdf:type owl:NamedIndividual ,
                                     rdfs:seeAlso <https://www.wikidata.org/wiki/Q7140505> ;
                                     skos:definition "A measurement technique to measure the velocity of particles."@en ;
                                     skos:prefLabel "Particle Tracking Velocimetry"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#RawBackgroundImageSubtraction
+pivmeta:RawBackgroundImageSubtraction rdf:type owl:NamedIndividual ,
+                                               pivmeta:BackgroundSubtractionMethod ;
+                                      skos:definition "A method of subtracting a background image which was recorded when no tracers were in the investigated domain"@en ;
+                                      skos:note "raw background image subtraction"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample

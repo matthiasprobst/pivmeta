@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing Particle Image Velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-01-28", "version":"v1.2.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing Particle Image Velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-01-29", "version":"v1.2.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -70,7 +70,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2025-01-28</dt>
+<dt>Modified on: 2025-01-29</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/1.2.0">https://matthiasprobst.github.io/pivmeta/1.2.0</a></dd>
 <dt>Latest version:</dt>
@@ -80,7 +80,7 @@ $(function(){
 <dt>Revision:</dt>
 <dd>v1.2.0</dd>
 <dt>Issued on:</dt>
-<dd>2025-01-28</dd>
+<dd>2025-01-29</dd>
 <dt>Authors:</dt>
 <dd><a href="https://orcid.org/0000-0001-8729-0482">Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery</a></dd>
 
@@ -163,12 +163,8 @@ This ontology has the following classes and properties.</span>
       <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">activity</a>
    </li>
    <li>
-      <a href="#BackgroundImageGeneration"
-         title="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">background image generation</a>
-   </li>
-   <li>
       <a href="#BackgroundSubtractionMethod"
-         title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction</a>
+         title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a>
    </li>
    <li>
       <a href="#Camera" title="https://matthiasprobst.github.io/pivmeta#Camera">camera</a>
@@ -205,14 +201,6 @@ This ontology has the following classes and properties.</span>
          title="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset">HDF5 dataset</a>
    </li>
    <li>
-      <a href="#ImageDewarping"
-         title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a>
-   </li>
-   <li>
-      <a href="#ImageFiltering"
-         title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a>
-   </li>
-   <li>
       <a href="#ImageManipulationMethod"
          title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a>
    </li>
@@ -221,10 +209,6 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#ImageManipulationType">
          <span>Image Manipulation Type</span>
       </a>
-   </li>
-   <li>
-      <a href="#ImageRotation"
-         title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a>
    </li>
    <li>
       <a href="#https://schema.org/Intangible" title="https://schema.org/Intangible">intangible</a>
@@ -248,11 +232,11 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#LightSource">light source</a>
    </li>
    <li>
-      <a href="#MaskGeneration"
-         title="https://matthiasprobst.github.io/pivmeta#MaskGeneration">mask generation</a>
+      <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
    </li>
    <li>
-      <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a>
+      <a href="#MinimumIntensityBackgroundSubtractionMethod"
+         title="https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod">minimum intensity background subtraction method</a>
    </li>
    <li>
       <a href="#Multigrid"
@@ -333,7 +317,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#PIVPreProcessing"
-         title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a>
+         title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a>
    </li>
    <li>
       <a href="#PIVProcessingStep"
@@ -356,10 +340,22 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#PIVValidation">PIV validation</a>
    </li>
    <li>
+      <a href="#PostProcessingType"
+         title="https://matthiasprobst.github.io/pivmeta#PostProcessingType">post processing type</a>
+   </li>
+   <li>
+      <a href="#PreProcessingStepType"
+         title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a>
+   </li>
+   <li>
       <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
          title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">
          <span>Processing Step</span>
       </a>
+   </li>
+   <li>
+      <a href="#ProcessingType"
+         title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a>
    </li>
    <li>
       <a href="#http://www.molmod.info/semantics/pims-ii.ttl#Property"
@@ -490,6 +486,10 @@ This ontology has the following classes and properties.</span>
       <a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a>
    </li>
    <li>
+      <a href="#processingType"
+         title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a>
+   </li>
+   <li>
       <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a>
    </li>
    <li>
@@ -536,6 +536,10 @@ This ontology has the following classes and properties.</span>
       <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has value</a>
    </li>
    <li>
+      <a href="#numberOfImages"
+         title="https://matthiasprobst.github.io/pivmeta#numberOfImages">number of images</a>
+   </li>
+   <li>
       <a href="#numberOfRecords"
          title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a>
    </li>
@@ -570,6 +574,10 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#BackgroundImageGeneration"
+         title="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">background image generation</a>
+   </li>
+   <li>
       <a href="#BlackmanWindow"
          title="https://matthiasprobst.github.io/pivmeta#BlackmanWindow">blackman window</a>
    </li>
@@ -596,6 +604,18 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#HannWindow">Hann window</a>
    </li>
    <li>
+      <a href="#ImageDewarping"
+         title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a>
+   </li>
+   <li>
+      <a href="#ImageFiltering"
+         title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a>
+   </li>
+   <li>
+      <a href="#ImageRotation"
+         title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a>
+   </li>
+   <li>
       <a href="#Interpolation"
          title="https://matthiasprobst.github.io/pivmeta#Interpolation">interpolation</a>
    </li>
@@ -605,6 +625,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#LeftRightFlip"
          title="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">left right flip</a>
+   </li>
+   <li>
+      <a href="#MaskGeneration"
+         title="https://matthiasprobst.github.io/pivmeta#MaskGeneration">mask generation</a>
    </li>
    <li>
       <a href="#microPIV"
@@ -637,6 +661,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#PIVMask"
          title="https://matthiasprobst.github.io/pivmeta#PIVMask">PIV mask</a>
+   </li>
+   <li>
+      <a href="#RawBackgroundImageSubtraction"
+         title="https://matthiasprobst.github.io/pivmeta#RawBackgroundImageSubtraction">
+         <span>Raw Background Image Subtraction</span>
+      </a>
    </li>
    <li>
       <a href="#ReEvaluateWithLargerSample"
@@ -687,8 +717,7 @@ This section provides details for each class and property defined by PIVMeta.
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
   <li><a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">activity</a></li>
-  <li><a href="#BackgroundImageGeneration" title="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">background image generation</a></li>
-  <li><a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction</a></li>
+  <li><a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a></li>
   <li><a href="#Camera" title="https://matthiasprobst.github.io/pivmeta#Camera">camera</a></li>
   <li><a href="#CorrelationMethod" title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a></li>
   <li><a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">dataset</a></li>
@@ -698,19 +727,16 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#FlagStatistics" title="https://matthiasprobst.github.io/pivmeta#FlagStatistics">flag statistics</a></li>
   <li><a href="#FlagVariable" title="https://matthiasprobst.github.io/pivmeta#FlagVariable">flag variable</a></li>
   <li><a href="#http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset" title="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset">HDF5 dataset</a></li>
-  <li><a href="#ImageDewarping" title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a></li>
-  <li><a href="#ImageFiltering" title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a></li>
   <li><a href="#ImageManipulationMethod" title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a></li>
   <li><a href="#ImageManipulationType" title="https://matthiasprobst.github.io/pivmeta#ImageManipulationType"> <span>Image Manipulation Type</span> </a></li>
-  <li><a href="#ImageRotation" title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a></li>
   <li><a href="#https://schema.org/Intangible" title="https://schema.org/Intangible">intangible</a></li>
   <li><a href="#InterrogationMethod" title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a></li>
   <li><a href="#Laser" title="https://matthiasprobst.github.io/pivmeta#Laser">laser</a></li>
   <li><a href="#Lens" title="https://matthiasprobst.github.io/pivmeta#Lens">lens</a></li>
   <li><a href="#LensSystem" title="https://matthiasprobst.github.io/pivmeta#LensSystem">lens system</a></li>
   <li><a href="#LightSource" title="https://matthiasprobst.github.io/pivmeta#LightSource">light source</a></li>
-  <li><a href="#MaskGeneration" title="https://matthiasprobst.github.io/pivmeta#MaskGeneration">mask generation</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a></li>
+  <li><a href="#MinimumIntensityBackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod">minimum intensity background subtraction method</a></li>
   <li><a href="#Multigrid" title="https://matthiasprobst.github.io/pivmeta#Multigrid">multigrid</a></li>
   <li><a href="#Multipass" title="https://matthiasprobst.github.io/pivmeta#Multipass">multipass</a></li>
   <li><a href="#https://www.wikidata.org/wiki/Q1110547" title="https://www.wikidata.org/wiki/Q1110547">NdYAG laser</a></li>
@@ -730,13 +756,16 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#PIVImageDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">PIV image distribution</a></li>
   <li><a href="#PIVParticle" title="https://matthiasprobst.github.io/pivmeta#PIVParticle">PIV particle</a></li>
   <li><a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a></li>
-  <li><a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a></li>
+  <li><a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a></li>
   <li><a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a></li>
   <li><a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a></li>
   <li><a href="#PIVSetup" title="https://matthiasprobst.github.io/pivmeta#PIVSetup">PIV setup</a></li>
   <li><a href="#PIVSoftware" title="https://matthiasprobst.github.io/pivmeta#PIVSoftware">PIV software</a></li>
   <li><a href="#PIVValidation" title="https://matthiasprobst.github.io/pivmeta#PIVValidation">PIV validation</a></li>
+  <li><a href="#PostProcessingType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingType">post processing type</a></li>
+  <li><a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"> <span>Processing Step</span> </a></li>
+  <li><a href="#ProcessingType" title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a></li>
   <li><a href="#http://www.molmod.info/semantics/pims-ii.ttl#Property" title="http://www.molmod.info/semantics/pims-ii.ttl#Property">property</a></li>
   <li><a href="#https://www.wikidata.org/wiki/Q38867" title="https://www.wikidata.org/wiki/Q38867"> <span>Q38867</span> </a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000017" title="http://purl.obolibrary.org/obo/BFO_0000017">realizable entity</a></li>
@@ -785,23 +814,8 @@ This section provides details for each class and property defined by PIVMeta.
    </dd>
   </dl>
  </div>
- <div class="entity" id="BackgroundImageGeneration">
-  <h3>background image generation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration</p>
-  <div class="comment">
-   <span class="markdown">The process of creating or recording background images</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="BackgroundSubtractionMethod">
-  <h3>background subtraction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>background subtraction method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod</p>
   <dl>
    <dt>
@@ -816,7 +830,19 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a> <sup class="type-c" title="class">c</sup>
+    <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#MinimumIntensityBackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod">minimum intensity background subtraction method</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#RawBackgroundImageSubtraction" title="https://matthiasprobst.github.io/pivmeta#RawBackgroundImageSubtraction">Raw Background Image Subtraction</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -1022,36 +1048,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dd>
   </dl>
  </div>
- <div class="entity" id="ImageDewarping">
-  <h3>image dewarping<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageDewarping</p>
-  <div class="comment">
-   <span class="markdown">The process of dewarping an distorted image, e.g. due to the fisheye effect.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="ImageFiltering">
-  <h3>image filtering<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageFiltering</p>
-  <div class="comment">
-   <span class="markdown">A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="ImageManipulationMethod">
   <h3>image manipulation method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod</p>
@@ -1082,24 +1078,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="ImageRotation">
-  <h3>image rotation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageRotation</p>
-  <div class="comment">
-   <span class="markdown">If not further specified assume anti-clockwise.</span>
-  </div>
-  <div class="comment">
-   <span class="markdown">The process of rotating an Image</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1223,21 +1201,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dd>
   </dl>
  </div>
- <div class="entity" id="MaskGeneration">
-  <h3>mask generation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#MaskGeneration</p>
-  <div class="comment">
-   <span class="markdown">The process of creating a mask to disabled parts in an image.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="http://w3id.org/nfdi4ing/metadata4ing#Method">
   <h3>method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://w3id.org/nfdi4ing/metadata4ing#Method</p>
@@ -1255,7 +1218,7 @@ This section provides details for each class and property defined by PIVMeta.
     has sub-classes
    </dt>
    <dd>
-    <a href="#CorrelationMethod" title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulationMethod" title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a> <sup class="type-c" title="class">c</sup>, <a href="#InterrogationMethod" title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a> <sup class="type-c" title="class">c</sup>, <a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a> <sup class="type-c" title="class">c</sup>, <a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a> <sup class="type-c" title="class">c</sup>, <a href="#CorrelationMethod" title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulationMethod" title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a> <sup class="type-c" title="class">c</sup>, <a href="#InterrogationMethod" title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a> <sup class="type-c" title="class">c</sup>, <a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a> <sup class="type-c" title="class">c</sup>, <a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -1268,6 +1231,27 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#microPIV" title="https://matthiasprobst.github.io/pivmeta#microPIV">Micro PIV</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ParticleImageVelocimetry" title="https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry">Particle Image Velocimetry</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ParticleTrackingVelocimetry" title="https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry">Particle Tracking Velocimetry</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MinimumIntensityBackgroundSubtractionMethod">
+  <h3>minimum intensity background subtraction method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod</p>
+  <div class="comment">
+   <span class="markdown">Background subtraction method which takes the minimum intensity at all pixels over a defined number of images from the experiment (with tracer particles) and subtracts it from each image which is taken for the PIV analysis..</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#numberOfImages" title="https://matthiasprobst.github.io/pivmeta#numberOfImages">number of images</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
@@ -1494,7 +1478,13 @@ This section provides details for each class and property defined by PIVMeta.
     has sub-classes
    </dt>
    <dd>
-    <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">Piv pre processing</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#numberOfImages" title="https://matthiasprobst.github.io/pivmeta#numberOfImages">number of images</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
@@ -1635,6 +1625,12 @@ This section provides details for each class and property defined by PIVMeta.
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PostProcessingType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingType">post processing type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -1649,20 +1645,20 @@ This section provides details for each class and property defined by PIVMeta.
   </dl>
  </div>
  <div class="entity" id="PIVPreProcessing">
-  <h3>Piv pre processing<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>PIV pre processing<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVPreProcessing</p>
   <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has super-classes
    </dt>
    <dd>
     <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV analysis</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#BackgroundImageGeneration" title="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">background image generation</a> <sup class="type-c" title="class">c</sup>, <a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageDewarping" title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageFiltering" title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageRotation" title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a> <sup class="type-c" title="class">c</sup>, <a href="#MaskGeneration" title="https://matthiasprobst.github.io/pivmeta#MaskGeneration">mask generation</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1702,6 +1698,12 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#numberOfImages" title="https://matthiasprobst.github.io/pivmeta#numberOfImages">number of images</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
@@ -1749,11 +1751,35 @@ This section provides details for each class and property defined by PIVMeta.
    <dd>
     <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>
    </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PostProcessingType">
+  <h3>post processing type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PostProcessingType</p>
+  <dl class="description">
    <dt>
-    is in domain of
+    has super-classes
    </dt>
    <dd>
-    <a href="#outlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">outlier replacement scheme</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#ProcessingType" title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PreProcessingStepType">
+  <h3>pre processing step type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PreProcessingStepType</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ProcessingType" title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#BackgroundImageGeneration" title="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">background image generation</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ImageDewarping" title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ImageFiltering" title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ImageRotation" title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#MaskGeneration" title="https://matthiasprobst.github.io/pivmeta#MaskGeneration">mask generation</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -1777,7 +1803,31 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>, <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ProcessingType">
+  <h3>Processing type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ProcessingType</p>
+  <div class="comment">
+   <span class="markdown">Allows identifying specific, well-defined processing steps</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A type assigned to a Processing Step</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#PostProcessingType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingType">post processing type</a> <sup class="type-c" title="class">c</sup>, <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2156,6 +2206,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a></li>
   <li><a href="#pivDistributionType" title="https://matthiasprobst.github.io/pivmeta#pivDistributionType"> <span>piv Distribution Type</span> </a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a></li>
+  <li><a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a></li>
   <li><a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">unit</a></li>
   <li><a href="#https://schema.org/instrument" title="https://schema.org/instrument">uses instrument</a></li>
@@ -2487,12 +2538,6 @@ This section provides details for each class and property defined by PIVMeta.
   <div class="description">
    <dl>
     <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#PIVValidation" title="https://matthiasprobst.github.io/pivmeta#PIVValidation">PIV validation</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
      has range
     </dt>
     <dd>
@@ -2560,6 +2605,26 @@ This section provides details for each class and property defined by PIVMeta.
     </dt>
     <dd>
      <a href="http://purl.obolibrary.org/obo/Process" target="_blank" title="http://purl.obolibrary.org/obo/Process">Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="processingType">
+  <h3>processing type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#processingType</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">Processing Step</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ProcessingType" title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2655,6 +2720,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#hasFlagValue" title="https://matthiasprobst.github.io/pivmeta#hasFlagValue">has flag value</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"> <span>has Numerical Value</span> </a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has value</a></li>
+  <li><a href="#numberOfImages" title="https://matthiasprobst.github.io/pivmeta#numberOfImages">number of images</a></li>
   <li><a href="#numberOfRecords" title="https://matthiasprobst.github.io/pivmeta#numberOfRecords">number of records</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#standardName" title="https://matthiasprobst.github.io/ssno#standardName">standard name</a></li>
   <li><a href="#timeFormat" title="https://matthiasprobst.github.io/pivmeta#timeFormat">time format</a></li>
@@ -2893,6 +2959,29 @@ A JSON-LD excerpt could look like this:
    </dl>
   </div>
  </div>
+ <div class="entity" id="numberOfImages">
+  <h3>number of images<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#numberOfImages</p>
+  <div class="comment">
+   <span class="markdown">Number of images taken into account for a process or method</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MinimumIntensityBackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod">minimum intensity background subtraction method</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV analysis</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#positiveInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive Integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="numberOfRecords">
   <h3>number of records<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#numberOfRecords</p>
@@ -2901,6 +2990,12 @@ A JSON-LD excerpt could look like this:
   </div>
   <div class="description">
    <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
     <dt>
      has domain
     </dt>
@@ -3007,6 +3102,7 @@ A JSON-LD excerpt could look like this:
   <li><a href="#https://orcid.org/0000-0001-8729-0482" title="https://orcid.org/0000-0001-8729-0482"> <span>0000 0001 8729 0482</span> </a></li>
   <li><a href="#FlagActive" title="https://matthiasprobst.github.io/pivmeta#FlagActive">active</a></li>
   <li><a href="#AmountOfSubstancePerUnitArea" title="https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea"> <span>Amount Of Substance Per Unit Area</span> </a></li>
+  <li><a href="#BackgroundImageGeneration" title="https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration">background image generation</a></li>
   <li><a href="#BlackmanWindow" title="https://matthiasprobst.github.io/pivmeta#BlackmanWindow">blackman window</a></li>
   <li><a href="#DEHS" title="https://matthiasprobst.github.io/pivmeta#DEHS">DEHS</a></li>
   <li><a href="#ExperimentalImage" title="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">experimental image</a></li>
@@ -3014,9 +3110,13 @@ A JSON-LD excerpt could look like this:
   <li><a href="#HammingWindow" title="https://matthiasprobst.github.io/pivmeta#HammingWindow">Hamming window</a></li>
   <li><a href="#https://www.wikidata.org/wiki/Q112166625" title="https://www.wikidata.org/wiki/Q112166625">Hamming window</a></li>
   <li><a href="#HannWindow" title="https://matthiasprobst.github.io/pivmeta#HannWindow">Hann window</a></li>
+  <li><a href="#ImageDewarping" title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a></li>
+  <li><a href="#ImageFiltering" title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a></li>
+  <li><a href="#ImageRotation" title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a></li>
   <li><a href="#Interpolation" title="https://matthiasprobst.github.io/pivmeta#Interpolation">interpolation</a></li>
   <li><a href="#https://ror.org/04t3en479" title="https://ror.org/04t3en479">KIT</a></li>
   <li><a href="#LeftRightFlip" title="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">left right flip</a></li>
+  <li><a href="#MaskGeneration" title="https://matthiasprobst.github.io/pivmeta#MaskGeneration">mask generation</a></li>
   <li><a href="#microPIV" title="https://matthiasprobst.github.io/pivmeta#microPIV">Micro PIV</a></li>
   <li><a href="#MilliM-PER-PIXEL" title="https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL">millimeter per pixel</a></li>
   <li><a href="#ParticleImageVelocimetry" title="https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry">Particle Image Velocimetry</a></li>
@@ -3025,6 +3125,7 @@ A JSON-LD excerpt could look like this:
   <li><a href="#PIVData" title="https://matthiasprobst.github.io/pivmeta#PIVData">PIV data</a></li>
   <li><a href="#PIVImage" title="https://matthiasprobst.github.io/pivmeta#PIVImage">PIV image</a></li>
   <li><a href="#PIVMask" title="https://matthiasprobst.github.io/pivmeta#PIVMask">PIV mask</a></li>
+  <li><a href="#RawBackgroundImageSubtraction" title="https://matthiasprobst.github.io/pivmeta#RawBackgroundImageSubtraction"> <span>Raw Background Image Subtraction</span> </a></li>
   <li><a href="#ReEvaluateWithLargerSample" title="https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample">re-evaluate with larger sample</a></li>
   <li><a href="#SpatialResolution" title="https://matthiasprobst.github.io/pivmeta#SpatialResolution">spatial resolution</a></li>
   <li><a href="#SplitImage" title="https://matthiasprobst.github.io/pivmeta#SplitImage">split image</a></li>
@@ -3112,6 +3213,30 @@ A JSON-LD excerpt could look like this:
    </dd>
    <dd>
     <a href="http://www.w3.org/2004/02/skos/core#label" target="_blank" title="http://www.w3.org/2004/02/skos/core#label">label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Amount of Substance per Unit Area"@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BackgroundImageGeneration">
+  <h3>background image generation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#BackgroundImageGeneration</p>
+  <div class="comment">
+   <span class="markdown">Type of process, which creates or records a background image</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Type of process, which creates or records a background image"@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"background image generation"@en</span>
    </dd>
   </dl>
  </div>
@@ -3256,6 +3381,81 @@ A JSON-LD excerpt could look like this:
    </dd>
   </dl>
  </div>
+ <div class="entity" id="ImageDewarping">
+  <h3>image dewarping<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageDewarping</p>
+  <div class="comment">
+   <span class="markdown">The process of dewarping an distorted image, e.g. due to the fisheye effect.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The process of dewarping an distorted image, e.g. due to the fisheye effect."@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"image dewarping"@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ImageFiltering">
+  <h3>image filtering<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageFiltering</p>
+  <div class="comment">
+   <span class="markdown">A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image."@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"image filtering"@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ImageRotation">
+  <h3>image rotation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageRotation</p>
+  <div class="comment">
+   <span class="markdown">If not further specified assume anti-clockwise.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The process of rotating an Image</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The process of rotating an Image"@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"image rotation"@en</span>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Interpolation">
   <h3>interpolation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Interpolation</p>
@@ -3316,6 +3516,30 @@ A JSON-LD excerpt could look like this:
    </dt>
    <dd>
     <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"left right flip"@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MaskGeneration">
+  <h3>mask generation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#MaskGeneration</p>
+  <div class="comment">
+   <span class="markdown">The process of creating a mask to disabled parts in an image.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The process of creating a mask to disabled parts in an image."@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"mask generation"@en</span>
    </dd>
   </dl>
  </div>
@@ -3514,6 +3738,30 @@ A JSON-LD excerpt could look like this:
    </dt>
    <dd>
     <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"PIV mask"@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RawBackgroundImageSubtraction">
+  <h3>Raw Background Image Subtraction<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#RawBackgroundImageSubtraction</p>
+  <div class="comment">
+   <span class="markdown">A method of subtracting a background image which was recorded when no tracers were in the investigated domain</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"A method of subtracting a background image which was recorded when no tracers were in the investigated domain"@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#note" target="_blank" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"raw background image subtraction"@en</span>
    </dd>
   </dl>
  </div>
