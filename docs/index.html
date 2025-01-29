@@ -181,6 +181,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">digital camera</a>
    </li>
    <li>
+      <a href="#EvaluationProcessingStepType"
+         title="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType">evaluation processing step type</a>
+   </li>
+   <li>
       <a href="#http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db"
          title="http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db">experiment</a>
    </li>
@@ -336,12 +340,8 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#PIVSoftware">PIV software</a>
    </li>
    <li>
-      <a href="#PIVValidation"
-         title="https://matthiasprobst.github.io/pivmeta#PIVValidation">PIV validation</a>
-   </li>
-   <li>
-      <a href="#PostProcessingType"
-         title="https://matthiasprobst.github.io/pivmeta#PostProcessingType">post processing type</a>
+      <a href="#PostProcessingStepType"
+         title="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType">post processing step type</a>
    </li>
    <li>
       <a href="#PreProcessingStepType"
@@ -722,6 +722,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#CorrelationMethod" title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a></li>
   <li><a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">dataset</a></li>
   <li><a href="#DigitalCamera" title="https://matthiasprobst.github.io/pivmeta#DigitalCamera">digital camera</a></li>
+  <li><a href="#EvaluationProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType">evaluation processing step type</a></li>
   <li><a href="#http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db" title="http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db">experiment</a></li>
   <li><a href="#ExperimentalPIVSetup" title="https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup">experimental PIV setup</a></li>
   <li><a href="#FlagStatistics" title="https://matthiasprobst.github.io/pivmeta#FlagStatistics">flag statistics</a></li>
@@ -761,8 +762,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a></li>
   <li><a href="#PIVSetup" title="https://matthiasprobst.github.io/pivmeta#PIVSetup">PIV setup</a></li>
   <li><a href="#PIVSoftware" title="https://matthiasprobst.github.io/pivmeta#PIVSoftware">PIV software</a></li>
-  <li><a href="#PIVValidation" title="https://matthiasprobst.github.io/pivmeta#PIVValidation">PIV validation</a></li>
-  <li><a href="#PostProcessingType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingType">post processing type</a></li>
+  <li><a href="#PostProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType">post processing step type</a></li>
   <li><a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"> <span>Processing Step</span> </a></li>
   <li><a href="#ProcessingType" title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a></li>
@@ -932,6 +932,18 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#Camera" title="https://matthiasprobst.github.io/pivmeta#Camera">camera</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EvaluationProcessingStepType">
+  <h3>evaluation processing step type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ProcessingType" title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1568,6 +1580,12 @@ This section provides details for each class and property defined by PIVMeta.
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#EvaluationProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType">evaluation processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -1628,19 +1646,13 @@ This section provides details for each class and property defined by PIVMeta.
     is equivalent to
    </dt>
    <dd>
-    <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PostProcessingType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingType">post processing type</a> <sup class="type-c" title="class">c</sup>
+    <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PostProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType">post processing step type</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has super-classes
    </dt>
    <dd>
     <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV analysis</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#PIVValidation" title="https://matthiasprobst.github.io/pivmeta#PIVValidation">PIV validation</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1738,24 +1750,9 @@ This section provides details for each class and property defined by PIVMeta.
    </dd>
   </dl>
  </div>
- <div class="entity" id="PIVValidation">
-  <h3>PIV validation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVValidation</p>
-  <div class="comment">
-   <span class="markdown">The process of validating an PIV solution.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="PostProcessingType">
-  <h3>post processing type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PostProcessingType</p>
+ <div class="entity" id="PostProcessingStepType">
+  <h3>post processing step type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PostProcessingStepType</p>
   <dl class="description">
    <dt>
     has super-classes
@@ -1821,7 +1818,7 @@ This section provides details for each class and property defined by PIVMeta.
     has sub-classes
    </dt>
    <dd>
-    <a href="#PostProcessingType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingType">post processing type</a> <sup class="type-c" title="class">c</sup>, <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+    <a href="#EvaluationProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType">evaluation processing step type</a> <sup class="type-c" title="class">c</sup>, <a href="#PostProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType">post processing step type</a> <sup class="type-c" title="class">c</sup>, <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of

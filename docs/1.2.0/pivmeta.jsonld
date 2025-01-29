@@ -53,13 +53,22 @@
   "@id" : "_:genid21",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#processingType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid23",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#imageBitDepth"
@@ -68,16 +77,16 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
   } ]
 }, {
-  "@id" : "_:genid23",
+  "@id" : "_:genid24",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#processingType"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PostProcessingType"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PostProcessingStepType"
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#processingType"
@@ -86,7 +95,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid26",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
@@ -95,7 +104,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
   } ]
 }, {
-  "@id" : "_:genid26",
+  "@id" : "_:genid27",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -104,7 +113,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#LightSource"
   } ]
 }, {
-  "@id" : "_:genid27",
+  "@id" : "_:genid28",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -113,7 +122,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#OpticSensor"
   } ]
 }, {
-  "@id" : "_:genid28",
+  "@id" : "_:genid29",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -122,7 +131,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVParticle"
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid30",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -776,6 +785,16 @@
     "@value" : "digital camera"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#ProcessingType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "evaluation processing step type"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1319,6 +1338,9 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVAnalysis"
   }, {
+    "@id" : "_:genid22"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "_:genid21"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
@@ -1350,7 +1372,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid22"
+    "@id" : "_:genid23"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1391,7 +1413,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVAnalysis"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid23"
+    "@id" : "_:genid24"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1407,14 +1429,17 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVAnalysis"
   }, {
-    "@id" : "_:genid25"
+    "@id" : "_:genid26"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid24"
+    "@id" : "_:genid25"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "PIV pre processing"
+  }, {
+    "@language" : "en",
+    "@value" : "The process before the main evaluation. Used dewarp or filter the images."
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep",
@@ -1452,11 +1477,11 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid26"
-  }, {
     "@id" : "_:genid27"
   }, {
     "@id" : "_:genid28"
+  }, {
+    "@id" : "_:genid29"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1477,20 +1502,6 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "PIV software"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVValidation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "The process of validating an PIV solution."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "PIV validation"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry",
@@ -1545,14 +1556,14 @@
     "@value" : "peak search method"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#PostProcessingType",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PostProcessingStepType",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#ProcessingType"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "post processing type"
+    "@value" : "post processing step type"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PreProcessingStepType",

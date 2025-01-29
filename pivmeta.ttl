@@ -641,6 +641,12 @@ pivmeta:DigitalCamera rdf:type owl:Class ;
                       skos:prefLabel "digital camera"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType
+pivmeta:EvaluationProcessingStepType rdf:type owl:Class ;
+                                     rdfs:subClassOf pivmeta:ProcessingType ;
+                                     skos:prefLabel "evaluation processing step type"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup
 pivmeta:ExperimentalPIVSetup rdf:type owl:Class ;
                              rdfs:subClassOf emmo:EMMO_22522299_4091_4d1f_82a2_3890492df6db ,
@@ -813,6 +819,10 @@ pivmeta:PIVDistributionType rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 pivmeta:PIVEvaluation rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty pivmeta:processingType ;
+                                            owl:someValuesFrom pivmeta:EvaluationProcessingStepType
+                                          ] ;
                       rdfs:subClassOf pivmeta:PIVAnalysis ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty obo:BFO_0000063 ;
@@ -844,7 +854,7 @@ pivmeta:PIVParticle rdf:type owl:Class ;
 pivmeta:PIVPostProcessing rdf:type owl:Class ;
                           owl:equivalentClass [ rdf:type owl:Restriction ;
                                                 owl:onProperty pivmeta:processingType ;
-                                                owl:someValuesFrom pivmeta:PostProcessingType
+                                                owl:someValuesFrom pivmeta:PostProcessingStepType
                                               ] ;
                           rdfs:subClassOf pivmeta:PIVAnalysis ;
                           skos:definition "The process after the main evaluation. Used to remove or mark outliers (invalid data) in the PIV solution"@en ;
@@ -862,7 +872,8 @@ pivmeta:PIVPreProcessing rdf:type owl:Class ;
                                            owl:onProperty obo:BFO_0000063 ;
                                            owl:someValuesFrom pivmeta:PIVEvaluation
                                          ] ;
-                         skos:prefLabel "PIV pre processing"@en .
+                         skos:prefLabel "PIV pre processing"@en ,
+                                        "The process before the main evaluation. Used dewarp or filter the images."@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
@@ -905,13 +916,6 @@ pivmeta:PIVSoftware rdf:type owl:Class ;
                     skos:prefLabel "PIV software"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PIVValidation
-pivmeta:PIVValidation rdf:type owl:Class ;
-                      rdfs:subClassOf pivmeta:PIVPostProcessing ;
-                      skos:definition "The process of validating an PIV solution."@en ;
-                      skos:prefLabel "PIV validation"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#PeakSearchMethod
 pivmeta:PeakSearchMethod rdf:type owl:Class ;
                          rdfs:subClassOf m4i:Method ;
@@ -920,10 +924,10 @@ pivmeta:PeakSearchMethod rdf:type owl:Class ;
                          skos:prefLabel "peak search method"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PostProcessingType
-pivmeta:PostProcessingType rdf:type owl:Class ;
-                           rdfs:subClassOf pivmeta:ProcessingType ;
-                           skos:prefLabel "post processing type"@en .
+###  https://matthiasprobst.github.io/pivmeta#PostProcessingStepType
+pivmeta:PostProcessingStepType rdf:type owl:Class ;
+                               rdfs:subClassOf pivmeta:ProcessingType ;
+                               skos:prefLabel "post processing step type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PreProcessingStepType

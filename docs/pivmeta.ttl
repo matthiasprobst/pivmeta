@@ -626,6 +626,12 @@ A JSON-LD excerpt could look like this:
                <http://www.w3.org/2004/02/skos/core#prefLabel> "digital camera"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType
+:EvaluationProcessingStepType rdf:type owl:Class ;
+                              rdfs:subClassOf :ProcessingType ;
+                              <http://www.w3.org/2004/02/skos/core#prefLabel> "evaluation processing step type"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup
 :ExperimentalPIVSetup rdf:type owl:Class ;
                       rdfs:subClassOf <http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db> ,
@@ -798,6 +804,10 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 :PIVEvaluation rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :processingType ;
+                                     owl:someValuesFrom :EvaluationProcessingStepType
+                                   ] ;
                rdfs:subClassOf :PIVAnalysis ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
@@ -829,7 +839,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :PIVPostProcessing rdf:type owl:Class ;
                    owl:equivalentClass [ rdf:type owl:Restriction ;
                                          owl:onProperty :processingType ;
-                                         owl:someValuesFrom :PostProcessingType
+                                         owl:someValuesFrom :PostProcessingStepType
                                        ] ;
                    rdfs:subClassOf :PIVAnalysis ;
                    <http://www.w3.org/2004/02/skos/core#definition> "The process after the main evaluation. Used to remove or mark outliers (invalid data) in the PIV solution"@en ;
@@ -847,7 +857,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
                                     owl:someValuesFrom :PIVEvaluation
                                   ] ;
-                  <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV pre processing"@en .
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV pre processing"@en ,
+                                                                  "The process before the main evaluation. Used dewarp or filter the images."@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
@@ -890,13 +901,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV software"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PIVValidation
-:PIVValidation rdf:type owl:Class ;
-               rdfs:subClassOf :PIVPostProcessing ;
-               <http://www.w3.org/2004/02/skos/core#definition> "The process of validating an PIV solution."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV validation"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#PeakSearchMethod
 :PeakSearchMethod rdf:type owl:Class ;
                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
@@ -905,10 +909,10 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "peak search method"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PostProcessingType
-:PostProcessingType rdf:type owl:Class ;
-                    rdfs:subClassOf :ProcessingType ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "post processing type"@en .
+###  https://matthiasprobst.github.io/pivmeta#PostProcessingStepType
+:PostProcessingStepType rdf:type owl:Class ;
+                        rdfs:subClassOf :ProcessingType ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> "post processing step type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PreProcessingStepType

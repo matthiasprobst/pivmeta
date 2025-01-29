@@ -1012,6 +1012,16 @@ A JSON-LD excerpt could look like this:
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
+        <skos:prefLabel xml:lang="en">evaluation processing step type</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup -->
 
 
@@ -1277,6 +1287,12 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVAnalysis"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1325,7 +1341,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PostProcessingType"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVAnalysis"/>
@@ -1353,6 +1369,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <skos:prefLabel xml:lang="en">PIV pre processing</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">The process before the main evaluation. Used dewarp or filter the images.</skos:prefLabel>
     </owl:Class>
     
 
@@ -1419,17 +1436,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#PIVValidation -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVValidation">
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"/>
-        <skos:definition xml:lang="en">The process of validating an PIV solution.</skos:definition>
-        <skos:prefLabel xml:lang="en">PIV validation</skos:prefLabel>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#PeakSearchMethod -->
 
 
@@ -1442,12 +1448,12 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#PostProcessingType -->
+    <!-- https://matthiasprobst.github.io/pivmeta#PostProcessingStepType -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PostProcessingType">
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType">
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
-        <skos:prefLabel xml:lang="en">post processing type</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">post processing step type</skos:prefLabel>
     </owl:Class>
     
 
