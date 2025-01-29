@@ -431,8 +431,7 @@ A JSON-LD excerpt could look like this:
 :numberOfImages rdf:type owl:DatatypeProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
                               owl:unionOf ( :MinimumIntensityBackgroundSubtractionMethod
-                                            :PIVAnalysis
-                                            :PIVRecording
+                                            :PIVProcessingStep
                                           )
                             ] ;
                 rdfs:range xsd:positiveInteger ;
@@ -768,6 +767,15 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVAnalysis
 :PIVAnalysis rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :processingType ;
+                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( :EvaluationProcessingStepType
+                                                                      :PostProcessingStepType
+                                                                      :PreProcessingStepType
+                                                                    )
+                                                      ]
+                                 ] ;
              rdfs:subClassOf :PIVProcessingStep ;
              <http://www.w3.org/2004/02/skos/core#definition> "PIV-specific action undertaken during PIV data handling from recording to processing."@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV analysis"@en .
@@ -863,6 +871,10 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
 :PIVProcessingStep rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty :processingType ;
+                                         owl:someValuesFrom :ProcessingType
+                                       ] ;
                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
                    <http://www.w3.org/2004/02/skos/core#definition> "A processing step related to a Particle Image Velocimetry Experiment or Analysis."@en ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV processing step"@en .
@@ -1122,11 +1134,18 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "image filtering"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#ImageRecording
+:ImageRecording rdf:type owl:NamedIndividual ,
+                         :ProcessingType ;
+                <http://www.w3.org/2004/02/skos/core#definition> "type of process that records an image"@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "image recording"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ImageRotation
 :ImageRotation rdf:type owl:NamedIndividual ,
                         :PreProcessingStepType ;
                rdfs:comment "If not further specified assume anti-clockwise."@en ;
-               <http://www.w3.org/2004/02/skos/core#definition> "The process of rotating an Image"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Type of process that rotates an image"@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "image rotation"@en .
 
 

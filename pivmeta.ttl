@@ -328,11 +328,11 @@ pivmeta:pivDistributionType rdf:type owl:ObjectProperty ;
                             rdfs:range pivmeta:PIVDistributionType .
 
 
-###  https://matthiasprobst.github.io/pivmeta#processingType
-pivmeta:processingType rdf:type owl:ObjectProperty ;
-                       rdfs:domain m4i:ProcessingStep ;
-                       rdfs:range pivmeta:ProcessingType ;
-                       skos:prefLabel "processing type"@en .
+###  https://matthiasprobst.github.io/pivmeta#processType
+pivmeta:processType rdf:type owl:ObjectProperty ;
+                    rdfs:domain m4i:ProcessingStep ;
+                    rdfs:range pivmeta:ProcessType ;
+                    skos:prefLabel "process type"@en .
 
 
 ###  https://matthiasprobst.github.io/ssno#hasStandardName
@@ -446,8 +446,7 @@ pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
 pivmeta:numberOfImages rdf:type owl:DatatypeProperty ;
                        rdfs:domain [ rdf:type owl:Class ;
                                      owl:unionOf ( pivmeta:MinimumIntensityBackgroundSubtractionMethod
-                                                   pivmeta:PIVAnalysis
-                                                   pivmeta:PIVRecording
+                                                   pivmeta:PIVProcessingStep
                                                  )
                                    ] ;
                        rdfs:range xsd:positiveInteger ;
@@ -643,7 +642,7 @@ pivmeta:DigitalCamera rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType
 pivmeta:EvaluationProcessingStepType rdf:type owl:Class ;
-                                     rdfs:subClassOf pivmeta:ProcessingType ;
+                                     rdfs:subClassOf pivmeta:ProcessType ;
                                      skos:prefLabel "evaluation processing step type"@en .
 
 
@@ -783,6 +782,15 @@ pivmeta:OutlierReplacementScheme rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVAnalysis
 pivmeta:PIVAnalysis rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty pivmeta:processType ;
+                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                               owl:unionOf ( pivmeta:EvaluationProcessingStepType
+                                                                             pivmeta:PostProcessingStepType
+                                                                             pivmeta:PreProcessingStepType
+                                                                           )
+                                                             ]
+                                        ] ;
                     rdfs:subClassOf pivmeta:PIVProcessingStep ;
                     skos:definition "PIV-specific action undertaken during PIV data handling from recording to processing."@en ;
                     skos:prefLabel "PIV analysis"@en .
@@ -820,7 +828,7 @@ pivmeta:PIVDistributionType rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 pivmeta:PIVEvaluation rdf:type owl:Class ;
                       owl:equivalentClass [ rdf:type owl:Restriction ;
-                                            owl:onProperty pivmeta:processingType ;
+                                            owl:onProperty pivmeta:processType ;
                                             owl:someValuesFrom pivmeta:EvaluationProcessingStepType
                                           ] ;
                       rdfs:subClassOf pivmeta:PIVAnalysis ,
@@ -853,7 +861,7 @@ pivmeta:PIVParticle rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#PIVPostProcessing
 pivmeta:PIVPostProcessing rdf:type owl:Class ;
                           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                owl:onProperty pivmeta:processingType ;
+                                                owl:onProperty pivmeta:processType ;
                                                 owl:someValuesFrom pivmeta:PostProcessingStepType
                                               ] ;
                           rdfs:subClassOf pivmeta:PIVAnalysis ;
@@ -864,7 +872,7 @@ pivmeta:PIVPostProcessing rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#PIVPreProcessing
 pivmeta:PIVPreProcessing rdf:type owl:Class ;
                          owl:equivalentClass [ rdf:type owl:Restriction ;
-                                               owl:onProperty pivmeta:processingType ;
+                                               owl:onProperty pivmeta:processType ;
                                                owl:someValuesFrom pivmeta:PreProcessingStepType
                                              ] ;
                          rdfs:subClassOf pivmeta:PIVAnalysis ,
@@ -878,6 +886,10 @@ pivmeta:PIVPreProcessing rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
 pivmeta:PIVProcessingStep rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty pivmeta:processType ;
+                                                owl:someValuesFrom pivmeta:ProcessType
+                                              ] ;
                           rdfs:subClassOf m4i:ProcessingStep ;
                           skos:definition "A processing step related to a Particle Image Velocimetry Experiment or Analysis."@en ;
                           skos:prefLabel "PIV processing step"@en .
@@ -926,21 +938,21 @@ pivmeta:PeakSearchMethod rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PostProcessingStepType
 pivmeta:PostProcessingStepType rdf:type owl:Class ;
-                               rdfs:subClassOf pivmeta:ProcessingType ;
+                               rdfs:subClassOf pivmeta:ProcessType ;
                                skos:prefLabel "post processing step type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PreProcessingStepType
 pivmeta:PreProcessingStepType rdf:type owl:Class ;
-                              rdfs:subClassOf pivmeta:ProcessingType ;
+                              rdfs:subClassOf pivmeta:ProcessType ;
                               skos:prefLabel "pre processing step type"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#ProcessingType
-pivmeta:ProcessingType rdf:type owl:Class ;
-                       rdfs:comment "Allows identifying specific, well-defined processing steps"@en ;
-                       skos:definition "A type assigned to a Processing Step"@en ;
-                       skos:prefLabel "Processing type"@en .
+###  https://matthiasprobst.github.io/pivmeta#ProcessType
+pivmeta:ProcessType rdf:type owl:Class ;
+                    rdfs:comment "Allows identifying specific, well-defined processing steps"@en ;
+                    skos:definition "A type assigned to a Processing Step"@en ;
+                    skos:prefLabel "process type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Singlepass
@@ -1138,11 +1150,18 @@ pivmeta:ImageFiltering rdf:type owl:NamedIndividual ,
                        skos:prefLabel "image filtering"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#ImageRecording
+pivmeta:ImageRecording rdf:type owl:NamedIndividual ,
+                                pivmeta:ProcessType ;
+                       skos:definition "type of process that records an image"@en ;
+                       skos:prefLabel "image recording"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ImageRotation
 pivmeta:ImageRotation rdf:type owl:NamedIndividual ,
                                pivmeta:PreProcessingStepType ;
                       rdfs:comment "If not further specified assume anti-clockwise."@en ;
-                      skos:definition "The process of rotating an Image"@en ;
+                      skos:definition "Type of process that rotates an image"@en ;
                       skos:prefLabel "image rotation"@en .
 
 
@@ -1283,8 +1302,6 @@ pivmeta:microPIV rdf:type owl:NamedIndividual ,
                           m4i:Method ;
                  skos:definition "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en ;
                  skos:prefLabel "Micro PIV"@en .
-
-
 
 
 ###  https://www.wikidata.org/wiki/Q112166625

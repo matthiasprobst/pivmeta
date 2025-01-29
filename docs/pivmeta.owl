@@ -699,8 +699,7 @@ A JSON-LD excerpt could look like this:
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod"/>
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVAnalysis"/>
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVRecording"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1232,6 +1231,20 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType"/>
+                            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType"/>
+                            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
         <skos:definition xml:lang="en">PIV-specific action undertaken during PIV data handling from recording to processing.</skos:definition>
         <skos:prefLabel xml:lang="en">PIV analysis</skos:prefLabel>
@@ -1378,6 +1391,12 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#processingType"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
         <skos:definition xml:lang="en">A processing step related to a Particle Image Velocimetry Experiment or Analysis.</skos:definition>
         <skos:prefLabel xml:lang="en">PIV processing step</skos:prefLabel>
@@ -1797,13 +1816,24 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#ImageRecording -->
+
+
+    <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ImageRecording">
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#ProcessingType"/>
+        <skos:definition xml:lang="en">type of process that records an image</skos:definition>
+        <skos:prefLabel xml:lang="en">image recording</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#ImageRotation -->
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ImageRotation">
         <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType"/>
         <rdfs:comment xml:lang="en">If not further specified assume anti-clockwise.</rdfs:comment>
-        <skos:definition xml:lang="en">The process of rotating an Image</skos:definition>
+        <skos:definition xml:lang="en">Type of process that rotates an image</skos:definition>
         <skos:prefLabel xml:lang="en">image rotation</skos:prefLabel>
     </owl:NamedIndividual>
     

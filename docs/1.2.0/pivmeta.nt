@@ -375,16 +375,13 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://matthiasprobst.github.io/pivmeta#numberOfImages
 <https://matthiasprobst.github.io/pivmeta#numberOfImages> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://matthiasprobst.github.io/pivmeta#numberOfImages> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid14 .
-_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid16 .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
 _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PIVRecording> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
 _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod> .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#numberOfImages> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
 <https://matthiasprobst.github.io/pivmeta#numberOfImages> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://matthiasprobst.github.io/pivmeta#numberOfRecords> .
@@ -674,6 +671,21 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVAnalysis
 <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PIVAnalysis> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#unionOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PreProcessingStepType> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#PostProcessingStepType> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#processingType> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> .
 <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> <http://www.w3.org/2004/02/skos/core#definition> "PIV-specific action undertaken during PIV data handling from recording to processing."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV analysis"@en .
@@ -681,15 +693,15 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://matthiasprobst.github.io/pivmeta#PIVDataset
 <https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Dataset> .
-<https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
-_:genid18 <http://www.w3.org/2002/07/owl#unionOf> _:genid19 .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid20 .
-_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVSetup> .
-_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVSetup> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Use obo:hasPart to relate a used Tool like a camera or laser to the PIV Dataset"@en .
 <https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2004/02/skos/core#definition> "A collection of Particle Image Velocimetry (PIV) data, published or curated by a single agent, and available for access or download in one or more representations."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVDataset> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV dataset"@en .
@@ -708,24 +720,24 @@ _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVEvaluation
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid21 .
-_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType> .
-_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#processingType> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#processingType> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> .
-<https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
-_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVPostProcessing> .
-_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000063> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVPostProcessing> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000063> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2004/02/skos/core#definition> "The PIV evaluation processing performing the correlation algorithm and interrogation method."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV evaluation"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
 <https://matthiasprobst.github.io/pivmeta#PIVImageDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PIVImageDistribution> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid23 .
-_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
-_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#imageBitDepth> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVImageDistribution> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#imageBitDepth> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVImageDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVDistribution> .
 <https://matthiasprobst.github.io/pivmeta#PIVImageDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A distribution holding a PIV image"@en .
 <https://matthiasprobst.github.io/pivmeta#PIVImageDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image distribution"@en .
@@ -738,30 +750,34 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVPostProcessing
 <https://matthiasprobst.github.io/pivmeta#PIVPostProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PIVPostProcessing> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid24 .
-_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PostProcessingStepType> .
-_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#processingType> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVPostProcessing> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid28 .
+_:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PostProcessingStepType> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#processingType> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVPostProcessing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> .
 <https://matthiasprobst.github.io/pivmeta#PIVPostProcessing> <http://www.w3.org/2004/02/skos/core#definition> "The process after the main evaluation. Used to remove or mark outliers (invalid data) in the PIV solution"@en .
 <https://matthiasprobst.github.io/pivmeta#PIVPostProcessing> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV post processing"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVPreProcessing
 <https://matthiasprobst.github.io/pivmeta#PIVPreProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PIVPreProcessing> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid25 .
-_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PreProcessingStepType> .
-_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#processingType> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVPreProcessing> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PreProcessingStepType> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#processingType> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVPreProcessing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVAnalysis> .
-<https://matthiasprobst.github.io/pivmeta#PIVPreProcessing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
-_:genid26 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> .
-_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000063> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVPreProcessing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVEvaluation> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000063> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVPreProcessing> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV pre processing"@en .
 <https://matthiasprobst.github.io/pivmeta#PIVPreProcessing> <http://www.w3.org/2004/02/skos/core#prefLabel> "The process before the main evaluation. Used dewarp or filter the images."@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
 <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#ProcessingType> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#processingType> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> .
 <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> <http://www.w3.org/2004/02/skos/core#definition> "A processing step related to a Particle Image Velocimetry Experiment or Analysis."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVProcessingStep> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV processing step"@en .
@@ -775,18 +791,18 @@ _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://matthiasprobst.github.io/pivmeta#PIVSetup
 <https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
-_:genid27 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#LightSource> .
-_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
-_:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#OpticSensor> .
-_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
-_:genid29 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVParticle> .
-_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#LightSource> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#OpticSensor> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVParticle> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2004/02/skos/core#definition> "A Particle Image Velocimetry Setup"@en .
 <https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV setup"@en .
 # 
@@ -989,11 +1005,17 @@ _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#ImageFiltering> <http://www.w3.org/2004/02/skos/core#definition> "A process of manipulate an image in order to remove unwanted effects or enahnce certain information in an image."@en .
 <https://matthiasprobst.github.io/pivmeta#ImageFiltering> <http://www.w3.org/2004/02/skos/core#prefLabel> "image filtering"@en .
 # 
+# https://matthiasprobst.github.io/pivmeta#ImageRecording
+<https://matthiasprobst.github.io/pivmeta#ImageRecording> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://matthiasprobst.github.io/pivmeta#ImageRecording> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#ProcessingType> .
+<https://matthiasprobst.github.io/pivmeta#ImageRecording> <http://www.w3.org/2004/02/skos/core#definition> "type of process that records an image"@en .
+<https://matthiasprobst.github.io/pivmeta#ImageRecording> <http://www.w3.org/2004/02/skos/core#prefLabel> "image recording"@en .
+# 
 # https://matthiasprobst.github.io/pivmeta#ImageRotation
 <https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://matthiasprobst.github.io/pivmeta#PreProcessingStepType> .
 <https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/2000/01/rdf-schema#comment> "If not further specified assume anti-clockwise."@en .
-<https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/2004/02/skos/core#definition> "The process of rotating an Image"@en .
+<https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/2004/02/skos/core#definition> "Type of process that rotates an image"@en .
 <https://matthiasprobst.github.io/pivmeta#ImageRotation> <http://www.w3.org/2004/02/skos/core#prefLabel> "image rotation"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#Interpolation
@@ -1128,13 +1150,13 @@ _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
-_:genid30 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid32 .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#SyntheticImage> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid35 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#SyntheticImage> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

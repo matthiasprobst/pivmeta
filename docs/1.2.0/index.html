@@ -606,6 +606,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a>
    </li>
    <li>
+      <a href="#ImageRecording"
+         title="https://matthiasprobst.github.io/pivmeta#ImageRecording">image recording</a>
+   </li>
+   <li>
       <a href="#ImageRotation"
          title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a>
    </li>
@@ -1472,6 +1476,12 @@ This section provides details for each class and property defined by PIVMeta.
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#EvaluationProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#EvaluationProcessingStepType">evaluation processing step type</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PostProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PostProcessingStepType">post processing step type</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PreProcessingStepType" title="https://matthiasprobst.github.io/pivmeta#PreProcessingStepType">pre processing step type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -1482,12 +1492,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#numberOfImages" title="https://matthiasprobst.github.io/pivmeta#numberOfImages">number of images</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
@@ -1673,6 +1677,12 @@ This section provides details for each class and property defined by PIVMeta.
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#ProcessingType" title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -1683,6 +1693,12 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#numberOfImages" title="https://matthiasprobst.github.io/pivmeta#numberOfImages">number of images</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
@@ -1701,12 +1717,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#numberOfImages" title="https://matthiasprobst.github.io/pivmeta#numberOfImages">number of images</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
@@ -1816,6 +1826,12 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#processingType" title="https://matthiasprobst.github.io/pivmeta#processingType">processing type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#ImageRecording" title="https://matthiasprobst.github.io/pivmeta#ImageRecording">image recording</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -2959,7 +2975,7 @@ A JSON-LD excerpt could look like this:
      has domain
     </dt>
     <dd>
-     <a href="#MinimumIntensityBackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod">minimum intensity background subtraction method</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV analysis</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MinimumIntensityBackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#MinimumIntensityBackgroundSubtractionMethod">minimum intensity background subtraction method</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -3099,6 +3115,7 @@ A JSON-LD excerpt could look like this:
   <li><a href="#HannWindow" title="https://matthiasprobst.github.io/pivmeta#HannWindow">Hann window</a></li>
   <li><a href="#ImageDewarping" title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a></li>
   <li><a href="#ImageFiltering" title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a></li>
+  <li><a href="#ImageRecording" title="https://matthiasprobst.github.io/pivmeta#ImageRecording">image recording</a></li>
   <li><a href="#ImageRotation" title="https://matthiasprobst.github.io/pivmeta#ImageRotation">image rotation</a></li>
   <li><a href="#Interpolation" title="https://matthiasprobst.github.io/pivmeta#Interpolation">interpolation</a></li>
   <li><a href="#LeftRightFlip" title="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">left right flip</a></li>
@@ -3385,6 +3402,30 @@ A JSON-LD excerpt could look like this:
    </dd>
   </dl>
  </div>
+ <div class="entity" id="ImageRecording">
+  <h3>image recording<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageRecording</p>
+  <div class="comment">
+   <span class="markdown">type of process that records an image</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ProcessingType" title="https://matthiasprobst.github.io/pivmeta#ProcessingType">Processing type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"type of process that records an image"@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"image recording"@en</span>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="ImageRotation">
   <h3>image rotation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageRotation</p>
@@ -3392,7 +3433,7 @@ A JSON-LD excerpt could look like this:
    <span class="markdown">If not further specified assume anti-clockwise.</span>
   </div>
   <div class="comment">
-   <span class="markdown">The process of rotating an Image</span>
+   <span class="markdown">Type of process that rotates an image</span>
   </div>
   <dl class="description">
    <dt>
@@ -3405,7 +3446,7 @@ A JSON-LD excerpt could look like this:
     has facts
    </dt>
    <dd>
-    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The process of rotating an Image"@en</span>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Type of process that rotates an image"@en</span>
    </dd>
    <dd>
     <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"image rotation"@en</span>
