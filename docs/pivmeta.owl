@@ -1226,6 +1226,17 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#PIVAnalysis -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"/>
+        <skos:definition xml:lang="en">High-level PIV Analysis processing step. All other PIV Processing steps like recording, pre processing, evaluation and post processing should be references using startsWith and endsWith</skos:definition>
+        <skos:prefLabel xml:lang="en">PIV Analysis</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration -->
 
 
@@ -1318,8 +1329,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSoftware"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSoftware"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <skos:definition xml:lang="en">Main step of a PIV evlauation applying the methods to determine the velocity</skos:definition>
@@ -1407,7 +1417,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
         <skos:definition xml:lang="en">Processing step of a PIV measurement. The concrete subclasses should be used to clearly define the individual steps in their order to enable tracability of a PIV measurement.</skos:definition>
-        <skos:prefLabel xml:lang="en">PIV processing step</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">PIV Processing step</skos:prefLabel>
     </owl:Class>
     
 
@@ -2038,6 +2048,19 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
      -->
 
 
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVAnalysis"/>
+            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration"/>
+            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVCalibration"/>
+            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVEvaluation"/>
+            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration"/>
+            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"/>
+            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"/>
+            <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#PIVRecording"/>
+        </owl:members>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">

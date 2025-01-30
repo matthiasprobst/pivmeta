@@ -767,6 +767,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                           <http://www.w3.org/2004/02/skos/core#prefLabel> "outlier replacement scheme"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#PIVAnalysis
+:PIVAnalysis rdf:type owl:Class ;
+             rdfs:subClassOf :PIVProcessingStep ;
+             <http://www.w3.org/2004/02/skos/core#definition> "High-level PIV Analysis processing step. All other PIV Processing steps like recording, pre processing, evaluation and post processing should be references using startsWith and endsWith"@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Analysis"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration
 :PIVBackgroundGeneration rdf:type owl:Class ;
                          rdfs:subClassOf :PIVProcessingStep ,
@@ -827,8 +834,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool> ;
-                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onClass :PIVSoftware
+                                 owl:someValuesFrom :PIVSoftware
                                ] ;
                <http://www.w3.org/2004/02/skos/core#definition> "Main step of a PIV evlauation applying the methods to determine the velocity"@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV evaluation"@en .
@@ -885,7 +891,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :PIVProcessingStep rdf:type owl:Class ;
                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
                    <http://www.w3.org/2004/02/skos/core#definition> "Processing step of a PIV measurement. The concrete subclasses should be used to clearly define the individual steps in their order to enable tracability of a PIV measurement."@en ;
-                   <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV processing step"@en .
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Processing step"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVRecording
@@ -1276,6 +1282,19 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :PIVAnalysis
+                :PIVBackgroundGeneration
+                :PIVCalibration
+                :PIVEvaluation
+                :PIVMaskGeneration
+                :PIVPostProcessing
+                :PIVPreProcessing
+                :PIVRecording
+              )
+] .
+
 
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :ExperimentalImage

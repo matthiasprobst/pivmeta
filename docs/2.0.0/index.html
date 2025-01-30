@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing Particle Image Velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-01-29", "version":"v2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing Particle Image Velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-01-30", "version":"v2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -70,7 +70,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2025-01-29</dt>
+<dt>Modified on: 2025-01-30</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/2.0.0">https://matthiasprobst.github.io/pivmeta/2.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -80,7 +80,7 @@ $(function(){
 <dt>Revision:</dt>
 <dd>v2.0.0</dd>
 <dt>Issued on:</dt>
-<dd>2025-01-29</dd>
+<dd>2025-01-30</dd>
 <dt>Authors:</dt>
 <dd><a href="https://orcid.org/0000-0001-8729-0482">Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery</a></dd>
 
@@ -283,6 +283,10 @@ This ontology has the following classes and properties.</span>
          title="http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f">physics based simulation</a>
    </li>
    <li>
+      <a href="#PIVAnalysis"
+         title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a>
+   </li>
+   <li>
       <a href="#PIVBackgroundGeneration"
          title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a>
    </li>
@@ -328,7 +332,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#PIVProcessingStep"
-         title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a>
+         title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a>
    </li>
    <li>
       <a href="#PIVRecording"
@@ -717,6 +721,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a></li>
   <li><a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a></li>
   <li><a href="#http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f" title="http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f">physics based simulation</a></li>
+  <li><a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a></li>
   <li><a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a></li>
   <li><a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a></li>
   <li><a href="#PIVDataset" title="https://matthiasprobst.github.io/pivmeta#PIVDataset">PIV dataset</a></li>
@@ -728,7 +733,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#PIVParticle" title="https://matthiasprobst.github.io/pivmeta#PIVParticle">PIV particle</a></li>
   <li><a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a></li>
   <li><a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a></li>
-  <li><a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a></li>
+  <li><a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a></li>
   <li><a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a></li>
   <li><a href="#PIVSetup" title="https://matthiasprobst.github.io/pivmeta#PIVSetup">PIV setup</a></li>
   <li><a href="#PIVSoftware" title="https://matthiasprobst.github.io/pivmeta#PIVSoftware">PIV software</a></li>
@@ -1428,6 +1433,27 @@ This section provides details for each class and property defined by PIVMeta.
    </dd>
   </dl>
  </div>
+ <div class="entity" id="PIVAnalysis">
+  <h3>PIV Analysis<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVAnalysis</p>
+  <div class="comment">
+   <span class="markdown">High-level PIV Analysis processing step. All other PIV Processing steps like recording, pre processing, evaluation and post processing should be references using startsWith and endsWith</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="PIVBackgroundGeneration">
   <h3>PIV background generation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration</p>
@@ -1439,7 +1465,13 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1454,7 +1486,13 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1541,7 +1579,13 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1577,7 +1621,13 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1613,7 +1663,13 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1628,12 +1684,18 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="PIVProcessingStep">
-  <h3>PIV processing step<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>PIV Processing step<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVProcessingStep</p>
   <div class="comment">
    <span class="markdown">Processing step of a PIV measurement. The concrete subclasses should be used to clearly define the individual steps in their order to enable tracability of a PIV measurement.</span>
@@ -1649,7 +1711,7 @@ This section provides details for each class and property defined by PIVMeta.
     has sub-classes
    </dt>
    <dd>
-    <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVRecording" title="https://matthiasprobst.github.io/pivmeta#PIVRecording">PIV recording</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1664,7 +1726,13 @@ This section provides details for each class and property defined by PIVMeta.
     has super-classes
    </dt>
    <dd>
-    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVBackgroundGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration">PIV background generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVCalibration" title="https://matthiasprobst.github.io/pivmeta#PIVCalibration">PIV calibration</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVEvaluation" title="https://matthiasprobst.github.io/pivmeta#PIVEvaluation">PIV evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVMaskGeneration" title="https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration">PIV mask generation</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPostProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing">PIV post processing</a> <sup class="type-c" title="class">c</sup>, <a href="#PIVPreProcessing" title="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing">PIV pre processing</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1709,7 +1777,7 @@ This section provides details for each class and property defined by PIVMeta.
     has sub-classes
    </dt>
    <dd>
-    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV processing step</a> <sup class="type-c" title="class">c</sup>
+    <a href="#PIVProcessingStep" title="https://matthiasprobst.github.io/pivmeta#PIVProcessingStep">PIV Processing step</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of

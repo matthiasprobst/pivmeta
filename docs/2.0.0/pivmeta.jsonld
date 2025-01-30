@@ -103,15 +103,11 @@
 }, {
   "@id" : "_:genid24",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSoftware"
-  } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSoftware"
   } ]
 }, {
   "@id" : "_:genid25",
@@ -204,6 +200,28 @@
   } ]
 }, {
   "@id" : "_:genid34",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PIVAnalysis"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PIVCalibration"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#PIVRecording"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid43",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -1300,6 +1318,20 @@
     "@value" : "per pixel"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#PIVAnalysis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "High-level PIV Analysis processing step. All other PIV Processing steps like recording, pre processing, evaluation and post processing should be references using startsWith and endsWith"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "PIV Analysis"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVBackgroundGeneration",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
@@ -1528,7 +1560,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "PIV processing step"
+    "@value" : "PIV Processing step"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#PIVRecording",
