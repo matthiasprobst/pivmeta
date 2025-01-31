@@ -263,13 +263,13 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#flagIn> <http://www.w3.org/2004/02/skos/core#definition> "Relates a Flag Variable to its used concept"@en .
 <https://matthiasprobst.github.io/pivmeta#flagIn> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#hasPIVDataType
-<https://matthiasprobst.github.io/pivmeta#hasPIVDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://matthiasprobst.github.io/pivmeta#hasPIVDataType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/type> .
-<https://matthiasprobst.github.io/pivmeta#hasPIVDataType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PIVDistribution> .
-<https://matthiasprobst.github.io/pivmeta#hasPIVDataType> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#DataType> .
-<https://matthiasprobst.github.io/pivmeta#hasPIVDataType> <http://www.w3.org/2004/02/skos/core#definition> "relates the PIV data type to a distribution"@en .
-<https://matthiasprobst.github.io/pivmeta#hasPIVDataType> <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
+# https://matthiasprobst.github.io/pivmeta#hasDataType
+<https://matthiasprobst.github.io/pivmeta#hasDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://matthiasprobst.github.io/pivmeta#hasDataType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/type> .
+<https://matthiasprobst.github.io/pivmeta#hasDataType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PIVDistribution> .
+<https://matthiasprobst.github.io/pivmeta#hasDataType> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#DataType> .
+<https://matthiasprobst.github.io/pivmeta#hasDataType> <http://www.w3.org/2004/02/skos/core#definition> "relates the PIV data type to a distribution"@en .
+<https://matthiasprobst.github.io/pivmeta#hasDataType> <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#hasVariable
 <https://matthiasprobst.github.io/pivmeta#hasVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -730,7 +730,7 @@ _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#PIVDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Distribution> .
 <https://matthiasprobst.github.io/pivmeta#PIVDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
 _:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#DataType> .
-_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasPIVDataType> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasDataType> .
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#PIVDistribution> <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en .
 <https://matthiasprobst.github.io/pivmeta#PIVDistribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV distribution"@en .
@@ -758,17 +758,17 @@ _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid28 .
 _:genid28 <http://www.w3.org/2002/07/owl#hasValue> <https://matthiasprobst.github.io/pivmeta#SyntheticImage> .
-_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasPIVDataType> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasDataType> .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid30 .
 _:genid30 <http://www.w3.org/2002/07/owl#hasValue> <https://matthiasprobst.github.io/pivmeta#PIVImage> .
-_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasPIVDataType> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasDataType> .
 _:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid32 .
 _:genid32 <http://www.w3.org/2002/07/owl#hasValue> <https://matthiasprobst.github.io/pivmeta#ExperimentalImage> .
-_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasPIVDataType> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasDataType> .
 _:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

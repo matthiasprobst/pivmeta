@@ -284,13 +284,13 @@ xsd:date rdf:type rdfs:Datatype .
         <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#hasPIVDataType
-:hasPIVDataType rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
-                rdfs:domain :PIVDistribution ;
-                rdfs:range :DataType ;
-                <http://www.w3.org/2004/02/skos/core#definition> "relates the PIV data type to a distribution"@en ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
+###  https://matthiasprobst.github.io/pivmeta#hasDataType
+:hasDataType rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
+             rdfs:domain :PIVDistribution ;
+             rdfs:range :DataType ;
+             <http://www.w3.org/2004/02/skos/core#definition> "relates the PIV data type to a distribution"@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#hasVariable
@@ -831,7 +831,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :PIVDistribution rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty :hasPIVDataType ;
+                                   owl:onProperty :hasDataType ;
                                    owl:someValuesFrom :DataType
                                  ] ;
                  <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
@@ -857,15 +857,15 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :PIVImageDistribution rdf:type owl:Class ;
                       owl:equivalentClass [ rdf:type owl:Class ;
                                             owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :hasPIVDataType ;
+                                                            owl:onProperty :hasDataType ;
                                                             owl:hasValue :ExperimentalImage
                                                           ]
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :hasPIVDataType ;
+                                                            owl:onProperty :hasDataType ;
                                                             owl:hasValue :PIVImage
                                                           ]
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :hasPIVDataType ;
+                                                            owl:onProperty :hasDataType ;
                                                             owl:hasValue :SyntheticImage
                                                           ]
                                                         )

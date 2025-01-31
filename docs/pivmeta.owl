@@ -480,10 +480,10 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#hasPIVDataType -->
+    <!-- https://matthiasprobst.github.io/pivmeta#hasDataType -->
 
 
-    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasPIVDataType">
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasDataType">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/type"/>
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
@@ -1324,7 +1324,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasPIVDataType"/>
+                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasDataType"/>
                 <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1365,15 +1365,15 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasPIVDataType"/>
+                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasDataType"/>
                         <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#ExperimentalImage"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasPIVDataType"/>
+                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasDataType"/>
                         <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVImage"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasPIVDataType"/>
+                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasDataType"/>
                         <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#SyntheticImage"/>
                     </owl:Restriction>
                 </owl:unionOf>

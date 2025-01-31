@@ -95,7 +95,7 @@
   "@id" : "_:genid23",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#hasDataType"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#DataType"
@@ -137,7 +137,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#SyntheticImage"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#hasDataType"
   } ]
 }, {
   "@id" : "_:genid30",
@@ -146,7 +146,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVImage"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#hasDataType"
   } ]
 }, {
   "@id" : "_:genid32",
@@ -155,7 +155,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalImage"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#hasDataType"
   } ]
 }, {
   "@id" : "_:genid33",
@@ -1991,6 +1991,26 @@
     "@value" : "fnumber"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasDataType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#DataType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/dc/terms/type"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "relates the PIV data type to a distribution"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "has PIV data type"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2034,26 +2054,6 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "has flag value"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDistribution"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#DataType"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://purl.org/dc/terms/type"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "relates the PIV data type to a distribution"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "has PIV data type"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasVariable",

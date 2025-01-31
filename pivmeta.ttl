@@ -299,8 +299,8 @@ pivmeta:flagIn rdf:type owl:ObjectProperty ;
                skos:prefLabel "flag in"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#hasPIVDataType
-pivmeta:hasPIVDataType rdf:type owl:ObjectProperty ;
+###  https://matthiasprobst.github.io/pivmeta#hasDataType
+pivmeta:hasDataType rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf dcterms:type ;
                        rdfs:domain pivmeta:PIVDistribution ;
                        rdfs:range pivmeta:DataType ;
@@ -846,7 +846,7 @@ pivmeta:PIVDataset rdf:type owl:Class ;
 pivmeta:PIVDistribution rdf:type owl:Class ;
                         rdfs:subClassOf dcat:Distribution ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty pivmeta:hasPIVDataType ;
+                                          owl:onProperty pivmeta:hasDataType ;
                                           owl:someValuesFrom pivmeta:DataType
                                         ] ;
                         skos:definition "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
@@ -872,15 +872,15 @@ pivmeta:PIVEvaluation rdf:type owl:Class ;
 pivmeta:PIVImageDistribution rdf:type owl:Class ;
                              owl:equivalentClass [ rdf:type owl:Class ;
                                                    owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty pivmeta:hasPIVDataType ;
+                                                                   owl:onProperty pivmeta:hasDataType ;
                                                                    owl:hasValue pivmeta:ExperimentalImage
                                                                  ]
                                                                  [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty pivmeta:hasPIVDataType ;
+                                                                   owl:onProperty pivmeta:hasDataType ;
                                                                    owl:hasValue pivmeta:PIVImage
                                                                  ]
                                                                  [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty pivmeta:hasPIVDataType ;
+                                                                   owl:onProperty pivmeta:hasDataType ;
                                                                    owl:hasValue pivmeta:SyntheticImage
                                                                  ]
                                                                )
