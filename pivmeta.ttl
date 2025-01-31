@@ -299,20 +299,29 @@ pivmeta:flagIn rdf:type owl:ObjectProperty ;
                skos:prefLabel "flag in"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#hasPIVDataType
+pivmeta:hasPIVDataType rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf dcterms:type ;
+                       rdfs:domain pivmeta:PIVDistribution ;
+                       rdfs:range pivmeta:DataType ;
+                       skos:definition "relates the PIV data type to a distribution"@en ;
+                       skos:prefLabel "has PIV data type"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#hasVariable
+pivmeta:hasVariable rdf:type owl:ObjectProperty ;
+                    rdfs:domain pivmeta:PIVDistribution ;
+                    rdfs:range pims-ii:Variable ;
+                    skos:definition "Relates a PIV Variable to a distribution"@en ;
+                    skos:prefLabel "has variable"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction
 pivmeta:hasWindowWeightingFunction rdf:type owl:ObjectProperty ;
                                    rdfs:domain pivmeta:CorrelationMethod ;
                                    rdfs:range pivmeta:WindowWeightingFunction ;
                                    skos:definition "Points to the window weighting function used by the correlation method."@en ;
                                    skos:prefLabel "has window weighting function"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#isPIVDistributionType
-pivmeta:isPIVDistributionType rdf:type owl:ObjectProperty ;
-                              rdfs:subPropertyOf dcterms:type ;
-                              rdfs:domain pivmeta:PIVDistribution ;
-                              rdfs:range pivmeta:PIVDistributionType ;
-                              skos:prefLabel "isPIVDistributionType"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer
@@ -435,7 +444,7 @@ pivmeta:imageBitDepth rdf:type owl:DatatypeProperty ;
                       rdfs:domain pivmeta:PIVDistribution ;
                       rdfs:range xsd:positiveInteger ;
                       skos:definition "The bit depth of an image"@en ;
-                      skos:prefLabel "bit depth"@en .
+                      skos:prefLabel "image bit depth"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#numberOfImages
@@ -620,6 +629,13 @@ pivmeta:CorrelationMethod rdf:type owl:Class ;
                           rdfs:subClassOf m4i:Method ;
                           skos:definition "The correlation method used by the PIV evaluation process"@en ;
                           skos:prefLabel "correlation method"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#DataType
+pivmeta:DataType rdf:type owl:Class ;
+                 skos:closeMatch dcterms:DCMIType ;
+                 skos:definition "The type of the distribution"@en ;
+                 skos:prefLabel "piv data type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
@@ -828,16 +844,13 @@ pivmeta:PIVDataset rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVDistribution
 pivmeta:PIVDistribution rdf:type owl:Class ;
-                        rdfs:subClassOf dcat:Distribution ;
+                        rdfs:subClassOf dcat:Distribution ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty pivmeta:hasPIVDataType ;
+                                          owl:someValuesFrom pivmeta:DataType
+                                        ] ;
                         skos:definition "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
                         skos:prefLabel "PIV distribution"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PIVDistributionType
-pivmeta:PIVDistributionType rdf:type owl:Class ;
-                            skos:closeMatch dcterms:DCMIType ;
-                            skos:definition "The type of distribution"@en ;
-                            skos:prefLabel "PIV distribution type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
@@ -857,11 +870,26 @@ pivmeta:PIVEvaluation rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
 pivmeta:PIVImageDistribution rdf:type owl:Class ;
-                             owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                   owl:onProperty pivmeta:imageBitDepth ;
-                                                   owl:someValuesFrom xsd:positiveInteger
+                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                   owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty pivmeta:hasPIVDataType ;
+                                                                   owl:hasValue pivmeta:ExperimentalImage
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty pivmeta:hasPIVDataType ;
+                                                                   owl:hasValue pivmeta:PIVImage
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty pivmeta:hasPIVDataType ;
+                                                                   owl:hasValue pivmeta:SyntheticImage
+                                                                 ]
+                                                               )
                                                  ] ;
-                             rdfs:subClassOf pivmeta:PIVDistribution ;
+                             rdfs:subClassOf pivmeta:PIVDistribution ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty pivmeta:imageBitDepth ;
+                                               owl:someValuesFrom xsd:positiveInteger
+                                             ] ;
                              skos:definition "A distribution holding a PIV image"@en ;
                              skos:prefLabel "PIV image distribution"@en .
 
@@ -1101,7 +1129,7 @@ pivmeta:DEHS rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 pivmeta:ExperimentalImage rdf:type owl:NamedIndividual ,
-                                   pivmeta:PIVDistributionType ;
+                                   pivmeta:DataType ;
                           owl:differentFrom pivmeta:SyntheticImage ;
                           skos:prefLabel "experimental image"@en .
 
@@ -1192,7 +1220,7 @@ pivmeta:PER-PIXEL rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVData
 pivmeta:PIVData rdf:type owl:NamedIndividual ,
-                         pivmeta:PIVDistributionType ;
+                         pivmeta:DataType ;
                 rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
                 skos:definition "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en ;
                 skos:prefLabel "PIV data"@en .
@@ -1200,14 +1228,14 @@ pivmeta:PIVData rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImage
 pivmeta:PIVImage rdf:type owl:NamedIndividual ,
-                          pivmeta:PIVDistributionType ;
+                          pivmeta:DataType ;
                  skos:definition "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en ;
                  skos:prefLabel "PIV image"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVMask
 pivmeta:PIVMask rdf:type owl:NamedIndividual ,
-                         pivmeta:PIVDistributionType ;
+                         pivmeta:DataType ;
                 skos:prefLabel "PIV mask"@en .
 
 
@@ -1261,7 +1289,7 @@ pivmeta:SquareWindow rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
 pivmeta:SyntheticImage rdf:type owl:NamedIndividual ,
-                                pivmeta:PIVDistributionType ;
+                                pivmeta:DataType ;
                        skos:prefLabel "synthetic image"@en .
 
 

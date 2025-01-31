@@ -284,20 +284,29 @@ xsd:date rdf:type rdfs:Datatype .
         <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#hasPIVDataType
+:hasPIVDataType rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
+                rdfs:domain :PIVDistribution ;
+                rdfs:range :DataType ;
+                <http://www.w3.org/2004/02/skos/core#definition> "relates the PIV data type to a distribution"@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#hasVariable
+:hasVariable rdf:type owl:ObjectProperty ;
+             rdfs:domain :PIVDistribution ;
+             rdfs:range <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Relates a PIV Variable to a distribution"@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "has variable"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction
 :hasWindowWeightingFunction rdf:type owl:ObjectProperty ;
                             rdfs:domain :CorrelationMethod ;
                             rdfs:range :WindowWeightingFunction ;
                             <http://www.w3.org/2004/02/skos/core#definition> "Points to the window weighting function used by the correlation method."@en ;
                             <http://www.w3.org/2004/02/skos/core#prefLabel> "has window weighting function"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#isPIVDistributionType
-:isPIVDistributionType rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
-                       rdfs:domain :PIVDistribution ;
-                       rdfs:range :PIVDistributionType ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "isPIVDistributionType"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer
@@ -420,7 +429,7 @@ A JSON-LD excerpt could look like this:
                rdfs:domain :PIVDistribution ;
                rdfs:range xsd:positiveInteger ;
                <http://www.w3.org/2004/02/skos/core#definition> "The bit depth of an image"@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "bit depth"@en .
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "image bit depth"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#numberOfImages
@@ -605,6 +614,13 @@ A JSON-LD excerpt could look like this:
                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
                    <http://www.w3.org/2004/02/skos/core#definition> "The correlation method used by the PIV evaluation process"@en ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "correlation method"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#DataType
+:DataType rdf:type owl:Class ;
+          <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/terms/DCMIType> ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The type of the distribution"@en ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "piv data type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
@@ -813,16 +829,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVDistribution
 :PIVDistribution rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
+                 rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasPIVDataType ;
+                                   owl:someValuesFrom :DataType
+                                 ] ;
                  <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV distribution"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PIVDistributionType
-:PIVDistributionType rdf:type owl:Class ;
-                     <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/terms/DCMIType> ;
-                     <http://www.w3.org/2004/02/skos/core#definition> "The type of distribution"@en ;
-                     <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV distribution type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVEvaluation
@@ -842,11 +855,26 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
 :PIVImageDistribution rdf:type owl:Class ;
-                      owl:equivalentClass [ rdf:type owl:Restriction ;
-                                            owl:onProperty :imageBitDepth ;
-                                            owl:someValuesFrom xsd:positiveInteger
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasPIVDataType ;
+                                                            owl:hasValue :ExperimentalImage
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasPIVDataType ;
+                                                            owl:hasValue :PIVImage
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasPIVDataType ;
+                                                            owl:hasValue :SyntheticImage
+                                                          ]
+                                                        )
                                           ] ;
-                      rdfs:subClassOf :PIVDistribution ;
+                      rdfs:subClassOf :PIVDistribution ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :imageBitDepth ;
+                                        owl:someValuesFrom xsd:positiveInteger
+                                      ] ;
                       <http://www.w3.org/2004/02/skos/core#definition> "A distribution holding a PIV image"@en ;
                       <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image distribution"@en .
 
@@ -1086,7 +1114,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 :ExperimentalImage rdf:type owl:NamedIndividual ,
-                            :PIVDistributionType ;
+                            :DataType ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
 
 
@@ -1176,7 +1204,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVData
 :PIVData rdf:type owl:NamedIndividual ,
-                  :PIVDistributionType ;
+                  :DataType ;
          rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
          <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data"@en .
@@ -1184,14 +1212,14 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImage
 :PIVImage rdf:type owl:NamedIndividual ,
-                   :PIVDistributionType ;
+                   :DataType ;
           <http://www.w3.org/2004/02/skos/core#definition> "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en ;
           <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVMask
 :PIVMask rdf:type owl:NamedIndividual ,
-                  :PIVDistributionType ;
+                  :DataType ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV mask"@en .
 
 
@@ -1245,7 +1273,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
 :SyntheticImage rdf:type owl:NamedIndividual ,
-                         :PIVDistributionType ;
+                         :DataType ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "synthetic image"@en .
 
 

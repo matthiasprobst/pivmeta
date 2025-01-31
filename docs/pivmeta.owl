@@ -480,6 +480,31 @@
     
 
 
+    <!-- https://matthiasprobst.github.io/pivmeta#hasPIVDataType -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasPIVDataType">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/type"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
+        <skos:definition xml:lang="en">relates the PIV data type to a distribution</skos:definition>
+        <skos:prefLabel xml:lang="en">has PIV data type</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#hasVariable -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasVariable">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
+        <rdfs:range rdf:resource="http://www.molmod.info/semantics/pims-ii.ttl#Variable"/>
+        <skos:definition xml:lang="en">Relates a PIV Variable to a distribution</skos:definition>
+        <skos:prefLabel xml:lang="en">has variable</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction -->
 
 
@@ -488,18 +513,6 @@
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#WindowWeightingFunction"/>
         <skos:definition xml:lang="en">Points to the window weighting function used by the correlation method.</skos:definition>
         <skos:prefLabel xml:lang="en">has window weighting function</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#isPIVDistributionType -->
-
-
-    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#isPIVDistributionType">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/type"/>
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
-        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistributionType"/>
-        <skos:prefLabel xml:lang="en">isPIVDistributionType</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -678,7 +691,7 @@ A JSON-LD excerpt could look like this:
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <skos:definition xml:lang="en">The bit depth of an image</skos:definition>
-        <skos:prefLabel xml:lang="en">bit depth</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">image bit depth</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -978,6 +991,17 @@ A JSON-LD excerpt could look like this:
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <skos:definition xml:lang="en">The correlation method used by the PIV evaluation process</skos:definition>
         <skos:prefLabel xml:lang="en">correlation method</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#DataType -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#DataType">
+        <skos:closeMatch rdf:resource="http://purl.org/dc/terms/DCMIType"/>
+        <skos:definition xml:lang="en">The type of the distribution</skos:definition>
+        <skos:prefLabel xml:lang="en">piv data type</skos:prefLabel>
     </owl:Class>
     
 
@@ -1298,19 +1322,14 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVDistribution">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasPIVDataType"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <skos:definition xml:lang="en">A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content.</skos:definition>
         <skos:prefLabel xml:lang="en">PIV distribution</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#PIVDistributionType -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVDistributionType">
-        <skos:closeMatch rdf:resource="http://purl.org/dc/terms/DCMIType"/>
-        <skos:definition xml:lang="en">The type of distribution</skos:definition>
-        <skos:prefLabel xml:lang="en">PIV distribution type</skos:prefLabel>
     </owl:Class>
     
 
@@ -1343,12 +1362,30 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">
         <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasPIVDataType"/>
+                        <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#ExperimentalImage"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasPIVDataType"/>
+                        <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVImage"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasPIVDataType"/>
+                        <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#SyntheticImage"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#imageBitDepth"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
+        </rdfs:subClassOf>
         <skos:definition xml:lang="en">A distribution holding a PIV image</skos:definition>
         <skos:prefLabel xml:lang="en">PIV image distribution</skos:prefLabel>
     </owl:Class>
@@ -1731,7 +1768,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistributionType"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
         <skos:prefLabel xml:lang="en">experimental image</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1874,7 +1911,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#PIVData">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistributionType"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
         <rdfs:comment xml:lang="en">Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types.</rdfs:comment>
         <skos:definition xml:lang="en">Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods.</skos:definition>
         <skos:prefLabel xml:lang="en">PIV data</skos:prefLabel>
@@ -1886,7 +1923,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#PIVImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistributionType"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
         <skos:definition xml:lang="en">An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement.</skos:definition>
         <skos:prefLabel xml:lang="en">PIV image</skos:prefLabel>
     </owl:NamedIndividual>
@@ -1897,7 +1934,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#PIVMask">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistributionType"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
         <skos:prefLabel xml:lang="en">PIV mask</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -1983,7 +2020,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#SyntheticImage">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistributionType"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#DataType"/>
         <skos:prefLabel xml:lang="en">synthetic image</skos:prefLabel>
     </owl:NamedIndividual>
     
