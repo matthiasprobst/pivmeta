@@ -49,6 +49,7 @@ class TestGraph(unittest.TestCase):
             if p not in (rdflib.RDF.first, rdflib.RDF.rest,
                          rdflib.OWL.members,
                          rdflib.OWL.onClass,
+                         rdflib.OWL.hasValue,
                          rdflib.URIRef("http://www.w3.org/2002/07/owl#minQualifiedCardinality"),
                          rdflib.OWL.unionOf) and o != rdflib.OWL.Class and o != rdflib.OWL.Restriction and p != rdflib.OWL.onProperty and p != rdflib.OWL.inverseOf and p != rdflib.OWL.someValuesFrom and p != rdflib.OWL.allValuesFrom:
                 if o not in rdflib.OWL.AllDisjointClasses:
