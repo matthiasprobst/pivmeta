@@ -284,21 +284,21 @@ xsd:date rdf:type rdfs:Datatype .
         <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#hasDataType
-:hasDataType rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
-             rdfs:domain :PIVDistribution ;
-             rdfs:range :DataType ;
-             <http://www.w3.org/2004/02/skos/core#definition> "relates the PIV data type to a distribution"@en ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#hasMetric
 :hasMetric rdf:type owl:ObjectProperty ;
            rdfs:domain :PIVDistribution ;
            rdfs:range <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
            <http://www.w3.org/2004/02/skos/core#definition> "A numerical value derived from or related to the distribution's content."@en ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "has metric"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#hasPIVDataType
+:hasPIVDataType rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/terms/type> ;
+                rdfs:domain :PIVDistribution ;
+                rdfs:range :PIVDataType ;
+                <http://www.w3.org/2004/02/skos/core#definition> "relates the PIV data type to a distribution"@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction
@@ -591,13 +591,6 @@ A JSON-LD excerpt could look like this:
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "correlation method"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#DataType
-:DataType rdf:type owl:Class ;
-          <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/terms/DCMIType> ;
-          <http://www.w3.org/2004/02/skos/core#definition> "The type of the distribution"@en ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "piv data type"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#DigitalCamera
 :DigitalCamera rdf:type owl:Class ;
                rdfs:subClassOf :Camera ;
@@ -760,7 +753,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVAnalysis
 :PIVAnalysis rdf:type owl:Class ;
-             rdfs:subClassOf :PIVProcessingStep ;
+             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
+             owl:disjointWith :PIVProcessingStep ;
              <http://www.w3.org/2004/02/skos/core#definition> "High-level PIV Analysis processing step. All other PIV Processing steps like recording, pre processing, evaluation and post processing should be references using startsWith and endsWith"@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Analysis"@en .
 
@@ -787,6 +781,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV calibration"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#PIVDataType
+:PIVDataType rdf:type owl:Class ;
+             <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/dc/terms/DCMIType> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "The type of the distribution"@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data type"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#PIVDataset
 :PIVDataset rdf:type owl:Class ;
             rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ,
@@ -806,8 +807,8 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :PIVDistribution rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty :hasDataType ;
-                                   owl:someValuesFrom :DataType
+                                   owl:onProperty :hasPIVDataType ;
+                                   owl:someValuesFrom :PIVDataType
                                  ] ;
                  <http://www.w3.org/2004/02/skos/core#definition> "A PIV-specific distribution. Subclasses of it are image mask and result distribution which should be used rather than this class. The subclasses describe more clearly the distribution content."@en ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV distribution"@en .
@@ -867,7 +868,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#PIVProcessingStep
 :PIVProcessingStep rdf:type owl:Class ;
                    rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
-                   <http://www.w3.org/2004/02/skos/core#definition> "Processing step of a PIV measurement. The concrete subclasses should be used to clearly define the individual steps in their order to enable tracability of a PIV measurement."@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Individual processing step of a PIV measurement. The concrete subclasses should be used to clearly define the individual steps in their order to enable tracability of a PIV measurement."@en ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Processing step"@en .
 
 
@@ -1063,7 +1064,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalImage
 :ExperimentalImage rdf:type owl:NamedIndividual ,
-                            :DataType ;
+                            :PIVDataType ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental image"@en .
 
 
@@ -1153,7 +1154,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVData
 :PIVData rdf:type owl:NamedIndividual ,
-                  :DataType ;
+                  :PIVDataType ;
          rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
          <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data"@en .
@@ -1161,14 +1162,14 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVImage
 :PIVImage rdf:type owl:NamedIndividual ,
-                   :DataType ;
+                   :PIVDataType ;
           <http://www.w3.org/2004/02/skos/core#definition> "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en ;
           <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVMask
 :PIVMask rdf:type owl:NamedIndividual ,
-                  :DataType ;
+                  :PIVDataType ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV mask"@en .
 
 
@@ -1222,7 +1223,7 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#SyntheticImage
 :SyntheticImage rdf:type owl:NamedIndividual ,
-                         :DataType ;
+                         :PIVDataType ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "synthetic image"@en .
 
 
@@ -1259,19 +1260,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 #################################################################
 #    General axioms
 #################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :PIVAnalysis
-                :PIVBackgroundGeneration
-                :PIVCalibration
-                :PIVEvaluation
-                :PIVMaskGeneration
-                :PIVPostProcessing
-                :PIVPreProcessing
-                :PIVRecording
-              )
-] .
-
 
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :ExperimentalImage
