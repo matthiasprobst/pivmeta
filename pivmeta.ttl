@@ -301,19 +301,19 @@ pivmeta:flagIn rdf:type owl:ObjectProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#hasDataType
 pivmeta:hasDataType rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf dcterms:type ;
-                       rdfs:domain pivmeta:PIVDistribution ;
-                       rdfs:range pivmeta:DataType ;
-                       skos:definition "relates the PIV data type to a distribution"@en ;
-                       skos:prefLabel "has PIV data type"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#hasVariable
-pivmeta:hasVariable rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf dcterms:type ;
                     rdfs:domain pivmeta:PIVDistribution ;
-                    rdfs:range pims-ii:Variable ;
-                    skos:definition "Relates a PIV Variable to a distribution"@en ;
-                    skos:prefLabel "has variable"@en .
+                    rdfs:range pivmeta:DataType ;
+                    skos:definition "relates the PIV data type to a distribution"@en ;
+                    skos:prefLabel "has PIV data type"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#hasMetric
+pivmeta:hasMetric rdf:type owl:ObjectProperty ;
+                  rdfs:domain pivmeta:PIVDistribution ;
+                  rdfs:range pims-ii:Variable ;
+                  skos:definition "A numerical value derived from or related to the distribution's content."@en ;
+                  skos:prefLabel "has metric"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction

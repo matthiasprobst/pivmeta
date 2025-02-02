@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing Particle Image Velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-01-31", "version":"v2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing Particle Image Velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-02-02", "version":"v2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -70,7 +70,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2025-01-31</dt>
+<dt>Modified on: 2025-02-02</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/2.0.0">https://matthiasprobst.github.io/pivmeta/2.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -80,7 +80,7 @@ $(function(){
 <dt>Revision:</dt>
 <dd>v2.0.0</dd>
 <dt>Issued on:</dt>
-<dd>2025-01-31</dd>
+<dd>2025-02-02</dd>
 <dt>Authors:</dt>
 <dd><a href="https://orcid.org/0000-0001-8729-0482">Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery</a></dd>
 
@@ -433,6 +433,10 @@ This ontology has the following classes and properties.</span>
          title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a>
    </li>
    <li>
+      <a href="#hasMetric"
+         title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a>
+   </li>
+   <li>
       <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter"
          title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a>
    </li>
@@ -449,10 +453,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#https://matthiasprobst.github.io/ssno#hasStandardName"
          title="https://matthiasprobst.github.io/ssno#hasStandardName">has standard name</a>
-   </li>
-   <li>
-      <a href="#hasVariable"
-         title="https://matthiasprobst.github.io/pivmeta#hasVariable">has variable</a>
    </li>
    <li>
       <a href="#hasWindowWeightingFunction"
@@ -1568,7 +1568,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#filenamePattern" title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasDataType" title="https://matthiasprobst.github.io/pivmeta#hasDataType">has PIV data type</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasVariable" title="https://matthiasprobst.github.io/pivmeta#hasVariable">has variable</a> <sup class="type-op" title="object property">op</sup>, <a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">image bit depth</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#filenamePattern" title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasDataType" title="https://matthiasprobst.github.io/pivmeta#hasDataType">has PIV data type</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasMetric" title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a> <sup class="type-op" title="object property">op</sup>, <a href="#imageBitDepth" title="https://matthiasprobst.github.io/pivmeta#imageBitDepth">image bit depth</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
@@ -2034,7 +2034,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in range of
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasVariable" title="https://matthiasprobst.github.io/pivmeta#hasVariable">has variable</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasMetric" title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2165,12 +2165,12 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a></li>
   <li><a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a></li>
+  <li><a href="#hasMetric" title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">has part</a></li>
   <li><a href="#hasDataType" title="https://matthiasprobst.github.io/pivmeta#hasDataType">has PIV data type</a></li>
   <li><a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#hasStandardName" title="https://matthiasprobst.github.io/ssno#hasStandardName">has standard name</a></li>
-  <li><a href="#hasVariable" title="https://matthiasprobst.github.io/pivmeta#hasVariable">has variable</a></li>
   <li><a href="#hasWindowWeightingFunction" title="https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction">has window weighting function</a></li>
   <li><a href="#http://purl.obolibrary.org/obo/RO_0002090" title="http://purl.obolibrary.org/obo/RO_0002090">immediately precedes</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn" title="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn">is employed tool</a></li>
@@ -2288,6 +2288,29 @@ This section provides details for each class and property defined by PIVMeta.
    </dl>
   </div>
  </div>
+ <div class="entity" id="hasMetric">
+  <h3>has metric<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#hasMetric</p>
+  <div class="comment">
+   <span class="markdown">A numerical value derived from or related to the distribution's content.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#PIVDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.molmod.info/semantics/pims-ii.ttl#Variable" title="http://www.molmod.info/semantics/pims-ii.ttl#Variable">variable</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">
   <h3>has parameter<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://w3id.org/nfdi4ing/metadata4ing#hasParameter</p>
@@ -2400,29 +2423,6 @@ This section provides details for each class and property defined by PIVMeta.
     </dt>
     <dd>
      <a href="https://matthiasprobst.github.io/ssno#StandardName" target="_blank" title="https://matthiasprobst.github.io/ssno#StandardName">Standard Name</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="hasVariable">
-  <h3>has variable<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#hasVariable</p>
-  <div class="comment">
-   <span class="markdown">Relates a PIV Variable to a distribution</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#PIVDistribution" title="https://matthiasprobst.github.io/pivmeta#PIVDistribution">PIV distribution</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#http://www.molmod.info/semantics/pims-ii.ttl#Variable" title="http://www.molmod.info/semantics/pims-ii.ttl#Variable">variable</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>

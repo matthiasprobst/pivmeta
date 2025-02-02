@@ -293,12 +293,12 @@ xsd:date rdf:type rdfs:Datatype .
              <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#hasVariable
-:hasVariable rdf:type owl:ObjectProperty ;
-             rdfs:domain :PIVDistribution ;
-             rdfs:range <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
-             <http://www.w3.org/2004/02/skos/core#definition> "Relates a PIV Variable to a distribution"@en ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "has variable"@en .
+###  https://matthiasprobst.github.io/pivmeta#hasMetric
+:hasMetric rdf:type owl:ObjectProperty ;
+           rdfs:domain :PIVDistribution ;
+           rdfs:range <http://www.molmod.info/semantics/pims-ii.ttl#Variable> ;
+           <http://www.w3.org/2004/02/skos/core#definition> "A numerical value derived from or related to the distribution's content."@en ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "has metric"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction
