@@ -424,31 +424,6 @@ A JSON-LD excerpt could look like this:
               <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag value"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#imageBitDepth
-:imageBitDepth rdf:type owl:DatatypeProperty ;
-               rdfs:domain :PIVDistribution ;
-               rdfs:range xsd:positiveInteger ;
-               <http://www.w3.org/2004/02/skos/core#definition> "The bit depth of an image"@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "image bit depth"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#numberOfImages
-:numberOfImages rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:positiveInteger ;
-                owl:propertyDisjointWith :numberOfRecords ;
-                <http://www.w3.org/2004/02/skos/core#definition> "Number of images taken into account for a process or method"@en ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "number of images"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#numberOfRecords
-:numberOfRecords rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf owl:topDataProperty ;
-                 rdfs:domain :PIVDataset ;
-                 rdfs:range xsd:positiveInteger ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process."@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "number of records"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#timeFormat
 :timeFormat rdf:type owl:DatatypeProperty ;
             rdfs:domain :TemporalVariable ;
@@ -851,32 +826,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                                ] ;
                <http://www.w3.org/2004/02/skos/core#definition> "Main step of a PIV evlauation applying the methods to determine the velocity"@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV evaluation"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PIVImageDistribution
-:PIVImageDistribution rdf:type owl:Class ;
-                      owl:equivalentClass [ rdf:type owl:Class ;
-                                            owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :hasDataType ;
-                                                            owl:hasValue :ExperimentalImage
-                                                          ]
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :hasDataType ;
-                                                            owl:hasValue :PIVImage
-                                                          ]
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :hasDataType ;
-                                                            owl:hasValue :SyntheticImage
-                                                          ]
-                                                        )
-                                          ] ;
-                      rdfs:subClassOf :PIVDistribution ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :imageBitDepth ;
-                                        owl:someValuesFrom xsd:positiveInteger
-                                      ] ;
-                      <http://www.w3.org/2004/02/skos/core#definition> "A distribution holding a PIV image"@en ;
-                      <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image distribution"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration

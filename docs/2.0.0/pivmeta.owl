@@ -684,43 +684,6 @@ A JSON-LD excerpt could look like this:
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#imageBitDepth -->
-
-
-    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#imageBitDepth">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <skos:definition xml:lang="en">The bit depth of an image</skos:definition>
-        <skos:prefLabel xml:lang="en">image bit depth</skos:prefLabel>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#numberOfImages -->
-
-
-    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#numberOfImages">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <owl:propertyDisjointWith rdf:resource="https://matthiasprobst.github.io/pivmeta#numberOfRecords"/>
-        <skos:definition xml:lang="en">Number of images taken into account for a process or method</skos:definition>
-        <skos:prefLabel xml:lang="en">number of images</skos:prefLabel>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#numberOfRecords -->
-
-
-    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#numberOfRecords">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDataset"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <skos:definition xml:lang="en">The number of records. A record describes the number of images needed for the evaluation of a single PIV velocity field. E.g. a double image recording stored in two separate files A1.tiff and B1.tiff counts as one record. Hence, the number of records correspond to the number of velocity fields, if all records are taken into account in the evluation process.</skos:definition>
-        <skos:prefLabel xml:lang="en">number of records</skos:prefLabel>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#timeFormat -->
 
 
@@ -1353,41 +1316,6 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</rdfs:comment>
         </rdfs:subClassOf>
         <skos:definition xml:lang="en">Main step of a PIV evlauation applying the methods to determine the velocity</skos:definition>
         <skos:prefLabel xml:lang="en">PIV evaluation</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#PIVImageDistribution -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVImageDistribution">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasDataType"/>
-                        <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#ExperimentalImage"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasDataType"/>
-                        <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVImage"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasDataType"/>
-                        <owl:hasValue rdf:resource="https://matthiasprobst.github.io/pivmeta#SyntheticImage"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVDistribution"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#imageBitDepth"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <skos:definition xml:lang="en">A distribution holding a PIV image</skos:definition>
-        <skos:prefLabel xml:lang="en">PIV image distribution</skos:prefLabel>
     </owl:Class>
     
 
