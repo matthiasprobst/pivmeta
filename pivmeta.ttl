@@ -307,7 +307,7 @@ piv:flagIn rdf:type owl:ObjectProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#hasMetric
 piv:hasMetric rdf:type owl:ObjectProperty ;
-              rdfs:domain piv:VelocimetryDistribution ;
+              rdfs:domain piv:ImageVelocimetryDistribution ;
               rdfs:range pims-ii:Variable ;
               skos:definition "A numerical value derived from or related to the distribution's content."@en ;
               skos:prefLabel "has metric"@en .
@@ -316,7 +316,7 @@ piv:hasMetric rdf:type owl:ObjectProperty ;
 ###  https://matthiasprobst.github.io/pivmeta#hasPIVDataType
 piv:hasPIVDataType rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf dcterms:type ;
-                   rdfs:domain piv:VelocimetryDistribution ;
+                   rdfs:domain piv:ImageVelocimetryDistribution ;
                    rdfs:range piv:PIVDataType ;
                    skos:definition "relates the PIV data type to a distribution"@en ;
                    skos:prefLabel "has PIV data type"@en .
@@ -326,7 +326,7 @@ piv:hasPIVDataType rdf:type owl:ObjectProperty ;
 piv:hasSetup rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf obo:BFO_0000051 ;
              owl:inverseOf piv:isSetupFor ;
-             rdfs:domain piv:VelocimetryDataset ;
+             rdfs:domain piv:ImageVelocimetryDataset ;
              rdfs:range piv:Setup ;
              skos:definition "Relates a dataset to the setup used to generate it."@en ;
              skos:prefLabel "has setup"@en .
@@ -344,7 +344,7 @@ piv:hasWindowWeightingFunction rdf:type owl:ObjectProperty ;
 piv:isSetupFor rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf obo:BFO_0000050 ;
                rdfs:domain piv:Setup ;
-               rdfs:range piv:VelocimetryDataset ;
+               rdfs:range piv:ImageVelocimetryDataset ;
                skos:definition "Relates a setup to the dataset(s) it was used for."@en ;
                skos:prefLabel "is setup for"@en .
 
@@ -408,7 +408,7 @@ m4i:hasValue rdf:type owl:DatatypeProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#filenamePattern
 piv:filenamePattern rdf:type owl:DatatypeProperty ;
-                    rdfs:domain piv:VelocimetryDistribution ;
+                    rdfs:domain piv:ImageVelocimetryDistribution ;
                     rdfs:range xsd:string ;
                     skos:definition "The regular expression string to determine the image filenames in the distribution."@en ;
                     skos:prefLabel "filename pattern"@en .
@@ -643,28 +643,28 @@ piv:DigitalCamera rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalSetup
 piv:ExperimentalSetup rdf:type owl:Class ;
-                         rdfs:subClassOf emmo:EMMO_22522299_4091_4d1f_82a2_3890492df6db ,
-                                         piv:Setup ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty obo:BFO_0000051 ;
-                                           owl:someValuesFrom piv:DigitalCamera
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty obo:BFO_0000051 ;
-                                           owl:someValuesFrom piv:Laser
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty obo:BFO_0000051 ;
-                                           owl:someValuesFrom piv:PIVParticle
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty m4i:hasEmployedTool ;
-                                           owl:someValuesFrom piv:PIVSoftware
-                                         ] ;
-                         owl:disjointWith piv:VirtualSetup ;
-                         rdfs:comment "Use prov:hasPart to relate the tools used."@en ;
-                         skos:definition "An experimental setup applying the Particle Image or Tracking Velocimetry method. The class should be related to the tools used in the experiment."@en ;
-                         skos:prefLabel "experimental setup"@en .
+                      rdfs:subClassOf emmo:EMMO_22522299_4091_4d1f_82a2_3890492df6db ,
+                                      piv:Setup ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty obo:BFO_0000051 ;
+                                        owl:someValuesFrom piv:DigitalCamera
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty obo:BFO_0000051 ;
+                                        owl:someValuesFrom piv:Laser
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty obo:BFO_0000051 ;
+                                        owl:someValuesFrom piv:PIVParticle
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty m4i:hasEmployedTool ;
+                                        owl:someValuesFrom piv:PIVSoftware
+                                      ] ;
+                      owl:disjointWith piv:VirtualSetup ;
+                      rdfs:comment "Use prov:hasPart to relate the tools used."@en ;
+                      skos:definition "An experimental setup applying the Particle Image or Tracking Velocimetry method. The class should be related to the tools used in the experiment."@en ;
+                      skos:prefLabel "experimental setup"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagStatistics
@@ -694,6 +694,35 @@ piv:ImageManipulationMethod rdf:type owl:Class ;
 ###  https://matthiasprobst.github.io/pivmeta#ImageManipulationType
 piv:ImageManipulationType rdf:type owl:Class ;
                           rdfs:subClassOf skos:Concept .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ImageVelocimetryDataset
+piv:ImageVelocimetryDataset rdf:type owl:Class ;
+                            rdfs:subClassOf dcat:Dataset ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty obo:BFO_0000051 ;
+                                              owl:someValuesFrom piv:Setup
+                                            ] ;
+                            skos:definition "A dataset holding data about PIV or PTV"@en ;
+                            skos:prefLabel "Image Velocimetry Dataset"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ImageVelocimetryDistribution
+piv:ImageVelocimetryDistribution rdf:type owl:Class ;
+                                 rdfs:subClassOf dcat:Distribution ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty piv:hasPIVDataType ;
+                                                   owl:someValuesFrom piv:PIVDataType
+                                                 ] ;
+                                 skos:definition "A distribution related to a velocimetry experiment (PIV or PTV)"@en ;
+                                 skos:prefLabel "Image Velocimetry Distribution"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ImageVelocimetryMethod
+piv:ImageVelocimetryMethod rdf:type owl:Class ;
+                           rdfs:subClassOf m4i:Method ;
+                           skos:definition "The velocimetry method applied."@en ;
+                           skos:prefLabel "image velocimetry method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#InterrogationMethod
@@ -798,7 +827,7 @@ piv:PIVAnalysis rdf:type owl:Class ;
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty m4i:realizesMethod ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass piv:VelocimetryMethod
+                                  owl:onClass piv:ImageVelocimetryMethod
                                 ] ;
                 owl:disjointWith piv:PIVProcessingStep ;
                 skos:definition "High-level PIV Analysis processing step. All other PIV Processing steps like recording, pre processing, evaluation and post processing should be references using startsWith and endsWith"@en ;
@@ -836,7 +865,7 @@ piv:PIVDataType rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVDataset
 piv:PIVDataset rdf:type owl:Class ;
-               rdfs:subClassOf piv:VelocimetryDataset ;
+               rdfs:subClassOf piv:ImageVelocimetryDataset ;
                rdfs:comment "Use obo:hasPart to relate a used Tool like a camera or laser to the PIV Dataset"@en ;
                skos:definition "A collection of Particle Image Velocimetry (PIV) data, published or curated by a single agent, and available for access or download in one or more representations."@en ;
                skos:prefLabel "PIV dataset"@en .
@@ -930,7 +959,7 @@ piv:PIVSoftware rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PTVDataset
 piv:PTVDataset rdf:type owl:Class ;
-               rdfs:subClassOf piv:VelocimetryDataset ;
+               rdfs:subClassOf piv:ImageVelocimetryDataset ;
                skos:definition "A collection of Particle Tracking Velocimetry (PIV) data, published or curated by a single agent, and available for access or download in one or more representations."@en ;
                skos:prefLabel "PTV Dataset"@en .
 
@@ -970,35 +999,6 @@ piv:TemporalVariable rdf:type owl:Class ;
                      skos:prefLabel "temporal variable"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#VelocimetryDataset
-piv:VelocimetryDataset rdf:type owl:Class ;
-                       rdfs:subClassOf dcat:Dataset ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty obo:BFO_0000051 ;
-                                         owl:someValuesFrom piv:Setup
-                                       ] ;
-                       skos:definition "A dataset holding data about PIV or PTV"@en ;
-                       skos:prefLabel "Velocimetry Dataset"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#VelocimetryDistribution
-piv:VelocimetryDistribution rdf:type owl:Class ;
-                            rdfs:subClassOf dcat:Distribution ,
-                                            [ rdf:type owl:Restriction ;
-                                              owl:onProperty piv:hasPIVDataType ;
-                                              owl:someValuesFrom piv:PIVDataType
-                                            ] ;
-                            skos:definition "A distribution related to a velocimetry experiment (PIV or PTV)"@en ;
-                            skos:prefLabel "Velocimetry Distribution"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#VelocimetryMethod
-piv:VelocimetryMethod rdf:type owl:Class ;
-                      rdfs:subClassOf m4i:Method ;
-                      skos:definition "The velocimetry method applied."@en ;
-                      skos:prefLabel "velocimetry method"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#VirtualCamera
 piv:VirtualCamera rdf:type owl:Class ;
                   rdfs:subClassOf piv:Camera ,
@@ -1017,22 +1017,22 @@ piv:VirtualLaser rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#VirtualSetup
 piv:VirtualSetup rdf:type owl:Class ;
-                    rdfs:subClassOf emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ,
-                                    piv:Setup ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty obo:BFO_0000051 ;
-                                      owl:someValuesFrom piv:PIVParticle
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty obo:BFO_0000051 ;
-                                      owl:someValuesFrom piv:VirtualCamera
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty obo:BFO_0000051 ;
-                                      owl:someValuesFrom piv:VirtualLaser
-                                    ] ;
-                    skos:definition "A simulation that relies on physics based models for a PIV Experiment."@en ;
-                    skos:prefLabel "virtual setup"@en .
+                 rdfs:subClassOf emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ,
+                                 piv:Setup ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty obo:BFO_0000051 ;
+                                   owl:someValuesFrom piv:PIVParticle
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty obo:BFO_0000051 ;
+                                   owl:someValuesFrom piv:VirtualCamera
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty obo:BFO_0000051 ;
+                                   owl:someValuesFrom piv:VirtualLaser
+                                 ] ;
+                 skos:definition "A simulation that relies on physics based models for a PIV Experiment."@en ;
+                 skos:prefLabel "virtual setup"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#VirtualTool
@@ -1233,7 +1233,7 @@ piv:PER-PIXEL rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#PIV
 piv:PIV rdf:type owl:NamedIndividual ,
-                 piv:VelocimetryMethod ;
+                 piv:ImageVelocimetryMethod ;
         rdfs:seeAlso <https://www.wikidata.org/wiki/Q1756248> ;
         skos:definition "Method to measure velocities in fluid."@en ;
         skos:prefLabel "Particle Image Velocimetry"@en .
@@ -1241,7 +1241,7 @@ piv:PIV rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#PTV
 piv:PTV rdf:type owl:NamedIndividual ,
-                 piv:VelocimetryMethod ;
+                 piv:ImageVelocimetryMethod ;
         rdfs:seeAlso <https://www.wikidata.org/wiki/Q7140505> ;
         skos:definition "A measurement technique to measure the velocity of particles."@en ;
         skos:prefLabel "Particle Tracking Velocimetry"@en .
@@ -1312,7 +1312,7 @@ piv:TukeyWindow rdf:type owl:NamedIndividual ,
 
 ###  https://matthiasprobst.github.io/pivmeta#microPIV
 piv:microPIV rdf:type owl:NamedIndividual ,
-                      piv:VelocimetryMethod ;
+                      piv:ImageVelocimetryMethod ;
              skos:definition "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en ;
              skos:prefLabel "Micro Particle Image Velocimetry"@en .
 
