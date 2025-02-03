@@ -49,16 +49,16 @@
         "value" : "PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups.",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://matthiasprobst.github.io/pivmeta#",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "v2.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://matthiasprobst.github.io/pivmeta#",
         "type" : "label"
       } ],
       "title" : [ {
@@ -152,10 +152,10 @@
     "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "81",
+    "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "4",
+    "id" : "82",
     "type" : "owl:Class"
   }, {
     "id" : "22",
@@ -165,6 +165,9 @@
     "type" : "owl:Class"
   }, {
     "id" : "86",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
     "type" : "owl:Class"
   }, {
     "id" : "92",
@@ -251,7 +254,7 @@
     "id" : "113",
     "type" : "owl:Class"
   }, {
-    "id" : "82",
+    "id" : "81",
     "type" : "owl:Class"
   }, {
     "id" : "19",
@@ -266,10 +269,10 @@
     "id" : "80",
     "type" : "owl:equivalentClass"
   }, {
-    "id" : "10",
+    "id" : "1",
     "type" : "owl:Class"
   }, {
-    "id" : "1",
+    "id" : "10",
     "type" : "owl:Class"
   }, {
     "id" : "140",
@@ -282,6 +285,9 @@
     "type" : "owl:Class"
   }, {
     "id" : "142",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
     "type" : "owl:Class"
   }, {
     "id" : "53",
@@ -302,16 +308,13 @@
     "id" : "44",
     "type" : "owl:Class"
   }, {
-    "id" : "37",
-    "type" : "owl:Class"
-  }, {
     "id" : "61",
     "type" : "owl:Class"
   }, {
-    "id" : "129",
+    "id" : "37",
     "type" : "owl:Class"
   }, {
-    "id" : "64",
+    "id" : "129",
     "type" : "owl:Class"
   }, {
     "id" : "27",
@@ -342,9 +345,6 @@
     "type" : "owl:Class"
   }, {
     "id" : "56",
-    "type" : "owl:Class"
-  }, {
-    "id" : "32",
     "type" : "owl:Class"
   }, {
     "id" : "34",
@@ -1021,7 +1021,7 @@
     "label" : {
       "IRI-based" : "Setup"
     },
-    "subClasses" : [ "32", "64" ],
+    "subClasses" : [ "64", "32" ],
     "id" : "18"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#VirtualCamera",
@@ -1148,6 +1148,17 @@
     "id" : "8",
     "superClasses" : [ "3" ]
   }, {
+    "iri" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
+    "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ProcessingStep"
+    },
+    "subClasses" : [ "81", "3" ],
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "47" ]
+  }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
     "instances" : 0,
@@ -1168,19 +1179,8 @@
     "label" : {
       "IRI-based" : "OutlierDetectionMethod"
     },
-    "id" : "81",
+    "id" : "82",
     "superClasses" : [ "14" ]
-  }, {
-    "iri" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
-    "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "ProcessingStep"
-    },
-    "subClasses" : [ "82", "3" ],
-    "attributes" : [ "external" ],
-    "id" : "4",
-    "superClasses" : [ "47" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/ssno#StandardName",
     "baseIri" : "https://matthiasprobst.github.io/ssno",
@@ -1237,6 +1237,32 @@
     "subClasses" : [ "87" ],
     "attributes" : [ "external" ],
     "id" : "86"
+  }, {
+    "iri" : "https://matthiasprobst.github.io/pivmeta#ExperimentalSetup",
+    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "experimental setup",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An experimental setup applying the Particle Image or Tracking Velocimetry method. The class should be related to the tools used in the experiment.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ExperimentalSetup"
+    },
+    "comment" : {
+      "en" : "Use prov:hasPart to relate the tools used."
+    },
+    "id" : "64",
+    "superClasses" : [ "63", "18" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Organization",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -1543,12 +1569,12 @@
   }, {
     "instances" : 0,
     "union" : [ "83", "96" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "104"
   }, {
     "instances" : 0,
     "union" : [ "32", "50" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "2"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -1644,12 +1670,12 @@
     "label" : {
       "IRI-based" : "Q1146001"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "109"
   }, {
     "instances" : 0,
     "union" : [ "14", "62", "50" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "110"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation",
@@ -1677,7 +1703,7 @@
   }, {
     "instances" : 0,
     "union" : [ "32", "50" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "85"
   }, {
     "iri" : "https://schema.org/CreativeWork",
@@ -1827,7 +1853,7 @@
     "label" : {
       "IRI-based" : "PIVAnalysis"
     },
-    "id" : "82",
+    "id" : "81",
     "superClasses" : [ "4" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#VelocimetryDataset",
@@ -1874,7 +1900,7 @@
     "label" : {
       "IRI-based" : "Method"
     },
-    "subClasses" : [ "30", "101", "129", "75", "81", "78", "79" ],
+    "subClasses" : [ "30", "101", "129", "75", "82", "78", "79" ],
     "attributes" : [ "external" ],
     "id" : "14",
     "superClasses" : [ "128" ]
@@ -1911,31 +1937,8 @@
     "comment" : {
       "en" : "Class from wikidata representing a Laser"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "80"
-  }, {
-    "iri" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing",
-    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-    "instances" : 0,
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "PIV post processing",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "Processing step after the main evaluation applying methods like validation and filtering.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "PIVPostProcessing"
-    },
-    "id" : "10",
-    "superClasses" : [ "3" ]
   }, {
     "iri" : "https://schema.org/SoftwareSourceCode",
     "baseIri" : "https://schema.org",
@@ -1960,6 +1963,29 @@
     "attributes" : [ "external" ],
     "id" : "1",
     "superClasses" : [ "115" ]
+  }, {
+    "iri" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing",
+    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "PIV post processing",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Processing step after the main evaluation applying methods like validation and filtering.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PIVPostProcessing"
+    },
+    "id" : "10",
+    "superClasses" : [ "3" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#Singlepass",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
@@ -2213,6 +2239,29 @@
     "attributes" : [ "external" ],
     "id" : "142"
   }, {
+    "iri" : "https://matthiasprobst.github.io/pivmeta#VirtualSetup",
+    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "virtual setup",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A simulation that relies on physics based models for a PIV Experiment.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "VirtualSetup"
+    },
+    "id" : "32",
+    "superClasses" : [ "31", "18" ]
+  }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
     "id" : "53",
@@ -2289,6 +2338,30 @@
     "attributes" : [ "external" ],
     "id" : "44"
   }, {
+    "iri" : "https://matthiasprobst.github.io/pivmeta#LensSystem",
+    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "lens system",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A number of lenses used in combination.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "LensSystem"
+    },
+    "subClasses" : [ "60" ],
+    "id" : "61",
+    "superClasses" : [ "71" ]
+  }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#TextVariable",
     "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
     "instances" : 0,
@@ -2313,30 +2386,6 @@
     "attributes" : [ "external" ],
     "id" : "37",
     "superClasses" : [ "43" ]
-  }, {
-    "iri" : "https://matthiasprobst.github.io/pivmeta#LensSystem",
-    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-    "instances" : 0,
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "lens system",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "A number of lenses used in combination.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "LensSystem"
-    },
-    "subClasses" : [ "60" ],
-    "id" : "61",
-    "superClasses" : [ "71" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#PeakSearchMethod",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
@@ -2363,32 +2412,6 @@
     },
     "id" : "129",
     "superClasses" : [ "14" ]
-  }, {
-    "iri" : "https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup",
-    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-    "instances" : 0,
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "experimental setup",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "An experimental setup applying the Particle Image or Tracking Velocimetry method. The class should be related to the tools used in the experiment.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ExperimentalPIVSetup"
-    },
-    "comment" : {
-      "en" : "Use prov:hasPart to relate the tools used."
-    },
-    "id" : "64",
-    "superClasses" : [ "63", "18" ]
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable",
     "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
@@ -2487,13 +2510,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "realizable entity",
+        "language" : "de",
+        "value" : "realisierbare Entität",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "realisierbare Entität",
+        "language" : "en",
+        "value" : "realizable entity",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -2613,29 +2636,6 @@
     },
     "id" : "56",
     "superClasses" : [ "78" ]
-  }, {
-    "iri" : "https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup",
-    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-    "instances" : 0,
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "virtual setup",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "A simulation that relies on physics based models for a PIV Experiment.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "VirtualPIVSetup"
-    },
-    "id" : "32",
-    "superClasses" : [ "31", "18" ]
   }, {
     "iri" : "http://www.w3.org/ns/dcat#Dataset",
     "baseIri" : "http://www.w3.org/ns/dcat",
@@ -3027,10 +3027,10 @@
     "type" : "owl:someValuesFrom"
   }, {
     "id" : "192",
-    "type" : "owl:someValuesFrom"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "193",
-    "type" : "owl:disjointWith"
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "194",
     "type" : "rdfs:SubClassOf"
@@ -3105,7 +3105,7 @@
       "IRI-based" : "isSourceCodeOf"
     },
     "domain" : "1",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "0"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#realizesMethod",
@@ -3129,7 +3129,7 @@
       "IRI-based" : "realizesMethod"
     },
     "domain" : "4",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "13"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn",
@@ -3153,7 +3153,7 @@
       "IRI-based" : "isEmployedToolIn"
     },
     "domain" : "16",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "15"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#isSetupFor",
@@ -3208,7 +3208,7 @@
       "IRI-based" : "standardName"
     },
     "domain" : "22",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "21"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue",
@@ -3218,7 +3218,7 @@
       "IRI-based" : "hasNumericalValue"
     },
     "domain" : "27",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "26"
   }, {
     "iri" : "http://www.w3.org/ns/dcat#distribution",
@@ -3242,7 +3242,7 @@
       "IRI-based" : "distribution"
     },
     "domain" : "34",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "33"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#hasMetric",
@@ -3291,7 +3291,7 @@
     },
     "domain" : "47",
     "subproperty" : [ "54" ],
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "52"
   }, {
     "iri" : "https://matthiasprobst.github.io/ssno#withImageDeformation",
@@ -3315,7 +3315,7 @@
       "IRI-based" : "withImageDeformation"
     },
     "domain" : "56",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "55"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#hasSetup",
@@ -3425,7 +3425,7 @@
       "IRI-based" : "unit"
     },
     "domain" : "22",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "76"
   }, {
     "iri" : "https://codemeta.github.io/terms/hasSourceCode",
@@ -3456,7 +3456,7 @@
       "IRI-based" : "hasSourceCode"
     },
     "domain" : "85",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "84"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#fnumber",
@@ -3522,7 +3522,7 @@
       "IRI-based" : "hasValue"
     },
     "domain" : "43",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "94"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -3547,7 +3547,7 @@
     },
     "domain" : "46",
     "subproperty" : [ "99" ],
-    "attributes" : [ "transitive", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive" ],
     "id" : "98"
   }, {
     "iri" : "https://w3id.org/okn/o/sd#hasDocumentation",
@@ -3565,7 +3565,7 @@
       "IRI-based" : "hasDocumentation"
     },
     "domain" : "86",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "107"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -3590,7 +3590,7 @@
     },
     "domain" : "32",
     "subproperty" : [ "58" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "111"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType",
@@ -3615,7 +3615,7 @@
     },
     "superproperty" : [ "114" ],
     "domain" : "42",
-    "attributes" : [ "someValues", "object" ],
+    "attributes" : [ "object", "someValues" ],
     "id" : "112"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -3640,33 +3640,8 @@
     },
     "domain" : "19",
     "subproperty" : [ "58" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "116"
-  }, {
-    "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
-    "baseIri" : "http://purl.obolibrary.org/obo",
-    "range" : "49",
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has part",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "a core relation that holds between a whole and its part",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "BFO_0000051"
-    },
-    "domain" : "32",
-    "subproperty" : [ "58" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
-    "id" : "117"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
     "baseIri" : "http://purl.obolibrary.org/obo",
@@ -3690,7 +3665,32 @@
     },
     "domain" : "32",
     "subproperty" : [ "58" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
+    "id" : "117"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "49",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "has part",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "a core relation that holds between a whole and its part",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "BFO_0000051"
+    },
+    "domain" : "32",
+    "subproperty" : [ "58" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "118"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -3715,7 +3715,7 @@
     },
     "domain" : "11",
     "subproperty" : [ "17" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "119"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -3740,7 +3740,7 @@
     },
     "domain" : "6",
     "subproperty" : [ "99" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "120"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -3765,7 +3765,7 @@
     },
     "domain" : "8",
     "subproperty" : [ "99" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "121"
   }, {
     "range" : "115",
@@ -3860,7 +3860,7 @@
     },
     "superproperty" : [ "98" ],
     "domain" : "46",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "99"
   }, {
     "range" : "50",
@@ -3936,7 +3936,7 @@
     },
     "superproperty" : [ "52" ],
     "domain" : "4",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "54"
   }, {
     "iri" : "https://matthiasprobst.github.io/ssno#hasStandardName",
@@ -3954,7 +3954,7 @@
       "IRI-based" : "hasStandardName"
     },
     "domain" : "27",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "141"
   }, {
     "range" : "3",
@@ -3992,13 +3992,13 @@
     "attributes" : [ "object", "anonymous" ],
     "id" : "149"
   }, {
-    "range" : "61",
-    "domain" : "60",
+    "range" : "37",
+    "domain" : "36",
     "attributes" : [ "object", "anonymous" ],
     "id" : "150"
   }, {
-    "range" : "37",
-    "domain" : "36",
+    "range" : "61",
+    "domain" : "60",
     "attributes" : [ "object", "anonymous" ],
     "id" : "151"
   }, {
@@ -4028,7 +4028,7 @@
       "IRI-based" : "hasParameter"
     },
     "domain" : "110",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "153"
   }, {
     "range" : "71",
@@ -4086,7 +4086,7 @@
     "id" : "159"
   }, {
     "range" : "14",
-    "domain" : "81",
+    "domain" : "82",
     "attributes" : [ "object", "anonymous" ],
     "id" : "160"
   }, {
@@ -4214,7 +4214,7 @@
       "IRI-based" : "wasGeneratedBy"
     },
     "domain" : "34",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "175"
   }, {
     "range" : "62",
@@ -4249,6 +4249,31 @@
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
     "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "93",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "has part",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "a core relation that holds between a whole and its part",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "BFO_0000051"
+    },
+    "domain" : "64",
+    "subproperty" : [ "58" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
+    "id" : "182"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
+    "baseIri" : "http://purl.obolibrary.org/obo",
     "range" : "39",
     "annotations" : {
       "prefLabel" : [ {
@@ -4269,8 +4294,8 @@
     },
     "domain" : "64",
     "subproperty" : [ "58" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
-    "id" : "182"
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
+    "id" : "183"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool",
     "inverse" : "15",
@@ -4295,36 +4320,11 @@
     },
     "superproperty" : [ "52" ],
     "domain" : "64",
-    "attributes" : [ "someValues", "object", "external" ],
-    "id" : "183"
-  }, {
-    "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
-    "baseIri" : "http://purl.obolibrary.org/obo",
-    "range" : "24",
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has part",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "a core relation that holds between a whole and its part",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "BFO_0000051"
-    },
-    "domain" : "64",
-    "subproperty" : [ "58" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "someValues" ],
     "id" : "184"
   }, {
     "range" : "3",
-    "domain" : "82",
+    "domain" : "81",
     "attributes" : [ "object", "anonymous" ],
     "id" : "185"
   }, {
@@ -4380,7 +4380,7 @@
     },
     "domain" : "9",
     "subproperty" : [ "99" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "187"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -4405,7 +4405,7 @@
     },
     "domain" : "5",
     "subproperty" : [ "99" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "188"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool",
@@ -4431,7 +4431,7 @@
     },
     "superproperty" : [ "52" ],
     "domain" : "7",
-    "attributes" : [ "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "someValues" ],
     "id" : "190"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -4456,12 +4456,17 @@
     },
     "domain" : "7",
     "subproperty" : [ "99" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "191"
+  }, {
+    "range" : "32",
+    "domain" : "64",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "192"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
     "baseIri" : "http://purl.obolibrary.org/obo",
-    "range" : "93",
+    "range" : "24",
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
@@ -4481,12 +4486,7 @@
     },
     "domain" : "64",
     "subproperty" : [ "58" ],
-    "attributes" : [ "transitive", "someValues", "object", "external" ],
-    "id" : "192"
-  }, {
-    "range" : "32",
-    "domain" : "64",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "external", "object", "transitive", "someValues" ],
     "id" : "193"
   }, {
     "range" : "86",
@@ -4510,7 +4510,7 @@
     "id" : "197"
   }, {
     "range" : "4",
-    "domain" : "82",
+    "domain" : "81",
     "attributes" : [ "object", "anonymous" ],
     "id" : "198"
   }, {
@@ -4590,7 +4590,7 @@
     },
     "domain" : "16",
     "subproperty" : [ "204" ],
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "114"
   }, {
     "range" : "25",
@@ -4599,12 +4599,12 @@
     "id" : "207"
   }, {
     "range" : "18",
-    "domain" : "64",
+    "domain" : "32",
     "attributes" : [ "object", "anonymous" ],
     "id" : "208"
   }, {
     "range" : "18",
-    "domain" : "32",
+    "domain" : "64",
     "attributes" : [ "object", "anonymous" ],
     "id" : "209"
   } ]

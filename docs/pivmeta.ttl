@@ -249,7 +249,7 @@ xsd:date rdf:type rdfs:Datatype .
 <https://codemeta.github.io/terms/hasSourceCode> rdf:type owl:ObjectProperty ;
                                                  owl:inverseOf <https://codemeta.github.io/terms/isSourceCodeOf> ;
                                                  rdfs:domain [ rdf:type owl:Class ;
-                                                               owl:unionOf ( :VirtualPIVSetup
+                                                               owl:unionOf ( :VirtualSetup
                                                                              :VirtualTool
                                                                            )
                                                              ] ;
@@ -263,7 +263,7 @@ xsd:date rdf:type rdfs:Datatype .
 <https://codemeta.github.io/terms/isSourceCodeOf> rdf:type owl:ObjectProperty ;
                                                   rdfs:domain <https://schema.org/SoftwareSourceCode> ;
                                                   rdfs:range [ rdf:type owl:Class ;
-                                                               owl:unionOf ( :VirtualPIVSetup
+                                                               owl:unionOf ( :VirtualSetup
                                                                              :VirtualTool
                                                                            )
                                                              ] ;
@@ -626,30 +626,30 @@ A JSON-LD excerpt could look like this:
                <http://www.w3.org/2004/02/skos/core#prefLabel> "digital camera"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup
-:ExperimentalPIVSetup rdf:type owl:Class ;
-                      rdfs:subClassOf <http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db> ,
-                                      :Setup ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                        owl:someValuesFrom :DigitalCamera
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                        owl:someValuesFrom :Laser
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                        owl:someValuesFrom :PIVParticle
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty <http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool> ;
-                                        owl:someValuesFrom :PIVSoftware
-                                      ] ;
-                      owl:disjointWith :VirtualPIVSetup ;
-                      rdfs:comment "Use prov:hasPart to relate the tools used."@en ;
-                      <http://www.w3.org/2004/02/skos/core#definition> "An experimental setup applying the Particle Image or Tracking Velocimetry method. The class should be related to the tools used in the experiment."@en ;
-                      <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental setup"@en .
+###  https://matthiasprobst.github.io/pivmeta#ExperimentalSetup
+:ExperimentalSetup rdf:type owl:Class ;
+                   rdfs:subClassOf <http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db> ,
+                                   :Setup ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                     owl:someValuesFrom :DigitalCamera
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                     owl:someValuesFrom :Laser
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                     owl:someValuesFrom :PIVParticle
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool> ;
+                                     owl:someValuesFrom :PIVSoftware
+                                   ] ;
+                   owl:disjointWith :VirtualSetup ;
+                   rdfs:comment "Use prov:hasPart to relate the tools used."@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "An experimental setup applying the Particle Image or Tracking Velocimetry method. The class should be related to the tools used in the experiment."@en ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental setup"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagStatistics
@@ -1000,24 +1000,24 @@ Provide piv:flagMeaning und piv:flagValues with it."""@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "virtual laser"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup
-:VirtualPIVSetup rdf:type owl:Class ;
-                 rdfs:subClassOf <http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> ,
-                                 :Setup ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                   owl:someValuesFrom :PIVParticle
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                   owl:someValuesFrom :VirtualCamera
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                   owl:someValuesFrom :VirtualLaser
-                                 ] ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "A simulation that relies on physics based models for a PIV Experiment."@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "virtual setup"@en .
+###  https://matthiasprobst.github.io/pivmeta#VirtualSetup
+:VirtualSetup rdf:type owl:Class ;
+              rdfs:subClassOf <http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> ,
+                              :Setup ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                owl:someValuesFrom :PIVParticle
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                owl:someValuesFrom :VirtualCamera
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                owl:someValuesFrom :VirtualLaser
+                              ] ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A simulation that relies on physics based models for a PIV Experiment."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "virtual setup"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#VirtualTool
