@@ -8,13 +8,13 @@
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
                                              owl:versionIRI <https://matthiasprobst.github.io/pivmeta/2.0.0> ;
-                                             <http://purl.org/dc/terms/abstract> "This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups."@en ;
+                                             <http://purl.org/dc/terms/abstract> "PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups."@en ;
                                              <http://purl.org/dc/terms/created> "2024-01-03" ;
                                              <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0001-8729-0482> ;
                                              <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
                                              <http://purl.org/dc/terms/modified> "2024-01-03" ;
-                                             <http://purl.org/dc/terms/title> "pivmeta: An ontology draft for describing particle image velocimetry data."@en ;
-                                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "pivmeta" ;
+                                             <http://purl.org/dc/terms/title> "piv: An ontology draft for describing particle image velocimetry data."@en ;
+                                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "piv" ;
                                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://matthiasprobst.github.io/pivmeta#" ;
                                              <http://w3id.org/nfdi4ing/metadata4ing#ContactPerson> "https://orcid.org/0000-0001-8729-0482" ;
                                              rdfs:label "pivmeta" ;
@@ -224,6 +224,14 @@ xsd:date rdf:type rdfs:Datatype .
                                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "is employed tool"@en .
 
 
+###  http://w3id.org/nfdi4ing/metadata4ing#realizesMethod
+<http://w3id.org/nfdi4ing/metadata4ing#realizesMethod> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
+                                                       rdfs:range <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "Points to a method that is used within a given processing step"@en ;
+                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "realizes method" .
+
+
 ###  http://www.w3.org/ns/dcat#distribution
 <http://www.w3.org/ns/dcat#distribution> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <http://www.w3.org/ns/dcat#Dataset> ;
@@ -386,8 +394,8 @@ xsd:date rdf:type rdfs:Datatype .
                 rdfs:domain :FlagVariable ;
                 rdfs:range xsd:string ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en ;
-                <http://www.w3.org/2004/02/skos/core#example> """For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
-pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"""@en ;
+                <http://www.w3.org/2004/02/skos/core#example> """For piv:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
+piv:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"""@en ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag meaning"@en .
 
 
@@ -396,19 +404,19 @@ pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disa
               rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> ;
               rdfs:domain :FlagVariable ;
               rdfs:range xsd:int ;
-              <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en ;
-              <http://www.w3.org/2004/02/skos/core#example> """pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
+              <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by piv:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en ;
+              <http://www.w3.org/2004/02/skos/core#example> """piv:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
 
 The corresponding meaning would be:
-pivmeta:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]
+piv:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]
 
 A flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation.
 
 A JSON-LD excerpt could look like this:
 {
     \"@type\": \"m4i:NumericalVariable\",
-    \"pivmeta:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],
-    \"pivmeta:flagMeanings\": [
+    \"piv:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],
+    \"piv:flagMeanings\": [
         \"inactive\",
         \"active\",
         \"masked\",
@@ -638,7 +646,7 @@ A JSON-LD excerpt could look like this:
               rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
               rdfs:comment """A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.
 
-Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
+Provide piv:flagMeaning und piv:flagValues with it."""@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects flag values as integer values."@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "flag variable"@en .
 
@@ -753,7 +761,12 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVAnalysis
 :PIVAnalysis rdf:type owl:Class ;
-             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
+             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://w3id.org/nfdi4ing/metadata4ing#realizesMethod> ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :VelocimetryMethod
+                             ] ;
              owl:disjointWith :PIVProcessingStep ;
              <http://www.w3.org/2004/02/skos/core#definition> "High-level PIV Analysis processing step. All other PIV Processing steps like recording, pre processing, evaluation and post processing should be references using startsWith and endsWith"@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV Analysis"@en .
@@ -931,8 +944,15 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#TemporalVariable
 :TemporalVariable rdf:type owl:Class ;
                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#TextVariable> ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property piv:timeFormat"@en ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "temporal variable"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#VelocimetryMethod
+:VelocimetryMethod rdf:type owl:Class ;
+                   rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "The velocimetry method applied."@en ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "velocimetry method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#VirtualCamera
@@ -1099,6 +1119,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "Hann window"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#Image
+:Image rdf:type owl:NamedIndividual ,
+                :PIVDataType ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "image"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ImageDewarping
 :ImageDewarping rdf:type owl:NamedIndividual ,
                          :ImageManipulationMethod ;
@@ -1133,6 +1160,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "left right flip"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#Mask
+:Mask rdf:type owl:NamedIndividual ,
+               :PIVDataType ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Mask data to mask out areas that should not be evaluated"@en ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "mask"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL
 :MilliM-PER-PIXEL rdf:type owl:NamedIndividual ,
                            <http://qudt.org/schema/qudt/Unit> ;
@@ -1152,41 +1186,20 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "per pixel"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PIVData
-:PIVData rdf:type owl:NamedIndividual ,
-                  :PIVDataType ;
-         rdfs:comment "Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types."@en ;
-         <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en ;
-         <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV data"@en .
+###  https://matthiasprobst.github.io/pivmeta#PIV
+:PIV rdf:type owl:NamedIndividual ,
+              :VelocimetryMethod ;
+     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1756248> ;
+     <http://www.w3.org/2004/02/skos/core#definition> "Method to measure velocities in fluid."@en ;
+     <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Image Velocimetry"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PIVImage
-:PIVImage rdf:type owl:NamedIndividual ,
-                   :PIVDataType ;
-          <http://www.w3.org/2004/02/skos/core#definition> "An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV image"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#PIVMask
-:PIVMask rdf:type owl:NamedIndividual ,
-                  :PIVDataType ;
-         <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV mask"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry
-:ParticleImageVelocimetry rdf:type owl:NamedIndividual ,
-                                   <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
-                          rdfs:seeAlso <https://www.wikidata.org/wiki/Q1756248> ;
-                          <http://www.w3.org/2004/02/skos/core#definition> "Method to measure velocities in fluid."@en ;
-                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Image Velocimetry"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry
-:ParticleTrackingVelocimetry rdf:type owl:NamedIndividual ,
-                                      <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
-                             rdfs:seeAlso <https://www.wikidata.org/wiki/Q7140505> ;
-                             <http://www.w3.org/2004/02/skos/core#definition> "A measurement technique to measure the velocity of particles."@en ;
-                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Tracking Velocimetry"@en .
+###  https://matthiasprobst.github.io/pivmeta#PTV
+:PTV rdf:type owl:NamedIndividual ,
+              :VelocimetryMethod ;
+     rdfs:seeAlso <https://www.wikidata.org/wiki/Q7140505> ;
+     <http://www.w3.org/2004/02/skos/core#definition> "A measurement technique to measure the velocity of particles."@en ;
+     <http://www.w3.org/2004/02/skos/core#prefLabel> "Particle Tracking Velocimetry"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#RawBackgroundImageSubtraction
@@ -1200,6 +1213,13 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 :ReEvaluateWithLargerSample rdf:type owl:NamedIndividual ,
                                      :OutlierReplacementScheme ;
                             <http://www.w3.org/2004/02/skos/core#prefLabel> "re-evaluate with larger sample"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#ResultData
+:ResultData rdf:type owl:NamedIndividual ,
+                     :PIVDataType ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Particle Image Velocimetry result data, e.g. data resulting from PIV, PTV or other specialized methods. Contains at least displacement and coordinate data"@en ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "result data"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#SpatialResolution
@@ -1247,9 +1267,9 @@ Provide pivmeta:flagMeaning und pivmeta:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#microPIV
 :microPIV rdf:type owl:NamedIndividual ,
-                   <http://w3id.org/nfdi4ing/metadata4ing#Method> ;
+                   :VelocimetryMethod ;
           <http://www.w3.org/2004/02/skos/core#definition> "Microscopic PIV. Example Applications can be found in Raffel et al. (2018) \"Particle Image Velocimetry: A Practical Guide\", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "Micro PIV"@en .
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "Micro Particle Image Velocimetry"@en .
 
 
 ###  https://www.wikidata.org/wiki/Q112166625

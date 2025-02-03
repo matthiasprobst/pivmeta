@@ -13,11 +13,11 @@
 <script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
 	<dark-mode-toggle class="slider"></dark-mode-toggle>
 </div>
- <title>PIVMeta: An ontology draft for describing Particle Image Velocimetry data.</title>
+ <title>PIVMeta: An ontology for describing Particle Image Velocimetry (PIV) data.</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology draft for describing Particle Image Velocimetry data.", "headline":"This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-02-02", "version":"v2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology for describing Particle Image Velocimetry (PIV) data.", "headline":"PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-02-03", "version":"v2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -65,12 +65,12 @@ $(function(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>PIVMeta: An ontology draft for describing Particle Image Velocimetry data.</h1>
+<h1>PIVMeta: An ontology for describing Particle Image Velocimetry (PIV) data.</h1>
 <h2>Release: 2024-03-30</h2>
 
 
 <dl>
-<dt>Modified on: 2025-02-02</dt>
+<dt>Modified on: 2025-02-03</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/2.0.0">https://matthiasprobst.github.io/pivmeta/2.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -80,7 +80,7 @@ $(function(){
 <dt>Revision:</dt>
 <dd>v2.0.0</dd>
 <dt>Issued on:</dt>
-<dd>2025-02-02</dd>
+<dd>2025-02-03</dd>
 <dt>Authors:</dt>
 <dd><a href="https://orcid.org/0000-0001-8729-0482">Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery</a></dd>
 
@@ -108,7 +108,7 @@ $(function(){
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-This is an ontology draft for the description of Particle Image Velocimetry data. It is currently limited to planar PIV (2D2C and 2D3C) setups.</span>
+PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups.</span>
 </div>
 <div id="toc"></div> 
 
@@ -130,7 +130,7 @@ This is an ontology draft for the description of Particle Image Velocimetry data
 <tr><td><b>obo</b></td><td>&lt;http://purl.obolibrary.org/obo/&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
 <tr><td><b>pims-ii</b></td><td>&lt;http://www.molmod.info/semantics/pims-ii.ttl#&gt;</td></tr>
-<tr><td><b>pivmeta</b></td><td>&lt;https://matthiasprobst.github.io/pivmeta#&gt;</td></tr>
+<tr><td><b>piv</b></td><td>&lt;https://matthiasprobst.github.io/pivmeta#&gt;</td></tr>
 <tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov#&gt;</td></tr>
 <tr><td><b>qudt</b></td><td>&lt;http://qudt.org/schema/qudt/&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
@@ -393,6 +393,10 @@ This ontology has the following classes and properties.</span>
          title="http://www.molmod.info/semantics/pims-ii.ttl#Variable">variable</a>
    </li>
    <li>
+      <a href="#VelocimetryMethod"
+         title="https://matthiasprobst.github.io/pivmeta#VelocimetryMethod">velocimetry method</a>
+   </li>
+   <li>
       <a href="#VirtualCamera"
          title="https://matthiasprobst.github.io/pivmeta#VirtualCamera">virtual camera</a>
    </li>
@@ -477,6 +481,10 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod"
+         title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a>
    </li>
    <li>
       <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a>
@@ -572,6 +580,9 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#HannWindow">Hann window</a>
    </li>
    <li>
+      <a href="#Image" title="https://matthiasprobst.github.io/pivmeta#Image">image</a>
+   </li>
+   <li>
       <a href="#ImageDewarping"
          title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a>
    </li>
@@ -592,36 +603,25 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">left right flip</a>
    </li>
    <li>
+      <a href="#Mask" title="https://matthiasprobst.github.io/pivmeta#Mask">mask</a>
+   </li>
+   <li>
       <a href="#microPIV"
-         title="https://matthiasprobst.github.io/pivmeta#microPIV">Micro PIV</a>
+         title="https://matthiasprobst.github.io/pivmeta#microPIV">Micro Particle Image Velocimetry</a>
    </li>
    <li>
       <a href="#MilliM-PER-PIXEL"
          title="https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL">millimeter per pixel</a>
    </li>
    <li>
-      <a href="#ParticleImageVelocimetry"
-         title="https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry">Particle Image Velocimetry</a>
+      <a href="#PIV" title="https://matthiasprobst.github.io/pivmeta#PIV">Particle Image Velocimetry</a>
    </li>
    <li>
-      <a href="#ParticleTrackingVelocimetry"
-         title="https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry">Particle Tracking Velocimetry</a>
+      <a href="#PTV" title="https://matthiasprobst.github.io/pivmeta#PTV">Particle Tracking Velocimetry</a>
    </li>
    <li>
       <a href="#PER-PIXEL"
          title="https://matthiasprobst.github.io/pivmeta#PER-PIXEL">per pixel</a>
-   </li>
-   <li>
-      <a href="#PIVData"
-         title="https://matthiasprobst.github.io/pivmeta#PIVData">PIV data</a>
-   </li>
-   <li>
-      <a href="#PIVImage"
-         title="https://matthiasprobst.github.io/pivmeta#PIVImage">PIV image</a>
-   </li>
-   <li>
-      <a href="#PIVMask"
-         title="https://matthiasprobst.github.io/pivmeta#PIVMask">PIV mask</a>
    </li>
    <li>
       <a href="#RawBackgroundImageSubtraction"
@@ -632,6 +632,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#ReEvaluateWithLargerSample"
          title="https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample">re-evaluate with larger sample</a>
+   </li>
+   <li>
+      <a href="#ResultData"
+         title="https://matthiasprobst.github.io/pivmeta#ResultData">result data</a>
    </li>
    <li>
       <a href="#SpatialResolution"
@@ -737,6 +741,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#Tool" title="http://w3id.org/nfdi4ing/metadata4ing#Tool">tool</a></li>
   <li><a href="#http://qudt.org/schema/qudt/Unit" title="http://qudt.org/schema/qudt/Unit">unit</a></li>
   <li><a href="#http://www.molmod.info/semantics/pims-ii.ttl#Variable" title="http://www.molmod.info/semantics/pims-ii.ttl#Variable">variable</a></li>
+  <li><a href="#VelocimetryMethod" title="https://matthiasprobst.github.io/pivmeta#VelocimetryMethod">velocimetry method</a></li>
   <li><a href="#VirtualCamera" title="https://matthiasprobst.github.io/pivmeta#VirtualCamera">virtual camera</a></li>
   <li><a href="#VirtualLaser" title="https://matthiasprobst.github.io/pivmeta#VirtualLaser">virtual laser</a></li>
   <li><a href="#VirtualPIVSetup" title="https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup">virtual PIV experiment</a></li>
@@ -958,7 +963,7 @@ This section provides details for each class and property defined by PIVMeta.
   <h3>flag variable<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#FlagVariable</p>
   <div class="comment">
-   <span class="markdown">A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated. Provide pivmeta:flagMeaning und pivmeta:flagValues with it.</span>
+   <span class="markdown">A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated. Provide piv:flagMeaning und piv:flagValues with it.</span>
   </div>
   <div class="comment">
    <span class="markdown">A variable that expects flag values as integer values.</span>
@@ -1183,7 +1188,7 @@ This section provides details for each class and property defined by PIVMeta.
     has sub-classes
    </dt>
    <dd>
-    <a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a> <sup class="type-c" title="class">c</sup>, <a href="#CorrelationMethod" title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulationMethod" title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a> <sup class="type-c" title="class">c</sup>, <a href="#InterrogationMethod" title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a> <sup class="type-c" title="class">c</sup>, <a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a> <sup class="type-c" title="class">c</sup>, <a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a> <sup class="type-c" title="class">c</sup>, <a href="#CorrelationMethod" title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulationMethod" title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a> <sup class="type-c" title="class">c</sup>, <a href="#InterrogationMethod" title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a> <sup class="type-c" title="class">c</sup>, <a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a> <sup class="type-c" title="class">c</sup>, <a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a> <sup class="type-c" title="class">c</sup>, <a href="#VelocimetryMethod" title="https://matthiasprobst.github.io/pivmeta#VelocimetryMethod">velocimetry method</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -1192,10 +1197,10 @@ This section provides details for each class and property defined by PIVMeta.
     <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
-    has members
+    is in range of
    </dt>
    <dd>
-    <a href="#microPIV" title="https://matthiasprobst.github.io/pivmeta#microPIV">Micro PIV</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ParticleImageVelocimetry" title="https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry">Particle Image Velocimetry</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ParticleTrackingVelocimetry" title="https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry">Particle Tracking Velocimetry</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod" title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1488,7 +1493,7 @@ This section provides details for each class and property defined by PIVMeta.
     has members
    </dt>
    <dd>
-    <a href="#PIVData" title="https://matthiasprobst.github.io/pivmeta#PIVData">PIV data</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#PIVImage" title="https://matthiasprobst.github.io/pivmeta#PIVImage">PIV image</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#PIVMask" title="https://matthiasprobst.github.io/pivmeta#PIVMask">PIV mask</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ExperimentalImage" title="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">experimental image</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#SyntheticImage" title="https://matthiasprobst.github.io/pivmeta#SyntheticImage">synthetic image</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#ExperimentalImage" title="https://matthiasprobst.github.io/pivmeta#ExperimentalImage">experimental image</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Image" title="https://matthiasprobst.github.io/pivmeta#Image">image</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Mask" title="https://matthiasprobst.github.io/pivmeta#Mask">mask</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResultData" title="https://matthiasprobst.github.io/pivmeta#ResultData">result data</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#SyntheticImage" title="https://matthiasprobst.github.io/pivmeta#SyntheticImage">synthetic image</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -1701,7 +1706,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod" title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -1828,7 +1833,7 @@ This section provides details for each class and property defined by PIVMeta.
   <h3>temporal variable<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#TemporalVariable</p>
   <div class="comment">
-   <span class="markdown">A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property pivmeta:timeFormat</span>
+   <span class="markdown">A variable that expects a string of characters as a valu, which represent date times. The format to process the data is specified in the property piv:timeFormat</span>
   </div>
   <dl class="description">
    <dt>
@@ -1949,6 +1954,27 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#hasMetric" title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="VelocimetryMethod">
+  <h3>velocimetry method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#VelocimetryMethod</p>
+  <div class="comment">
+   <span class="markdown">The velocimetry method applied.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#microPIV" title="https://matthiasprobst.github.io/pivmeta#microPIV">Micro Particle Image Velocimetry</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#PIV" title="https://matthiasprobst.github.io/pivmeta#PIV">Particle Image Velocimetry</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#PTV" title="https://matthiasprobst.github.io/pivmeta#PTV">Particle Tracking Velocimetry</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -2093,6 +2119,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#outlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">outlier replacement scheme</a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a></li>
+  <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod" title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a></li>
   <li><a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">unit</a></li>
   <li><a href="#https://schema.org/instrument" title="https://schema.org/instrument">uses instrument</a></li>
@@ -2538,6 +2565,29 @@ This section provides details for each class and property defined by PIVMeta.
    </dl>
   </div>
  </div>
+ <div class="entity" id="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">
+  <h3>realizes method<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/nfdi4ing/metadata4ing#realizesMethod</p>
+  <div class="comment">
+   <span class="markdown">Points to a method that is used within a given processing step</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">Processing Step</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="http://purl.org/dc/terms/type">
   <h3>type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://purl.org/dc/terms/type</p>
@@ -2706,8 +2756,8 @@ This section provides details for each class and property defined by PIVMeta.
     Example
    </dt>
    <dd>
-    <pre>For pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
-pivmeta:flagMeanings=["inactive", "active", "masked", "noresult", "disabled", "filtered", "interpolated", "replaced", "manualedit"]</pre>
+    <pre>For piv:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
+piv:flagMeanings=["inactive", "active", "masked", "noresult", "disabled", "filtered", "interpolated", "replaced", "manualedit"]</pre>
    </dd>
   </dl>
   <div class="description">
@@ -2731,25 +2781,25 @@ pivmeta:flagMeanings=["inactive", "active", "masked", "noresult", "disabled", "f
   <h3>has flag value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#hasFlagValue</p>
   <div class="comment">
-   <span class="markdown">The data property flag values provides binary flag values which are explained by pivmeta:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17.</span>
+   <span class="markdown">The data property flag values provides binary flag values which are explained by piv:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17.</span>
   </div>
   <dl>
    <dt>
     Example
    </dt>
    <dd>
-    <pre>pivmeta:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
+    <pre>piv:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
 
 The corresponding meaning would be:
-pivmeta:flagMeanings=["inactive", "active", "masked", "noresult", "disabled", "filtered", "interpolated", "replaced", "manualedit"]
+piv:flagMeanings=["inactive", "active", "masked", "noresult", "disabled", "filtered", "interpolated", "replaced", "manualedit"]
 
 A flag value of 17 means "active and filtered", which is obtained by bitwise AND operation.
 
 A JSON-LD excerpt could look like this:
 {
     "@type": "m4i:NumericalVariable",
-    "pivmeta:flagValues": [0, 1, 2, 4, 8, 16, 32, 64, 128],
-    "pivmeta:flagMeanings": [
+    "piv:flagValues": [0, 1, 2, 4, 8, 16, 32, 64, 128],
+    "piv:flagMeanings": [
         "inactive",
         "active",
         "masked",
@@ -2939,21 +2989,21 @@ A JSON-LD excerpt could look like this:
   <li><a href="#HammingWindow" title="https://matthiasprobst.github.io/pivmeta#HammingWindow">Hamming window</a></li>
   <li><a href="#https://www.wikidata.org/wiki/Q112166625" title="https://www.wikidata.org/wiki/Q112166625">Hamming window</a></li>
   <li><a href="#HannWindow" title="https://matthiasprobst.github.io/pivmeta#HannWindow">Hann window</a></li>
+  <li><a href="#Image" title="https://matthiasprobst.github.io/pivmeta#Image">image</a></li>
   <li><a href="#ImageDewarping" title="https://matthiasprobst.github.io/pivmeta#ImageDewarping">image dewarping</a></li>
   <li><a href="#ImageFiltering" title="https://matthiasprobst.github.io/pivmeta#ImageFiltering">image filtering</a></li>
   <li><a href="#ImageHorizontalFlip" title="https://matthiasprobst.github.io/pivmeta#ImageHorizontalFlip">image horizontal flip</a></li>
   <li><a href="#Interpolation" title="https://matthiasprobst.github.io/pivmeta#Interpolation">interpolation</a></li>
   <li><a href="#LeftRightFlip" title="https://matthiasprobst.github.io/pivmeta#LeftRightFlip">left right flip</a></li>
-  <li><a href="#microPIV" title="https://matthiasprobst.github.io/pivmeta#microPIV">Micro PIV</a></li>
+  <li><a href="#Mask" title="https://matthiasprobst.github.io/pivmeta#Mask">mask</a></li>
+  <li><a href="#microPIV" title="https://matthiasprobst.github.io/pivmeta#microPIV">Micro Particle Image Velocimetry</a></li>
   <li><a href="#MilliM-PER-PIXEL" title="https://matthiasprobst.github.io/pivmeta#MilliM-PER-PIXEL">millimeter per pixel</a></li>
-  <li><a href="#ParticleImageVelocimetry" title="https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry">Particle Image Velocimetry</a></li>
-  <li><a href="#ParticleTrackingVelocimetry" title="https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry">Particle Tracking Velocimetry</a></li>
+  <li><a href="#PIV" title="https://matthiasprobst.github.io/pivmeta#PIV">Particle Image Velocimetry</a></li>
+  <li><a href="#PTV" title="https://matthiasprobst.github.io/pivmeta#PTV">Particle Tracking Velocimetry</a></li>
   <li><a href="#PER-PIXEL" title="https://matthiasprobst.github.io/pivmeta#PER-PIXEL">per pixel</a></li>
-  <li><a href="#PIVData" title="https://matthiasprobst.github.io/pivmeta#PIVData">PIV data</a></li>
-  <li><a href="#PIVImage" title="https://matthiasprobst.github.io/pivmeta#PIVImage">PIV image</a></li>
-  <li><a href="#PIVMask" title="https://matthiasprobst.github.io/pivmeta#PIVMask">PIV mask</a></li>
   <li><a href="#RawBackgroundImageSubtraction" title="https://matthiasprobst.github.io/pivmeta#RawBackgroundImageSubtraction"> <span>Raw Background Image Subtraction</span> </a></li>
   <li><a href="#ReEvaluateWithLargerSample" title="https://matthiasprobst.github.io/pivmeta#ReEvaluateWithLargerSample">re-evaluate with larger sample</a></li>
+  <li><a href="#ResultData" title="https://matthiasprobst.github.io/pivmeta#ResultData">result data</a></li>
   <li><a href="#SpatialResolution" title="https://matthiasprobst.github.io/pivmeta#SpatialResolution">spatial resolution</a></li>
   <li><a href="#SplitImage" title="https://matthiasprobst.github.io/pivmeta#SplitImage">split image</a></li>
   <li><a href="#SquareWindow" title="https://matthiasprobst.github.io/pivmeta#SquareWindow">square window</a></li>
@@ -3154,6 +3204,30 @@ A JSON-LD excerpt could look like this:
    </dd>
   </dl>
  </div>
+ <div class="entity" id="Image">
+  <h3>image<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Image</p>
+  <div class="comment">
+   <span class="markdown">An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"image"@en</span>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="ImageDewarping">
   <h3>image dewarping<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ImageDewarping</p>
@@ -3268,8 +3342,32 @@ A JSON-LD excerpt could look like this:
    </dd>
   </dl>
  </div>
+ <div class="entity" id="Mask">
+  <h3>mask<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#Mask</p>
+  <div class="comment">
+   <span class="markdown">Mask data to mask out areas that should not be evaluated</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Mask data to mask out areas that should not be evaluated"@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"mask"@en</span>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="microPIV">
-  <h3>Micro PIV<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <h3>Micro Particle Image Velocimetry<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#microPIV</p>
   <div class="comment">
    <span class="markdown">Microscopic PIV. Example Applications can be found in Raffel et al. (2018) "Particle Image Velocimetry: A Practical Guide", Springer, https://doi.org/10.1007/978-3-319-68852-7.</span>
@@ -3279,7 +3377,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup>
+    <a href="#VelocimetryMethod" title="https://matthiasprobst.github.io/pivmeta#VelocimetryMethod">velocimetry method</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3288,7 +3386,7 @@ A JSON-LD excerpt could look like this:
     <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Microscopic PIV. Example Applications can be found in Raffel et al. (2018) "Particle Image Velocimetry: A Practical Guide", Springer, https://doi.org/10.1007/978-3-319-68852-7."@en</span>
    </dd>
    <dd>
-    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Micro PIV"@en</span>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Micro Particle Image Velocimetry"@en</span>
    </dd>
   </dl>
  </div>
@@ -3319,9 +3417,9 @@ A JSON-LD excerpt could look like this:
    </dd>
   </dl>
  </div>
- <div class="entity" id="ParticleImageVelocimetry">
+ <div class="entity" id="PIV">
   <h3>Particle Image Velocimetry<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ParticleImageVelocimetry</p>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIV</p>
   <div class="comment">
    <span class="markdown">Method to measure velocities in fluid.</span>
   </div>
@@ -3330,7 +3428,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup>
+    <a href="#VelocimetryMethod" title="https://matthiasprobst.github.io/pivmeta#VelocimetryMethod">velocimetry method</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3343,9 +3441,9 @@ A JSON-LD excerpt could look like this:
    </dd>
   </dl>
  </div>
- <div class="entity" id="ParticleTrackingVelocimetry">
+ <div class="entity" id="PTV">
   <h3>Particle Tracking Velocimetry<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ParticleTrackingVelocimetry</p>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PTV</p>
   <div class="comment">
    <span class="markdown">A measurement technique to measure the velocity of particles.</span>
   </div>
@@ -3354,7 +3452,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup>
+    <a href="#VelocimetryMethod" title="https://matthiasprobst.github.io/pivmeta#VelocimetryMethod">velocimetry method</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3397,75 +3495,6 @@ A JSON-LD excerpt could look like this:
    </dd>
   </dl>
  </div>
- <div class="entity" id="PIVData">
-  <h3>PIV data<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVData</p>
-  <div class="comment">
-   <span class="markdown">Use this as dct:type of a dcat:Resource. See https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types.</span>
-  </div>
-  <div class="comment">
-   <span class="markdown">Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Particle Image Velocimetry data, e.g. data resulting from PIV, PTV or other specialized methods."@en</span>
-   </dd>
-   <dd>
-    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"PIV data"@en</span>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="PIVImage">
-  <h3>PIV image<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVImage</p>
-  <div class="comment">
-   <span class="markdown">An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"An image showing Particles illuminated by a laser from a Particle Image Velocimetry measurement."@en</span>
-   </dd>
-   <dd>
-    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"PIV image"@en</span>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="PIVMask">
-  <h3>PIV mask<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#PIVMask</p>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"PIV mask"@en</span>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="RawBackgroundImageSubtraction">
   <h3>Raw Background Image Subtraction<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#RawBackgroundImageSubtraction</p>
@@ -3505,6 +3534,30 @@ A JSON-LD excerpt could look like this:
    </dt>
    <dd>
     <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"re-evaluate with larger sample"@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResultData">
+  <h3>result data<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#ResultData</p>
+  <div class="comment">
+   <span class="markdown">Particle Image Velocimetry result data, e.g. data resulting from PIV, PTV or other specialized methods. Contains at least displacement and coordinate data</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Particle Image Velocimetry result data, e.g. data resulting from PIV, PTV or other specialized methods. Contains at least displacement and coordinate data"@en</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank" title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"result data"@en</span>
    </dd>
   </dl>
  </div>
