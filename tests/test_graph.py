@@ -17,7 +17,7 @@ class TestGraph(unittest.TestCase):
         g.parse(onto_purl, format="ttl")
         sparql_query = """
         PREFIX ssno: <https://matthiasprobst.github.io/ssno#>
-        PREFIX pivmeta: <https://matthiasprobst.github.io/pivmeta#>
+        PREFIX piv: <https://matthiasprobst.github.io/pivmeta#>
         
         SELECT ?standard_name ?description ?unit
         WHERE {
@@ -50,6 +50,7 @@ class TestGraph(unittest.TestCase):
                          rdflib.OWL.members,
                          rdflib.OWL.onClass,
                          rdflib.OWL.hasValue,
+                         rdflib.OWL.qualifiedCardinality,
                          rdflib.URIRef("http://www.w3.org/2002/07/owl#minQualifiedCardinality"),
                          rdflib.OWL.unionOf) and o != rdflib.OWL.Class and o != rdflib.OWL.Restriction and p != rdflib.OWL.onProperty and p != rdflib.OWL.inverseOf and p != rdflib.OWL.someValuesFrom and p != rdflib.OWL.allValuesFrom:
                 if o not in rdflib.OWL.AllDisjointClasses:

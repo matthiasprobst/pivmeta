@@ -27,7 +27,7 @@ class TestContext(unittest.TestCase):
         query: str = (f"""SELECT ?id ?label ?type# ?description
                 WHERE {{
                     ?id rdf:type {entity} .
-                    ?id rdf:type pivmeta:StandardName .
+                    ?id rdf:type piv:StandardName .
                     ?id skos:prefLabel ?label.
                     # ?id skos:description ?description.
                     OPTIONAL {{?id rdfs:range ?type .}}.
