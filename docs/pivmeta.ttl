@@ -312,7 +312,7 @@ xsd:date rdf:type rdfs:Datatype .
           rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
           owl:inverseOf :isSetupFor ;
           rdfs:domain :VelocimetryDataset ;
-          rdfs:range :PIVSetup ;
+          rdfs:range :Setup ;
           <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset to the setup used to generate it."@en ;
           <http://www.w3.org/2004/02/skos/core#prefLabel> "has setup"@en .
 
@@ -328,7 +328,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#isSetupFor
 :isSetupFor rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000050> ;
-            rdfs:domain :PIVSetup ;
+            rdfs:domain :Setup ;
             rdfs:range :VelocimetryDataset ;
             <http://www.w3.org/2004/02/skos/core#definition> "Relates a setup to the dataset(s) it was used for."@en ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "is setup for"@en .
@@ -629,7 +629,7 @@ A JSON-LD excerpt could look like this:
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup
 :ExperimentalPIVSetup rdf:type owl:Class ;
                       rdfs:subClassOf <http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db> ,
-                                      :PIVSetup ,
+                                      :Setup ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                         owl:someValuesFrom :DigitalCamera
@@ -906,12 +906,6 @@ Provide piv:flagMeaning und piv:flagValues with it."""@en ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV recording"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#PIVSetup
-:PIVSetup rdf:type owl:Class ;
-          <http://www.w3.org/2004/02/skos/core#definition> "A Particle Image or Tracking Velocimetry Setup"@en ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "Setup"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#PIVSoftware
 :PIVSoftware rdf:type owl:Class ;
              rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#Tool> ,
@@ -932,6 +926,12 @@ Provide piv:flagMeaning und piv:flagValues with it."""@en ;
                   rdfs:comment "Method fitting the sub pixel peak in the correlation signal."@en ;
                   <http://www.w3.org/2004/02/skos/core#example> "Peak centroid, Parabolic peak fit or Gaussian peak fit."@en ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "peak search method"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#Setup
+:Setup rdf:type owl:Class ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A Particle Image or Tracking Velocimetry Setup"@en ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "Setup"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#Singlepass
@@ -960,7 +960,7 @@ Provide piv:flagMeaning und piv:flagValues with it."""@en ;
                     rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                      owl:someValuesFrom :PIVSetup
+                                      owl:someValuesFrom :Setup
                                     ] ;
                     <http://www.w3.org/2004/02/skos/core#definition> "A dataset holding data about PIV or PTV"@en ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Velocimetry Dataset"@en .
@@ -1003,7 +1003,7 @@ Provide piv:flagMeaning und piv:flagValues with it."""@en ;
 ###  https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup
 :VirtualPIVSetup rdf:type owl:Class ;
                  rdfs:subClassOf <http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> ,
-                                 :PIVSetup ,
+                                 :Setup ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                    owl:someValuesFrom :PIVParticle

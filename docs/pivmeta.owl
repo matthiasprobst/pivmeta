@@ -522,7 +522,7 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:inverseOf rdf:resource="https://matthiasprobst.github.io/pivmeta#isSetupFor"/>
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#VelocimetryDataset"/>
-        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSetup"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#Setup"/>
         <skos:definition xml:lang="en">Relates a dataset to the setup used to generate it.</skos:definition>
         <skos:prefLabel xml:lang="en">has setup</skos:prefLabel>
     </owl:ObjectProperty>
@@ -546,7 +546,7 @@
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#isSetupFor">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSetup"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Setup"/>
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#VelocimetryDataset"/>
         <skos:definition xml:lang="en">Relates a setup to the dataset(s) it was used for.</skos:definition>
         <skos:prefLabel xml:lang="en">is setup for</skos:prefLabel>
@@ -1015,7 +1015,7 @@ A JSON-LD excerpt could look like this:
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db"/>
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSetup"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Setup"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -1438,16 +1438,6 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#PIVSetup -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#PIVSetup">
-        <skos:definition xml:lang="en">A Particle Image or Tracking Velocimetry Setup</skos:definition>
-        <skos:prefLabel xml:lang="en">Setup</skos:prefLabel>
-    </owl:Class>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#PIVSoftware -->
 
 
@@ -1478,6 +1468,16 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
         <rdfs:comment xml:lang="en">Method fitting the sub pixel peak in the correlation signal.</rdfs:comment>
         <skos:example xml:lang="en">Peak centroid, Parabolic peak fit or Gaussian peak fit.</skos:example>
         <skos:prefLabel xml:lang="en">peak search method</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#Setup -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Setup">
+        <skos:definition xml:lang="en">A Particle Image or Tracking Velocimetry Setup</skos:definition>
+        <skos:prefLabel xml:lang="en">Setup</skos:prefLabel>
     </owl:Class>
     
 
@@ -1523,7 +1523,7 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSetup"/>
+                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#Setup"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <skos:definition xml:lang="en">A dataset holding data about PIV or PTV</skos:definition>
@@ -1589,7 +1589,7 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f"/>
-        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSetup"/>
+        <rdfs:subClassOf rdf:resource="https://matthiasprobst.github.io/pivmeta#Setup"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>

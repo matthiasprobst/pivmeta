@@ -288,7 +288,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#hasSetup> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.obolibrary.org/obo/BFO_0000051> .
 <https://matthiasprobst.github.io/pivmeta#hasSetup> <http://www.w3.org/2002/07/owl#inverseOf> <https://matthiasprobst.github.io/pivmeta#isSetupFor> .
 <https://matthiasprobst.github.io/pivmeta#hasSetup> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#VelocimetryDataset> .
-<https://matthiasprobst.github.io/pivmeta#hasSetup> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#PIVSetup> .
+<https://matthiasprobst.github.io/pivmeta#hasSetup> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#Setup> .
 <https://matthiasprobst.github.io/pivmeta#hasSetup> <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset to the setup used to generate it."@en .
 <https://matthiasprobst.github.io/pivmeta#hasSetup> <http://www.w3.org/2004/02/skos/core#prefLabel> "has setup"@en .
 # 
@@ -302,7 +302,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://matthiasprobst.github.io/pivmeta#isSetupFor
 <https://matthiasprobst.github.io/pivmeta#isSetupFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://matthiasprobst.github.io/pivmeta#isSetupFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.obolibrary.org/obo/BFO_0000050> .
-<https://matthiasprobst.github.io/pivmeta#isSetupFor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#PIVSetup> .
+<https://matthiasprobst.github.io/pivmeta#isSetupFor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#Setup> .
 <https://matthiasprobst.github.io/pivmeta#isSetupFor> <http://www.w3.org/2000/01/rdf-schema#range> <https://matthiasprobst.github.io/pivmeta#VelocimetryDataset> .
 <https://matthiasprobst.github.io/pivmeta#isSetupFor> <http://www.w3.org/2004/02/skos/core#definition> "Relates a setup to the dataset(s) it was used for."@en .
 <https://matthiasprobst.github.io/pivmeta#isSetupFor> <http://www.w3.org/2004/02/skos/core#prefLabel> "is setup for"@en .
@@ -550,7 +550,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup
 <https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db> .
-<https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVSetup> .
+<https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Setup> .
 <https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
 _:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#DigitalCamera> .
 _:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
@@ -795,11 +795,6 @@ _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#PIVRecording> <http://www.w3.org/2004/02/skos/core#definition> "Processing step of taking the images"@en .
 <https://matthiasprobst.github.io/pivmeta#PIVRecording> <http://www.w3.org/2004/02/skos/core#prefLabel> "PIV recording"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#PIVSetup
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2004/02/skos/core#definition> "A Particle Image or Tracking Velocimetry Setup"@en .
-<https://matthiasprobst.github.io/pivmeta#PIVSetup> <http://www.w3.org/2004/02/skos/core#prefLabel> "Setup"@en .
-# 
 # https://matthiasprobst.github.io/pivmeta#PIVSoftware
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#PIVSoftware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/nfdi4ing/metadata4ing#Tool> .
@@ -818,6 +813,11 @@ _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Method fitting the sub pixel peak in the correlation signal."@en .
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2004/02/skos/core#example> "Peak centroid, Parabolic peak fit or Gaussian peak fit."@en .
 <https://matthiasprobst.github.io/pivmeta#PeakSearchMethod> <http://www.w3.org/2004/02/skos/core#prefLabel> "peak search method"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#Setup
+<https://matthiasprobst.github.io/pivmeta#Setup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://matthiasprobst.github.io/pivmeta#Setup> <http://www.w3.org/2004/02/skos/core#definition> "A Particle Image or Tracking Velocimetry Setup"@en .
+<https://matthiasprobst.github.io/pivmeta#Setup> <http://www.w3.org/2004/02/skos/core#prefLabel> "Setup"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#Singlepass
 <https://matthiasprobst.github.io/pivmeta#Singlepass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -841,7 +841,7 @@ _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#VelocimetryDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#VelocimetryDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Dataset> .
 <https://matthiasprobst.github.io/pivmeta#VelocimetryDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
-_:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVSetup> .
+_:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#Setup> .
 _:genid28 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#VelocimetryDataset> <http://www.w3.org/2004/02/skos/core#definition> "A dataset holding data about PIV or PTV"@en .
@@ -880,7 +880,7 @@ _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup
 <https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> .
-<https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#PIVSetup> .
+<https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://matthiasprobst.github.io/pivmeta#Setup> .
 <https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
 _:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://matthiasprobst.github.io/pivmeta#PIVParticle> .
 _:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000051> .
