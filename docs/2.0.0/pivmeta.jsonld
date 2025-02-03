@@ -285,12 +285,6 @@
 }, {
   "@id" : "http://purl.obolibrary.org/obo/BFO_0000050",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
-  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "a core relation that holds between a part and its whole"
@@ -2056,6 +2050,29 @@
     "@value" : "has PIV data type"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasSetup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#VelocimetryDataset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#isSetupFor"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Relates a dataset to the setup used to generate it."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "has setup"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2071,6 +2088,26 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "has window weighting function"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#isSetupFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVSetup"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#VelocimetryDataset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000050"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Relates a setup to the dataset(s) it was used for."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "is setup for"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#manufacturer",

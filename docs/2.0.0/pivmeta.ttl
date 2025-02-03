@@ -159,8 +159,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.obolibrary.org/obo/BFO_0000050
 <http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ,
                                                       owl:TransitiveProperty ;
-                                             rdfs:domain <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
-                                             rdfs:range <http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "a core relation that holds between a part and its whole"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "part of"@en .
 
@@ -309,12 +307,31 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "has PIV data type"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#hasSetup
+:hasSetup rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
+          owl:inverseOf :isSetupFor ;
+          rdfs:domain :VelocimetryDataset ;
+          rdfs:range :PIVSetup ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset to the setup used to generate it."@en ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "has setup"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction
 :hasWindowWeightingFunction rdf:type owl:ObjectProperty ;
                             rdfs:domain :CorrelationMethod ;
                             rdfs:range :WindowWeightingFunction ;
                             <http://www.w3.org/2004/02/skos/core#definition> "Points to the window weighting function used by the correlation method."@en ;
                             <http://www.w3.org/2004/02/skos/core#prefLabel> "has window weighting function"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#isSetupFor
+:isSetupFor rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000050> ;
+            rdfs:domain :PIVSetup ;
+            rdfs:range :VelocimetryDataset ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Relates a setup to the dataset(s) it was used for."@en ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "is setup for"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer

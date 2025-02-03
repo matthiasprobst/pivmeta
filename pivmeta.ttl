@@ -174,8 +174,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.obolibrary.org/obo/BFO_0000050
 obo:BFO_0000050 rdf:type owl:ObjectProperty ,
                          owl:TransitiveProperty ;
-                rdfs:domain m4i:ProcessingStep ;
-                rdfs:range m4i:ProcessingStep ;
                 skos:definition "a core relation that holds between a part and its whole"@en ;
                 skos:prefLabel "part of"@en .
 
@@ -324,12 +322,31 @@ piv:hasPIVDataType rdf:type owl:ObjectProperty ;
                    skos:prefLabel "has PIV data type"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#hasSetup
+piv:hasSetup rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf obo:BFO_0000051 ;
+             owl:inverseOf piv:isSetupFor ;
+             rdfs:domain piv:VelocimetryDataset ;
+             rdfs:range piv:PIVSetup ;
+             skos:definition "Relates a dataset to the setup used to generate it."@en ;
+             skos:prefLabel "has setup"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction
 piv:hasWindowWeightingFunction rdf:type owl:ObjectProperty ;
                                rdfs:domain piv:CorrelationMethod ;
                                rdfs:range piv:WindowWeightingFunction ;
                                skos:definition "Points to the window weighting function used by the correlation method."@en ;
                                skos:prefLabel "has window weighting function"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#isSetupFor
+piv:isSetupFor rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf obo:BFO_0000050 ;
+               rdfs:domain piv:PIVSetup ;
+               rdfs:range piv:VelocimetryDataset ;
+               skos:definition "Relates a setup to the dataset(s) it was used for."@en ;
+               skos:prefLabel "is setup for"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#manufacturer

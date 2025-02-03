@@ -459,6 +459,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#hasPIVDataType">has PIV data type</a>
    </li>
    <li>
+      <a href="#hasSetup"
+         title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a>
+   </li>
+   <li>
       <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a>
    </li>
    <li>
@@ -475,6 +479,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn"
          title="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn">is employed tool</a>
+   </li>
+   <li>
+      <a href="#isSetupFor"
+         title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a>
    </li>
    <li>
       <a href="#https://codemeta.github.io/terms/isSourceCodeOf" title="https://codemeta.github.io/terms/isSourceCodeOf">is source code of</a>
@@ -1702,13 +1710,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod" title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod" title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1777,6 +1779,18 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#ExperimentalPIVSetup" title="https://matthiasprobst.github.io/pivmeta#ExperimentalPIVSetup">experimental setup</a> <sup class="type-c" title="class">c</sup>, <a href="#VirtualPIVSetup" title="https://matthiasprobst.github.io/pivmeta#VirtualPIVSetup">virtual setup</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isSetupFor" title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasSetup" title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2002,6 +2016,18 @@ This section provides details for each class and property defined by PIVMeta.
    <dd>
     <a href="#PIVDataset" title="https://matthiasprobst.github.io/pivmeta#PIVDataset">PIV dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#PTVDataset" title="https://matthiasprobst.github.io/pivmeta#PTVDataset">PTV Dataset</a> <sup class="type-c" title="class">c</sup>
    </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasSetup" title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isSetupFor" title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="VelocimetryDistribution">
@@ -2177,11 +2203,13 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">has part</a></li>
   <li><a href="#hasPIVDataType" title="https://matthiasprobst.github.io/pivmeta#hasPIVDataType">has PIV data type</a></li>
+  <li><a href="#hasSetup" title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a></li>
   <li><a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#hasStandardName" title="https://matthiasprobst.github.io/ssno#hasStandardName">has standard name</a></li>
   <li><a href="#hasWindowWeightingFunction" title="https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction">has window weighting function</a></li>
   <li><a href="#http://purl.obolibrary.org/obo/RO_0002090" title="http://purl.obolibrary.org/obo/RO_0002090">immediately precedes</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn" title="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn">is employed tool</a></li>
+  <li><a href="#isSetupFor" title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a></li>
   <li><a href="#https://codemeta.github.io/terms/isSourceCodeOf" title="https://codemeta.github.io/terms/isSourceCodeOf">is source code of</a></li>
   <li><a href="#manufacturer" title="https://matthiasprobst.github.io/pivmeta#manufacturer">manufacturer</a></li>
   <li><a href="#outlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">outlier replacement scheme</a></li>
@@ -2349,6 +2377,17 @@ This section provides details for each class and property defined by PIVMeta.
   <div class="comment">
    <span class="markdown">a core relation that holds between a whole and its part</span>
   </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> transitive</p>
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasSetup" title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
  </div>
  <div class="entity" id="hasPIVDataType">
   <h3>has PIV data type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
@@ -2375,6 +2414,41 @@ This section provides details for each class and property defined by PIVMeta.
     </dt>
     <dd>
      <a href="#PIVDataType" title="https://matthiasprobst.github.io/pivmeta#PIVDataType">PIV data type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSetup">
+  <h3>has setup<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#hasSetup</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset to the setup used to generate it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#VelocimetryDataset" title="https://matthiasprobst.github.io/pivmeta#VelocimetryDataset">Velocimetry Dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#PIVSetup" title="https://matthiasprobst.github.io/pivmeta#PIVSetup">Setup</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isSetupFor" title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -2505,6 +2579,41 @@ This section provides details for each class and property defined by PIVMeta.
    </dl>
   </div>
  </div>
+ <div class="entity" id="isSetupFor">
+  <h3>is setup for<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#isSetupFor</p>
+  <div class="comment">
+   <span class="markdown">Relates a setup to the dataset(s) it was used for.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#PIVSetup" title="https://matthiasprobst.github.io/pivmeta#PIVSetup">Setup</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#VelocimetryDataset" title="https://matthiasprobst.github.io/pivmeta#VelocimetryDataset">Velocimetry Dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasSetup" title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="https://codemeta.github.io/terms/isSourceCodeOf">
   <h3>is source code of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://codemeta.github.io/terms/isSourceCodeOf</p>
@@ -2589,16 +2698,10 @@ This section provides details for each class and property defined by PIVMeta.
    <p><strong>has characteristics: </strong> transitive</p>
    <dl>
     <dt>
-     has domain
+     has sub-properties
     </dt>
     <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">Processing Step</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">Processing Step</a> <sup class="type-c" title="class">c</sup>
+     <a href="#isSetupFor" title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
