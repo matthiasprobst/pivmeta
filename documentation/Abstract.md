@@ -1,1 +1,1 @@
-PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups.
+PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups. Particle Tracking Velocimetry data can also be described with it.
