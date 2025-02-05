@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology for describing Particle Image Velocimetry (PIV) data.", "headline":"PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-02-03", "version":"v2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://matthiasprobst.github.io/pivmeta#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://matthiasprobst.github.io/pivmeta#","name":"PIVMeta: An ontology for describing Particle Image Velocimetry (PIV) data.", "headline":"PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups.", "dateReleased":"2024-03-30", "dateModified":"2025-02-05", "version":"v2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-8729-0482"}], "contributor":[{"@type":"Person","name":"Balazs Pritz (https://orcid.org/0000-0001-9560-500X), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery","url":"https://orcid.org/0000-0001-9560-500X"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -70,7 +70,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2025-02-03</dt>
+<dt>Modified on: 2025-02-05</dt>
 <dt>This version:</dt>
 <dd><a href="https://matthiasprobst.github.io/pivmeta/2.0.0">https://matthiasprobst.github.io/pivmeta/2.0.0</a></dd>
 <dt>Latest version:</dt>
@@ -80,7 +80,7 @@ $(function(){
 <dt>Revision:</dt>
 <dd>v2.0.0</dd>
 <dt>Issued on:</dt>
-<dd>2025-02-03</dd>
+<dd>2025-02-05</dd>
 <dt>Authors:</dt>
 <dd><a href="https://orcid.org/0000-0001-8729-0482">Matthias Probst (https://orcid.org/0000-0001-8729-0482), Karlsruhe Institute of Technology, Institute of Thermal Turbomachinery</a></dd>
 
@@ -283,11 +283,11 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#OutlierDetectionMethod"
-         title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a>
+         title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">Outlier detection method</a>
    </li>
    <li>
       <a href="#OutlierReplacementScheme"
-         title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a>
+         title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">Outlier replacement scheme</a>
    </li>
    <li>
       <a href="#PeakSearchMethod"
@@ -430,7 +430,14 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">distribution</a>
+      <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">
+         <span>B F O 0000050</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">
+         <span>B F O 0000051</span>
+      </a>
    </li>
    <li>
       <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a>
@@ -439,19 +446,12 @@ This ontology has the following classes and properties.</span>
       <a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a>
    </li>
    <li>
-      <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"
-         title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a>
-   </li>
-   <li>
       <a href="#hasMetric"
          title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a>
    </li>
    <li>
       <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter"
          title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a>
-   </li>
-   <li>
-      <a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">has part</a>
    </li>
    <li>
       <a href="#hasPIVDataType"
@@ -473,13 +473,6 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction">has window weighting function</a>
    </li>
    <li>
-      <a href="#http://purl.obolibrary.org/obo/RO_0002090" title="http://purl.obolibrary.org/obo/RO_0002090">immediately precedes</a>
-   </li>
-   <li>
-      <a href="#http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn"
-         title="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn">is employed tool</a>
-   </li>
-   <li>
       <a href="#isSetupFor"
          title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a>
    </li>
@@ -495,9 +488,6 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">outlier replacement scheme</a>
    </li>
    <li>
-      <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a>
-   </li>
-   <li>
       <a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a>
    </li>
    <li>
@@ -505,13 +495,7 @@ This ontology has the following classes and properties.</span>
          title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a>
    </li>
    <li>
-      <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a>
-   </li>
-   <li>
       <a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">unit</a>
-   </li>
-   <li>
-      <a href="#https://schema.org/instrument" title="https://schema.org/instrument">uses instrument</a>
    </li>
    <li>
       <a href="#http://www.w3.org/ns/prov#wasGeneratedBy" title="http://www.w3.org/ns/prov#wasGeneratedBy">was generated by</a>
@@ -544,7 +528,9 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has value</a>
+      <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">
+         <span>has Value</span>
+      </a>
    </li>
    <li>
       <a href="#https://matthiasprobst.github.io/ssno#standardName"
@@ -731,8 +717,8 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#Objective" title="https://matthiasprobst.github.io/pivmeta#Objective">objective</a></li>
   <li><a href="#OpticSensor" title="https://matthiasprobst.github.io/pivmeta#OpticSensor">optic sensor</a></li>
   <li><a href="#OpticalComponent" title="https://matthiasprobst.github.io/pivmeta#OpticalComponent">optical component</a></li>
-  <li><a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a></li>
-  <li><a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a></li>
+  <li><a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">Outlier detection method</a></li>
+  <li><a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">Outlier replacement scheme</a></li>
   <li><a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a></li>
   <li><a href="#http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f" title="http://emmo.info/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f">physics based simulation</a></li>
   <li><a href="#PIVAnalysis" title="https://matthiasprobst.github.io/pivmeta#PIVAnalysis">PIV Analysis</a></li>
@@ -784,12 +770,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">Processing Step</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#https://schema.org/instrument" title="https://schema.org/instrument">uses instrument</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -893,7 +873,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">distribution</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#wasGeneratedBy" title="http://www.w3.org/ns/prov#wasGeneratedBy">was generated by</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#http://www.w3.org/ns/prov#wasGeneratedBy" title="http://www.w3.org/ns/prov#wasGeneratedBy">was generated by</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -929,12 +909,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#ImageVelocimetryDistribution" title="https://matthiasprobst.github.io/pivmeta#ImageVelocimetryDistribution">Image Velocimetry Distribution</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">distribution</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -996,6 +970,12 @@ This section provides details for each class and property defined by PIVMeta.
    <dd>
     <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="FlagVariable">
@@ -1018,7 +998,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#hasFlagMeaning" title="https://matthiasprobst.github.io/pivmeta#hasFlagMeaning">has flag meaning</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFlagValue" title="https://matthiasprobst.github.io/pivmeta#hasFlagValue">has flag value</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFlagMeaning" title="https://matthiasprobst.github.io/pivmeta#hasFlagMeaning">has flag meaning</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFlagValue" title="https://matthiasprobst.github.io/pivmeta#hasFlagValue">has flag value</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
@@ -1054,6 +1034,12 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1302,7 +1288,7 @@ This section provides details for each class and property defined by PIVMeta.
     has sub-classes
    </dt>
    <dd>
-    <a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a> <sup class="type-c" title="class">c</sup>, <a href="#CorrelationMethod" title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulationMethod" title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageVelocimetryMethod" title="https://matthiasprobst.github.io/pivmeta#ImageVelocimetryMethod">image velocimetry method</a> <sup class="type-c" title="class">c</sup>, <a href="#InterrogationMethod" title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a> <sup class="type-c" title="class">c</sup>, <a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">outlier detection method</a> <sup class="type-c" title="class">c</sup>, <a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a> <sup class="type-c" title="class">c</sup>
+    <a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">Outlier detection method</a> <sup class="type-c" title="class">c</sup>, <a href="#BackgroundSubtractionMethod" title="https://matthiasprobst.github.io/pivmeta#BackgroundSubtractionMethod">background subtraction method</a> <sup class="type-c" title="class">c</sup>, <a href="#CorrelationMethod" title="https://matthiasprobst.github.io/pivmeta#CorrelationMethod">correlation method</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageManipulationMethod" title="https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod">image manipulation method</a> <sup class="type-c" title="class">c</sup>, <a href="#ImageVelocimetryMethod" title="https://matthiasprobst.github.io/pivmeta#ImageVelocimetryMethod">image velocimetry method</a> <sup class="type-c" title="class">c</sup>, <a href="#InterrogationMethod" title="https://matthiasprobst.github.io/pivmeta#InterrogationMethod">interrogation method</a> <sup class="type-c" title="class">c</sup>, <a href="#PeakSearchMethod" title="https://matthiasprobst.github.io/pivmeta#PeakSearchMethod">peak search method</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -1460,7 +1446,7 @@ This section provides details for each class and property defined by PIVMeta.
   </dl>
  </div>
  <div class="entity" id="OutlierDetectionMethod">
-  <h3>outlier detection method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>Outlier detection method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod</p>
   <div class="comment">
    <span class="markdown">Outlier detection method used to mark or interpolate spurious vectors.</span>
@@ -1472,10 +1458,16 @@ This section provides details for each class and property defined by PIVMeta.
    <dd>
     <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup>
    </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#outlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">outlier replacement scheme</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="OutlierReplacementScheme">
-  <h3>outlier replacement scheme<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>Outlier replacement scheme<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme</p>
   <div class="comment">
    <span class="markdown">Method used, to replace outliers.</span>
@@ -1784,7 +1776,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod" title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod" title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2009,12 +2001,6 @@ This section provides details for each class and property defined by PIVMeta.
    <dd>
     <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#manufacturer" title="https://matthiasprobst.github.io/pivmeta#manufacturer">manufacturer</a> <sup class="type-op" title="object property">op</sup>
    </dd>
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
   </dl>
  </div>
  <div class="entity" id="http://qudt.org/schema/qudt/Unit">
@@ -2061,7 +2047,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has value</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
@@ -2157,7 +2143,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -2194,51 +2180,52 @@ This section provides details for each class and property defined by PIVMeta.
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
-  <li><a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">distribution</a></li>
+  <li><a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050"> <span>B F O 0000050</span> </a></li>
+  <li><a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051"> <span>B F O 0000051</span> </a></li>
   <li><a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a></li>
   <li><a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a></li>
-  <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a></li>
   <li><a href="#hasMetric" title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a></li>
-  <li><a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">has part</a></li>
   <li><a href="#hasPIVDataType" title="https://matthiasprobst.github.io/pivmeta#hasPIVDataType">has PIV data type</a></li>
   <li><a href="#hasSetup" title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a></li>
   <li><a href="#https://codemeta.github.io/terms/hasSourceCode" title="https://codemeta.github.io/terms/hasSourceCode">has source code</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#hasStandardName" title="https://matthiasprobst.github.io/ssno#hasStandardName">has standard name</a></li>
   <li><a href="#hasWindowWeightingFunction" title="https://matthiasprobst.github.io/pivmeta#hasWindowWeightingFunction">has window weighting function</a></li>
-  <li><a href="#http://purl.obolibrary.org/obo/RO_0002090" title="http://purl.obolibrary.org/obo/RO_0002090">immediately precedes</a></li>
-  <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn" title="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn">is employed tool</a></li>
   <li><a href="#isSetupFor" title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a></li>
   <li><a href="#https://codemeta.github.io/terms/isSourceCodeOf" title="https://codemeta.github.io/terms/isSourceCodeOf">is source code of</a></li>
   <li><a href="#manufacturer" title="https://matthiasprobst.github.io/pivmeta#manufacturer">manufacturer</a></li>
   <li><a href="#outlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">outlier replacement scheme</a></li>
-  <li><a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a></li>
   <li><a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#realizesMethod" title="http://w3id.org/nfdi4ing/metadata4ing#realizesMethod">realizes method</a></li>
-  <li><a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#unit" title="https://matthiasprobst.github.io/ssno#unit">unit</a></li>
-  <li><a href="#https://schema.org/instrument" title="https://schema.org/instrument">uses instrument</a></li>
   <li><a href="#http://www.w3.org/ns/prov#wasGeneratedBy" title="http://www.w3.org/ns/prov#wasGeneratedBy">was generated by</a></li>
  </ul>
- <div class="entity" id="http://www.w3.org/ns/dcat#distribution">
-  <h3>distribution<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#distribution</p>
-  <div class="comment">
-   <span class="markdown">An available distribution of the dataset.</span>
-  </div>
+ <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000050">
+  <h3>B F O 0000050<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/BFO_0000050</p>
   <div class="description">
+   <p><strong>has characteristics: </strong> transitive</p>
    <dl>
     <dt>
-     has domain
+     has sub-properties
     </dt>
     <dd>
-     <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>
+     <a href="#isSetupFor" title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a> <sup class="type-op" title="object property">op</sup>
     </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000051">
+  <h3>B F O 0000051<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/BFO_0000051</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> transitive</p>
+   <dl>
     <dt>
-     has range
+     has sub-properties
     </dt>
     <dd>
-     <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="class">c</sup>
+     <a href="#hasSetup" title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -2281,45 +2268,22 @@ This section provides details for each class and property defined by PIVMeta.
   <div class="description">
    <dl>
     <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">
-  <h3>has employed tool<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool</p>
-  <div class="comment">
-   <span class="markdown">Points to a tool that is used within a given processing step</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has super-properties
-    </dt>
-    <dd>
-     <a href="#https://schema.org/instrument" title="https://schema.org/instrument">uses instrument</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-    <dt>
      has domain
     </dt>
     <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep" title="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep">Processing Step</a> <sup class="type-c" title="class">c</sup>
+     <a href="#FlagVariable" title="https://matthiasprobst.github.io/pivmeta#FlagVariable">flag variable</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#Tool" title="http://w3id.org/nfdi4ing/metadata4ing#Tool">tool</a> <sup class="type-c" title="class">c</sup>
+     <a href="#http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset" title="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset">HDF5 dataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#FlagStatistics" title="https://matthiasprobst.github.io/pivmeta#FlagStatistics">flag statistics</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
     </dt>
     <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn" title="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn">is employed tool</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -2359,31 +2323,13 @@ This section provides details for each class and property defined by PIVMeta.
      has domain
     </dt>
     <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#http://w3id.org/nfdi4ing/metadata4ing#Tool" title="http://w3id.org/nfdi4ing/metadata4ing#Tool">tool</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#VirtualTool" title="https://matthiasprobst.github.io/pivmeta#VirtualTool">virtual tool</a> <sup class="type-c" title="class">c</sup>
+     <a href="#http://w3id.org/nfdi4ing/metadata4ing#Method" title="http://w3id.org/nfdi4ing/metadata4ing#Method">method</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#http://w3id.org/nfdi4ing/metadata4ing#Tool" title="http://w3id.org/nfdi4ing/metadata4ing#Tool">tool</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
      <a href="#http://www.molmod.info/semantics/pims-ii.ttl#Variable" title="http://www.molmod.info/semantics/pims-ii.ttl#Variable">variable</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000051">
-  <h3>has part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/BFO_0000051</p>
-  <div class="comment">
-   <span class="markdown">a core relation that holds between a whole and its part</span>
-  </div>
-  <div class="description">
-   <p><strong>has characteristics: </strong> transitive</p>
-   <dl>
-    <dt>
-     has sub-properties
-    </dt>
-    <dd>
-     <a href="#hasSetup" title="https://matthiasprobst.github.io/pivmeta#hasSetup">has setup</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -2400,7 +2346,7 @@ This section provides details for each class and property defined by PIVMeta.
      has super-properties
     </dt>
     <dd>
-     <a href="#http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type">type</a> <sup class="type-op" title="object property">op</sup>
+     <a href="http://purl.org/dc/terms/type" target="_blank" title="http://purl.org/dc/terms/type">type</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -2429,7 +2375,7 @@ This section provides details for each class and property defined by PIVMeta.
      has super-properties
     </dt>
     <dd>
-     <a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">has part</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">B F O 0000051</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -2532,52 +2478,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dl>
   </div>
  </div>
- <div class="entity" id="http://purl.obolibrary.org/obo/RO_0002090">
-  <h3>immediately precedes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/RO_0002090</p>
-  <div class="comment">
-   <span class="markdown">X immediately precedes_Y iff: end(X) simultaneous_with start(Y)</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has super-properties
-    </dt>
-    <dd>
-     <a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="http://purl.obolibrary.org/obo/Process" target="_blank" title="http://purl.obolibrary.org/obo/Process">Process</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="http://purl.obolibrary.org/obo/Process" target="_blank" title="http://purl.obolibrary.org/obo/Process">Process</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn">
-  <h3>is employed tool<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn</p>
-  <div class="comment">
-   <span class="markdown">Points to a processing step the tool has been used in</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="isSetupFor">
   <h3>is setup for<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#isSetupFor</p>
@@ -2590,7 +2490,7 @@ This section provides details for each class and property defined by PIVMeta.
      has super-properties
     </dt>
     <dd>
-     <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">part of</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#http://purl.obolibrary.org/obo/BFO_0000050" title="http://purl.obolibrary.org/obo/BFO_0000050">B F O 0000050</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -2679,28 +2579,16 @@ This section provides details for each class and property defined by PIVMeta.
   <div class="description">
    <dl>
     <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#OutlierDetectionMethod" title="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">Outlier detection method</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
      has range
     </dt>
     <dd>
-     <a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000050">
-  <h3>part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/BFO_0000050</p>
-  <div class="comment">
-   <span class="markdown">a core relation that holds between a part and its whole</span>
-  </div>
-  <div class="description">
-   <p><strong>has characteristics: </strong> transitive</p>
-   <dl>
-    <dt>
-     has sub-properties
-    </dt>
-    <dd>
-     <a href="#isSetupFor" title="https://matthiasprobst.github.io/pivmeta#isSetupFor">is setup for</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">Outlier replacement scheme</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2714,12 +2602,6 @@ This section provides details for each class and property defined by PIVMeta.
   <div class="description">
    <p><strong>has characteristics: </strong> transitive</p>
    <dl>
-    <dt>
-     has sub-properties
-    </dt>
-    <dd>
-     <a href="#http://purl.obolibrary.org/obo/RO_0002090" title="http://purl.obolibrary.org/obo/RO_0002090">immediately precedes</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
     <dt>
      has domain
     </dt>
@@ -2758,20 +2640,6 @@ This section provides details for each class and property defined by PIVMeta.
    </dl>
   </div>
  </div>
- <div class="entity" id="http://purl.org/dc/terms/type">
-  <h3>type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/terms/type</p>
-  <div class="description">
-   <dl>
-    <dt>
-     has sub-properties
-    </dt>
-    <dd>
-     <a href="#hasPIVDataType" title="https://matthiasprobst.github.io/pivmeta#hasPIVDataType">has PIV data type</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="https://matthiasprobst.github.io/ssno#unit">
   <h3>unit<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/ssno#unit</p>
@@ -2791,29 +2659,6 @@ This section provides details for each class and property defined by PIVMeta.
     </dt>
     <dd>
      <a href="#http://qudt.org/schema/qudt/Unit" title="http://qudt.org/schema/qudt/Unit">unit</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="https://schema.org/instrument">
-  <h3>uses instrument<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.org/instrument</p>
-  <div class="comment">
-   <span class="markdown">points to an object that helped the agent perform the action (e.g., John wrote a book with a pen)</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has sub-properties
-    </dt>
-    <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool" title="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">has employed tool</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">activity</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2847,7 +2692,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#hasFlagMeaning" title="https://matthiasprobst.github.io/pivmeta#hasFlagMeaning">has flag meaning</a></li>
   <li><a href="#hasFlagValue" title="https://matthiasprobst.github.io/pivmeta#hasFlagValue">has flag value</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"> <span>has Numerical Value</span> </a></li>
-  <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has value</a></li>
+  <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue"> <span>has Value</span> </a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#standardName" title="https://matthiasprobst.github.io/ssno#standardName">standard name</a></li>
   <li><a href="#timeFormat" title="https://matthiasprobst.github.io/pivmeta#timeFormat">time format</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#withImageDeformation" title="https://matthiasprobst.github.io/ssno#withImageDeformation">with image deformation</a></li>
@@ -3016,7 +2861,7 @@ A JSON-LD excerpt could look like this:
      has super-properties
     </dt>
     <dd>
-     <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has value</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="#http://w3id.org/nfdi4ing/metadata4ing#hasValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
     <dt>
      has sub-properties
@@ -3040,11 +2885,8 @@ A JSON-LD excerpt could look like this:
   </div>
  </div>
  <div class="entity" id="http://w3id.org/nfdi4ing/metadata4ing#hasValue">
-  <h3>has value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>has Value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://w3id.org/nfdi4ing/metadata4ing#hasValue</p>
-  <div class="comment">
-   <span class="markdown">A value of any type</span>
-  </div>
   <div class="description">
    <dl>
     <dt>
@@ -3481,7 +3323,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a> <sup class="type-c" title="class">c</sup>
+    <a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">Outlier replacement scheme</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3697,7 +3539,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a> <sup class="type-c" title="class">c</sup>
+    <a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">Outlier replacement scheme</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -3832,7 +3674,7 @@ A JSON-LD excerpt could look like this:
     belongs to
    </dt>
    <dd>
-    <a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">outlier replacement scheme</a> <sup class="type-c" title="class">c</sup>
+    <a href="#OutlierReplacementScheme" title="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">Outlier replacement scheme</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts

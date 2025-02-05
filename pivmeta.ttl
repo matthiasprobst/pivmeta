@@ -173,16 +173,12 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000050
 obo:BFO_0000050 rdf:type owl:ObjectProperty ,
-                         owl:TransitiveProperty ;
-                skos:definition "a core relation that holds between a part and its whole"@en ;
-                skos:prefLabel "part of"@en .
+                         owl:TransitiveProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000051
 obo:BFO_0000051 rdf:type owl:ObjectProperty ,
-                         owl:TransitiveProperty ;
-                skos:definition "a core relation that holds between a whole and its part"@en ;
-                skos:prefLabel "has part"@en .
+                         owl:TransitiveProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000063
@@ -194,28 +190,8 @@ obo:BFO_0000063 rdf:type owl:ObjectProperty ,
                 skos:prefLabel "precedes"@en .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002090
-obo:RO_0002090 rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf obo:BFO_0000063 ;
-               rdfs:domain obo:Process ;
-               rdfs:range obo:Process ;
-               skos:definition "X immediately precedes_Y iff: end(X) simultaneous_with start(Y)"@en ;
-               skos:prefLabel "immediately precedes"@en .
-
-
 ###  http://purl.org/dc/terms/type
-dcterms:type rdf:type owl:ObjectProperty ;
-             skos:prefLabel "type"@en .
-
-
-###  http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool
-m4i:hasEmployedTool rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf schema:instrument ;
-                    owl:inverseOf m4i:isEmployedToolIn ;
-                    rdfs:domain m4i:ProcessingStep ;
-                    rdfs:range m4i:Tool ;
-                    skos:definition "Points to a tool that is used within a given processing step"@en ;
-                    skos:prefLabel "has employed tool"@en .
+dcterms:type rdf:type owl:ObjectProperty .
 
 
 ###  http://w3id.org/nfdi4ing/metadata4ing#hasParameter
@@ -223,18 +199,11 @@ m4i:hasParameter rdf:type owl:ObjectProperty ;
                  rdfs:domain [ rdf:type owl:Class ;
                                owl:unionOf ( m4i:Method
                                              m4i:Tool
-                                             piv:VirtualTool
                                            )
                              ] ;
                  rdfs:range pims-ii:Variable ;
                  skos:definition "Points to a parameter of a given method or tool."@en ;
                  skos:prefLabel "has parameter"@en .
-
-
-###  http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn
-m4i:isEmployedToolIn rdf:type owl:ObjectProperty ;
-                     skos:definition "Points to a processing step the tool has been used in"@en ;
-                     skos:prefLabel "is employed tool"@en .
 
 
 ###  http://w3id.org/nfdi4ing/metadata4ing#realizesMethod
@@ -243,14 +212,6 @@ m4i:realizesMethod rdf:type owl:ObjectProperty ;
                    rdfs:range m4i:Method ;
                    skos:definition "Points to a method that is used within a given processing step"@en ;
                    skos:prefLabel "realizes method" .
-
-
-###  http://www.w3.org/ns/dcat#distribution
-dcat:distribution rdf:type owl:ObjectProperty ;
-                  rdfs:domain dcat:Dataset ;
-                  rdfs:range dcat:Distribution ;
-                  skos:definition "An available distribution of the dataset."@en ;
-                  skos:prefLabel "distribution"@en .
 
 
 ###  http://www.w3.org/ns/prov#wasGeneratedBy
@@ -301,6 +262,12 @@ piv:flag rdf:type owl:ObjectProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#flagIn
 piv:flagIn rdf:type owl:ObjectProperty ;
+           rdfs:domain piv:FlagVariable ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset>
+                                      piv:FlagStatistics
+                                    )
+                      ] ;
            skos:definition "Relates a Flag Variable to its used concept"@en ;
            skos:prefLabel "flag in"@en .
 
@@ -360,6 +327,7 @@ piv:manufacturer rdf:type owl:ObjectProperty ;
 
 ###  https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme
 piv:outlierReplacementScheme rdf:type owl:ObjectProperty ;
+                             rdfs:domain piv:OutlierDetectionMethod ;
                              rdfs:range piv:OutlierReplacementScheme ;
                              skos:definition "Points to the outlier replacement scheme used by the PIV validation process."@en ;
                              skos:prefLabel "outlier replacement scheme"@en .
@@ -381,13 +349,6 @@ ssno:unit rdf:type owl:ObjectProperty ;
           skos:prefLabel "unit"@en .
 
 
-###  https://schema.org/instrument
-schema:instrument rdf:type owl:ObjectProperty ;
-                  rdfs:domain prov:Activity ;
-                  skos:definition "points to an object that helped the agent perform the action (e.g., John wrote a book with a pen)"@en ;
-                  skos:prefLabel "uses instrument"@en .
-
-
 #################################################################
 #    Data properties
 #################################################################
@@ -401,9 +362,7 @@ m4i:hasNumericalValue rdf:type owl:DatatypeProperty ;
 
 ###  http://w3id.org/nfdi4ing/metadata4ing#hasValue
 m4i:hasValue rdf:type owl:DatatypeProperty ;
-             rdfs:domain pims-ii:Variable ;
-             skos:definition "A value of any type"@en ;
-             skos:prefLabel "has value"@en .
+             rdfs:domain pims-ii:Variable .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#filenamePattern
@@ -656,10 +615,6 @@ piv:ExperimentalSetup rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty obo:BFO_0000051 ;
                                         owl:someValuesFrom piv:PIVParticle
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty m4i:hasEmployedTool ;
-                                        owl:someValuesFrom piv:PIVSoftware
                                       ] ;
                       owl:disjointWith piv:VirtualSetup ;
                       rdfs:comment "Use prov:hasPart to relate the tools used."@en ;
@@ -811,14 +766,14 @@ piv:OpticalComponent rdf:type owl:Class ;
 piv:OutlierDetectionMethod rdf:type owl:Class ;
                            rdfs:subClassOf m4i:Method ;
                            skos:definition "Outlier detection method used to mark or interpolate spurious vectors."@en ;
-                           skos:prefLabel "outlier detection method"@en .
+                           skos:prefLabel "Outlier detection method"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme
 piv:OutlierReplacementScheme rdf:type owl:Class ;
                              rdfs:subClassOf skos:Concept ;
                              skos:definition "Method used, to replace outliers."@en ;
-                             skos:prefLabel "outlier replacement scheme"@en .
+                             skos:prefLabel "Outlier replacement scheme"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#PIVAnalysis
@@ -877,10 +832,6 @@ piv:PIVEvaluation rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty obo:BFO_0000063 ;
                                     owl:someValuesFrom piv:PIVPostProcessing
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty m4i:hasEmployedTool ;
-                                    owl:someValuesFrom piv:PIVSoftware
                                   ] ;
                   skos:definition "Main step of a PIV evlauation applying the methods to determine the velocity"@en ;
                   skos:prefLabel "PIV evaluation"@en .
@@ -935,16 +886,6 @@ piv:PIVRecording rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty obo:BFO_0000063 ;
                                    owl:someValuesFrom piv:PIVPreProcessing
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty m4i:hasEmployedTool ;
-                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass piv:Camera
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty m4i:hasEmployedTool ;
-                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass piv:LightSource
                                  ] ;
                  skos:definition "Processing step of taking the images"@en ;
                  skos:prefLabel "PIV recording"@en .
@@ -1037,7 +978,11 @@ piv:VirtualSetup rdf:type owl:Class ;
 
 ###  https://matthiasprobst.github.io/pivmeta#VirtualTool
 piv:VirtualTool rdf:type owl:Class ;
-                rdfs:subClassOf m4i:Tool ;
+                rdfs:subClassOf m4i:Tool ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty m4i:hasParameter ;
+                                  owl:someValuesFrom pims-ii:Variable
+                                ] ;
                 skos:definition "The virtual or computational object that helped the agent perform the action, e.g. John took a photo with his modelled camera."@en ;
                 skos:prefLabel "virtual tool"@en .
 

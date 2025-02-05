@@ -289,8 +289,6 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <skos:definition xml:lang="en">a core relation that holds between a part and its whole</skos:definition>
-        <skos:prefLabel xml:lang="en">part of</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -300,8 +298,6 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <skos:definition xml:lang="en">a core relation that holds between a whole and its part</skos:definition>
-        <skos:prefLabel xml:lang="en">has part</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -319,39 +315,10 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002090 -->
-
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002090">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/Process"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/Process"/>
-        <skos:definition xml:lang="en">X immediately precedes_Y iff: end(X) simultaneous_with start(Y)</skos:definition>
-        <skos:prefLabel xml:lang="en">immediately precedes</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/dc/terms/type -->
 
 
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/type">
-        <skos:prefLabel xml:lang="en">type</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool -->
-
-
-    <owl:ObjectProperty rdf:about="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool">
-        <rdfs:subPropertyOf rdf:resource="https://schema.org/instrument"/>
-        <owl:inverseOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn"/>
-        <rdfs:domain rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"/>
-        <rdfs:range rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
-        <skos:definition xml:lang="en">Points to a tool that is used within a given processing step</skos:definition>
-        <skos:prefLabel xml:lang="en">has employed tool</skos:prefLabel>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/type"/>
     
 
 
@@ -364,23 +331,12 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
                     <rdf:Description rdf:about="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#VirtualTool"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.molmod.info/semantics/pims-ii.ttl#Variable"/>
         <skos:definition xml:lang="en">Points to a parameter of a given method or tool.</skos:definition>
         <skos:prefLabel xml:lang="en">has parameter</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn -->
-
-
-    <owl:ObjectProperty rdf:about="http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn">
-        <skos:definition xml:lang="en">Points to a processing step the tool has been used in</skos:definition>
-        <skos:prefLabel xml:lang="en">is employed tool</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -393,18 +349,6 @@
         <rdfs:range rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <skos:definition xml:lang="en">Points to a method that is used within a given processing step</skos:definition>
         <skos:prefLabel>realizes method</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/ns/dcat#distribution -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#distribution">
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
-        <skos:definition xml:lang="en">An available distribution of the dataset.</skos:definition>
-        <skos:prefLabel xml:lang="en">distribution</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -484,6 +428,15 @@
 
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#flagIn">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagVariable"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagStatistics"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <skos:definition xml:lang="en">Relates a Flag Variable to its used concept</skos:definition>
         <skos:prefLabel xml:lang="en">flag in</skos:prefLabel>
     </owl:ObjectProperty>
@@ -571,6 +524,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod"/>
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme"/>
         <skos:definition xml:lang="en">Points to the outlier replacement scheme used by the PIV validation process.</skos:definition>
         <skos:prefLabel xml:lang="en">outlier replacement scheme</skos:prefLabel>
@@ -598,17 +552,6 @@
         <rdfs:seeAlso rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasUnit"/>
         <skos:definition xml:lang="en">The canonical unit of the standard name</skos:definition>
         <skos:prefLabel xml:lang="en">unit</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://schema.org/instrument -->
-
-
-    <owl:ObjectProperty rdf:about="https://schema.org/instrument">
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-        <skos:definition xml:lang="en">points to an object that helped the agent perform the action (e.g., John wrote a book with a pen)</skos:definition>
-        <skos:prefLabel xml:lang="en">uses instrument</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -641,8 +584,6 @@
 
     <owl:DatatypeProperty rdf:about="http://w3id.org/nfdi4ing/metadata4ing#hasValue">
         <rdfs:domain rdf:resource="http://www.molmod.info/semantics/pims-ii.ttl#Variable"/>
-        <skos:definition xml:lang="en">A value of any type</skos:definition>
-        <skos:prefLabel xml:lang="en">has value</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -1034,12 +975,6 @@ A JSON-LD excerpt could look like this:
                 <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVParticle"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSoftware"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://matthiasprobst.github.io/pivmeta#VirtualSetup"/>
         <rdfs:comment xml:lang="en">Use prov:hasPart to relate the tools used.</rdfs:comment>
         <skos:definition xml:lang="en">An experimental setup applying the Particle Image or Tracking Velocimetry method. The class should be related to the tools used in the experiment.</skos:definition>
@@ -1270,7 +1205,7 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Method"/>
         <skos:definition xml:lang="en">Outlier detection method used to mark or interpolate spurious vectors.</skos:definition>
-        <skos:prefLabel xml:lang="en">outlier detection method</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Outlier detection method</skos:prefLabel>
     </owl:Class>
     
 
@@ -1281,7 +1216,7 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#OutlierReplacementScheme">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <skos:definition xml:lang="en">Method used, to replace outliers.</skos:definition>
-        <skos:prefLabel xml:lang="en">outlier replacement scheme</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Outlier replacement scheme</skos:prefLabel>
     </owl:Class>
     
 
@@ -1373,12 +1308,6 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"/>
-                <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVSoftware"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:definition xml:lang="en">Main step of a PIV evlauation applying the methods to determine the velocity</skos:definition>
         <skos:prefLabel xml:lang="en">PIV evaluation</skos:prefLabel>
     </owl:Class>
@@ -1461,20 +1390,6 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
                 <owl:someValuesFrom rdf:resource="https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://matthiasprobst.github.io/pivmeta#Camera"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://matthiasprobst.github.io/pivmeta#LightSource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <skos:definition xml:lang="en">Processing step of taking the images</skos:definition>
@@ -1619,6 +1534,12 @@ Provide piv:flagMeaning und piv:flagValues with it.</rdfs:comment>
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#VirtualTool">
         <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#Tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasParameter"/>
+                <owl:someValuesFrom rdf:resource="http://www.molmod.info/semantics/pims-ii.ttl#Variable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <skos:definition xml:lang="en">The virtual or computational object that helped the agent perform the action, e.g. John took a photo with his modelled camera.</skos:definition>
         <skos:prefLabel xml:lang="en">virtual tool</skos:prefLabel>
     </owl:Class>
