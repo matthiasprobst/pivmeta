@@ -56,7 +56,7 @@ generate the `pivmeta.ttl` file. Here are detailed instructions on how to do so:
 1. Updating the ontology:
 
 - Update the `.ttl` file [pivmeta_orig.ttl](pivmeta_orig.ttl)
-- You may use Protege or any other ontology editor to do so.
+- You may use Protégé or any other ontology editor to do so.
 - Update the [standard name table file](standard_name_table.yaml)
 
 2. Generate the context file:

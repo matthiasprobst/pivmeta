@@ -10,8 +10,9 @@ def merge_jsonld_files(list_of_filenames, output_filename):
     g = Graph()
     for filename in list_of_filenames:
         g.parse(filename, format='json-ld')
-    g.serialize(output_filename, format='json-ld',
-                context={
-                    "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld"
-                }
-                )
+    g.serialize(
+        output_filename, format='json-ld',
+        context={
+            "@import": "https://raw.githubusercontent.com/matthiasprobst/pivmeta/main/pivmeta_context.jsonld"
+        }
+    )

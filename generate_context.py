@@ -1,6 +1,7 @@
 """This code is taken from https://git.rwth-aachen.de/nfdi4ing/metadata4ing/metadata4ing/-/blob/1.2.1/ci/generate_context_file.py
 and only slightly adjusted. The original code is licensed under the CC-BY-4 license."""
 import logging
+import pathlib
 from pathlib import Path
 
 from rdflib import Graph
@@ -14,6 +15,7 @@ __this_dir__ = Path(__file__).parent
 
 def generate(ttl_file):
     """Generate context JSON-LD file"""
+    ttl_file = pathlib.Path(ttl_file)
     assert ttl_file.suffix == '.ttl'
     assert ttl_file.exists()
 
@@ -85,4 +87,4 @@ def generate(ttl_file):
 
 
 if __name__ == '__main__':
-    generate()
+    generate("pivmeta.ttl")
