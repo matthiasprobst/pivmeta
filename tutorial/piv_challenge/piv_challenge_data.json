@@ -4,19 +4,17 @@
   },
   "@graph": [
     {
-      "@id": "https://www.pivchallenge.org/pub/B/B.zip",
-      "@type": "Distribution",
-      "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
-      "dct:description": "PIV image data",
-      "download URL": "https://www.pivchallenge.org/pub/B/B.zip",
-      "pivm:pivDataSource": "pivm:Experimental"
+      "@id": "https://orcid.org/0000-0001-9336-2091",
+      "@type": "prov:Person",
+      "has ORCID ID": "https://orcid.org/0000-0001-9336-2091",
+      "personal mailbox": "christian.kaehler@dlr.de",
+      "role": "contact person"
     },
     {
-      "@id": "https://www.pivchallenge.org/pub/A/readmeA.txt",
-      "@type": "Distribution",
-      "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown",
-      "dct:description": "Readme file",
-      "download URL": "https://www.pivchallenge.org/pub/A/readmeA.txt"
+      "@id": "https://example.org/stanislas",
+      "@type": "prov:Person",
+      "last name": "Stanislas",
+      "personal mailbox": "pivnet-sig32@univ-lille1.fr"
     },
     {
       "@id": "https://www.pivchallenge.org/pub/index.html#a",
@@ -39,11 +37,34 @@
       "label": "Challenge1A"
     },
     {
-      "@id": "https://www.pivchallenge.org/pub/C/readmeC.txt",
+      "@id": "https://www.pivchallenge.org/pub/E/E.zip",
+      "@type": "Distribution",
+      "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
+      "dct:description": "PIV image data",
+      "download URL": "https://www.pivchallenge.org/pub/E/E.zip",
+      "pivm:pivDataSource": "pivm:Experimental"
+    },
+    {
+      "@id": "https://www.pivchallenge.org/pub/A/A.zip",
+      "@type": "Distribution",
+      "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
+      "dct:description": "PIV image data",
+      "download URL": "https://www.pivchallenge.org/pub/A/A.zip",
+      "pivm:pivDataSource": "pivm:Experimental"
+    },
+    {
+      "@id": "https://www.pivchallenge.org/pub/B/readmeB.txt",
       "@type": "Distribution",
       "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown",
       "dct:description": "Readme file",
-      "download URL": "https://www.pivchallenge.org/pub/C/readmeC.txt"
+      "download URL": "https://www.pivchallenge.org/pub/B/readmeB.txt"
+    },
+    {
+      "@id": "https://www.pivchallenge.org/pub/A/readmeA.txt",
+      "@type": "Distribution",
+      "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown",
+      "dct:description": "Readme file",
+      "download URL": "https://www.pivchallenge.org/pub/A/readmeA.txt"
     },
     {
       "@id": "https://www.pivchallenge.org/pub/index.html#c",
@@ -65,47 +86,24 @@
       "label": "Challenge1C"
     },
     {
-      "@id": "https://example.org/okamoto",
-      "@type": "prov:Person",
-      "last name": "Okamoto",
-      "personal mailbox": "okamoto@tokai.t.u-tokyo.ac.jp"
-    },
-    {
-      "@id": "https://www.pivchallenge.org/pub/B/readmeB.txt",
-      "@type": "Distribution",
-      "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown",
-      "dct:description": "Readme file",
-      "download URL": "https://www.pivchallenge.org/pub/B/readmeB.txt"
-    },
-    {
-      "@id": "https://www.pivchallenge.org/pub/C/C.zip",
-      "@type": "Distribution",
-      "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
-      "dct:description": "PIV image data",
-      "download URL": "https://www.pivchallenge.org/pub/C/C.zip",
-      "pivm:pivDataSource": "pivm:Experimental"
-    },
-    {
-      "@id": "https://orcid.org/0000-0001-9336-2091",
-      "@type": "prov:Person",
-      "has ORCID ID": "https://orcid.org/0000-0001-9336-2091",
-      "personal mailbox": "christian.kaehler@dlr.de",
-      "role": "contact person"
-    },
-    {
-      "@id": "https://www.pivchallenge.org/pub/E/E.zip",
-      "@type": "Distribution",
-      "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
-      "dct:description": "PIV image data",
-      "download URL": "https://www.pivchallenge.org/pub/E/E.zip",
-      "pivm:pivDataSource": "pivm:Experimental"
-    },
-    {
-      "@id": "https://www.pivchallenge.org/pub/E/readmeE.txt",
-      "@type": "Distribution",
-      "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown",
-      "dct:description": "Readme file",
-      "download URL": "https://www.pivchallenge.org/pub/E/readmeE.txt"
+      "@id": "https://www.pivchallenge.org/pub/index.html#b",
+      "@type": "dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://www.pivchallenge.org/pub/B/B.zip"
+        },
+        {
+          "@id": "https://www.pivchallenge.org/pub/B/readmeB.txt"
+        }
+      ],
+      "dcat:landingPage": "https://www.pivchallenge.org/pub/index.html#a",
+      "dct:description": "Strong vortex with different seeding concentration (high, medium, low) and different particle image size (two), (provided Okamoto) < synthetic > [512 x 512] ",
+      "dcterms:creator": {
+        "@id": "https://example.org/okamoto"
+      },
+      "dcterms:modified": "2000-10-28",
+      "dcterms:title": "Strong vortex",
+      "label": "Challenge1B"
     },
     {
       "@id": "https://www.pivchallenge.org/pub/index.html#e",
@@ -128,38 +126,40 @@
       "label": "Challenge1E"
     },
     {
-      "@id": "https://www.pivchallenge.org/pub/A/A.zip",
+      "@id": "https://www.pivchallenge.org/pub/B/B.zip",
       "@type": "Distribution",
       "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
       "dct:description": "PIV image data",
-      "download URL": "https://www.pivchallenge.org/pub/A/A.zip",
+      "download URL": "https://www.pivchallenge.org/pub/B/B.zip",
       "pivm:pivDataSource": "pivm:Experimental"
     },
     {
-      "@id": "https://example.org/stanislas",
+      "@id": "https://example.org/okamoto",
       "@type": "prov:Person",
-      "last name": "Stanislas",
-      "personal mailbox": "pivnet-sig32@univ-lille1.fr"
+      "last name": "Okamoto",
+      "personal mailbox": "okamoto@tokai.t.u-tokyo.ac.jp"
     },
     {
-      "@id": "https://www.pivchallenge.org/pub/index.html#b",
-      "@type": "dataset",
-      "dcat:distribution": [
-        {
-          "@id": "https://www.pivchallenge.org/pub/B/B.zip"
-        },
-        {
-          "@id": "https://www.pivchallenge.org/pub/B/readmeB.txt"
-        }
-      ],
-      "dcat:landingPage": "https://www.pivchallenge.org/pub/index.html#a",
-      "dct:description": "Strong vortex with different seeding concentration (high, medium, low) and different particle image size (two), (provided Okamoto) < synthetic > [512 x 512] ",
-      "dcterms:creator": {
-        "@id": "https://example.org/okamoto"
-      },
-      "dcterms:modified": "2000-10-28",
-      "dcterms:title": "Strong vortex",
-      "label": "Challenge1B"
+      "@id": "https://www.pivchallenge.org/pub/E/readmeE.txt",
+      "@type": "Distribution",
+      "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown",
+      "dct:description": "Readme file",
+      "download URL": "https://www.pivchallenge.org/pub/E/readmeE.txt"
+    },
+    {
+      "@id": "https://www.pivchallenge.org/pub/C/C.zip",
+      "@type": "Distribution",
+      "dcat:mediaType": "https://www.iana.org/assignments/media-types/application/zip",
+      "dct:description": "PIV image data",
+      "download URL": "https://www.pivchallenge.org/pub/C/C.zip",
+      "pivm:pivDataSource": "pivm:Experimental"
+    },
+    {
+      "@id": "https://www.pivchallenge.org/pub/C/readmeC.txt",
+      "@type": "Distribution",
+      "dcat:mediaType": "https://www.iana.org/assignments/media-types/text/markdown",
+      "dct:description": "Readme file",
+      "download URL": "https://www.pivchallenge.org/pub/C/readmeC.txt"
     }
   ]
 }
