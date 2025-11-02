@@ -46,13 +46,20 @@ class TestGraph(unittest.TestCase):
             print(s, p, o)
 
             assert isinstance(p, rdflib.URIRef), f'Error: {s} is not a URIRef'
-            if p not in (rdflib.RDF.first, rdflib.RDF.rest,
+            if (p not in (rdflib.RDF.first, rdflib.RDF.rest,
                          rdflib.OWL.members,
                          rdflib.OWL.onClass,
+                         rdflib.OWL.onDataRange,
                          rdflib.OWL.hasValue,
                          rdflib.OWL.qualifiedCardinality,
                          rdflib.URIRef("http://www.w3.org/2002/07/owl#minQualifiedCardinality"),
-                         rdflib.OWL.unionOf) and o != rdflib.OWL.Class and o != rdflib.OWL.Restriction and p != rdflib.OWL.onProperty and p != rdflib.OWL.inverseOf and p != rdflib.OWL.someValuesFrom and p != rdflib.OWL.allValuesFrom:
+                         rdflib.OWL.unionOf) and o != rdflib.OWL.Class
+                    and o != rdflib.OWL.Restriction
+                    and o != rdflib.RDFS.Datatype
+                    and p != rdflib.OWL.onProperty
+                    and p != rdflib.OWL.inverseOf
+                    and p != rdflib.OWL.someValuesFrom
+                    and p != rdflib.OWL.allValuesFrom):
                 if o not in rdflib.OWL.AllDisjointClasses:
                     assert isinstance(s, rdflib.URIRef), f'Error: {s} is not a URIRef ({s}, {p}, {o})'
         assert len(g) > 0, f'Error: No triples found in {onto_purl}.'
