@@ -223,7 +223,7 @@ def create_version(*,
 
 if __name__ == "__main__":
     prev_version_string = 'v3.0.0'
-    version_string = 'v3.0.1'
+    version_string = 'v3.1.0'
     img_version_string = 'v1.0.0'
     doi_url = "https://doi.org/10.5281/zenodo.17560453"
     overwrite = True
