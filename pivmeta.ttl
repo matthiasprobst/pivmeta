@@ -262,26 +262,6 @@ and encoding method (bitwise or enumerated). Typically used on HDF5 datasets, bu
 also annotate entire distributions or files represented as dcat:Resource.
 """@en .
 
-piv:flag a owl:ObjectProperty ;
-  owl:inverseOf piv:flagIn ;
-  rdfs:domain [ a owl:Class ;
-                owl:unionOf ( piv:FlagValue hdf5:Dataset dcat:Resource )
-              ] ;
-  rdfs:range piv:FlagScheme ;
-  skos:prefLabel "flag"@en ;
-  skos:definition """
-Relates a flag value, dataset, or resource to its flag scheme, or
-to concrete flag values derived from that scheme.
-"""@en .
-
-piv:flagIn a owl:ObjectProperty ;
-  rdfs:domain piv:FlagScheme ;
-  rdfs:range [ a owl:Class ;
-               owl:unionOf ( piv:FlagValue hdf5:Dataset dcat:Resource )
-             ] ;
-  skos:prefLabel "flag in"@en ;
-  skos:definition "Inverse of piv:flag; indicates the dataset, resource, or value where a flag scheme is applied."@en .
-
 ### Scheme declares which atoms it allows.
 piv:allowedFlag a owl:ObjectProperty ;
   rdfs:domain piv:FlagScheme ; rdfs:range piv:Flag ;
@@ -294,7 +274,6 @@ piv:usesFlagSchemeType a owl:ObjectProperty ;
   skos:prefLabel "uses flag scheme type"@en ;
   skos:definition "Specifies whether the scheme is bitwise or enumerated."@en .
 
-### Mapping entry to which atom it maps to (kept separate from piv:flag to avoid overloading).
 piv:mapsToFlag a owl:ObjectProperty ;
   rdfs:domain piv:FlagMapping ; rdfs:range piv:Flag ;
   skos:prefLabel "maps to flag"@en ;
