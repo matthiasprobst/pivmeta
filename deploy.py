@@ -225,7 +225,7 @@ if __name__ == "__main__":
     prev_version_string = 'v2.1.1'
     version_string = 'v3.0.0'
     img_version_string = 'v1.0.0'
-    doi_url = "https://doi.org/10.5281/zenodo.17552158"
+    doi_url = "https://doi.org/10.5281/zenodo.17560113"
     overwrite = True
 
     version_dir = __this_dir__ / 'docs' / version_string.strip('v')

@@ -137,7 +137,7 @@
     "id" : "86",
     "type" : "owl:Class"
   }, {
-    "id" : "77",
+    "id" : "79",
     "type" : "owl:Class"
   }, {
     "id" : "46",
@@ -167,10 +167,10 @@
     "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "90",
+    "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "4",
+    "id" : "90",
     "type" : "owl:Class"
   }, {
     "id" : "23",
@@ -371,10 +371,10 @@
     "id" : "72",
     "type" : "owl:Class"
   }, {
-    "id" : "11",
+    "id" : "49",
     "type" : "owl:Class"
   }, {
-    "id" : "49",
+    "id" : "11",
     "type" : "owl:Class"
   }, {
     "id" : "151",
@@ -849,7 +849,7 @@
     } ],
     "subClasses" : [ "37" ],
     "id" : "38",
-    "superClasses" : [ "77" ]
+    "superClasses" : [ "79" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#Objective",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
@@ -1016,7 +1016,7 @@
       }
     } ],
     "subClasses" : [ "38", "88", "89", "90", "49", "91" ],
-    "id" : "77",
+    "id" : "79",
     "superClasses" : [ "14" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#OpticalComponent",
@@ -1167,26 +1167,6 @@
         "IRI-based" : "TopBottomFlip"
       }
     }, {
-      "iri" : "https://matthiasprobst.github.io/pivmeta#ImageDewarping",
-      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-      "annotations" : {
-        "prefLabel" : [ {
-          "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "image dewarping",
-          "type" : "label"
-        } ],
-        "definition" : [ {
-          "identifier" : "definition",
-          "language" : "en",
-          "value" : "The process of dewarping a distorted image, e.g. due to the fisheye effect.",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "ImageDewarping"
-      }
-    }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#ImageFiltering",
       "baseIri" : "https://matthiasprobst.github.io/pivmeta",
       "annotations" : {
@@ -1206,9 +1186,29 @@
       "labels" : {
         "IRI-based" : "ImageFiltering"
       }
+    }, {
+      "iri" : "https://matthiasprobst.github.io/pivmeta#ImageDewarping",
+      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+      "annotations" : {
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "en",
+          "value" : "image dewarping",
+          "type" : "label"
+        } ],
+        "definition" : [ {
+          "identifier" : "definition",
+          "language" : "en",
+          "value" : "The process of dewarping a distorted image, e.g. due to the fisheye effect.",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "ImageDewarping"
+      }
     } ],
     "id" : "89",
-    "superClasses" : [ "77" ]
+    "superClasses" : [ "79" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#Setup",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
@@ -1300,7 +1300,7 @@
       "IRI-based" : "CorrelationMethod"
     },
     "id" : "91",
-    "superClasses" : [ "77" ]
+    "superClasses" : [ "79" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#Laser",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
@@ -1361,6 +1361,17 @@
     "id" : "8",
     "superClasses" : [ "3" ]
   }, {
+    "iri" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
+    "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ProcessingStep"
+    },
+    "subClasses" : [ "101", "3" ],
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "66" ]
+  }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#OutlierDetectionMethod",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
     "instances" : 0,
@@ -1382,18 +1393,7 @@
       "IRI-based" : "OutlierDetectionMethod"
     },
     "id" : "90",
-    "superClasses" : [ "77" ]
-  }, {
-    "iri" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep",
-    "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "ProcessingStep"
-    },
-    "subClasses" : [ "101", "3" ],
-    "attributes" : [ "external" ],
-    "id" : "4",
-    "superClasses" : [ "66" ]
+    "superClasses" : [ "79" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/ssno#StandardName",
     "baseIri" : "https://matthiasprobst.github.io/ssno",
@@ -1710,7 +1710,7 @@
   }, {
     "instances" : 0,
     "union" : [ "44", "67" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "95"
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -1723,22 +1723,22 @@
   }, {
     "instances" : 0,
     "union" : [ "67", "102", "41" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "121"
   }, {
     "instances" : 0,
     "union" : [ "67", "102", "41" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "122"
   }, {
     "instances" : 0,
     "union" : [ "4", "19" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "82"
   }, {
     "instances" : 0,
     "union" : [ "102", "41" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "119"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#PIVRecording",
@@ -1816,12 +1816,12 @@
   }, {
     "instances" : 0,
     "union" : [ "40", "31" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "104"
   }, {
     "instances" : 0,
     "union" : [ "14", "29" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "126"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation",
@@ -1849,7 +1849,7 @@
   }, {
     "instances" : 0,
     "union" : [ "40", "31" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "2"
   }, {
     "iri" : "https://schema.org/CreativeWork",
@@ -2064,7 +2064,7 @@
     "label" : {
       "IRI-based" : "Method"
     },
-    "subClasses" : [ "77" ],
+    "subClasses" : [ "79" ],
     "attributes" : [ "external" ],
     "id" : "14",
     "superClasses" : [ "142" ]
@@ -2376,20 +2376,6 @@
         "IRI-based" : "TukeyWindow"
       }
     }, {
-      "iri" : "https://matthiasprobst.github.io/pivmeta#SquareWindow",
-      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-      "annotations" : {
-        "prefLabel" : [ {
-          "identifier" : "prefLabel",
-          "language" : "en",
-          "value" : "square window",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "SquareWindow"
-      }
-    }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#GaussianWindow",
       "baseIri" : "https://matthiasprobst.github.io/pivmeta",
       "annotations" : {
@@ -2408,6 +2394,20 @@
       },
       "labels" : {
         "IRI-based" : "GaussianWindow"
+      }
+    }, {
+      "iri" : "https://matthiasprobst.github.io/pivmeta#SquareWindow",
+      "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+      "annotations" : {
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "en",
+          "value" : "square window",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "SquareWindow"
       }
     }, {
       "iri" : "https://matthiasprobst.github.io/pivmeta#HammingWindow",
@@ -2784,7 +2784,7 @@
       "en" : "Method fitting the sub pixel peak in the correlation signal."
     },
     "id" : "88",
-    "superClasses" : [ "77" ]
+    "superClasses" : [ "79" ]
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable",
     "baseIri" : "http://w3id.org/nfdi4ing/metadata4ing",
@@ -2842,13 +2842,13 @@
     "annotations" : {
       "prefLabel" : [ {
         "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "realizable entity",
+        "language" : "de",
+        "value" : "realisierbare Entität",
         "type" : "label"
       }, {
         "identifier" : "prefLabel",
-        "language" : "de",
-        "value" : "realisierbare Entität",
+        "language" : "en",
+        "value" : "realizable entity",
         "type" : "label"
       } ],
       "definition" : [ {
@@ -2997,6 +2997,24 @@
     "attributes" : [ "external" ],
     "id" : "72"
   }, {
+    "iri" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod",
+    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "interrogation method",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "InterrogationMethod"
+    },
+    "subClasses" : [ "191", "154", "48" ],
+    "id" : "49",
+    "superClasses" : [ "79" ]
+  }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#PIVMaskGeneration",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
     "instances" : 0,
@@ -3019,24 +3037,6 @@
     },
     "id" : "11",
     "superClasses" : [ "3" ]
-  }, {
-    "iri" : "https://matthiasprobst.github.io/pivmeta#InterrogationMethod",
-    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-    "instances" : 0,
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "interrogation method",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "InterrogationMethod"
-    },
-    "subClasses" : [ "191", "154", "48" ],
-    "id" : "49",
-    "superClasses" : [ "77" ]
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#BitwiseFlagScheme",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
@@ -3134,7 +3134,7 @@
     "id" : "75",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "78",
+    "id" : "77",
     "type" : "owl:objectProperty"
   }, {
     "id" : "81",
@@ -3366,7 +3366,7 @@
     "type" : "owl:someValuesFrom"
   }, {
     "id" : "196",
-    "type" : "owl:disjointWith"
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "197",
     "type" : "owl:someValuesFrom"
@@ -3393,7 +3393,7 @@
     "type" : "owl:someValuesFrom"
   }, {
     "id" : "207",
-    "type" : "owl:someValuesFrom"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "208",
     "type" : "rdfs:SubClassOf"
@@ -3583,12 +3583,12 @@
   }, {
     "range" : "29",
     "domain" : "28",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "27"
   }, {
     "range" : "29",
     "domain" : "31",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "30"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue",
@@ -3627,47 +3627,23 @@
   }, {
     "range" : "29",
     "domain" : "46",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "45"
   }, {
     "range" : "49",
     "domain" : "48",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "47"
   }, {
     "range" : "29",
     "domain" : "51",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "50"
   }, {
     "range" : "29",
     "domain" : "53",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "52"
-  }, {
-    "iri" : "https://matthiasprobst.github.io/pivmeta#hasMetric",
-    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
-    "range" : "62",
-    "annotations" : {
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "has metric",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "A numerical value derived from or related to the distribution's content.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasMetric"
-    },
-    "domain" : "61",
-    "attributes" : [ "object" ],
-    "id" : "68"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#usesFlagSchemeType",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
@@ -3690,6 +3666,30 @@
       "IRI-based" : "usesFlagSchemeType"
     },
     "domain" : "43",
+    "attributes" : [ "object" ],
+    "id" : "68"
+  }, {
+    "iri" : "https://matthiasprobst.github.io/pivmeta#hasMetric",
+    "baseIri" : "https://matthiasprobst.github.io/pivmeta",
+    "range" : "62",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "has metric",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A numerical value derived from or related to the distribution's content.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasMetric"
+    },
+    "domain" : "61",
     "attributes" : [ "object" ],
     "id" : "69"
   }, {
@@ -3738,10 +3738,10 @@
     "label" : {
       "IRI-based" : "hasSetup"
     },
-    "superproperty" : [ "79" ],
+    "superproperty" : [ "78" ],
     "domain" : "20",
     "attributes" : [ "object" ],
-    "id" : "78"
+    "id" : "77"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#usesSoftware",
     "baseIri" : "https://matthiasprobst.github.io/pivmeta",
@@ -3757,7 +3757,7 @@
     "label" : {
       "IRI-based" : "usesSoftware"
     },
-    "superproperty" : [ "79" ],
+    "superproperty" : [ "78" ],
     "domain" : "82",
     "subproperty" : [ "84", "85" ],
     "attributes" : [ "object" ],
@@ -4002,7 +4002,7 @@
       "IRI-based" : "BFO_0000063"
     },
     "domain" : "65",
-    "attributes" : [ "external", "transitive", "object" ],
+    "attributes" : [ "external", "object", "transitive" ],
     "id" : "116"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#allowedFlag",
@@ -4079,20 +4079,20 @@
       "en" : "has part"
     },
     "domain" : "40",
-    "subproperty" : [ "78", "81" ],
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "subproperty" : [ "77", "81" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "127"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
     "baseIri" : "http://purl.obolibrary.org/obo",
-    "range" : "70",
+    "range" : "99",
     "label" : {
       "IRI-based" : "BFO_0000051",
       "en" : "has part"
     },
     "domain" : "40",
-    "subproperty" : [ "78", "81" ],
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "subproperty" : [ "77", "81" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "129"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasParameter",
@@ -4121,14 +4121,14 @@
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
     "baseIri" : "http://purl.obolibrary.org/obo",
-    "range" : "99",
+    "range" : "70",
     "label" : {
       "IRI-based" : "BFO_0000051",
       "en" : "has part"
     },
     "domain" : "40",
-    "subproperty" : [ "78", "81" ],
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "subproperty" : [ "77", "81" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "131"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -4139,7 +4139,7 @@
     },
     "domain" : "11",
     "subproperty" : [ "18" ],
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "132"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -4163,7 +4163,7 @@
       "IRI-based" : "BFO_0000063"
     },
     "domain" : "6",
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "133"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -4187,12 +4187,12 @@
       "IRI-based" : "BFO_0000063"
     },
     "domain" : "8",
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "134"
   }, {
     "range" : "3",
     "domain" : "11",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "135"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#flag",
@@ -4222,12 +4222,12 @@
   }, {
     "range" : "31",
     "domain" : "99",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "139"
   }, {
     "range" : "31",
     "domain" : "125",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "140"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#mapsToFlag",
@@ -4256,52 +4256,52 @@
   }, {
     "range" : "3",
     "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "143"
   }, {
     "range" : "3",
     "domain" : "7",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "144"
   }, {
     "range" : "3",
     "domain" : "10",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "145"
   }, {
     "range" : "3",
     "domain" : "9",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "146"
   }, {
     "range" : "59",
     "domain" : "93",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "147"
   }, {
     "range" : "59",
     "domain" : "110",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "148"
   }, {
     "range" : "3",
     "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "149"
   }, {
     "range" : "3",
     "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "150"
   }, {
     "range" : "59",
     "domain" : "16",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "152"
   }, {
     "range" : "59",
     "domain" : "23",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "153"
   }, {
     "iri" : "https://matthiasprobst.github.io/ssno#hasStandardName",
@@ -4324,12 +4324,12 @@
   }, {
     "range" : "59",
     "domain" : "58",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "157"
   }, {
     "range" : "66",
     "domain" : "4",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "159"
   }, {
     "domain" : "59",
@@ -4340,29 +4340,29 @@
       "undefined" : "is a"
     }
   }, {
-    "range" : "77",
+    "range" : "79",
     "domain" : "49",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "161"
   }, {
-    "range" : "77",
+    "range" : "79",
     "domain" : "90",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "162"
   }, {
     "range" : "97",
     "domain" : "26",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "163"
   }, {
-    "range" : "77",
+    "range" : "79",
     "domain" : "91",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "164"
   }, {
-    "range" : "77",
+    "range" : "79",
     "domain" : "89",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "165"
   }, {
     "iri" : "http://w3id.org/nfdi4ing/metadata4ing#hasParameter",
@@ -4389,19 +4389,19 @@
     "attributes" : [ "external", "object" ],
     "id" : "166"
   }, {
-    "range" : "77",
+    "range" : "79",
     "domain" : "88",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "167"
   }, {
-    "range" : "77",
+    "range" : "79",
     "domain" : "38",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "168"
   }, {
     "range" : "20",
     "domain" : "74",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "169"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#usesAnalysisSoftware",
@@ -4425,12 +4425,12 @@
   }, {
     "range" : "20",
     "domain" : "73",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "170"
   }, {
     "range" : "86",
     "domain" : "87",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "171"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#flagIn",
@@ -4459,27 +4459,27 @@
   }, {
     "range" : "38",
     "domain" : "37",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "172"
   }, {
     "range" : "65",
     "domain" : "66",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "173"
   }, {
     "range" : "14",
-    "domain" : "77",
-    "attributes" : [ "anonymous", "object" ],
+    "domain" : "79",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "174"
   }, {
     "range" : "36",
     "domain" : "35",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "175"
   }, {
     "range" : "36",
     "domain" : "151",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "176"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#usesAcquisitionSoftware",
@@ -4527,42 +4527,42 @@
   }, {
     "range" : "62",
     "domain" : "55",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "179"
   }, {
     "range" : "62",
     "domain" : "33",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "180"
   }, {
     "range" : "62",
     "domain" : "64",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "181"
   }, {
     "range" : "39",
     "domain" : "40",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "182"
   }, {
     "range" : "31",
     "domain" : "70",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "183"
   }, {
     "range" : "60",
     "domain" : "61",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "184"
   }, {
     "range" : "128",
     "domain" : "1",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "185"
   }, {
     "range" : "72",
     "domain" : "20",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "186"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasGeneratedBy",
@@ -4585,32 +4585,32 @@
   }, {
     "range" : "83",
     "domain" : "51",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "188"
   }, {
     "range" : "49",
     "domain" : "154",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "189"
   }, {
     "range" : "49",
     "domain" : "191",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "190"
   }, {
     "range" : "4",
     "domain" : "3",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "192"
   }, {
     "range" : "71",
     "domain" : "70",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "193"
   }, {
     "range" : "71",
     "domain" : "57",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "194"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -4621,13 +4621,20 @@
       "en" : "has part"
     },
     "domain" : "87",
-    "subproperty" : [ "78", "81" ],
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "subproperty" : [ "77", "81" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "195"
   }, {
-    "range" : "40",
+    "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "BFO_0000051",
+      "en" : "has part"
+    },
     "domain" : "87",
-    "attributes" : [ "anonymous", "object" ],
+    "subproperty" : [ "77", "81" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "196"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -4638,8 +4645,8 @@
       "en" : "has part"
     },
     "domain" : "20",
-    "subproperty" : [ "78", "81" ],
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "subproperty" : [ "77", "81" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "197"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType",
@@ -4699,7 +4706,7 @@
   }, {
     "range" : "3",
     "domain" : "101",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "201"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -4723,7 +4730,7 @@
       "IRI-based" : "BFO_0000063"
     },
     "domain" : "9",
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "202"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -4747,7 +4754,7 @@
       "IRI-based" : "BFO_0000063"
     },
     "domain" : "5",
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "204"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -4771,20 +4778,8 @@
       "IRI-based" : "BFO_0000063"
     },
     "domain" : "7",
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
     "id" : "205"
-  }, {
-    "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
-    "baseIri" : "http://purl.obolibrary.org/obo",
-    "range" : "28",
-    "label" : {
-      "IRI-based" : "BFO_0000051",
-      "en" : "has part"
-    },
-    "domain" : "87",
-    "subproperty" : [ "78", "81" ],
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
-    "id" : "206"
   }, {
     "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
     "baseIri" : "http://purl.obolibrary.org/obo",
@@ -4794,58 +4789,63 @@
       "en" : "has part"
     },
     "domain" : "87",
-    "subproperty" : [ "78", "81" ],
-    "attributes" : [ "external", "someValues", "transitive", "object" ],
+    "subproperty" : [ "77", "81" ],
+    "attributes" : [ "external", "someValues", "object", "transitive" ],
+    "id" : "206"
+  }, {
+    "range" : "40",
+    "domain" : "87",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "207"
   }, {
     "range" : "57",
     "domain" : "56",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "208"
   }, {
     "range" : "33",
     "domain" : "67",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "209"
   }, {
     "range" : "4",
     "domain" : "101",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "210"
   }, {
     "range" : "142",
     "domain" : "14",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "211"
   }, {
     "range" : "26",
     "domain" : "25",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "212"
   }, {
     "range" : "26",
     "domain" : "99",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "213"
   }, {
     "range" : "19",
     "domain" : "40",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "214"
   }, {
     "range" : "19",
     "domain" : "87",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "215"
   }, {
     "range" : "55",
     "domain" : "54",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "216"
   }, {
     "range" : "80",
     "domain" : "53",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "217"
   }, {
     "iri" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType",
@@ -4875,12 +4875,12 @@
   }, {
     "range" : "63",
     "domain" : "62",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "219"
   }, {
     "range" : "46",
     "domain" : "97",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "220"
   }, {
     "iri" : "http://purl.org/dc/terms/type",
@@ -4896,17 +4896,17 @@
   }, {
     "range" : "46",
     "domain" : "80",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "221"
   }, {
     "range" : "46",
     "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "222"
   }, {
     "range" : "46",
     "domain" : "98",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "223"
   } ]
 }
