@@ -222,8 +222,8 @@ def create_version(*,
 
 
 if __name__ == "__main__":
-    prev_version_string = 'v2.1.0'
-    version_string = 'v2.1.1'
+    prev_version_string = 'v2.1.1'
+    version_string = 'v3.0.0'
     img_version_string = 'v1.0.0'
     doi_url = "https://doi.org/10.5281/zenodo.17552158"
     overwrite = True

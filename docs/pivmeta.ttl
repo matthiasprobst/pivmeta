@@ -7,7 +7,7 @@
 @base <https://matthiasprobst.github.io/pivmeta#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
-                                             owl:versionIRI <https://matthiasprobst.github.io/pivmeta/2.1.1> ;
+                                             owl:versionIRI <https://matthiasprobst.github.io/pivmeta/3.0.0> ;
                                              <http://purl.org/dc/terms/abstract> "PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups."@en ;
                                              <http://purl.org/dc/terms/created> "2024-01-03" ;
                                              <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0001-8729-0482> ;
@@ -18,7 +18,7 @@
                                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://matthiasprobst.github.io/pivmeta#" ;
                                              <http://w3id.org/nfdi4ing/metadata4ing#ContactPerson> "https://orcid.org/0000-0001-8729-0482" ;
                                              rdfs:label "pivmeta" ;
-                                             owl:versionInfo "v2.1.1" .
+                                             owl:versionInfo "v3.0.0" .
 
 #################################################################
 #    Annotation properties
@@ -233,29 +233,43 @@ xsd:date rdf:type rdfs:Datatype .
                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "is source code of"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#allowedFlag
+:allowedFlag rdf:type owl:ObjectProperty ;
+             rdfs:domain :FlagScheme ;
+             rdfs:range :FlagAtom ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Lists the atomic flags that are valid within the scheme."@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "allowed flag"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#flag
 :flag rdf:type owl:ObjectProperty ;
       owl:inverseOf :flagIn ;
-      rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf ( <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset>
-                                  :FlagStatistics
-                                )
-                  ] ;
-      rdfs:range :FlagVariable ;
-      <http://www.w3.org/2004/02/skos/core#definition> "Relates something to a Flag Variable"@en ;
+      rdfs:range [ rdf:type owl:Class ;
+                   owl:unionOf ( :FlagBitmask
+                                 :FlagScheme
+                               )
+                 ] ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Relates a thing (typically dataset or variable) to its flag scheme or to concrete bitmask flag values."@en ;
       <http://www.w3.org/2004/02/skos/core#prefLabel> "flag"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#flagIn
 :flagIn rdf:type owl:ObjectProperty ;
-        rdfs:domain :FlagVariable ;
-        rdfs:range [ rdf:type owl:Class ;
-                     owl:unionOf ( <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset>
-                                   :FlagStatistics
-                                 )
-                   ] ;
-        <http://www.w3.org/2004/02/skos/core#definition> "Relates a Flag Variable to its used concept"@en ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :FlagBitmask
+                                    :FlagScheme
+                                  )
+                    ] ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Inverse of piv:flag; indicates in which thing (typically dataset or variable) a flag scheme or bitmask is used."@en ;
         <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#hasFlagMapping
+:hasFlagMapping rdf:type owl:ObjectProperty ;
+                rdfs:domain :FlagScheme ;
+                rdfs:range :FlagMapping ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Associates a flag scheme with its explicit value to atom mappings."@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag mapping"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#hasMetric
@@ -311,6 +325,14 @@ xsd:date rdf:type rdfs:Datatype .
               <http://www.w3.org/2004/02/skos/core#prefLabel> "manufacturer"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#mapsToFlag
+:mapsToFlag rdf:type owl:ObjectProperty ;
+            rdfs:domain :FlagMapping ;
+            rdfs:range :FlagAtom ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Connects a piv:FlagMapping entry to the corresponding piv:FlagAtom."@en ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "maps to flag"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#outlierReplacementScheme
 :outlierReplacementScheme rdf:type owl:ObjectProperty ;
                           rdfs:domain :OutlierDetectionMethod ;
@@ -329,6 +351,14 @@ xsd:date rdf:type rdfs:Datatype .
 :usesAnalysisSoftware rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :usesSoftware ;
                       <http://www.w3.org/2004/02/skos/core#prefLabel> "uses analysis software"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#usesFlagSchemeType
+:usesFlagSchemeType rdf:type owl:ObjectProperty ;
+                    rdfs:domain :FlagScheme ;
+                    rdfs:range :FlagSchemeType ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Specifies whether the scheme is bitwise or enumerated."@en ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "uses flag scheme type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#usesSoftware
@@ -375,6 +405,15 @@ xsd:date rdf:type rdfs:Datatype .
                                                  rdfs:domain <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
 
 
+###  https://matthiasprobst.github.io/pivmeta#bitmaskValue
+:bitmaskValue rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> ;
+              rdfs:domain :FlagBitmask ;
+              rdfs:range xsd:unsignedInt ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Numeric bitmask (OR of atom masks) stored with the data."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "bitmask value"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#filenamePattern
 :filenamePattern rdf:type owl:DatatypeProperty ;
                  rdfs:domain :ImageVelocimetryDistribution ;
@@ -390,47 +429,21 @@ xsd:date rdf:type rdfs:Datatype .
          <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#hasFlagMeaning
-:hasFlagMeaning rdf:type owl:DatatypeProperty ;
-                rdfs:domain :FlagVariable ;
-                rdfs:range xsd:string ;
-                <http://www.w3.org/2004/02/skos/core#definition> "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."@en ;
-                <http://www.w3.org/2004/02/skos/core#example> """For piv:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:
-piv:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"""@en ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag meaning"@en .
+###  https://matthiasprobst.github.io/pivmeta#mask
+:mask rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> ;
+      rdfs:domain :FlagAtom ;
+      rdfs:range xsd:unsignedInt ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Power-of-two integer value of the atomic flag."@en ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "mask"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#hasFlagValue
-:hasFlagValue rdf:type owl:DatatypeProperty ;
-              rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> ;
-              rdfs:domain :FlagVariable ;
-              rdfs:range xsd:unsignedInt ;
-              <http://www.w3.org/2004/02/skos/core#definition> "The data property flag values provides binary flag values which are explained by piv:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."@en ;
-              <http://www.w3.org/2004/02/skos/core#example> """piv:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].
-
-The corresponding meaning would be:
-piv:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]
-
-A flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation.
-
-A JSON-LD excerpt could look like this:
-{
-    \"@type\": \"m4i:NumericalVariable\",
-    \"piv:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],
-    \"piv:flagMeanings\": [
-        \"inactive\",
-        \"active\",
-        \"masked\",
-        \"noresult\",
-        \"disabled\",
-        \"filtered\",
-        \"interpolated\",
-        \"replaced\",
-        \"manualedit\"
-    ],
-    \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"
-}"""@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag value"@en .
+###  https://matthiasprobst.github.io/pivmeta#meaning
+:meaning rdf:type owl:DatatypeProperty ;
+         rdfs:domain :FlagAtom ;
+         rdfs:range xsd:string ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Human-readable meaning of the atomic flag."@en ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "meaning"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#timeValue
@@ -444,6 +457,14 @@ A JSON-LD excerpt could look like this:
            <http://www.w3.org/2004/02/skos/core#definition> "Canonical timestamp value."@en ;
            <http://www.w3.org/2004/02/skos/core#example> "2024-07-25T13:45:30" ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "time value"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#value
+:value rdf:type owl:DatatypeProperty ;
+       rdfs:domain :FlagMapping ;
+       rdfs:range xsd:unsignedInt ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Concrete integer value that maps to a specific atomic flag within the scheme."@en ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "value"@en .
 
 
 ###  https://matthiasprobst.github.io/ssno#standardName
@@ -590,6 +611,13 @@ A JSON-LD excerpt could look like this:
                              <http://www.w3.org/2004/02/skos/core#prefLabel> "background subtraction method"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#BitwiseFlagScheme
+:BitwiseFlagScheme rdf:type owl:Class ;
+                   rdfs:subClassOf :FlagSchemeType ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Flag values can be combined using bitwise OR; atoms are recovered via bitwise AND with each piv:mask."@en ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "bitwise flag scheme"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#Camera
 :Camera rdf:type owl:Class ;
         rdfs:subClassOf :OpticSensor ;
@@ -614,6 +642,13 @@ A JSON-LD excerpt could look like this:
                <http://www.w3.org/2004/02/skos/core#prefLabel> "digital camera"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#EnumeratedFlagScheme
+:EnumeratedFlagScheme rdf:type owl:Class ;
+                      rdfs:subClassOf :FlagSchemeType ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Each flag value represents a mutually exclusive state; combinations are not used."@en ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "enumerated flag scheme"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#ExperimentalSetup
 :ExperimentalSetup rdf:type owl:Class ;
                    rdfs:subClassOf <http://emmo.info/emmo#EMMO_22522299_4091_4d1f_82a2_3890492df6db> ,
@@ -636,31 +671,54 @@ A JSON-LD excerpt could look like this:
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental setup"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#FlagStatistics
-:FlagStatistics rdf:type owl:Class ;
-                rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
-                <http://www.w3.org/2004/02/skos/core#definition> "Holds statistics, e.g. the number of data points associated with a Flag Variable."@en ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "flag statistics"@en .
+###  https://matthiasprobst.github.io/pivmeta#FlagAtom
+:FlagAtom rdf:type owl:Class ;
+          rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :mask ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :meaning ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          <http://www.w3.org/2004/02/skos/core#definition> """
+An elementary flag concept representing one minimal, indivisible condition
+that may be assigned to data points in a PIV dataset (e.g., “active”, “masked”, “filtered”).
+Each FlagAtom corresponds to a single power-of-two mask value that can be
+combined with others by bitwise OR operations to form composite flag values.
+"""@en ;
+          <http://www.w3.org/2004/02/skos/core#note> "Use piv:mask for the numeric bit value and piv:meaning (or skos:prefLabel) for the human-readable label."@en ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "flag atom"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#FlagVariable
-:FlagVariable rdf:type owl:Class ;
-              rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :hasFlagMeaning ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:string
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :hasFlagValue ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:unsignedInt
-                              ] ;
-              rdfs:comment """A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.
+###  https://matthiasprobst.github.io/pivmeta#FlagBitmask
+:FlagBitmask rdf:type owl:Class ;
+             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "A numeric value whose binary representation encodes the set of active FlagAtoms."@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "flag bitmask"@en .
 
-Provide piv:flagMeaning and piv:flagValues with it."""@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> "A variable that expects flag values as integer values."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "flag variable"@en .
+
+###  https://matthiasprobst.github.io/pivmeta#FlagMapping
+:FlagMapping rdf:type owl:Class ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Associates a concrete integer value with a piv:FlagAtom within a scheme."@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "flag mapping"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#FlagScheme
+:FlagScheme rdf:type owl:Class ;
+            <http://www.w3.org/2004/02/skos/core#definition> """
+A scheme defining the set of valid flag atoms and the interpretation rules for flag
+values in a dataset. A scheme declares whether values are mutually exclusive
+(enumerated) or bitwise-combinable.
+"""@en ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "flag scheme"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#FlagSchemeType
+:FlagSchemeType rdf:type owl:Class ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Describes how flag values are interpreted (bitwise vs enumerated)."@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "flag scheme type"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod
@@ -968,7 +1026,7 @@ Provide piv:flagMeaning and piv:flagValues with it."""@en ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onDataRange [ rdf:type rdfs:Datatype ;
                                                       owl:unionOf ( xsd:date
-                                                                    xsd:dateTimeStamp
+                                                                    xsd:dateTime
                                                                   )
                                                     ]
                                   ] ;
@@ -1105,73 +1163,73 @@ Provide piv:flagMeaning and piv:flagValues with it."""@en ;
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagActive
 :FlagActive rdf:type owl:NamedIndividual ,
-                     :FlagVariable ;
-            :hasFlagMeaning "active" ;
-            :hasFlagValue 1 ;
+                     :FlagAtom ;
+            :mask 1 ;
+            :meaning "active" ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "active"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagDisabled
 :FlagDisabled rdf:type owl:NamedIndividual ,
-                       :FlagVariable ;
-              :hasFlagMeaning "disabled" ;
-              :hasFlagValue 8 ;
+                       :FlagAtom ;
+              :mask 8 ;
+              :meaning "disabled" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "disabled"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagFiltered
 :FlagFiltered rdf:type owl:NamedIndividual ,
-                       :FlagVariable ;
-              :hasFlagMeaning "filtered" ;
-              :hasFlagValue 16 ;
+                       :FlagAtom ;
+              :mask 16 ;
+              :meaning "filtered" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "filtered"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagInactive
 :FlagInactive rdf:type owl:NamedIndividual ,
-                       :FlagVariable ;
-              :hasFlagMeaning "inactive" ;
-              :hasFlagValue 0 ;
+                       :FlagAtom ;
+              :mask 0 ;
+              :meaning "inactive" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "inactive"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagInterpolated
 :FlagInterpolated rdf:type owl:NamedIndividual ,
-                           :FlagVariable ;
-                  :hasFlagMeaning "interpolated" ;
-                  :hasFlagValue 32 ;
+                           :FlagAtom ;
+                  :mask 32 ;
+                  :meaning "interpolated" ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "interpolated"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagManualEdit
 :FlagManualEdit rdf:type owl:NamedIndividual ,
-                         :FlagVariable ;
-                :hasFlagMeaning "manualedit" ;
-                :hasFlagValue 128 ;
+                         :FlagAtom ;
+                :mask 128 ;
+                :meaning "manualedit" ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "manualedit"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagMasked
 :FlagMasked rdf:type owl:NamedIndividual ,
-                     :FlagVariable ;
-            :hasFlagMeaning "masked" ;
-            :hasFlagValue 2 ;
+                     :FlagAtom ;
+            :mask 2 ;
+            :meaning "masked" ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "masked"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagNoResult
 :FlagNoResult rdf:type owl:NamedIndividual ,
-                       :FlagVariable ;
-              :hasFlagMeaning "noresult" ;
-              :hasFlagValue 4 ;
+                       :FlagAtom ;
+              :mask 4 ;
+              :meaning "noresult" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "noresult"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagReplaced
 :FlagReplaced rdf:type owl:NamedIndividual ,
-                       :FlagVariable ;
-              :hasFlagMeaning "replaced" ;
-              :hasFlagValue 64 ;
+                       :FlagAtom ;
+              :mask 64 ;
+              :meaning "replaced" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "replaced"@en .
 
 

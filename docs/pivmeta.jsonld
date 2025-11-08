@@ -13,9 +13,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset"
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagBitmask"
     }, {
-      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagStatistics"
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme"
     } ]
   } ]
 }, {
@@ -23,9 +23,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset"
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagBitmask"
     }, {
-      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagStatistics"
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme"
     } ]
   } ]
 }, {
@@ -78,28 +78,22 @@
 }, {
   "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#mask"
   } ]
 }, {
   "@id" : "_:genid26",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#hasFlagValue"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#meaning"
   } ]
 }, {
   "@id" : "_:genid27",
@@ -206,7 +200,7 @@
     "@list" : [ {
       "@id" : "http://www.w3.org/2001/XMLSchema#date"
     }, {
-      "@id" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
     } ]
   } ]
 }, {
@@ -696,10 +690,10 @@
     "@value" : "pivmeta"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta/2.1.1"
+    "@id" : "https://matthiasprobst.github.io/pivmeta/3.0.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "v2.1.1"
+    "@value" : "v3.0.0"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#AmountOfSubstancePerUnitArea",
@@ -735,6 +729,20 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "background subtraction method"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#BitwiseFlagScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagSchemeType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Flag values can be combined using bitwise OR; atoms are recovered via bitwise AND with each piv:mask."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "bitwise flag scheme"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#BlackmanWindow",
@@ -814,6 +822,20 @@
     "@value" : "digital camera"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#EnumeratedFlagScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagSchemeType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Each flag value represents a mutually exclusive state; combinations are not used."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "enumerated flag scheme"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#ExperimentalImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -856,176 +878,22 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagActive",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "active"
   } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "active"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "1"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "active"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagDisabled",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "disabled"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "disabled"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "8"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagFiltered",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "filtered"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "filtered"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "16"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagInactive",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "inactive"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "inactive"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "0"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagInterpolated",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "interpolated"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "interpolated"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "32"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagManualEdit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "manualedit"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "manualedit"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "128"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMasked",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "masked"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "masked"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "2"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagNoResult",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "noresult"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "noresult"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "4"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagReplaced",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "replaced"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning" : [ {
-    "@value" : "replaced"
-  } ],
-  "https://matthiasprobst.github.io/pivmeta#hasFlagValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "64"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagStatistics",
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Holds statistics, e.g. the number of data points associated with a Flag Variable."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "flag statistics"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A flag indicates the processing status of a vector. It can be disabled, active or processed in any other way by a post-processing step. The flag meaning must be provided with the dataset through flag meanings and flag values. Recommendation for the flag meaning are 0-inactive, 1-active, 2-masked, 4-no result, 8-disabled, 16-filtered, 32-interpolated, 64-replaced, 128-manualedit. Combinations of the flags can be used by bitwise OR operation. For example, 33 would mean that the vector is active and interpolated.\r\n\r\nProvide piv:flagMeaning and piv:flagValues with it."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
   }, {
@@ -1035,11 +903,198 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "A variable that expects flag values as integer values."
+    "@value" : "\r\nAn elementary flag concept representing one minimal, indivisible condition\r\nthat may be assigned to data points in a PIV dataset (e.g., “active”, “masked”, “filtered”).\r\nEach FlagAtom corresponds to a single power-of-two mask value that can be\r\ncombined with others by bitwise OR operations to form composite flag values.\r\n"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "Use piv:mask for the numeric bit value and piv:meaning (or skos:prefLabel) for the human-readable label."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "flag variable"
+    "@value" : "flag atom"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagBitmask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A numeric value whose binary representation encodes the set of active FlagAtoms."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "flag bitmask"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagDisabled",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "disabled"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "8"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "disabled"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagFiltered",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "filtered"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "16"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "filtered"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagInactive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "inactive"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "inactive"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagInterpolated",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "interpolated"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "32"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "interpolated"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagManualEdit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "manualedit"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "128"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "manualedit"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMapping",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Associates a concrete integer value with a piv:FlagAtom within a scheme."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "flag mapping"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMasked",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "masked"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "masked"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagNoResult",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "noresult"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "4"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "noresult"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagReplaced",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "replaced"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#mask" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "64"
+  } ],
+  "https://matthiasprobst.github.io/pivmeta#meaning" : [ {
+    "@value" : "replaced"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "\r\nA scheme defining the set of valid flag atoms and the interpretation rules for flag\r\nvalues in a dataset. A scheme declares whether values are mutually exclusive\r\n(enumerated) or bitwise-combinable.\r\n"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "flag scheme"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagSchemeType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Describes how flag values are interpreted (bitwise vs enumerated)."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "flag scheme type"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#GaussianWindow",
@@ -2023,6 +2078,43 @@
     "@value" : "window weighting function"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#allowedFlag",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Lists the atomic flags that are valid within the scheme."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "allowed flag"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#bitmaskValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagBitmask"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Numeric bitmask (OR of atom masks) stored with the data."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "bitmask value"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#filenamePattern",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2042,18 +2134,15 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#flag",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid10"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
+    "@id" : "_:genid10"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#flagIn"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Relates something to a Flag Variable"
+    "@value" : "Relates a thing (typically dataset or variable) to its flag scheme or to concrete bitmask flag values."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -2063,14 +2152,11 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#flagIn",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "_:genid13"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Relates a Flag Variable to its used concept"
+    "@value" : "Inverse of piv:flag; indicates in which thing (typically dataset or variable) a flag scheme or bitmask is used."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -2090,49 +2176,21 @@
     "@value" : "fnumber"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#hasFlagMeaning",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasFlagMapping",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMapping"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The flag meanings data property provides the string representations of the pvmeta:flagValues data property."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#example" : [ {
-    "@language" : "en",
-    "@value" : "For piv:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128], the meaning could be:\r\npiv:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]"
+    "@value" : "Associates a flag scheme with its explicit value to atom mappings."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
-    "@value" : "has flag meaning"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#hasFlagValue",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagVariable"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "The data property flag values provides binary flag values which are explained by piv:flagValues. From the flag values, new flags can be computed by bitwise OR operation, e.g. 1 | 16=17."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#example" : [ {
-    "@language" : "en",
-    "@value" : "piv:flagValues=[0, 1, 2, 4, 8, 16, 32, 64, 128].\r\n\r\nThe corresponding meaning would be:\r\npiv:flagMeanings=[\"inactive\", \"active\", \"masked\", \"noresult\", \"disabled\", \"filtered\", \"interpolated\", \"replaced\", \"manualedit\"]\r\n\r\nA flag value of 17 means \"active and filtered\", which is obtained by bitwise AND operation.\r\n\r\nA JSON-LD excerpt could look like this:\r\n{\r\n    \"@type\": \"m4i:NumericalVariable\",\r\n    \"piv:flagValues\": [0, 1, 2, 4, 8, 16, 32, 64, 128],\r\n    \"piv:flagMeanings\": [\r\n        \"inactive\",\r\n        \"active\",\r\n        \"masked\",\r\n        \"noresult\",\r\n        \"disabled\",\r\n        \"filtered\",\r\n        \"interpolated\",\r\n        \"replaced\",\r\n        \"manualedit\"\r\n    ],\r\n    \"units\": \"http://qudt.org/vocab/unit/M-PER-SEC\"\r\n}"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "has flag value"
+    "@value" : "has flag mapping"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasMetric",
@@ -2252,6 +2310,60 @@
     "@value" : "manufacturer"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#mapsToFlag",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMapping"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Connects a piv:FlagMapping entry to the corresponding piv:FlagAtom."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "maps to flag"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#mask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Power-of-two integer value of the atomic flag."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "mask"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#meaning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Human-readable meaning of the atomic flag."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "meaning"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#microPIV",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -2323,6 +2435,23 @@
     "@value" : "uses analysis software"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#usesFlagSchemeType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagSchemeType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Specifies whether the scheme is bitwise or enumerated."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "uses flag scheme type"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#usesSoftware",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2337,6 +2466,23 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "uses software"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#value",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMapping"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Concrete integer value that maps to a specific atomic flag within the scheme."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "value"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/ssno#StandardName",
