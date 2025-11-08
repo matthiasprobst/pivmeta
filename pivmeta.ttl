@@ -23,7 +23,7 @@
 @base <http://www.semanticweb.org/owl/owlapi/turtle#> .
 
 <https://matthiasprobst.github.io/pivmeta#> rdf:type owl:Ontology ;
-                                             owl:versionIRI <https://matthiasprobst.github.io/pivmeta/3.0.0> ;
+                                             owl:versionIRI <https://matthiasprobst.github.io/pivmeta/3.0.1> ;
                                              dcterms:abstract "PIVMeta is an ontology that has been developed for the purpose of describing Particle Image Velocimetry (PIV) data. At present, its functionality is limited to planar PIV (2D2C and 2D3C) setups."@en ;
                                              dcterms:created "2024-01-03" ;
                                              dcterms:creator <https://orcid.org/0000-0001-8729-0482> ;
@@ -34,7 +34,7 @@
                                              vann:preferredNamespaceUri "https://matthiasprobst.github.io/pivmeta#" ;
                                              m4i:ContactPerson "https://orcid.org/0000-0001-8729-0482" ;
                                              rdfs:label "pivmeta" ;
-                                             owl:versionInfo "v3.0.0" .
+                                             owl:versionInfo "v3.0.1" .
 
 #################################################################
 #    Annotation properties
@@ -262,26 +262,6 @@ and encoding method (bitwise or enumerated). Typically used on HDF5 datasets, bu
 also annotate entire distributions or files represented as dcat:Resource.
 """@en .
 
-piv:flag a owl:ObjectProperty ;
-  owl:inverseOf piv:flagIn ;
-  rdfs:domain [ a owl:Class ;
-                owl:unionOf ( piv:FlagValue hdf5:Dataset dcat:Resource )
-              ] ;
-  rdfs:range piv:FlagScheme ;
-  skos:prefLabel "flag"@en ;
-  skos:definition """
-Relates a flag value, dataset, or resource to its flag scheme, or
-to concrete flag values derived from that scheme.
-"""@en .
-
-piv:flagIn a owl:ObjectProperty ;
-  rdfs:domain piv:FlagScheme ;
-  rdfs:range [ a owl:Class ;
-               owl:unionOf ( piv:FlagValue hdf5:Dataset dcat:Resource )
-             ] ;
-  skos:prefLabel "flag in"@en ;
-  skos:definition "Inverse of piv:flag; indicates the dataset, resource, or value where a flag scheme is applied."@en .
-
 ### Scheme declares which atoms it allows.
 piv:allowedFlag a owl:ObjectProperty ;
   rdfs:domain piv:FlagScheme ; rdfs:range piv:Flag ;
@@ -294,7 +274,6 @@ piv:usesFlagSchemeType a owl:ObjectProperty ;
   skos:prefLabel "uses flag scheme type"@en ;
   skos:definition "Specifies whether the scheme is bitwise or enumerated."@en .
 
-### Mapping entry to which atom it maps to (kept separate from piv:flag to avoid overloading).
 piv:mapsToFlag a owl:ObjectProperty ;
   rdfs:domain piv:FlagMapping ; rdfs:range piv:Flag ;
   skos:prefLabel "maps to flag"@en ;
@@ -445,7 +424,6 @@ piv:fnumber rdf:type owl:DatatypeProperty ;
 ### Single-bit mask for a Flag (power of two).
 piv:mask a owl:DatatypeProperty ;
   rdfs:domain piv:Flag ; rdfs:range xsd:unsignedInt ;
-  rdfs:subPropertyOf m4i:hasNumericalValue ;
   skos:prefLabel "mask"@en ;
   skos:definition "Non-negative integer used for encoding. For bitwise schemes: powers of two; 0 is reserved for 'no flag'."@en .
 
@@ -458,9 +436,7 @@ piv:meaning a owl:DatatypeProperty ;
 
 
 piv:hasFlagValue a owl:DatatypeProperty ;
-  rdfs:domain [ a owl:Class ;
-                owl:unionOf ( piv:FlagValue piv:FlagMapping )
-              ] ;
+  rdfs:domain piv:FlagMapping ;
   rdfs:range xsd:unsignedInt ;
   skos:prefLabel "has flag value"@en ;
   skos:definition """
@@ -541,13 +517,6 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 piv:FlagMapping a owl:Class ;
   skos:prefLabel "flag mapping"@en ;
   skos:definition "Associates a concrete integer value with a piv:Flag within a scheme."@en .
-
-### A stored bitmask value (bitwise OR of atoms) attached to data when needed.
-piv:FlagValue a owl:Class ;
-  rdfs:subClassOf m4i:NumericalVariable ;
-  skos:prefLabel "flag value"@en ;
-  skos:definition "A numeric value whose binary representation encodes the set of active Flags (bitwise) or a single state (enumerated)."@en .
-
 ### Scheme type taxonomy to make the semantics machine-readable.
 piv:FlagSchemeType a owl:Class ;
   skos:prefLabel "flag scheme type"@en ;
