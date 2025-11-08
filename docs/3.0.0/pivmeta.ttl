@@ -244,23 +244,30 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#flag
 :flag rdf:type owl:ObjectProperty ;
       owl:inverseOf :flagIn ;
-      rdfs:range [ rdf:type owl:Class ;
-                   owl:unionOf ( :FlagScheme
-                                 :FlagValue
-                               )
-                 ] ;
-      <http://www.w3.org/2004/02/skos/core#definition> "Relates a thing (typically dataset or variable) to its flag scheme or to concrete bitmask flag values."@en ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset>
+                                  <http://www.w3.org/ns/dcat#Resource>
+                                  :FlagValue
+                                )
+                  ] ;
+      rdfs:range :FlagScheme ;
+      <http://www.w3.org/2004/02/skos/core#definition> """
+Relates a flag value, dataset, or resource to its flag scheme, or
+to concrete flag values derived from that scheme.
+"""@en ;
       <http://www.w3.org/2004/02/skos/core#prefLabel> "flag"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#flagIn
 :flagIn rdf:type owl:ObjectProperty ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :FlagScheme
-                                    :FlagValue
-                                  )
-                    ] ;
-        <http://www.w3.org/2004/02/skos/core#definition> "Inverse of piv:flag; indicates in which thing (typically dataset or variable) a flag scheme or bitmask is used."@en ;
+        rdfs:domain :FlagScheme ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset>
+                                   <http://www.w3.org/ns/dcat#Resource>
+                                   :FlagValue
+                                 )
+                   ] ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Inverse of piv:flag; indicates the dataset, resource, or value where a flag scheme is applied."@en ;
         <http://www.w3.org/2004/02/skos/core#prefLabel> "flag in"@en .
 
 
@@ -270,6 +277,22 @@ xsd:date rdf:type rdfs:Datatype .
                 rdfs:range :FlagMapping ;
                 <http://www.w3.org/2004/02/skos/core#definition> "Associates a flag scheme with its explicit value to mappings."@en ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag mapping"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#hasFlagScheme
+:hasFlagScheme rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( <http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset>
+                                           <http://www.w3.org/ns/dcat#Resource>
+                                         )
+                           ] ;
+               rdfs:range :FlagScheme ;
+               <http://www.w3.org/2004/02/skos/core#definition> """
+Relates a dataset or data resource to the flag scheme defining the valid flag meanings
+and encoding method (bitwise or enumerated). Typically used on HDF5 datasets, but may
+also annotate entire distributions or files represented as dcat:Resource.
+"""@en ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag scheme"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#hasMetric
@@ -592,6 +615,10 @@ In a FlagValue, it represents the actual value stored with data.
 ###  http://www.w3.org/ns/dcat#Distribution
 <http://www.w3.org/ns/dcat#Distribution> rdf:type owl:Class ;
                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Distribution"@en .
+
+
+###  http://www.w3.org/ns/dcat#Resource
+<http://www.w3.org/ns/dcat#Resource> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/prov#Activity

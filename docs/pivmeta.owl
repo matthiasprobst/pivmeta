@@ -422,15 +422,20 @@
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#flag">
         <owl:inverseOf rdf:resource="https://matthiasprobst.github.io/pivmeta#flagIn"/>
-        <rdfs:range>
+        <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
+                    <rdf:Description rdf:about="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Resource"/>
                     <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagValue"/>
                 </owl:unionOf>
             </owl:Class>
-        </rdfs:range>
-        <skos:definition xml:lang="en">Relates a thing (typically dataset or variable) to its flag scheme or to concrete bitmask flag values.</skos:definition>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
+        <skos:definition xml:lang="en">
+Relates a flag value, dataset, or resource to its flag scheme, or
+to concrete flag values derived from that scheme.
+</skos:definition>
         <skos:prefLabel xml:lang="en">flag</skos:prefLabel>
     </owl:ObjectProperty>
     
@@ -440,15 +445,17 @@
 
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#flagIn">
-        <rdfs:domain>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
+        <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
+                    <rdf:Description rdf:about="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Resource"/>
                     <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagValue"/>
                 </owl:unionOf>
             </owl:Class>
-        </rdfs:domain>
-        <skos:definition xml:lang="en">Inverse of piv:flag; indicates in which thing (typically dataset or variable) a flag scheme or bitmask is used.</skos:definition>
+        </rdfs:range>
+        <skos:definition xml:lang="en">Inverse of piv:flag; indicates the dataset, resource, or value where a flag scheme is applied.</skos:definition>
         <skos:prefLabel xml:lang="en">flag in</skos:prefLabel>
     </owl:ObjectProperty>
     
@@ -462,6 +469,29 @@
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagMapping"/>
         <skos:definition xml:lang="en">Associates a flag scheme with its explicit value to mappings.</skos:definition>
         <skos:prefLabel xml:lang="en">has flag mapping</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#hasFlagScheme -->
+
+
+    <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasFlagScheme">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Resource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
+        <skos:definition xml:lang="en">
+Relates a dataset or data resource to the flag scheme defining the valid flag meanings
+and encoding method (bitwise or enumerated). Typically used on HDF5 datasets, but may
+also annotate entire distributions or files represented as dcat:Resource.
+</skos:definition>
+        <skos:prefLabel xml:lang="en">has flag scheme</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -975,6 +1005,13 @@ In a FlagValue, it represents the actual value stored with data.
     <owl:Class rdf:about="http://www.w3.org/ns/dcat#Distribution">
         <skos:prefLabel xml:lang="en">Distribution</skos:prefLabel>
     </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Resource -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Resource"/>
     
 
 

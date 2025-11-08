@@ -249,19 +249,38 @@ codemeta:isSourceCodeOf rdf:type owl:ObjectProperty ;
                         rdfs:isDefinedBy codemeta: ;
                         skos:prefLabel "is source code of"@en .
 
+### Core structural link (dataset → scheme)
+piv:hasFlagScheme a owl:ObjectProperty ;
+  rdfs:domain [ a owl:Class ;
+                owl:unionOf ( hdf5:Dataset dcat:Resource )
+              ] ;
+  rdfs:range piv:FlagScheme ;
+  skos:prefLabel "has flag scheme"@en ;
+  skos:definition """
+Relates a dataset or data resource to the flag scheme defining the valid flag meanings
+and encoding method (bitwise or enumerated). Typically used on HDF5 datasets, but may
+also annotate entire distributions or files represented as dcat:Resource.
+"""@en .
 
-###  https://matthiasprobst.github.io/pivmeta#flag
 piv:flag a owl:ObjectProperty ;
   owl:inverseOf piv:flagIn ;
-  rdfs:range  [ a owl:Class ; owl:unionOf ( piv:FlagScheme piv:FlagValue ) ] ;
+  rdfs:domain [ a owl:Class ;
+                owl:unionOf ( piv:FlagValue hdf5:Dataset dcat:Resource )
+              ] ;
+  rdfs:range piv:FlagScheme ;
   skos:prefLabel "flag"@en ;
-  skos:definition "Relates a thing (typically dataset or variable) to its flag scheme or to concrete bitmask flag values."@en .
+  skos:definition """
+Relates a flag value, dataset, or resource to its flag scheme, or
+to concrete flag values derived from that scheme.
+"""@en .
 
-###  https://matthiasprobst.github.io/pivmeta#flagIn
 piv:flagIn a owl:ObjectProperty ;
-  rdfs:domain [ a owl:Class ; owl:unionOf ( piv:FlagScheme piv:FlagValue ) ] ;
+  rdfs:domain piv:FlagScheme ;
+  rdfs:range [ a owl:Class ;
+               owl:unionOf ( piv:FlagValue hdf5:Dataset dcat:Resource )
+             ] ;
   skos:prefLabel "flag in"@en ;
-  skos:definition "Inverse of piv:flag; indicates in which thing (typically dataset or variable) a flag scheme or bitmask is used."@en .
+  skos:definition "Inverse of piv:flag; indicates the dataset, resource, or value where a flag scheme is applied."@en .
 
 ### Scheme declares which atoms it allows.
 piv:allowedFlag a owl:ObjectProperty ;

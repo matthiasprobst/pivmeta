@@ -476,6 +476,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#hasFlagMapping">has flag mapping</a>
    </li>
    <li>
+      <a href="#hasFlagScheme"
+         title="https://matthiasprobst.github.io/pivmeta#hasFlagScheme">has flag scheme</a>
+   </li>
+   <li>
       <a href="#hasMetric"
          title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a>
    </li>
@@ -1161,7 +1165,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in range of
    </dt>
    <dd>
-    <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFlagScheme" title="https://matthiasprobst.github.io/pivmeta#hasFlagScheme">has flag scheme</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1203,13 +1207,13 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFlagValue" title="https://matthiasprobst.github.io/pivmeta#hasFlagValue">has flag value</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFlagValue" title="https://matthiasprobst.github.io/pivmeta#hasFlagValue">has flag value</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1225,6 +1229,20 @@ This section provides details for each class and property defined by PIVMeta.
    </dt>
    <dd>
     <a href="http://purl.allotrope.org/ontologies/hdf5/1.8#">http://purl.allotrope.org/ontologies/hdf5/1.8#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFlagScheme" title="https://matthiasprobst.github.io/pivmeta#hasFlagScheme">has flag scheme</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2393,6 +2411,7 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#flag" title="https://matthiasprobst.github.io/pivmeta#flag">flag</a></li>
   <li><a href="#flagIn" title="https://matthiasprobst.github.io/pivmeta#flagIn">flag in</a></li>
   <li><a href="#hasFlagMapping" title="https://matthiasprobst.github.io/pivmeta#hasFlagMapping">has flag mapping</a></li>
+  <li><a href="#hasFlagScheme" title="https://matthiasprobst.github.io/pivmeta#hasFlagScheme">has flag scheme</a></li>
   <li><a href="#hasMetric" title="https://matthiasprobst.github.io/pivmeta#hasMetric">has metric</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasParameter" title="http://w3id.org/nfdi4ing/metadata4ing#hasParameter">has parameter</a></li>
   <li><a href="#hasPIVDataType" title="https://matthiasprobst.github.io/pivmeta#hasPIVDataType">has PIV data type</a></li>
@@ -2471,15 +2490,21 @@ This section provides details for each class and property defined by PIVMeta.
   <h3>flag<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#flag</p>
   <div class="comment">
-   <span class="markdown">Relates a thing (typically dataset or variable) to its flag scheme or to concrete bitmask flag values.</span>
+   <span class="markdown"> Relates a flag value, dataset, or resource to its flag scheme, or to concrete flag values derived from that scheme. </span>
   </div>
   <div class="description">
    <dl>
     <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset" title="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset">HDF5 dataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="http://www.w3.org/ns/dcat#Resource" target="_blank" title="http://www.w3.org/ns/dcat#Resource">Resource</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#FlagValue" title="https://matthiasprobst.github.io/pivmeta#FlagValue">flag value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
      has range
     </dt>
     <dd>
-     <a href="#FlagScheme" title="https://matthiasprobst.github.io/pivmeta#FlagScheme">flag scheme</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#FlagValue" title="https://matthiasprobst.github.io/pivmeta#FlagValue">flag value</a> <sup class="type-c" title="class">c</sup>
+     <a href="#FlagScheme" title="https://matthiasprobst.github.io/pivmeta#FlagScheme">flag scheme</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -2494,7 +2519,7 @@ This section provides details for each class and property defined by PIVMeta.
   <h3>flag in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#flagIn</p>
   <div class="comment">
-   <span class="markdown">Inverse of piv:flag; indicates in which thing (typically dataset or variable) a flag scheme or bitmask is used.</span>
+   <span class="markdown">Inverse of piv:flag; indicates the dataset, resource, or value where a flag scheme is applied.</span>
   </div>
   <div class="description">
    <dl>
@@ -2502,7 +2527,13 @@ This section provides details for each class and property defined by PIVMeta.
      has domain
     </dt>
     <dd>
-     <a href="#FlagScheme" title="https://matthiasprobst.github.io/pivmeta#FlagScheme">flag scheme</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#FlagValue" title="https://matthiasprobst.github.io/pivmeta#FlagValue">flag value</a> <sup class="type-c" title="class">c</sup>
+     <a href="#FlagScheme" title="https://matthiasprobst.github.io/pivmeta#FlagScheme">flag scheme</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset" title="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset">HDF5 dataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="http://www.w3.org/ns/dcat#Resource" target="_blank" title="http://www.w3.org/ns/dcat#Resource">Resource</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#FlagValue" title="https://matthiasprobst.github.io/pivmeta#FlagValue">flag value</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -2532,6 +2563,29 @@ This section provides details for each class and property defined by PIVMeta.
     </dt>
     <dd>
      <a href="#FlagMapping" title="https://matthiasprobst.github.io/pivmeta#FlagMapping">flag mapping</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFlagScheme">
+  <h3>has flag scheme<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#hasFlagScheme</p>
+  <div class="comment">
+   <span class="markdown"> Relates a dataset or data resource to the flag scheme defining the valid flag meanings and encoding method (bitwise or enumerated). Typically used on HDF5 datasets, but may also annotate entire distributions or files represented as dcat:Resource. </span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset" title="http://purl.allotrope.org/ontologies/hdf5/1.8#Dataset">HDF5 dataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="http://www.w3.org/ns/dcat#Resource" target="_blank" title="http://www.w3.org/ns/dcat#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#FlagScheme" title="https://matthiasprobst.github.io/pivmeta#FlagScheme">flag scheme</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
