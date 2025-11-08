@@ -686,10 +686,21 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#flagValue -->
+    <!-- https://matthiasprobst.github.io/pivmeta#fnumber -->
 
 
-    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#flagValue">
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#fnumber">
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Camera"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <skos:prefLabel xml:lang="en">fnumber</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#hasFlagValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasFlagValue">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -704,18 +715,7 @@ Concrete integer value that encodes one or more flags.
 In a FlagMapping, it defines how numeric values map to flag definitions.
 In a FlagValue, it represents the actual value stored with data.
 </skos:definition>
-        <skos:prefLabel xml:lang="en">flag value</skos:prefLabel>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#fnumber -->
-
-
-    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#fnumber">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Camera"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <skos:prefLabel xml:lang="en">fnumber</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">has flag value</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -1138,7 +1138,7 @@ combined with others by bitwise OR operations to form composite flag values.
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#flagValue"/>
+                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#hasFlagValue"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
             </owl:Restriction>

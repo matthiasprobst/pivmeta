@@ -387,9 +387,15 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2004/02/skos/core#definition> "The regular expression string to determine the image filenames in the distribution."@en .
 <https://matthiasprobst.github.io/pivmeta#filenamePattern> <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 # 
-# https://matthiasprobst.github.io/pivmeta#flagValue
-<https://matthiasprobst.github.io/pivmeta#flagValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://matthiasprobst.github.io/pivmeta#flagValue> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid19 .
+# https://matthiasprobst.github.io/pivmeta#fnumber
+<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#Camera> .
+<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+# 
+# https://matthiasprobst.github.io/pivmeta#hasFlagValue
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid19 .
 _:genid19 <http://www.w3.org/2002/07/owl#unionOf> _:genid21 .
 _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
@@ -398,15 +404,9 @@ _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://matthiasprobst.github.io/pivmeta#FlagMapping> .
 _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://matthiasprobst.github.io/pivmeta#flagValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#unsignedInt> .
-<https://matthiasprobst.github.io/pivmeta#flagValue> <http://www.w3.org/2004/02/skos/core#definition> "\r\nConcrete integer value that encodes one or more flags.\r\nIn a FlagMapping, it defines how numeric values map to flag definitions.\r\nIn a FlagValue, it represents the actual value stored with data.\r\n"@en .
-<https://matthiasprobst.github.io/pivmeta#flagValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag value"@en .
-# 
-# https://matthiasprobst.github.io/pivmeta#fnumber
-<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://matthiasprobst.github.io/pivmeta#Camera> .
-<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<https://matthiasprobst.github.io/pivmeta#fnumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#unsignedInt> .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2004/02/skos/core#definition> "\r\nConcrete integer value that encodes one or more flags.\r\nIn a FlagMapping, it defines how numeric values map to flag definitions.\r\nIn a FlagValue, it represents the actual value stored with data.\r\n"@en .
+<https://matthiasprobst.github.io/pivmeta#hasFlagValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag value"@en .
 # 
 # https://matthiasprobst.github.io/pivmeta#mask
 <https://matthiasprobst.github.io/pivmeta#mask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -645,7 +645,7 @@ _:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://matthiasprobst.github.io/pivmeta#FlagMapping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
 _:genid31 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#unsignedInt> .
 _:genid31 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#flagValue> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://matthiasprobst.github.io/pivmeta#hasFlagValue> .
 _:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://matthiasprobst.github.io/pivmeta#FlagMapping> <http://www.w3.org/2004/02/skos/core#definition> "Associates a concrete integer value with a piv:Flag within a scheme."@en .
 <https://matthiasprobst.github.io/pivmeta#FlagMapping> <http://www.w3.org/2004/02/skos/core#prefLabel> "flag mapping"@en .

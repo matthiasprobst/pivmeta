@@ -282,7 +282,7 @@ piv:mapsToFlag a owl:ObjectProperty ;
   skos:definition "Connects a piv:FlagMapping entry to the corresponding piv:Flag."@en .
 
 piv:FlagMapping rdfs:subClassOf
-  [ a owl:Restriction ; owl:onProperty piv:flagValue ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:unsignedInt ],
+  [ a owl:Restriction ; owl:onProperty piv:hasFlagValue ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:unsignedInt ],
   [ a owl:Restriction ; owl:onProperty piv:mapsToFlag ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass piv:Flag ] .
 
 
@@ -438,12 +438,12 @@ piv:meaning a owl:DatatypeProperty ;
   skos:definition "Human-readable meaning of the atomic flag."@en .
 
 
-piv:flagValue a owl:DatatypeProperty ;
+piv:hasFlagValue a owl:DatatypeProperty ;
   rdfs:domain [ a owl:Class ;
                 owl:unionOf ( piv:FlagValue piv:FlagMapping )
               ] ;
   rdfs:range xsd:unsignedInt ;
-  skos:prefLabel "flag value"@en ;
+  skos:prefLabel "has flag value"@en ;
   skos:definition """
 Concrete integer value that encodes one or more flags.
 In a FlagMapping, it defines how numeric values map to flag definitions.

@@ -413,27 +413,27 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#flagValue
-:flagValue rdf:type owl:DatatypeProperty ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :FlagMapping
-                                       :FlagValue
-                                     )
-                       ] ;
-           rdfs:range xsd:unsignedInt ;
-           <http://www.w3.org/2004/02/skos/core#definition> """
-Concrete integer value that encodes one or more flags.
-In a FlagMapping, it defines how numeric values map to flag definitions.
-In a FlagValue, it represents the actual value stored with data.
-"""@en ;
-           <http://www.w3.org/2004/02/skos/core#prefLabel> "flag value"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#fnumber
 :fnumber rdf:type owl:DatatypeProperty ;
          rdfs:domain :Camera ;
          rdfs:range rdfs:Literal ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "fnumber"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#hasFlagValue
+:hasFlagValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :FlagMapping
+                                          :FlagValue
+                                        )
+                          ] ;
+              rdfs:range xsd:unsignedInt ;
+              <http://www.w3.org/2004/02/skos/core#definition> """
+Concrete integer value that encodes one or more flags.
+In a FlagMapping, it defines how numeric values map to flag definitions.
+In a FlagValue, it represents the actual value stored with data.
+"""@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag value"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#mask
@@ -700,7 +700,7 @@ combined with others by bitwise OR operations to form composite flag values.
                                owl:onClass :Flag
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty :flagValue ;
+                               owl:onProperty :hasFlagValue ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:unsignedInt
                              ] ;

@@ -125,7 +125,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#flagValue"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#hasFlagValue"
   } ],
   "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -2184,23 +2184,6 @@
     "@value" : "flag in"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#flagValue",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid19"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "\r\nConcrete integer value that encodes one or more flags.\r\nIn a FlagMapping, it defines how numeric values map to flag definitions.\r\nIn a FlagValue, it represents the actual value stored with data.\r\n"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "flag value"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#fnumber",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2229,6 +2212,23 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "has flag mapping"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#hasFlagValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid19"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "\r\nConcrete integer value that encodes one or more flags.\r\nIn a FlagMapping, it defines how numeric values map to flag definitions.\r\nIn a FlagValue, it represents the actual value stored with data.\r\n"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "has flag value"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#hasMetric",
