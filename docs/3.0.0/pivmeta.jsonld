@@ -13,9 +13,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagBitmask"
-    }, {
       "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagValue"
     } ]
   } ]
 }, {
@@ -23,9 +23,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagBitmask"
-    }, {
       "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagValue"
     } ]
   } ]
 }, {
@@ -40,6 +40,16 @@
   } ]
 }, {
   "@id" : "_:genid19",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMapping"
+    }, {
+      "@id" : "https://matthiasprobst.github.io/pivmeta#FlagValue"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid22",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -49,7 +59,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -58,7 +68,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#DigitalCamera"
   } ]
 }, {
-  "@id" : "_:genid23",
+  "@id" : "_:genid26",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -67,7 +77,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#Laser"
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid27",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -76,7 +86,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVParticle"
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid28",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -86,7 +96,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#mask"
   } ]
 }, {
-  "@id" : "_:genid26",
+  "@id" : "_:genid29",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -96,7 +106,33 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#meaning"
   } ]
 }, {
-  "@id" : "_:genid27",
+  "@id" : "_:genid30",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#mapsToFlag"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid31",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#flagValue"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid32",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -105,7 +141,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#Setup"
   } ]
 }, {
-  "@id" : "_:genid28",
+  "@id" : "_:genid33",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#hasPIVDataType"
@@ -114,7 +150,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVDataType"
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid34",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#ImageVelocimetryMethod"
@@ -125,51 +161,6 @@
   "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid30",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
-  } ]
-}, {
-  "@id" : "_:genid31",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVRecording"
-  } ]
-}, {
-  "@id" : "_:genid32",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
-  } ]
-}, {
-  "@id" : "_:genid33",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000050"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
-  } ]
-}, {
-  "@id" : "_:genid34",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
   } ]
 }, {
   "@id" : "_:genid35",
@@ -183,25 +174,38 @@
 }, {
   "@id" : "_:genid36",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
-    "@id" : "_:genid37"
-  } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#timeValue"
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
   } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVRecording"
   } ]
 }, {
   "@id" : "_:genid37",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.w3.org/2001/XMLSchema#date"
-    }, {
-      "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
-    } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPostProcessing"
+  } ]
+}, {
+  "@id" : "_:genid38",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000050"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
+  } ]
+}, {
+  "@id" : "_:genid39",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVEvaluation"
   } ]
 }, {
   "@id" : "_:genid4",
@@ -217,13 +221,45 @@
   "@id" : "_:genid40",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.obolibrary.org/obo/BFO_0000063"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#PIVPreProcessing"
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+    "@id" : "_:genid42"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://matthiasprobst.github.io/pivmeta#timeValue"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid42",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.w3.org/2001/XMLSchema#date"
+    }, {
+      "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid45",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVParticle"
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid46",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -232,7 +268,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#VirtualCamera"
   } ]
 }, {
-  "@id" : "_:genid42",
+  "@id" : "_:genid47",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -241,7 +277,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#VirtualLaser"
   } ]
 }, {
-  "@id" : "_:genid43",
+  "@id" : "_:genid48",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasParameter"
@@ -250,7 +286,7 @@
     "@id" : "http://www.molmod.info/semantics/pims-ii.ttl#Variable"
   } ]
 }, {
-  "@id" : "_:genid44",
+  "@id" : "_:genid49",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -857,11 +893,11 @@
   }, {
     "@id" : "https://matthiasprobst.github.io/pivmeta#Setup"
   }, {
-    "@id" : "_:genid22"
+    "@id" : "_:genid25"
   }, {
-    "@id" : "_:genid23"
+    "@id" : "_:genid26"
   }, {
-    "@id" : "_:genid24"
+    "@id" : "_:genid27"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#VirtualSetup"
@@ -875,10 +911,32 @@
     "@value" : "experimental setup"
   } ]
 }, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#Flag",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
+    "@id" : "_:genid28"
+  }, {
+    "@id" : "_:genid29"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "\r\nAn elementary flag concept representing one minimal, indivisible condition\r\nthat may be assigned to data points in a PIV dataset (e.g., “active”, “masked”, “filtered”).\r\nEach Flag corresponds to a single power-of-two mask value that can be\r\ncombined with others by bitwise OR operations to form composite flag values.\r\n"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "Use piv:mask for the numeric bit value and piv:meaning (or skos:prefLabel) for the human-readable label."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "flag"
+  } ]
+}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagActive",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -892,46 +950,10 @@
     "@value" : "active"
   } ]
 }, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
-  }, {
-    "@id" : "_:genid25"
-  }, {
-    "@id" : "_:genid26"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "\r\nAn elementary flag concept representing one minimal, indivisible condition\r\nthat may be assigned to data points in a PIV dataset (e.g., “active”, “masked”, “filtered”).\r\nEach FlagAtom corresponds to a single power-of-two mask value that can be\r\ncombined with others by bitwise OR operations to form composite flag values.\r\n"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "Use piv:mask for the numeric bit value and piv:meaning (or skos:prefLabel) for the human-readable label."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "flag atom"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagBitmask",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A numeric value whose binary representation encodes the set of active FlagAtoms."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "flag bitmask"
-  } ]
-}, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagDisabled",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -948,7 +970,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagFiltered",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -965,7 +987,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagInactive",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -982,7 +1004,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagInterpolated",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -999,7 +1021,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagManualEdit",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1015,9 +1037,14 @@
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMapping",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid30"
+  }, {
+    "@id" : "_:genid31"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Associates a concrete integer value with a piv:FlagAtom within a scheme."
+    "@value" : "Associates a concrete integer value with a piv:Flag within a scheme."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1027,7 +1054,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMasked",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1044,7 +1071,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagNoResult",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1061,7 +1088,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#FlagReplaced",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -1095,6 +1122,20 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "flag scheme type"
+  } ]
+}, {
+  "@id" : "https://matthiasprobst.github.io/pivmeta#FlagValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A numeric value whose binary representation encodes the set of active Flags (bitwise) or a single state (enumerated)."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "flag value"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#GaussianWindow",
@@ -1217,7 +1258,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/dcat#Dataset"
   }, {
-    "@id" : "_:genid27"
+    "@id" : "_:genid32"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1233,7 +1274,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/dcat#Distribution"
   }, {
-    "@id" : "_:genid28"
+    "@id" : "_:genid33"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1563,7 +1604,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep"
   }, {
-    "@id" : "_:genid29"
+    "@id" : "_:genid34"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
@@ -1582,7 +1623,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   }, {
-    "@id" : "_:genid30"
+    "@id" : "_:genid35"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1598,7 +1639,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   }, {
-    "@id" : "_:genid31"
+    "@id" : "_:genid36"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1646,7 +1687,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   }, {
-    "@id" : "_:genid32"
+    "@id" : "_:genid37"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1662,7 +1703,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   }, {
-    "@id" : "_:genid33"
+    "@id" : "_:genid38"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1706,7 +1747,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   }, {
-    "@id" : "_:genid34"
+    "@id" : "_:genid39"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1736,7 +1777,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://matthiasprobst.github.io/pivmeta#PIVProcessingStep"
   }, {
-    "@id" : "_:genid35"
+    "@id" : "_:genid40"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -1954,7 +1995,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#TextVariable"
   }, {
-    "@id" : "_:genid36"
+    "@id" : "_:genid41"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -2034,11 +2075,11 @@
   }, {
     "@id" : "https://matthiasprobst.github.io/pivmeta#Setup"
   }, {
-    "@id" : "_:genid40"
+    "@id" : "_:genid45"
   }, {
-    "@id" : "_:genid41"
+    "@id" : "_:genid46"
   }, {
-    "@id" : "_:genid42"
+    "@id" : "_:genid47"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -2054,7 +2095,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://w3id.org/nfdi4ing/metadata4ing#Tool"
   }, {
-    "@id" : "_:genid43"
+    "@id" : "_:genid48"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -2084,7 +2125,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#FlagScheme"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -2093,26 +2134,6 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "allowed flag"
-  } ]
-}, {
-  "@id" : "https://matthiasprobst.github.io/pivmeta#bitmaskValue",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagBitmask"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Numeric bitmask (OR of atom masks) stored with the data."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "bitmask value"
   } ]
 }, {
   "@id" : "https://matthiasprobst.github.io/pivmeta#filenamePattern",
@@ -2166,14 +2187,14 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#flagValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMapping"
+    "@id" : "_:genid19"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Concrete integer value that maps to a specific atomic flag within the scheme."
+    "@value" : "\r\nConcrete integer value that encodes one or more flags.\r\nIn a FlagMapping, it defines how numeric values map to flag definitions.\r\nIn a FlagValue, it represents the actual value stored with data.\r\n"
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -2203,7 +2224,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Associates a flag scheme with its explicit value to atom mappings."
+    "@value" : "Associates a flag scheme with its explicit value to mappings."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -2333,11 +2354,11 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#FlagMapping"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Connects a piv:FlagMapping entry to the corresponding piv:FlagAtom."
+    "@value" : "Connects a piv:FlagMapping entry to the corresponding piv:Flag."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -2347,7 +2368,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#mask",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
@@ -2357,7 +2378,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "Power-of-two integer value of the atomic flag."
+    "@value" : "Non-negative integer used for encoding. For bitwise schemes: powers of two; 0 is reserved for 'no flag'."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -2367,7 +2388,7 @@
   "@id" : "https://matthiasprobst.github.io/pivmeta#meaning",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://matthiasprobst.github.io/pivmeta#FlagAtom"
+    "@id" : "https://matthiasprobst.github.io/pivmeta#Flag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -2375,6 +2396,10 @@
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "Human-readable meaning of the atomic flag."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "Prefer skos:prefLabel for the human-readable flag name; piv:meaning is kept for backward compatibility."
   } ],
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
@@ -2418,7 +2443,7 @@
     "@id" : "https://matthiasprobst.github.io/pivmeta#TemporalVariable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid19"
+    "@id" : "_:genid22"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",

@@ -410,7 +410,7 @@
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#allowedFlag">
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
-        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <skos:definition xml:lang="en">Lists the atomic flags that are valid within the scheme.</skos:definition>
         <skos:prefLabel xml:lang="en">allowed flag</skos:prefLabel>
     </owl:ObjectProperty>
@@ -425,8 +425,8 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagBitmask"/>
                     <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagValue"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -443,8 +443,8 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagBitmask"/>
                     <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagValue"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -460,7 +460,7 @@
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#hasFlagMapping">
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagScheme"/>
         <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagMapping"/>
-        <skos:definition xml:lang="en">Associates a flag scheme with its explicit value to atom mappings.</skos:definition>
+        <skos:definition xml:lang="en">Associates a flag scheme with its explicit value to mappings.</skos:definition>
         <skos:prefLabel xml:lang="en">has flag mapping</skos:prefLabel>
     </owl:ObjectProperty>
     
@@ -548,8 +548,8 @@
 
     <owl:ObjectProperty rdf:about="https://matthiasprobst.github.io/pivmeta#mapsToFlag">
         <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagMapping"/>
-        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
-        <skos:definition xml:lang="en">Connects a piv:FlagMapping entry to the corresponding piv:FlagAtom.</skos:definition>
+        <rdfs:range rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
+        <skos:definition xml:lang="en">Connects a piv:FlagMapping entry to the corresponding piv:Flag.</skos:definition>
         <skos:prefLabel xml:lang="en">maps to flag</skos:prefLabel>
     </owl:ObjectProperty>
     
@@ -674,19 +674,6 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#bitmaskValue -->
-
-
-    <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#bitmaskValue">
-        <rdfs:subPropertyOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"/>
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagBitmask"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <skos:definition xml:lang="en">Numeric bitmask (OR of atom masks) stored with the data.</skos:definition>
-        <skos:prefLabel xml:lang="en">bitmask value</skos:prefLabel>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://matthiasprobst.github.io/pivmeta#filenamePattern -->
 
 
@@ -703,9 +690,20 @@
 
 
     <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#flagValue">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagMapping"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagMapping"/>
+                    <rdf:Description rdf:about="https://matthiasprobst.github.io/pivmeta#FlagValue"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <skos:definition xml:lang="en">Concrete integer value that maps to a specific atomic flag within the scheme.</skos:definition>
+        <skos:definition xml:lang="en">
+Concrete integer value that encodes one or more flags.
+In a FlagMapping, it defines how numeric values map to flag definitions.
+In a FlagValue, it represents the actual value stored with data.
+</skos:definition>
         <skos:prefLabel xml:lang="en">flag value</skos:prefLabel>
     </owl:DatatypeProperty>
     
@@ -727,9 +725,9 @@
 
     <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#mask">
         <rdfs:subPropertyOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"/>
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <skos:definition xml:lang="en">Power-of-two integer value of the atomic flag.</skos:definition>
+        <skos:definition xml:lang="en">Non-negative integer used for encoding. For bitwise schemes: powers of two; 0 is reserved for &apos;no flag&apos;.</skos:definition>
         <skos:prefLabel xml:lang="en">mask</skos:prefLabel>
     </owl:DatatypeProperty>
     
@@ -739,9 +737,10 @@
 
 
     <owl:DatatypeProperty rdf:about="https://matthiasprobst.github.io/pivmeta#meaning">
-        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdfs:domain rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <skos:definition xml:lang="en">Human-readable meaning of the atomic flag.</skos:definition>
+        <skos:note xml:lang="en">Prefer skos:prefLabel for the human-readable flag name; piv:meaning is kept for backward compatibility.</skos:note>
         <skos:prefLabel xml:lang="en">meaning</skos:prefLabel>
     </owl:DatatypeProperty>
     
@@ -1097,11 +1096,11 @@
     
 
 
-    <!-- https://matthiasprobst.github.io/pivmeta#FlagAtom -->
+    <!-- https://matthiasprobst.github.io/pivmeta#Flag -->
 
 
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#FlagAtom">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#Flag">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#mask"/>
@@ -1117,22 +1116,11 @@
         <skos:definition xml:lang="en">
 An elementary flag concept representing one minimal, indivisible condition
 that may be assigned to data points in a PIV dataset (e.g., “active”, “masked”, “filtered”).
-Each FlagAtom corresponds to a single power-of-two mask value that can be
+Each Flag corresponds to a single power-of-two mask value that can be
 combined with others by bitwise OR operations to form composite flag values.
 </skos:definition>
         <skos:note xml:lang="en">Use piv:mask for the numeric bit value and piv:meaning (or skos:prefLabel) for the human-readable label.</skos:note>
-        <skos:prefLabel xml:lang="en">flag atom</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://matthiasprobst.github.io/pivmeta#FlagBitmask -->
-
-
-    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#FlagBitmask">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
-        <skos:definition xml:lang="en">A numeric value whose binary representation encodes the set of active FlagAtoms.</skos:definition>
-        <skos:prefLabel xml:lang="en">flag bitmask</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">flag</skos:prefLabel>
     </owl:Class>
     
 
@@ -1141,7 +1129,21 @@ combined with others by bitwise OR operations to form composite flag values.
 
 
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#FlagMapping">
-        <skos:definition xml:lang="en">Associates a concrete integer value with a piv:FlagAtom within a scheme.</skos:definition>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#mapsToFlag"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://matthiasprobst.github.io/pivmeta#flagValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:definition xml:lang="en">Associates a concrete integer value with a piv:Flag within a scheme.</skos:definition>
         <skos:prefLabel xml:lang="en">flag mapping</skos:prefLabel>
     </owl:Class>
     
@@ -1167,6 +1169,17 @@ values in a dataset. A scheme declares whether values are mutually exclusive
     <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#FlagSchemeType">
         <skos:definition xml:lang="en">Describes how flag values are interpreted (bitwise vs enumerated).</skos:definition>
         <skos:prefLabel xml:lang="en">flag scheme type</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://matthiasprobst.github.io/pivmeta#FlagValue -->
+
+
+    <owl:Class rdf:about="https://matthiasprobst.github.io/pivmeta#FlagValue">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable"/>
+        <skos:definition xml:lang="en">A numeric value whose binary representation encodes the set of active Flags (bitwise) or a single state (enumerated).</skos:definition>
+        <skos:prefLabel xml:lang="en">flag value</skos:prefLabel>
     </owl:Class>
     
 
@@ -1867,7 +1880,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagActive">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</mask>
         <meaning>active</meaning>
         <skos:prefLabel xml:lang="en">active</skos:prefLabel>
@@ -1879,7 +1892,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagDisabled">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</mask>
         <meaning>disabled</meaning>
         <skos:prefLabel xml:lang="en">disabled</skos:prefLabel>
@@ -1891,7 +1904,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagFiltered">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</mask>
         <meaning>filtered</meaning>
         <skos:prefLabel xml:lang="en">filtered</skos:prefLabel>
@@ -1903,7 +1916,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagInactive">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</mask>
         <meaning>inactive</meaning>
         <skos:prefLabel xml:lang="en">inactive</skos:prefLabel>
@@ -1915,7 +1928,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagInterpolated">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</mask>
         <meaning>interpolated</meaning>
         <skos:prefLabel xml:lang="en">interpolated</skos:prefLabel>
@@ -1927,7 +1940,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagManualEdit">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</mask>
         <meaning>manualedit</meaning>
         <skos:prefLabel xml:lang="en">manualedit</skos:prefLabel>
@@ -1939,7 +1952,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagMasked">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</mask>
         <meaning>masked</meaning>
         <skos:prefLabel xml:lang="en">masked</skos:prefLabel>
@@ -1951,7 +1964,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagNoResult">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</mask>
         <meaning>noresult</meaning>
         <skos:prefLabel xml:lang="en">noresult</skos:prefLabel>
@@ -1963,7 +1976,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 
     <owl:NamedIndividual rdf:about="https://matthiasprobst.github.io/pivmeta#FlagReplaced">
-        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#FlagAtom"/>
+        <rdf:type rdf:resource="https://matthiasprobst.github.io/pivmeta#Flag"/>
         <mask rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64</mask>
         <meaning>replaced</meaning>
         <skos:prefLabel xml:lang="en">replaced</skos:prefLabel>

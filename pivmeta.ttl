@@ -253,19 +253,19 @@ codemeta:isSourceCodeOf rdf:type owl:ObjectProperty ;
 ###  https://matthiasprobst.github.io/pivmeta#flag
 piv:flag a owl:ObjectProperty ;
   owl:inverseOf piv:flagIn ;
-  rdfs:range  [ a owl:Class ; owl:unionOf ( piv:FlagScheme piv:FlagBitmask ) ] ;
+  rdfs:range  [ a owl:Class ; owl:unionOf ( piv:FlagScheme piv:FlagValue ) ] ;
   skos:prefLabel "flag"@en ;
   skos:definition "Relates a thing (typically dataset or variable) to its flag scheme or to concrete bitmask flag values."@en .
 
 ###  https://matthiasprobst.github.io/pivmeta#flagIn
 piv:flagIn a owl:ObjectProperty ;
-  rdfs:domain [ a owl:Class ; owl:unionOf ( piv:FlagScheme piv:FlagBitmask ) ] ;
+  rdfs:domain [ a owl:Class ; owl:unionOf ( piv:FlagScheme piv:FlagValue ) ] ;
   skos:prefLabel "flag in"@en ;
   skos:definition "Inverse of piv:flag; indicates in which thing (typically dataset or variable) a flag scheme or bitmask is used."@en .
 
 ### Scheme declares which atoms it allows.
 piv:allowedFlag a owl:ObjectProperty ;
-  rdfs:domain piv:FlagScheme ; rdfs:range piv:FlagAtom ;
+  rdfs:domain piv:FlagScheme ; rdfs:range piv:Flag ;
   skos:prefLabel "allowed flag"@en ;
   skos:definition "Lists the atomic flags that are valid within the scheme."@en .
 
@@ -277,15 +277,20 @@ piv:usesFlagSchemeType a owl:ObjectProperty ;
 
 ### Mapping entry to which atom it maps to (kept separate from piv:flag to avoid overloading).
 piv:mapsToFlag a owl:ObjectProperty ;
-  rdfs:domain piv:FlagMapping ; rdfs:range piv:FlagAtom ;
+  rdfs:domain piv:FlagMapping ; rdfs:range piv:Flag ;
   skos:prefLabel "maps to flag"@en ;
-  skos:definition "Connects a piv:FlagMapping entry to the corresponding piv:FlagAtom."@en .
+  skos:definition "Connects a piv:FlagMapping entry to the corresponding piv:Flag."@en .
+
+piv:FlagMapping rdfs:subClassOf
+  [ a owl:Restriction ; owl:onProperty piv:flagValue ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:unsignedInt ],
+  [ a owl:Restriction ; owl:onProperty piv:mapsToFlag ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass piv:Flag ] .
+
 
 ### Scheme to its mapping entries.
 piv:hasFlagMapping a owl:ObjectProperty ;
   rdfs:domain piv:FlagScheme ; rdfs:range piv:FlagMapping ;
   skos:prefLabel "has flag mapping"@en ;
-  skos:definition "Associates a flag scheme with its explicit value to atom mappings."@en .
+  skos:definition "Associates a flag scheme with its explicit value to mappings."@en .
 
 ###  https://matthiasprobst.github.io/pivmeta#hasMetric
 piv:hasMetric rdf:type owl:ObjectProperty ;
@@ -418,33 +423,32 @@ piv:fnumber rdf:type owl:DatatypeProperty ;
             rdfs:range rdfs:Literal ;
             skos:prefLabel "fnumber"@en .
 
-### Single-bit mask for a FlagAtom (power of two).
+### Single-bit mask for a Flag (power of two).
 piv:mask a owl:DatatypeProperty ;
-  rdfs:domain piv:FlagAtom ; rdfs:range xsd:unsignedInt ;
+  rdfs:domain piv:Flag ; rdfs:range xsd:unsignedInt ;
   rdfs:subPropertyOf m4i:hasNumericalValue ;
   skos:prefLabel "mask"@en ;
-  skos:definition "Power-of-two integer value of the atomic flag."@en .
+  skos:definition "Non-negative integer used for encoding. For bitwise schemes: powers of two; 0 is reserved for 'no flag'."@en .
 
-### Human-readable meaning/label for an atom.
+### Human-readable meaning/label for a flag.
 piv:meaning a owl:DatatypeProperty ;
-  rdfs:domain piv:FlagAtom ; rdfs:range xsd:string ;
+  rdfs:domain piv:Flag ; rdfs:range xsd:string ;
   skos:prefLabel "meaning"@en ;
+  skos:note "Prefer skos:prefLabel for the human-readable flag name; piv:meaning is kept for backward compatibility."@en ;
   skos:definition "Human-readable meaning of the atomic flag."@en .
 
-### Bitmask numeric value used on data.
-piv:bitmaskValue a owl:DatatypeProperty ;
-  rdfs:domain piv:FlagBitmask ; rdfs:range xsd:unsignedInt ;
-  rdfs:subPropertyOf m4i:hasNumericalValue ;
-  skos:prefLabel "bitmask value"@en ;
-  skos:definition "Numeric bitmask (OR of atom masks) stored with the data."@en .
 
-### Literal value used by a mapping entry (works for both enumerations and atomic bit values).
 piv:flagValue a owl:DatatypeProperty ;
-  rdfs:domain piv:FlagMapping ; rdfs:range xsd:unsignedInt ;
+  rdfs:domain [ a owl:Class ;
+                owl:unionOf ( piv:FlagValue piv:FlagMapping )
+              ] ;
+  rdfs:range xsd:unsignedInt ;
   skos:prefLabel "flag value"@en ;
-  skos:definition "Concrete integer value that maps to a specific atomic flag within the scheme."@en .
-
-
+  skos:definition """
+Concrete integer value that encodes one or more flags.
+In a FlagMapping, it defines how numeric values map to flag definitions.
+In a FlagValue, it represents the actual value stored with data.
+"""@en .
 
 ###  https://matthiasprobst.github.io/pivmeta#timeValue
 piv:timeValue rdf:type owl:DatatypeProperty ;
@@ -488,18 +492,18 @@ sd:hasDocumentation rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ### An indivisible flag condition (atomic bit) like "active" or "filtered".
-piv:FlagAtom a owl:Class ;
-  rdfs:subClassOf m4i:NumericalVariable ;
-  skos:prefLabel "flag atom"@en ;
+piv:Flag a owl:Class ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "flag"@en ;
   skos:definition """
 An elementary flag concept representing one minimal, indivisible condition
 that may be assigned to data points in a PIV dataset (e.g., “active”, “masked”, “filtered”).
-Each FlagAtom corresponds to a single power-of-two mask value that can be
+Each Flag corresponds to a single power-of-two mask value that can be
 combined with others by bitwise OR operations to form composite flag values.
 """@en ;
   skos:note "Use piv:mask for the numeric bit value and piv:meaning (or skos:prefLabel) for the human-readable label."@en .
 
-piv:FlagAtom rdfs:subClassOf
+piv:Flag rdfs:subClassOf
   [ a owl:Restriction ; owl:onProperty piv:mask ; owl:cardinality "1"^^xsd:nonNegativeInteger ],
   [ a owl:Restriction ; owl:onProperty piv:meaning ; owl:cardinality "1"^^xsd:nonNegativeInteger ] .
 
@@ -514,16 +518,16 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 """@en .
 
 
-### Explicit mapping entry that binds a literal integer value to a specific atom.
+### Explicit mapping entry that binds a literal integer value to a specific.
 piv:FlagMapping a owl:Class ;
   skos:prefLabel "flag mapping"@en ;
-  skos:definition "Associates a concrete integer value with a piv:FlagAtom within a scheme."@en .
+  skos:definition "Associates a concrete integer value with a piv:Flag within a scheme."@en .
 
 ### A stored bitmask value (bitwise OR of atoms) attached to data when needed.
-piv:FlagBitmask a owl:Class ;
+piv:FlagValue a owl:Class ;
   rdfs:subClassOf m4i:NumericalVariable ;
-  skos:prefLabel "flag bitmask"@en ;
-  skos:definition "A numeric value whose binary representation encodes the set of active FlagAtoms."@en .
+  skos:prefLabel "flag value"@en ;
+  skos:definition "A numeric value whose binary representation encodes the set of active Flags (bitwise) or a single state (enumerated)."@en .
 
 ### Scheme type taxonomy to make the semantics machine-readable.
 piv:FlagSchemeType a owl:Class ;
@@ -1365,14 +1369,14 @@ piv:microPIV rdf:type owl:NamedIndividual ,
 # Canonical flag atoms (single-bit definitions)
 #################################################################
 
-piv:FlagInactive     a piv:FlagAtom ;  piv:meaning "inactive"     ; piv:mask 0   ; skos:prefLabel "inactive"@en .
-piv:FlagActive       a piv:FlagAtom ;  piv:meaning "active"       ; piv:mask 1   ; skos:prefLabel "active"@en .
-piv:FlagMasked       a piv:FlagAtom ;  piv:meaning "masked"       ; piv:mask 2   ; skos:prefLabel "masked"@en .
-piv:FlagNoResult     a piv:FlagAtom ;  piv:meaning "noresult"     ; piv:mask 4   ; skos:prefLabel "noresult"@en .
-piv:FlagDisabled     a piv:FlagAtom ;  piv:meaning "disabled"     ; piv:mask 8   ; skos:prefLabel "disabled"@en .
-piv:FlagFiltered     a piv:FlagAtom ;  piv:meaning "filtered"     ; piv:mask 16  ; skos:prefLabel "filtered"@en .
-piv:FlagInterpolated a piv:FlagAtom ;  piv:meaning "interpolated" ; piv:mask 32  ; skos:prefLabel "interpolated"@en .
-piv:FlagReplaced     a piv:FlagAtom ;  piv:meaning "replaced"     ; piv:mask 64  ; skos:prefLabel "replaced"@en .
-piv:FlagManualEdit   a piv:FlagAtom ;  piv:meaning "manualedit"   ; piv:mask 128 ; skos:prefLabel "manualedit"@en .
+piv:FlagInactive     a piv:Flag ;  piv:meaning "inactive"     ; piv:mask 0   ; skos:prefLabel "inactive"@en .
+piv:FlagActive       a piv:Flag ;  piv:meaning "active"       ; piv:mask 1   ; skos:prefLabel "active"@en .
+piv:FlagMasked       a piv:Flag ;  piv:meaning "masked"       ; piv:mask 2   ; skos:prefLabel "masked"@en .
+piv:FlagNoResult     a piv:Flag ;  piv:meaning "noresult"     ; piv:mask 4   ; skos:prefLabel "noresult"@en .
+piv:FlagDisabled     a piv:Flag ;  piv:meaning "disabled"     ; piv:mask 8   ; skos:prefLabel "disabled"@en .
+piv:FlagFiltered     a piv:Flag ;  piv:meaning "filtered"     ; piv:mask 16  ; skos:prefLabel "filtered"@en .
+piv:FlagInterpolated a piv:Flag ;  piv:meaning "interpolated" ; piv:mask 32  ; skos:prefLabel "interpolated"@en .
+piv:FlagReplaced     a piv:Flag ;  piv:meaning "replaced"     ; piv:mask 64  ; skos:prefLabel "replaced"@en .
+piv:FlagManualEdit   a piv:Flag ;  piv:meaning "manualedit"   ; piv:mask 128 ; skos:prefLabel "manualedit"@en .
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

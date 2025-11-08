@@ -236,7 +236,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#allowedFlag
 :allowedFlag rdf:type owl:ObjectProperty ;
              rdfs:domain :FlagScheme ;
-             rdfs:range :FlagAtom ;
+             rdfs:range :Flag ;
              <http://www.w3.org/2004/02/skos/core#definition> "Lists the atomic flags that are valid within the scheme."@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "allowed flag"@en .
 
@@ -245,8 +245,8 @@ xsd:date rdf:type rdfs:Datatype .
 :flag rdf:type owl:ObjectProperty ;
       owl:inverseOf :flagIn ;
       rdfs:range [ rdf:type owl:Class ;
-                   owl:unionOf ( :FlagBitmask
-                                 :FlagScheme
+                   owl:unionOf ( :FlagScheme
+                                 :FlagValue
                                )
                  ] ;
       <http://www.w3.org/2004/02/skos/core#definition> "Relates a thing (typically dataset or variable) to its flag scheme or to concrete bitmask flag values."@en ;
@@ -256,8 +256,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#flagIn
 :flagIn rdf:type owl:ObjectProperty ;
         rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :FlagBitmask
-                                    :FlagScheme
+                      owl:unionOf ( :FlagScheme
+                                    :FlagValue
                                   )
                     ] ;
         <http://www.w3.org/2004/02/skos/core#definition> "Inverse of piv:flag; indicates in which thing (typically dataset or variable) a flag scheme or bitmask is used."@en ;
@@ -268,7 +268,7 @@ xsd:date rdf:type rdfs:Datatype .
 :hasFlagMapping rdf:type owl:ObjectProperty ;
                 rdfs:domain :FlagScheme ;
                 rdfs:range :FlagMapping ;
-                <http://www.w3.org/2004/02/skos/core#definition> "Associates a flag scheme with its explicit value to atom mappings."@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Associates a flag scheme with its explicit value to mappings."@en ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "has flag mapping"@en .
 
 
@@ -328,8 +328,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#mapsToFlag
 :mapsToFlag rdf:type owl:ObjectProperty ;
             rdfs:domain :FlagMapping ;
-            rdfs:range :FlagAtom ;
-            <http://www.w3.org/2004/02/skos/core#definition> "Connects a piv:FlagMapping entry to the corresponding piv:FlagAtom."@en ;
+            rdfs:range :Flag ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Connects a piv:FlagMapping entry to the corresponding piv:Flag."@en ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "maps to flag"@en .
 
 
@@ -405,15 +405,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                  rdfs:domain <http://www.molmod.info/semantics/pims-ii.ttl#Variable> .
 
 
-###  https://matthiasprobst.github.io/pivmeta#bitmaskValue
-:bitmaskValue rdf:type owl:DatatypeProperty ;
-              rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> ;
-              rdfs:domain :FlagBitmask ;
-              rdfs:range xsd:unsignedInt ;
-              <http://www.w3.org/2004/02/skos/core#definition> "Numeric bitmask (OR of atom masks) stored with the data."@en ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "bitmask value"@en .
-
-
 ###  https://matthiasprobst.github.io/pivmeta#filenamePattern
 :filenamePattern rdf:type owl:DatatypeProperty ;
                  rdfs:domain :ImageVelocimetryDistribution ;
@@ -424,9 +415,17 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://matthiasprobst.github.io/pivmeta#flagValue
 :flagValue rdf:type owl:DatatypeProperty ;
-           rdfs:domain :FlagMapping ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :FlagMapping
+                                       :FlagValue
+                                     )
+                       ] ;
            rdfs:range xsd:unsignedInt ;
-           <http://www.w3.org/2004/02/skos/core#definition> "Concrete integer value that maps to a specific atomic flag within the scheme."@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> """
+Concrete integer value that encodes one or more flags.
+In a FlagMapping, it defines how numeric values map to flag definitions.
+In a FlagValue, it represents the actual value stored with data.
+"""@en ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "flag value"@en .
 
 
@@ -440,17 +439,18 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://matthiasprobst.github.io/pivmeta#mask
 :mask rdf:type owl:DatatypeProperty ;
       rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue> ;
-      rdfs:domain :FlagAtom ;
+      rdfs:domain :Flag ;
       rdfs:range xsd:unsignedInt ;
-      <http://www.w3.org/2004/02/skos/core#definition> "Power-of-two integer value of the atomic flag."@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Non-negative integer used for encoding. For bitwise schemes: powers of two; 0 is reserved for 'no flag'."@en ;
       <http://www.w3.org/2004/02/skos/core#prefLabel> "mask"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#meaning
 :meaning rdf:type owl:DatatypeProperty ;
-         rdfs:domain :FlagAtom ;
+         rdfs:domain :Flag ;
          rdfs:range xsd:string ;
          <http://www.w3.org/2004/02/skos/core#definition> "Human-readable meaning of the atomic flag."@en ;
+         <http://www.w3.org/2004/02/skos/core#note> "Prefer skos:prefLabel for the human-readable flag name; piv:meaning is kept for backward compatibility."@en ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "meaning"@en .
 
 
@@ -671,37 +671,40 @@ xsd:date rdf:type rdfs:Datatype .
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "experimental setup"@en .
 
 
-###  https://matthiasprobst.github.io/pivmeta#FlagAtom
-:FlagAtom rdf:type owl:Class ;
-          rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :mask ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :meaning ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ;
-          <http://www.w3.org/2004/02/skos/core#definition> """
+###  https://matthiasprobst.github.io/pivmeta#Flag
+:Flag rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :mask ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :meaning ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      <http://www.w3.org/2004/02/skos/core#definition> """
 An elementary flag concept representing one minimal, indivisible condition
 that may be assigned to data points in a PIV dataset (e.g., “active”, “masked”, “filtered”).
-Each FlagAtom corresponds to a single power-of-two mask value that can be
+Each Flag corresponds to a single power-of-two mask value that can be
 combined with others by bitwise OR operations to form composite flag values.
 """@en ;
-          <http://www.w3.org/2004/02/skos/core#note> "Use piv:mask for the numeric bit value and piv:meaning (or skos:prefLabel) for the human-readable label."@en ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "flag atom"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#FlagBitmask
-:FlagBitmask rdf:type owl:Class ;
-             rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
-             <http://www.w3.org/2004/02/skos/core#definition> "A numeric value whose binary representation encodes the set of active FlagAtoms."@en ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "flag bitmask"@en .
+      <http://www.w3.org/2004/02/skos/core#note> "Use piv:mask for the numeric bit value and piv:meaning (or skos:prefLabel) for the human-readable label."@en ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "flag"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagMapping
 :FlagMapping rdf:type owl:Class ;
-             <http://www.w3.org/2004/02/skos/core#definition> "Associates a concrete integer value with a piv:FlagAtom within a scheme."@en ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :mapsToFlag ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Flag
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :flagValue ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:unsignedInt
+                             ] ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Associates a concrete integer value with a piv:Flag within a scheme."@en ;
              <http://www.w3.org/2004/02/skos/core#prefLabel> "flag mapping"@en .
 
 
@@ -719,6 +722,13 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 :FlagSchemeType rdf:type owl:Class ;
                 <http://www.w3.org/2004/02/skos/core#definition> "Describes how flag values are interpreted (bitwise vs enumerated)."@en ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "flag scheme type"@en .
+
+
+###  https://matthiasprobst.github.io/pivmeta#FlagValue
+:FlagValue rdf:type owl:Class ;
+           rdfs:subClassOf <http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable> ;
+           <http://www.w3.org/2004/02/skos/core#definition> "A numeric value whose binary representation encodes the set of active Flags (bitwise) or a single state (enumerated)."@en ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "flag value"@en .
 
 
 ###  https://matthiasprobst.github.io/pivmeta#ImageManipulationMethod
@@ -1163,7 +1173,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagActive
 :FlagActive rdf:type owl:NamedIndividual ,
-                     :FlagAtom ;
+                     :Flag ;
             :mask 1 ;
             :meaning "active" ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "active"@en .
@@ -1171,7 +1181,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagDisabled
 :FlagDisabled rdf:type owl:NamedIndividual ,
-                       :FlagAtom ;
+                       :Flag ;
               :mask 8 ;
               :meaning "disabled" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "disabled"@en .
@@ -1179,7 +1189,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagFiltered
 :FlagFiltered rdf:type owl:NamedIndividual ,
-                       :FlagAtom ;
+                       :Flag ;
               :mask 16 ;
               :meaning "filtered" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "filtered"@en .
@@ -1187,7 +1197,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagInactive
 :FlagInactive rdf:type owl:NamedIndividual ,
-                       :FlagAtom ;
+                       :Flag ;
               :mask 0 ;
               :meaning "inactive" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "inactive"@en .
@@ -1195,7 +1205,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagInterpolated
 :FlagInterpolated rdf:type owl:NamedIndividual ,
-                           :FlagAtom ;
+                           :Flag ;
                   :mask 32 ;
                   :meaning "interpolated" ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "interpolated"@en .
@@ -1203,7 +1213,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagManualEdit
 :FlagManualEdit rdf:type owl:NamedIndividual ,
-                         :FlagAtom ;
+                         :Flag ;
                 :mask 128 ;
                 :meaning "manualedit" ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "manualedit"@en .
@@ -1211,7 +1221,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagMasked
 :FlagMasked rdf:type owl:NamedIndividual ,
-                     :FlagAtom ;
+                     :Flag ;
             :mask 2 ;
             :meaning "masked" ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "masked"@en .
@@ -1219,7 +1229,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagNoResult
 :FlagNoResult rdf:type owl:NamedIndividual ,
-                       :FlagAtom ;
+                       :Flag ;
               :mask 4 ;
               :meaning "noresult" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "noresult"@en .
@@ -1227,7 +1237,7 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 
 ###  https://matthiasprobst.github.io/pivmeta#FlagReplaced
 :FlagReplaced rdf:type owl:NamedIndividual ,
-                       :FlagAtom ;
+                       :Flag ;
               :mask 64 ;
               :meaning "replaced" ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "replaced"@en .
