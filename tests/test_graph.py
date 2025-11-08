@@ -50,6 +50,7 @@ class TestGraph(unittest.TestCase):
                          rdflib.OWL.members,
                          rdflib.OWL.onClass,
                          rdflib.OWL.onDataRange,
+                         rdflib.OWL.cardinality,
                          rdflib.OWL.hasValue,
                          rdflib.OWL.qualifiedCardinality,
                          rdflib.URIRef("http://www.w3.org/2002/07/owl#minQualifiedCardinality"),
