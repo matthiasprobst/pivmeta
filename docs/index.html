@@ -563,6 +563,10 @@ This ontology has the following classes and properties.</span>
          title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a>
    </li>
    <li>
+      <a href="#flagValue"
+         title="https://matthiasprobst.github.io/pivmeta#flagValue">flag value</a>
+   </li>
+   <li>
       <a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a>
    </li>
    <li>
@@ -592,9 +596,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#timeValue"
          title="https://matthiasprobst.github.io/pivmeta#timeValue">time value</a>
-   </li>
-   <li>
-      <a href="#value" title="https://matthiasprobst.github.io/pivmeta#value">value</a>
    </li>
    <li>
       <a href="#https://matthiasprobst.github.io/ssno#withImageDeformation"
@@ -1160,7 +1161,7 @@ This section provides details for each class and property defined by PIVMeta.
     is in domain of
    </dt>
    <dd>
-    <a href="#mapsToFlag" title="https://matthiasprobst.github.io/pivmeta#mapsToFlag">maps to flag</a> <sup class="type-op" title="object property">op</sup>, <a href="#value" title="https://matthiasprobst.github.io/pivmeta#value">value</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#flagValue" title="https://matthiasprobst.github.io/pivmeta#flagValue">flag value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#mapsToFlag" title="https://matthiasprobst.github.io/pivmeta#mapsToFlag">maps to flag</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -3041,6 +3042,7 @@ This section provides details for each class and property defined by PIVMeta.
  <ul class="hlist">
   <li><a href="#bitmaskValue" title="https://matthiasprobst.github.io/pivmeta#bitmaskValue">bitmask value</a></li>
   <li><a href="#filenamePattern" title="https://matthiasprobst.github.io/pivmeta#filenamePattern">filename pattern</a></li>
+  <li><a href="#flagValue" title="https://matthiasprobst.github.io/pivmeta#flagValue">flag value</a></li>
   <li><a href="#fnumber" title="https://matthiasprobst.github.io/pivmeta#fnumber">fnumber</a></li>
   <li><a href="#https://w3id.org/okn/o/sd#hasDocumentation" title="https://w3id.org/okn/o/sd#hasDocumentation">has documentation</a></li>
   <li><a href="#http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue" title="http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue"> <span>has Numerical Value</span> </a></li>
@@ -3049,7 +3051,6 @@ This section provides details for each class and property defined by PIVMeta.
   <li><a href="#meaning" title="https://matthiasprobst.github.io/pivmeta#meaning">meaning</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#standardName" title="https://matthiasprobst.github.io/ssno#standardName">standard name</a></li>
   <li><a href="#timeValue" title="https://matthiasprobst.github.io/pivmeta#timeValue">time value</a></li>
-  <li><a href="#value" title="https://matthiasprobst.github.io/pivmeta#value">value</a></li>
   <li><a href="#https://matthiasprobst.github.io/ssno#withImageDeformation" title="https://matthiasprobst.github.io/ssno#withImageDeformation">with image deformation</a></li>
  </ul>
  <div class="entity" id="bitmaskValue">
@@ -3100,6 +3101,29 @@ This section provides details for each class and property defined by PIVMeta.
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="flagValue">
+  <h3>flag value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#flagValue</p>
+  <div class="comment">
+   <span class="markdown">Concrete integer value that maps to a specific atomic flag within the scheme.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FlagMapping" title="https://matthiasprobst.github.io/pivmeta#FlagMapping">flag mapping</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#unsignedInt" target="_blank" title="http://www.w3.org/2001/XMLSchema#unsignedInt">unsigned Int</a>
     </dd>
    </dl>
   </div>
@@ -3306,29 +3330,6 @@ This section provides details for each class and property defined by PIVMeta.
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a> <span class="logic">or</span> <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="value">
-  <h3>value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://matthiasprobst.github.io/pivmeta#value</p>
-  <div class="comment">
-   <span class="markdown">Concrete integer value that maps to a specific atomic flag within the scheme.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#FlagMapping" title="https://matthiasprobst.github.io/pivmeta#FlagMapping">flag mapping</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#unsignedInt" target="_blank" title="http://www.w3.org/2001/XMLSchema#unsignedInt">unsigned Int</a>
     </dd>
    </dl>
   </div>

@@ -422,6 +422,14 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "filename pattern"@en .
 
 
+###  https://matthiasprobst.github.io/pivmeta#flagValue
+:flagValue rdf:type owl:DatatypeProperty ;
+           rdfs:domain :FlagMapping ;
+           rdfs:range xsd:unsignedInt ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Concrete integer value that maps to a specific atomic flag within the scheme."@en ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "flag value"@en .
+
+
 ###  https://matthiasprobst.github.io/pivmeta#fnumber
 :fnumber rdf:type owl:DatatypeProperty ;
          rdfs:domain :Camera ;
@@ -457,14 +465,6 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "Canonical timestamp value."@en ;
            <http://www.w3.org/2004/02/skos/core#example> "2024-07-25T13:45:30" ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "time value"@en .
-
-
-###  https://matthiasprobst.github.io/pivmeta#value
-:value rdf:type owl:DatatypeProperty ;
-       rdfs:domain :FlagMapping ;
-       rdfs:range xsd:unsignedInt ;
-       <http://www.w3.org/2004/02/skos/core#definition> "Concrete integer value that maps to a specific atomic flag within the scheme."@en ;
-       <http://www.w3.org/2004/02/skos/core#prefLabel> "value"@en .
 
 
 ###  https://matthiasprobst.github.io/ssno#standardName
