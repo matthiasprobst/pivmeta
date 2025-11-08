@@ -424,7 +424,6 @@ piv:fnumber rdf:type owl:DatatypeProperty ;
 ### Single-bit mask for a Flag (power of two).
 piv:mask a owl:DatatypeProperty ;
   rdfs:domain piv:Flag ; rdfs:range xsd:unsignedInt ;
-  rdfs:subPropertyOf m4i:hasNumericalValue ;
   skos:prefLabel "mask"@en ;
   skos:definition "Non-negative integer used for encoding. For bitwise schemes: powers of two; 0 is reserved for 'no flag'."@en .
 
@@ -437,9 +436,7 @@ piv:meaning a owl:DatatypeProperty ;
 
 
 piv:hasFlagValue a owl:DatatypeProperty ;
-  rdfs:domain [ a owl:Class ;
-                owl:unionOf ( piv:FlagValue piv:FlagMapping )
-              ] ;
+  rdfs:domain piv:FlagMapping ;
   rdfs:range xsd:unsignedInt ;
   skos:prefLabel "has flag value"@en ;
   skos:definition """
@@ -520,13 +517,6 @@ values in a dataset. A scheme declares whether values are mutually exclusive
 piv:FlagMapping a owl:Class ;
   skos:prefLabel "flag mapping"@en ;
   skos:definition "Associates a concrete integer value with a piv:Flag within a scheme."@en .
-
-### A stored bitmask value (bitwise OR of atoms) attached to data when needed.
-piv:FlagValue a owl:Class ;
-  rdfs:subClassOf m4i:NumericalVariable ;
-  skos:prefLabel "flag value"@en ;
-  skos:definition "A numeric value whose binary representation encodes the set of active Flags (bitwise) or a single state (enumerated)."@en .
-
 ### Scheme type taxonomy to make the semantics machine-readable.
 piv:FlagSchemeType a owl:Class ;
   skos:prefLabel "flag scheme type"@en ;
