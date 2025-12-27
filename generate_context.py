@@ -52,7 +52,9 @@ def generate(ttl_file: Union[pathlib.Path, str]):
             "rdfs:Datatype",
             "owl:ObjectProperty",
             "owl:DatatypeProperty",
-            "owl:NamedIndividual"]
+            "owl:NamedIndividual",
+            "piv:Flag",
+        ]
 
         ids = []
 
@@ -65,7 +67,6 @@ def generate(ttl_file: Union[pathlib.Path, str]):
                           '}')
             logger.debug(f'*** Adding entities of type "{entity}" to the context file ***')
             query_result = g.query(query)
-
             logger.debug(f'Total: {len(query_result)}')
             for row in query_result:
                 typestr = ""
