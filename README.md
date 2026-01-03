@@ -83,8 +83,6 @@ for PIV quantities (see the [sSNO Guide](https://github.com/matthiasprobst/ssno/
 
 ### Simplified interface: `pivmetalib`
 
-### Simplified Interface: `pivmetalib`
-
 Writing RDF data like JSON-LD manually can be cumbersome.  
 The [**pivmetalib**](https://github.com/matthiasprobst/pivmetalib) Python package offers a high-level interface to
 create and manage PIVMeta descriptions conveniently. It provides numerous examples across different PIV data types —
